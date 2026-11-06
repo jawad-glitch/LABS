@@ -1,0 +1,10 @@
+[2026-11-06 23:46:45 +0000] [8767] [INFO] Starting gunicorn 26.2.0
+[2026-11-06 23:46:45 +0000] [8767] [INFO] Listening at: http://0.0.0.0:8000 (8767)
+[2026-11-06 23:46:45 +0000] [8767] [INFO] Using worker: sync
+[2026-11-06 23:46:45 +0000] [8775] [INFO] Booting worker with pid: 8775
+[2026-11-06 23:46:45 +0000] [8776] [INFO] Booting worker with pid: 8776
+[2026-11-06 23:46:46 +0000] [8767] [INFO] Control socket listening at /run/user/1000/gunicorn.ctl
+[2026-11-06 23:47:05 +0000] [8767] [INFO] Handling signal: term
+[2026-11-06 23:47:05 +0000] [8776] [INFO] Worker exiting (pid: 8776)
+[2026-11-06 23:47:05 +0000] [8775] [INFO] Worker exiting (pid: 8775)
+[2026-11-06 23:47:06 +0000] [8767] [INFO] Shutting down: Master

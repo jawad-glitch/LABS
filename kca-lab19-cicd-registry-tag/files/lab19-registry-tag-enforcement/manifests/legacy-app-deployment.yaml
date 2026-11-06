@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: legacy-app-special
+  namespace: default
+  labels:
+    app: legacy-app
+    exemption: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: legacy-app
+  template:
+    metadata:
+      labels:
+        app: legacy-app
+    spec:
+      securityContext:
+        runAsNonRoot: true
+      containers:
+      - name: legacy-container
+        image: internal-registry.company.com/legacy-app:v2.1.0
+        ports:
+        - containerPort: 8080

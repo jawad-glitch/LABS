@@ -1,0 +1,13 @@
+========== CORE CHECKS (kca-lab19-cicd-registry-tag, 2026-11-06 23:21:54 UTC) ==========
+PASS: Task 1: Kyverno CLI installed
+PASS: Task 2: compliant Deployment passes both policies (autogen, semver regex)
+PASS: Task 3: bad registry rejected by enforce-registry
+PASS: Task 3: :latest tag rejected by enforce-tags
+PASS: Task 3: untagged image rejected by enforce-tags
+PASS: Task 5: pipeline FAILS (exit 1) with Passed: 1 / Failed: 3
+PASS: Task 6: legacy app fails WITHOUT the PolicyException
+PASS: Task 6: legacy app passes WITH the PolicyException
+PASS: Task 6.2: continuous-monitor.sh valid bash
+PASS: Task 7: test suite 5/5 passed
+PASS: Task 8: final report generated with test + pipeline results
+CORE: 11/11 PASS

@@ -1,0 +1,28 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: enforce-registry
+  annotations:
+    policies.kyverno.io/title: Enforce Registry
+    policies.kyverno.io/category: Security
+    policies.kyverno.io/description: >-
+      This policy ensures that all container images come from approved registries.
+      Matching Pods lets Kyverno auto-generate rules for Deployments, StatefulSets,
+      DaemonSets, Jobs and CronJobs.
+spec:
+  background: true
+  rules:
+  - name: check-registry
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    validate:
+      failureAction: Enforce
+      message: "Container images must come from approved registries: docker.io, gcr.io, or quay.io"
+      pattern:
+        spec:
+          containers:
+          - name: "*"
+            image: "docker.io/*|gcr.io/*|quay.io/*"

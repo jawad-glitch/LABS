@@ -1,0 +1,8 @@
+Warning: policies/enforce-registry.yaml: kyverno.io/v1 ClusterPolicy is deprecated and will be removed in a future release; migrate to ValidatingPolicy, MutatingPolicy, GeneratingPolicy or ImageValidatingPolicy (policies.kyverno.io), see https://kyverno.io/docs/guides/migration-to-cel/
+Warning: policies/enforce-tags.yaml: kyverno.io/v1 ClusterPolicy is deprecated and will be removed in a future release; migrate to ValidatingPolicy, MutatingPolicy, GeneratingPolicy or ImageValidatingPolicy (policies.kyverno.io), see https://kyverno.io/docs/guides/migration-to-cel/
+
+Applying 9 policy rule(s) to 1 resource(s)...
+policy enforce-registry -> resource default/Deployment/legacy-app-special failed:
+1 - autogen-check-registry validation error: Container images must come from approved registries: docker.io, gcr.io, or quay.io. rule autogen-check-registry failed at path /spec/template/spec/containers/0/image/
+
+pass: 2, fail: 1, warn: 0, error: 0, skip: 0 

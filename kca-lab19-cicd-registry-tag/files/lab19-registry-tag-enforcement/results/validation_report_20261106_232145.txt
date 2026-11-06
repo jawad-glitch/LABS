@@ -1,0 +1,27 @@
+Kyverno Policy Validation Report
+Generated: Fri Nov  6 23:21:45 UTC 2026
+========================================
+
+FAIL: bad-registry-deployment
+Violations:
+  policy enforce-registry -> resource default/Deployment/bad-registry-app failed:
+  1 - autogen-check-registry validation error: Container images must come from approved registries: docker.io, gcr.io, or quay.io. rule autogen-check-registry failed at path /spec/template/spec/containers/0/image/
+---
+PASS: compliant-deployment
+FAIL: latest-tag-deployment
+Violations:
+  policy enforce-tags -> resource default/Deployment/latest-tag-app failed:
+  1 - autogen-require-image-tag validation error: Container images must have specific tags (not 'latest' or empty). rule autogen-require-image-tag failed at path /spec/template/spec/containers/0/image/
+---
+PASS: legacy-app-deployment
+FAIL: no-tag-deployment
+Violations:
+  policy enforce-tags -> resource default/Deployment/no-tag-app failed:
+  1 - autogen-require-image-tag validation error: Container images must have specific tags (not 'latest' or empty). rule autogen-require-image-tag failed at path /spec/template/spec/containers/0/image/
+---
+
+SUMMARY:
+Total Manifests: 5
+Passed: 2
+Failed: 3
+PIPELINE RESULT: FAILED

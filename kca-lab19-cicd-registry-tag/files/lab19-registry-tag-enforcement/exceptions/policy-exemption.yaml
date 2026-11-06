@@ -1,0 +1,21 @@
+apiVersion: kyverno.io/v2
+kind: PolicyException
+metadata:
+  name: registry-exemption-legacy
+  namespace: default
+spec:
+  exceptions:
+  - policyName: enforce-registry
+    ruleNames:
+    - check-registry
+    - autogen-check-registry
+  match:
+    any:
+    - resources:
+        kinds:
+        - Deployment
+        - Pod
+        names:
+        - legacy-app*
+        namespaces:
+        - default

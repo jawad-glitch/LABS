@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: no-tag-app
+  labels:
+    app: no-tag-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: no-tag-app
+  template:
+    metadata:
+      labels:
+        app: no-tag-app
+    spec:
+      securityContext:
+        runAsNonRoot: true
+      containers:
+      - name: web-server
+        image: docker.io/nginx
+        ports:
+        - containerPort: 80

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: latest-tag-app
+  labels:
+    app: latest-tag-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: latest-tag-app
+  template:
+    metadata:
+      labels:
+        app: latest-tag-app
+    spec:
+      securityContext:
+        runAsNonRoot: true
+      containers:
+      - name: web-server
+        image: docker.io/nginx:latest
+        ports:
+        - containerPort: 80

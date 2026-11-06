@@ -1,0 +1,58 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: add-default-labels
+  annotations:
+    policies.kyverno.io/title: Add Default Labels
+    policies.kyverno.io/category: Best Practices
+    policies.kyverno.io/severity: low
+    policies.kyverno.io/description: >-
+      This policy adds default labels to Pods, Deployments and Services.
+spec:
+  background: false
+  rules:
+  - name: add-labels-to-pods
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    mutate:
+      patchStrategicMerge:
+        metadata:
+          labels:
+            +(managed-by): "kyverno"
+            +(environment): "{{ request.namespace || 'default' }}"
+            +(created-date): "{{ time_now_utc() | truncate(@, `10`) }}"
+  - name: add-labels-to-deployments
+    match:
+      any:
+      - resources:
+          kinds:
+          - Deployment
+    mutate:
+      patchStrategicMerge:
+        metadata:
+          labels:
+            +(managed-by): "kyverno"
+            +(environment): "{{ request.namespace || 'default' }}"
+            +(created-date): "{{ time_now_utc() | truncate(@, `10`) }}"
+        spec:
+          template:
+            metadata:
+              labels:
+                +(managed-by): "kyverno"
+                +(environment): "{{ request.namespace || 'default' }}"
+  - name: add-labels-to-services
+    match:
+      any:
+      - resources:
+          kinds:
+          - Service
+    mutate:
+      patchStrategicMerge:
+        metadata:
+          labels:
+            +(managed-by): "kyverno"
+            +(environment): "{{ request.namespace || 'default' }}"
+            +(created-date): "{{ time_now_utc() | truncate(@, `10`) }}"

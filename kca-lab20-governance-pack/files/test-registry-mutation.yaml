@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: registry-test
+  namespace: policy-test
+spec:
+  containers:
+  - name: test-container
+    image: nginx

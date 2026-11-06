@@ -1,0 +1,1 @@
+{"app":"test-svc","created-date":"2026-11-06","environment":"policy-test","managed-by":"kyverno"}

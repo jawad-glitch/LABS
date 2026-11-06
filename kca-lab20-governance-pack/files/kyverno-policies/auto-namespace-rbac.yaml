@@ -1,0 +1,78 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: auto-namespace-rbac
+  annotations:
+    policies.kyverno.io/title: Auto Generate Namespace RBAC
+    policies.kyverno.io/category: Security
+    policies.kyverno.io/severity: medium
+    policies.kyverno.io/description: >-
+      This policy automatically generates RBAC resources for new namespaces.
+spec:
+  background: true
+  rules:
+  - name: generate-namespace-admin-role
+    match:
+      any:
+      - resources:
+          kinds:
+          - Namespace
+    exclude:
+      any:
+      - resources:
+          kinds:
+          - Namespace
+          names:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+    generate:
+      apiVersion: rbac.authorization.k8s.io/v1
+      kind: Role
+      name: namespace-admin
+      namespace: "{{request.object.metadata.name}}"
+      data:
+        metadata:
+          labels:
+            generated-by: kyverno
+        rules:
+        - apiGroups: [""]
+          resources: ["*"]
+          verbs: ["*"]
+        - apiGroups: ["apps"]
+          resources: ["*"]
+          verbs: ["*"]
+  - name: generate-namespace-admin-rolebinding
+    match:
+      any:
+      - resources:
+          kinds:
+          - Namespace
+    exclude:
+      any:
+      - resources:
+          kinds:
+          - Namespace
+          names:
+          - kube-system
+          - kube-public
+          - kube-node-lease
+          - kyverno
+    generate:
+      apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      name: namespace-admin-binding
+      namespace: "{{request.object.metadata.name}}"
+      data:
+        metadata:
+          labels:
+            generated-by: kyverno
+        roleRef:
+          apiGroup: rbac.authorization.k8s.io
+          kind: Role
+          name: namespace-admin
+        subjects:
+        - kind: User
+          name: "{{request.object.metadata.name}}-admin"
+          apiGroup: rbac.authorization.k8s.io

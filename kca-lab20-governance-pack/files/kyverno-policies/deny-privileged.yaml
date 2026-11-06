@@ -1,0 +1,31 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: deny-privileged-containers
+  annotations:
+    policies.kyverno.io/title: Deny Privileged Containers
+    policies.kyverno.io/category: Security
+    policies.kyverno.io/severity: high
+    policies.kyverno.io/description: >-
+      Privileged containers have access to all Linux kernel capabilities and devices.
+      This policy prevents the creation of privileged containers.
+spec:
+  background: true
+  rules:
+  - name: deny-privileged
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    validate:
+      failureAction: Enforce
+      message: "Privileged containers are not allowed"
+      pattern:
+        spec:
+          containers:
+          - =(securityContext):
+              =(privileged): "false"
+          =(initContainers):
+          - =(securityContext):
+              =(privileged): "false"

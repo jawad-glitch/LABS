@@ -1,0 +1,6 @@
+Error from server: error when creating "/home/ubuntu/test-privileged-pod.yaml": admission webhook "validate.kyverno.svc-fail" denied the request: 
+
+resource Pod/policy-test/privileged-test was blocked due to the following policies 
+
+deny-privileged-containers:
+  deny-privileged: 'validation error: Privileged containers are not allowed. rule deny-privileged failed at path /spec/containers/0/securityContext/privileged/'

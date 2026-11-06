@@ -1,0 +1,64 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: enforce-registry
+  annotations:
+    policies.kyverno.io/title: Enforce Approved Registry
+    policies.kyverno.io/category: Security
+    policies.kyverno.io/severity: medium
+    policies.kyverno.io/description: >-
+      Images without a registry are normalised to docker.io (library/ for official images);
+      images must then come from docker.io, gcr.io or quay.io.
+spec:
+  background: true
+  rules:
+  - name: prepend-registry
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    mutate:
+      foreach:
+      - list: "request.object.spec.containers"
+        preconditions:
+          all:
+          - key: "{{ regex_match('^[^/]*[.:][^/]*/|^localhost/', '{{ element.image }}') }}"
+            operator: Equals
+            value: false
+          - key: "{{ contains(element.image, '/') }}"
+            operator: Equals
+            value: false
+        patchStrategicMerge:
+          spec:
+            containers:
+            - name: "{{ element.name }}"
+              image: "docker.io/library/{{ element.image }}"
+      - list: "request.object.spec.containers"
+        preconditions:
+          all:
+          - key: "{{ regex_match('^[^/]*[.:][^/]*/|^localhost/', '{{ element.image }}') }}"
+            operator: Equals
+            value: false
+          - key: "{{ contains(element.image, '/') }}"
+            operator: Equals
+            value: true
+        patchStrategicMerge:
+          spec:
+            containers:
+            - name: "{{ element.name }}"
+              image: "docker.io/{{ element.image }}"
+  - name: validate-registry
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    validate:
+      failureAction: Enforce
+      message: "Images must be from approved registries (docker.io, gcr.io, or quay.io)"
+      pattern:
+        spec:
+          containers:
+          - name: "*"
+            image: "docker.io/*|gcr.io/*|quay.io/*"

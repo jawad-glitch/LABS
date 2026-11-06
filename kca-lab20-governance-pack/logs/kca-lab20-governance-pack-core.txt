@@ -1,0 +1,14 @@
+========== CORE CHECKS (kca-lab20-governance-pack, 2026-11-06 23:30:04 UTC) ==========
+PASS: Task 1: Kyverno running; CRDs + webhooks present
+PASS: Task 5: all 4 policies Ready
+PASS: Task 6.1: privileged pod DENIED
+PASS: Task 6.1: non-privileged pod ADMITTED
+PASS: Task 6.2: 'nginx' mutated to docker.io/library/nginx
+PASS: Task 6.2: approved gcr.io image untouched; bitnami/nginx -> docker.io/bitnami/nginx
+PASS: Task 6.2: pod labels managed-by=kyverno, environment=policy-test, created-date=2026-11-06
+PASS: Task 6.2: deployment + template labelled; its pods labelled
+PASS: Task 4: services receive default labels
+PASS: Task 6.3: Role namespace-admin + RoleBinding (subject rbac-test-admin) generated
+PASS: Task 6.3: generated RBAC works (rbac-test-admin admin in rbac-test only)
+PASS: Task 6.4: badregistry.com image REJECTED (not rewritten to docker.io)
+CORE: 12/12 PASS

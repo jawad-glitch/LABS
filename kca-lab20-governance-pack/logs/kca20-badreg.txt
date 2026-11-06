@@ -1,0 +1,6 @@
+Error from server: error when creating "/home/ubuntu/test-invalid-registry.yaml": admission webhook "validate.kyverno.svc-fail" denied the request: 
+
+resource Pod/policy-test/invalid-registry-test was blocked due to the following policies 
+
+enforce-registry:
+  validate-registry: 'validation error: Images must be from approved registries (docker.io, gcr.io, or quay.io). rule validate-registry failed at path /spec/containers/0/image/'

@@ -7,3 +7,4 @@
 | [otel-lab01-docker-tooling](otel-lab01-docker-tooling/PROOF.md) | CORE: 11/11 PASS | 2026-11-06 23:38 |
 | [otel-lab02-hello-collector](otel-lab02-hello-collector/PROOF.md) | CORE: 10/10 PASS | 2026-11-06 23:41 |
 | [Lab 3 - Scaffold Python Demo Service](Lab%203%20-%20Scaffold%20Python%20Demo%20Service/PROOF.md) | CORE: 10/10 PASS | 2026-11-06 23:47 |
+| [Lab 4 - Manual Tracing (OTLP → Collector)](Lab%204%20-%20Manual%20Tracing%20%28OTLP%20→%20Collector%29/PROOF.md) | CORE: 10/11 PASS | 2026-11-06 23:54 |

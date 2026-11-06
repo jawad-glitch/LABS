@@ -1,0 +1,1 @@
+spans parsed: 32 | traces: 8 | traces with correct hierarchy: 8

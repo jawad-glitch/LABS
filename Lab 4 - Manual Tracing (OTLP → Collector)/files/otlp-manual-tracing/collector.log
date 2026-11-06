@@ -1,0 +1,897 @@
+2026-11-06T23:53:29.948Z	info	otelconftelemetry/tracer.go:47	Internal trace telemetry disabled	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-06T23:53:29.953Z	warn	coredistro/coredistro.go:28	This component will be removed from the OpenTelemetry Collector core distribution (otelcol) in v0.167.0. Use the transform processor instead.	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "attributes", "otelcol.component.kind": "processor", "otelcol.pipeline.id": "traces", "otelcol.signal": "traces"}
+2026-11-06T23:53:29.957Z	info	service@v0.164.0/service.go:233	Starting otelcol...	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}, "Version": "0.164.0", "NumCPU": 2}
+2026-11-06T23:53:29.957Z	info	extensions/extensions.go:43	Starting extensions...	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-06T23:53:29.958Z	info	otlpreceiver@v0.164.0/otlp.go:120	Starting GRPC server	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4317"}
+2026-11-06T23:53:29.958Z	info	otlpreceiver@v0.164.0/otlp.go:175	Starting HTTP server	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4318"}
+2026-11-06T23:53:29.958Z	info	service@v0.164.0/service.go:256	Everything is ready. Begin running and processing data.	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-06T23:53:41.970Z	info	Traces	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 12}
+2026-11-06T23:53:41.971Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(1436b51e-6fea-4a0b-b0c2-3b7de9cfd431)
+     -> service.name: Str(manual-tracing-app)
+     -> service.version: Str(1.0.0)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope __main__ 
+Span #0
+    Trace ID       : 629df8deee84f516d992f3fb07944f01
+    Parent ID      : 227a0a17f1c53b09
+    ID             : ddd574a5253cdef2
+    Name           : data_preparation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:38.710722156 +0000 UTC
+    End time       : 2026-11-06 23:53:38.811056028 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(preparation)
+     -> data.size: Int(372)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data preparation
+     -> Timestamp: 2026-11-06 23:53:38.710796347 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Data preparation completed
+     -> Timestamp: 2026-11-06 23:53:38.811022297 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> records: Int(372)
+Span #1
+    Trace ID       : 629df8deee84f516d992f3fb07944f01
+    Parent ID      : 227a0a17f1c53b09
+    ID             : eabee26725b3d147
+    Name           : data_processing
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:38.811231479 +0000 UTC
+    End time       : 2026-11-06 23:53:38.91869833 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(processing)
+     -> processing.duration_ms: Int(107)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data processing
+     -> Timestamp: 2026-11-06 23:53:38.81125884 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Processing completed successfully
+     -> Timestamp: 2026-11-06 23:53:38.91866605 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #2
+    Trace ID       : 629df8deee84f516d992f3fb07944f01
+    Parent ID      : 227a0a17f1c53b09
+    ID             : cd494836a2104ef1
+    Name           : result_generation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:38.918851112 +0000 UTC
+    End time       : 2026-11-06 23:53:38.969104189 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(result_generation)
+     -> result.count: Int(29)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Generating results
+     -> Timestamp: 2026-11-06 23:53:38.918877582 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Results generated
+     -> Timestamp: 2026-11-06 23:53:38.969078508 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> count: Int(29)
+Span #3
+    Trace ID       : 629df8deee84f516d992f3fb07944f01
+    Parent ID      : 
+    ID             : 227a0a17f1c53b09
+    Name           : work_operation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:38.710592055 +0000 UTC
+    End time       : 2026-11-06 23:53:38.969337471 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> http.method: Str(GET)
+     -> http.route: Str(/work)
+     -> operation.type: Str(manual_work)
+     -> operation.success: Bool(true)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Work operation completed successfully
+     -> Timestamp: 2026-11-06 23:53:38.969155889 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #4
+    Trace ID       : b081eba50a3689c31d48c0b55d6c6578
+    Parent ID      : bdb89804eec8c32e
+    ID             : 5bedbf63fca4828d
+    Name           : data_preparation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:38.988545287 +0000 UTC
+    End time       : 2026-11-06 23:53:39.088823488 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(preparation)
+     -> data.size: Int(770)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data preparation
+     -> Timestamp: 2026-11-06 23:53:38.988573417 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Data preparation completed
+     -> Timestamp: 2026-11-06 23:53:39.088801628 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> records: Int(770)
+Span #5
+    Trace ID       : b081eba50a3689c31d48c0b55d6c6578
+    Parent ID      : bdb89804eec8c32e
+    ID             : b4e8cb8a46bf571a
+    Name           : data_processing
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:39.0889639 +0000 UTC
+    End time       : 2026-11-06 23:53:39.175161195 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(processing)
+     -> processing.duration_ms: Int(85)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data processing
+     -> Timestamp: 2026-11-06 23:53:39.08899216 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Processing completed successfully
+     -> Timestamp: 2026-11-06 23:53:39.175134244 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #6
+    Trace ID       : b081eba50a3689c31d48c0b55d6c6578
+    Parent ID      : bdb89804eec8c32e
+    ID             : 41f00f5eabfc8cf6
+    Name           : result_generation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:39.175314816 +0000 UTC
+    End time       : 2026-11-06 23:53:39.225573793 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(result_generation)
+     -> result.count: Int(25)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Generating results
+     -> Timestamp: 2026-11-06 23:53:39.175342396 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Results generated
+     -> Timestamp: 2026-11-06 23:53:39.225551353 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> count: Int(25)
+Span #7
+    Trace ID       : b081eba50a3689c31d48c0b55d6c6578
+    Parent ID      : 
+    ID             : bdb89804eec8c32e
+    Name           : work_operation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:38.988445906 +0000 UTC
+    End time       : 2026-11-06 23:53:39.225791385 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> http.method: Str(GET)
+     -> http.route: Str(/work)
+     -> operation.type: Str(manual_work)
+     -> operation.success: Bool(true)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Work operation completed successfully
+     -> Timestamp: 2026-11-06 23:53:39.225619603 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #8
+    Trace ID       : 0210be2e3ca31182aabdbcd4beafa8b2
+    Parent ID      : 58672a6d71385532
+    ID             : 8e3f8d7b92df523d
+    Name           : data_preparation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:39.244113112 +0000 UTC
+    End time       : 2026-11-06 23:53:39.344393784 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(preparation)
+     -> data.size: Int(152)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data preparation
+     -> Timestamp: 2026-11-06 23:53:39.244138063 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Data preparation completed
+     -> Timestamp: 2026-11-06 23:53:39.344367624 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> records: Int(152)
+Span #9
+    Trace ID       : 0210be2e3ca31182aabdbcd4beafa8b2
+    Parent ID      : 58672a6d71385532
+    ID             : 62727493da8d6377
+    Name           : data_processing
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:39.344555455 +0000 UTC
+    End time       : 2026-11-06 23:53:39.480000727 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(processing)
+     -> processing.duration_ms: Int(135)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data processing
+     -> Timestamp: 2026-11-06 23:53:39.344587066 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Processing completed successfully
+     -> Timestamp: 2026-11-06 23:53:39.479975337 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #10
+    Trace ID       : 0210be2e3ca31182aabdbcd4beafa8b2
+    Parent ID      : 58672a6d71385532
+    ID             : b20523f52b865ce7
+    Name           : result_generation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:39.480133659 +0000 UTC
+    End time       : 2026-11-06 23:53:39.530408696 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(result_generation)
+     -> result.count: Int(15)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Generating results
+     -> Timestamp: 2026-11-06 23:53:39.480165629 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Results generated
+     -> Timestamp: 2026-11-06 23:53:39.530385405 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> count: Int(15)
+Span #11
+    Trace ID       : 0210be2e3ca31182aabdbcd4beafa8b2
+    Parent ID      : 
+    ID             : 58672a6d71385532
+    Name           : work_operation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:39.244015862 +0000 UTC
+    End time       : 2026-11-06 23:53:39.53086339 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> http.method: Str(GET)
+     -> http.route: Str(/work)
+     -> operation.type: Str(manual_work)
+     -> operation.success: Bool(true)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Work operation completed successfully
+     -> Timestamp: 2026-11-06 23:53:39.530458736 +0000 UTC
+     -> DroppedAttributesCount: 0
+	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-06T23:53:46.973Z	info	Traces	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 16}
+2026-11-06T23:53:46.974Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(1436b51e-6fea-4a0b-b0c2-3b7de9cfd431)
+     -> service.name: Str(manual-tracing-app)
+     -> service.version: Str(1.0.0)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope __main__ 
+Span #0
+    Trace ID       : 7397365a6b13d24fa69dae2870b62272
+    Parent ID      : 41ce97bb4597fc01
+    ID             : 6f086d2aea8e4e7c
+    Name           : data_preparation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:42.133101716 +0000 UTC
+    End time       : 2026-11-06 23:53:42.233337887 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(preparation)
+     -> data.size: Int(261)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data preparation
+     -> Timestamp: 2026-11-06 23:53:42.133129156 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Data preparation completed
+     -> Timestamp: 2026-11-06 23:53:42.233315907 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> records: Int(261)
+Span #1
+    Trace ID       : 7397365a6b13d24fa69dae2870b62272
+    Parent ID      : 41ce97bb4597fc01
+    ID             : fef2e4af85cd1a19
+    Name           : data_processing
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:42.233449358 +0000 UTC
+    End time       : 2026-11-06 23:53:42.413534672 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(processing)
+     -> processing.duration_ms: Int(179)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data processing
+     -> Timestamp: 2026-11-06 23:53:42.233473728 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Processing completed successfully
+     -> Timestamp: 2026-11-06 23:53:42.413509202 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #2
+    Trace ID       : 7397365a6b13d24fa69dae2870b62272
+    Parent ID      : 41ce97bb4597fc01
+    ID             : a96ba606c56124bd
+    Name           : result_generation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:42.413658393 +0000 UTC
+    End time       : 2026-11-06 23:53:42.46389809 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(result_generation)
+     -> result.count: Int(50)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Generating results
+     -> Timestamp: 2026-11-06 23:53:42.413687484 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Results generated
+     -> Timestamp: 2026-11-06 23:53:42.46387212 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> count: Int(50)
+Span #3
+    Trace ID       : 7397365a6b13d24fa69dae2870b62272
+    Parent ID      : 
+    ID             : 41ce97bb4597fc01
+    Name           : work_operation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:42.132964035 +0000 UTC
+    End time       : 2026-11-06 23:53:42.464117662 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> http.method: Str(GET)
+     -> http.route: Str(/work)
+     -> operation.type: Str(manual_work)
+     -> operation.success: Bool(true)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Work operation completed successfully
+     -> Timestamp: 2026-11-06 23:53:42.463969361 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #4
+    Trace ID       : 08be1815ef6625d4276d46db320a372a
+    Parent ID      : 9ec6b6577f060bf8
+    ID             : bba5b42ed966e239
+    Name           : data_preparation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:43.483960961 +0000 UTC
+    End time       : 2026-11-06 23:53:43.584207962 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(preparation)
+     -> data.size: Int(644)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data preparation
+     -> Timestamp: 2026-11-06 23:53:43.483985381 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Data preparation completed
+     -> Timestamp: 2026-11-06 23:53:43.584185441 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> records: Int(644)
+Span #5
+    Trace ID       : 08be1815ef6625d4276d46db320a372a
+    Parent ID      : 9ec6b6577f060bf8
+    ID             : 2c2a2bf1fed3e747
+    Name           : data_processing
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:43.584322273 +0000 UTC
+    End time       : 2026-11-06 23:53:43.705644408 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(processing)
+     -> processing.duration_ms: Int(121)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data processing
+     -> Timestamp: 2026-11-06 23:53:43.584348893 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Processing completed successfully
+     -> Timestamp: 2026-11-06 23:53:43.705620708 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #6
+    Trace ID       : 08be1815ef6625d4276d46db320a372a
+    Parent ID      : 9ec6b6577f060bf8
+    ID             : b401761658789ec9
+    Name           : result_generation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:43.70580806 +0000 UTC
+    End time       : 2026-11-06 23:53:43.756040626 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(result_generation)
+     -> result.count: Int(10)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Generating results
+     -> Timestamp: 2026-11-06 23:53:43.70583789 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Results generated
+     -> Timestamp: 2026-11-06 23:53:43.756016916 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> count: Int(10)
+Span #7
+    Trace ID       : 08be1815ef6625d4276d46db320a372a
+    Parent ID      : 
+    ID             : 9ec6b6577f060bf8
+    Name           : work_operation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:43.48387588 +0000 UTC
+    End time       : 2026-11-06 23:53:43.756230248 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> http.method: Str(GET)
+     -> http.route: Str(/work)
+     -> operation.type: Str(manual_work)
+     -> operation.success: Bool(true)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Work operation completed successfully
+     -> Timestamp: 2026-11-06 23:53:43.756087117 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #8
+    Trace ID       : d47086e88fc89955afa00e44c367e589
+    Parent ID      : b31ca1e2f6cb004b
+    ID             : 7c79f91b91447d61
+    Name           : data_preparation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:44.778735022 +0000 UTC
+    End time       : 2026-11-06 23:53:44.879050594 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(preparation)
+     -> data.size: Int(508)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data preparation
+     -> Timestamp: 2026-11-06 23:53:44.778838173 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Data preparation completed
+     -> Timestamp: 2026-11-06 23:53:44.879025154 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> records: Int(508)
+Span #9
+    Trace ID       : d47086e88fc89955afa00e44c367e589
+    Parent ID      : b31ca1e2f6cb004b
+    ID             : 192d236336e3623f
+    Name           : data_processing
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:44.879181285 +0000 UTC
+    End time       : 2026-11-06 23:53:44.929644714 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(processing)
+     -> processing.duration_ms: Int(50)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data processing
+     -> Timestamp: 2026-11-06 23:53:44.879213955 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Processing completed successfully
+     -> Timestamp: 2026-11-06 23:53:44.929621084 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #10
+    Trace ID       : d47086e88fc89955afa00e44c367e589
+    Parent ID      : b31ca1e2f6cb004b
+    ID             : 3d7e7ba841cda17d
+    Name           : result_generation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:44.93031261 +0000 UTC
+    End time       : 2026-11-06 23:53:44.980544847 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(result_generation)
+     -> result.count: Int(40)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Generating results
+     -> Timestamp: 2026-11-06 23:53:44.930344091 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Results generated
+     -> Timestamp: 2026-11-06 23:53:44.980520407 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> count: Int(40)
+Span #11
+    Trace ID       : d47086e88fc89955afa00e44c367e589
+    Parent ID      : 
+    ID             : b31ca1e2f6cb004b
+    Name           : work_operation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:44.778617661 +0000 UTC
+    End time       : 2026-11-06 23:53:44.980750929 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> http.method: Str(GET)
+     -> http.route: Str(/work)
+     -> operation.type: Str(manual_work)
+     -> operation.success: Bool(true)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Work operation completed successfully
+     -> Timestamp: 2026-11-06 23:53:44.980593147 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #12
+    Trace ID       : 13763d699a96ec6e8f6f80060f38a77c
+    Parent ID      : f1d604ec62899fd0
+    ID             : 385a852d53bfbc06
+    Name           : data_preparation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:46.002228833 +0000 UTC
+    End time       : 2026-11-06 23:53:46.102501695 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(preparation)
+     -> data.size: Int(640)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data preparation
+     -> Timestamp: 2026-11-06 23:53:46.002256984 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Data preparation completed
+     -> Timestamp: 2026-11-06 23:53:46.102476744 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> records: Int(640)
+Span #13
+    Trace ID       : 13763d699a96ec6e8f6f80060f38a77c
+    Parent ID      : f1d604ec62899fd0
+    ID             : abdfa17a24ac7bd5
+    Name           : data_processing
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:46.102622766 +0000 UTC
+    End time       : 2026-11-06 23:53:46.182008575 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(processing)
+     -> processing.duration_ms: Int(79)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data processing
+     -> Timestamp: 2026-11-06 23:53:46.102651726 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Processing completed successfully
+     -> Timestamp: 2026-11-06 23:53:46.181982954 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #14
+    Trace ID       : 13763d699a96ec6e8f6f80060f38a77c
+    Parent ID      : f1d604ec62899fd0
+    ID             : 844c61a8226e6b17
+    Name           : result_generation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:46.182132156 +0000 UTC
+    End time       : 2026-11-06 23:53:46.232361492 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(result_generation)
+     -> result.count: Int(41)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Generating results
+     -> Timestamp: 2026-11-06 23:53:46.182160516 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Results generated
+     -> Timestamp: 2026-11-06 23:53:46.232338202 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> count: Int(41)
+Span #15
+    Trace ID       : 13763d699a96ec6e8f6f80060f38a77c
+    Parent ID      : 
+    ID             : f1d604ec62899fd0
+    Name           : work_operation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:46.002130912 +0000 UTC
+    End time       : 2026-11-06 23:53:46.232549214 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> http.method: Str(GET)
+     -> http.route: Str(/work)
+     -> operation.type: Str(manual_work)
+     -> operation.success: Bool(true)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Work operation completed successfully
+     -> Timestamp: 2026-11-06 23:53:46.232408983 +0000 UTC
+     -> DroppedAttributesCount: 0
+	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-06T23:53:51.975Z	info	Traces	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 4}
+2026-11-06T23:53:51.976Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(1436b51e-6fea-4a0b-b0c2-3b7de9cfd431)
+     -> service.name: Str(manual-tracing-app)
+     -> service.version: Str(1.0.0)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope __main__ 
+Span #0
+    Trace ID       : 42b6255df004a11c1411d3f96ed108be
+    Parent ID      : 87bea720fad36fbb
+    ID             : 9b4432535229f065
+    Name           : data_preparation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:47.255043318 +0000 UTC
+    End time       : 2026-11-06 23:53:47.35530614 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(preparation)
+     -> data.size: Int(773)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data preparation
+     -> Timestamp: 2026-11-06 23:53:47.255067249 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Data preparation completed
+     -> Timestamp: 2026-11-06 23:53:47.355280609 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> records: Int(773)
+Span #1
+    Trace ID       : 42b6255df004a11c1411d3f96ed108be
+    Parent ID      : 87bea720fad36fbb
+    ID             : 915009d530f1c0fb
+    Name           : data_processing
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:47.355441981 +0000 UTC
+    End time       : 2026-11-06 23:53:47.555331742 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(processing)
+     -> processing.duration_ms: Int(199)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Starting data processing
+     -> Timestamp: 2026-11-06 23:53:47.355475771 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Processing completed successfully
+     -> Timestamp: 2026-11-06 23:53:47.555304692 +0000 UTC
+     -> DroppedAttributesCount: 0
+Span #2
+    Trace ID       : 42b6255df004a11c1411d3f96ed108be
+    Parent ID      : 87bea720fad36fbb
+    ID             : a9a62e354d6dd4a6
+    Name           : result_generation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:47.555472674 +0000 UTC
+    End time       : 2026-11-06 23:53:47.605698296 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> step: Str(result_generation)
+     -> result.count: Int(27)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Generating results
+     -> Timestamp: 2026-11-06 23:53:47.555503824 +0000 UTC
+     -> DroppedAttributesCount: 0
+SpanEvent #1
+     -> Name: Results generated
+     -> Timestamp: 2026-11-06 23:53:47.605674846 +0000 UTC
+     -> DroppedAttributesCount: 0
+     -> Attributes::
+          -> count: Int(27)
+Span #3
+    Trace ID       : 42b6255df004a11c1411d3f96ed108be
+    Parent ID      : 
+    ID             : 87bea720fad36fbb
+    Name           : work_operation
+    Kind           : Internal
+    Start time     : 2026-11-06 23:53:47.254953628 +0000 UTC
+    End time       : 2026-11-06 23:53:47.605953979 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> http.method: Str(GET)
+     -> http.route: Str(/work)
+     -> operation.type: Str(manual_work)
+     -> operation.success: Bool(true)
+     -> environment: Str(lab)
+Events:
+SpanEvent #0
+     -> Name: Work operation completed successfully
+     -> Timestamp: 2026-11-06 23:53:47.605745247 +0000 UTC
+     -> DroppedAttributesCount: 0
+	{"resource": {"service.instance.id": "5073f67f-aa78-4fb5-ab85-00572f59c70b", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}

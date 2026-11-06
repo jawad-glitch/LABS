@@ -1,0 +1,14 @@
+ Network ubuntu_default Creating 
+ Network ubuntu_default Creating 
+ Network ubuntu_default Created 
+ Network ubuntu_default Created 
+ Container ubuntu-test-1 Creating 
+ Container ubuntu-test-1 Created 
+Attaching to test-1
+ Container ubuntu-test-1 Starting 
+test-1  | Docker Compose is working correctly!
+ Container ubuntu-test-1 Started 
+[Ktest-1 exited with code 0
+ Compose Stopping Aborting on container exit...
+ Container ubuntu-test-1 Stopping 
+ Container ubuntu-test-1 Stopped 

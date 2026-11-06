@@ -1,0 +1,13 @@
+========== CORE CHECKS (otel-lab01-docker-tooling, 2026-11-06 23:38:04 UTC) ==========
+PASS: Task 1: curl, git, python3, pip3 installed
+PASS: Task 2: docker-ce installed from download.docker.com
+PASS: Task 2: buildx + compose plugins installed
+PASS: Task 2.5: docker service active and enabled
+PASS: Task 3: ubuntu is in the docker group
+PASS: Task 3.3: hello-world ran via docker group (no sudo)
+PASS: Task 4: standalone docker-compose installed (ELF binary, executable)
+PASS: Task 4.3: /usr/bin/docker-compose symlink
+PASS: Task 5.1/5.2: docker server responds; docker-compose v2+ (standalone + plugin)
+PASS: Task 5.3: alpine container printed message
+PASS: Task 5.4: docker-compose test service printed message
+CORE: 11/11 PASS

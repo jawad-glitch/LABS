@@ -1,0 +1,7 @@
+Lab: Lab 2 - Run Besu Node
+Date UTC: Sat Nov  7 13:26:52 UTC 2026
+Java: openjdk version "25.0.4.1" 2026-08-18
+Besu: besu/v26.11.0/linux-x86_64/openjdk-java-25
+RPC: http://127.0.0.1:8545
+Besu PID: 12283
+CORE RESULT: 10/10 PASS

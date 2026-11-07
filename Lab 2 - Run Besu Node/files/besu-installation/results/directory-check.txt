@@ -1,0 +1,1 @@
+drwxr-xr-x  2 ubuntu ubuntu 4096 Nov  7 13:23 besu_data

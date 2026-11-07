@@ -1,0 +1,110 @@
+[2m2026-11-07 13:26:36.652+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mStarting Besu
+[m[2m2026-11-07 13:26:39.364+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mRPC HTTP JSON-RPC config: JsonRpcConfiguration{enabled=true, port=8545, host=127.0.0.1, corsAllowedDomains=[], hostsAllowlist=[localhost, 127.0.0.1], rpcApis=[ETH, NET, WEB3], authenticationEnabled=false, authenticationCredentialsFile=null, authenticationPublicKeyFile=null, tlsConfiguration=Optional.empty, httpTimeoutSec=30, maxActiveConnections=80, maxBatchSize=1024}
+[m[2m2026-11-07 13:26:39.374+0000[m[2m | [m[2mmain[m[2m | [m[33mWARN [m[2m | [m[2mBesu[m[2m | [m[33mEngine API authentication enabled without key file. Expect ephemeral jwt.hex file in datadir
+[m[2m2026-11-07 13:26:39.375+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mEngine JSON-RPC config: JsonRpcConfiguration{enabled=true, port=8551, host=127.0.0.1, corsAllowedDomains=[], hostsAllowlist=[localhost, 127.0.0.1], rpcApis=[ENGINE, ETH], authenticationEnabled=true, authenticationCredentialsFile=null, authenticationPublicKeyFile=null, tlsConfiguration=Optional.empty, httpTimeoutSec=30, maxActiveConnections=80, maxBatchSize=1024}
+[m[2m2026-11-07 13:26:39.393+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mBonsai cross-block cache enabled for BAL prefetch reading
+[m[2m2026-11-07 13:26:39.395+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mConnecting to 0 static nodes.
+[m[2m2026-11-07 13:26:39.478+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mjemalloc library not found, memory usage may be reduced by installing it
+[m[2m2026-11-07 13:26:39.597+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32m
+####################################################################################################
+#                                                                                                  #
+# Besu version 26.11.0                                                                             #
+#                                                                                                  #
+# Configuration:                                                                                   #
+# Network: Mainnet                                                                                 #
+# Network Id: 1                                                                                    #
+# Data storage: Bonsai                                                                             #
+# RocksDB max open files: 1024 (derived from available resources)                                  #
+# Sync mode: Snap                                                                                  #
+#   SNAP Sync server disabled                                                                      #
+# Sync min peers: 5                                                                                #
+# RPC HTTP APIs: ETH,NET,WEB3                                                                      #
+# RPC HTTP port: 8545                                                                              #
+# Engine APIs: ENGINE,ETH                                                                          #
+# Engine port: 8551                                                                                #
+# Engine JWT: /tmp/besu_data/jwt.hex                                                               #
+# Using LAYERED transaction pool implementation                                                    #
+# Using STACKED worldstate update mode                                                             #
+# Opcode optimizations enabled                                                                     #
+# Parallel transaction processing enabled                                                          #
+# Limit trie logs enabled: retention: 512; prune window: 5000                                      #
+# BAL pruning enabled (retained BALs: 457568)                                                      #
+# Target Gas Limit: 60M                                                                            #
+#                                                                                                  #
+# Host:                                                                                            #
+# Java: openjdk-java-25                                                                            #
+# Maximum heap size: 0.94 GB                                                                       #
+# OS: linux-x86_64                                                                                 #
+# glibc: 2.39                                                                                      #
+# Total memory: 3.76 GB                                                                            #
+# CPU cores: 2                                                                                     #
+#                                                                                                  #
+# Plugin Registration Summary:                                                                     #
+# No plugins have been registered.                                                                 #
+# TOTAL = 0 of 0 plugins successfully registered.                                                  #
+#                                                                                                  #
+####################################################################################################
+[m[2m2026-11-07 13:26:39.599+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mSecurity Module: localfile
+[m[2m2026-11-07 13:26:39.601+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mVersionMetadata[m[2m | [m[32mLookup version metadata file in data directory: /tmp/besu_data
+[m[2m2026-11-07 13:26:39.602+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mVersionMetadata[m[2m | [m[32mNo version data detected. Writing Besu version 26.11.0 to metadata file
+[m[2m2026-11-07 13:26:39.719+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mUsing the native implementation of alt bn128
+[m[2m2026-11-07 13:26:39.722+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mUsing the Java implementation of modexp
+[m[2m2026-11-07 13:26:39.722+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mUsing the native implementation of the signature algorithm
+[m[2m2026-11-07 13:26:39.727+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mUsing the native implementation of the blake2bf algorithm
+[m[2m2026-11-07 13:26:40.109+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mUsing the native BoringSSL implementation of p256verify
+[m[2m2026-11-07 13:26:40.124+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mKZGPointEvalPrecompiledContract[m[2m | [m[32mLoading network trusted setup from classpath resource /kzg-trusted-setups/mainnet.txt
+[m[2m2026-11-07 13:26:44.674+0000[m[2m | [m[2mmain[m[2m | [m[33mWARN [m[2m | [m[2mBesuController[m[2m | [m[33mNo consensus mechanism detected in genesis config, using PoS
+[m[2m2026-11-07 13:26:44.779+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mKeyPairUtil[m[2m | [m[32mGenerated new secp256k1 public key 0x3e838612c3dcecfc4a1501e739f5a0f48bdb6c838259b7bc0c2d5cbce4f3f3eee23b79524944f02bc5f58de964c3a3866bfb689c4e141792978970ea0a12aff0 and stored it to /tmp/besu_data/key
+[m[2m2026-11-07 13:26:45.078+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mProtocolScheduleBuilder[m[2m | [m[32mProtocol schedule created with milestones: [Paris:0, Paris:1150000, Paris:1920000, Paris:1920001, Paris:1920010, Paris:2463000, Paris:2675000, Paris:4370000, Paris:7280000, Paris:9069000, Paris:9200000, Paris:12244000, Paris:12965000, Paris:13773000, Paris:15050000, Shanghai:1681338455, Cancun:1710338135, Prague:1746612311, Osaka:1764798551, BPO1:1765290071, BPO2:1767747671]
+[m[2m2026-11-07 13:26:45.083+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRocksDBKeyValueStorageFactory[m[2m | [m[32mNo existing database at /tmp/besu_data. Using default metadata for new db versionedStorageFormat=BaseVersionedStorageFormat{format=BONSAI, version=4}
+[m[2m2026-11-07 13:26:45.503+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mVersionedFlatDbCacheManager[m[2m | [m[32mCache maintenance will trigger asynchronously after 1000 pending tasks
+[m[2m2026-11-07 13:26:45.516+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mFlatDbStrategyProvider[m[2m | [m[32mFlat db mode found FULL
+[m[2m2026-11-07 13:26:45.522+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mFlatDbStrategyProvider[m[2m | [m[32mDB mode with code stored using code hash enabled = true
+[m[2m2026-11-07 13:26:45.569+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mFlatDbStrategyProvider[m[2m | [m[32mFlat db mode found FULL
+[m[2m2026-11-07 13:26:45.571+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mFlatDbStrategyProvider[m[2m | [m[32mDB mode with code stored using code hash enabled = true
+[m[2m2026-11-07 13:26:49.715+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesuControllerBuilder[m[2m | [m[32mAdding ChainDataPruner to observe block added events
+[m[2m2026-11-07 13:26:49.720+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesuControllerBuilder[m[2m | [m[32mBAL pruning enabled | BALs retained: 457568 | Frequency: 256
+[m[2m2026-11-07 13:26:49.794+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mTransactionPoolFactory[m[2m | [m[32mTransaction pool disabled while initial sync in progress
+[m[2m2026-11-07 13:26:49.805+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mEthPeers[m[2m | [m[32mUpdating the default best peer comparator
+[m[2m2026-11-07 13:26:49.859+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesuControllerBuilder[m[2m | [m[32mTTD difficulty is present, creating initial sync for PoS
+[m[2m2026-11-07 13:26:49.993+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mTrieLogPruner[m[2m | [m[32mTrie log pruner queue preload starting...
+[m[2m2026-11-07 13:26:49.996+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mTrieLogPruner[m[2m | [m[32mAttempting to load first 5000 trie logs from database...
+[m[2m2026-11-07 13:26:49.997+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mTrieLogPruner[m[2m | [m[32mTrie log pruning will timeout after 30 seconds. If this is timing out, consider using `besu storage trie-log prune` subcommand, see https://besu.hyperledger.org/public-networks/how-to/bonsai-limit-trie-logs
+[m[2m2026-11-07 13:26:49.999+0000[m[2m | [m[2mpool-10-thread-1[m[2m | [m[32mINFO [m[2m | [m[2mTrieLogPruner[m[2m | [m[32mAdded 1 trie logs to prune queue. Commencing pruning of eligible trie logs...
+[m[2m2026-11-07 13:26:49.999+0000[m[2m | [m[2mpool-10-thread-1[m[2m | [m[32mINFO [m[2m | [m[2mTrieLogPruner[m[2m | [m[32mPruned 0 trie logs
+[m[2m2026-11-07 13:26:50.000+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mTrieLogPruner[m[2m | [m[32mTrie log pruner queue preload complete.
+[m[2m2026-11-07 13:26:50.003+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRunnerBuilder[m[2m | [m[32mResolved 23 bootnodes.
+[m[2m2026-11-07 13:26:50.020+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRunnerBuilder[m[2m | [m[32mDetecting NAT service.
+[m[2m2026-11-07 13:26:50.078+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mCompositePeerDiscoveryAgentFactory[m[2m | [m[32mPeer discovery mode: BOTH (requested=BOTH, V4=true, V5=true)
+[m[2m2026-11-07 13:26:50.786+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRunner[m[2m | [m[32mStarting external services ... 
+[m[2m2026-11-07 13:26:50.788+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mJsonRpcHttpService[m[2m | [m[32mStarting JSON-RPC service on 127.0.0.1:8545
+[m[2m2026-11-07 13:26:51.042+0000[m[2m | [m[2mvert.x-eventloop-thread-1[m[2m | [m[32mINFO [m[2m | [m[2mJsonRpcHttpService[m[2m | [m[32mJSON-RPC service started and listening on 127.0.0.1:8545
+[m[2m2026-11-07 13:26:51.042+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mEngineJsonRpcService[m[2m | [m[32mStarting JSON-RPC service on 127.0.0.1:8551
+[m[2m2026-11-07 13:26:51.051+0000[m[2m | [m[2mvert.x-eventloop-thread-1[m[2m | [m[32mINFO [m[2m | [m[2mEngineJsonRpcService[m[2m | [m[32mJSON-RPC service started and listening on 127.0.0.1:8551
+[m[2m2026-11-07 13:26:51.057+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mAutoTransactionLogBloomCachingService[m[2m | [m[32mStarting auto transaction log bloom caching service.
+[m[2m2026-11-07 13:26:51.059+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mLogBloomCacheMetadata[m[2m | [m[32mLookup cache metadata file in data directory: /tmp/besu_data/caches
+[m[2m2026-11-07 13:26:51.080+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRunner[m[2m | [m[32mStarting Ethereum main loop ... 
+[m[2m2026-11-07 13:26:51.081+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mNatService[m[2m | [m[32mNo NAT environment detected so no service could be started
+[m[2m2026-11-07 13:26:51.081+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mNetworkRunner[m[2m | [m[32mStarting Network.
+[m[2m2026-11-07 13:26:51.085+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mDefaultP2PNetwork[m[2m | [m[32mStarting DNS discovery with URL enrtree://AKA3AM6LPBYEUDMVNU3BSVQJ5AD45Y7YPOHJLEF6W26QOE4VTUDPE@all.mainnet.ethdisco.net
+[m[2m2026-11-07 13:26:51.095+0000[m[2m | [m[2mvert.x-virtual-thread-0[m[2m | [m[32mINFO [m[2m | [m[2mDNSDaemon[m[2m | [m[32mStarting DNSDaemon for enrtree://AKA3AM6LPBYEUDMVNU3BSVQJ5AD45Y7YPOHJLEF6W26QOE4VTUDPE@all.mainnet.ethdisco.net, using default DNS host.
+[m[2m2026-11-07 13:26:51.122+0000[m[2m | [m[2mnioEventLoopGroup-2-1[m[2m | [m[32mINFO [m[2m | [m[2mRlpxAgent[m[2m | [m[32mP2P RLPx agent started and listening on /[0:0:0:0:0:0:0:0]:30303.
+[m[2m2026-11-07 13:26:51.124+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mCompositePeerDiscoveryAgent[m[2m | [m[32mStarting discovery on shared UDP socket (V4 + V5)
+[m[2m2026-11-07 13:26:51.171+0000[m[2m | [m[2mdisc-shared-eventloop[m[2m | [m[32mINFO [m[2m | [m[2mPeerDiscoveryAgentV4[m[2m | [m[32mStarting peer discovery agent on host=0.0.0.0, port=30303. IPv6 available.
+[m[2m2026-11-07 13:26:51.319+0000[m[2m | [m[2mdisc-shared-eventloop[m[2m | [m[32mINFO [m[2m | [m[2mNodeRecordManager[m[2m | [m[32mWriting node record to disk. NodeRecord{seq=1, publicKey=0x023e838612c3dcecfc4a1501e739f5a0f48bdb6c838259b7bc0c2d5cbce4f3f3ee, udpAddress=Optional[/127.0.0.1:30303], tcpAddress=Optional[/127.0.0.1:30303], quicAddress=Optional.empty, udp6Address=Optional.empty, tcp6Address=Optional.empty, quic6Address=Optional.empty, asBase64=-Jq4QNSaigQ1rW8Rr2f3pGsUo_ekqzopL_5x9FFYav8Qf7ZKIpE7anmnV08VIgfOBsoObsfTTHY7FrAcOWEZ-948Oc0Bg2V0aMrJhPxk7ASDEYwwgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQI-g4YSw9zs_EoVAec59aD0i9tsg4JZt7wMLVy85PPz7oN0Y3CCdl-DdWRwgnZf, nodeId=0x4e0416164a47699cad4cf32d35de2159721589bcd51749aec362ad93e2455da5, customFields={tcp=30303, udp=30303, eth=[[0xfc64ec04, 0x118c30]], id=V4, ip=0x7f000001, secp256k1=0x023e838612c3dcecfc4a1501e739f5a0f48bdb6c838259b7bc0c2d5cbce4f3f3ee}}
+[m[2m2026-11-07 13:26:51.411+0000[m[2m | [m[2mdisc-shared-eventloop[m[2m | [m[32mINFO [m[2m | [m[2mPeerDiscoveryAgentV4[m[2m | [m[32mP2P peer discovery agent started and listening on /0.0.0.0:30303
+[m[2m2026-11-07 13:26:51.412+0000[m[2m | [m[2mdisc-shared-eventloop[m[2m | [m[32mINFO [m[2m | [m[2mPeerDiscoveryAgentV5[m[2m | [m[32mStarting DiscV5 peer discovery agent ...
+[m[2m2026-11-07 13:26:51.654+0000[m[2m | [m[2mdisc-shared-eventloop[m[2m | [m[32mINFO [m[2m | [m[2mNettyDiscoveryClientImpl[m[2m | [m[32mUDP discovery client started
+[m[2m2026-11-07 13:26:51.838+0000[m[2m | [m[2mdisc-shared-eventloop[m[2m | [m[32mINFO [m[2m | [m[2mPeerDiscoveryAgentV5[m[2m | [m[32mP2P DiscV5 peer discovery agent started and listening on 30303
+[m[2m2026-11-07 13:26:51.844+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mDefaultP2PNetwork[m[2m | [m[32mEnode URL enode://3e838612c3dcecfc4a1501e739f5a0f48bdb6c838259b7bc0c2d5cbce4f3f3eee23b79524944f02bc5f58de964c3a3866bfb689c4e141792978970ea0a12aff0@127.0.0.1:30303
+[m[2m2026-11-07 13:26:51.866+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mDefaultP2PNetwork[m[2m | [m[32mENR URL enr:-Jq4QNSaigQ1rW8Rr2f3pGsUo_ekqzopL_5x9FFYav8Qf7ZKIpE7anmnV08VIgfOBsoObsfTTHY7FrAcOWEZ-948Oc0Bg2V0aMrJhPxk7ASDEYwwgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQI-g4YSw9zs_EoVAec59aD0i9tsg4JZt7wMLVy85PPz7oN0Y3CCdl-DdWRwgnZf
+[m[2m2026-11-07 13:26:51.874+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mDefaultP2PNetwork[m[2m | [m[32mNode address 0x35de2159721589bcd51749aec362ad93e2455da5
+[m[2m2026-11-07 13:26:51.957+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mNetworkRunner[m[2m | [m[32mSupported capabilities: [eth/68, eth/69, eth/70, eth/71], [snap/1]
+[m[2m2026-11-07 13:26:51.962+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mDefaultSynchronizer[m[2m | [m[32mStarting synchronizer.
+[m[2m2026-11-07 13:26:51.979+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mSnapSyncDownloader[m[2m | [m[32mStarting pivot-based sync
+[m[2m2026-11-07 13:26:52.009+0000[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRunner[m[2m | [m[32mEthereum main loop is up.
+[m[2m2026-11-07 13:27:06.117+0000[m[2m | [m[2mdisc-shared-eventloop[m[2m | [m[33mWARN [m[2m | [m[2mPeerDiscoveryAgentV4[m[2m | [m[33mDropping inbound discovery packets: 256 already in flight. See the discovery_packets_dropped_total metric.
+[m[2m2026-11-07 13:27:52.008+0000[m[2m | [m[2mEthScheduler-Timer-0[m[2m | [m[32mINFO [m[2m | [m[2mPivotSelectorFromSafeBlock[m[2m | [m[32mWaiting for consensus client, this may be because your consensus client is still syncing
+[m[2m2026-11-07 13:28:50.682+0000[m[2m | [m[2mvert.x-eventloop-thread-0[m[2m | [m[33mWARN [m[2m | [m[2mEngineQosTimer[m[2m | [m[33mExecution engine not called in 120 seconds, consensus client may not be connected
+[m[2m2026-11-07 13:28:52.018+0000[m[2m | [m[2mEthScheduler-Timer-0[m[2m | [m[32mINFO [m[2m | [m[2mPivotSelectorFromSafeBlock[m[2m | [m[32mWaiting for consensus client, this may be because your consensus client is still syncing
+[m

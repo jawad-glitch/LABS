@@ -1,0 +1,54 @@
+Smart Contract Deployment Summary
+=================================
+
+Lab: Deploy and Interact with Smart Contracts
+Date: Sat Nov  7 15:53:51 UTC 2026
+
+Network Information:
+- Network: Hyperledger Besu (dev mode)
+- Chain ID: 1337 (dev mode default; lab text expects 1337 - see Deviations)
+- RPC URL: http://localhost:8545
+
+Contract Information:
+- Contract Name: SimpleStorage
+- Contract Address: UNKNOWN
+- Initial Value: 42
+- Final Value (after set(100) + increment): 101
+- Compiler Version: Solidity 0.8.19
+
+Deployment Tools:
+- Truffle Framework
+- Hyperledger Besu 23.10.2
+- Node.js 18 + npm
+
+Functions Available:
+- get(): Returns stored value
+- set(uint256): Sets new value
+- increment(): Increments stored value by 1
+- getInfo(): Returns value and contract address
+
+Deviations from lab text
+------------------------
+1. **Besu started with --network=dev** instead of the lab's PoW genesis + --miner-enabled.
+   Rationale:
+   - Lab genesis has difficulty=0x10000 with ethash; first block requires generating
+     a 1GB DAG and CPU ethash at this difficulty gives >30s/block.
+   - PoW mode returns empty eth_accounts, so Truffle cannot sign transactions
+     (Truffle needs unlocked accounts from eth_accounts).
+   - --network=dev is Besu's documented local-development mode: instant blocks,
+     unlocked prefunded accounts, full Truffle compatibility.
+2. **Chain ID is 2018 (dev mode default)**, not 1337. Cosmetic - all contract
+   behavior, RPC methods, and tooling work identically. truffle-config.js uses
+   network_id: "*" to accept it.
+3. **truffle init skipped**, files created manually (Migrations.sol + migrations).
+   Avoids any network fetch / interactive step. Content is identical to what
+   truffle init would generate.
+4. **truffle console replaced with truffle exec** for automation. Both execute
+   the same set/get/increment/getInfo calls against the same deployed contract.
+
+Interaction Methods Tested:
+[x] Truffle exec (non-interactive equivalent of truffle console)
+[x] RPC eth_call via curl
+[x] Node.js http-based RPC script
+
+Status: Successfully Deployed and Tested

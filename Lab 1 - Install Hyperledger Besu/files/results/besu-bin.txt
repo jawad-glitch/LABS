@@ -1,0 +1,5 @@
+total 24
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep 23  2020 .
+drwxr-xr-x 4 ubuntu ubuntu  4096 Sep 23  2020 ..
+-rwxr-xr-x 1 ubuntu ubuntu 11054 Sep 23  2020 besu
+-rwxr-xr-x 1 ubuntu ubuntu  3303 Sep 23  2020 besu.bat

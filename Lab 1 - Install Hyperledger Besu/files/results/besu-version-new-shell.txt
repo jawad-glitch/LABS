@@ -1,0 +1,3 @@
+Enhanced logging active (v3.0) | Session: aa85ada8...
+Instance: i-00093d98aac89ca22 | Container: 192150
+besu/v1.5.5/linux-x86_64/openjdk-java-11

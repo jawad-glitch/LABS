@@ -1,0 +1,7 @@
+total 40
+drwxr-xr-x 4 ubuntu ubuntu  4096 Sep 23  2020 .
+drwxrwxr-x 4 ubuntu ubuntu  4096 Nov  7 13:14 ..
+-rw-r--r-- 1 ubuntu ubuntu 11357 Sep 23  2020 LICENSE
+drwxr-xr-x 2 ubuntu ubuntu  4096 Sep 23  2020 bin
+drwxr-xr-x 2 ubuntu ubuntu 12288 Sep 23  2020 lib
+-rw-r--r-- 1 ubuntu ubuntu  1198 Sep 23  2020 license-dependency.html

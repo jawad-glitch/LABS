@@ -24,3 +24,4 @@
 | [Lab 18 - Multi-Pipeline Export (Jaeger + Zipkin)](Lab%2018%20-%20Multi-Pipeline%20Export%20%28Jaeger%20+%20Zipkin%29/PROOF.md) | CORE: 12/12 PASS | 2026-11-07 01:36 |
 | [Lab 19 - CI-Style Validation Script](Lab%2019%20-%20CI-Style%20Validation%20Script/PROOF.md) | no core-check file | 2026-11-07 01:42 |
 | [Lab 20 - End-to-End Incident Drill](Lab%2020%20-%20End-to-End%20Incident%20Drill/PROOF.md) | CORE: 9/14 PASS | 2026-11-07 01:50 |
+| [Lab 1 - Install Hyperledger Besu](Lab%201%20-%20Install%20Hyperledger%20Besu/PROOF.md) | CORE: 9/9 PASS | 2026-11-07 13:16 |

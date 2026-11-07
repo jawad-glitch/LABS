@@ -1,0 +1,3 @@
+permissions-accounts-config-enabled=true
+permissions-accounts-config-file="/home/ubuntu/besu-permissioning-lab/accounts-allowlist.toml"
+permissions-accounts-config-file-enabled=true

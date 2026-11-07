@@ -39,3 +39,4 @@
 | [Lab 13 - Monitor Besu with Prometheus](Lab%2013%20-%20Monitor%20Besu%20with%20Prometheus/PROOF.md) | CORE: 10/14 PASS | 2026-11-07 16:07 |
 | [Lab 14 - Monitor Besu with Grafana](Lab%2014%20-%20Monitor%20Besu%20with%20Grafana/PROOF.md) | CORE: 18/20 PASS | 2026-11-07 16:19 |
 | [Lab 15 - Use Besu GraphQL API](Lab%2015%20-%20Use%20Besu%20GraphQL%20API/PROOF.md) | CORE: 14/18 PASS | 2026-11-07 16:25 |
+| [Lab 16 - Implement Permissioning for Accounts](Lab%2016%20-%20Implement%20Permissioning%20for%20Accounts/PROOF.md) | none |

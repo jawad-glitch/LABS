@@ -1,0 +1,9 @@
+counter (latest export): /fast=15 /slow=8 /error=12 (500s=4) /health=17
+expected:                /fast=15 /slow=8 /error=12 (500s=4) /health=17
+COUNTER_EXACT=yes
+histogram: /fast count=15.0 mean=0.194s | /slow count=8.0 mean=1.871s | /fast buckets=16 bounds=15
+HIST_COUNT_MATCH=yes
+SLOW_GT_FAST=yes
+HAS_BUCKETS=yes
+/fast counter across exports: [2.0, 5.0, 5.0, 5.0, 5.0, 5.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0]
+MONOTONIC=yes

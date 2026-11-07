@@ -1,0 +1,10 @@
+[ 25/200] by status: 200=25
+[ 50/200] by status: 200=50
+[ 75/200] by status: 200=72, 500=3
+[100/200] by status: 200=95, 500=5
+[125/200] by status: 200=119, 500=6
+[150/200] by status: 200=143, 500=7
+[175/200] by status: 200=167, 500=8
+[200/200] by status: 200=192, 500=8
+routes hit: {'/fast': 77, '/flaky': 45, '/checkout': 29, '/work': 49}
+SDK STATS: requests=200 sampled_traces=48 ratio=0.2 -> reduction 76.0%

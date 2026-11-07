@@ -1,0 +1,5 @@
+wget: invalid option -- 'f'
+wget: invalid option -- 's'
+Usage: wget [OPTION]... [URL]...
+
+Try `wget --help' for more options.

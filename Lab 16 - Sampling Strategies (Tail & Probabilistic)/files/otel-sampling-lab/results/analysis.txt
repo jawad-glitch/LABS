@@ -1,0 +1,15 @@
+=== SAMPLING ANALYSIS (tail-sampled output file) ===
+Total span records found:          10
+Spans with ERROR status:           3
+Spans with duration > 1500ms:      4
+Traces retained:                   8
+Overall retention vs 200 sent:    4.0%
+
+=== LAYER BREAKDOWN ===
+Requests sent:                     200
+Traces after SDK 20% sampler:      48  (24.0%)
+Traces after collector tail rules: 8  (4.0%)
+COVERAGE ERROR          traces: received=3 kept=3 -> 100%
+COVERAGE SLOW >1500ms   traces: received=2 kept=2 -> 100%
+COVERAGE priority=high  traces: received=2 kept=2 -> 100%
+Server spans missing custom attributes: 0

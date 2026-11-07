@@ -1,0 +1,248 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.10.38:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Nov/2026 01:21:09] "GET /stats HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #1: be4d831a63ff5e5a250eb7d69a0703e2 GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:10] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+[sdk] sampled trace #2: 033c20768fec972d320c28d18ef432ca GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #3: 0734009041020cb21751b47bf4402932 GET /checkout
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+[sdk] sampled trace #4: 84c16f717c289c1c31d35cde64d3f6d1 GET /checkout
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #5: aa40276f4591e65a0f92ff8cc1d4edbe GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "[35m[1mGET /flaky HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "[35m[1mGET /flaky HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #6: a303e0f0997ab4dc208adef83afd2a90 GET /flaky
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:11] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #7: dc8e508952d4e82b151d3085d45ad8c0 GET /flaky
+127.0.0.1 - - [07/Nov/2026 01:21:11] "[35m[1mGET /flaky HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /checkout HTTP/1.1" 200 -
+[sdk] sampled trace #8: 263f85ec6cb3fa8f167bb3e4d2fb794a GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #9: e4f7b2908083612e0d38ae03c771f78d GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /checkout HTTP/1.1" 200 -
+[sdk] sampled trace #10: aea36454408ce9490742a74a854b0206 GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #11: 756445a3491657e1211fabaa77118189 GET /flaky
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #12: 402d807b9717a2fb17e207c979966213 GET /flaky
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:12] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #13: 1b4f5a28d4b1a4d2299598ad0ebd73d4 GET /checkout
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #14: c40cd1ba709f18ae25b0b505423d9d84 GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #15: aba0a2856e78b00b023148c0c83a540e GET /checkout
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:13] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #16: 26faf0a21ce884232e28aafa431f0666 GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #17: 2a144d07c802180f0f9720cb0d96ea08 GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #18: 93f60174ba2e10a81779ee4aaf676bef GET /flaky
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /flaky HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces to localhost:4317, retrying in 1.04s. Error details: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:4317: Failed to connect to remote host: Connection refused
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "[35m[1mGET /flaky HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "[35m[1mGET /flaky HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #19: 3e14ee0a81060de31a89494fe9c6700c GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #20: dbc96effa496ebde1b51f7c7617957be GET /flaky
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #21: 4739e8cea4a59be608c818a49dc81700 GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:14] "[35m[1mGET /flaky HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /flaky HTTP/1.1" 200 -
+Failed to export traces to localhost:4317, error code: StatusCode.UNAVAILABLE, error details: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:4317: Failed to connect to remote host: Connection refused
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "[35m[1mGET /flaky HTTP/1.1[0m" 500 -
+[sdk] sampled trace #22: 1fb45ef6c1d311511d65db04f73163c5 GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /work HTTP/1.1" 200 -
+[sdk] sampled trace #23: efc9b7aa2604e28c1eccd3e38bf52ef8 GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:15] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #24: 32cc836bec6440181d58a55f71edb3bf GET /flaky
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #25: 66e862b42fd886e5096e660408cb5532 GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "[35m[1mGET /flaky HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #26: f17e5691aeba20772c01d6b2398dceec GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #27: ffe62278d03bbd4821ff9da7381f3245 GET /flaky
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #28: d519ca70ceef483832b86fc7989a774d GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /work HTTP/1.1" 200 -
+[sdk] sampled trace #29: bbb0f87f8b5512c42facc5ac6876900b GET /fast
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #30: 25b8bb266c07e1640165372d8192a425 GET /flaky
+127.0.0.1 - - [07/Nov/2026 01:21:16] "[35m[1mGET /flaky HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:16] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:17] "GET /checkout HTTP/1.1" 200 -
+[sdk] sampled trace #31: 6efd75e298c5f3263083fea3544e70cb GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:17] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:17] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:17] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:17] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:17] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #32: f746437564a5ba2924db6dfabbeb0d75 GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:17] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:17] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /checkout HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /flaky HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /fast HTTP/1.1" 200 -
+[sdk] sampled trace #33: b36a386439558e462d55fee29dffdcc9 GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:18] "GET /flaky HTTP/1.1" 200 -
+[sdk] sampled trace #34: 8a49c4bb457bf15d09d837856062bd32 GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:19] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:19] "GET /work HTTP/1.1" 200 -
+[sdk] sampled trace #35: a84d0bd6f50f1a323099ffe18ad07d6e GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:19] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:19] "GET /work HTTP/1.1" 200 -
+[sdk] sampled trace #36: f0e22196407d573c0089ed01be936a79 GET /work
+127.0.0.1 - - [07/Nov/2026 01:21:20] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:20] "GET /work HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 01:21:20] "GET /stats HTTP/1.1" 200 -
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces to localhost:4317, retrying in 1.10s. Error details: failed to connect to all addresses; last error: UNKNOWN: ipv6:%5B::1%5D:4317: Failed to connect to remote host: Connection refused

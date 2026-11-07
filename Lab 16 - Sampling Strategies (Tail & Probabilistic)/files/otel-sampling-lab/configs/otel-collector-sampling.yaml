@@ -1,0 +1,57 @@
+extensions:
+  health_check:
+    endpoint: 0.0.0.0:13133
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  tail_sampling:
+    decision_wait: 5s              # default 30s; traces are short here
+    num_traces: 10000
+    expected_new_traces_per_sec: 50
+    policies:
+      - name: keep_errors
+        type: status_code
+        status_code:
+          status_codes: [ERROR]
+      - name: keep_slow
+        type: latency
+        latency:
+          threshold_ms: 1500
+      - name: keep_critical_attribute
+        type: string_attribute
+        string_attribute:
+          key: priority
+          values: [high]
+      - name: default_sample
+        type: probabilistic
+        probabilistic:
+          sampling_percentage: 8
+  batch:
+    timeout: 1s
+
+exporters:
+  file/received:                    # everything the SDK sent (before tail sampling) - the baseline
+    path: /home/ubuntu/otel-sampling-lab/output/received-traces.json
+  file/sampled:                     # what tail sampling kept
+    path: /home/ubuntu/otel-sampling-lab/output/sampled-traces.json
+  debug:
+    verbosity: basic
+
+service:
+  extensions: [health_check]
+  pipelines:
+    traces/received:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [file/received]
+    traces/sampled:
+      receivers: [otlp]
+      processors: [tail_sampling, batch]
+      exporters: [file/sampled, debug]

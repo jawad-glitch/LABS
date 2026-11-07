@@ -1,0 +1,5 @@
+REPOSITORY         TAG       SIZE
+prom/prometheus    latest    389MB
+hyperledger/besu   latest    884MB
+grafana/grafana    latest    2.01GB
+hello-world        latest    25.9kB

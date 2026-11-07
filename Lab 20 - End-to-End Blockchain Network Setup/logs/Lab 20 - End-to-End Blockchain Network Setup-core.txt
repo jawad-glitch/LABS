@@ -1,0 +1,22 @@
+========== CORE CHECKS (Lab 20 - End-to-End Blockchain Network Setup, 2026-11-07 17:44:25 UTC) ==========
+PASS: Task 1.1: docker engine + compose v2 installed
+PASS: Task 1.1: hello-world ran (daemon usable)
+PASS: Task 1.1: user is in the docker group
+PASS: Task 1.2: besu, prometheus, grafana images present
+PASS: Task 2: 3 node keys + 3 distinct addresses
+PASS: Task 2: genesis extraData is 316 chars (0x + 314)
+PASS: Task 2: genesis extraData encodes all 3 signers
+PASS: Task 2: genesis alloc funds all 3 signers
+FAIL: Task 2: 3 besu nodes + prometheus + grafana running
+FAIL: AC 2.1: net_peerCount is 0x2 on all three nodes
+FAIL: AC 2.1: eth_blockNumber greater than 0x0 on all three
+FAIL: AC 2.2: clique_getSigners returns exactly 3 addresses
+FAIL: AC 2.2: signers match genesis addresses exactly
+PASS: Task 3A: Counter compiled to bytecode
+FAIL: AC 3.1: count() returns 2 on all three RPC ports
+FAIL: AC 3.2: Prometheus has all 3 besu targets UP
+FAIL: AC 3.2: ethereum_blockchain_height has 3 series
+FAIL: AC 3.2: block height is increasing between scrapes
+PASS: AC 3.2: Grafana has the Prometheus datasource
+PASS: AC 3.2: Grafana dashboard besu-height is provisioned
+CORE: 11/20 PASS

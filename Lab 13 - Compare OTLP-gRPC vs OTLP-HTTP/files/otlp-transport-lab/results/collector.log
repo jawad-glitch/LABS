@@ -1,0 +1,2588 @@
+2026-11-07T00:56:11.373Z	info	otelconftelemetry/tracer.go:47	Internal trace telemetry disabled	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:56:11.378Z	info	service@v0.164.0/service.go:233	Starting otelcol-contrib...	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "Version": "0.164.0", "NumCPU": 2}
+2026-11-07T00:56:11.378Z	info	extensions/extensions.go:43	Starting extensions...	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:56:11.379Z	info	otlpreceiver@v0.164.0/otlp.go:120	Starting GRPC server	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4317"}
+2026-11-07T00:56:11.379Z	info	otlpreceiver@v0.164.0/otlp.go:175	Starting HTTP server	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4318"}
+2026-11-07T00:56:11.379Z	info	service@v0.164.0/service.go:256	Everything is ready. Begin running and processing data.	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:58:16.023Z	info	Traces	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 5}
+2026-11-07T00:58:16.023Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(15e33d8b-125d-4551-a07a-4a52a48271f5)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope __main__ 
+Span #0
+    Trace ID       : 1200668bc7ab6e5c5ec28edf5c013fe8
+    Parent ID      : 
+    ID             : 367ac2b3a317d09f
+    Name           : grpc-operation-0
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:10.984320347 +0000 UTC
+    End time       : 2026-11-07 00:58:12.798317949 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(0)
+     -> duration: Double(1.813250753699252)
+Span #1
+    Trace ID       : a076ef60dbf80bb9ce9db660161195cc
+    Parent ID      : 
+    ID             : 283364a76560a5cd
+    Name           : grpc-operation-1
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:12.798463431 +0000 UTC
+    End time       : 2026-11-07 00:58:13.08161229 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(1)
+     -> duration: Double(0.28274426675614195)
+Span #2
+    Trace ID       : 0c1510aaba053c6591405f331fde6966
+    Parent ID      : 
+    ID             : 00d6d6ac4693d16a
+    Name           : grpc-operation-2
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:13.081733632 +0000 UTC
+    End time       : 2026-11-07 00:58:14.085078504 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(2)
+     -> duration: Double(1.0027265699764734)
+Span #3
+    Trace ID       : d6fb8ae5e35f08beec8e2e153dd79d64
+    Parent ID      : 
+    ID             : dbfaaf52b0bef739
+    Name           : grpc-operation-3
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:14.085207617 +0000 UTC
+    End time       : 2026-11-07 00:58:14.489368396 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(3)
+     -> duration: Double(0.40269775132230745)
+Span #4
+    Trace ID       : d64ba24febca42b98b52dc941176a8c5
+    Parent ID      : 
+    ID             : d81ebd863fe8d70a
+    Name           : grpc-operation-4
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:14.489497068 +0000 UTC
+    End time       : 2026-11-07 00:58:15.519386867 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(4)
+     -> duration: Double(1.0294972436618108)
+	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:58:16.035Z	info	Metrics	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:58:16.036Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(15e33d8b-125d-4551-a07a-4a52a48271f5)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope __main__ 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:58:12.798020033 +0000 UTC
+Timestamp: 2026-11-07 00:58:15.984615407 +0000 UTC
+Value: 5
+Exemplars:
+Exemplar #0
+     -> Trace ID: a076ef60dbf80bb9ce9db660161195cc
+     -> Span ID: 283364a76560a5cd
+     -> Timestamp: 2026-11-07 00:58:13.081343085 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:58:12.798187656 +0000 UTC
+Timestamp: 2026-11-07 00:58:15.984615407 +0000 UTC
+Count: 5
+Sum: 4.530917
+Min: 0.282744
+Max: 1.813251
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 5
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: d64ba24febca42b98b52dc941176a8c5
+     -> Span ID: d81ebd863fe8d70a
+     -> Timestamp: 2026-11-07 00:58:15.519277135 +0000 UTC
+     -> Value: 1.029497
+	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:58:21.041Z	info	Traces	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 4}
+2026-11-07T00:58:21.042Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(15e33d8b-125d-4551-a07a-4a52a48271f5)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope __main__ 
+Span #0
+    Trace ID       : 930d48fbc38939c1764d4f814c04dce6
+    Parent ID      : 
+    ID             : 5c51305cfcb6fab8
+    Name           : grpc-operation-5
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:15.519496099 +0000 UTC
+    End time       : 2026-11-07 00:58:17.312363627 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(5)
+     -> duration: Double(1.7923169339896947)
+Span #1
+    Trace ID       : 3bd6c396470e6d2ffa4906b2619781ef
+    Parent ID      : 
+    ID             : 6276743734453c87
+    Name           : grpc-operation-6
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:17.312480049 +0000 UTC
+    End time       : 2026-11-07 00:58:18.915664506 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(6)
+     -> duration: Double(1.60266531272355)
+Span #2
+    Trace ID       : b776cfa9d4774b23bd05a0618ac9959b
+    Parent ID      : 
+    ID             : ae6432227c8b148c
+    Name           : grpc-operation-7
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:18.915794718 +0000 UTC
+    End time       : 2026-11-07 00:58:20.459830546 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(7)
+     -> duration: Double(1.54353096250572)
+Span #3
+    Trace ID       : 472d5e3770384fafeb3496f2c87c4081
+    Parent ID      : 
+    ID             : d4a256fec3d00b32
+    Name           : grpc-operation-8
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:20.459943148 +0000 UTC
+    End time       : 2026-11-07 00:58:20.848320755 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(8)
+     -> duration: Double(0.38785175995747045)
+	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:58:21.053Z	info	Metrics	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:58:21.053Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(15e33d8b-125d-4551-a07a-4a52a48271f5)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope __main__ 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:58:12.798020033 +0000 UTC
+Timestamp: 2026-11-07 00:58:20.991849457 +0000 UTC
+Value: 9
+Exemplars:
+Exemplar #0
+     -> Trace ID: 3bd6c396470e6d2ffa4906b2619781ef
+     -> Span ID: 6276743734453c87
+     -> Timestamp: 2026-11-07 00:58:18.915331981 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:58:12.798187656 +0000 UTC
+Timestamp: 2026-11-07 00:58:20.991849457 +0000 UTC
+Count: 9
+Sum: 9.857282
+Min: 0.282744
+Max: 1.813251
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 9
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: 472d5e3770384fafeb3496f2c87c4081
+     -> Span ID: d4a256fec3d00b32
+     -> Timestamp: 2026-11-07 00:58:20.848105252 +0000 UTC
+     -> Value: 0.387852
+	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:58:26.058Z	info	Traces	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-07T00:58:26.058Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(15e33d8b-125d-4551-a07a-4a52a48271f5)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope __main__ 
+Span #0
+    Trace ID       : 7b5a5af1e1c69cef24c8567ad76b8935
+    Parent ID      : 
+    ID             : e1458c6fce24f1c3
+    Name           : grpc-operation-9
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:20.848435617 +0000 UTC
+    End time       : 2026-11-07 00:58:21.61036851 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(9)
+     -> duration: Double(0.7615372537698739)
+	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:58:26.069Z	info	Metrics	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:58:26.069Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(15e33d8b-125d-4551-a07a-4a52a48271f5)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope __main__ 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:58:12.798020033 +0000 UTC
+Timestamp: 2026-11-07 00:58:25.996233408 +0000 UTC
+Value: 10
+Exemplars:
+Exemplar #0
+     -> Trace ID: 7b5a5af1e1c69cef24c8567ad76b8935
+     -> Span ID: e1458c6fce24f1c3
+     -> Timestamp: 2026-11-07 00:58:21.610123236 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:58:12.798187656 +0000 UTC
+Timestamp: 2026-11-07 00:58:25.996233408 +0000 UTC
+Count: 10
+Sum: 10.618819
+Min: 0.282744
+Max: 1.813251
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: 7b5a5af1e1c69cef24c8567ad76b8935
+     -> Span ID: e1458c6fce24f1c3
+     -> Timestamp: 2026-11-07 00:58:21.610249078 +0000 UTC
+     -> Value: 0.761537
+	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:58:31.085Z	info	Metrics	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:58:31.085Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(15e33d8b-125d-4551-a07a-4a52a48271f5)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope __main__ 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:58:12.798020033 +0000 UTC
+Timestamp: 2026-11-07 00:58:30.99937207 +0000 UTC
+Value: 10
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:58:12.798187656 +0000 UTC
+Timestamp: 2026-11-07 00:58:30.99937207 +0000 UTC
+Count: 10
+Sum: 10.618819
+Min: 0.282744
+Max: 1.813251
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:58:31.688Z	info	Metrics	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:58:31.688Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(15e33d8b-125d-4551-a07a-4a52a48271f5)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope __main__ 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:58:12.798020033 +0000 UTC
+Timestamp: 2026-11-07 00:58:31.61104358 +0000 UTC
+Value: 10
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:58:12.798187656 +0000 UTC
+Timestamp: 2026-11-07 00:58:31.61104358 +0000 UTC
+Count: 10
+Sum: 10.618819
+Min: 0.282744
+Max: 1.813251
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:58:34.437Z	info	otelcol@v0.164.0/collector.go:476	Received signal from OS	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "signal": "terminated"}
+2026-11-07T00:58:34.439Z	info	service@v0.164.0/service.go:294	Starting shutdown...	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:58:34.439Z	info	extensions/extensions.go:72	Stopping extensions...	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:58:34.439Z	info	service@v0.164.0/service.go:308	Shutdown complete.	{"resource": {"service.instance.id": "8f17ce2a-e4a9-4850-aa5e-1f3c0884877e", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:58:35.541Z	info	otelconftelemetry/tracer.go:47	Internal trace telemetry disabled	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:58:35.545Z	info	service@v0.164.0/service.go:233	Starting otelcol-contrib...	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "Version": "0.164.0", "NumCPU": 2}
+2026-11-07T00:58:35.546Z	info	extensions/extensions.go:43	Starting extensions...	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:58:35.546Z	info	otlpreceiver@v0.164.0/otlp.go:120	Starting GRPC server	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4317"}
+2026-11-07T00:58:35.547Z	info	otlpreceiver@v0.164.0/otlp.go:175	Starting HTTP server	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4318"}
+2026-11-07T00:58:35.547Z	info	service@v0.164.0/service.go:256	Everything is ready. Begin running and processing data.	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:58:41.761Z	info	Metrics	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:58:41.762Z	info	Traces	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 4}
+2026-11-07T00:58:41.762Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(35cb69a6-826d-4c7d-82f1-3b1c23fc9c87)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope __main__ 
+Span #0
+    Trace ID       : 6cb66d1b464d48c65bfda3479cbb1a8b
+    Parent ID      : 
+    ID             : 907d4a4252b60ab3
+    Name           : http-operation-0
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:36.696647208 +0000 UTC
+    End time       : 2026-11-07 00:58:37.80598087 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(0)
+     -> duration: Double(1.1079849321869577)
+Span #1
+    Trace ID       : 96e754f1d9c40a6f20612734b7fb9d1b
+    Parent ID      : 
+    ID             : 661dc94e6e246dc6
+    Name           : http-operation-1
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:37.806171833 +0000 UTC
+    End time       : 2026-11-07 00:58:39.45760429 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(1)
+     -> duration: Double(1.6498946687923473)
+Span #2
+    Trace ID       : b7e81d136c98ea2993fb711187eb7074
+    Parent ID      : 
+    ID             : c2fa567fcd1a6443
+    Name           : http-operation-2
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:39.457764303 +0000 UTC
+    End time       : 2026-11-07 00:58:39.688414549 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(2)
+     -> duration: Double(0.23006279839478522)
+Span #3
+    Trace ID       : d7d27937aeb0fcf476b544b82f6a9833
+    Parent ID      : 
+    ID             : 7707ff7062bbe35c
+    Name           : http-operation-3
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:39.688532521 +0000 UTC
+    End time       : 2026-11-07 00:58:41.101111446 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(3)
+     -> duration: Double(1.411931371854831)
+	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:58:41.762Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(35cb69a6-826d-4c7d-82f1-3b1c23fc9c87)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope __main__ 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:58:37.805132375 +0000 UTC
+Timestamp: 2026-11-07 00:58:41.699912736 +0000 UTC
+Value: 4
+Exemplars:
+Exemplar #0
+     -> Trace ID: 6cb66d1b464d48c65bfda3479cbb1a8b
+     -> Span ID: 907d4a4252b60ab3
+     -> Timestamp: 2026-11-07 00:58:37.80481599 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:58:37.805452311 +0000 UTC
+Timestamp: 2026-11-07 00:58:41.699912736 +0000 UTC
+Count: 4
+Sum: 4.399874
+Min: 0.230063
+Max: 1.649895
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 4
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: d7d27937aeb0fcf476b544b82f6a9833
+     -> Span ID: 7707ff7062bbe35c
+     -> Timestamp: 2026-11-07 00:58:41.100792411 +0000 UTC
+     -> Value: 1.411931
+	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:58:46.775Z	info	Traces	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 4}
+2026-11-07T00:58:46.776Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(35cb69a6-826d-4c7d-82f1-3b1c23fc9c87)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope __main__ 
+Span #0
+    Trace ID       : b30039177d04747b6b68ab14dddbd8c8
+    Parent ID      : 
+    ID             : 9aa93b2d73ff3720
+    Name           : http-operation-4
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:41.101264959 +0000 UTC
+    End time       : 2026-11-07 00:58:43.046943331 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(4)
+     -> duration: Double(1.9451129175454605)
+Span #1
+    Trace ID       : 3bc997ecfa64145c5076346b31defcec
+    Parent ID      : 
+    ID             : d52f26566fc8596a
+    Name           : http-operation-5
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:43.047105243 +0000 UTC
+    End time       : 2026-11-07 00:58:44.014533484 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(5)
+     -> duration: Double(0.9669085417249541)
+Span #2
+    Trace ID       : 1829aae707cd7228e37a21101ba0fd67
+    Parent ID      : 
+    ID             : caf61023228082b6
+    Name           : http-operation-6
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:44.014649946 +0000 UTC
+    End time       : 2026-11-07 00:58:44.776739951 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(6)
+     -> duration: Double(0.7616375857207285)
+Span #3
+    Trace ID       : 91bbe2aef60c9577b5d122d850f48db9
+    Parent ID      : 
+    ID             : 8cf69692d0a0b018
+    Name           : http-operation-7
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:44.776866044 +0000 UTC
+    End time       : 2026-11-07 00:58:46.157558058 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(7)
+     -> duration: Double(1.380263017140592)
+	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:58:46.776Z	info	Metrics	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:58:46.777Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(35cb69a6-826d-4c7d-82f1-3b1c23fc9c87)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope __main__ 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:58:37.805132375 +0000 UTC
+Timestamp: 2026-11-07 00:58:46.711072815 +0000 UTC
+Value: 8
+Exemplars:
+Exemplar #0
+     -> Trace ID: 91bbe2aef60c9577b5d122d850f48db9
+     -> Span ID: 8cf69692d0a0b018
+     -> Timestamp: 2026-11-07 00:58:46.157272744 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:58:37.805452311 +0000 UTC
+Timestamp: 2026-11-07 00:58:46.711072815 +0000 UTC
+Count: 8
+Sum: 9.453796
+Min: 0.230063
+Max: 1.945113
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 8
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: 91bbe2aef60c9577b5d122d850f48db9
+     -> Span ID: 8cf69692d0a0b018
+     -> Timestamp: 2026-11-07 00:58:46.157396796 +0000 UTC
+     -> Value: 1.380263
+	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:58:51.790Z	info	Traces	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 2}
+2026-11-07T00:58:51.790Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(35cb69a6-826d-4c7d-82f1-3b1c23fc9c87)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope __main__ 
+Span #0
+    Trace ID       : 309266b748f25da6b3a33835e81baa35
+    Parent ID      : 
+    ID             : ee81aef8aaa19023
+    Name           : http-operation-8
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:46.15767883 +0000 UTC
+    End time       : 2026-11-07 00:58:46.84785636 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(8)
+     -> duration: Double(0.6896454880010808)
+Span #1
+    Trace ID       : ee89a498e26f3b8cee72dac107d003b6
+    Parent ID      : 
+    ID             : d9f72945009cd67f
+    Name           : http-operation-9
+    Kind           : Internal
+    Start time     : 2026-11-07 00:58:46.848048763 +0000 UTC
+    End time       : 2026-11-07 00:58:47.909323265 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(9)
+     -> duration: Double(1.060547517172914)
+	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:58:51.791Z	info	Metrics	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:58:51.791Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(35cb69a6-826d-4c7d-82f1-3b1c23fc9c87)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope __main__ 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:58:37.805132375 +0000 UTC
+Timestamp: 2026-11-07 00:58:51.716822513 +0000 UTC
+Value: 10
+Exemplars:
+Exemplar #0
+     -> Trace ID: ee89a498e26f3b8cee72dac107d003b6
+     -> Span ID: d9f72945009cd67f
+     -> Timestamp: 2026-11-07 00:58:47.908757465 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:58:37.805452311 +0000 UTC
+Timestamp: 2026-11-07 00:58:51.716822513 +0000 UTC
+Count: 10
+Sum: 11.203989
+Min: 0.230063
+Max: 1.945113
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: ee89a498e26f3b8cee72dac107d003b6
+     -> Span ID: d9f72945009cd67f
+     -> Timestamp: 2026-11-07 00:58:47.908878757 +0000 UTC
+     -> Value: 1.060548
+	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:58:56.807Z	info	Metrics	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:58:56.807Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(35cb69a6-826d-4c7d-82f1-3b1c23fc9c87)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope __main__ 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:58:37.805132375 +0000 UTC
+Timestamp: 2026-11-07 00:58:56.721832524 +0000 UTC
+Value: 10
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:58:37.805452311 +0000 UTC
+Timestamp: 2026-11-07 00:58:56.721832524 +0000 UTC
+Count: 10
+Sum: 11.203989
+Min: 0.230063
+Max: 1.945113
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:58:58.009Z	info	Metrics	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:58:58.009Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(35cb69a6-826d-4c7d-82f1-3b1c23fc9c87)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope __main__ 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:58:37.805132375 +0000 UTC
+Timestamp: 2026-11-07 00:58:57.910913061 +0000 UTC
+Value: 10
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:58:37.805452311 +0000 UTC
+Timestamp: 2026-11-07 00:58:57.910913061 +0000 UTC
+Count: 10
+Sum: 11.203989
+Min: 0.230063
+Max: 1.945113
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:59:00.617Z	info	otelcol@v0.164.0/collector.go:476	Received signal from OS	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "signal": "terminated"}
+2026-11-07T00:59:00.617Z	info	service@v0.164.0/service.go:294	Starting shutdown...	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:59:00.617Z	info	extensions/extensions.go:72	Stopping extensions...	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:59:00.617Z	info	service@v0.164.0/service.go:308	Shutdown complete.	{"resource": {"service.instance.id": "106cabc4-fd82-4296-9f51-6591bac4f806", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:59:01.599Z	info	otelconftelemetry/tracer.go:47	Internal trace telemetry disabled	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:59:01.603Z	info	service@v0.164.0/service.go:233	Starting otelcol-contrib...	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "Version": "0.164.0", "NumCPU": 2}
+2026-11-07T00:59:01.603Z	info	extensions/extensions.go:43	Starting extensions...	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:59:01.604Z	info	otlpreceiver@v0.164.0/otlp.go:120	Starting GRPC server	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4317"}
+2026-11-07T00:59:01.604Z	info	otlpreceiver@v0.164.0/otlp.go:175	Starting HTTP server	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4318"}
+2026-11-07T00:59:01.604Z	info	service@v0.164.0/service.go:256	Everything is ready. Begin running and processing data.	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}}
+2026-11-07T00:59:07.215Z	info	Traces	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 4}
+2026-11-07T00:59:07.216Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope app_grpc 
+Span #0
+    Trace ID       : 76416050cf103ff9d1325b7e40a831ec
+    Parent ID      : 
+    ID             : e35df6c4a16e83ae
+    Name           : grpc-operation-0
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:02.079177513 +0000 UTC
+    End time       : 2026-11-07 00:59:02.408636298 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(0)
+     -> duration: Double(0.328621455024541)
+Span #1
+    Trace ID       : 3d6da913d1e8f9a5a5af3e7547b8c027
+    Parent ID      : 
+    ID             : c354983ea9e8d036
+    Name           : grpc-operation-1
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:02.408802501 +0000 UTC
+    End time       : 2026-11-07 00:59:03.394293256 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(1)
+     -> duration: Double(0.9850314478082722)
+Span #2
+    Trace ID       : 469cc97de60ac4b2c751b016bdd16731
+    Parent ID      : 
+    ID             : d18d82d000dbdc75
+    Name           : grpc-operation-2
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:03.394436819 +0000 UTC
+    End time       : 2026-11-07 00:59:04.10835806 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(2)
+     -> duration: Double(0.7124869677633793)
+Span #3
+    Trace ID       : f6d2fbe9267f4361562b8da31fa3d042
+    Parent ID      : 
+    ID             : 2838b8b77cda9ae2
+    Name           : grpc-operation-3
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:04.108484742 +0000 UTC
+    End time       : 2026-11-07 00:59:06.014468033 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(3)
+     -> duration: Double(1.905575601241403)
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:59:07.217Z	info	Metrics	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:59:07.217Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope app_grpc 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:59:02.408283872 +0000 UTC
+Timestamp: 2026-11-07 00:59:07.079396014 +0000 UTC
+Value: 4
+Exemplars:
+Exemplar #0
+     -> Trace ID: 76416050cf103ff9d1325b7e40a831ec
+     -> Span ID: e35df6c4a16e83ae
+     -> Timestamp: 2026-11-07 00:59:02.408025397 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:59:02.408491026 +0000 UTC
+Timestamp: 2026-11-07 00:59:07.079396014 +0000 UTC
+Count: 4
+Sum: 3.931715
+Min: 0.328621
+Max: 1.905576
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 4
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: f6d2fbe9267f4361562b8da31fa3d042
+     -> Span ID: 2838b8b77cda9ae2
+     -> Timestamp: 2026-11-07 00:59:06.014341941 +0000 UTC
+     -> Value: 1.905576
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:59:09.221Z	info	Traces	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 5}
+2026-11-07T00:59:09.221Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope app_http 
+Span #0
+    Trace ID       : af2c021096762e0efe3191e9a8689009
+    Parent ID      : 
+    ID             : 189ab6b737d1ae59
+    Name           : http-operation-0
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:04.185282033 +0000 UTC
+    End time       : 2026-11-07 00:59:05.000534677 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(0)
+     -> duration: Double(0.8146161146240591)
+Span #1
+    Trace ID       : 549e3b80d5f680f66a7f2b0e93c0ca18
+    Parent ID      : 
+    ID             : 7fc197e4653c8254
+    Name           : http-operation-1
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:05.000657499 +0000 UTC
+    End time       : 2026-11-07 00:59:05.672316329 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(1)
+     -> duration: Double(0.671250762489382)
+Span #2
+    Trace ID       : 640ea6b835e8f41bdc86ac45a78dbbe6
+    Parent ID      : 
+    ID             : 84eb45031455e5c5
+    Name           : http-operation-2
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:05.672463462 +0000 UTC
+    End time       : 2026-11-07 00:59:06.021967408 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(2)
+     -> duration: Double(0.34889650847238984)
+Span #3
+    Trace ID       : f63534f04d0039ff4a703bfafc2ea2fb
+    Parent ID      : 
+    ID             : b720faf5640274ec
+    Name           : http-operation-3
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:06.022140001 +0000 UTC
+    End time       : 2026-11-07 00:59:07.988623223 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(3)
+     -> duration: Double(1.9660145950951589)
+Span #4
+    Trace ID       : 92ee60e6489d3ca649699f73204005a2
+    Parent ID      : 
+    ID             : 26bbdda414506dba
+    Name           : http-operation-4
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:07.988740105 +0000 UTC
+    End time       : 2026-11-07 00:59:08.941818159 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(4)
+     -> duration: Double(0.952632108369562)
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:59:09.222Z	info	Metrics	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:59:09.222Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope app_http 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:59:05.000262492 +0000 UTC
+Timestamp: 2026-11-07 00:59:09.18770372 +0000 UTC
+Value: 5
+Exemplars:
+Exemplar #0
+     -> Trace ID: 549e3b80d5f680f66a7f2b0e93c0ca18
+     -> Span ID: 7fc197e4653c8254
+     -> Timestamp: 2026-11-07 00:59:05.672062695 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:59:05.000426175 +0000 UTC
+Timestamp: 2026-11-07 00:59:09.18770372 +0000 UTC
+Count: 5
+Sum: 4.753410
+Min: 0.348897
+Max: 1.966015
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 5
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: 92ee60e6489d3ca649699f73204005a2
+     -> Span ID: 26bbdda414506dba
+     -> Timestamp: 2026-11-07 00:59:08.941661876 +0000 UTC
+     -> Value: 0.952632
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:59:12.230Z	info	Traces	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 5}
+2026-11-07T00:59:12.230Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope app_grpc 
+Span #0
+    Trace ID       : 159d31f3bda8814b4388d5f6cb28a3a0
+    Parent ID      : 
+    ID             : ba512f87693b9fcf
+    Name           : grpc-operation-4
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:06.014595066 +0000 UTC
+    End time       : 2026-11-07 00:59:07.492683117 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(4)
+     -> duration: Double(1.4776213893908359)
+Span #1
+    Trace ID       : 26a911df73f5fbb673e41d08c690e06e
+    Parent ID      : 
+    ID             : df11c6b864fef208
+    Name           : grpc-operation-5
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:07.492809899 +0000 UTC
+    End time       : 2026-11-07 00:59:08.430322672 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(5)
+     -> duration: Double(0.9370030720799676)
+Span #2
+    Trace ID       : 5780c68c2735fd437525bbd2a0183594
+    Parent ID      : 
+    ID             : 5b293171428969ed
+    Name           : grpc-operation-6
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:08.430441634 +0000 UTC
+    End time       : 2026-11-07 00:59:09.601890889 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(6)
+     -> duration: Double(1.1709469347727024)
+Span #3
+    Trace ID       : 211502eee179c2dc8eec9f8eb92c6db5
+    Parent ID      : 
+    ID             : 8eb52ec3829e6ebf
+    Name           : grpc-operation-7
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:09.602081952 +0000 UTC
+    End time       : 2026-11-07 00:59:09.839518937 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(7)
+     -> duration: Double(0.23688403431053248)
+Span #4
+    Trace ID       : 4d5d1bb9bf48e56e414e636ab16a6caa
+    Parent ID      : 
+    ID             : 4b82a8835e8ad7d2
+    Name           : grpc-operation-8
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:09.839644829 +0000 UTC
+    End time       : 2026-11-07 00:59:11.47779234 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(8)
+     -> duration: Double(1.637623782494691)
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:59:12.231Z	info	Metrics	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:59:12.231Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope app_grpc 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:59:02.408283872 +0000 UTC
+Timestamp: 2026-11-07 00:59:12.087527351 +0000 UTC
+Value: 9
+Exemplars:
+Exemplar #0
+     -> Trace ID: 4d5d1bb9bf48e56e414e636ab16a6caa
+     -> Span ID: 4b82a8835e8ad7d2
+     -> Timestamp: 2026-11-07 00:59:11.477458154 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:59:02.408491026 +0000 UTC
+Timestamp: 2026-11-07 00:59:12.087527351 +0000 UTC
+Count: 9
+Sum: 9.391795
+Min: 0.236884
+Max: 1.905576
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 9
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: 4d5d1bb9bf48e56e414e636ab16a6caa
+     -> Span ID: 4b82a8835e8ad7d2
+     -> Timestamp: 2026-11-07 00:59:11.477587836 +0000 UTC
+     -> Value: 1.637624
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:59:14.236Z	info	Traces	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 3}
+2026-11-07T00:59:14.236Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope app_http 
+Span #0
+    Trace ID       : 85a58af4ab05c940f4eff6bd02fc2120
+    Parent ID      : 
+    ID             : 91958824c10badde
+    Name           : http-operation-5
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:08.941942051 +0000 UTC
+    End time       : 2026-11-07 00:59:09.992807792 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(5)
+     -> duration: Double(1.0504520406475497)
+Span #1
+    Trace ID       : 9d5586ea9922db36426e4e00b20a3f75
+    Parent ID      : 
+    ID             : 024028fcc6fdb288
+    Name           : http-operation-6
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:09.992924554 +0000 UTC
+    End time       : 2026-11-07 00:59:11.895915087 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(6)
+     -> duration: Double(1.9024427071098007)
+Span #2
+    Trace ID       : a630afdfbbd0e6fa9f2eaa5194b546bb
+    Parent ID      : 
+    ID             : 1cc15e6418900464
+    Name           : http-operation-7
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:11.89609431 +0000 UTC
+    End time       : 2026-11-07 00:59:13.028385762 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(7)
+     -> duration: Double(1.1317304253936757)
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:59:14.237Z	info	Metrics	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:59:14.237Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope app_http 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:59:05.000262492 +0000 UTC
+Timestamp: 2026-11-07 00:59:14.196777435 +0000 UTC
+Value: 8
+Exemplars:
+Exemplar #0
+     -> Trace ID: 85a58af4ab05c940f4eff6bd02fc2120
+     -> Span ID: 91958824c10badde
+     -> Timestamp: 2026-11-07 00:59:09.992548217 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:59:05.000426175 +0000 UTC
+Timestamp: 2026-11-07 00:59:14.196777435 +0000 UTC
+Count: 8
+Sum: 8.838035
+Min: 0.348897
+Max: 1.966015
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 8
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: a630afdfbbd0e6fa9f2eaa5194b546bb
+     -> Span ID: 1cc15e6418900464
+     -> Timestamp: 2026-11-07 00:59:13.02827446 +0000 UTC
+     -> Value: 1.131730
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:59:17.244Z	info	Traces	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-11-07T00:59:17.244Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope app_grpc 
+Span #0
+    Trace ID       : f1bfeaad9b0e049e3990cd3fbe345a5c
+    Parent ID      : 
+    ID             : 6c1b59a13046cf64
+    Name           : grpc-operation-9
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:11.477924172 +0000 UTC
+    End time       : 2026-11-07 00:59:12.679230589 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(grpc-test)
+     -> iteration: Int(9)
+     -> duration: Double(1.2007767410160994)
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:59:17.245Z	info	Metrics	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:59:17.245Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope app_grpc 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:59:02.408283872 +0000 UTC
+Timestamp: 2026-11-07 00:59:17.09111184 +0000 UTC
+Value: 10
+Exemplars:
+Exemplar #0
+     -> Trace ID: f1bfeaad9b0e049e3990cd3fbe345a5c
+     -> Span ID: 6c1b59a13046cf64
+     -> Timestamp: 2026-11-07 00:59:12.678853982 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:59:02.408491026 +0000 UTC
+Timestamp: 2026-11-07 00:59:17.09111184 +0000 UTC
+Count: 10
+Sum: 10.592571
+Min: 0.236884
+Max: 1.905576
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: f1bfeaad9b0e049e3990cd3fbe345a5c
+     -> Span ID: 6c1b59a13046cf64
+     -> Timestamp: 2026-11-07 00:59:12.678976694 +0000 UTC
+     -> Value: 1.200777
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:59:19.250Z	info	Traces	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 2}
+2026-11-07T00:59:19.251Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope app_http 
+Span #0
+    Trace ID       : 3248e36c830210acce856f662e93fd82
+    Parent ID      : 
+    ID             : 60b9d0d0ec02dfc0
+    Name           : http-operation-8
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:13.028503535 +0000 UTC
+    End time       : 2026-11-07 00:59:15.007407353 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(8)
+     -> duration: Double(1.9783872317484668)
+Span #1
+    Trace ID       : 2a469e722c566a100db568f1b3f4b429
+    Parent ID      : 
+    ID             : e33e3a40d49e07ef
+    Name           : http-operation-9
+    Kind           : Internal
+    Start time     : 2026-11-07 00:59:15.007568886 +0000 UTC
+    End time       : 2026-11-07 00:59:16.756841186 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> operation.type: Str(http-test)
+     -> iteration: Int(9)
+     -> duration: Double(1.7488342887662118)
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-11-07T00:59:19.252Z	info	Metrics	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:59:19.252Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope app_http 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:59:05.000262492 +0000 UTC
+Timestamp: 2026-11-07 00:59:19.201619818 +0000 UTC
+Value: 10
+Exemplars:
+Exemplar #0
+     -> Trace ID: 3248e36c830210acce856f662e93fd82
+     -> Span ID: 60b9d0d0ec02dfc0
+     -> Timestamp: 2026-11-07 00:59:15.007070687 +0000 UTC
+     -> Value: 1
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:59:05.000426175 +0000 UTC
+Timestamp: 2026-11-07 00:59:19.201619818 +0000 UTC
+Count: 10
+Sum: 12.565257
+Min: 0.348897
+Max: 1.978387
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+Exemplars:
+Exemplar #0
+     -> Trace ID: 2a469e722c566a100db568f1b3f4b429
+     -> Span ID: e33e3a40d49e07ef
+     -> Timestamp: 2026-11-07 00:59:16.756681423 +0000 UTC
+     -> Value: 1.748834
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:59:22.262Z	info	Metrics	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:59:22.262Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope app_grpc 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:59:02.408283872 +0000 UTC
+Timestamp: 2026-11-07 00:59:22.094983037 +0000 UTC
+Value: 10
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:59:02.408491026 +0000 UTC
+Timestamp: 2026-11-07 00:59:22.094983037 +0000 UTC
+Count: 10
+Sum: 10.592571
+Min: 0.236884
+Max: 1.905576
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:59:24.268Z	info	Metrics	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 2}
+2026-11-07T00:59:24.268Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope app_http 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:59:05.000262492 +0000 UTC
+Timestamp: 2026-11-07 00:59:24.207712203 +0000 UTC
+Value: 10
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:59:05.000426175 +0000 UTC
+Timestamp: 2026-11-07 00:59:24.207712203 +0000 UTC
+Count: 10
+Sum: 12.565257
+Min: 0.348897
+Max: 1.978387
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:59:26.873Z	info	Metrics	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 2, "metrics": 4, "data points": 4}
+2026-11-07T00:59:26.874Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-http)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(http)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope app_http 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:59:05.000262492 +0000 UTC
+Timestamp: 2026-11-07 00:59:26.759922199 +0000 UTC
+Value: 10
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(POST)
+     -> transport: Str(http)
+StartTimestamp: 2026-11-07 00:59:05.000426175 +0000 UTC
+Timestamp: 2026-11-07 00:59:26.759922199 +0000 UTC
+Count: 10
+Sum: 12.565257
+Min: 0.348897
+Max: 1.978387
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+ResourceMetrics #1
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(df11657c-5f4b-459b-ab25-7dfc04cf20ce)
+     -> service.name: Str(sample-app-grpc)
+     -> service.version: Str(1.0.0)
+     -> transport.protocol: Str(grpc)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope app_grpc 
+Metric #0
+Descriptor:
+     -> Name: requests_total
+     -> Description: Total number of requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:59:02.408283872 +0000 UTC
+Timestamp: 2026-11-07 00:59:26.766117259 +0000 UTC
+Value: 10
+Metric #1
+Descriptor:
+     -> Name: request_duration_seconds
+     -> Description: Request duration in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> method: Str(GET)
+     -> transport: Str(grpc)
+StartTimestamp: 2026-11-07 00:59:02.408491026 +0000 UTC
+Timestamp: 2026-11-07 00:59:26.766117259 +0000 UTC
+Count: 10
+Sum: 10.592571
+Min: 0.236884
+Max: 1.905576
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 10
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "801534bb-22aa-48c9-839f-466a07e2e468", "service.name": "otelcol-contrib", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}

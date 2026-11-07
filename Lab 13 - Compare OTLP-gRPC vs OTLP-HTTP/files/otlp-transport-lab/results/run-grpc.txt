@@ -1,0 +1,14 @@
+Generating telemetry data using gRPC transport...
+Generated span 1/10 via gRPC (duration: 1.81s)
+Generated span 2/10 via gRPC (duration: 0.28s)
+Generated span 3/10 via gRPC (duration: 1.00s)
+Generated span 4/10 via gRPC (duration: 0.40s)
+Generated span 5/10 via gRPC (duration: 1.03s)
+Generated span 6/10 via gRPC (duration: 1.79s)
+Generated span 7/10 via gRPC (duration: 1.60s)
+Generated span 8/10 via gRPC (duration: 1.54s)
+Generated span 9/10 via gRPC (duration: 0.39s)
+Generated span 10/10 via gRPC (duration: 0.76s)
+Completed generating telemetry data via gRPC
+Waiting for final export...
+gRPC export test completed

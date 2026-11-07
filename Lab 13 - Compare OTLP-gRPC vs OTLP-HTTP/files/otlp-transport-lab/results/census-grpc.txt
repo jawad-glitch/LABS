@@ -1,0 +1,1 @@
+sample-app-grpc: spans=10 requests_total_exports=5

@@ -1,0 +1,14 @@
+Generating telemetry data using HTTP transport...
+Generated span 1/10 via HTTP (duration: 1.11s)
+Generated span 2/10 via HTTP (duration: 1.65s)
+Generated span 3/10 via HTTP (duration: 0.23s)
+Generated span 4/10 via HTTP (duration: 1.41s)
+Generated span 5/10 via HTTP (duration: 1.95s)
+Generated span 6/10 via HTTP (duration: 0.97s)
+Generated span 7/10 via HTTP (duration: 0.76s)
+Generated span 8/10 via HTTP (duration: 1.38s)
+Generated span 9/10 via HTTP (duration: 0.69s)
+Generated span 10/10 via HTTP (duration: 1.06s)
+Completed generating telemetry data via HTTP
+Waiting for final export...
+HTTP export test completed

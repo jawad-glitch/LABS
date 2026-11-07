@@ -1,0 +1,66 @@
+================================================================================
+OTLP TRANSPORT COMPARISON: gRPC vs HTTP
+================================================================================
+
+1. ENDPOINT CONFIGURATION:
+----------------------------------------
+gRPC:
+  - Endpoint: http://localhost:4317
+  - Protocol: Binary gRPC (HTTP/2)
+  - Default Port: 4317
+  - Path: Not required (gRPC service)
+
+HTTP:
+  - Endpoint: http://localhost:4318/v1/traces
+  - Protocol: HTTP/1.1 or HTTP/2 (protobuf or JSON body)
+  - Default Port: 4318
+  - Path: Required (/v1/traces, /v1/metrics, /v1/logs)
+
+2. HEADERS AND AUTHENTICATION:
+----------------------------------------
+gRPC:
+  - Headers: Optional metadata
+  - Auth: gRPC metadata / TLS
+  - Content-Type: Handled by gRPC
+
+HTTP:
+  - Headers: Standard HTTP headers
+  - Auth: HTTP-based auth (Bearer, Basic, etc.)
+  - Content-Type: application/x-protobuf (or application/json)
+
+3. PERFORMANCE CHARACTERISTICS:
+----------------------------------------
+gRPC:
+  - Lower overhead (binary protocol)
+  - HTTP/2 multiplexing
+  - Better for high-throughput scenarios
+
+HTTP:
+  - Slightly higher overhead (HTTP headers)
+  - Simpler debugging and monitoring
+  - Better firewall/proxy compatibility
+
+4. USE CASES:
+----------------------------------------
+gRPC:
+  - High-performance service-to-service export
+  - When network efficiency is critical
+
+HTTP:
+  - Browsers / web apps
+  - When passing through HTTP proxies/load balancers
+  - Easier debugging (curl-able)
+
+5. CONFIGURATION DIFFERENCES:
+----------------------------------------
+gRPC Configuration:
+  OTLPSpanExporter(
+    endpoint='http://localhost:4317',
+    insecure=True
+  )
+
+HTTP Configuration:
+  OTLPSpanExporter(
+    endpoint='http://localhost:4318/v1/traces',
+    headers={'Content-Type': 'application/x-protobuf'}
+  )

@@ -1,0 +1,19 @@
+=== TRANSPORT ANALYSIS RESULTS ===
+
+1. Collector Status:
+d86fafa7246a   otel/opentelemetry-collector-contrib:latest   "/otelcol-contrib --…"   3 minutes ago   Up 28 seconds   0.0.0.0:4317-4318->4317-4318/tcp, [::]:4317-4318->4317-4318/tcp, 55679/tcp   otel-collector
+
+2. Port Usage:
+LISTEN 0      4096         0.0.0.0:4318      0.0.0.0:*          
+LISTEN 0      4096         0.0.0.0:4317      0.0.0.0:*          
+LISTEN 0      4096            [::]:4318         [::]:*          
+LISTEN 0      4096            [::]:4317         [::]:*          
+
+3. Exported Data Summary:
+Total telemetry records (export batches): 15
+File size: 28K
+
+4. Transport Success Verification (spans per service in the exported file):
+gRPC (sample-app-grpc) resource entries: 8
+HTTP (sample-app-http) resource entries: 8
+✅ Both transports working successfully!

@@ -1,0 +1,32 @@
+Testing both transports simultaneously...
+Starting gRPC transport test...
+Generating telemetry data using gRPC transport...
+Generated span 1/10 via gRPC (duration: 0.33s)
+Generated span 2/10 via gRPC (duration: 0.99s)
+Starting HTTP transport test...
+Generated span 3/10 via gRPC (duration: 0.71s)
+Overriding of current TracerProvider is not allowed
+Overriding of current MeterProvider is not allowed
+Generating telemetry data using HTTP transport...
+Generated span 1/10 via HTTP (duration: 0.81s)
+Generated span 2/10 via HTTP (duration: 0.67s)
+Generated span 4/10 via gRPC (duration: 1.91s)
+Generated span 3/10 via HTTP (duration: 0.35s)
+Generated span 5/10 via gRPC (duration: 1.48s)
+Generated span 4/10 via HTTP (duration: 1.97s)
+Generated span 6/10 via gRPC (duration: 0.94s)
+Generated span 5/10 via HTTP (duration: 0.95s)
+Generated span 7/10 via gRPC (duration: 1.17s)
+Generated span 8/10 via gRPC (duration: 0.24s)
+Generated span 6/10 via HTTP (duration: 1.05s)
+Generated span 9/10 via gRPC (duration: 1.64s)
+Generated span 7/10 via HTTP (duration: 1.90s)
+Generated span 10/10 via gRPC (duration: 1.20s)
+Completed generating telemetry data via gRPC
+gRPC transport test completed
+Generated span 8/10 via HTTP (duration: 1.13s)
+Generated span 9/10 via HTTP (duration: 1.98s)
+Generated span 10/10 via HTTP (duration: 1.75s)
+Completed generating telemetry data via HTTP
+HTTP transport test completed
+Both transport tests completed!

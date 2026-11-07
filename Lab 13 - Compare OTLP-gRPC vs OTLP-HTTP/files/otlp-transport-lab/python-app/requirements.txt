@@ -1,0 +1,9 @@
+# Lab pinned opentelemetry 1.21.0 / 0.42b0 / grpcio 1.59.0 and later added an UNPINNED http exporter,
+# which upgrades api/sdk and breaks the pinned grpc exporter. One consistent current set instead:
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-exporter-otlp-proto-grpc
+opentelemetry-exporter-otlp-proto-http
+opentelemetry-instrumentation
+grpcio
+requests

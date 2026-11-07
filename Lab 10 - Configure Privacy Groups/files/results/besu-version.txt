@@ -1,0 +1,2 @@
+besu/v22.10.3/linux-x86_64/openjdk-java-17
+2026-11-07 15:43:01.811+00:00 | main | INFO  | Besu | jemalloc library not found, memory usage may be reduced by installing it

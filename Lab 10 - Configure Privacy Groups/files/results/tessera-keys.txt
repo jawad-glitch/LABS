@@ -1,0 +1,5 @@
+total 16
+drwxrwxr-x 2 ubuntu ubuntu 4096 Nov  7 15:43 .
+drwxrwxr-x 4 ubuntu ubuntu 4096 Nov  7 15:42 ..
+-rw-r--r-- 1 root   root    109 Nov  7 15:43 node1.key
+-rw-r--r-- 1 root   root     44 Nov  7 15:43 node1.pub

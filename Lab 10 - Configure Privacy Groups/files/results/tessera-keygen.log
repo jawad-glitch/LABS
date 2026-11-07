@@ -1,0 +1,8 @@
+Enter a password if you want to lock the private key or leave blank
+Please re-enter the password (or lack of) to confirm
+2026-11-07 15:43:33.489 [main] INFO  c.q.t.encryption.nacl.jnacl.Jnacl - Generating new keypair...
+2026-11-07 15:43:33.579 [main] INFO  c.q.t.encryption.nacl.jnacl.Jnacl - Generated new key pair with public key PublicKey[FAogtJ+HQ/+rZoV2HHC3v874T2a4SxvzMUEoms97dlQ=]
+1 keypair(s) generated:
+	1: type=file, pub=FAogtJ+HQ/+rZoV2HHC3v874T2a4SxvzMUEoms97dlQ=
+		pub: path=/keys/node1.pub
+		prv: path=/keys/node1.key

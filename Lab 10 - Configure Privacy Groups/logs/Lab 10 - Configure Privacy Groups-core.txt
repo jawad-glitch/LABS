@@ -1,0 +1,15 @@
+========== CORE CHECKS (Lab 10 - Configure Privacy Groups, 2026-11-07 15:45:10 UTC) ==========
+PASS: Task 1.2: besu 22.10.3 present
+PASS: Task 1.2: tessera present (jar or docker)
+PASS: Task 2.1: tessera key pair exists
+PASS: Task 2.1: tessera pubkey non-trivial
+PASS: Task 2.2: tessera config valid JSON
+FAIL: Task 2.3: tessera upcheck=200
+PASS: Task 3.1: genesis valid, qbft, chainId 1337
+FAIL: Task 3.1: besu address matches validator
+FAIL: Task 3.3: besu started
+FAIL: Task 3.3: QBFT block produced
+FAIL: Task 4.3: priv_getPrivacyPrecompileAddress returned 0x...
+FAIL: Task 4.3: priv_createPrivacyGroup returned group id
+FAIL: Task 4.3: priv_findPrivacyGroup returned result
+CORE: 6/13 PASS

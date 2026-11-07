@@ -1,0 +1,38 @@
+Setting logging level to INFO
+2026-11-07 15:44:24.039+00:00 | main | INFO  | Besu | Starting Besu
+2026-11-07 15:44:24.723+00:00 | main | WARN  | Besu | --min-gas-price has been ignored because --miner-enabled was not defined on the command line.
+2026-11-07 15:44:25.538+00:00 | main | INFO  | Besu | 
+####################################################################################################
+#                                                                                                  #
+# Besu 22.10.3                                                                                     #
+#                                                                                                  #
+# Configuration:                                                                                   #
+# Network: Mainnet                                                                                 #
+# Data storage: Forest                                                                             #
+# Sync mode: Full                                                                                  #
+# RPC HTTP APIs: ETH,NET,WEB3,EEA,PRIV,QBFT                                                        #
+# RPC HTTP port: 8545                                                                              #
+#                                                                                                  #
+# Host:                                                                                            #
+# Java: openjdk-java-17                                                                            #
+# Maximum heap size: 0.94 GB                                                                       #
+# OS: linux-x86_64                                                                                 #
+# glibc: 2.39                                                                                      #
+# Total memory: 3.76 GB                                                                            #
+# CPU cores: 2                                                                                     #
+#                                                                                                  #
+####################################################################################################
+2026-11-07 15:44:25.539+00:00 | main | INFO  | Besu | Connecting to 0 static nodes.
+2026-11-07 15:44:25.541+00:00 | main | INFO  | Besu | Security Module: localfile
+2026-11-07 15:44:25.706+00:00 | main | INFO  | Besu | Using the native implementation of alt bn128
+2026-11-07 15:44:25.874+00:00 | main | INFO  | Besu | Using the native implementation of modexp
+2026-11-07 15:44:25.875+00:00 | main | INFO  | Besu | Using the native implementation of the signature algorithm
+2026-11-07 15:44:25.954+00:00 | main | INFO  | Besu | Using the native implementation of the blake2bf algorithm
+2026-11-07 15:44:26.014+00:00 | main | INFO  | RocksDBKeyValueStorageFactory | No existing database detected at /home/ubuntu/privacy-lab/besu-node1/data. Using version 1
+2026-11-07 15:44:27.053+00:00 | main | WARN  | Besu | --tx-pool-future-max-by-account has been deprecated, use --tx-pool-limit-by-account-percentage instead.
+2026-11-07 15:44:27.066+00:00 | main | INFO  | KeyPairUtil | Loaded public key 0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 from /home/ubuntu/privacy-lab/besu-node1/data/key
+Unexpected error while converting ECPoint: Invalid point coordinates
+
+To display full help:
+besu [COMMAND] --help
+2026-11-07 15:44:27.073+00:00 | main | INFO  | Besu | jemalloc library not found, memory usage may be reduced by installing it

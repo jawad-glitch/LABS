@@ -1,0 +1,12 @@
+{
+  "mode": "orion", "useWhiteList": false,
+  "jdbc": { "username": "sa", "password": "", "url": "jdbc:h2:./data/tessera1;MODE=Oracle;TRACE_LEVEL_SYSTEM_OUT=0", "autoCreateTables": true },
+  "serverConfigs": [
+    { "app": "ThirdParty", "enabled": true, "serverAddress": "http://localhost:9101", "communicationType": "REST" },
+    { "app": "Q2T",        "enabled": true, "serverAddress": "http://localhost:9102", "communicationType": "REST" },
+    { "app": "P2P",        "enabled": true, "serverAddress": "http://localhost:9103", "communicationType": "REST" }
+  ],
+  "peer": [],
+  "keys": { "passwords": [], "keyData": [ { "privateKeyPath": "keys/node1.key", "publicKeyPath": "keys/node1.pub" } ] },
+  "alwaysSendTo": []
+}

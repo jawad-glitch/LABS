@@ -1,9 +1,9 @@
 # Lab 3 - Besu CLI Configuration - completion proof
-Completed (UTC): 2026-11-07 14:08:43 | EC2: i-0d0a948030b92a410 | host: ip-172-31-10-44 | user: ubuntu
+Completed (UTC): 2026-11-07 14:12:52 | EC2: i-0d0a948030b92a410 | host: ip-172-31-10-44 | user: ubuntu
 
 ## Core checks
 ```
-========== CORE CHECKS (Lab 3 - Besu CLI Configuration, 2026-11-07 14:08:36 UTC) ==========
+========== CORE CHECKS (Lab 3 - Besu CLI Configuration, 2026-11-07 14:12:46 UTC) ==========
 FAIL: Task 1: besu --version prints a version and Java 17+ is active
 PASS: Task 2.1/2.2: config.toml + dev.json written with expected keys
 FAIL: Task 2.3: basic config started and web3_clientVersion answered

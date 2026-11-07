@@ -1,1 +1,3 @@
-timeout: failed to run command ‘besu’: No such file or directory
+
+Java version must be at least 25 (detected: 21)
+

@@ -1,0 +1,1 @@
+-rw-rw-r-- 1 ubuntu ubuntu 768 Nov  7 14:45 genesis.json

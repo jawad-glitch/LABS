@@ -1,0 +1,20 @@
+2026-11-07 14:45:38.120+00:00 | main | INFO  | Besu | Starting Besu
+2026-11-07 14:45:40.204+00:00 | main | WARN  | Besu | Forcing --bonsai-limit-trie-logs-enabled=false, since it cannot be enabled with --sync-mode=FULL and --data-storage-format=BONSAI.
+2026-11-07 14:45:40.210+00:00 | main | INFO  | Besu | Connecting to 0 static nodes.
+2026-11-07 14:45:40.317+00:00 | main | INFO  | Besu | jemalloc library not found, memory usage may be reduced by installing it
+2026-11-07 14:45:40.681+00:00 | main | INFO  | Besu | 
+####################################################################################################
+#                                                                                                  #
+# Besu version 24.12.2                                                                             #
+#                                                                                                  #
+# Configuration:                                                                                   #
+# Network: Custom genesis file                                                                     #
+# /home/ubuntu/private-network/genesis.json                                                        #
+# Network Id: 1337                                                                                 #
+# Data storage: Bonsai                                                                             #
+# Sync mode: Full                                                                                  #
+# Sync min peers: 5                                                                                #
+# RPC HTTP APIs: ETH,NET,WEB3                                                                      #
+# RPC HTTP port: 8545                                                                              #
+# Using LAYERED transaction pool implementation                                                    #
+# Using STACKED worldstate update mode                                                             #

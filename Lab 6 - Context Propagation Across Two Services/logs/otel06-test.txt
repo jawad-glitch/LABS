@@ -1,0 +1,25 @@
+Testing Context Propagation Across Services
+==================================================
+
+Test Request 1:
+--------------------
+Status: completed
+Message: Request processed successfully
+Worker Items Processed: 42
+Total Processing Time: 3.3s
+
+Test Request 2:
+--------------------
+Status: completed
+Message: Request processed successfully
+Worker Items Processed: 42
+Total Processing Time: 3.3s
+
+Test Request 3:
+--------------------
+Status: completed
+Message: Request processed successfully
+Worker Items Processed: 42
+Total Processing Time: 3.3s
+
+Test completed. Check both service logs for trace relationships.

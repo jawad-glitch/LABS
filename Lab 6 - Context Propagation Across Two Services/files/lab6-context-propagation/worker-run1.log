@@ -1,0 +1,808 @@
+2026-11-07 00:06:36,584 - __main__ - INFO - Starting Worker Service on port 9000
+ * Serving Flask app 'worker'
+ * Debug mode: on
+2026-11-07 00:06:36,622 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:9000
+ * Running on http://172.31.10.89:9000
+2026-11-07 00:06:36,622 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-11-07 00:06:36,624 - werkzeug - INFO -  * Restarting with stat
+2026-11-07 00:06:37,110 - __main__ - INFO - Starting Worker Service on port 9000
+2026-11-07 00:06:37,128 - werkzeug - WARNING -  * Debugger is active!
+2026-11-07 00:06:37,143 - werkzeug - INFO -  * Debugger PIN: 110-879-105
+2026-11-07 00:06:37,159 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2026 00:06:37] "GET /health HTTP/1.1" 200 -
+2026-11-07 00:06:40,682 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2026 00:06:40] "GET /health HTTP/1.1" 200 -
+{
+    "name": "GET /health",
+    "context": {
+        "trace_id": "0x1508ab13b3fa7d2016c9c9e1703bbc69",
+        "span_id": "0x814ac9f08f541c65",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-11-07T00:06:37.158085Z",
+    "end_time": "2026-11-07T00:06:37.159529Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "GET",
+        "http.server_name": "0.0.0.0",
+        "http.scheme": "http",
+        "net.host.name": "localhost:9000",
+        "http.host": "localhost:9000",
+        "net.host.port": 9000,
+        "http.target": "/health",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 32828,
+        "http.user_agent": "curl/8.5.0",
+        "http.flavor": "1.1",
+        "http.route": "/health",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /health",
+    "context": {
+        "trace_id": "0xc5957c8fba4d7787710c98d799c54fe4",
+        "span_id": "0xfc1e1acc44bc4369",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": null,
+    "start_time": "2026-11-07T00:06:40.680740Z",
+    "end_time": "2026-11-07T00:06:40.681842Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "GET",
+        "http.server_name": "0.0.0.0",
+        "http.scheme": "http",
+        "net.host.name": "localhost:9000",
+        "http.host": "localhost:9000",
+        "net.host.port": 9000,
+        "http.target": "/health",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 32838,
+        "http.user_agent": "curl/8.5.0",
+        "http.flavor": "1.1",
+        "http.route": "/health",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+2026-11-07 00:06:42,635 - __main__ - INFO - Worker service received request at /do endpoint
+2026-11-07 00:06:42,635 - __main__ - INFO - Worker is processing data...
+2026-11-07 00:06:45,136 - __main__ - INFO - Database query completed
+2026-11-07 00:06:45,436 - __main__ - INFO - Data transformation completed
+2026-11-07 00:06:45,437 - __main__ - INFO - Worker completed processing: {'status': 'success', 'message': 'Work completed successfully', 'processed_items': 42, 'processing_time': 2.8}
+2026-11-07 00:06:45,437 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2026 00:06:45] "GET /do HTTP/1.1" 200 -
+2026-11-07 00:06:46,914 - __main__ - INFO - Worker service received request at /do endpoint
+2026-11-07 00:06:46,915 - __main__ - INFO - Worker is processing data...
+{
+    "name": "database_query",
+    "context": {
+        "trace_id": "0x3ea3b54e40f02f2c6bbd4f3b0e7405d5",
+        "span_id": "0x13ec1a3f09cb2239",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x970ce43c635e63b4",
+    "start_time": "2026-11-07T00:06:44.636143Z",
+    "end_time": "2026-11-07T00:06:45.136493Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "db.operation": "SELECT",
+        "db.table": "users"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "data_transformation",
+    "context": {
+        "trace_id": "0x3ea3b54e40f02f2c6bbd4f3b0e7405d5",
+        "span_id": "0x8b269ba4d7a782e4",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x970ce43c635e63b4",
+    "start_time": "2026-11-07T00:06:45.136633Z",
+    "end_time": "2026-11-07T00:06:45.436982Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "transform.type": "json_to_xml"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "worker_processing",
+    "context": {
+        "trace_id": "0x3ea3b54e40f02f2c6bbd4f3b0e7405d5",
+        "span_id": "0x970ce43c635e63b4",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xb0d7b5b8db83e422",
+    "start_time": "2026-11-07T00:06:42.635797Z",
+    "end_time": "2026-11-07T00:06:45.437297Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "worker.task": "data_processing",
+        "worker.duration": 2,
+        "worker.result": "success",
+        "worker.items_processed": 42
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /do",
+    "context": {
+        "trace_id": "0x3ea3b54e40f02f2c6bbd4f3b0e7405d5",
+        "span_id": "0xb0d7b5b8db83e422",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": "0x792d626ecd0fdd82",
+    "start_time": "2026-11-07T00:06:42.634726Z",
+    "end_time": "2026-11-07T00:06:45.437539Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "GET",
+        "http.server_name": "0.0.0.0",
+        "http.scheme": "http",
+        "net.host.name": "localhost:9000",
+        "http.host": "localhost:9000",
+        "net.host.port": 9000,
+        "http.target": "/do",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 32848,
+        "http.user_agent": "python-requests/2.34.2",
+        "http.flavor": "1.1",
+        "http.route": "/do",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+2026-11-07 00:06:49,415 - __main__ - INFO - Database query completed
+2026-11-07 00:06:49,716 - __main__ - INFO - Data transformation completed
+2026-11-07 00:06:49,716 - __main__ - INFO - Worker completed processing: {'status': 'success', 'message': 'Work completed successfully', 'processed_items': 42, 'processing_time': 2.8}
+2026-11-07 00:06:49,716 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2026 00:06:49] "GET /do HTTP/1.1" 200 -
+{
+    "name": "database_query",
+    "context": {
+        "trace_id": "0xfafd5e736b3916eb7f6f6dca51e86c06",
+        "span_id": "0xf5e291f7d3e1c027",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x50d93816f7f1c626",
+    "start_time": "2026-11-07T00:06:48.915460Z",
+    "end_time": "2026-11-07T00:06:49.415793Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "db.operation": "SELECT",
+        "db.table": "users"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "data_transformation",
+    "context": {
+        "trace_id": "0xfafd5e736b3916eb7f6f6dca51e86c06",
+        "span_id": "0x1d978c4bd639ffa5",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x50d93816f7f1c626",
+    "start_time": "2026-11-07T00:06:49.415923Z",
+    "end_time": "2026-11-07T00:06:49.716316Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "transform.type": "json_to_xml"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "worker_processing",
+    "context": {
+        "trace_id": "0xfafd5e736b3916eb7f6f6dca51e86c06",
+        "span_id": "0x50d93816f7f1c626",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xc7074c0ad06aee4e",
+    "start_time": "2026-11-07T00:06:46.915116Z",
+    "end_time": "2026-11-07T00:06:49.716582Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "worker.task": "data_processing",
+        "worker.duration": 2,
+        "worker.result": "success",
+        "worker.items_processed": 42
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /do",
+    "context": {
+        "trace_id": "0xfafd5e736b3916eb7f6f6dca51e86c06",
+        "span_id": "0xc7074c0ad06aee4e",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": "0xa01b76cc61b518ca",
+    "start_time": "2026-11-07T00:06:46.914167Z",
+    "end_time": "2026-11-07T00:06:49.716808Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "GET",
+        "http.server_name": "0.0.0.0",
+        "http.scheme": "http",
+        "net.host.name": "localhost:9000",
+        "http.host": "localhost:9000",
+        "net.host.port": 9000,
+        "http.target": "/do",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 32858,
+        "http.user_agent": "python-requests/2.34.2",
+        "http.flavor": "1.1",
+        "http.route": "/do",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+2026-11-07 00:06:54,881 - __main__ - INFO - Worker service received request at /do endpoint
+2026-11-07 00:06:54,882 - __main__ - INFO - Worker is processing data...
+2026-11-07 00:06:57,383 - __main__ - INFO - Database query completed
+2026-11-07 00:06:57,683 - __main__ - INFO - Data transformation completed
+2026-11-07 00:06:57,683 - __main__ - INFO - Worker completed processing: {'status': 'success', 'message': 'Work completed successfully', 'processed_items': 42, 'processing_time': 2.8}
+2026-11-07 00:06:57,684 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2026 00:06:57] "GET /do HTTP/1.1" 200 -
+2026-11-07 00:07:00,501 - __main__ - INFO - Worker service received request at /do endpoint
+2026-11-07 00:07:00,502 - __main__ - INFO - Worker is processing data...
+{
+    "name": "database_query",
+    "context": {
+        "trace_id": "0xf7c41e265123d389bf6fcb59055739d3",
+        "span_id": "0x3aaa8177396ed61c",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xca1be56095e726e1",
+    "start_time": "2026-11-07T00:06:56.883004Z",
+    "end_time": "2026-11-07T00:06:57.383350Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "db.operation": "SELECT",
+        "db.table": "users"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "data_transformation",
+    "context": {
+        "trace_id": "0xf7c41e265123d389bf6fcb59055739d3",
+        "span_id": "0xb547e6313a08505e",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xca1be56095e726e1",
+    "start_time": "2026-11-07T00:06:57.383473Z",
+    "end_time": "2026-11-07T00:06:57.683790Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "transform.type": "json_to_xml"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "worker_processing",
+    "context": {
+        "trace_id": "0xf7c41e265123d389bf6fcb59055739d3",
+        "span_id": "0xca1be56095e726e1",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xfe529171943e9612",
+    "start_time": "2026-11-07T00:06:54.882658Z",
+    "end_time": "2026-11-07T00:06:57.684068Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "worker.task": "data_processing",
+        "worker.duration": 2,
+        "worker.result": "success",
+        "worker.items_processed": 42
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /do",
+    "context": {
+        "trace_id": "0xf7c41e265123d389bf6fcb59055739d3",
+        "span_id": "0xfe529171943e9612",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": "0x5ea5da23fba99df9",
+    "start_time": "2026-11-07T00:06:54.880600Z",
+    "end_time": "2026-11-07T00:06:57.684323Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "GET",
+        "http.server_name": "0.0.0.0",
+        "http.scheme": "http",
+        "net.host.name": "localhost:9000",
+        "http.host": "localhost:9000",
+        "net.host.port": 9000,
+        "http.target": "/do",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 36902,
+        "http.user_agent": "python-requests/2.34.2",
+        "http.flavor": "1.1",
+        "http.route": "/do",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+2026-11-07 00:07:03,002 - __main__ - INFO - Database query completed
+2026-11-07 00:07:03,303 - __main__ - INFO - Data transformation completed
+2026-11-07 00:07:03,303 - __main__ - INFO - Worker completed processing: {'status': 'success', 'message': 'Work completed successfully', 'processed_items': 42, 'processing_time': 2.8}
+2026-11-07 00:07:03,303 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2026 00:07:03] "GET /do HTTP/1.1" 200 -
+2026-11-07 00:07:06,116 - __main__ - INFO - Worker service received request at /do endpoint
+2026-11-07 00:07:06,116 - __main__ - INFO - Worker is processing data...
+{
+    "name": "database_query",
+    "context": {
+        "trace_id": "0x60aa23befd472c0e75c597f230438571",
+        "span_id": "0xfb00360c26a2c349",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xeaed17b302821cda",
+    "start_time": "2026-11-07T00:07:02.502392Z",
+    "end_time": "2026-11-07T00:07:03.002736Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "db.operation": "SELECT",
+        "db.table": "users"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "data_transformation",
+    "context": {
+        "trace_id": "0x60aa23befd472c0e75c597f230438571",
+        "span_id": "0x6378504cf99b402a",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xeaed17b302821cda",
+    "start_time": "2026-11-07T00:07:03.002864Z",
+    "end_time": "2026-11-07T00:07:03.303196Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "transform.type": "json_to_xml"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "worker_processing",
+    "context": {
+        "trace_id": "0x60aa23befd472c0e75c597f230438571",
+        "span_id": "0xeaed17b302821cda",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x6037b3be0ef4320d",
+    "start_time": "2026-11-07T00:07:00.502036Z",
+    "end_time": "2026-11-07T00:07:03.303515Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "worker.task": "data_processing",
+        "worker.duration": 2,
+        "worker.result": "success",
+        "worker.items_processed": 42
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /do",
+    "context": {
+        "trace_id": "0x60aa23befd472c0e75c597f230438571",
+        "span_id": "0x6037b3be0ef4320d",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": "0x8c72538ca56b10c5",
+    "start_time": "2026-11-07T00:07:00.500999Z",
+    "end_time": "2026-11-07T00:07:03.303732Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "GET",
+        "http.server_name": "0.0.0.0",
+        "http.scheme": "http",
+        "net.host.name": "localhost:9000",
+        "http.host": "localhost:9000",
+        "net.host.port": 9000,
+        "http.target": "/do",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 55826,
+        "http.user_agent": "python-requests/2.34.2",
+        "http.flavor": "1.1",
+        "http.route": "/do",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+2026-11-07 00:07:08,617 - __main__ - INFO - Database query completed
+2026-11-07 00:07:08,917 - __main__ - INFO - Data transformation completed
+2026-11-07 00:07:08,918 - __main__ - INFO - Worker completed processing: {'status': 'success', 'message': 'Work completed successfully', 'processed_items': 42, 'processing_time': 2.8}
+2026-11-07 00:07:08,918 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2026 00:07:08] "GET /do HTTP/1.1" 200 -
+{
+    "name": "database_query",
+    "context": {
+        "trace_id": "0x23e06903cbd8db6b8c74cb7987890495",
+        "span_id": "0xe143cf78dc5d0525",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7cc469fa0ad53c21",
+    "start_time": "2026-11-07T00:07:08.117136Z",
+    "end_time": "2026-11-07T00:07:08.617498Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "db.operation": "SELECT",
+        "db.table": "users"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "data_transformation",
+    "context": {
+        "trace_id": "0x23e06903cbd8db6b8c74cb7987890495",
+        "span_id": "0xdcce5fa8f0c4cc35",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x7cc469fa0ad53c21",
+    "start_time": "2026-11-07T00:07:08.617631Z",
+    "end_time": "2026-11-07T00:07:08.917957Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "transform.type": "json_to_xml"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "worker_processing",
+    "context": {
+        "trace_id": "0x23e06903cbd8db6b8c74cb7987890495",
+        "span_id": "0x7cc469fa0ad53c21",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x457d73493793d9d2",
+    "start_time": "2026-11-07T00:07:06.116784Z",
+    "end_time": "2026-11-07T00:07:08.918212Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "worker.task": "data_processing",
+        "worker.duration": 2,
+        "worker.result": "success",
+        "worker.items_processed": 42
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "GET /do",
+    "context": {
+        "trace_id": "0x23e06903cbd8db6b8c74cb7987890495",
+        "span_id": "0x457d73493793d9d2",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.SERVER",
+    "parent_id": "0x4a464f6dafb2dad7",
+    "start_time": "2026-11-07T00:07:06.115993Z",
+    "end_time": "2026-11-07T00:07:08.918471Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "GET",
+        "http.server_name": "0.0.0.0",
+        "http.scheme": "http",
+        "net.host.name": "localhost:9000",
+        "http.host": "localhost:9000",
+        "net.host.port": 9000,
+        "http.target": "/do",
+        "net.peer.ip": "127.0.0.1",
+        "net.peer.port": 55838,
+        "http.user_agent": "python-requests/2.34.2",
+        "http.flavor": "1.1",
+        "http.route": "/do",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "74ebfda8-2619-4493-b04d-7a167c18e4a0",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}

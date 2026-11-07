@@ -1,0 +1,1 @@
+2026-11-07 00:07:25,559 - __main__ - INFO - Received traceparent header: 00-8de7c83ab86be218e4685390daaa3c03-0df4defa8436f9a0-03

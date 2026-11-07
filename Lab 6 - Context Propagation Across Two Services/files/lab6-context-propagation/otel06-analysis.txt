@@ -1,0 +1,3 @@
+main spans: 38 | worker spans: 54 | /process traces: 6
+full cross-service chains verified (main_processing>call_worker_service>CLIENT>SERVER GET /do>worker_processing>2 children): 0
+traceparent headers matching a main-service CLIENT span (trace_id + parent span_id): 0

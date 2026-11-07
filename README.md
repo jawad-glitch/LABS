@@ -9,3 +9,4 @@
 | [Lab 3 - Scaffold Python Demo Service](Lab%203%20-%20Scaffold%20Python%20Demo%20Service/PROOF.md) | CORE: 10/10 PASS | 2026-11-06 23:47 |
 | [Lab 4 - Manual Tracing (OTLP → Collector)](Lab%204%20-%20Manual%20Tracing%20%28OTLP%20→%20Collector%29/PROOF.md) | CORE: 10/11 PASS | 2026-11-06 23:54 |
 | [Lab 5 - Auto-Instrumentation (Python)](Lab%205%20-%20Auto-Instrumentation%20%28Python%29/PROOF.md) | CORE: 13/13 PASS | 2026-11-07 00:01 |
+| [Lab 6 - Context Propagation Across Two Services](Lab%206%20-%20Context%20Propagation%20Across%20Two%20Services/PROOF.md) | CORE: 4/9 PASS | 2026-11-07 00:07 |

@@ -1,0 +1,12 @@
+{
+  "main_service": "app.py",
+  "message": "Request processed successfully",
+  "status": "completed",
+  "total_processing_time": 3.3,
+  "worker_response": {
+    "message": "Work completed successfully",
+    "processed_items": 42,
+    "processing_time": 2.8,
+    "status": "success"
+  }
+}

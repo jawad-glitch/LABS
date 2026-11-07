@@ -1,0 +1,22 @@
+Besu Public Network Diagnostic Report
+=====================================
+
+1. Process Status:
+   FAIL: Besu not running
+
+2. Port Status:
+   FAIL: port 8545 not listening
+   FAIL: port 8546 not listening
+   FAIL: port 30303 not listening
+
+3. Network Connectivity:
+   FAIL: RPC unreachable
+
+4. Recent Log Analysis:
+   Error-related entries: 0
+
+5. System Resources:
+   Disk usage in data dir:
+4.0K	data/
+   Available disk:
+/dev/root        29G  8.3G   20G  30% /

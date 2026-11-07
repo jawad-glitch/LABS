@@ -1,0 +1,4 @@
+Invalid value for option '--sync-mode': expected one of [FULL, FAST, X_SNAP, X_CHECKPOINT] (case-insensitive) but was 'SNAP'
+
+To display full help:
+besu [COMMAND] --help

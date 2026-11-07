@@ -1,0 +1,12 @@
+Sepolia Network Information Report
+==================================
+
+Network Version:
+Expecting value: line 1 column 1 (char 0)
+
+Node Information:
+Expecting value: line 1 column 1 (char 0)
+
+Network Listening Status:
+Expecting value: line 1 column 1 (char 0)
+

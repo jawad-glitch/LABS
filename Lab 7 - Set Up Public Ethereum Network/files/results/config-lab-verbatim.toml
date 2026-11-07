@@ -1,0 +1,35 @@
+# Network Configuration
+network="sepolia"
+sync-mode="FAST"
+
+# Data Directory
+data-path="data"
+
+# JSON-RPC Configuration
+rpc-http-enabled=true
+rpc-http-host="0.0.0.0"
+rpc-http-port=8545
+rpc-http-cors-origins=["*"]
+rpc-http-api=["ETH","NET","WEB3","DEBUG","ADMIN"]
+
+# WebSocket Configuration
+rpc-ws-enabled=true
+rpc-ws-host="0.0.0.0"
+rpc-ws-port=8546
+
+# P2P Network Configuration
+p2p-enabled=true
+p2p-host="0.0.0.0"
+p2p-port=30303
+max-peers=50
+
+# Discovery Configuration
+discovery-enabled=true
+
+# Logging Configuration
+logging="INFO"
+
+# Metrics (optional)
+metrics-enabled=true
+metrics-host="0.0.0.0"
+metrics-port=9545

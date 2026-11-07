@@ -1,0 +1,13 @@
+=== Final Besu Public Network Status ===
+Network Connection Summary:
+- Network: Sepolia Testnet
+- Chain ID: 
+- Current Block: 
+- Connected Peers: 
+
+Configuration Summary:
+- JSON-RPC Endpoint: http://localhost:8545
+- WebSocket Endpoint: ws://localhost:8546
+- P2P Port: 30303
+- Data Directory: /home/ubuntu/besu-lab7-public-network/data
+- Log File: /home/ubuntu/besu-lab7-public-network/logs/besu.log

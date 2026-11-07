@@ -1,0 +1,5 @@
+-rwxrwxr-x 1 ubuntu ubuntu  465 Nov  7 15:09 cleanup.sh
+-rwxrwxr-x 1 ubuntu ubuntu 1094 Nov  7 15:08 diagnose.sh
+-rwxrwxr-x 1 ubuntu ubuntu  987 Nov  7 15:08 monitor_sync.sh
+-rwxrwxr-x 1 ubuntu ubuntu  712 Nov  7 15:08 network_info.sh
+-rwxrwxr-x 1 ubuntu ubuntu  737 Nov  7 15:08 performance_test.sh

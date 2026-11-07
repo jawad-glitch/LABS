@@ -1,0 +1,5 @@
+# Network Configuration
+network="sepolia"
+sync-mode="FAST"
+
+# Data Directory

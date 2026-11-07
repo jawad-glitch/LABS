@@ -1,0 +1,7 @@
+Checking all Collector endpoints...
+Testing Health Check (http://localhost:13133/health): ✓ OK (200)
+Testing zPages Service (http://localhost:55679/debug/servicez): ✓ OK (200)
+Testing Pipeline Stats (http://localhost:55679/debug/pipelinez): ✓ OK (200)
+Testing Extensions (http://localhost:55679/debug/extensionz): ✓ OK (200)
+Testing Collector Metrics (http://localhost:8888/metrics): ✓ OK (200)
+Testing OTLP HTTP Traces (http://localhost:4318/v1/traces): ✓ OK (405)

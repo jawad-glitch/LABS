@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Feature Gates</title>
+    <link rel="shortcut icon" href="https://opentelemetry.io/favicons/favicon.ico"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+<body>
+<h2>Feature Gates</h2><table style="border-spacing: 0">
+    <tr>
+        <td colspan=1 style="text-align: left"><b>ID</b></td>
+        <td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        <td colspan=1 style="text-align: center"><b>Enabled</b></td>
+        <td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        <td colspan=1 style="text-align: center"><b>Description</b></td>
+        <td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        <td colspan=1 style="text-align: center"><b>Stage</b></td>
+        <td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        <td colspan=1 style="text-align: center"><b>From Version</b></td>
+        <td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        <td colspan=1 style="text-align: center"><b>To Version</b></td>
+        <td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        <td colspan=1 style="text-align: center"><b>Reference URL</b></td>
+    </tr>
+    
+            <tr style="background: #eee">
+        <td>awsemf.nodimrollupdefault</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Changes the default AWS EMF Exporter Dimension rollup option to NoDimensionRollup</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.83.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/23997</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>cloudfoundry.resourceAttributes.allow</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, envelope tags are copied to the metrics as resource attributes instead of datapoint attributes</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.117.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/34824</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>confmap.enableMergeAppendOption</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Combines lists when resolving configs from different sources. This feature gate will not be stabilized &#39;as is&#39;; the current behavior will remain the default.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.120.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector/issues/8754</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>connector.routing.defaultErrorModeIgnore</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the default error_mode is `ignore` instead of `propagate`.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.155.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/48418</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>connector.servicegraph.legacyLatencyMetricNames</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, connector uses legacy latency metric names.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Deprecated</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.80.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/18743</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>connector.servicegraph.legacyLatencyUnitMs</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, connector reports latency in milliseconds, instead of seconds.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Deprecated</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.89.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/27488</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>connector.spanmetrics.excludeResourceMetrics</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, connector will exclude all resource attributes.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.137.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/42103</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>connector.spanmetrics.includeCollectorInstanceID</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, connector add collector.instance.id to default dimensions.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.136.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/40400</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>connector.spanmetrics.legacyMetricNames</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, connector uses legacy metric names.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.109.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/33227</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>connector.spanmetrics.useSecondAsDefaultMetricsUnit</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, connector use second as default unit for duration metrics.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.137.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/42462</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>datadog.EnableOperationAndResourceNameV2</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, datadogexporter and datadogconnector use improved logic to compute operation name and resource name.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.118.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/36419</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>datadog.EnableReceiveResourceSpansV2</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, use a refactored implementation of the span receiver which improves performance by 10% and deprecates some not-to-spec functionality.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.118.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/37171</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>datadog.EnableScopeConvention</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, use otel.scope.name and otel.scope.version convention to set scope name and version instead of the deprecated otel.library.name and otel.library.version.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.159.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/49001</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>datadog.serializerexporter.UseSyncForwarder</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Send metrics synchronously inside the serializer exporter so failures propagate to OTel exporterhelper.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://datadoghq.atlassian.net/browse/OTAGENT-1024</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>domainControllers.autodiscovery</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled and is remote automatically discover domain controllers through joined controllers and  start collecting logs from specified channel.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.150.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/44156</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.awsemf.DisableLegacyResourceToTelemetryConversion</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the deprecated enabled and exclude_service_attributes fields in resource_to_telemetry_conversion are disabled, and included/excluded patterns must be used instead</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.160.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/48861</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.awsxray.DontEmitV0DBConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the AWS X-Ray exporter no longer reads deprecated semconv v1.12.0 database attribute keys. Requires exporter.awsxray.EmitV1DBConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.147.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/46533</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.awsxray.DontEmitV0HTTPNetworkConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the AWS X-Ray exporter no longer reads deprecated semconv v1.12.0 HTTP and network attribute keys. Requires exporter.awsxray.EmitV1HTTPNetworkConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.147.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/46533</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.awsxray.EmitV1DBConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the AWS X-Ray exporter reads database span attributes using semconv v1.38.0 keys (db.namespace, db.system.name, db.query.text, user.name) instead of the deprecated v1.12.0 keys (db.name, db.system, db.statement, db.user).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.147.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/46533</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.awsxray.EmitV1HTTPNetworkConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the AWS X-Ray exporter reads HTTP and network span attributes using semconv v1.38.0 keys (e.g. http.request.method, server.address, server.port, client.address, messaging.message.body.size) instead of the deprecated v1.12.0 keys.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.163.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/46533</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.awsxray.skiptimestampvalidation</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Remove XRay&#39;s timestamp validation on first 32 bits of trace ID</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.84.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/48737</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.datadogexporter.AddUnits</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Datadog Exporter adds units to exported metrics.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.157.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/15280</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.datadogexporter.DisableAPMStats</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Datadog Exporter will not compute APM Stats</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.89.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/28616</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.datadogexporter.DisableAllMetricRemapping</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled the Datadog Exporter stops mapping OpenTelemetry semantic conventions to Datadog semantic conventions for all locally mapped conventions including system and runtime metrics.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.146.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://docs.datadoghq.com/opentelemetry/schema_semantics/metrics_mapping/</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.datadogexporter.EnableAttributeSliceMultiTagExporting</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, attributes with slice values will have their elements turned into individual `key:value` Datadog tags.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.142.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/44859</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.datadogexporter.InferIntervalForDeltaMetrics</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the exporter will infer the metrics interval for OTLP delta sums using a heuristic.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.148.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/46851</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.datadogexporter.TraceExportUseCustomHTTPClient</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, trace export uses the HTTP client from the exporter HTTP configs</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.105.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/34025</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.datadogexporter.metricexportserializerclient</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, metric export in datadogexporter uses the serializer exporter from the Datadog Agent.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.122.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/37930</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.datadogexporter.metricremappingdisabled</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled the Datadog Exporter stops mapping OpenTelemetry semantic conventions to Datadog semantic conventions. This feature gate is only for internal use. [DEPRECATED] Use &#39;exporter.datadogexporter.DisableAllMetricRemapping&#39; instead.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.110.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://docs.datadoghq.com/opentelemetry/schema_semantics/metrics_mapping/</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.file.nativeCompression</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Use native file-level compression (zstd) instead of message-level compression. Creates standard .zst files compatible with standard decompression tools</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/44077</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.googlecloud.CustomMonitoredResources</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the googlecloudexporter will map the OTLP metrics to the monitored resource type defined by the resource label gcp.resource_type. The MR labels are defined by resource labels with the prefix gcp.&lt;monitored_resource_type&gt;.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.122.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/38331</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.googlecloud.noLogTraceContextPrefix</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Do not prefix the trace field in LogEntry with projects/&lt;project_id/traces/.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.139.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td></td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.googlemanagedprometheus.intToDouble</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Convert all int metrics to double metrics to avoid incompatible value types.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.100.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/GoogleCloudPlatform/opentelemetry-operations-go/issues/798</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.kafka.useRequestType</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Kafka exporter converts pdata into Kafka records at request-creation time and uses a custom exporterhelper.Request for queue/batch sizing.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.157.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/48090</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.prometheus.DisableResourceToTelemetryConversion</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the deprecated resource_to_telemetry_conversion section and legacy conversion fields are disabled, and resource_constant_labels must be used instead</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.160.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/48861</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.prometheusexporter.DisableAddMetricSuffixes</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the deprecated add_metric_suffixes configuration option is ignored and translation_strategy is always used</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.132.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-specification/pull/4533</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.prometheusremotewrite.DisableResourceToTelemetryConversion</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the deprecated resource_to_telemetry_conversion section and legacy conversion fields are disabled, and resource_constant_labels must be used instead</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.160.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/48862</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.prometheusremotewritexporter.EnableMultipleWorkers</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled and settings configured, the Prometheus remote exporter will spawn multiple workers/goroutines to handle incoming metrics batches concurrently.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.118.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/36134</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.prometheusremotewritexporter.RetryOn429</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Prometheus remote write exporter will retry 429 http status code. Requires exporter.prometheusremotewritexporter.metrics.RetryOn429 to be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.101.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/31924</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.prometheusremotewritexporter.enableSendingRW2</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Prometheus remote write exporter will support sending rw2. Extra configuration is still required besides enabling this feature gate.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.125.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/35888</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.prometheusremotewritexporter.removeTopLevelHTTPSettings</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, it rejects top-level HTTP client settings (e.g. endpoint, tls, proxy_url); configure them under the http block instead.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.158.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/46209</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>exporter.signalfx.consumeEntityEvents</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Process entity events from logs pipeline and convert to dimension property updates</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.145.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/45595</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>exporter.xray.allowDot</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>X-Ray Exporter will no longer convert . to _ in annotation keys when this feature gate is enabled. </td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.97.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td></td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>extension.awslogsencoding.cloudtrail.enable.user.identity.prefix</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, CloudTrail log userIdentity attributes will use &#39;aws.user_identity&#39; prefix. This helps to preserve the attribute origin.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.145.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/45459</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>extension.awslogsencoding.vpcflow.start.iso8601</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, aws.vpc.flow.start field will be formatted as ISO-8601 string instead of seconds since epoch integer.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.138.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/43390</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>extension.azureencoding.DontEmitV0LogConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, v0 semconv log attribute names are not emitted.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.149.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/47543</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>extension.azureencoding.EmitV1LogConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, v1 semconv log attribute names are emitted.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.149.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/47543</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>extension.encoding.awslogsencoding.DontEmitV0RPCConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, CloudTrail log unmarshaler no longer emits the deprecated semconv v1.38.0 attributes rpc.service and rpc.system. Requires extension.encoding.awslogsencoding.EmitV1RPCConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.150.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/47549</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>extension.encoding.awslogsencoding.EmitV1RPCConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, CloudTrail log unmarshaler emits rpc.system.name (semconv v1.40.0) instead of the deprecated rpc.system (semconv v1.38.0).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.150.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/47549</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>extension.encoding.googlecloudlogentryencoding.DontEmitV0RPCConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, audit log parser no longer emits the deprecated semconv v1.38.0 attributes rpc.jsonrpc.error_code and rpc.jsonrpc.error_message.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/22095</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>extension.healthcheck.useComponentStatus</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Switch to the shared healthcheck implementation powered by component status events</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.142.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/42256</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>extension.opampextension.RemoteRestarts</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the OpAMP extension supports restart commands from the OpAMP server through the `CommandType_Restart` command.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.145.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/45056</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>filelog.allowFileDeletion</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, allows usage of the `delete_after_read` setting.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.70.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/16314</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>filelog.allowHeaderMetadataParsing</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, allows usage of the `header` setting.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.73.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/18198</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>filelog.mtimeSortType</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, allows usage of `ordering_criteria.mode` = `mtime`.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.89.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/27812</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>filelog.protobufCheckpointEncoding</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Use protobuf encoding for checkpoint storage instead of JSON.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Stable</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.148.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.165.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/43266</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>filelog.requireExplicitTopN</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, requires `ordering_criteria.top_n` to be set explicitly when `ordering_criteria.sort_by` is configured. When disabled, an unset `top_n` falls back to the legacy default of 1.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.159.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/47444</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>filelog.windows.caseInsensitive</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>On Windows, make matching patterns in include/exclude case insensitive.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.142.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/43777</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>filter.filterlog.useOTTLBridge</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, filterlog will convert filterlog configuration to OTTL and use filterottl evaluation</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.81.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/18642</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>filter.filtermetric.useOTTLBridge</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, filtermetric will convert filtermetric configuration to OTTL and use filterottl evaluation</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.81.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/18642</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>filter.filterspan.useOTTLBridge</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, filterspan will convert filterspan configuration to OTTL and use filterottl evaluation</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.79.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/18642</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>hostmetrics.process.bootTimeCache</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, all process scrapes will use the boot time value that is cached at the start of the process.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.98.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/28849</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>logs.assignKeys</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, allows usage of `assign_keys` transformer.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.93.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/30321</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>logs.jsonParserArray</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, allows usage of `json_array_parser`.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.93.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/30321</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>metricsgeneration.MatchAttributes</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the metric calculations will only be done between data points whose attributes match.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.112.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/35425</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>ottl.functions.enableLambda</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Allow OTTL functions to take lambda arguments. When disabled, lambda arguments are rejected.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.155.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/48227</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>parser.uri.ecscompliant</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled resulting map will be in semconv compliant format.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.103.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/32906</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pdata.useProtoPooling</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, enable using local memory pools for underlying data that the pdata messages are pushed to.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.133.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector/issues/13631</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.confighttp.PrioritizeNewKeepalive</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Keepalive configuration is prioritized over the deprecated configuration fields.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.162.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector/issues/9380</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pkg.experimentalmetricmetadata.useEntityEventsSpecification</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, emit entity events using the OpenTelemetry entity events specification log record format.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.156.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/49667</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.exporterhelper.queueBatchEnabled</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Enables exporterhelper batching by default in NewDefaultQueueConfig, as described in the batching migration RFC.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.158.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector/issues/15047</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pkg.ottl.functions.enableDynamicSliceArguments</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Allow slice arguments of stable OTTL functions, such as the values of Concat, to be paths or converters that resolve to a slice at runtime. When disabled, these arguments only accept list literals.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.163.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/27821</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.ottl.functions.enableExperimental</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Allow OTTL statements and conditions to use experimental functions. When disabled, experimental functions are rejected.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.163.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/50927</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pkg.stanza.addDefaultScopeName</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, adds a default scope name and version for stanza log entries without scope name</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.162.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/51084</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.translator.azurelogs.DontEmitV0LogConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the deprecated semconv attributes code.function and code.filepath are not emitted. Requires pkg.translator.azurelogs.EmitV1LogConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.147.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45033</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pkg.translator.azurelogs.EmitV1LogConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the stable semconv attributes code.function.name and code.file.path are emitted.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.147.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45033</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.translator.faro.DontEmitV0DeploymentEnvironmentConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Faro translator no longer emits the deprecated deployment.environment attribute (semconv v1.26.0). Requires pkg.translator.faro.EmitV1DeploymentEnvironmentConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.155.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45074</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pkg.translator.faro.EmitV1DeploymentEnvironmentConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Faro translator emits deployment.environment.name (semconv v1.40.0) instead of the deprecated deployment.environment (semconv v1.26.0).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.155.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45074</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.translator.jaeger.DontEmitV0HttpConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Jaeger translator no longer emits the deprecated http.status_code attribute (semconv v1.25.0). Requires pkg.translator.jaeger.EmitV1HttpConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.158.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45036</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pkg.translator.jaeger.EmitV1HttpConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Jaeger translator emits http.response.status_code (semconv v1.40.0) instead of the deprecated http.status_code (semconv v1.25.0).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.158.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45036</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.translator.prometheus.PermissiveLabelSanitization</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Controls whether to change labels starting with &#39;_&#39; to &#39;key_&#39;.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Stable</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.55.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.166.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/8950</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pkg.translator.zipkin.DontEmitV0CloudResourceConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Zipkin translator no longer emits the deprecated faas.id attribute (semconv v1.18.0). Requires pkg.translator.zipkin.EmitV1CloudResourceConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.155.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45080</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.translator.zipkin.DontEmitV0HttpConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Zipkin translator no longer emits the deprecated http.status_code attribute (semconv v1.25.0). Requires pkg.translator.zipkin.EmitV1HttpConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45089</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pkg.translator.zipkin.DontEmitV0NetworkConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Zipkin translator no longer emits the deprecated net.host.ip, net.peer.ip, and peer.service (semconv v1.12.0) attributes. Requires pkg.translator.zipkin.EmitV1NetworkConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.147.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45041</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.translator.zipkin.DontEmitV0ScopeConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Zipkin translator no longer emits the deprecated otel.library.name and otel.library.version attributes (semconv v1.25.0). Requires pkg.translator.zipkin.EmitV1ScopeConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45089</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pkg.translator.zipkin.EmitV1CloudResourceConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Zipkin translator emits cloud.resource_id (semconv v1.40.0) instead of the deprecated faas.id (semconv v1.18.0).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.155.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45080</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.translator.zipkin.EmitV1HttpConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Zipkin translator emits http.response.status_code (semconv v1.40.0) instead of the deprecated http.status_code (semconv v1.25.0).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45089</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>pkg.translator.zipkin.EmitV1NetworkConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Zipkin translator emits network.local.address and network.peer.address and service.peer.name (semconv v1.40.0) instead of the deprecated net.host.ip, net.peer.ip, and peer.service (semconv v1.12.0).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.147.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45041</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>pkg.translator.zipkin.EmitV1ScopeConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Zipkin translator emits otel.scope.name and otel.scope.version (semconv v1.40.0) instead of the deprecated otel.library.name and otel.library.version (semconv v1.25.0).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45089</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>postgresqlreceiver.preciselagmetrics</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Metric `postgresql.wal.lag` is replaced by more precise `postgresql.wal.delay`.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.89.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/30831</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>processor.k8sattributes.DontEmitV0K8sConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, semconv legacy attributes are disabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.145.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/44589</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>processor.k8sattributes.EmitV1K8sConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, semconv stable attributes are enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.145.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/44589</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>processor.k8sattributes.EnableKubeletPodSource</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, k8sattributesprocessor can use kubelet /pods polling as the pod metadata source.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.164.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/14475</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>processor.k8sattributes.ShareProcessorBetweenPipelines</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, processor instances with identical configuration are shared across different signal type pipelines, reducing duplicate Kubernetes API watchers.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.150.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/2450</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>processor.k8sattributes.telemetry.disableOldFormatMetrics</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, old formatted internal telemetry metrics are disabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.146.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45871</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>processor.k8sattributes.telemetry.enableNewFormatMetrics</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, new formatted internal telemetry metrics are enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.146.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45871</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>processor.resourcedetection.consul.prefixMetaAttributes</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, Consul node metadata is emitted as `consul.meta.&lt;key&gt;` resource attributes instead of `&lt;key&gt;`.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.159.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/49988</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>processor.resourcedetection.elasticbeanstalk.DontEmitV0DeploymentConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the detector no longer emits the deprecated deployment.environment and service.instance.id resource attributes. Requires processor.resourcedetection.elasticbeanstalk.EmitV1DeploymentConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.159.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/50130</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>processor.resourcedetection.elasticbeanstalk.EmitV1DeploymentConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the detector emits deployment.environment.name and deployment.id instead of the deprecated deployment.environment and service.instance.id.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.159.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/50130</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>processor.tailsamplingprocessor.metricstatcountbytessampled</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, a new metric stat_count_bytes_sampled will be available in the tail sampling processor. Differently from stat_count_traces_sampled, this metric will count the number of bytes sampled or not per sampling policy, where the original counts traces.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.152.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/48348</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>processor.tailsamplingprocessor.metricstatcountspanssampled</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, a new metric stat_count_spans_sampled will be available in the tail sampling processor. Differently from stat_count_traces_sampled, this metric will count the number of spans sampled or not per sampling policy, where the original counts traces.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.95.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/30482</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>processor.tailsamplingprocessor.recordpolicy</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, attaches the name of the policy (and if applicable, composite policy) responsible for sampling a trace in the &#39;tailsampling.policy&#39;, &#39;tailsampling.composite_policy&#39;, and `tailsampling.cached_decision` attributes.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.120.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/35180</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>processor.tailsamplingprocessor.tailstorageextension</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, allows configuring tail_storage to use a tail storage extension implementation.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.150.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/47331</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>processor.tailsamplingprocessor.usetracestate</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, sampling policies consult OpenTelemetry probability sampling information carried in W3C tracestate (the &#39;rv&#39; and &#39;th&#39; fields of the &#39;ot&#39; section). The &#39;probabilistic&#39; policy uses tracestate randomness for its sampling decision (falling back to the legacy FNV trace ID hash when no tracestate sampling info is present), and the processor rewrites the outgoing &#39;th&#39; on sampled traces to the effective threshold across all matched policies.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://opentelemetry.io/docs/specs/otel/trace/tracestate-probability-sampling/</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.apache.disableOldFormatMetrics</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the receiver no longer emits the original metric and attribute names (e.g. apache.requests, apache.scoreboard, and the mode/level/state attributes). Requires receiver.apache.enableNewFormatMetrics to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.159.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/47327</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.apache.enableNewFormatMetrics</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the receiver emits the new, consistently named metrics and attributes (e.g. apache.request.count, apache.worker.status, cpu.mode) alongside the original ones. See the migration guide linked from the component README for the full mapping.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.159.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/47327</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.awscontainerinsightreceiver.useNewTypeName</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the receiver uses the new component type name &#39;awscontainerinsight&#39; instead of &#39;awscontainerinsightreceiver&#39;.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.143.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/44052</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.awsecscontainermetrics.DontEmitV0ContainerConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the receiver no longer emits the deprecated semconv v1.21.0 attribute container.image.tag. Requires receiver.awsecscontainermetrics.EmitV1ContainerConventions to also be enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.157.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45087</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.awsecscontainermetrics.EmitV1ContainerConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the receiver emits container.image.tags (semconv v1.42.0) instead of the deprecated container.image.tag (semconv v1.21.0).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.157.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45087</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.awsxray.DontEmitV0HttpConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, semconv legacy HTTP attributes are disabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.158.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45085</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.awsxray.EmitV1HttpConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, semconv stable HTTP attributes are enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.158.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45085</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.datadogreceiver.DontEmitDeprecatedRPCServiceAttr</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the receiver no longer emits the deprecated rpc.service attribute on gRPC spans or resource attributes. The service name is already captured in the span name (service/method) and rpc.method.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/22095</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.datadogreceiver.Enable128BitTraceID</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, reconstructs full 128-bit TraceIDs for spans coming from Datadog instrumented services so they correlate with OpenTelemetry spans. Enabled by default; disable to fall back to 64-bit (zero-padded) TraceIDs.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.125.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/36926</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.datadogreceiver.EnableMultiTagParsing</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, parses `key:value` tags with duplicate keys into a slice attribute.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.142.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/44747</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.githubreceiver.UseCheckRunID</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, deterministic job, step, and queue span IDs are derived from the GitHub check_run_id (the WorkflowJob.id webhook field, also exposed in-runner as ${{ job.check_run_id }}). Step span IDs additionally incorporate the step&#39;s raw name, allowing in-action telemetry tools to reproduce matching span IDs without calling the GitHub REST API and without knowing the runner-dependent step number. Payloads missing a check_run_id are rejected while this gate is enabled. Workflows with duplicate step names within a job will log a warning; duplicate steps will share the same span ID.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.151.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/44856</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.hostmetrics.DontEmitV0SystemConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, all scrapers stop emitting legacy semantic convention metrics, superseding per-scraper gates.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.160.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/semantic-conventions/issues/3041</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.hostmetrics.EmitV1SystemConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, all scrapers emit metrics aligned with the latest semantic conventions, superseding per-scraper gates.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.160.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/semantic-conventions/issues/3041</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.hostmetricsreceiver.UseLinuxMemAvailable</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the used value for the system.memory.usage and system.memory.utilization metrics will be based on the Linux kernel&#39;s MemAvailable statistic instead of MemFree, Buffers, and Cached.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.137.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/42221</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.k8sobjects.useInformerObserver</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the receiver collects objects via a shared informer factory (List&#43;Watch backed by an in-memory cache) instead of the legacy per-object pull/watch observers. Pull mode reads from the informer cache; watch mode uses informer event handlers with automatic relist/reconnect. The `pull` RBAC now also requires the `watch` verb, `resource_version` is ignored, and `exclude_watch_type: [BOOKMARK, ERROR]` is a no-op.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.164.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/43602</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.kafkametricsreceiver.UseFranzGo</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>The Kafka Metrics receiver now uses the franz-go client to connect to Kafka.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Stable</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.137.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.154.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/41480</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.kubeletstats.cpuUsageScrapeBased</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, container.cpu.usage, k8s.pod.cpu.usage and k8s.node.cpu.usage (and the cpu utilization metrics derived from them) are calculated by the receiver as the rate of the corresponding *.cpu.time counter between consecutive scrapes, instead of being read directly from the kubelet&#39;s UsageNanoCores value.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.156.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/49477</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.postgresql.connectionPool</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Use of connection pooling</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.96.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/30831</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.postgresql.separateSchemaAttr</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Moves Schema Names into dedicated Attribute</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.122.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/29559</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.postgresql.useOTelSemconv</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, uses a single resource per server with a service.instance.id (UUID v5) resource attribute, aligning with OpenTelemetry semantic conventions. When disabled, uses the legacy per-entity resource model with postgresql.database.name, postgresql.table.name, postgresql.index.name, and postgresql.schema.name resource attributes.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.156.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/45347</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.prometheusreceiver.EnableCreatedTimestampZeroIngestion</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Enables the Prometheus created-timestamps-zero-injection feature. Created timestamps are injected as 0-valued samples when appropriate. This is disabled by default due to worse CPU performance with higher metric volumes.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.113.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/40355</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiver.statsd.monotonicCounterDefault</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, changes the default value of is_monotonic_counter to true, so that statsd counters are treated as monotonic sums by default. Explicitly setting is_monotonic_counter in the receiver config always takes precedence over this feature gate.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.159.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/14956</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>receiver.vcenter.resourcePoolMemoryUsageAttribute</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Enables the memory usage type attribute for the vcenter.resource_pool.memory.usage metric</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.105.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/33741</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>receiverhelper.newReceiverMetrics</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Controls whether receivers emit new metrics and span attributes to distinguish downstream errors from internal errors. This is a breaking change for the semantics of the otelcol_receiver_refused_metric_points,  otelcol_receiver_refused_log_records and otelcol_receiver_refused_spans.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.138.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector/pull/12802</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>scraper.process.DontEmitV0SystemConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, semconv legacy attributes are disabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.158.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/semantic-conventions/issues/3041</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>scraper.process.EmitV1SystemConventions</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, semconv stable attributes are enabled.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.158.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/semantic-conventions/issues/3041</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>service.AllowNoPipelines</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Allow starting the Collector without starting any pipelines.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.122.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector/pull/12613</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>service.partialReload</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Controls whether configuration changes trigger a partial reload that rebuilds only the affected components.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.157.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/rfcs/partial-reload.md</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>service.partialReloadReceivers</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>true</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Controls whether receiver-only configuration changes restart only the receivers.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Beta</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.157.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/rfcs/partial-reload.md</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>service.profilesSupport</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Controls whether profiles support can be enabled</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.112.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector/pull/11477</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>spanmetrics.statusCodeConvention.useOtelPrefix</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, generated metrics will use `otel.status_code=ERROR` instead of `status.code=STATUS_CODE_ERROR`</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.141.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/43000</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>stanza.synchronousLogEmitter</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Prevents possible data loss in Stanza-based receivers by emitting logs synchronously.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.122.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/35456</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>stanza.udp.useStableNetworkAttributes</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the udp_input operator&#39;s `add_attributes` option emits stable network semantic convention attributes (network.transport, network.local.address, server.port, server.address, network.peer.address, client.port, client.address) instead of the deprecated ones (net.transport, net.host.ip, net.host.port, net.host.name, net.peer.ip, net.peer.port, net.peer.name).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.158.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/49050</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>stanza.windows.eventDrivenScraping</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, the Stanza windows input wakes on API signals instead of polling on a fixed interval.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.148.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/47091</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>telemetry.newPipelineTelemetry</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Injects component-identifying scope attributes in internal Collector metrics</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.123.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/rfcs/component-universal-telemetry.md</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr>
+        <td>transform.flatten.logs</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Flatten log data prior to transformation so every record has a unique copy of the resource and scope. Regroups logs based on resource and scope after transformations.</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.103.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/32080#issuecomment-2120764953</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+            <tr style="background: #eee">
+        <td>translator.skywalking.useStableSemconv</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>false</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>When enabled, uses stable semantic conventions (v1.38.0) for attribute names (e.g., url.full, http.response.status_code, db.namespace, server.address). When disabled, uses legacy attribute names (e.g., http.url, http.status_code, db.name, net.peer.name).</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>Alpha</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v0.146.0</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>v&lt;nil&gt;</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td>https://github.com/open-telemetry/opentelemetry-collector-contrib/issues/44796</td><td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        </tr>
+    
+</table>
+</body>
+</html>

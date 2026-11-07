@@ -1,0 +1,5 @@
+  /debug/servicez   -> HTTP 200
+  /debug/pipelinez  -> HTTP 200
+  /debug/extensionz -> HTTP 200
+  /debug/featurez   -> HTTP 200
+  /debug/tracez     -> HTTP 404

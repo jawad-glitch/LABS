@@ -1,0 +1,81 @@
+# OpenTelemetry Collector Configuration with Extensions
+extensions:
+  # Health check extension provides HTTP endpoint for health status
+  health_check:
+    endpoint: "0.0.0.0:13133"
+    path: "/health"
+
+  # zPages extension provides internal observability web interface
+  zpages:
+    endpoint: "0.0.0.0:55679"
+
+receivers:
+  # OTLP receiver to accept telemetry data
+  otlp:
+    protocols:
+      grpc:
+        endpoint: "0.0.0.0:4317"
+      http:
+        endpoint: "0.0.0.0:4318"
+
+  # Host metrics receiver to generate some data for observation
+  hostmetrics:
+    collection_interval: 10s
+    scrapers:
+      cpu:
+      memory:
+      disk:
+      filesystem:
+      network:
+
+processors:
+  # Batch processor to group telemetry data
+  batch:
+    timeout: 1s
+    send_batch_size: 1024
+
+  # Memory limiter to prevent excessive memory usage (check_interval is required)
+  memory_limiter:
+    check_interval: 1s
+    limit_mib: 256
+
+exporters:
+  # Debug exporter (the 'logging' exporter was removed from the collector)
+  debug:
+    verbosity: detailed
+
+service:
+  # Enable the extensions
+  extensions: [health_check, zpages]
+
+  pipelines:
+    # Metrics pipeline
+    metrics:
+      receivers: [hostmetrics, otlp]
+      processors: [memory_limiter, batch]
+      exporters: [debug]
+
+    # Traces pipeline
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [debug]
+
+    # Logs pipeline
+    logs:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [debug]
+
+  # Telemetry configuration for the collector itself
+  telemetry:
+    logs:
+      level: "info"
+    metrics:
+      level: "detailed"
+      readers:
+        - pull:
+            exporter:
+              prometheus:
+                host: "0.0.0.0"
+                port: 8888

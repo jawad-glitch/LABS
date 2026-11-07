@@ -1,0 +1,499 @@
+# HELP http_server_request_body_size Size of HTTP server request bodies.
+# TYPE http_server_request_body_size histogram
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="25"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="50"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="75"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="100"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="250"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="500"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="750"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1000"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2500"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5000"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7500"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10000"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 3
+http_server_request_body_size_sum{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 0
+http_server_request_body_size_count{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 3
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="25"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="50"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="75"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="100"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="250"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="500"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="750"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1000"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2500"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5000"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7500"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10000"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 1
+http_server_request_body_size_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 0
+http_server_request_body_size_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="25"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="50"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="75"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="100"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="250"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="500"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="750"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1000"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2500"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5000"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7500"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10000"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 1
+http_server_request_body_size_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 0
+http_server_request_body_size_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="25"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="50"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="75"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="100"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="250"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="500"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="750"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1000"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2500"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5000"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7500"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10000"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 2
+http_server_request_body_size_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 0
+http_server_request_body_size_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 2
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="25"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="50"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="75"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="100"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="250"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="500"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="750"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1000"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2500"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5000"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7500"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10000"} 1
+http_server_request_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 1
+http_server_request_body_size_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 0
+http_server_request_body_size_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 1
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0"} 0
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="5"} 0
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="10"} 0
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="25"} 0
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="50"} 0
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="75"} 0
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="100"} 0
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="250"} 0
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="500"} 8
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="750"} 8
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="1000"} 8
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="2500"} 8
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="5000"} 8
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="7500"} 8
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="10000"} 8
+http_server_request_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="+Inf"} 8
+http_server_request_body_size_sum{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http"} 3896
+http_server_request_body_size_count{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http"} 8
+# HELP http_server_request_duration Duration of HTTP server requests.
+# TYPE http_server_request_duration histogram
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.005"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.01"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.025"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.05"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.075"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.1"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.25"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.5"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.75"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2.5"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7.5"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 3
+http_server_request_duration_sum{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 0.000273453
+http_server_request_duration_count{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 3
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.005"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.01"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.025"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.05"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.075"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.1"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.25"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.75"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2.5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7.5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 1
+http_server_request_duration_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 0.000399516
+http_server_request_duration_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.005"} 0
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.01"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.025"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.05"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.075"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.1"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.25"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.75"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2.5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7.5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 1
+http_server_request_duration_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 0.009481692
+http_server_request_duration_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.005"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.01"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.025"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.05"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.075"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.1"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.25"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.5"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.75"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2.5"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7.5"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 2
+http_server_request_duration_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 0.00217916
+http_server_request_duration_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 2
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.005"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.01"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.025"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.05"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.075"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.1"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.25"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0.75"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2.5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7.5"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 1
+http_server_request_duration_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 1
+http_server_request_duration_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 0.000500167
+http_server_request_duration_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 1
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0.005"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0.01"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0.025"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0.05"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0.075"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0.1"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0.25"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0.5"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0.75"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="1"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="2.5"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="5"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="7.5"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="10"} 8
+http_server_request_duration_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="+Inf"} 8
+http_server_request_duration_sum{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http"} 0.00288173
+http_server_request_duration_count{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http"} 8
+# HELP http_server_response_body_size Size of HTTP server response bodies.
+# TYPE http_server_response_body_size histogram
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="25"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="50"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="75"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="100"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="250"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="500"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="750"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1000"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2500"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5000"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7500"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10000"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 3
+http_server_response_body_size_sum{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 57
+http_server_response_body_size_count{http_request_method="GET",http_response_status_code="404",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 3
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="25"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="50"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="75"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="100"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="250"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="500"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="750"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1000"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2500"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5000"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7500"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10000"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 1
+http_server_response_body_size_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 816
+http_server_response_body_size_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/extensionz",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="25"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="50"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="75"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="100"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="250"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="500"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="750"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1000"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2500"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5000"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7500"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10000"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 1
+http_server_response_body_size_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 103494
+http_server_response_body_size_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/featurez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="25"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="50"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="75"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="100"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="250"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="500"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="750"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1000"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2500"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5000"} 2
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7500"} 2
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10000"} 2
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 2
+http_server_response_body_size_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 9182
+http_server_response_body_size_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/pipelinez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 2
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="0"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="25"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="50"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="75"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="100"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="250"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="500"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="750"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="1000"} 0
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="2500"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="5000"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="7500"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="10000"} 1
+http_server_response_body_size_bucket{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http",le="+Inf"} 1
+http_server_response_body_size_sum{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 2275
+http_server_response_body_size_count{http_request_method="GET",http_response_status_code="200",http_route="/debug/servicez",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="55679",url_scheme="http"} 1
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="0"} 0
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="5"} 0
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="10"} 0
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="25"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="50"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="75"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="100"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="250"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="500"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="750"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="1000"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="2500"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="5000"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="7500"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="10000"} 8
+http_server_response_body_size_bucket{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http",le="+Inf"} 8
+http_server_response_body_size_sum{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http"} 168
+http_server_response_body_size_count{http_request_method="POST",http_response_status_code="200",http_route="/v1/traces",network_protocol_name="http",network_protocol_version="1.1",server_address="localhost",server_port="4318",url_scheme="http"} 8
+# HELP otelcol_exporter_in_flight_requests Number of export requests currently in-flight (including retry backoff). [Development]
+# TYPE otelcol_exporter_in_flight_requests gauge
+otelcol_exporter_in_flight_requests{data_type="metrics",exporter="debug"} 0
+otelcol_exporter_in_flight_requests{data_type="traces",exporter="debug"} 0
+# HELP otelcol_exporter_sent_metric_points Number of metric points successfully sent to destination. [Alpha]
+# TYPE otelcol_exporter_sent_metric_points counter
+otelcol_exporter_sent_metric_points{exporter="debug"} 1164
+# HELP otelcol_exporter_sent_spans Number of spans successfully sent to destination. [Alpha]
+# TYPE otelcol_exporter_sent_spans counter
+otelcol_exporter_sent_spans{exporter="debug"} 8
+# HELP otelcol_process_cpu_seconds Total CPU user and system time in seconds [Alpha]
+# TYPE otelcol_process_cpu_seconds counter
+otelcol_process_cpu_seconds 0.53
+# HELP otelcol_process_memory_rss Total physical memory (resident set size) [Alpha]
+# TYPE otelcol_process_memory_rss gauge
+otelcol_process_memory_rss 2.19533312e+08
+# HELP otelcol_process_runtime_heap_alloc_bytes Bytes of allocated heap objects (see 'go doc runtime.MemStats.HeapAlloc') [Alpha]
+# TYPE otelcol_process_runtime_heap_alloc_bytes gauge
+otelcol_process_runtime_heap_alloc_bytes 2.7643e+07
+# HELP otelcol_process_runtime_total_alloc_bytes Cumulative bytes allocated for heap objects (see 'go doc runtime.MemStats.TotalAlloc') [Alpha]
+# TYPE otelcol_process_runtime_total_alloc_bytes counter
+otelcol_process_runtime_total_alloc_bytes 5.170456e+07
+# HELP otelcol_process_runtime_total_sys_memory_bytes Total bytes of memory obtained from the OS (see 'go doc runtime.MemStats.Sys') [Alpha]
+# TYPE otelcol_process_runtime_total_sys_memory_bytes gauge
+otelcol_process_runtime_total_sys_memory_bytes 4.8929032e+07
+# HELP otelcol_process_uptime Uptime of the process [Alpha]
+# TYPE otelcol_process_uptime counter
+otelcol_process_uptime 39.110216813
+# HELP otelcol_processor_batch_batch_send_size Number of units in the batch [Development]
+# TYPE otelcol_processor_batch_batch_send_size histogram
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="10"} 8
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="25"} 8
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="50"} 8
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="75"} 8
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="100"} 8
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="250"} 8
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="500"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="750"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="1000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="2000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="3000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="4000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="5000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="6000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="7000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="8000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="9000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="10000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="20000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="30000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="50000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="100000"} 12
+otelcol_processor_batch_batch_send_size_bucket{processor="batch",le="+Inf"} 12
+otelcol_processor_batch_batch_send_size_sum{processor="batch"} 1172
+otelcol_processor_batch_batch_send_size_count{processor="batch"} 12
+# HELP otelcol_processor_batch_batch_send_size_bytes Number of bytes in batch that was sent. Only available on detailed level. [Development]
+# TYPE otelcol_processor_batch_batch_send_size_bytes histogram
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="128"} 0
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="256"} 8
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="512"} 8
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="1024"} 8
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="2048"} 8
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="4096"} 8
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="8192"} 8
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="16384"} 8
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="32768"} 12
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="65536"} 12
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="131072"} 12
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="262144"} 12
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="524288"} 12
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="1.048576e+06"} 12
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="2.097152e+06"} 12
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="4.194304e+06"} 12
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="8.388608e+06"} 12
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="1.6777216e+07"} 12
+otelcol_processor_batch_batch_send_size_bytes_bucket{processor="batch",le="+Inf"} 12
+otelcol_processor_batch_batch_send_size_bytes_sum{processor="batch"} 105552
+otelcol_processor_batch_batch_send_size_bytes_count{processor="batch"} 12
+# HELP otelcol_processor_batch_metadata_cardinality Number of distinct metadata value combinations being processed [Development]
+# TYPE otelcol_processor_batch_metadata_cardinality gauge
+otelcol_processor_batch_metadata_cardinality{processor="batch"} 3
+# HELP otelcol_processor_batch_timeout_trigger_send Number of times the batch was sent due to a timeout trigger [Development]
+# TYPE otelcol_processor_batch_timeout_trigger_send counter
+otelcol_processor_batch_timeout_trigger_send{processor="batch"} 12
+# HELP otelcol_processor_incoming_items Number of items passed to the processor. [Alpha]
+# TYPE otelcol_processor_incoming_items counter
+otelcol_processor_incoming_items{otel_signal="metrics",processor="memory_limiter"} 1164
+otelcol_processor_incoming_items{otel_signal="traces",processor="memory_limiter"} 8
+# HELP otelcol_processor_internal_duration Duration of time taken to process a batch of telemetry data through the processor. [Alpha]
+# TYPE otelcol_processor_internal_duration histogram
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="0"} 0
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="5"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="10"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="25"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="50"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="75"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="100"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="250"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="500"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="750"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="1000"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="2500"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="5000"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="7500"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="10000"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="metrics",processor="memory_limiter",le="+Inf"} 4
+otelcol_processor_internal_duration_sum{otel_signal="metrics",processor="memory_limiter"} 1.963e-05
+otelcol_processor_internal_duration_count{otel_signal="metrics",processor="memory_limiter"} 4
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="0"} 0
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="5"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="10"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="25"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="50"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="75"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="100"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="250"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="500"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="750"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="1000"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="2500"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="5000"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="7500"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="10000"} 8
+otelcol_processor_internal_duration_bucket{otel_signal="traces",processor="memory_limiter",le="+Inf"} 8
+otelcol_processor_internal_duration_sum{otel_signal="traces",processor="memory_limiter"} 0.000249463
+otelcol_processor_internal_duration_count{otel_signal="traces",processor="memory_limiter"} 8
+# HELP otelcol_processor_memory_limiter_accepted_metric_points Number of metric points successfully pushed into the next component in the pipeline. [Alpha]
+# TYPE otelcol_processor_memory_limiter_accepted_metric_points counter
+otelcol_processor_memory_limiter_accepted_metric_points{processor="memory_limiter"} 1164
+# HELP otelcol_processor_memory_limiter_accepted_spans Number of spans successfully pushed into the next component in the pipeline. [Alpha]
+# TYPE otelcol_processor_memory_limiter_accepted_spans counter
+otelcol_processor_memory_limiter_accepted_spans{processor="memory_limiter"} 8
+# HELP otelcol_processor_outgoing_items Number of items emitted from the processor. [Alpha]
+# TYPE otelcol_processor_outgoing_items counter
+otelcol_processor_outgoing_items{otel_signal="metrics",processor="memory_limiter"} 1164
+otelcol_processor_outgoing_items{otel_signal="traces",processor="memory_limiter"} 8
+# HELP otelcol_receiver_accepted_metric_points Number of metric points successfully pushed into the pipeline. [Alpha]
+# TYPE otelcol_receiver_accepted_metric_points counter
+otelcol_receiver_accepted_metric_points{receiver="hostmetrics",transport=""} 1164
+# HELP otelcol_receiver_accepted_spans Number of spans successfully pushed into the pipeline. [Alpha]
+# TYPE otelcol_receiver_accepted_spans counter
+otelcol_receiver_accepted_spans{receiver="otlp",transport="http"} 8
+# HELP otelcol_receiver_failed_metric_points The number of metric points that failed to be processed by the receiver due to internal errors. [Alpha]
+# TYPE otelcol_receiver_failed_metric_points counter
+otelcol_receiver_failed_metric_points{receiver="hostmetrics",transport=""} 0
+# HELP otelcol_receiver_failed_spans The number of spans that failed to be processed by the receiver due to internal errors. [Alpha]
+# TYPE otelcol_receiver_failed_spans counter
+otelcol_receiver_failed_spans{receiver="otlp",transport="http"} 0
+# HELP otelcol_receiver_refused_metric_points Number of metric points that could not be pushed into the pipeline. [Alpha]
+# TYPE otelcol_receiver_refused_metric_points counter
+otelcol_receiver_refused_metric_points{receiver="hostmetrics",transport=""} 0
+# HELP otelcol_receiver_refused_spans Number of spans that could not be pushed into the pipeline. [Alpha]
+# TYPE otelcol_receiver_refused_spans counter
+otelcol_receiver_refused_spans{receiver="otlp",transport="http"} 0
+# HELP otelcol_scraper_errored_metric_points Number of metric points that were unable to be scraped. [Alpha]
+# TYPE otelcol_scraper_errored_metric_points counter
+otelcol_scraper_errored_metric_points{receiver="hostmetrics",scraper="cpu"} 0
+otelcol_scraper_errored_metric_points{receiver="hostmetrics",scraper="disk"} 0
+otelcol_scraper_errored_metric_points{receiver="hostmetrics",scraper="filesystem"} 0
+otelcol_scraper_errored_metric_points{receiver="hostmetrics",scraper="memory"} 0
+otelcol_scraper_errored_metric_points{receiver="hostmetrics",scraper="network"} 0
+# HELP otelcol_scraper_scraped_metric_points Number of metric points successfully scraped. [Alpha]
+# TYPE otelcol_scraper_scraped_metric_points counter
+otelcol_scraper_scraped_metric_points{receiver="hostmetrics",scraper="cpu"} 8
+otelcol_scraper_scraped_metric_points{receiver="hostmetrics",scraper="disk"} 28
+otelcol_scraper_scraped_metric_points{receiver="hostmetrics",scraper="filesystem"} 8
+otelcol_scraper_scraped_metric_points{receiver="hostmetrics",scraper="memory"} 4
+otelcol_scraper_scraped_metric_points{receiver="hostmetrics",scraper="network"} 20
+# HELP promhttp_metric_handler_errors_total Total number of internal errors encountered by the promhttp metric handler.
+# TYPE promhttp_metric_handler_errors_total counter
+promhttp_metric_handler_errors_total{cause="encoding"} 0
+promhttp_metric_handler_errors_total{cause="gathering"} 0
+# HELP target_info Target metadata
+# TYPE target_info gauge
+target_info{service_instance_id="92fb3768-81ee-4971-80f3-2def12d07d87",service_name="otelcol-contrib",service_version="0.164.0"} 1

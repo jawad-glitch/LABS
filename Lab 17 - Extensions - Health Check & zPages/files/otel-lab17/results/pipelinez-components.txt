@@ -1,0 +1,8 @@
+      3 batch
+      3 debug
+      1 hostmetrics
+      2 logs
+      3 memory_limiter
+      2 metrics
+      3 otlp
+      2 traces

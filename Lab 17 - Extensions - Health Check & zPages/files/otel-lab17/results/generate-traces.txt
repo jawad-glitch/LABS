@@ -1,0 +1,6 @@
+Sent trace, status: 200
+Sent trace, status: 200
+Sent trace, status: 200
+Sent trace, status: 200
+Sent trace, status: 200
+Finished sending traces

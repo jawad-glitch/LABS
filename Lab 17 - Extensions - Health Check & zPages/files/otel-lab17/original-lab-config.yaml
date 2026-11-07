@@ -1,0 +1,28 @@
+extensions:
+  health_check:
+    endpoint: "0.0.0.0:13133"
+    path: "/health"
+  zpages:
+    endpoint: "0.0.0.0:55679"
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: "0.0.0.0:4318"
+processors:
+  memory_limiter:
+    limit_mib: 256
+exporters:
+  logging:
+    loglevel: info
+service:
+  extensions: [health_check, zpages]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter]
+      exporters: [logging]
+  telemetry:
+    metrics:
+      level: "detailed"
+      address: "0.0.0.0:8888"

@@ -1,0 +1,62 @@
+OpenTelemetry Collector Monitoring Dashboard
+===========================================
+OpenTelemetry Collector Status - Sat Nov  7 01:27:18 UTC 2026
+========================================
+Health Status:
+✓ Collector is healthy
+  {"status":"Server available","upSince":"2026-11-07T01:26:34.093901833Z","uptime":"44.593639643s"}
+
+Pipeline Statistics:
+-------------------
+✓ Pipeline statistics available
+  Check http://localhost:55679/debug/pipelinez for details
+
+Recent Metrics (sample):
+----------------------
+otelcol_exporter_in_flight_requests{data_type="metrics",exporter="debug"} 0
+otelcol_exporter_in_flight_requests{data_type="traces",exporter="debug"} 0
+otelcol_exporter_sent_metric_points{exporter="debug"} 1455
+otelcol_exporter_sent_spans{exporter="debug"} 8
+otelcol_receiver_accepted_metric_points{receiver="hostmetrics",transport=""} 1455
+
+Press Ctrl+C to exit...
+OpenTelemetry Collector Status - Sat Nov  7 01:27:28 UTC 2026
+========================================
+Health Status:
+✓ Collector is healthy
+  {"status":"Server available","upSince":"2026-11-07T01:26:34.093901833Z","uptime":"54.658148282s"}
+
+Pipeline Statistics:
+-------------------
+✓ Pipeline statistics available
+  Check http://localhost:55679/debug/pipelinez for details
+
+Recent Metrics (sample):
+----------------------
+otelcol_exporter_in_flight_requests{data_type="metrics",exporter="debug"} 0
+otelcol_exporter_in_flight_requests{data_type="traces",exporter="debug"} 0
+otelcol_exporter_sent_metric_points{exporter="debug"} 1746
+otelcol_exporter_sent_spans{exporter="debug"} 8
+otelcol_receiver_accepted_metric_points{receiver="hostmetrics",transport=""} 1746
+
+Press Ctrl+C to exit...
+OpenTelemetry Collector Status - Sat Nov  7 01:27:38 UTC 2026
+========================================
+Health Status:
+✓ Collector is healthy
+  {"status":"Server available","upSince":"2026-11-07T01:26:34.093901833Z","uptime":"1m4.733617068s"}
+
+Pipeline Statistics:
+-------------------
+✓ Pipeline statistics available
+  Check http://localhost:55679/debug/pipelinez for details
+
+Recent Metrics (sample):
+----------------------
+otelcol_exporter_in_flight_requests{data_type="metrics",exporter="debug"} 0
+otelcol_exporter_in_flight_requests{data_type="traces",exporter="debug"} 0
+otelcol_exporter_sent_metric_points{exporter="debug"} 2037
+otelcol_exporter_sent_spans{exporter="debug"} 8
+otelcol_receiver_accepted_metric_points{receiver="hostmetrics",transport=""} 2037
+
+Press Ctrl+C to exit...

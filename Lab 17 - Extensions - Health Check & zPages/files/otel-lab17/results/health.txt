@@ -1,0 +1,6 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Sat, 07 Nov 2026 01:26:37 GMT
+Content-Length: 96
+
+{"status":"Server available","upSince":"2026-11-07T01:26:34.093901833Z","uptime":"3.214771203s"}

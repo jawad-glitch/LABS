@@ -1,0 +1,6 @@
+Error: failed to get config: cannot unmarshal the configuration: decoding failed due to the following error(s):
+
+'exporters' the logging exporter has been deprecated, use the debug exporter instead
+'service.telemetry.metrics' decoding failed due to the following error(s):
+
+'migration.MetricsConfigV030' has invalid keys: address

@@ -1,0 +1,247 @@
+/app/app.py:38: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  'timestamp': datetime.utcnow().isoformat() + 'Z',
+2026-11-07 01:04:19,656 - sample-app - INFO - Application starting up
+2026-11-07 01:04:19,657 - sample-app - INFO - Processing request for user 5581
+2026-11-07 01:04:19,817 - sample-app - INFO - Querying database for user 5581
+2026-11-07 01:04:19,944 - sample-app - INFO - Generating response for user 5581
+2026-11-07 01:04:20,012 - sample-app - INFO - Request completed successfully for user 5581
+2026-11-07 01:04:20,012 - sample-app - INFO - Request 1 completed successfully
+2026-11-07 01:04:21,710 - sample-app - INFO - Processing request for user 9235
+2026-11-07 01:04:22,077 - sample-app - INFO - Querying database for user 9235
+2026-11-07 01:04:22,188 - sample-app - INFO - Generating response for user 9235
+2026-11-07 01:04:22,277 - sample-app - INFO - Request completed successfully for user 9235
+2026-11-07 01:04:22,278 - sample-app - INFO - Request 2 completed successfully
+2026-11-07 01:04:23,999 - sample-app - INFO - Processing request for user 3539
+2026-11-07 01:04:24,443 - sample-app - INFO - Querying database for user 3539
+2026-11-07 01:04:24,534 - sample-app - INFO - Generating response for user 3539
+2026-11-07 01:04:24,606 - sample-app - INFO - Request completed successfully for user 3539
+2026-11-07 01:04:24,606 - sample-app - INFO - Request 3 completed successfully
+2026-11-07 01:04:25,718 - sample-app - INFO - Processing request for user 9127
+2026-11-07 01:04:26,126 - sample-app - INFO - Querying database for user 9127
+2026-11-07 01:04:26,287 - sample-app - INFO - Generating response for user 9127
+2026-11-07 01:04:26,338 - sample-app - INFO - Request completed successfully for user 9127
+2026-11-07 01:04:26,339 - sample-app - INFO - Request 4 completed successfully
+2026-11-07 01:04:29,139 - sample-app - INFO - Processing request for user 2892
+2026-11-07 01:04:29,531 - sample-app - INFO - Querying database for user 2892
+2026-11-07 01:04:29,636 - sample-app - INFO - Generating response for user 2892
+2026-11-07 01:04:29,685 - sample-app - INFO - Request completed successfully for user 2892
+2026-11-07 01:04:29,685 - sample-app - INFO - Request 5 completed successfully
+2026-11-07 01:04:32,473 - sample-app - INFO - Processing request for user 1976
+2026-11-07 01:04:32,810 - sample-app - INFO - Querying database for user 1976
+2026-11-07 01:04:32,866 - sample-app - INFO - Generating response for user 1976
+2026-11-07 01:04:32,911 - sample-app - INFO - Request completed successfully for user 1976
+2026-11-07 01:04:32,911 - sample-app - INFO - Request 6 completed successfully
+2026-11-07 01:04:34,736 - sample-app - INFO - Processing request for user 3824
+2026-11-07 01:04:35,112 - sample-app - INFO - Querying database for user 3824
+2026-11-07 01:04:35,190 - sample-app - INFO - Generating response for user 3824
+2026-11-07 01:04:35,211 - sample-app - INFO - Request completed successfully for user 3824
+2026-11-07 01:04:35,212 - sample-app - INFO - Request 7 completed successfully
+2026-11-07 01:04:38,061 - sample-app - INFO - Processing request for user 9113
+2026-11-07 01:04:38,422 - sample-app - INFO - Querying database for user 9113
+2026-11-07 01:04:38,576 - sample-app - INFO - Generating response for user 9113
+2026-11-07 01:04:38,634 - sample-app - INFO - Request completed successfully for user 9113
+2026-11-07 01:04:38,634 - sample-app - INFO - Request 8 completed successfully
+2026-11-07 01:04:40,493 - sample-app - INFO - Processing request for user 8133
+2026-11-07 01:04:40,991 - sample-app - INFO - Querying database for user 8133
+2026-11-07 01:04:41,185 - sample-app - INFO - Generating response for user 8133
+2026-11-07 01:04:41,279 - sample-app - INFO - Request completed successfully for user 8133
+2026-11-07 01:04:41,279 - sample-app - INFO - Request 9 completed successfully
+2026-11-07 01:04:43,500 - sample-app - INFO - Processing request for user 7137
+2026-11-07 01:04:43,602 - sample-app - INFO - Querying database for user 7137
+2026-11-07 01:04:43,697 - sample-app - INFO - Generating response for user 7137
+2026-11-07 01:04:43,755 - sample-app - INFO - Request completed successfully for user 7137
+2026-11-07 01:04:43,755 - sample-app - INFO - Request 10 completed successfully
+2026-11-07 01:04:46,091 - sample-app - INFO - Processing request for user 4733
+2026-11-07 01:04:46,313 - sample-app - INFO - Querying database for user 4733
+2026-11-07 01:04:46,373 - sample-app - INFO - Generating response for user 4733
+2026-11-07 01:04:46,474 - sample-app - INFO - Request completed successfully for user 4733
+2026-11-07 01:04:46,474 - sample-app - INFO - Request 11 completed successfully
+2026-11-07 01:04:48,837 - sample-app - INFO - Processing request for user 7285
+2026-11-07 01:04:49,179 - sample-app - INFO - Querying database for user 7285
+2026-11-07 01:04:49,311 - sample-app - INFO - Generating response for user 7285
+2026-11-07 01:04:49,367 - sample-app - INFO - Request completed successfully for user 7285
+2026-11-07 01:04:49,368 - sample-app - INFO - Request 12 completed successfully
+2026-11-07 01:04:50,504 - sample-app - INFO - Processing request for user 3369
+2026-11-07 01:04:50,639 - sample-app - INFO - Querying database for user 3369
+2026-11-07 01:04:50,698 - sample-app - INFO - Generating response for user 3369
+2026-11-07 01:04:50,734 - sample-app - INFO - Request completed successfully for user 3369
+2026-11-07 01:04:50,734 - sample-app - INFO - Request 13 completed successfully
+2026-11-07 01:04:52,784 - sample-app - INFO - Processing request for user 1028
+2026-11-07 01:04:53,059 - sample-app - INFO - Querying database for user 1028
+2026-11-07 01:04:53,165 - sample-app - ERROR - Database query failed for user 1028
+2026-11-07 01:04:53,166 - sample-app - WARNING - Request 14 failed
+2026-11-07 01:04:55,959 - sample-app - INFO - Processing request for user 7764
+2026-11-07 01:04:56,322 - sample-app - INFO - Querying database for user 7764
+2026-11-07 01:04:56,411 - sample-app - ERROR - Database query failed for user 7764
+2026-11-07 01:04:56,411 - sample-app - WARNING - Request 15 failed
+2026-11-07 01:04:59,002 - sample-app - INFO - Processing request for user 6026
+2026-11-07 01:04:59,301 - sample-app - INFO - Querying database for user 6026
+2026-11-07 01:04:59,388 - sample-app - ERROR - Database query failed for user 6026
+2026-11-07 01:04:59,389 - sample-app - WARNING - Request 16 failed
+2026-11-07 01:05:01,281 - sample-app - INFO - Processing request for user 5712
+2026-11-07 01:05:01,574 - sample-app - INFO - Querying database for user 5712
+2026-11-07 01:05:01,695 - sample-app - INFO - Generating response for user 5712
+2026-11-07 01:05:01,738 - sample-app - INFO - Request completed successfully for user 5712
+2026-11-07 01:05:01,738 - sample-app - INFO - Request 17 completed successfully
+2026-11-07 01:05:03,618 - sample-app - INFO - Processing request for user 7103
+2026-11-07 01:05:04,106 - sample-app - INFO - Querying database for user 7103
+2026-11-07 01:05:04,229 - sample-app - INFO - Generating response for user 7103
+2026-11-07 01:05:04,290 - sample-app - INFO - Request completed successfully for user 7103
+2026-11-07 01:05:04,290 - sample-app - INFO - Request 18 completed successfully
+2026-11-07 01:05:07,118 - sample-app - INFO - Processing request for user 5524
+2026-11-07 01:05:07,438 - sample-app - INFO - Querying database for user 5524
+2026-11-07 01:05:07,575 - sample-app - INFO - Generating response for user 5524
+2026-11-07 01:05:07,637 - sample-app - INFO - Request completed successfully for user 5524
+2026-11-07 01:05:07,637 - sample-app - INFO - Request 19 completed successfully
+2026-11-07 01:05:10,500 - sample-app - INFO - Processing request for user 6261
+2026-11-07 01:05:10,793 - sample-app - INFO - Querying database for user 6261
+2026-11-07 01:05:10,925 - sample-app - INFO - Generating response for user 6261
+2026-11-07 01:05:10,957 - sample-app - INFO - Request completed successfully for user 6261
+2026-11-07 01:05:10,957 - sample-app - INFO - Request 20 completed successfully
+2026-11-07 01:05:11,964 - sample-app - INFO - Processing request for user 4927
+2026-11-07 01:05:12,222 - sample-app - INFO - Querying database for user 4927
+2026-11-07 01:05:12,286 - sample-app - INFO - Generating response for user 4927
+2026-11-07 01:05:12,369 - sample-app - INFO - Request completed successfully for user 4927
+2026-11-07 01:05:12,369 - sample-app - INFO - Request 21 completed successfully
+2026-11-07 01:05:14,642 - sample-app - INFO - Processing request for user 3571
+2026-11-07 01:05:14,829 - sample-app - INFO - Querying database for user 3571
+2026-11-07 01:05:14,959 - sample-app - INFO - Generating response for user 3571
+2026-11-07 01:05:14,996 - sample-app - INFO - Request completed successfully for user 3571
+2026-11-07 01:05:14,997 - sample-app - INFO - Request 22 completed successfully
+2026-11-07 01:05:17,061 - sample-app - INFO - Processing request for user 1289
+2026-11-07 01:05:17,422 - sample-app - INFO - Querying database for user 1289
+2026-11-07 01:05:17,490 - sample-app - ERROR - Database query failed for user 1289
+2026-11-07 01:05:17,490 - sample-app - WARNING - Request 23 failed
+2026-11-07 01:05:19,185 - sample-app - INFO - Processing request for user 8852
+2026-11-07 01:05:19,645 - sample-app - INFO - Querying database for user 8852
+2026-11-07 01:05:19,819 - sample-app - INFO - Generating response for user 8852
+2026-11-07 01:05:19,912 - sample-app - INFO - Request completed successfully for user 8852
+2026-11-07 01:05:19,912 - sample-app - INFO - Request 24 completed successfully
+2026-11-07 01:05:22,849 - sample-app - INFO - Processing request for user 8654
+2026-11-07 01:05:23,148 - sample-app - INFO - Querying database for user 8654
+2026-11-07 01:05:23,318 - sample-app - ERROR - Database query failed for user 8654
+2026-11-07 01:05:23,318 - sample-app - WARNING - Request 25 failed
+2026-11-07 01:05:25,322 - sample-app - INFO - Processing request for user 7982
+2026-11-07 01:05:25,728 - sample-app - INFO - Querying database for user 7982
+2026-11-07 01:05:25,865 - sample-app - INFO - Generating response for user 7982
+2026-11-07 01:05:25,923 - sample-app - INFO - Request completed successfully for user 7982
+2026-11-07 01:05:25,923 - sample-app - INFO - Request 26 completed successfully
+2026-11-07 01:05:27,581 - sample-app - INFO - Processing request for user 6401
+2026-11-07 01:05:27,917 - sample-app - INFO - Querying database for user 6401
+2026-11-07 01:05:27,989 - sample-app - INFO - Generating response for user 6401
+2026-11-07 01:05:28,045 - sample-app - INFO - Request completed successfully for user 6401
+2026-11-07 01:05:28,045 - sample-app - INFO - Request 27 completed successfully
+2026-11-07 01:05:30,141 - sample-app - INFO - Processing request for user 6702
+2026-11-07 01:05:30,547 - sample-app - INFO - Querying database for user 6702
+2026-11-07 01:05:30,651 - sample-app - INFO - Generating response for user 6702
+2026-11-07 01:05:30,737 - sample-app - INFO - Request completed successfully for user 6702
+2026-11-07 01:05:30,737 - sample-app - INFO - Request 28 completed successfully
+2026-11-07 01:05:33,476 - sample-app - INFO - Processing request for user 6090
+2026-11-07 01:05:33,724 - sample-app - INFO - Querying database for user 6090
+2026-11-07 01:05:33,822 - sample-app - INFO - Generating response for user 6090
+2026-11-07 01:05:33,898 - sample-app - INFO - Request completed successfully for user 6090
+2026-11-07 01:05:33,898 - sample-app - INFO - Request 29 completed successfully
+2026-11-07 01:05:36,713 - sample-app - INFO - Processing request for user 8049
+2026-11-07 01:05:36,822 - sample-app - INFO - Querying database for user 8049
+2026-11-07 01:05:36,958 - sample-app - INFO - Generating response for user 8049
+2026-11-07 01:05:37,045 - sample-app - INFO - Request completed successfully for user 8049
+2026-11-07 01:05:37,045 - sample-app - INFO - Request 30 completed successfully
+2026-11-07 01:05:38,154 - sample-app - INFO - Processing request for user 2256
+2026-11-07 01:05:38,612 - sample-app - INFO - Querying database for user 2256
+2026-11-07 01:05:38,698 - sample-app - INFO - Generating response for user 2256
+2026-11-07 01:05:38,794 - sample-app - INFO - Request completed successfully for user 2256
+2026-11-07 01:05:38,795 - sample-app - INFO - Request 31 completed successfully
+2026-11-07 01:05:39,945 - sample-app - INFO - Processing request for user 6108
+2026-11-07 01:05:40,173 - sample-app - INFO - Querying database for user 6108
+2026-11-07 01:05:40,369 - sample-app - INFO - Generating response for user 6108
+2026-11-07 01:05:40,459 - sample-app - INFO - Request completed successfully for user 6108
+2026-11-07 01:05:40,460 - sample-app - INFO - Request 32 completed successfully
+2026-11-07 01:05:42,251 - sample-app - INFO - Processing request for user 7228
+2026-11-07 01:05:42,681 - sample-app - INFO - Querying database for user 7228
+2026-11-07 01:05:42,750 - sample-app - INFO - Generating response for user 7228
+2026-11-07 01:05:42,790 - sample-app - INFO - Request completed successfully for user 7228
+2026-11-07 01:05:42,790 - sample-app - INFO - Request 33 completed successfully
+2026-11-07 01:05:44,143 - sample-app - INFO - Processing request for user 6977
+2026-11-07 01:05:44,480 - sample-app - INFO - Querying database for user 6977
+2026-11-07 01:05:44,635 - sample-app - INFO - Generating response for user 6977
+2026-11-07 01:05:44,723 - sample-app - INFO - Request completed successfully for user 6977
+2026-11-07 01:05:44,723 - sample-app - INFO - Request 34 completed successfully
+2026-11-07 01:05:47,111 - sample-app - INFO - Processing request for user 9335
+2026-11-07 01:05:47,381 - sample-app - INFO - Querying database for user 9335
+2026-11-07 01:05:47,438 - sample-app - INFO - Generating response for user 9335
+2026-11-07 01:05:47,488 - sample-app - INFO - Request completed successfully for user 9335
+2026-11-07 01:05:47,489 - sample-app - INFO - Request 35 completed successfully
+2026-11-07 01:05:49,283 - sample-app - INFO - Processing request for user 9879
+2026-11-07 01:05:49,729 - sample-app - INFO - Querying database for user 9879
+2026-11-07 01:05:49,849 - sample-app - INFO - Generating response for user 9879
+2026-11-07 01:05:49,873 - sample-app - INFO - Request completed successfully for user 9879
+2026-11-07 01:05:49,873 - sample-app - INFO - Request 36 completed successfully
+2026-11-07 01:05:52,839 - sample-app - INFO - Processing request for user 9179
+2026-11-07 01:05:53,190 - sample-app - INFO - Querying database for user 9179
+2026-11-07 01:05:53,346 - sample-app - INFO - Generating response for user 9179
+2026-11-07 01:05:53,423 - sample-app - INFO - Request completed successfully for user 9179
+2026-11-07 01:05:53,424 - sample-app - INFO - Request 37 completed successfully
+2026-11-07 01:05:54,804 - sample-app - INFO - Processing request for user 6831
+2026-11-07 01:05:55,072 - sample-app - INFO - Querying database for user 6831
+2026-11-07 01:05:55,205 - sample-app - INFO - Generating response for user 6831
+2026-11-07 01:05:55,257 - sample-app - INFO - Request completed successfully for user 6831
+2026-11-07 01:05:55,257 - sample-app - INFO - Request 38 completed successfully
+2026-11-07 01:05:57,011 - sample-app - INFO - Processing request for user 6855
+2026-11-07 01:05:57,145 - sample-app - INFO - Querying database for user 6855
+2026-11-07 01:05:57,332 - sample-app - ERROR - Database query failed for user 6855
+2026-11-07 01:05:57,332 - sample-app - WARNING - Request 39 failed
+2026-11-07 01:05:58,712 - sample-app - INFO - Processing request for user 6660
+2026-11-07 01:05:58,813 - sample-app - INFO - Querying database for user 6660
+2026-11-07 01:05:58,960 - sample-app - INFO - Generating response for user 6660
+2026-11-07 01:05:59,046 - sample-app - INFO - Request completed successfully for user 6660
+2026-11-07 01:05:59,047 - sample-app - INFO - Request 40 completed successfully
+2026-11-07 01:06:01,441 - sample-app - INFO - Processing request for user 4469
+2026-11-07 01:06:01,702 - sample-app - INFO - Querying database for user 4469
+2026-11-07 01:06:01,886 - sample-app - INFO - Generating response for user 4469
+2026-11-07 01:06:01,920 - sample-app - INFO - Request completed successfully for user 4469
+2026-11-07 01:06:01,921 - sample-app - INFO - Request 41 completed successfully
+2026-11-07 01:06:03,822 - sample-app - INFO - Processing request for user 6773
+2026-11-07 01:06:03,923 - sample-app - INFO - Querying database for user 6773
+2026-11-07 01:06:04,073 - sample-app - INFO - Generating response for user 6773
+2026-11-07 01:06:04,132 - sample-app - INFO - Request completed successfully for user 6773
+2026-11-07 01:06:04,132 - sample-app - INFO - Request 42 completed successfully
+2026-11-07 01:06:05,777 - sample-app - INFO - Processing request for user 9519
+2026-11-07 01:06:06,116 - sample-app - INFO - Querying database for user 9519
+2026-11-07 01:06:06,249 - sample-app - INFO - Generating response for user 9519
+2026-11-07 01:06:06,295 - sample-app - INFO - Request completed successfully for user 9519
+2026-11-07 01:06:06,295 - sample-app - INFO - Request 43 completed successfully
+2026-11-07 01:06:08,929 - sample-app - INFO - Processing request for user 7646
+2026-11-07 01:06:09,098 - sample-app - INFO - Querying database for user 7646
+2026-11-07 01:06:09,154 - sample-app - INFO - Generating response for user 7646
+2026-11-07 01:06:09,213 - sample-app - INFO - Request completed successfully for user 7646
+2026-11-07 01:06:09,213 - sample-app - INFO - Request 44 completed successfully
+2026-11-07 01:06:11,527 - sample-app - INFO - Processing request for user 9807
+2026-11-07 01:06:11,847 - sample-app - INFO - Querying database for user 9807
+2026-11-07 01:06:12,008 - sample-app - INFO - Generating response for user 9807
+2026-11-07 01:06:12,104 - sample-app - INFO - Request completed successfully for user 9807
+2026-11-07 01:06:12,104 - sample-app - INFO - Request 45 completed successfully
+2026-11-07 01:06:14,430 - sample-app - INFO - Processing request for user 4275
+2026-11-07 01:06:14,681 - sample-app - INFO - Querying database for user 4275
+2026-11-07 01:06:14,757 - sample-app - INFO - Generating response for user 4275
+2026-11-07 01:06:14,783 - sample-app - INFO - Request completed successfully for user 4275
+2026-11-07 01:06:14,783 - sample-app - INFO - Request 46 completed successfully
+2026-11-07 01:06:16,493 - sample-app - INFO - Processing request for user 6572
+2026-11-07 01:06:16,616 - sample-app - INFO - Querying database for user 6572
+2026-11-07 01:06:16,752 - sample-app - INFO - Generating response for user 6572
+2026-11-07 01:06:16,849 - sample-app - INFO - Request completed successfully for user 6572
+2026-11-07 01:06:16,849 - sample-app - INFO - Request 47 completed successfully
+2026-11-07 01:06:18,804 - sample-app - INFO - Processing request for user 3110
+2026-11-07 01:06:19,068 - sample-app - INFO - Querying database for user 3110
+2026-11-07 01:06:19,246 - sample-app - INFO - Generating response for user 3110
+2026-11-07 01:06:19,297 - sample-app - INFO - Request completed successfully for user 3110
+2026-11-07 01:06:19,297 - sample-app - INFO - Request 48 completed successfully
+2026-11-07 01:06:20,761 - sample-app - INFO - Processing request for user 6469
+2026-11-07 01:06:21,186 - sample-app - INFO - Querying database for user 6469
+2026-11-07 01:06:21,377 - sample-app - INFO - Generating response for user 6469
+2026-11-07 01:06:21,451 - sample-app - INFO - Request completed successfully for user 6469
+2026-11-07 01:06:21,452 - sample-app - INFO - Request 49 completed successfully
+2026-11-07 01:06:23,294 - sample-app - INFO - Processing request for user 2418
+2026-11-07 01:06:23,563 - sample-app - INFO - Querying database for user 2418
+2026-11-07 01:06:23,628 - sample-app - INFO - Generating response for user 2418
+2026-11-07 01:06:23,674 - sample-app - INFO - Request completed successfully for user 2418
+2026-11-07 01:06:23,674 - sample-app - INFO - Request 50 completed successfully

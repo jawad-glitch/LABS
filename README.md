@@ -17,3 +17,4 @@
 | [Lab 11 - Metrics to Prometheus](Lab%2011%20-%20Metrics%20to%20Prometheus/PROOF.md) | CORE: 11/12 PASS | 2026-11-07 00:41 |
 | [Lab 12 - Grafana Dashboards for OpenTelemetry](Lab%2012%20-%20Grafana%20Dashboards%20for%20OpenTelemetry/PROOF.md) | CORE: 12/12 PASS | 2026-11-07 00:49 |
 | [Lab 13 - Compare OTLP-gRPC vs OTLP-HTTP](Lab%2013%20-%20Compare%20OTLP-gRPC%20vs%20OTLP-HTTP/PROOF.md) | CORE: 9/9 PASS | 2026-11-07 00:59 |
+| [Lab 14 - Logs via Collector (Filelog Receiver)](Lab%2014%20-%20Logs%20via%20Collector%20%28Filelog%20Receiver%29/PROOF.md) | CORE: 10/12 PASS | 2026-11-07 01:06 |

@@ -1,0 +1,2 @@
+otelcol_process_uptime 134.734227676
+otelcol_receiver_accepted_log_records{receiver="filelog",transport=""} 245

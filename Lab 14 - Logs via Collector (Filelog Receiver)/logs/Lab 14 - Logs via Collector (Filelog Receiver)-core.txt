@@ -1,0 +1,14 @@
+========== CORE CHECKS (Lab 14 - Logs via Collector (Filelog Receiver), 2026-11-07 01:06:37 UTC) ==========
+PASS: Task 3: lab's original config rejected (removed logging/jaeger exporters); fixed config validates
+PASS: Task 4.1: stack deployed (jaeger + otel-collector running; sample-app built and ran)
+PASS: Task 2/4.3: app.log is valid JSON lines with 32-hex trace_id + 16-hex span_id
+PASS: Task 2: app ran its 50 requests (INFO + WARNING + ERROR levels present)
+PASS: Task 3: filelog parsed each line - message in Body, severity set, service.name=sample-app
+FAIL: Task 3: log record timestamp parsed from JSON (not epoch 0)
+PASS: Task 5: collector log records carry the app's trace_id (log-trace context set)
+PASS: Task 5.3: collector accepted log records (self-metric > 0)
+FAIL: Task 5.1: Jaeger lists service 'sample-app' (not overwritten to log-collector)
+PASS: Task 5.2: the trace_id from app.log exists in Jaeger with user_request/database_query spans
+PASS: Task 5.2: an ERROR log's trace is also in Jaeger
+PASS: Task 6.2: analyze_logs.sh report produced
+CORE: 10/12 PASS

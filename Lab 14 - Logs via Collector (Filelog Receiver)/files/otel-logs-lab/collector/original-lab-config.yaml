@@ -1,0 +1,33 @@
+receivers:
+  filelog:
+    include: ["/var/log/app/app.log"]
+    operators:
+      - type: json_parser
+        parse_from: attributes.message
+        parse_to: attributes
+  otlp:
+    protocols:
+      grpc:
+processors:
+  resource:
+    attributes:
+      - key: service.name
+        value: "log-collector"
+        action: upsert
+exporters:
+  logging:
+    loglevel: info
+  jaeger:
+    endpoint: jaeger:14250
+    tls:
+      insecure: true
+service:
+  pipelines:
+    logs:
+      receivers: [filelog]
+      processors: [resource]
+      exporters: [logging]
+    traces:
+      receivers: [otlp]
+      processors: [resource]
+      exporters: [jaeger, logging]

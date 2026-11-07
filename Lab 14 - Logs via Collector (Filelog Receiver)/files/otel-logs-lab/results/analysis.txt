@@ -1,0 +1,15 @@
+=== Log Analysis Report ===
+Total log entries: 245
+
+=== Log Levels ===
+      6 ERROR
+    233 INFO
+      6 WARNING
+
+=== Unique Trace IDs ===
+Total unique traces: 50
+
+=== Recent Error Logs ===
+  "span_id": "824e02f27c65055f",
+  "service": "sample-app"
+}

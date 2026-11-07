@@ -1,0 +1,1 @@
+jaeger trace e9a9b44cddf4296b65ba7787575b2ae6 | services ['sample-app'] | spans ['database_query', 'response_generation', 'user_request']

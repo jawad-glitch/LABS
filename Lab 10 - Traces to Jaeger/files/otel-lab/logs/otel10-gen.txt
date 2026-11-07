@@ -1,0 +1,22 @@
+Generating traces for Jaeger demonstration...
+Made request to user endpoint (ID: 3)
+Made request to home endpoint
+Made request to user endpoint (ID: 4)
+Made request to home endpoint
+Made request to non-existent endpoint (404)
+Made request to non-existent endpoint (404)
+Made request to non-existent endpoint (404)
+Made request to home endpoint
+Made request to home endpoint
+Made request to user endpoint (ID: 2)
+Made request to slow endpoint
+Made request to slow endpoint
+Made request to user endpoint (ID: 1)
+Made request to home endpoint
+Made request to non-existent endpoint (404)
+Made request to user endpoint (ID: 8)
+Made request to home endpoint
+Made request to non-existent endpoint (404)
+Made request to user endpoint (ID: 2)
+Made request to non-existent endpoint (404)
+Trace generation completed!

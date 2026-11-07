@@ -1,0 +1,7 @@
+========== CORE CHECKS (Lab 10 - Traces to Jaeger, 2026-11-07 00:36:54 UTC) ==========
+PASS: Task 1: standalone Jaeger served its UI on :16686
+PASS: Task 2: lab's original config rejected (removed 'jaeger' exporter); fixed config validates
+PASS: Task 2.5: compose stack running (jaeger + otel-collector)
+PASS: Task 3: app deps installed in venv and app responded
+PASS: Task 4: traffic script completed (20 requests)
+FAIL: Task 4.4: Jaeger lists service 'trace-app'

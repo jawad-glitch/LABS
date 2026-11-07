@@ -1,0 +1,2 @@
+otelcol_exporter_sent_spans{exporter="debug"} 92
+otelcol_exporter_sent_spans{exporter="otlp/jaeger",server_address="jaeger",server_port="4317"} 92

@@ -13,3 +13,4 @@
 | [Lab 7 - Metrics (Counter & Histogram)](Lab%207%20-%20Metrics%20%28Counter%20&%20Histogram%29/PROOF.md) | CORE: 11/11 PASS | 2026-11-07 00:15 |
 | [Lab 8 - Correlated Logs with Trace IDs](Lab%208%20-%20Correlated%20Logs%20with%20Trace%20IDs/PROOF.md) | CORE: 10/10 PASS | 2026-11-07 00:21 |
 | [Lab 9 - Collector Pipelines & Processors](Lab%209%20-%20Collector%20Pipelines%20&%20Processors/PROOF.md) | CORE: 11/11 PASS | 2026-11-07 00:27 |
+| [Lab 10 - Traces to Jaeger](Lab%2010%20-%20Traces%20to%20Jaeger/PROOF.md) | FAIL: Task 4.4: Jaeger lists service 'trace-app' | 2026-11-07 00:37 |

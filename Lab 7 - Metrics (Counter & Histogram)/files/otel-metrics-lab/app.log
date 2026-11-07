@@ -1,0 +1,74 @@
+Starting metrics demo application...
+Available endpoints:
+  - http://localhost:5000/fast
+  - http://localhost:5000/slow
+  - http://localhost:5000/error
+  - http://localhost:5000/health
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.10.84:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+Starting metrics demo application...
+Available endpoints:
+  - http://localhost:5000/fast
+  - http://localhost:5000/slow
+  - http://localhost:5000/error
+  - http://localhost:5000/health
+ * Debugger is active!
+ * Debugger PIN: 209-586-086
+127.0.0.1 - - [07/Nov/2026 00:13:12] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:15] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:16] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:17] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:19] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:20] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:23] "GET /slow HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:26] "GET /slow HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:29] "GET /slow HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:31] "[35m[1mGET /error HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 00:13:33] "[35m[1mGET /error HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 00:13:34] "[35m[1mGET /error HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 00:13:36] "GET /error HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:37] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:42] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:42] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:42] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:42] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:42] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:42] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:42] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:42] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:42] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:42] "GET /fast HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:46] "GET /slow HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:46] "GET /slow HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:47] "GET /slow HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:47] "GET /slow HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:47] "GET /slow HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:49] "GET /error HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:49] "GET /error HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:49] "GET /error HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:49] "GET /error HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:49] "[35m[1mGET /error HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Nov/2026 00:13:49] "GET /error HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:50] "GET /error HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:50] "GET /error HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:13:52] "GET /health HTTP/1.1" 200 -

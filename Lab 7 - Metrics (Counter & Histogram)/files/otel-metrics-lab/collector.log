@@ -1,0 +1,2529 @@
+2026-11-07T00:13:09.192Z	info	otelconftelemetry/tracer.go:47	Internal trace telemetry disabled	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-07T00:13:09.195Z	info	service@v0.164.0/service.go:233	Starting otelcol...	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "Version": "0.164.0", "NumCPU": 2}
+2026-11-07T00:13:09.195Z	info	extensions/extensions.go:43	Starting extensions...	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-07T00:13:09.195Z	info	otlpreceiver@v0.164.0/otlp.go:120	Starting GRPC server	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4317"}
+2026-11-07T00:13:09.195Z	info	otlpreceiver@v0.164.0/otlp.go:175	Starting HTTP server	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4318"}
+2026-11-07T00:13:09.195Z	info	service@v0.164.0/service.go:256	Everything is ready. Begin running and processing data.	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-07T00:13:18.203Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 4}
+2026-11-07T00:13:18.204Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:13:17.459611203 +0000 UTC
+Value: 1
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:13:17.459611203 +0000 UTC
+Value: 2
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:13:17.459611203 +0000 UTC
+Count: 1
+Sum: 0.000000
+Min: 0.000000
+Max: 0.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 1
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:13:17.459611203 +0000 UTC
+Count: 2
+Sum: 0.479869
+Min: 0.206897
+Max: 0.272971
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 2
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:13:23.207Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 4}
+2026-11-07T00:13:23.208Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:13:22.466170155 +0000 UTC
+Value: 1
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:13:22.466170155 +0000 UTC
+Value: 5
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:13:22.466170155 +0000 UTC
+Count: 1
+Sum: 0.000000
+Min: 0.000000
+Max: 0.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 1
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:13:22.466170155 +0000 UTC
+Count: 5
+Sum: 0.986722
+Min: 0.106173
+Max: 0.272971
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 5
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:13:28.211Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 6}
+2026-11-07T00:13:28.211Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:13:27.468354797 +0000 UTC
+Value: 1
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:13:27.468354797 +0000 UTC
+Value: 5
+NumberDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:23.846738346 +0000 UTC
+Timestamp: 2026-11-07 00:13:27.468354797 +0000 UTC
+Value: 2
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:13:27.468354797 +0000 UTC
+Count: 1
+Sum: 0.000000
+Min: 0.000000
+Max: 0.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 1
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:13:27.468354797 +0000 UTC
+Count: 5
+Sum: 0.986722
+Min: 0.106173
+Max: 0.272971
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 5
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:23.846813817 +0000 UTC
+Timestamp: 2026-11-07 00:13:27.468354797 +0000 UTC
+Count: 2
+Sum: 3.161254
+Min: 1.444808
+Max: 1.716445
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 2
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:13:33.213Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 8}
+2026-11-07T00:13:33.213Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:13:32.47148199 +0000 UTC
+Value: 1
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:13:32.47148199 +0000 UTC
+Value: 5
+NumberDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:23.846738346 +0000 UTC
+Timestamp: 2026-11-07 00:13:32.47148199 +0000 UTC
+Value: 3
+NumberDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(500)
+StartTimestamp: 2026-11-07 00:13:31.905118475 +0000 UTC
+Timestamp: 2026-11-07 00:13:32.47148199 +0000 UTC
+Value: 1
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:13:32.47148199 +0000 UTC
+Count: 1
+Sum: 0.000000
+Min: 0.000000
+Max: 0.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 1
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:13:32.47148199 +0000 UTC
+Count: 5
+Sum: 0.986722
+Min: 0.106173
+Max: 0.272971
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 5
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:23.846813817 +0000 UTC
+Timestamp: 2026-11-07 00:13:32.47148199 +0000 UTC
+Count: 3
+Sum: 5.008931
+Min: 1.444808
+Max: 1.847678
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 3
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:31.905200636 +0000 UTC
+Timestamp: 2026-11-07 00:13:32.47148199 +0000 UTC
+Count: 1
+Sum: 0.309988
+Min: 0.309988
+Max: 0.309988
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 1
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:13:38.218Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 9}
+2026-11-07T00:13:38.219Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:13:37.473589367 +0000 UTC
+Value: 1
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:13:37.473589367 +0000 UTC
+Value: 5
+NumberDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:23.846738346 +0000 UTC
+Timestamp: 2026-11-07 00:13:37.473589367 +0000 UTC
+Value: 3
+NumberDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(500)
+StartTimestamp: 2026-11-07 00:13:31.905118475 +0000 UTC
+Timestamp: 2026-11-07 00:13:37.473589367 +0000 UTC
+Value: 3
+NumberDataPoints #4
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:36.189304456 +0000 UTC
+Timestamp: 2026-11-07 00:13:37.473589367 +0000 UTC
+Value: 1
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:13:37.473589367 +0000 UTC
+Count: 1
+Sum: 0.000000
+Min: 0.000000
+Max: 0.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 1
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:13:37.473589367 +0000 UTC
+Count: 5
+Sum: 0.986722
+Min: 0.106173
+Max: 0.272971
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 5
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:23.846813817 +0000 UTC
+Timestamp: 2026-11-07 00:13:37.473589367 +0000 UTC
+Count: 3
+Sum: 5.008931
+Min: 1.444808
+Max: 1.847678
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 3
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:31.905200636 +0000 UTC
+Timestamp: 2026-11-07 00:13:37.473589367 +0000 UTC
+Count: 4
+Sum: 1.419288
+Min: 0.251434
+Max: 0.447987
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 4
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:13:43.221Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 9}
+2026-11-07T00:13:43.221Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:13:42.476450915 +0000 UTC
+Value: 2
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:13:42.476450915 +0000 UTC
+Value: 5
+NumberDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:23.846738346 +0000 UTC
+Timestamp: 2026-11-07 00:13:42.476450915 +0000 UTC
+Value: 3
+NumberDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(500)
+StartTimestamp: 2026-11-07 00:13:31.905118475 +0000 UTC
+Timestamp: 2026-11-07 00:13:42.476450915 +0000 UTC
+Value: 3
+NumberDataPoints #4
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:36.189304456 +0000 UTC
+Timestamp: 2026-11-07 00:13:42.476450915 +0000 UTC
+Value: 1
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:13:42.476450915 +0000 UTC
+Count: 2
+Sum: 0.000001
+Min: 0.000000
+Max: 0.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 2
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:13:42.476450915 +0000 UTC
+Count: 5
+Sum: 0.986722
+Min: 0.106173
+Max: 0.272971
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 5
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:23.846813817 +0000 UTC
+Timestamp: 2026-11-07 00:13:42.476450915 +0000 UTC
+Count: 3
+Sum: 5.008931
+Min: 1.444808
+Max: 1.847678
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 3
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:31.905200636 +0000 UTC
+Timestamp: 2026-11-07 00:13:42.476450915 +0000 UTC
+Count: 4
+Sum: 1.419288
+Min: 0.251434
+Max: 0.447987
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 4
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:13:48.223Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 9}
+2026-11-07T00:13:48.223Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:13:47.482086262 +0000 UTC
+Value: 2
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:13:47.482086262 +0000 UTC
+Value: 15
+NumberDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:23.846738346 +0000 UTC
+Timestamp: 2026-11-07 00:13:47.482086262 +0000 UTC
+Value: 7
+NumberDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(500)
+StartTimestamp: 2026-11-07 00:13:31.905118475 +0000 UTC
+Timestamp: 2026-11-07 00:13:47.482086262 +0000 UTC
+Value: 3
+NumberDataPoints #4
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:36.189304456 +0000 UTC
+Timestamp: 2026-11-07 00:13:47.482086262 +0000 UTC
+Value: 1
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:13:47.482086262 +0000 UTC
+Count: 2
+Sum: 0.000001
+Min: 0.000000
+Max: 0.000000
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 2
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:13:47.482086262 +0000 UTC
+Count: 15
+Sum: 2.903854
+Min: 0.106173
+Max: 0.278111
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 15
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:23.846813817 +0000 UTC
+Timestamp: 2026-11-07 00:13:47.482086262 +0000 UTC
+Count: 7
+Sum: 12.481876
+Min: 1.346362
+Max: 2.298934
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 7
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:31.905200636 +0000 UTC
+Timestamp: 2026-11-07 00:13:47.482086262 +0000 UTC
+Count: 4
+Sum: 1.419288
+Min: 0.251434
+Max: 0.447987
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 4
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:13:53.237Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 9}
+2026-11-07T00:13:53.237Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:13:52.484514381 +0000 UTC
+Value: 17
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:13:52.484514381 +0000 UTC
+Value: 15
+NumberDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:23.846738346 +0000 UTC
+Timestamp: 2026-11-07 00:13:52.484514381 +0000 UTC
+Value: 8
+NumberDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(500)
+StartTimestamp: 2026-11-07 00:13:31.905118475 +0000 UTC
+Timestamp: 2026-11-07 00:13:52.484514381 +0000 UTC
+Value: 4
+NumberDataPoints #4
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:36.189304456 +0000 UTC
+Timestamp: 2026-11-07 00:13:52.484514381 +0000 UTC
+Value: 8
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:13:52.484514381 +0000 UTC
+Count: 17
+Sum: 0.000008
+Min: 0.000000
+Max: 0.000001
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 17
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:13:52.484514381 +0000 UTC
+Count: 15
+Sum: 2.903854
+Min: 0.106173
+Max: 0.278111
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 15
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:23.846813817 +0000 UTC
+Timestamp: 2026-11-07 00:13:52.484514381 +0000 UTC
+Count: 8
+Sum: 14.967872
+Min: 1.346362
+Max: 2.485995
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 8
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:31.905200636 +0000 UTC
+Timestamp: 2026-11-07 00:13:52.484514381 +0000 UTC
+Count: 12
+Sum: 4.010930
+Min: 0.207313
+Max: 0.447987
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 12
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:13:58.240Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 9}
+2026-11-07T00:13:58.241Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:13:57.486630845 +0000 UTC
+Value: 17
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:13:57.486630845 +0000 UTC
+Value: 15
+NumberDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:23.846738346 +0000 UTC
+Timestamp: 2026-11-07 00:13:57.486630845 +0000 UTC
+Value: 8
+NumberDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(500)
+StartTimestamp: 2026-11-07 00:13:31.905118475 +0000 UTC
+Timestamp: 2026-11-07 00:13:57.486630845 +0000 UTC
+Value: 4
+NumberDataPoints #4
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:36.189304456 +0000 UTC
+Timestamp: 2026-11-07 00:13:57.486630845 +0000 UTC
+Value: 8
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:13:57.486630845 +0000 UTC
+Count: 17
+Sum: 0.000008
+Min: 0.000000
+Max: 0.000001
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 17
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:13:57.486630845 +0000 UTC
+Count: 15
+Sum: 2.903854
+Min: 0.106173
+Max: 0.278111
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 15
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:23.846813817 +0000 UTC
+Timestamp: 2026-11-07 00:13:57.486630845 +0000 UTC
+Count: 8
+Sum: 14.967872
+Min: 1.346362
+Max: 2.485995
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 8
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:31.905200636 +0000 UTC
+Timestamp: 2026-11-07 00:13:57.486630845 +0000 UTC
+Count: 12
+Sum: 4.010930
+Min: 0.207313
+Max: 0.447987
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 12
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:14:03.242Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 9}
+2026-11-07T00:14:03.242Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:14:02.488666528 +0000 UTC
+Value: 17
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:14:02.488666528 +0000 UTC
+Value: 15
+NumberDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:23.846738346 +0000 UTC
+Timestamp: 2026-11-07 00:14:02.488666528 +0000 UTC
+Value: 8
+NumberDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(500)
+StartTimestamp: 2026-11-07 00:13:31.905118475 +0000 UTC
+Timestamp: 2026-11-07 00:14:02.488666528 +0000 UTC
+Value: 4
+NumberDataPoints #4
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:36.189304456 +0000 UTC
+Timestamp: 2026-11-07 00:14:02.488666528 +0000 UTC
+Value: 8
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:14:02.488666528 +0000 UTC
+Count: 17
+Sum: 0.000008
+Min: 0.000000
+Max: 0.000001
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 17
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:14:02.488666528 +0000 UTC
+Count: 15
+Sum: 2.903854
+Min: 0.106173
+Max: 0.278111
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 15
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:23.846813817 +0000 UTC
+Timestamp: 2026-11-07 00:14:02.488666528 +0000 UTC
+Count: 8
+Sum: 14.967872
+Min: 1.346362
+Max: 2.485995
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 8
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:31.905200636 +0000 UTC
+Timestamp: 2026-11-07 00:14:02.488666528 +0000 UTC
+Count: 12
+Sum: 4.010930
+Min: 0.207313
+Max: 0.447987
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 12
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:14:08.251Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 9}
+2026-11-07T00:14:08.251Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:14:07.490937526 +0000 UTC
+Value: 17
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:14:07.490937526 +0000 UTC
+Value: 15
+NumberDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:23.846738346 +0000 UTC
+Timestamp: 2026-11-07 00:14:07.490937526 +0000 UTC
+Value: 8
+NumberDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(500)
+StartTimestamp: 2026-11-07 00:13:31.905118475 +0000 UTC
+Timestamp: 2026-11-07 00:14:07.490937526 +0000 UTC
+Value: 4
+NumberDataPoints #4
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:36.189304456 +0000 UTC
+Timestamp: 2026-11-07 00:14:07.490937526 +0000 UTC
+Value: 8
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:14:07.490937526 +0000 UTC
+Count: 17
+Sum: 0.000008
+Min: 0.000000
+Max: 0.000001
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 17
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:14:07.490937526 +0000 UTC
+Count: 15
+Sum: 2.903854
+Min: 0.106173
+Max: 0.278111
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 15
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:23.846813817 +0000 UTC
+Timestamp: 2026-11-07 00:14:07.490937526 +0000 UTC
+Count: 8
+Sum: 14.967872
+Min: 1.346362
+Max: 2.485995
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 8
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:31.905200636 +0000 UTC
+Timestamp: 2026-11-07 00:14:07.490937526 +0000 UTC
+Count: 12
+Sum: 4.010930
+Min: 0.207313
+Max: 0.447987
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 12
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:14:13.254Z	info	Metrics	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "resource metrics": 1, "metrics": 2, "data points": 9}
+2026-11-07T00:14:13.254Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> telemetry.sdk.language: Str(python)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.45.2)
+     -> service.instance.id: Str(00da2d03-2e09-4b70-a4d8-31043f11bc00)
+     -> service.name: Str(metrics-demo-app)
+     -> service.version: Str(1.0.0)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope demo-meter 1.0.0
+Metric #0
+Descriptor:
+     -> Name: http_requests_total
+     -> Description: Total number of HTTP requests
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:12.500023648 +0000 UTC
+Timestamp: 2026-11-07 00:14:12.493443262 +0000 UTC
+Value: 17
+NumberDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:15.369109845 +0000 UTC
+Timestamp: 2026-11-07 00:14:12.493443262 +0000 UTC
+Value: 15
+NumberDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:23.846738346 +0000 UTC
+Timestamp: 2026-11-07 00:14:12.493443262 +0000 UTC
+Value: 8
+NumberDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(500)
+StartTimestamp: 2026-11-07 00:13:31.905118475 +0000 UTC
+Timestamp: 2026-11-07 00:14:12.493443262 +0000 UTC
+Value: 4
+NumberDataPoints #4
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+     -> status: Str(200)
+StartTimestamp: 2026-11-07 00:13:36.189304456 +0000 UTC
+Timestamp: 2026-11-07 00:14:12.493443262 +0000 UTC
+Value: 8
+Metric #1
+Descriptor:
+     -> Name: http_request_duration_seconds
+     -> Description: Duration of HTTP requests in seconds
+     -> Unit: s
+     -> DataType: Histogram
+     -> AggregationTemporality: Cumulative
+HistogramDataPoints #0
+Data point attributes:
+     -> endpoint: Str(/health)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:12.50016879 +0000 UTC
+Timestamp: 2026-11-07 00:14:12.493443262 +0000 UTC
+Count: 17
+Sum: 0.000008
+Min: 0.000000
+Max: 0.000001
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 17
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #1
+Data point attributes:
+     -> endpoint: Str(/fast)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:15.369201156 +0000 UTC
+Timestamp: 2026-11-07 00:14:12.493443262 +0000 UTC
+Count: 15
+Sum: 2.903854
+Min: 0.106173
+Max: 0.278111
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 15
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #2
+Data point attributes:
+     -> endpoint: Str(/slow)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:23.846813817 +0000 UTC
+Timestamp: 2026-11-07 00:14:12.493443262 +0000 UTC
+Count: 8
+Sum: 14.967872
+Min: 1.346362
+Max: 2.485995
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 8
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+HistogramDataPoints #3
+Data point attributes:
+     -> endpoint: Str(/error)
+     -> method: Str(GET)
+StartTimestamp: 2026-11-07 00:13:31.905200636 +0000 UTC
+Timestamp: 2026-11-07 00:14:12.493443262 +0000 UTC
+Count: 12
+Sum: 4.010930
+Min: 0.207313
+Max: 0.447987
+ExplicitBounds #0: 0.000000
+ExplicitBounds #1: 5.000000
+ExplicitBounds #2: 10.000000
+ExplicitBounds #3: 25.000000
+ExplicitBounds #4: 50.000000
+ExplicitBounds #5: 75.000000
+ExplicitBounds #6: 100.000000
+ExplicitBounds #7: 250.000000
+ExplicitBounds #8: 500.000000
+ExplicitBounds #9: 750.000000
+ExplicitBounds #10: 1000.000000
+ExplicitBounds #11: 2500.000000
+ExplicitBounds #12: 5000.000000
+ExplicitBounds #13: 7500.000000
+ExplicitBounds #14: 10000.000000
+Buckets #0, Count: 0
+Buckets #1, Count: 12
+Buckets #2, Count: 0
+Buckets #3, Count: 0
+Buckets #4, Count: 0
+Buckets #5, Count: 0
+Buckets #6, Count: 0
+Buckets #7, Count: 0
+Buckets #8, Count: 0
+Buckets #9, Count: 0
+Buckets #10, Count: 0
+Buckets #11, Count: 0
+Buckets #12, Count: 0
+Buckets #13, Count: 0
+Buckets #14, Count: 0
+Buckets #15, Count: 0
+	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-11-07T00:14:16.237Z	info	otelcol@v0.164.0/collector.go:476	Received signal from OS	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}, "signal": "terminated"}
+2026-11-07T00:14:16.237Z	info	service@v0.164.0/service.go:294	Starting shutdown...	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-07T00:14:16.242Z	info	extensions/extensions.go:72	Stopping extensions...	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}}
+2026-11-07T00:14:16.242Z	info	service@v0.164.0/service.go:308	Shutdown complete.	{"resource": {"service.instance.id": "b75fa20f-b519-42df-bdd8-f596d698c1ad", "service.name": "otelcol", "service.version": "0.164.0"}}

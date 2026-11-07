@@ -1,0 +1,7 @@
+total 24
+drwxrwxr-x  6 ubuntu ubuntu 4096 Nov  7 15:23 .
+drwxr-x--- 20 ubuntu ubuntu 4096 Nov  7 15:23 ..
+drwxrwxr-x  2 ubuntu ubuntu 4096 Nov  7 15:22 results
+drwxrwxr-x  3 ubuntu ubuntu 4096 Nov  7 15:23 validator1
+drwxrwxr-x  3 ubuntu ubuntu 4096 Nov  7 15:23 validator2
+drwxrwxr-x  3 ubuntu ubuntu 4096 Nov  7 15:23 validator3

@@ -1,0 +1,1 @@
+target nodejs-app http://host.docker.internal:9090/metrics -> down

@@ -1,0 +1,3 @@
+{"level":"info","message":"Work request started","latencyMs":null}
+{"level":"warn","message":"Injecting artificial latency","latencyMs":2000}
+{"level":"info","message":"Work request completed","latencyMs":null}

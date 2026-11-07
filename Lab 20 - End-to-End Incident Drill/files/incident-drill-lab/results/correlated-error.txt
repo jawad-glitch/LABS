@@ -1,0 +1,4 @@
+{"level":"info","message":"Work request started","error":null}
+{"level":"warn","message":"Injecting artificial latency","error":null}
+{"level":"error","message":"Injected error occurred","error":null}
+{"level":"error","message":"Work request failed","error":"Simulated error for testing"}

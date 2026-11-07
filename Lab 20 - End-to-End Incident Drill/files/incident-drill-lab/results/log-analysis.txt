@@ -1,0 +1,13 @@
+=== Log Analysis Report ===
+Total log entries: 95
+Latency injection events: 16
+Error events: 6
+Completed requests: 32
+Failed requests: 3
+
+=== Recent High Latency Events ===
+2026-11-07T01:49:11.362Z - Trace: c696c778486d9063e33d52dbd557ccfc - Latency: 2000ms
+2026-11-07T01:49:15.434Z - Trace: 112941a8f2ec89792f556799dc9ad402 - Latency: 2000ms
+2026-11-07T01:49:19.506Z - Trace: e606279c27c3aaa03f5d7dfda31f2577 - Latency: 2000ms
+2026-11-07T01:49:23.579Z - Trace: 99bec44aaf0a57163b37081baf662476 - Latency: 2000ms
+2026-11-07T01:49:27.659Z - Trace: 35b298faee110f8832d8b5d2c8a5ca28 - Latency: 2000ms

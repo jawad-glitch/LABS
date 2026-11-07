@@ -1,0 +1,33 @@
+Generating traffic with injected issues...
+Request 1:
+Time: 2.054448s, Status: 200
+Request 2:
+Time: 2.057015s, Status: 500
+Request 3:
+Time: 2.063190s, Status: 200
+Request 4:
+Time: 2.056164s, Status: 200
+Request 5:
+Time: 2.056514s, Status: 200
+Request 6:
+Time: 2.056473s, Status: 200
+Request 7:
+Time: 2.056746s, Status: 200
+Request 8:
+Time: 2.055016s, Status: 200
+Request 9:
+Time: 2.055411s, Status: 200
+Request 10:
+Time: 2.054950s, Status: 200
+Request 11:
+Time: 2.057596s, Status: 500
+Request 12:
+Time: 2.054396s, Status: 200
+Request 13:
+Time: 2.054362s, Status: 500
+Request 14:
+Time: 2.053743s, Status: 200
+Request 15:
+Time: 2.054959s, Status: 200
+Request 16:
+Time: 2.087025s, Status: 200

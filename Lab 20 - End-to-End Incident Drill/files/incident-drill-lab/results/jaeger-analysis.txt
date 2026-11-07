@@ -1,0 +1,4 @@
+/work traces: 35 | normal(<0.5s): 20 | slow(>=2s): 15 | failed(error): 3
+example normal trace: 53 ms
+SLOW_TRACE=8bdfa4a64a137002ff81687c72695f8f root=GET /work 2061 ms spans=['GET /work', 'middleware - <anonymous>', 'request handler - /work']
+ERROR_TRACE=f5fb8cc213d2e07db36a28aad5190448 2059 ms

@@ -1,0 +1,33 @@
+Verifying system recovery...
+Generating normal traffic to confirm latency is back to baseline...
+Recovery test 1:
+Time: 0.053113s, Status: 200
+Recovery test 2:
+Time: 0.053415s, Status: 200
+Recovery test 3:
+Time: 0.054039s, Status: 200
+Recovery test 4:
+Time: 0.053223s, Status: 200
+Recovery test 5:
+Time: 0.053481s, Status: 200
+Recovery test 6:
+Time: 0.053130s, Status: 200
+Recovery test 7:
+Time: 0.053305s, Status: 200
+Recovery test 8:
+Time: 0.053164s, Status: 200
+Recovery test 9:
+Time: 0.053735s, Status: 200
+Recovery test 10:
+Time: 0.053484s, Status: 200
+Recovery test 11:
+Time: 0.054528s, Status: 200
+Recovery test 12:
+Time: 0.053008s, Status: 200
+Recovery test 13:
+Time: 0.052502s, Status: 200
+Recovery test 14:
+Time: 0.053794s, Status: 200
+Recovery test 15:
+Time: 0.051907s, Status: 200
+Recovery verification complete

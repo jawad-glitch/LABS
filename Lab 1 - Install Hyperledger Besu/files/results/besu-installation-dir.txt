@@ -1,0 +1,5 @@
+total 88164
+drwxrwxr-x  3 ubuntu ubuntu     4096 Nov  7 17:18 .
+drwxr-x--- 19 ubuntu ubuntu     4096 Nov  7 17:18 ..
+-rw-rw-r--  1 ubuntu ubuntu 90266264 Nov  7 17:18 besu-1.5.5.tar.gz
+drwxrwxr-x  2 ubuntu ubuntu     4096 Nov  7 17:18 results

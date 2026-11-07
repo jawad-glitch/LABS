@@ -24,7 +24,6 @@
 | [Lab 18 - Multi-Pipeline Export (Jaeger + Zipkin)](Lab%2018%20-%20Multi-Pipeline%20Export%20%28Jaeger%20+%20Zipkin%29/PROOF.md) | CORE: 12/12 PASS | 2026-11-07 01:36 |
 | [Lab 19 - CI-Style Validation Script](Lab%2019%20-%20CI-Style%20Validation%20Script/PROOF.md) | no core-check file | 2026-11-07 01:42 |
 | [Lab 20 - End-to-End Incident Drill](Lab%2020%20-%20End-to-End%20Incident%20Drill/PROOF.md) | CORE: 12/14 PASS | 2026-11-07 01:50 |
-| [Lab 1 - Install Hyperledger Besu](Lab%201%20-%20Install%20Hyperledger%20Besu/PROOF.md) | CORE: 9/9 PASS | 2026-11-07 13:16 |
 | [Lab 2 - Run Besu Node](Lab%202%20-%20Run%20Besu%20Node/PROOF.md) | CORE RESULT: 10/10 PASS | 2026-11-07 13:29 |
 | [Lab 3 - Besu CLI Configuration](Lab%203%20-%20Besu%20CLI%20Configuration/PROOF.md) | CORE: 9/12 PASS | 2026-11-07 14:22 |
 | [Lab 4 - Set Up Logging and Data Directories](Lab%204%20-%20Set%20Up%20Logging%20and%20Data%20Directories/PROOF.md) | CORE: 11/12 PASS | 2026-11-07 14:39 |
@@ -41,3 +40,4 @@
 | [Lab 15 - Use Besu GraphQL API](Lab%2015%20-%20Use%20Besu%20GraphQL%20API/PROOF.md) | CORE: 14/18 PASS | 2026-11-07 16:25 |
 | [Lab 16 - Implement Permissioning for Accounts](Lab%2016%20-%20Implement%20Permissioning%20for%20Accounts/PROOF.md) | none |
 | [Lab 17 - Handle Node Sync Issues](Lab%2017%20-%20Handle%20Node%20Sync%20Issues/PROOF.md) | none |
+| [Lab 1 - Install Hyperledger Besu](Lab%201%20-%20Install%20Hyperledger%20Besu/PROOF.md) | CORE: 10/10 PASS | 2026-11-07 17:19 |

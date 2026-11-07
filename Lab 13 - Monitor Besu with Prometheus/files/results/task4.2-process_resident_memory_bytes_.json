@@ -1,0 +1,19 @@
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "process_resident_memory_bytes",
+                    "instance": "localhost:9090",
+                    "job": "prometheus"
+                },
+                "value": [
+                    1794067567.518,
+                    "98861056"
+                ]
+            }
+        ]
+    }
+}

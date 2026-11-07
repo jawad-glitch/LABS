@@ -1,0 +1,10 @@
+=== Besu Node Monitoring Dashboard ===
+Timestamp: Sat Nov  7 16:06:11 UTC 2026
+==================================
+Node Status (1=up, 0=down): 0
+Current Block Height: no data
+Connected Peers: no data
+Pending Transactions: no data
+CPU seconds (cumulative): 0.75
+Memory (bytes): 98861056
+==================================

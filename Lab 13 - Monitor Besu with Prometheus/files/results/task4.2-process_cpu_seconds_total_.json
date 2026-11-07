@@ -1,0 +1,19 @@
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "process_cpu_seconds_total",
+                    "instance": "localhost:9090",
+                    "job": "prometheus"
+                },
+                "value": [
+                    1794067567.299,
+                    "0.75"
+                ]
+            }
+        ]
+    }
+}

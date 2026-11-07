@@ -1,0 +1,16 @@
+========== CORE CHECKS (Lab 13 - Monitor Besu with Prometheus, 2026-11-07 16:06:44 UTC) ==========
+PASS: Task 1.1: docker installed and runnable
+PASS: Task 2.1: besu 23.10.2 available
+PASS: Task 2.2: besu config has metrics-enabled + prometheus protocol
+PASS: Task 2.2: besu config data-path is absolute (not '~')
+PASS: Task 2.3: besu running (RPC responds)
+PASS: Task 2.3: besu metrics endpoint returns HELP lines
+PASS: Task 3.1: prometheus.yml created with besu-node job
+PASS: Task 3.2: prometheus container running, config endpoint 200
+FAIL: Task 3.3: scrape up for besu-node = 1
+FAIL: Task 4.2: ethereum_blockchain_height query returned data
+FAIL: Task 4.2: process_cpu_seconds_total query returned data
+PASS: Task 4.3: monitor-besu.sh ran, printed Node Status line
+PASS: Task 5.1: verify-setup reports Besu running + metrics OK
+FAIL: Task 5.2: activity generated (eth_sendTransaction responses)
+CORE: 10/14 PASS

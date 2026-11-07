@@ -1,0 +1,21 @@
+=== Besu + Prometheus Setup Verification ===
+
+1. Docker Containers Status:
+NAMES        STATUS
+prometheus   Up About a minute
+
+2. Besu Process Status:
+OK: Besu running (PID 11929)
+
+3. Port Accessibility:
+OK: Prometheus (port 9090) accessible
+OK: BesuMetrics (port 9545) accessible
+OK: BesuRPC (port 8545) accessible
+
+4. Metrics Availability:
+OK: Besu metrics available (403 lines)
+
+5. Prometheus Target Status:
+   Besu target: down - http://host.docker.internal:9545/metrics
+
+=== Verification Complete ===

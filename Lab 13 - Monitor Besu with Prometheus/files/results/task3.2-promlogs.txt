@@ -1,0 +1,10 @@
+time=2026-11-07T16:05:06.064Z level=INFO source=head.go:855 msg="Replaying WAL, this may take a while" component=tsdb
+time=2026-11-07T16:05:06.065Z level=INFO source=head.go:950 msg="WAL segment loaded" component=tsdb segment=0 maxSegment=0 duration=309.145µs
+time=2026-11-07T16:05:06.065Z level=INFO source=head.go:987 msg="WAL replay completed" component=tsdb checkpoint_replay_duration=100.822µs wal_replay_duration=548.259µs wbl_replay_duration=280ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=2.81µs total_replay_duration=1.118429ms
+time=2026-11-07T16:05:06.082Z level=INFO source=main.go:1542 msg="filesystem information" fs_type=EXT4_SUPER_MAGIC
+time=2026-11-07T16:05:06.083Z level=INFO source=main.go:1545 msg="TSDB started"
+time=2026-11-07T16:05:06.083Z level=INFO source=main.go:1744 msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+time=2026-11-07T16:05:06.084Z level=INFO source=main.go:1148 msg="TSDB retention updated" duration=15d size=0B percentage=0
+time=2026-11-07T16:05:06.087Z level=INFO source=main.go:1786 msg="Completed loading of configuration file" db_storage=781.233µs remote_storage=3.39µs web_handler=870ns query_engine=1.56µs scrape=2.38796ms scrape_sd=77.982µs notify=2.03µs notify_sd=1.66µs rules=2.44µs tracing=7.64µs filename=/etc/prometheus/prometheus.yml totalDuration=4.411034ms
+time=2026-11-07T16:05:06.094Z level=INFO source=manager.go:235 msg="Starting rule manager..." component="rule manager"
+time=2026-11-07T16:05:06.094Z level=INFO source=main.go:1506 msg="Server is ready to receive web requests."

@@ -1,0 +1,32 @@
+latest: Pulling from prom/prometheus
+f6bf6bb569c5: Pulling fs layer
+72dcf69f72aa: Pulling fs layer
+456bdf926fcd: Pulling fs layer
+492c0d6bf242: Pulling fs layer
+7a8519c01f22: Pulling fs layer
+d53a350ae5bb: Pulling fs layer
+cfe87db7b7e0: Pulling fs layer
+add0f1445f2b: Pulling fs layer
+f4d3d6669d6d: Pulling fs layer
+f4d3d6669d6d: Download complete
+72dcf69f72aa: Download complete
+add0f1445f2b: Download complete
+f6bf6bb569c5: Download complete
+456bdf926fcd: Download complete
+d53a350ae5bb: Download complete
+cfe87db7b7e0: Download complete
+94ec85689262: Download complete
+72dcf69f72aa: Pull complete
+456bdf926fcd: Pull complete
+7a8519c01f22: Download complete
+492c0d6bf242: Download complete
+492c0d6bf242: Pull complete
+f4d3d6669d6d: Pull complete
+d53a350ae5bb: Pull complete
+cfe87db7b7e0: Pull complete
+7a8519c01f22: Pull complete
+add0f1445f2b: Pull complete
+f6bf6bb569c5: Pull complete
+Digest: sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06
+Status: Downloaded newer image for prom/prometheus:latest
+docker.io/prom/prometheus:latest

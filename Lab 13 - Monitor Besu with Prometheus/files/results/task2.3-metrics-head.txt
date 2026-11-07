@@ -1,0 +1,11 @@
+# HELP besu_executors_ethscheduler_transactions_active_threads_current Current number of threads executing tasks
+# TYPE besu_executors_ethscheduler_transactions_active_threads_current gauge
+besu_executors_ethscheduler_transactions_active_threads_current 0.0
+# HELP jvm_threads_current Current thread count of a JVM
+# TYPE jvm_threads_current gauge
+jvm_threads_current 20.0
+# HELP jvm_threads_daemon Daemon thread count of a JVM
+# TYPE jvm_threads_daemon gauge
+jvm_threads_daemon 9.0
+# HELP jvm_threads_peak Peak thread count of a JVM
+metrics lines: 403

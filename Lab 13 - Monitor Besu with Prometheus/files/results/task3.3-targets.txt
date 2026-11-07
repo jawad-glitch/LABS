@@ -1,0 +1,64 @@
+{
+    "status": "success",
+    "data": {
+        "activeTargets": [
+            {
+                "discoveredLabels": {
+                    "__address__": "host.docker.internal:9545",
+                    "__always_scrape_classic_histograms__": "false",
+                    "__convert_classic_histograms_to_nhcb__": "false",
+                    "__metrics_path__": "/metrics",
+                    "__scheme__": "http",
+                    "__scrape_interval__": "10s",
+                    "__scrape_native_histograms__": "false",
+                    "__scrape_timeout__": "10s",
+                    "job": "besu-node"
+                },
+                "labels": {
+                    "instance": "host.docker.internal:9545",
+                    "job": "besu-node"
+                },
+                "scrapePool": "besu-node",
+                "scrapeUrl": "http://host.docker.internal:9545/metrics",
+                "globalUrl": "http://host.docker.internal:9545/metrics",
+                "lastError": "",
+                "lastScrape": "0001-01-01T00:00:00Z",
+                "lastScrapeDuration": 0,
+                "health": "unknown",
+                "scrapeInterval": "10s",
+                "scrapeTimeout": "10s"
+            },
+            {
+                "discoveredLabels": {
+                    "__address__": "localhost:9090",
+                    "__always_scrape_classic_histograms__": "false",
+                    "__convert_classic_histograms_to_nhcb__": "false",
+                    "__metrics_path__": "/metrics",
+                    "__scheme__": "http",
+                    "__scrape_interval__": "15s",
+                    "__scrape_native_histograms__": "false",
+                    "__scrape_timeout__": "10s",
+                    "job": "prometheus"
+                },
+                "labels": {
+                    "instance": "localhost:9090",
+                    "job": "prometheus"
+                },
+                "scrapePool": "prometheus",
+                "scrapeUrl": "http://localhost:9090/metrics",
+                "globalUrl": "http://baeb9c16e007:9090/metrics",
+                "lastError": "",
+                "lastScrape": "0001-01-01T00:00:00Z",
+                "lastScrapeDuration": 0,
+                "health": "unknown",
+                "scrapeInterval": "15s",
+                "scrapeTimeout": "10s"
+            }
+        ],
+        "droppedTargets": [],
+        "droppedTargetCounts": {
+            "besu-node": 0,
+            "prometheus": 0
+        }
+    }
+}

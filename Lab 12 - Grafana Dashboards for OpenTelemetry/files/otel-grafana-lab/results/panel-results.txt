@@ -1,0 +1,9 @@
+PANEL 1 [{{method}} {{status_code}}] series=4 :: {'method': 'GET', 'status_code': '200'} 0.3418; {'method': 'GET', 'status_code': '200'} 0.3273; {'method': 'GET', 'status_code': '500'} 0.0113; {'method': 'GET', 'status_code': '500'} 0.0266
+PANEL 2 [Error Rate Percentage] series=1 ::  5.3548
+PANEL 3 [Status {{status_code}}] series=2 :: {'status_code': '200'} 0.6697; {'status_code': '500'} 0.0379
+PANEL 4 [P50] series=1 ::  0.1229
+PANEL 4 [P95] series=1 ::  0.4427
+PANEL 4 [P99] series=1 ::  0.4885
+PANEL 5 [Average Request Latency] series=1 ::  0.1483
+PANEL 6 [Total Request Volume] series=1 ::  0.7088
+VARIABLE service values: ['demo-http-api']

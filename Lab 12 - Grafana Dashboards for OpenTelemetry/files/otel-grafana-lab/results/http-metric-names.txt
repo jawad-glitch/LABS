@@ -1,0 +1,4 @@
+http_request_duration_seconds_bucket
+http_request_duration_seconds_count
+http_request_duration_seconds_sum
+http_requests_total

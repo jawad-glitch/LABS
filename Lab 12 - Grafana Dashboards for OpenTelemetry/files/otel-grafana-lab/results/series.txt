@@ -1,0 +1,5 @@
+http_requests_total series: 4
+   {'method': 'GET', 'route': '/api/users', 'service_name': 'demo-http-api', 'status_code': '200'}
+   {'method': 'GET', 'route': '/api/orders', 'service_name': 'demo-http-api', 'status_code': '200'}
+   {'method': 'GET', 'route': '/api/users', 'service_name': 'demo-http-api', 'status_code': '500'}
+   {'method': 'GET', 'route': '/api/orders', 'service_name': 'demo-http-api', 'status_code': '500'}

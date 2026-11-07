@@ -1,0 +1,2 @@
+2026-11-07 14:56:37.468+00:00 | main | INFO  | KeyPairUtil | Generated new secp256k1 public key 0xbc7963375c0c63b1995d58dc26874091189d7083d828cd2e1a998f8987d3e3786d1b3f7d2e3b443d62cbedabbefe2a2b4c507f4c225ec659e8ac485c317d854e and stored it to /home/ubuntu/besu-p2p-lab/./data/key
+-rw-rw-r-- 1 ubuntu ubuntu 130 Nov  7 14:56 ./config/nodekey.pub

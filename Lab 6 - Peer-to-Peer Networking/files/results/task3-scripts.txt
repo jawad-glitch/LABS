@@ -1,0 +1,1 @@
+-rwxrwxr-x 1 ubuntu ubuntu 931 Nov  7 14:57 scripts/peer-discovery.sh

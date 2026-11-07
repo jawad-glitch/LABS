@@ -1,0 +1,25 @@
+=== P2P Network Troubleshooting ===
+
+1. Checking Besu process status...
+FAIL: Besu not running
+
+2. Checking port availability...
+MISSING: port 8545
+MISSING: port 8546
+MISSING: port 30303
+MISSING: port 9545
+
+3. Checking configuration files...
+OK: config.toml exists
+OK: genesis.json exists
+OK: genesis JSON valid
+
+4. Testing RPC...
+FAIL: RPC unreachable
+
+5. Recent log entries:
+Recent errors:
+2026-11-07 14:57:22.220+00:00 | main | ERROR | Besu | Failed to start Besu
+Recent P2P:
+
+=== Troubleshooting Complete ===

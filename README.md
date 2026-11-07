@@ -29,3 +29,4 @@
 | [Lab 3 - Besu CLI Configuration](Lab%203%20-%20Besu%20CLI%20Configuration/PROOF.md) | CORE: 9/12 PASS | 2026-11-07 14:22 |
 | [Lab 4 - Set Up Logging and Data Directories](Lab%204%20-%20Set%20Up%20Logging%20and%20Data%20Directories/PROOF.md) | CORE: 11/12 PASS | 2026-11-07 14:39 |
 | [Lab 5 - Start a Private Network](Lab%205%20-%20Start%20a%20Private%20Network/PROOF.md) | CORE: 7/7 PASS | 2026-11-07 14:49 |
+| [Lab 6 - Peer-to-Peer Networking](Lab%206%20-%20Peer-to-Peer%20Networking/PROOF.md) | CORE: 15/22 PASS | 2026-11-07 15:03 |

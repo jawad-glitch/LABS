@@ -1,0 +1,5 @@
+=== Besu P2P Network Monitor ===
+[H[2J[3J=== Network Status - Sat Nov  7 14:58:07 UTC 2026 ===
+
+Network ID: 
+./monitor-network.sh: line 9: 16#: invalid integer constant (error token is "16#")

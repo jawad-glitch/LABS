@@ -1,0 +1,10 @@
+Starting Besu node with P2P networking...
+Configuration: config/run-config.toml (verbatim config/config.toml has invalid log-level key)
+Data directory: ./data
+
+Besu node started with PID: 13537
+Logs are being written to: logs/besu.log
+Node endpoints:
+  HTTP RPC: http://localhost:8545
+  WebSocket: ws://localhost:8546
+  P2P: localhost:30303

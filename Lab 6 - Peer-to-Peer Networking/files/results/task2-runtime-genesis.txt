@@ -1,0 +1,1 @@
+genesis-file="config/genesis-runtime.json"

@@ -1,0 +1,27 @@
+=== Comprehensive P2P Network Test ===
+
+Test 1: Basic Connectivity
+==========================
+Client Version: 
+Network ID: 
+Listening: 
+
+Test 2: Peer Information
+========================
+./test-p2p-network.sh: line 18: 16#: invalid integer constant (error token is "16#")
+Node Enode: 
+
+Test 3: Network Status
+======================
+Sync Status: 
+Current Block: 
+
+Test 4: Connected Peers Details
+===============================
+Peers: 
+
+Test 5: Network Metrics
+=======================
+Metrics endpoint not accessible
+
+=== Test Complete ===

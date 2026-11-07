@@ -1,0 +1,13 @@
+=== Multi-Export Health Check ===
+
+Container Status:
+otel-collector-advanced   Up 12 seconds
+jaeger                    Up About a minute
+zipkin                    Up About a minute (healthy)
+
+Backend Health Checks:
+Jaeger Health: HTTP 200
+Zipkin Health: HTTP 200
+OTLP Endpoint: HTTP 405
+
+✅ All backends are healthy!

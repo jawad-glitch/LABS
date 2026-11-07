@@ -1,0 +1,6 @@
+jaeger traces=3 zipkin traces=3 same trace IDs in both=3
+traces with identical 5-span structure in both: 3
+traces with identical attributes (lab.number=18, db.table=users): 3
+example trace 0b3a0224a0f03b258dcb104faf8dbba2
+  jaeger: ['data-processing', 'data-validation', 'database-query', 'external-api-call', 'main-operation']
+  zipkin: ['data-processing', 'data-validation', 'database-query', 'external-api-call', 'main-operation']

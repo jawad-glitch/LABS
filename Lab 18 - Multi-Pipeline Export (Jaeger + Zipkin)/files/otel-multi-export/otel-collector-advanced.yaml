@@ -1,0 +1,50 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  batch:
+    timeout: 1s
+    send_batch_size: 1024
+    send_batch_max_size: 2048
+
+  # Add probabilistic sampling
+  probabilistic_sampler:
+    sampling_percentage: 100  # 100% for demo purposes
+
+exporters:
+  # Jaeger: OTLP/gRPC to the 'jaeger' container (the 'jaeger' exporter was removed from the collector)
+  otlp/jaeger:
+    endpoint: jaeger:4317
+    tls:
+      insecure: true
+
+  # Zipkin exporter - 'zipkin' container on the shared Docker network (not localhost)
+  zipkin:
+    endpoint: http://zipkin:9411/api/v2/spans
+    format: json
+
+  # Debug exporter (replaces the removed 'logging' exporter)
+  debug:
+    verbosity: basic
+
+service:
+  telemetry:
+    metrics:
+      readers:
+        - pull:
+            exporter:
+              prometheus:
+                host: 0.0.0.0
+                port: 8888
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [probabilistic_sampler, batch]
+      exporters: [otlp/jaeger, zipkin, debug]
+
+  extensions: []

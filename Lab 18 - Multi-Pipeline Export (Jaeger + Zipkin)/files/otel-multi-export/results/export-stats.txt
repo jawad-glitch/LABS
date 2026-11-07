@@ -1,0 +1,4 @@
+otelcol_exporter_sent_spans{exporter="debug"} 90
+otelcol_exporter_sent_spans{exporter="zipkin"} 90
+otelcol_exporter_sent_spans{exporter="otlp/jaeger",server_address="jaeger",server_port="4317"} 90
+otelcol_receiver_accepted_spans{receiver="otlp",transport="grpc"} 90

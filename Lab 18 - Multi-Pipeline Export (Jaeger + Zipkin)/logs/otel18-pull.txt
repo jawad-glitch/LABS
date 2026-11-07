@@ -1,0 +1,4 @@
+docker.io/openzipkin/zipkin:latest
+docker.io/jaegertracing/all-in-one:latest
+docker.io/otel/opentelemetry-collector:latest
+docker.io/otel/opentelemetry-collector-contrib:latest

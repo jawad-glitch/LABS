@@ -21,3 +21,4 @@
 | [Lab 15 - Resource Detection & Attributes](Lab%2015%20-%20Resource%20Detection%20&%20Attributes/PROOF.md) | CORE: 11/13 PASS | 2026-11-07 01:15 |
 | [Lab 16 - Sampling Strategies (Tail & Probabilistic)](Lab%2016%20-%20Sampling%20Strategies%20%28Tail%20&%20Probabilistic%29/PROOF.md) | CORE: 13/13 PASS | 2026-11-07 01:22 |
 | [Lab 17 - Extensions - Health Check & zPages](Lab%2017%20-%20Extensions%20-%20Health%20Check%20&%20zPages/PROOF.md) | CORE: 10/12 PASS | 2026-11-07 01:28 |
+| [Lab 18 - Multi-Pipeline Export (Jaeger + Zipkin)](Lab%2018%20-%20Multi-Pipeline%20Export%20%28Jaeger%20+%20Zipkin%29/PROOF.md) | CORE: 12/12 PASS | 2026-11-07 01:36 |

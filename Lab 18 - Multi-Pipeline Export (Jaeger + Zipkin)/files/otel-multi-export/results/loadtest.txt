@@ -1,0 +1,9 @@
+Starting load test for multi-export...
+Thread 1: Starting to generate 5 traces
+Thread 2: Starting to generate 5 traces
+Thread 3: Starting to generate 5 traces
+Thread 3: Completed generating traces
+Thread 1: Completed generating traces
+Thread 2: Completed generating traces
+Load test completed. Waiting for export...
+Check both UIs for the generated traces!

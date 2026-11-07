@@ -1,0 +1,14 @@
+========== CORE CHECKS (Lab 18 - Multi-Pipeline Export (Jaeger + Zipkin), 2026-11-07 01:36:39 UTC) ==========
+PASS: Task 1: Zipkin running (API + UI reachable)
+PASS: Task 2: Jaeger running (health :14269 + UI :16686)
+PASS: Task 3: lab's original config rejected (removed jaeger/logging exporters); fixed configs validate
+PASS: Task 3.3: collector exports to otlp/jaeger + zipkin + debug in one traces pipeline
+PASS: Task 4: generator produced 3 traces
+PASS: Task 5.4: verify_traces.sh finds traces in BOTH backends
+PASS: Task 5.3: the same 3 trace IDs exist in Jaeger and Zipkin
+PASS: Task 5.3: identical 5-span structure and attributes in both backends
+PASS: Task 6: advanced collector (probabilistic_sampler 100%) running and exporting
+PASS: Task 7.3: health_check.sh - all backends healthy
+PASS: Task 8: after load test, all 21 traces present in both backends
+PASS: Task 8.2: collector sent the same span count to Jaeger and Zipkin, 0 failures
+CORE: 12/12 PASS

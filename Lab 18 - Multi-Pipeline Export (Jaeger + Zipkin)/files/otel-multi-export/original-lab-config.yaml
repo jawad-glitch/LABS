@@ -1,0 +1,20 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+exporters:
+  jaeger:
+    endpoint: localhost:14250
+    tls:
+      insecure: true
+  zipkin:
+    endpoint: http://localhost:9411/api/v2/spans
+    format: json
+  logging:
+    loglevel: debug
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [jaeger, zipkin, logging]

@@ -1,0 +1,9 @@
+=== Multi-Export Verification (service: trace-generator) ===
+
+Checking Jaeger traces...
+Jaeger traces found: 3
+Checking Zipkin traces...
+Zipkin traces found: 3
+
+✅ SUCCESS: Traces found in both backends!
+Multi-export configuration is working correctly.

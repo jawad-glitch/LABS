@@ -1,14 +1,12 @@
-CORE (Lab 16 - Implement Permissioning for Accounts, 2026-11-07 16:40:50 UTC)
-PASS: besu started (READY=1)
-PASS: config: allowlist file + enabled flag
-PASS: config: PERM in rpc-http-api (used)
-FAIL: fe3b in allowlist -> tx ACCEPTED
+CORE (Lab 16 - Implement Permissioning for Accounts, 2026-11-07 16:42:03 UTC)
+FAIL: besu started
+PASS: allowlist file has fe3b
+PASS: net_version=2018 (dev mode active)
+PASS: chainId=1337
+PASS: fe3b in allowlist -> tx ACCEPTED (tx hash returned)
 PASS: perm_removeAccountsFromAllowlist returned Success
-PASS: fe3b removed -> tx REJECTED 'not authorized'
+PASS: fe3b removed -> tx REJECTED with -32007 not-authorized
 PASS: perm_addAccountsToAllowlist returned Success
-FAIL: fe3b re-added -> tx ACCEPTED
+PASS: fe3b re-added -> tx ACCEPTED again
 PASS: final allowlist = [fe3b] only
-FAIL: 6273 not in allowlist -> tx REJECTED
-FAIL: 6273 added -> tx ACCEPTED
-FAIL: 6273 removed -> tx REJECTED again
-CORE: 7/12 PASS
+CORE: 9/10 PASS

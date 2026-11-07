@@ -1,0 +1,3 @@
+{"jsonrpc":"2.0","id":1,"result":"besu/v25.5.0/linux-x86_64/openjdk-java-21"}
+{"jsonrpc":"2.0","id":1,"result":"2018"}
+{"jsonrpc":"2.0","id":1,"result":[]}

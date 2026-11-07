@@ -1,3 +1,4 @@
+Could not invoke public void org.hyperledger.besu.cli.options.LoggingLevelOption.setLogLevel(java.lang.String) with INVALID_LEVEL (java.lang.NullPointerException: commandLine)
 
-Java version must be at least 25 (detected: 21)
-
+To display full help:
+besu [COMMAND] --help

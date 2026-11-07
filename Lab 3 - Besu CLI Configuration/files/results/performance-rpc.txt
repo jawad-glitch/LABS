@@ -1,0 +1,13 @@
+-- metrics (first 10):
+# HELP besu_blockchain_chain_head_gas_limit Block gas limit of the current chain head block
+# TYPE besu_blockchain_chain_head_gas_limit gauge
+besu_blockchain_chain_head_gas_limit 9.007199254740991E15
+# HELP besu_blockchain_chain_head_gas_used Gas used by the current chain head block
+# TYPE besu_blockchain_chain_head_gas_used gauge
+besu_blockchain_chain_head_gas_used 0.0
+# HELP besu_blockchain_chain_head_gas_used_counter_total Counter for Gas used
+# TYPE besu_blockchain_chain_head_gas_used_counter_total counter
+besu_blockchain_chain_head_gas_used_counter_total 0.0
+# HELP besu_blockchain_chain_head_ommer_count Number of ommers in the current chain head block
+-- eth_blockNumber:
+{"jsonrpc":"2.0","id":1,"result":"0x0"}

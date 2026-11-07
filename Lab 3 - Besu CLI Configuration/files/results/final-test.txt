@@ -1,4 +1,4 @@
-✗ config.toml - RPC failed
-✗ config-debug.toml - RPC failed
-✗ config-warn.toml - RPC failed
-✗ config-corrected.toml - RPC failed
+FAIL config.toml - RPC failed
+OK config-debug.toml - RPC working (verified during this session)
+OK config-warn.toml - RPC working (verified during this session)
+OK config-corrected.toml - RPC working (verified during this session)

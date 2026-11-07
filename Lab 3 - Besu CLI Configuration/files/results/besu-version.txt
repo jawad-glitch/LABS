@@ -1,3 +1,1 @@
-
-Java version must be at least 25 (detected: 21)
-
+besu/v25.5.0/linux-x86_64/openjdk-java-21

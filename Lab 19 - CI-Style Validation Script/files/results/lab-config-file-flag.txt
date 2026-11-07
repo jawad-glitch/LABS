@@ -1,0 +1,2 @@
+Error: unknown flag: --config-file
+2026/11/07 01:40:35 collector server run finished with error: unknown flag: --config-file

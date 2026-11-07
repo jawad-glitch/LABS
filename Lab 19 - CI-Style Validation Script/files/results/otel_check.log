@@ -1,0 +1,36 @@
+2026-11-07 01:41:00 - Starting OpenTelemetry validation checks
+2026-11-07 01:41:00 - Collector health check passed
+2026-11-07 01:41:01 - Test span sent successfully
+2026-11-07 01:41:01 - Test metrics sent successfully
+2026-11-07 01:41:06 - Prometheus scraping check passed
+2026-11-07 01:41:06 - All validation checks passed successfully
+2026-11-07 01:41:17 - Starting OpenTelemetry validation checks
+2026-11-07 01:41:17 - Collector health check failed with HTTP code: 000
+2026-11-07 01:41:17 - Failed to send test span
+2026-11-07 01:41:18 - Failed to send test metrics
+2026-11-07 01:41:23 - Prometheus scraping check failed - target down
+2026-11-07 01:41:23 - Validation failed - check individual test results above
+2026-11-07 01:41:29 - Starting OpenTelemetry validation checks
+2026-11-07 01:41:29 - Collector health check passed
+2026-11-07 01:41:29 - Test span sent successfully
+2026-11-07 01:41:30 - Test metrics sent successfully
+2026-11-07 01:41:35 - Prometheus scraping check passed
+2026-11-07 01:41:35 - All validation checks passed successfully
+2026-11-07 01:41:44 - Starting OpenTelemetry validation checks
+2026-11-07 01:41:44 - Collector health check passed
+2026-11-07 01:41:44 - Test span sent successfully
+2026-11-07 01:41:44 - Test metrics sent successfully
+2026-11-07 01:41:50 - Prometheus scraping check passed
+2026-11-07 01:41:50 - All validation checks passed successfully
+2026-11-07 01:42:03 - Starting OpenTelemetry validation checks
+2026-11-07 01:42:03 - Collector health check failed with HTTP code: 000
+2026-11-07 01:42:03 - Failed to send test span
+2026-11-07 01:42:04 - Failed to send test metrics
+2026-11-07 01:42:09 - Prometheus scraping check failed - target down
+2026-11-07 01:42:09 - Validation failed - check individual test results above
+2026-11-07 01:42:20 - Starting OpenTelemetry validation checks
+2026-11-07 01:42:20 - Collector health check passed
+2026-11-07 01:42:21 - Test span sent successfully
+2026-11-07 01:42:21 - Test metrics sent successfully
+2026-11-07 01:42:26 - Prometheus scraping check passed
+2026-11-07 01:42:26 - All validation checks passed successfully

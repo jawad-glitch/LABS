@@ -1,0 +1,33 @@
+==========================================
+CI/CD Pipeline: sample-app-v1.2.3
+Environment: staging
+==========================================
+[0;34m[PIPELINE][0m Step 1: Building application...
+[0;32m[SUCCESS][0m Application built successfully
+[0;34m[PIPELINE][0m Step 2: Running unit tests...
+[0;32m[SUCCESS][0m All unit tests passed
+[0;34m[PIPELINE][0m Step 3: Deploying to staging environment...
+[0;32m[SUCCESS][0m Deployment to staging completed
+[0;34m[PIPELINE][0m Step 4: Running observability validation (Quality Gate)...
+[1;33m[INFO][0m Starting CI-Style OpenTelemetry Validation
+[1;33m[INFO][0m Log file: /tmp/otel_check.log
+2026-11-07 01:42:03 - Starting OpenTelemetry validation checks
+[1;33m[INFO][0m Checking OpenTelemetry Collector health...
+[0;31m[FAIL][0m Collector health check failed (HTTP 000)
+2026-11-07 01:42:03 - Collector health check failed with HTTP code: 000
+[1;33m[INFO][0m Sending test span to OpenTelemetry Collector...
+ERROR: Exception while sending test span: HTTPConnectionPool(host='localhost', port=4318): Max retries exceeded with url: /v1/traces (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f18145903e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[0;31m[FAIL][0m Failed to send test span
+2026-11-07 01:42:03 - Failed to send test span
+[1;33m[INFO][0m Sending test metrics to OpenTelemetry Collector...
+ERROR: Exception while sending test metrics: HTTPConnectionPool(host='localhost', port=4318): Max retries exceeded with url: /v1/metrics (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7eb8fcad91f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[0;31m[FAIL][0m Failed to send test metrics
+2026-11-07 01:42:04 - Failed to send test metrics
+[1;33m[INFO][0m Checking Prometheus scraping status...
+[0;31m[FAIL][0m Prometheus target is down (up=0)
+2026-11-07 01:42:09 - Prometheus scraping check failed - target down
+[0;31m[FAIL][0m One or more validation checks failed!
+2026-11-07 01:42:09 - Validation failed - check individual test results above
+[0;31m[ERROR][0m Observability validation failed - blocking deployment
+[0;31m[ERROR][0m Pipeline failed at observability validation gate
+[1;33m[WARNING][0m Production deployment blocked due to observability issues

@@ -1,0 +1,64 @@
+2026-11-07T01:42:10.027Z	info	service@v0.91.0/telemetry.go:86	Setting up own telemetry...
+2026-11-07T01:42:10.028Z	info	service@v0.91.0/telemetry.go:203	Serving Prometheus metrics	{"address": ":8888", "level": "Basic"}
+2026-11-07T01:42:10.028Z	info	exporter@v0.91.0/exporter.go:275	Deprecated component. Will be removed in future releases.	{"kind": "exporter", "data_type": "traces", "name": "logging"}
+2026-11-07T01:42:10.028Z	warn	common/factory.go:68	'loglevel' option is deprecated in favor of 'verbosity'. Set 'verbosity' to equivalent value to preserve behavior.	{"kind": "exporter", "data_type": "traces", "name": "logging", "loglevel": "debug", "equivalent verbosity level": "Detailed"}
+2026-11-07T01:42:10.028Z	info	exporter@v0.91.0/exporter.go:275	Deprecated component. Will be removed in future releases.	{"kind": "exporter", "data_type": "metrics", "name": "logging"}
+2026-11-07T01:42:10.040Z	info	service@v0.91.0/service.go:145	Starting otelcol...	{"Version": "0.91.0", "NumCPU": 2}
+2026-11-07T01:42:10.041Z	info	extensions/extensions.go:34	Starting extensions...
+2026-11-07T01:42:10.041Z	info	extensions/extensions.go:37	Extension is starting...	{"kind": "extension", "name": "health_check"}
+2026-11-07T01:42:10.041Z	info	healthcheckextension@v0.91.0/healthcheckextension.go:35	Starting health_check extension	{"kind": "extension", "name": "health_check", "config": {"Endpoint":"0.0.0.0:13133","TLSSetting":null,"CORS":null,"Auth":null,"MaxRequestBodySize":0,"IncludeMetadata":false,"ResponseHeaders":null,"Path":"/","ResponseBody":null,"CheckCollectorPipeline":{"Enabled":false,"Interval":"5m","ExporterFailureThreshold":5}}}
+2026-11-07T01:42:10.041Z	warn	internal@v0.91.0/warning.go:40	Using the 0.0.0.0 address exposes this server to every network interface, which may facilitate Denial of Service attacks	{"kind": "extension", "name": "health_check", "documentation": "https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/security-best-practices.md#safeguards-against-denial-of-service-attacks"}
+2026-11-07T01:42:10.041Z	info	extensions/extensions.go:52	Extension started.	{"kind": "extension", "name": "health_check"}
+2026-11-07T01:42:10.041Z	warn	internal@v0.91.0/warning.go:40	Using the 0.0.0.0 address exposes this server to every network interface, which may facilitate Denial of Service attacks	{"kind": "exporter", "data_type": "metrics", "name": "prometheus", "documentation": "https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/security-best-practices.md#safeguards-against-denial-of-service-attacks"}
+2026-11-07T01:42:10.041Z	warn	internal@v0.91.0/warning.go:40	Using the 0.0.0.0 address exposes this server to every network interface, which may facilitate Denial of Service attacks	{"kind": "receiver", "name": "otlp", "data_type": "traces", "documentation": "https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/security-best-practices.md#safeguards-against-denial-of-service-attacks"}
+2026-11-07T01:42:10.042Z	info	otlpreceiver@v0.91.0/otlp.go:83	Starting GRPC server	{"kind": "receiver", "name": "otlp", "data_type": "traces", "endpoint": "0.0.0.0:4317"}
+2026-11-07T01:42:10.042Z	warn	internal@v0.91.0/warning.go:40	Using the 0.0.0.0 address exposes this server to every network interface, which may facilitate Denial of Service attacks	{"kind": "receiver", "name": "otlp", "data_type": "traces", "documentation": "https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/security-best-practices.md#safeguards-against-denial-of-service-attacks"}
+2026-11-07T01:42:10.042Z	info	otlpreceiver@v0.91.0/otlp.go:101	Starting HTTP server	{"kind": "receiver", "name": "otlp", "data_type": "traces", "endpoint": "0.0.0.0:4318"}
+2026-11-07T01:42:10.042Z	info	healthcheck/handler.go:132	Health Check state change	{"kind": "extension", "name": "health_check", "status": "ready"}
+2026-11-07T01:42:10.042Z	info	service@v0.91.0/service.go:171	Everything is ready. Begin running and processing data.
+2026-11-07T01:42:21.071Z	info	TracesExporter	{"kind": "exporter", "data_type": "traces", "name": "logging", "resource spans": 1, "spans": 1}
+2026-11-07T01:42:21.071Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(ci-validation-test)
+     -> service.version: Str(1.0.0)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope ci-validation-scope 1.0.0
+Span #0
+    Trace ID       : 12345678901234567890123456789012
+    Parent ID      : 
+    ID             : 1234567890123456
+    Name           : ci-validation-test-span
+    Kind           : Internal
+    Start time     : 2026-11-07 01:42:21.011588096 +0000 UTC
+    End time       : 2026-11-07 01:42:21.012588096 +0000 UTC
+    Status code    : Ok
+    Status message : 
+Attributes:
+     -> test.type: Str(ci-validation)
+     -> test.timestamp: Str(2026-11-07T01:42:21.011597)
+	{"kind": "exporter", "data_type": "traces", "name": "logging"}
+2026-11-07T01:42:21.472Z	info	MetricsExporter	{"kind": "exporter", "data_type": "metrics", "name": "logging", "resource metrics": 1, "metrics": 1, "data points": 1}
+2026-11-07T01:42:21.472Z	info	ResourceMetrics #0
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(ci-validation-test)
+ScopeMetrics #0
+ScopeMetrics SchemaURL: 
+InstrumentationScope ci-validation-metrics 1.0.0
+Metric #0
+Descriptor:
+     -> Name: ci_validation_test_counter
+     -> Description: Test counter for CI validation
+     -> Unit: 1
+     -> DataType: Sum
+     -> IsMonotonic: true
+     -> AggregationTemporality: Cumulative
+NumberDataPoints #0
+Data point attributes:
+     -> test.type: Str(ci-validation)
+StartTimestamp: 1970-01-01 00:00:00 +0000 UTC
+Timestamp: 2026-11-07 01:42:21.33271424 +0000 UTC
+Value: 42
+	{"kind": "exporter", "data_type": "metrics", "name": "logging"}

@@ -1,0 +1,19 @@
+[1;33m[INFO][0m Starting CI-Style OpenTelemetry Validation
+[1;33m[INFO][0m Log file: /tmp/otel_check.log
+2026-11-07 01:41:00 - Starting OpenTelemetry validation checks
+[1;33m[INFO][0m Checking OpenTelemetry Collector health...
+[0;32m[PASS][0m Collector health check successful (HTTP 200)
+2026-11-07 01:41:00 - Collector health check passed
+[1;33m[INFO][0m Sending test span to OpenTelemetry Collector...
+SUCCESS: Test span sent successfully (HTTP 200)
+[0;32m[PASS][0m Test span sent successfully
+2026-11-07 01:41:01 - Test span sent successfully
+[1;33m[INFO][0m Sending test metrics to OpenTelemetry Collector...
+SUCCESS: Test metrics sent successfully (HTTP 200)
+[0;32m[PASS][0m Test metrics sent successfully
+2026-11-07 01:41:01 - Test metrics sent successfully
+[1;33m[INFO][0m Checking Prometheus scraping status...
+[0;32m[PASS][0m Prometheus scraping is working (target is up)
+2026-11-07 01:41:06 - Prometheus scraping check passed
+[0;32m[PASS][0m All OpenTelemetry validation checks passed!
+2026-11-07 01:41:06 - All validation checks passed successfully

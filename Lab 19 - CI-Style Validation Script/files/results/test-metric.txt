@@ -1,0 +1,1 @@
+ci_validation_test_counter_total in Prometheus: 42

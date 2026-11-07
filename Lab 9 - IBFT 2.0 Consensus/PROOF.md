@@ -1,33 +1,30 @@
 # Lab 9 - IBFT 2.0 Consensus - completion proof
-Completed (UTC): 2026-11-07 15:31:43 | EC2: i-01cf992d9848410f3 | host: ip-172-31-10-94 | user: ubuntu
+Completed (UTC): 2026-11-07 15:36:39 | EC2: i-01cf992d9848410f3 | host: ip-172-31-10-94 | user: ubuntu
 
 ## Core checks
 ```
-========== CORE CHECKS (Lab 9 - IBFT 2.0 Consensus, 2026-11-07 15:31:37 UTC) ==========
+========== CORE CHECKS (Lab 9 - IBFT 2.0 Consensus, 2026-11-07 15:36:34 UTC) ==========
 PASS: Task 1.1: validator1/2/3 with data dirs exist
 PASS: Task 1.2/1.3: 3 addresses exported (40 hex each)
-PASS: Task 1.4/1.5: extraData file is 326 bytes (0x + 324 hex + newline)
-sed: -e expression #1, char 1: unknown command: `"'
-sed: -e expression #1, char 1: unknown command: `"'
-sed: -e expression #1, char 1: unknown command: `"'
-PASS: Task 1.4: genesis has all 3 validator addresses in extraData
+PASS: Task 1.4/1.5: extraData is 98 bytes (196 hex after 0x)
+PASS: Task 1.4: genesis has all 3 validator addresses
 PASS: Task 1.4: genesis has ibft2 config
 PASS: Task 1.6: genesis JSON valid
 PASS: Task 2.1: configs exist with distinct RPC ports
 FAIL: Task 2.2/2.3: v1 RPC ready and enode captured
-FAIL: Task 2.3: bootnodes patched (no placeholder left)
+FAIL: Task 2.3: bootnodes patched (no placeholder)
 FAIL: Task 2.4/2.5: v2 and v3 RPC-ready
 FAIL: Task 2.5: all 3 respond to eth_blockNumber
 FAIL: Task 3: IBFT produced a block
 FAIL: Task 3.1: net_version = 1337
 FAIL: Task 3.1: eth_chainId = 0x539
-FAIL: Task 3.2: ibft_getValidatorsByBlockNumber returns all 3
+FAIL: Task 3.2: ibft_getValidatorsByBlockNumber has 3 validators
 FAIL: Task 3.2: ibft_getPendingVotes answered
-FAIL: Task 3.3: monitor_blocks shows positive block numbers
+FAIL: Task 3.3: monitor shows positive block numbers
 FAIL: Task 3.4: balance1 non-zero
 FAIL: Task 3.4: balance2 non-zero
-FAIL: Task 3.5: latest block has non-zero number
-FAIL: Task 3.6: net_peerCount answered; admin_nodeInfo has enode
+FAIL: Task 3.5: latest block non-zero
+FAIL: Task 3.6: net_peerCount; admin_nodeInfo has enode
 PASS: Task 6: lab_summary.txt written
 CORE: 8/22 PASS
 ```
@@ -54,6 +51,9 @@ CORE: 8/22 PASS
 ./results/task2.5-ports.txt
 ./results/task3.1-blocknumber.txt
 ./results/task3.1-chainid.txt
+./results/task3.1-init-v2.log
+./results/task3.1-init-v3.log
+./results/task3.1-init.log
 ./results/task3.1-netversion.txt
 ./results/task3.2-pendingvotes.txt
 ./results/task3.2-validators.txt
@@ -81,10 +81,8 @@ CORE: 8/22 PASS
 ./validator1/publickey
 ./validator2/address
 ./validator2/config.toml
-./validator2/data/key
 ./validator2/publickey
 ./validator3/address
 ./validator3/config.toml
-./validator3/data/key
 ./validator3/publickey
 ```

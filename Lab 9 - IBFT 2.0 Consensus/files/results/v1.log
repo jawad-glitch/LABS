@@ -1,6 +1,6 @@
-2026-11-07 15:29:42.738+00:00 | main | INFO  | Besu | Starting Besu
-2026-11-07 15:29:43.918+00:00 | main | INFO  | Besu | jemalloc library not found, memory usage may be reduced by installing it
-2026-11-07 15:29:44.056+00:00 | main | INFO  | Besu | 
+2026-11-07 15:34:01.058+00:00 | main | INFO  | Besu | Starting Besu
+2026-11-07 15:34:02.241+00:00 | main | INFO  | Besu | jemalloc library not found, memory usage may be reduced by installing it
+2026-11-07 15:34:02.357+00:00 | main | INFO  | Besu | 
 ####################################################################################################
 #                                                                                                  #
 # Besu version 23.10.2                                                                             #
@@ -28,16 +28,16 @@
 # from /home/ubuntu/besu-installation/besu-23.10.2/plugins                                         #
 #                                                                                                  #
 ####################################################################################################
-2026-11-07 15:29:44.064+00:00 | main | INFO  | Besu | Connecting to 0 static nodes.
-2026-11-07 15:29:44.064+00:00 | main | INFO  | Besu | Security Module: localfile
-2026-11-07 15:29:44.148+00:00 | main | INFO  | Besu | Using the native implementation of alt bn128
-2026-11-07 15:29:44.218+00:00 | main | INFO  | Besu | Using the native implementation of modexp
-2026-11-07 15:29:44.220+00:00 | main | INFO  | Besu | Using the native implementation of the signature algorithm
-2026-11-07 15:29:44.236+00:00 | main | INFO  | Besu | Using the native implementation of the blake2bf algorithm
-2026-11-07 15:29:44.673+00:00 | main | INFO  | KeyPairUtil | Loaded public key 0x68bec7f9fda39a90f8d050bf9b6c4f7a717e38768ce6a7f74789425c3bf59c4e2ad46d9491567ffc5f63e2ed2d2c4a20f8af2804eefcceb7ac669e5ba9dff0c3 from /home/ubuntu/besu-ibft-lab/validator1/data/key
-2026-11-07 15:29:44.996+00:00 | main | INFO  | ProtocolScheduleBuilder | Protocol schedule created with milestones: [London:0]
-2026-11-07 15:29:45.054+00:00 | main | INFO  | RocksDBKeyValueStorageFactory | No existing database detected at /home/ubuntu/besu-ibft-lab/validator1/data. Using version 1
-2026-11-07 15:29:45.864+00:00 | main | ERROR | Besu | Failed to start Besu
+2026-11-07 15:34:02.365+00:00 | main | INFO  | Besu | Connecting to 0 static nodes.
+2026-11-07 15:34:02.366+00:00 | main | INFO  | Besu | Security Module: localfile
+2026-11-07 15:34:02.452+00:00 | main | INFO  | Besu | Using the native implementation of alt bn128
+2026-11-07 15:34:02.544+00:00 | main | INFO  | Besu | Using the native implementation of modexp
+2026-11-07 15:34:02.545+00:00 | main | INFO  | Besu | Using the native implementation of the signature algorithm
+2026-11-07 15:34:02.561+00:00 | main | INFO  | Besu | Using the native implementation of the blake2bf algorithm
+2026-11-07 15:34:02.955+00:00 | main | INFO  | KeyPairUtil | Generated new secp256k1 public key 0xdf4d6e90ea391515a55f876a64916195be737df8a6dafe519f6e5e36cc1cbcebaac3482bf65208925ae28e74f0347b7864ac053c5fbf86d66ac78efb92fac41f and stored it to /home/ubuntu/besu-ibft-lab/validator1/data/key
+2026-11-07 15:34:03.342+00:00 | main | INFO  | ProtocolScheduleBuilder | Protocol schedule created with milestones: [London:0]
+2026-11-07 15:34:03.422+00:00 | main | INFO  | RocksDBKeyValueStorageFactory | No existing database detected at /home/ubuntu/besu-ibft-lab/validator1/data. Using version 1
+2026-11-07 15:34:04.252+00:00 | main | ERROR | Besu | Failed to start Besu
 picocli.CommandLine$ExecutionException: Expected current item to be a list, but it is: BYTE_ELEMENT (at bytes 0-1: [00]00000000...)
 	at org.hyperledger.besu.cli.BesuCommand.buildController(BesuCommand.java:2116)
 	at org.hyperledger.besu.cli.BesuCommand.initController(BesuCommand.java:2102)

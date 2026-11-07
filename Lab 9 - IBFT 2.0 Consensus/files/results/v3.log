@@ -1,5 +1,5 @@
-2026-11-07 15:30:09.295+00:00 | main | INFO  | Besu | Starting Besu
-2026-11-07 15:30:10.258+00:00 | main | ERROR | Besu | Failed to start Besu
+2026-11-07 15:34:38.848+00:00 | main | INFO  | Besu | Starting Besu
+2026-11-07 15:34:39.842+00:00 | main | ERROR | Besu | Failed to start Besu
 picocli.CommandLine$ParameterException: Invalid enode URL syntax 'enode://BOOTNODE_ENODE'. Enode URL should have the following format 'enode://<node_id>@<ip>:<listening_port>[?discport=<discovery_port>]'. Missing or invalid host or ip address.
 	at org.hyperledger.besu.cli.BesuCommand.updateNetworkConfig(BesuCommand.java:3029)
 	at org.hyperledger.besu.cli.BesuCommand.configure(BesuCommand.java:2024)

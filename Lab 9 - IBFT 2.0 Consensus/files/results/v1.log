@@ -1,0 +1,94 @@
+2026-11-07 15:29:42.738+00:00 | main | INFO  | Besu | Starting Besu
+2026-11-07 15:29:43.918+00:00 | main | INFO  | Besu | jemalloc library not found, memory usage may be reduced by installing it
+2026-11-07 15:29:44.056+00:00 | main | INFO  | Besu | 
+####################################################################################################
+#                                                                                                  #
+# Besu version 23.10.2                                                                             #
+#                                                                                                  #
+# Configuration:                                                                                   #
+# Network: Custom genesis file specified                                                           #
+# Network Id: 1337                                                                                 #
+# Data storage: Forest                                                                             #
+# Sync mode: Full                                                                                  #
+# RPC HTTP APIs: ETH,NET,IBFT                                                                      #
+# RPC HTTP port: 8545                                                                              #
+# Using LAYERED transaction pool implementation                                                    #
+# Using STACKED worldstate update mode                                                             #
+#                                                                                                  #
+# Host:                                                                                            #
+# Java: openjdk-java-17                                                                            #
+# Maximum heap size: 0.94 GB                                                                       #
+# OS: linux-x86_64                                                                                 #
+# glibc: 2.39                                                                                      #
+# Total memory: 3.76 GB                                                                            #
+# CPU cores: 2                                                                                     #
+#                                                                                                  #
+# Plugins:                                                                                         #
+# TOTAL = 0 of 0 plugins successfully loaded                                                       #
+# from /home/ubuntu/besu-installation/besu-23.10.2/plugins                                         #
+#                                                                                                  #
+####################################################################################################
+2026-11-07 15:29:44.064+00:00 | main | INFO  | Besu | Connecting to 0 static nodes.
+2026-11-07 15:29:44.064+00:00 | main | INFO  | Besu | Security Module: localfile
+2026-11-07 15:29:44.148+00:00 | main | INFO  | Besu | Using the native implementation of alt bn128
+2026-11-07 15:29:44.218+00:00 | main | INFO  | Besu | Using the native implementation of modexp
+2026-11-07 15:29:44.220+00:00 | main | INFO  | Besu | Using the native implementation of the signature algorithm
+2026-11-07 15:29:44.236+00:00 | main | INFO  | Besu | Using the native implementation of the blake2bf algorithm
+2026-11-07 15:29:44.673+00:00 | main | INFO  | KeyPairUtil | Loaded public key 0x68bec7f9fda39a90f8d050bf9b6c4f7a717e38768ce6a7f74789425c3bf59c4e2ad46d9491567ffc5f63e2ed2d2c4a20f8af2804eefcceb7ac669e5ba9dff0c3 from /home/ubuntu/besu-ibft-lab/validator1/data/key
+2026-11-07 15:29:44.996+00:00 | main | INFO  | ProtocolScheduleBuilder | Protocol schedule created with milestones: [London:0]
+2026-11-07 15:29:45.054+00:00 | main | INFO  | RocksDBKeyValueStorageFactory | No existing database detected at /home/ubuntu/besu-ibft-lab/validator1/data. Using version 1
+2026-11-07 15:29:45.864+00:00 | main | ERROR | Besu | Failed to start Besu
+picocli.CommandLine$ExecutionException: Expected current item to be a list, but it is: BYTE_ELEMENT (at bytes 0-1: [00]00000000...)
+	at org.hyperledger.besu.cli.BesuCommand.buildController(BesuCommand.java:2116)
+	at org.hyperledger.besu.cli.BesuCommand.initController(BesuCommand.java:2102)
+	at org.hyperledger.besu.cli.BesuCommand.run(BesuCommand.java:1433)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2026)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2453)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2415)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2417)
+	at picocli.CommandLine.execute(CommandLine.java:2170)
+	at org.hyperledger.besu.cli.util.ConfigOptionSearchAndRunHandler.handle(ConfigOptionSearchAndRunHandler.java:62)
+	at org.hyperledger.besu.cli.util.ConfigOptionSearchAndRunHandler.handle(ConfigOptionSearchAndRunHandler.java:33)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2417)
+	at picocli.CommandLine.execute(CommandLine.java:2170)
+	at org.hyperledger.besu.cli.BesuCommand.parse(BesuCommand.java:1596)
+	at org.hyperledger.besu.cli.BesuCommand.parse(BesuCommand.java:1393)
+	at org.hyperledger.besu.Besu.main(Besu.java:39)
+Caused by: org.hyperledger.besu.ethereum.rlp.RLPException: Expected current item to be a list, but it is: BYTE_ELEMENT (at bytes 0-1: [00]00000000...)
+	at org.hyperledger.besu.ethereum.rlp.AbstractRLPInput.error(AbstractRLPInput.java:205)
+	at org.hyperledger.besu.ethereum.rlp.AbstractRLPInput.enterList(AbstractRLPInput.java:481)
+	at org.hyperledger.besu.ethereum.rlp.BytesValueRLPInput.enterList(BytesValueRLPInput.java:24)
+	at org.hyperledger.besu.ethereum.rlp.AbstractRLPInput.enterList(AbstractRLPInput.java:465)
+	at org.hyperledger.besu.ethereum.rlp.BytesValueRLPInput.enterList(BytesValueRLPInput.java:24)
+	at org.hyperledger.besu.consensus.ibft.IbftExtraDataCodec.decodeRaw(IbftExtraDataCodec.java:86)
+	at org.hyperledger.besu.consensus.common.bft.BftBlockHeaderFunctions.parseExtraData(BftBlockHeaderFunctions.java:72)
+	at org.hyperledger.besu.consensus.common.bft.BftBlockHeaderFunctions.parseExtraData(BftBlockHeaderFunctions.java:24)
+	at org.hyperledger.besu.ethereum.mainnet.ScheduleBasedBlockHeaderFunctions.parseExtraData(ScheduleBasedBlockHeaderFunctions.java:46)
+	at org.hyperledger.besu.ethereum.core.BlockHeader.lambda$new$1(BlockHeader.java:92)
+	at com.google.common.base.Suppliers$NonSerializableMemoizingSupplier.get(Suppliers.java:183)
+	at org.hyperledger.besu.ethereum.core.BlockHeader.getParsedExtraData(BlockHeader.java:126)
+	at org.hyperledger.besu.consensus.common.bft.BftExtraDataCodec.decode(BftExtraDataCodec.java:87)
+	at org.hyperledger.besu.consensus.common.bft.BftBlockHashing.calculateHashOfBftBlockOnchain(BftBlockHashing.java:85)
+	at org.hyperledger.besu.consensus.common.bft.BftBlockHeaderFunctions.lambda$forOnchainBlock$0(BftBlockHeaderFunctions.java:49)
+	at org.hyperledger.besu.consensus.common.bft.BftBlockHeaderFunctions.hash(BftBlockHeaderFunctions.java:67)
+	at org.hyperledger.besu.ethereum.mainnet.ScheduleBasedBlockHeaderFunctions.hash(ScheduleBasedBlockHeaderFunctions.java:41)
+	at org.hyperledger.besu.ethereum.core.BlockHeader.lambda$new$0(BlockHeader.java:91)
+	at com.google.common.base.Suppliers$NonSerializableMemoizingSupplier.get(Suppliers.java:183)
+	at org.hyperledger.besu.ethereum.core.BlockHeader.getHash(BlockHeader.java:135)
+	at org.hyperledger.besu.ethereum.core.Block.getHash(Block.java:47)
+	at org.hyperledger.besu.ethereum.chain.DefaultBlockchain.setGenesis(DefaultBlockchain.java:760)
+	at org.hyperledger.besu.ethereum.chain.DefaultBlockchain.lambda$new$0(DefaultBlockchain.java:106)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at org.hyperledger.besu.ethereum.chain.DefaultBlockchain.<init>(DefaultBlockchain.java:106)
+	at org.hyperledger.besu.ethereum.chain.DefaultBlockchain.createMutable(DefaultBlockchain.java:228)
+	at org.hyperledger.besu.controller.BesuControllerBuilder.build(BesuControllerBuilder.java:603)
+	at org.hyperledger.besu.cli.BesuCommand.buildController(BesuCommand.java:2114)
+	... 18 more
+Expected current item to be a list, but it is: BYTE_ELEMENT (at bytes 0-1: [00]00000000...)
+
+To display full help:
+besu [COMMAND] --help

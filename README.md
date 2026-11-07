@@ -32,4 +32,4 @@
 | [Lab 6 - Peer-to-Peer Networking](Lab%206%20-%20Peer-to-Peer%20Networking/PROOF.md) | CORE: 15/22 PASS | 2026-11-07 15:03 |
 | [Lab 7 - Set Up Public Ethereum Network](Lab%207%20-%20Set%20Up%20Public%20Ethereum%20Network/PROOF.md) | CORE: 21/25 PASS | 2026-11-07 15:11 |
 | [Lab 8 - Consensus Mechanism - Proof of Authority (PoA)](Lab%208%20-%20Consensus%20Mechanism%20-%20Proof%20of%20Authority%20%28PoA%29/PROOF.md) | CORE: 18/21 PASS | 2026-11-07 15:19 |
-| [Lab 9 - IBFT 2.0 Consensus](Lab%209%20-%20IBFT%202.0%20Consensus/PROOF.md) | CORE: 7/22 PASS | 2026-11-07 15:28 |
+| [Lab 9 - IBFT 2.0 Consensus](Lab%209%20-%20IBFT%202.0%20Consensus/PROOF.md) | CORE: 8/22 PASS | 2026-11-07 15:31 |

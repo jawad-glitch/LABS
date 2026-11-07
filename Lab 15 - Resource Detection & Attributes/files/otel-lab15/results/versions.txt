@@ -1,0 +1,3 @@
+otelcol-contrib version 0.100.0
+"gitVersion":"v1.57.0"
+prometheus, version 2.52.0 (branch: HEAD, revision: 879d80922a227c37df502e7315fad8ceb10a986d)

@@ -1,0 +1,2 @@
+query_inventory: deployment.environment=staging, team.owner=platform, region=us-east-1
+process_order: deployment.environment=staging, team.owner=platform, region=us-east-1

@@ -1,0 +1,30 @@
+=== Process-level resource attributes on most recent trace ===
+cluster.name: otel-lab-cluster
+host.name: ip-172-31-10-110
+lab.id: lab15
+os.type: linux
+otel.library.name: lab15.generator
+otel.library.version: 1.0.0
+process.command: .venv/bin/python
+process.executable.name: python
+process.executable.path: /home/ubuntu/otel-lab15/.venv/bin/python
+process.parent_pid: 2884
+process.pid: 11007
+process.runtime.description: 3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]
+process.runtime.name: cpython
+process.runtime.version: 3.12.3
+service.instance.id: instance-001
+service.namespace: lab15-ns
+service.version: 1.0.0
+telemetry.sdk.language: python
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.version: 1.45.2
+
+=== Asserting required attributes are present ===
+OK:      host.name = ip-172-31-10-110
+OK:      os.type = linux
+OK:      service.namespace = lab15-ns
+OK:      service.instance.id = instance-001
+OK:      lab.id = lab15
+OK:      cluster.name = otel-lab-cluster
+All required resource attributes present.

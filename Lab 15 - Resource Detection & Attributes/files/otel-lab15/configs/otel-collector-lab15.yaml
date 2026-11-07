@@ -1,0 +1,71 @@
+extensions:
+  health_check:
+    endpoint: 0.0.0.0:13133
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  # 1) Automatic metadata. 'system' gives host.name / os.type; 'env' reads OTEL_RESOURCE_ATTRIBUTES
+  #    of THIS process. ('host'/'process' are not resourcedetection detectors; process.* comes from the SDK.)
+  resourcedetection:
+    detectors: [env, system]
+    timeout: 5s
+    override: false
+    system:
+      hostname_sources: [os]
+
+  # 2) Resource-level business metadata
+  resource:
+    attributes:
+      - key: lab.id
+        value: lab15
+        action: insert
+      - key: cluster.name
+        value: otel-lab-cluster
+        action: insert
+
+  # 3) Span / datapoint-level business metadata
+  attributes:
+    actions:
+      - key: deployment.environment
+        value: staging
+        action: insert
+      - key: team.owner
+        value: platform
+        action: insert
+      - key: region
+        value: us-east-1
+        action: insert
+
+  batch:
+
+exporters:
+  # Jaeger 1.57 ingests OTLP (moved to 14317 so it does not clash with the collector's 4317).
+  # Port 14250 is Jaeger's legacy model.proto API; the collector's 'jaeger' exporter was removed in v0.85.
+  otlp/jaeger:
+    endpoint: localhost:14317
+    tls:
+      insecure: true
+
+  prometheus:
+    endpoint: 0.0.0.0:8889
+    resource_to_telemetry_conversion:
+      enabled: true   # promote resource attributes (service.name, host.name, lab.id...) to labels
+
+service:
+  extensions: [health_check]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [resourcedetection, resource, attributes, batch]
+      exporters: [otlp/jaeger]
+    metrics:
+      receivers: [otlp]
+      processors: [resourcedetection, resource, attributes, batch]
+      exporters: [prometheus]

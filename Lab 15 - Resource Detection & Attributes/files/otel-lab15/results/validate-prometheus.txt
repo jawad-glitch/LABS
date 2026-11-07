@@ -1,0 +1,37 @@
+=== Labels on http_requests_total ===
+__name__: http_requests_total
+cluster_name: otel-lab-cluster
+deployment_environment: staging
+exported_instance: instance-001
+exported_job: lab15-ns/sample-app
+host_name: ip-172-31-10-110
+instance: localhost:8889
+job: otel-collector
+lab_id: lab15
+method: GET
+os_type: linux
+process_command: .venv/bin/python
+process_executable_name: python
+process_executable_path: /home/ubuntu/otel-lab15/.venv/bin/python
+process_parent_pid: 2884
+process_pid: 11007
+process_runtime_description: 3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]
+process_runtime_name: cpython
+process_runtime_version: 3.12.3
+region: us-east-1
+service_instance_id: instance-001
+service_name: sample-app
+service_namespace: lab15-ns
+service_version: 1.0.0
+status_code: 200
+team_owner: platform
+telemetry_sdk_language: python
+telemetry_sdk_name: opentelemetry
+telemetry_sdk_version: 1.45.2
+
+=== Asserting required labels are present ===
+OK:      deployment_environment = staging
+OK:      team_owner = platform
+OK:      region = us-east-1
+OK:      service_name = sample-app
+All required metric labels present.

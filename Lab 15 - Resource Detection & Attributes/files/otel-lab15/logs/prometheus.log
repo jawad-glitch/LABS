@@ -1,0 +1,33 @@
+ts=2026-11-07T01:12:30.867Z caller=main.go:573 level=info msg="No time or size retention was set so using the default time retention" duration=15d
+ts=2026-11-07T01:12:30.867Z caller=main.go:617 level=info msg="Starting Prometheus Server" mode=server version="(version=2.52.0, branch=HEAD, revision=879d80922a227c37df502e7315fad8ceb10a986d)"
+ts=2026-11-07T01:12:30.867Z caller=main.go:622 level=info build_context="(go=go1.22.3, platform=linux/amd64, user=root@1b4f4c206e41, date=20240508-21:56:43, tags=netgo,builtinassets,stringlabels)"
+ts=2026-11-07T01:12:30.867Z caller=main.go:623 level=info host_details="(Linux 6.14.0-1018-aws #18~24.04.1-Ubuntu SMP Mon Nov 24 19:46:27 UTC 2025 x86_64 ip-172-31-10-110 (none))"
+ts=2026-11-07T01:12:30.867Z caller=main.go:624 level=info fd_limits="(soft=1048576, hard=1048576)"
+ts=2026-11-07T01:12:30.867Z caller=main.go:625 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+ts=2026-11-07T01:12:30.885Z caller=web.go:568 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+ts=2026-11-07T01:12:30.887Z caller=main.go:1129 level=info msg="Starting TSDB ..."
+ts=2026-11-07T01:12:30.897Z caller=tls_config.go:313 level=info component=web msg="Listening on" address=[::]:9090
+ts=2026-11-07T01:12:30.897Z caller=tls_config.go:316 level=info component=web msg="TLS is disabled." http2=false address=[::]:9090
+ts=2026-11-07T01:12:30.919Z caller=head.go:616 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+ts=2026-11-07T01:12:30.919Z caller=head.go:703 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=28.74µs
+ts=2026-11-07T01:12:30.919Z caller=head.go:711 level=info component=tsdb msg="Replaying WAL, this may take a while"
+ts=2026-11-07T01:12:30.921Z caller=head.go:783 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=0
+ts=2026-11-07T01:12:30.921Z caller=head.go:820 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=66.881µs wal_replay_duration=2.089176ms wbl_replay_duration=200ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=28.74µs total_replay_duration=2.244388ms
+ts=2026-11-07T01:12:30.929Z caller=main.go:1150 level=info fs_type=EXT4_SUPER_MAGIC
+ts=2026-11-07T01:12:30.929Z caller=main.go:1153 level=info msg="TSDB started"
+ts=2026-11-07T01:12:30.929Z caller=main.go:1335 level=info msg="Loading configuration file" filename=configs/prometheus.yml
+ts=2026-11-07T01:12:30.935Z caller=main.go:1372 level=info msg="Completed loading of configuration file" filename=configs/prometheus.yml totalDuration=5.285557ms db_storage=25.64µs remote_storage=1.87µs web_handler=730ns query_engine=1.561µs scrape=4.614268ms scrape_sd=62.241µs notify=1.68µs notify_sd=1.14µs rules=23.17µs tracing=40.941µs
+ts=2026-11-07T01:12:30.935Z caller=main.go:1114 level=info msg="Server is ready to receive web requests."
+ts=2026-11-07T01:12:30.935Z caller=manager.go:163 level=info component="rule manager" msg="Starting rule manager..."
+ts=2026-11-07T01:14:47.096Z caller=main.go:964 level=warn msg="Received an OS signal, exiting gracefully..." signal=terminated
+ts=2026-11-07T01:14:47.096Z caller=main.go:988 level=info msg="Stopping scrape discovery manager..."
+ts=2026-11-07T01:14:47.096Z caller=main.go:1002 level=info msg="Stopping notify discovery manager..."
+ts=2026-11-07T01:14:47.096Z caller=manager.go:177 level=info component="rule manager" msg="Stopping rule manager..."
+ts=2026-11-07T01:14:47.096Z caller=manager.go:187 level=info component="rule manager" msg="Rule manager stopped"
+ts=2026-11-07T01:14:47.096Z caller=main.go:1039 level=info msg="Stopping scrape manager..."
+ts=2026-11-07T01:14:47.096Z caller=main.go:984 level=info msg="Scrape discovery manager stopped"
+ts=2026-11-07T01:14:47.096Z caller=main.go:998 level=info msg="Notify discovery manager stopped"
+ts=2026-11-07T01:14:47.096Z caller=main.go:1031 level=info msg="Scrape manager stopped"
+ts=2026-11-07T01:14:47.099Z caller=notifier.go:623 level=info component=notifier msg="Stopping notification manager..."
+ts=2026-11-07T01:14:47.099Z caller=main.go:1261 level=info msg="Notifier manager stopped"
+ts=2026-11-07T01:14:47.099Z caller=main.go:1273 level=info msg="See you next time!"

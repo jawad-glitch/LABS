@@ -42,3 +42,4 @@
 | [Lab 17 - Handle Node Sync Issues](Lab%2017%20-%20Handle%20Node%20Sync%20Issues/PROOF.md) | none |
 | [Lab 1 - Install Hyperledger Besu](Lab%201%20-%20Install%20Hyperledger%20Besu/PROOF.md) | CORE: 10/10 PASS | 2026-11-07 17:19 |
 | [Lab 20 - End-to-End Blockchain Network Setup](Lab%2020%20-%20End-to-End%20Blockchain%20Network%20Setup/PROOF.md) | CORE: 11/20 PASS | 2026-11-07 17:44 |
+| [Lab 1 - Install Argo CLI and Configure Kubernetes](Lab%201%20-%20Install%20Argo%20CLI%20and%20Configure%20Kubernetes/PROOF.md) | CORE: 11/18 PASS | 2026-11-07 17:52 |

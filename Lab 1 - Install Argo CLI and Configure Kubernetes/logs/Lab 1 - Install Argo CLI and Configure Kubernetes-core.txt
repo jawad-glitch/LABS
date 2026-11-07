@@ -1,0 +1,20 @@
+========== CORE CHECKS (Lab 1 - Install Argo CLI and Configure Kubernetes, 2026-11-07 17:51:52 UTC) ==========
+PASS: Task 1.3: architecture is x86_64
+PASS: Task 1.2: curl, wget, gnupg, jq installed
+FAIL: Task 2.1-2.3: kubectl in /usr/local/bin, version prints
+PASS: Task 2.4: minikube in /usr/local/bin
+PASS: Task 2.5: minikube host/kubelet/apiserver Running
+PASS: Task 2.6: kubectl get nodes shows Ready
+PASS: Task 2.6: kubectl cluster-info reachable
+PASS: Task 3.1-3.3: argo CLI installed and reports a version
+PASS: Task 4.1: namespace argo exists and is Active
+FAIL: Task 4.2: argo-server + workflow-controller 1/1 available
+PASS: Task 4.3: all argo pods Running (>=2 pods)
+PASS: Task 4.4: rolebinding default-admin exists in argo ns
+FAIL: Task 6.2: hello-world workflow was submitted
+FAIL: Task 6.2: workflow reached phase Succeeded
+FAIL: Task 6.5: argo logs contain 'Hello World from Argo'
+FAIL: Task 6.3: workflow appears in argo list
+PASS: Task 7.1: comprehensive verification report produced
+FAIL: Task 7.2: argo delete --all left zero workflows
+CORE: 11/18 PASS

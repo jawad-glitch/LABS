@@ -1,0 +1,35 @@
+=== System Verification ===
+1. kubectl version:
+Client Version: v1.36.2
+Kustomize Version: v5.8.1
+
+2. Minikube status:
+E1107 17:51:46.261277   13778 status.go:178] status error: host: state: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+E1107 17:51:46.261308   13778 status.go:127] status error: host: state: unknown state "minikube": docker container inspect minikube --format={{.State.Status}}: exit status 1
+stdout:
+
+
+stderr:
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+
+3. Argo CLI version:
+/usr/local/bin/argo: line 1: Not: command not found
+
+4. Kubernetes cluster info:
+Kubernetes control plane is running at https://192.168.49.2:8443
+CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+5. Argo pods status:
+NAME                                   READY   STATUS    RESTARTS   AGE
+argo-server-7bdc95447-g4tf7            0/1     Running   0          22s
+workflow-controller-7884db94b5-67jhb   1/1     Running   0          22s
+
+6. Recent workflows:
+/usr/local/bin/argo: line 1: Not: command not found

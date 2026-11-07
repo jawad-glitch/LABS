@@ -1,0 +1,3 @@
+  otelcol            http://localhost:9464/metrics    up
+  otelcol-internal   http://localhost:8888/metrics    up
+  prometheus         http://localhost:9090/metrics    up

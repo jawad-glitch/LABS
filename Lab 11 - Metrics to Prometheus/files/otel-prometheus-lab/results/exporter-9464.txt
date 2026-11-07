@@ -1,0 +1,10 @@
+# HELP otelcol_httpcheck_duration_milliseconds Measures the duration of the HTTP check.
+# TYPE otelcol_httpcheck_duration_milliseconds gauge
+otelcol_httpcheck_duration_milliseconds{environment="lab",http_url="http://host.docker.internal:8080/health",otel_scope_name="github.com/open-telemetry/opentelemetry-collector-contrib/receiver/httpcheckreceiver",otel_scope_schema_url="",otel_scope_version="0.164.0"} 149
+# HELP otelcol_httpcheck_status 1 if the check resulted in status_code matching the status_class, otherwise 0.
+# TYPE otelcol_httpcheck_status gauge
+otelcol_httpcheck_status{environment="lab",http_method="GET",http_status_class="1xx",http_url="http://host.docker.internal:8080/health",otel_scope_name="github.com/open-telemetry/opentelemetry-collector-contrib/receiver/httpcheckreceiver",otel_scope_schema_url="",otel_scope_version="0.164.0"} 0
+otelcol_httpcheck_status{environment="lab",http_method="GET",http_status_class="3xx",http_url="http://host.docker.internal:8080/health",otel_scope_name="github.com/open-telemetry/opentelemetry-collector-contrib/receiver/httpcheckreceiver",otel_scope_schema_url="",otel_scope_version="0.164.0"} 0
+otelcol_httpcheck_status{environment="lab",http_method="GET",http_status_class="4xx",http_url="http://host.docker.internal:8080/health",otel_scope_name="github.com/open-telemetry/opentelemetry-collector-contrib/receiver/httpcheckreceiver",otel_scope_schema_url="",otel_scope_version="0.164.0"} 0
+otelcol_httpcheck_status{environment="lab",http_method="GET",http_status_class="5xx",http_url="http://host.docker.internal:8080/health",otel_scope_name="github.com/open-telemetry/opentelemetry-collector-contrib/receiver/httpcheckreceiver",otel_scope_schema_url="",otel_scope_version="0.164.0"} 0
+otelcol_httpcheck_status{environment="lab",http_method="GET",http_status_class="2xx",http_status_code="200",http_url="http://host.docker.internal:8080/health",otel_scope_name="github.com/open-telemetry/opentelemetry-collector-contrib/receiver/httpcheckreceiver",otel_scope_schema_url="",otel_scope_version="0.164.0"} 1

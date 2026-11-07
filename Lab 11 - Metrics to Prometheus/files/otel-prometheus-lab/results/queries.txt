@@ -1,0 +1,11 @@
+otelcol_processor_batch_batch_send_size_sum                            -> 1 series
+otelcol_httpcheck_status                                               -> 5 series
+otelcol_process_memory_rss                                             -> 1 series
+rate(otelcol_processor_batch_batch_send_size_sum[5m])                  -> 1 series
+{__name__=~"otelcol_.*"}                                               -> 51 series
+{__name__=~"otelcol_receiver_.*"}                                      -> 3 series
+{__name__=~"otelcol_processor_.*"}                                     -> 30 series
+{__name__=~"otelcol_exporter_.*"}                                      -> 4 series
+otelcol_processor_batch_batch_send_size_sum / otelcol_processor_batch_batch_send_size_count -> 1 series
+rate(otelcol_receiver_accepted_metric_points[1m])                      -> 1 series
+rate(otelcol_exporter_sent_metric_points[1m]) / rate(otelcol_receiver_accepted_metric_points[1m]) -> 0 series

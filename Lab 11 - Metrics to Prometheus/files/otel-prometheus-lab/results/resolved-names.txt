@@ -1,0 +1,1 @@
+resolved: batch=otelcol_processor_batch_batch_send_size_sum | httpcheck=otelcol_httpcheck_status | memory=otelcol_process_memory_rss | accepted=otelcol_receiver_accepted_metric_points | sent=otelcol_exporter_sent_metric_points

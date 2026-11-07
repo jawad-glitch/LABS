@@ -1,0 +1,2 @@
+docker.io/otel/opentelemetry-collector-contrib:latest
+docker.io/prom/prometheus:latest

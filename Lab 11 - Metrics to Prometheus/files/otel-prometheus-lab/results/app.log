@@ -1,0 +1,44 @@
+Server running at http://localhost:8080
+Endpoints:
+  /health - Health check endpoint
+  /metrics - Custom metrics endpoint
+127.0.0.1 - - [07/Nov/2026 00:40:22] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:40:23] "GET /health HTTP/1.1" 200 -
+172.17.0.2 - - [07/Nov/2026 00:40:44] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:40:48] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:40:48] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:40:49] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:40:51] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:40:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:40:54] "GET /health HTTP/1.1" 200 -
+172.17.0.2 - - [07/Nov/2026 00:40:54] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:40:55] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:40:57] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:40:59] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:01] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:02] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:04] "GET /health HTTP/1.1" 200 -
+172.17.0.2 - - [07/Nov/2026 00:41:04] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:05] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:06] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:07] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:09] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:12] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:13] "GET /health HTTP/1.1" 200 -
+172.17.0.2 - - [07/Nov/2026 00:41:14] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:14] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:15] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:16] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:16] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:18] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:19] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:20] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:22] "GET /health HTTP/1.1" 200 -
+172.17.0.2 - - [07/Nov/2026 00:41:24] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:24] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:26] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:28] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:30] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:31] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:33] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 00:41:34] "GET /health HTTP/1.1" 200 -

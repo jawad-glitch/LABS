@@ -1,0 +1,16 @@
+receivers:
+  httpcheck:
+    targets:
+      - endpoint: http://localhost:8080/health
+processors:
+  memory_limiter:
+    limit_mib: 512
+exporters:
+  logging:
+    loglevel: info
+service:
+  pipelines:
+    metrics:
+      receivers: [httpcheck]
+      processors: [memory_limiter]
+      exporters: [logging]

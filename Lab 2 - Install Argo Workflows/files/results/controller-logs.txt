@@ -1,0 +1,30 @@
+time=2026-11-07T18:03:53.215Z level=INFO msg="index config" indexWorkflowSemaphoreKeys=true
+time=2026-11-07T18:03:53.215Z level=INFO msg="cron config" cronSyncPeriod=10s
+time=2026-11-07T18:03:53.215Z level=INFO msg="Memoization caches will be garbage-collected if they have not been hit after" gcAfterNotHitDuration=30s
+time=2026-11-07T18:03:53.216Z level=INFO msg="not enabling pprof debug endpoints"
+time=2026-11-07T18:03:53.264Z level=INFO msg="Configuration updated"
+time=2026-11-07T18:03:53.265Z level=INFO msg="Persistence configuration disabled"
+time=2026-11-07T18:03:53.265Z level=INFO msg="" executorImagePullPolicy="" managedNamespace="" initlessPod=false executorImage=quay.io/argoproj/argoexec:v4.1.6
+time=2026-11-07T18:03:53.266Z level=INFO msg="Starting Prometheus metrics exporter"
+time=2026-11-07T18:03:53.268Z level=INFO msg="Leader election is turned off. Running in single-instance mode"
+time=2026-11-07T18:03:53.269Z level=INFO msg="starting leading" id=single-instance
+time=2026-11-07T18:03:53.271Z level=INFO msg="Generating Self Signed TLS Certificates for Telemetry Servers"
+time=2026-11-07T18:03:53.284Z level=INFO msg="Starting prometheus server" name="prometheus metrics server" port=9090 path=/metrics
+time=2026-11-07T18:03:53.294Z level=INFO msg="Received Workflow Controller config map creation" component=config_watcher namespace=argo name=argo-workflows-workflow-controller-configmap
+time=2026-11-07T18:03:53.294Z level=INFO msg="Configuration updated" component=config_watcher
+time=2026-11-07T18:03:53.294Z level=INFO msg="Persistence configuration disabled" component=config_watcher
+time=2026-11-07T18:03:53.294Z level=INFO msg="" managedNamespace="" initlessPod=false component=config_watcher executorImage=quay.io/argoproj/argoexec:v4.1.6 executorImagePullPolicy=""
+time=2026-11-07T18:03:53.387Z level=INFO msg="DB migration is disabled"
+time=2026-11-07T18:03:53.387Z level=INFO msg="Starting Workflow Controller" version=v4.1.6 instanceID="" defaultRequeueTime=10s buildDate=2026-10-22T08:12:58Z gitCommit=43021573c5a35cbafae009043c132dfcef43a112 gitTag=v4.1.6 gitTreeState=clean goVersion=go1.26.10
+time=2026-11-07T18:03:53.387Z level=INFO msg="Current Worker Numbers" workflowWorkers=32 workflowTtlWorkers=4 podCleanup=4 cronWorkflowWorkers=8 workflowArchive=8
+time=2026-11-07T18:03:53.397Z level=INFO msg="Watching task results" labelSelector=!workflows.argoproj.io/controller-instanceid,workflows.argoproj.io/workflow
+time=2026-11-07T18:03:53.397Z level=INFO msg=Plugins component=config_map_informer executorPlugins=false
+time=2026-11-07T18:03:53.398Z level=INFO msg="Sync manager ttl" component=lock_manager syncLimitCacheTTL=0s
+time=2026-11-07T18:03:53.398Z level=INFO msg="Sync manager initialized" component=lock_manager dbConfigured=false
+time=2026-11-07T18:03:53.410Z level=INFO msg="Sync manager initialized successfully" component=lock_manager
+time=2026-11-07T18:03:53.720Z level=INFO msg="Performing periodic GC" component=wf_garbage_collector periodicity=5m0s
+time=2026-11-07T18:03:53.720Z level=INFO msg="Persistence disabled - so archived workflow GC disabled - you must restart the controller if you enable this" component=archived_wf_garbage_collector
+time=2026-11-07T18:03:53.720Z level=INFO msg="Starting workflow garbage collector controller" component=gc_controller workers=4
+time=2026-11-07T18:03:53.720Z level=INFO msg="Started workflow garbage collection" component=gc_controller
+time=2026-11-07T18:03:53.720Z level=INFO msg="Starting CronWorkflow controller" component=cron instanceID=""
+I1107 18:03:53.751203       1 shared_informer.go:534] "Warning: the sharedIndexInformer has started, run more than once is not allowed"

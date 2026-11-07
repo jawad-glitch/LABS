@@ -1,0 +1,8 @@
+argo: v4.1.6
+  BuildDate: 2026-10-22T08:14:52Z
+  GitCommit: 43021573c5a35cbafae009043c132dfcef43a112
+  GitTreeState: clean
+  GitTag: v4.1.6
+  GoVersion: go1.26.10
+  Compiler: gc
+  Platform: linux/amd64

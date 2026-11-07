@@ -1,0 +1,4 @@
+argo-workflows-server                                                   ClusterRole/argo-workflows-server                                                   39s
+argo-workflows-server-cluster-template                                  ClusterRole/argo-workflows-server-cluster-template                                  39s
+argo-workflows-workflow-controller                                      ClusterRole/argo-workflows-workflow-controller                                      39s
+argo-workflows-workflow-controller-cluster-template                     ClusterRole/argo-workflows-workflow-controller-cluster-template                     39s

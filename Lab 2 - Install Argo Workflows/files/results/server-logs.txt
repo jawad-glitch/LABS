@@ -1,0 +1,11 @@
+time=2026-11-07T18:03:58.915Z level=INFO msg="not enabling pprof debug endpoints"
+time=2026-11-07T18:03:58.951Z level=INFO msg="Starting Argo Server" namespace=argo managedNamespace="" ssoNamespace=argo baseHRef=/ secure=false authModes=[client]
+time=2026-11-07T18:03:58.952Z level=WARN msg="You are running in insecure mode. Learn how to enable transport layer security: https://argo-workflows.readthedocs.io/en/latest/tls/"
+time=2026-11-07T18:03:58.952Z level=INFO msg="SSO disabled"
+time=2026-11-07T18:03:59.014Z level=INFO msg="No artifact drivers configured, skipping validation"
+time=2026-11-07T18:03:59.014Z level=INFO msg="No artifact drivers configured, skipping connection validation"
+time=2026-11-07T18:03:59.014Z level=INFO msg="Starting Argo Server" gitCommit=43021573c5a35cbafae009043c132dfcef43a112 gitTag=v4.1.6 gitTreeState=clean instanceID="" goVersion=go1.26.10 version=v4.1.6 buildDate=2026-10-22T08:13:58Z
+time=2026-11-07T18:03:59.032Z level=INFO msg="Creating event controller" asyncDispatch=false workerCount=4 operationQueueSize=16
+time=2026-11-07T18:03:59.296Z level=INFO msg="GRPC Server Max Message Size, MaxGRPCMessageSize, is set" GRPC_MESSAGE_SIZE=104857600
+time=2026-11-07T18:03:59.296Z level=INFO msg="Argo Server started successfully" url=http://localhost:2746
+time=2026-11-07T18:04:19.168Z level=INFO msg="HTTP request" path=/ method=GET status=200 size=487 duration=9.508643ms

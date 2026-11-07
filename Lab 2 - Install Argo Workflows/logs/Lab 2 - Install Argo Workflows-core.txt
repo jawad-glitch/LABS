@@ -1,0 +1,20 @@
+========== CORE CHECKS (Lab 2 - Install Argo Workflows, 2026-11-07 18:04:59 UTC) ==========
+PASS: Task 1.1: kubectl cluster-info reachable
+FAIL: Task 1.1: at least one node Ready
+FAIL: Task 1.2: helm 3.x installed
+PASS: Task 2.1: argo helm repository added
+PASS: Task 2.2: helm search shows argo/argo-workflows
+PASS: Task 3.1: argo namespace exists and is Active
+PASS: Task 3.2: helm release argo-workflows is deployed
+PASS: Task 3.3: >=2 pods in argo ns, all Running+Ready
+PASS: Task 4.1: deployment argo-workflows-server is available
+PASS: Task 4.1: deployment argo-workflows-workflow-controller is available
+PASS: Task 4.1: service argo-workflows-server exists
+PASS: Task 4.1: helm chart configmaps present in argo ns
+PASS: Task 4.3: serviceaccount argo-workflows-server exists
+PASS: Task 4.3: argo-workflows clusterrolebindings exist
+FAIL: Task 5.2: /api/v1/info returns HTTP 200
+FAIL: Task 5.2: /api/v1/info contains version field
+FAIL: Task 6.1: argo CLI installed and reports v3
+FAIL: Task 6.2: argo CLI reaches the server (argo list)
+CORE: 12/18 PASS

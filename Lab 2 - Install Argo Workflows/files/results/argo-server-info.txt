@@ -1,0 +1,2 @@
+Error: unknown command "server-info" for "argo"
+Run 'argo --help' for usage.

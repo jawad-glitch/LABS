@@ -1,0 +1,14 @@
+NAME                                                     READY   STATUS    RESTARTS   AGE
+pod/argo-workflows-server-7dfdccdd8-tpg9n                1/1     Running   0          35s
+pod/argo-workflows-workflow-controller-55df46c7b-2qkls   1/1     Running   0          35s
+
+NAME                            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+service/argo-workflows-server   ClusterIP   10.104.55.46   <none>        2746/TCP   36s
+
+NAME                                                 READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/argo-workflows-server                1/1     1            1           35s
+deployment.apps/argo-workflows-workflow-controller   1/1     1            1           35s
+
+NAME                                                           DESIRED   CURRENT   READY   AGE
+replicaset.apps/argo-workflows-server-7dfdccdd8                1         1         1       35s
+replicaset.apps/argo-workflows-workflow-controller-55df46c7b   1         1         1       35s

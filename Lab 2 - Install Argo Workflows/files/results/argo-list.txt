@@ -1,0 +1,1 @@
+time=2026-11-07T18:04:58.147Z level=ERROR msg="Failed to get auth string" error="could not find a token"

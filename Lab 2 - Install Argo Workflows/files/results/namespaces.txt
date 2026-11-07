@@ -1,0 +1,5 @@
+NAME              STATUS   AGE
+default           Active   13s
+kube-node-lease   Active   13s
+kube-public       Active   13s
+kube-system       Active   14s

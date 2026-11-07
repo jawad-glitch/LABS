@@ -1,0 +1,30 @@
+Release "argo-workflows" does not exist. Installing it now.
+NAME: argo-workflows
+LAST DEPLOYED: Sat Nov  7 18:02:53 2026
+NAMESPACE: argo
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+1. Get Argo Server external IP/domain by running:
+
+kubectl --namespace argo get services -o wide | grep argo-workflows-server
+
+2. Before submitting workflows, set up executor RBAC. The workflow executor
+   needs permission to create workflowtaskresults, and the default
+   ServiceAccount does not have it, so submitting without this setup fails
+   with 'workflowtaskresults.argoproj.io is forbidden'.
+
+   Either let this chart create a workflow ServiceAccount with the required
+   RBAC by upgrading with:
+
+     --set workflow.serviceAccount.create=true
+
+   and then submit with:
+
+     argo submit https://raw.githubusercontent.com/argoproj/argo-workflows/main/examples/hello-world.yaml --serviceaccount argo-workflow --watch
+
+   or create a ServiceAccount with equivalent RBAC yourself in each namespace
+   where workflows run. See the "ServiceAccount for Workflow Spec" section of
+   the chart README for details.

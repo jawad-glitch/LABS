@@ -1,0 +1,14 @@
+========== CORE CHECKS (Lab 4 - Set Up Logging and Data Directories, 2026-11-07 14:35:21 UTC) ==========
+PASS: Task 1.1/1.2: dirs mode 755
+PASS: Task 2.1/2.2/2.3: config keys present
+PASS: Task 2.3: enhanced preserved
+PASS: Task 3: startup script executable
+PASS: Task 4.1: --help captured
+FAIL: Task 4.2: RPC answered
+PASS: Task 5.1: data populated
+PASS: Task 5.2: database/ files
+PASS: Task 6.1/6.2: log >20 lines
+PASS: Task 6.3: log has rpc
+PASS: Task 7: analyze-logs ran
+PASS: Task 8: verify OK
+CORE: 11/12 PASS

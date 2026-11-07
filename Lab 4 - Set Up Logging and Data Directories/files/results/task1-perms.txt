@@ -1,0 +1,3 @@
+755 /home/ubuntu/besu-lab/data
+755 /home/ubuntu/besu-lab/logs
+755 /home/ubuntu/besu-lab/config

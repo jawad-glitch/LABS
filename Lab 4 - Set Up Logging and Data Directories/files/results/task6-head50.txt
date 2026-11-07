@@ -1,0 +1,4 @@
+Unable to read from empty TOML configuration file.
+
+To display full help:
+besu [COMMAND] --help

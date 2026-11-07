@@ -1,0 +1,7 @@
+total 24
+drwxr-xr-x 3 ubuntu ubuntu 4096 Nov  7 14:30 .
+drwxrwxr-x 6 ubuntu ubuntu 4096 Nov  7 14:29 ..
+-rw-rw-r-- 1 ubuntu ubuntu   61 Nov  7 14:30 DATABASE_METADATA.json
+-rw-rw-r-- 1 ubuntu ubuntu   24 Nov  7 14:30 VERSION_METADATA.json
+drwxr-xr-x 2 ubuntu ubuntu 4096 Nov  7 14:30 database
+-rw------- 1 ubuntu ubuntu   66 Nov  7 14:30 key

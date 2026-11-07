@@ -1,0 +1,4 @@
+total 12
+drwxr-xr-x 2 ubuntu ubuntu 4096 Nov  7 14:28 .
+drwxrwxr-x 6 ubuntu ubuntu 4096 Nov  7 14:28 ..
+-rw-rw-r-- 1 ubuntu ubuntu   96 Nov  7 14:28 besu-20261107-142837.log

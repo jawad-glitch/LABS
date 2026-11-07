@@ -1,0 +1,1 @@
+-rwxrwxr-x 1 ubuntu ubuntu 574 Nov  7 14:28 /home/ubuntu/besu-lab/start-besu-with-logging.sh

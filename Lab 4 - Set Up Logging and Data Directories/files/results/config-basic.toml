@@ -1,0 +1,22 @@
+# Besu Configuration File - Lab 4
+# Data Directory Configuration
+
+# Specify the path where Besu will store blockchain data
+data-path="/home/$USER/besu-lab/data"
+
+# Network Configuration
+network="dev"
+miner-enabled=true
+miner-coinbase="0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"
+
+# RPC Configuration
+rpc-http-enabled=true
+rpc-http-host="127.0.0.1"
+rpc-http-port=8545
+rpc-http-cors-origins=["*"]
+
+# Logging Configuration
+logging="INFO"
+
+# Log file path configuration
+# Note: Besu uses standard output by default, but we can redirect logs

@@ -1,0 +1,20 @@
+Analyzing latest log file: besu-20261107-142837.log
+========================================
+
+1. Startup Information:
+----------------------
+
+2. Network Information:
+----------------------
+
+3. RPC Information:
+------------------
+
+4. Error Messages (if any):
+---------------------------
+
+5. Log Statistics:
+-----------------
+Total lines: 4
+File size: 4.0K
+Creation time: 2026-11-07 14:28:44.449449842 +0000

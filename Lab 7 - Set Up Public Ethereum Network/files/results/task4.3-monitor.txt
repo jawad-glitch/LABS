@@ -1,7 +1,7 @@
 Besu Sepolia Network Monitoring
 ===============================
 
-[2026-11-07 15:08:21] Peers: 0 | Block: 0 | Syncing: In Progress
-[2026-11-07 15:08:25] Peers: 0 | Block: 0 | Syncing: In Progress
-[2026-11-07 15:08:28] Peers: 0 | Block: 0 | Syncing: In Progress
-[2026-11-07 15:08:31] Peers: 0 | Block: 0 | Syncing: In Progress
+[2026-11-07 15:10:43] Peers: 0 | Block: 0 | Syncing: Complete
+[2026-11-07 15:10:46] Peers: 0 | Block: 0 | Syncing: Complete
+[2026-11-07 15:10:49] Peers: 0 | Block: 0 | Syncing: Complete
+[2026-11-07 15:10:52] Peers: 0 | Block: 0 | Syncing: Complete

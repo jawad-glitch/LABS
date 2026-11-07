@@ -2,11 +2,48 @@ Sepolia Network Information Report
 ==================================
 
 Network Version:
-Expecting value: line 1 column 1 (char 0)
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "11155111"
+}
 
 Node Information:
-Expecting value: line 1 column 1 (char 0)
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "enode": "enode://0d5f910b99a48c2db8c5e1a1ac5cdc31c1a4ae2aa66a3026ea077fb0b65891ccc34563a9d887cf897fbe5cf1d951a3f4b45fcd340c5326194e35ed3702fe14fe@0.0.0.0:30303",
+        "listenAddr": "0.0.0.0:30303",
+        "ip": "0.0.0.0",
+        "name": "besu/v23.10.2/linux-x86_64/openjdk-java-17",
+        "id": "0d5f910b99a48c2db8c5e1a1ac5cdc31c1a4ae2aa66a3026ea077fb0b65891ccc34563a9d887cf897fbe5cf1d951a3f4b45fcd340c5326194e35ed3702fe14fe",
+        "ports": {
+            "discovery": 30303,
+            "listener": 30303
+        },
+        "protocols": {
+            "eth": {
+                "config": {
+                    "chainId": 11155111,
+                    "homesteadBlock": 0,
+                    "eip150Block": 0,
+                    "eip158Block": 0,
+                    "byzantiumBlock": 0,
+                    "constantinopleBlock": 0,
+                    "petersburgBlock": 0,
+                    "istanbulBlock": 0,
+                    "berlinBlock": 0,
+                    "londonBlock": 0,
+                    "mergeNetSplitBlock": 1735371,
+                    "shanghaiTime": 1677557088,
+                    "ethash": {}
+                },
 
 Network Listening Status:
-Expecting value: line 1 column 1 (char 0)
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": true
+}
 

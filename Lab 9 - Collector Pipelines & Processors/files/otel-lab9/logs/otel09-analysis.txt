@@ -1,0 +1,10 @@
+OpenTelemetry Collector Data Analysis
+==================================================
+File Export Analysis
+==============================
+Total lines in export file: 3
+Trace documents: 1 | Metric documents: 1 | Log documents: 1
+Documents carrying service.environment + lab.name + lab.number: 3/3
+
+==================================================
+Analysis complete!

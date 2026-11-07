@@ -1,0 +1,27 @@
+OpenTelemetry Collector Configuration Validator
+=======================================================
+✓ Configuration file loaded successfully
+✓ receivers section found
+✓ processors section found
+✓ exporters section found
+✓ service section found
+✓ OTLP receiver configured
+✓ memory_limiter processor configured
+✓ batch processor configured
+✓ attributes processor configured
+✓ service.environment attribute configured
+✓ traces pipeline configured
+  ✓ traces pipeline has OTLP receiver
+  ✓ traces pipeline has all required processors
+  ✓ traces pipeline order: memory_limiter first, batch last
+✓ metrics pipeline configured
+  ✓ metrics pipeline has OTLP receiver
+  ✓ metrics pipeline has all required processors
+  ✓ metrics pipeline order: memory_limiter first, batch last
+✓ logs pipeline configured
+  ✓ logs pipeline has OTLP receiver
+  ✓ logs pipeline has all required processors
+  ✓ logs pipeline order: memory_limiter first, batch last
+
+=======================================================
+Configuration validation completed!

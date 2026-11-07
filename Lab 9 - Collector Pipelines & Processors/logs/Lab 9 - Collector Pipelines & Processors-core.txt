@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 9 - Collector Pipelines & Processors, 2026-11-07 00:27:42 UTC) ==========
+PASS: Task 2: config validates in contrib collector (memory_limiter, attributes, batch; debug + file)
+PASS: Task 3: collector started via docker compose ('Everything is ready', health 200)
+PASS: Task 4: original 16-hex trace id rejected (HTTP 400) - fixed generator accepted
+PASS: Task 4.4: traces, metrics AND logs enriched with service.environment/lab.name/lab.number
+PASS: Task 5: file exporter wrote to host ./data with all 3 signals
+PASS: Task 5.2: analyze-data.py - every exported document carries the added attributes
+PASS: Task 6: updated config (batch 512/2s) applied - pipeline.version + processed.timestamp added
+PASS: Task 7: stress test - all requests accepted, no memory_limiter refusals
+PASS: Task 8.1: validate-config.py has no failures (incl. processor order)
+PASS: Task 8.2: health-check.py passed
+PASS: Task 9: summary written, collector stopped, archive created
+CORE: 11/11 PASS

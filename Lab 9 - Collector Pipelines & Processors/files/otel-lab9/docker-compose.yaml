@@ -1,0 +1,22 @@
+services:
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    container_name: otel-collector-lab9
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./config/otel-config.yaml:/etc/otel-collector-config.yaml:ro
+      - ./logs:/tmp/logs
+      - ./data:/tmp/data
+    ports:
+      - "4317:4317"   # OTLP gRPC receiver
+      - "4318:4318"   # OTLP HTTP receiver
+      - "8888:8888"   # Collector's own Prometheus metrics (/metrics)
+      - "8889:8889"   # Prometheus exporter metrics (unused here)
+      - "13133:13133" # health_check extension
+    environment:
+      - OTEL_LOG_LEVEL=info
+    restart: unless-stopped
+
+networks:
+  default:
+    name: otel-lab9-network

@@ -1,0 +1,17 @@
+Starting comprehensive health check...
+
+OpenTelemetry Collector Health Check
+========================================
+✓ health_check extension reports healthy (13133)
+✓ Collector self-metrics served on 8888/metrics
+✓ OTLP HTTP endpoint is accessible
+✓ OTLP gRPC port is open
+
+Testing Pipeline Flow
+=========================
+✓ Test data sent successfully
+✓ Pipeline is processing data
+
+========================================
+✓ All health checks passed!
+✓ Collector pipeline is working correctly

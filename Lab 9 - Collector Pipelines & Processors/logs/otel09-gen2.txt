@@ -1,0 +1,14 @@
+OpenTelemetry Collector Test Data Generator
+==================================================
+
+1. Sending trace data...
+✓ Successfully sent data to http://localhost:4318/v1/traces
+
+2. Sending metric data...
+✓ Successfully sent data to http://localhost:4318/v1/metrics
+
+3. Sending log data...
+✓ Successfully sent data to http://localhost:4318/v1/logs
+
+4. Test completed at 2026-11-07 00:27:10.102183
+Check the collector logs to see the processed data with added attributes!

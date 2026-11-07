@@ -1,0 +1,1 @@
+otel-collector-lab9  CPU 0.37%  MEM 45.65MiB / 3.759GiB

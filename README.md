@@ -26,3 +26,4 @@
 | [Lab 20 - End-to-End Incident Drill](Lab%2020%20-%20End-to-End%20Incident%20Drill/PROOF.md) | CORE: 9/14 PASS | 2026-11-07 01:50 |
 | [Lab 1 - Install Hyperledger Besu](Lab%201%20-%20Install%20Hyperledger%20Besu/PROOF.md) | CORE: 9/9 PASS | 2026-11-07 13:16 |
 | [Lab 2 - Run Besu Node](Lab%202%20-%20Run%20Besu%20Node/PROOF.md) | CORE RESULT: 10/10 PASS | 2026-11-07 13:29 |
+| [Lab 3 - Besu CLI Configuration](Lab%203%20-%20Besu%20CLI%20Configuration/PROOF.md) | CORE: 3/12 PASS | 2026-11-07 14:08 |

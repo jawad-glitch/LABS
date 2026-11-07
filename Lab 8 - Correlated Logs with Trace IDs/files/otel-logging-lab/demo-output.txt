@@ -1,0 +1,505 @@
+Starting Correlated Logging Demo
+2026-11-07 00:20:58,044 - __main__ - INFO - [trace_id=0 span_id=0] - Application started - beginning user processing
+2026-11-07 00:20:58,044 - __main__ - INFO - [trace_id=14d078566fcb5130d48f129329721823 span_id=1dd7ddbee4d8bc97] - Starting to process request for user 101
+2026-11-07 00:20:58,145 - __main__ - INFO - [trace_id=14d078566fcb5130d48f129329721823 span_id=65cda200bec5fe19] - Validating data for user 101
+2026-11-07 00:20:58,195 - __main__ - INFO - [trace_id=14d078566fcb5130d48f129329721823 span_id=65cda200bec5fe19] - User 101 data validation successful
+2026-11-07 00:20:58,196 - __main__ - INFO - [trace_id=14d078566fcb5130d48f129329721823 span_id=00bd1d04de5d24ff] - Saving data for user 101 to database
+2026-11-07 00:20:58,276 - __main__ - INFO - [trace_id=14d078566fcb5130d48f129329721823 span_id=00bd1d04de5d24ff] - Successfully saved data for user 101
+2026-11-07 00:20:58,276 - __main__ - INFO - [trace_id=14d078566fcb5130d48f129329721823 span_id=1dd7ddbee4d8bc97] - Completed processing request for user 101
+2026-11-07 00:20:58,277 - __main__ - INFO - [trace_id=781c376af87c12273a564b802bea21ab span_id=0c2f923d58aae309] - Starting to process request for user 102
+2026-11-07 00:20:58,377 - __main__ - INFO - [trace_id=781c376af87c12273a564b802bea21ab span_id=38d9e0cad99c6e07] - Validating data for user 102
+2026-11-07 00:20:58,428 - __main__ - WARNING - [trace_id=781c376af87c12273a564b802bea21ab span_id=38d9e0cad99c6e07] - User 102 has incomplete profile data
+2026-11-07 00:20:58,428 - __main__ - INFO - [trace_id=781c376af87c12273a564b802bea21ab span_id=00351fe8950c496d] - Saving data for user 102 to database
+2026-11-07 00:20:58,508 - __main__ - INFO - [trace_id=781c376af87c12273a564b802bea21ab span_id=00351fe8950c496d] - Successfully saved data for user 102
+2026-11-07 00:20:58,509 - __main__ - INFO - [trace_id=781c376af87c12273a564b802bea21ab span_id=0c2f923d58aae309] - Completed processing request for user 102
+2026-11-07 00:20:58,509 - __main__ - INFO - [trace_id=fcc83ac6528042e42c1488555ce92d10 span_id=c79f3ef42d920203] - Starting to process request for user 103
+2026-11-07 00:20:58,609 - __main__ - INFO - [trace_id=fcc83ac6528042e42c1488555ce92d10 span_id=1aede0755c957973] - Validating data for user 103
+2026-11-07 00:20:58,660 - __main__ - INFO - [trace_id=fcc83ac6528042e42c1488555ce92d10 span_id=1aede0755c957973] - User 103 data validation successful
+2026-11-07 00:20:58,660 - __main__ - INFO - [trace_id=fcc83ac6528042e42c1488555ce92d10 span_id=52e97d82c0572698] - Saving data for user 103 to database
+2026-11-07 00:20:58,741 - __main__ - INFO - [trace_id=fcc83ac6528042e42c1488555ce92d10 span_id=52e97d82c0572698] - Successfully saved data for user 103
+2026-11-07 00:20:58,741 - __main__ - INFO - [trace_id=fcc83ac6528042e42c1488555ce92d10 span_id=c79f3ef42d920203] - Completed processing request for user 103
+2026-11-07 00:20:58,741 - __main__ - INFO - [trace_id=85b922ec480fec17a51629a5391e5a9c span_id=0221718e614654da] - Starting to process request for user 999
+2026-11-07 00:20:58,842 - __main__ - INFO - [trace_id=85b922ec480fec17a51629a5391e5a9c span_id=37472a7186b2d213] - Validating data for user 999
+2026-11-07 00:20:58,892 - __main__ - INFO - [trace_id=85b922ec480fec17a51629a5391e5a9c span_id=37472a7186b2d213] - User 999 data validation successful
+2026-11-07 00:20:58,893 - __main__ - INFO - [trace_id=85b922ec480fec17a51629a5391e5a9c span_id=73929f796d0a8afb] - Saving data for user 999 to database
+2026-11-07 00:20:58,973 - __main__ - ERROR - [trace_id=85b922ec480fec17a51629a5391e5a9c span_id=73929f796d0a8afb] - Failed to save data for user 999: Database connection failed
+2026-11-07 00:20:58,974 - __main__ - INFO - [trace_id=85b922ec480fec17a51629a5391e5a9c span_id=0221718e614654da] - Completed processing request for user 999
+2026-11-07 00:20:58,974 - __main__ - INFO - [trace_id=488225a5db6678f27fdfeace05897faf span_id=ea405e77adb65d5d] - Starting to process request for user 105
+2026-11-07 00:20:59,075 - __main__ - INFO - [trace_id=488225a5db6678f27fdfeace05897faf span_id=317806ef6dcd4b92] - Validating data for user 105
+2026-11-07 00:20:59,125 - __main__ - INFO - [trace_id=488225a5db6678f27fdfeace05897faf span_id=317806ef6dcd4b92] - User 105 data validation successful
+2026-11-07 00:20:59,125 - __main__ - INFO - [trace_id=488225a5db6678f27fdfeace05897faf span_id=2eea6e2ea30e0043] - Saving data for user 105 to database
+2026-11-07 00:20:59,206 - __main__ - INFO - [trace_id=488225a5db6678f27fdfeace05897faf span_id=2eea6e2ea30e0043] - Successfully saved data for user 105
+2026-11-07 00:20:59,206 - __main__ - INFO - [trace_id=488225a5db6678f27fdfeace05897faf span_id=ea405e77adb65d5d] - Completed processing request for user 105
+2026-11-07 00:20:59,206 - __main__ - INFO - [trace_id=0 span_id=0] - Application completed - all users processed
+Demo completed. Check the output above for correlated logs and traces.
+{
+    "name": "validate_user_data",
+    "context": {
+        "trace_id": "0x14d078566fcb5130d48f129329721823",
+        "span_id": "0x65cda200bec5fe19",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x1dd7ddbee4d8bc97",
+    "start_time": "2026-11-07T00:20:58.145344Z",
+    "end_time": "2026-11-07T00:20:58.196065Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 101
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "save_user_data",
+    "context": {
+        "trace_id": "0x14d078566fcb5130d48f129329721823",
+        "span_id": "0x00bd1d04de5d24ff",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x1dd7ddbee4d8bc97",
+    "start_time": "2026-11-07T00:20:58.196216Z",
+    "end_time": "2026-11-07T00:20:58.276801Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 101,
+        "operation": "database_save",
+        "save.status": "success"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "process_user_request",
+    "context": {
+        "trace_id": "0x14d078566fcb5130d48f129329721823",
+        "span_id": "0x1dd7ddbee4d8bc97",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-11-07T00:20:58.044814Z",
+    "end_time": "2026-11-07T00:20:58.276989Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 101
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "validate_user_data",
+    "context": {
+        "trace_id": "0x781c376af87c12273a564b802bea21ab",
+        "span_id": "0x38d9e0cad99c6e07",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x0c2f923d58aae309",
+    "start_time": "2026-11-07T00:20:58.377603Z",
+    "end_time": "2026-11-07T00:20:58.428325Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 102
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "save_user_data",
+    "context": {
+        "trace_id": "0x781c376af87c12273a564b802bea21ab",
+        "span_id": "0x00351fe8950c496d",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x0c2f923d58aae309",
+    "start_time": "2026-11-07T00:20:58.428499Z",
+    "end_time": "2026-11-07T00:20:58.509011Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 102,
+        "operation": "database_save",
+        "save.status": "success"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "process_user_request",
+    "context": {
+        "trace_id": "0x781c376af87c12273a564b802bea21ab",
+        "span_id": "0x0c2f923d58aae309",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-11-07T00:20:58.277117Z",
+    "end_time": "2026-11-07T00:20:58.509173Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 102
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "validate_user_data",
+    "context": {
+        "trace_id": "0xfcc83ac6528042e42c1488555ce92d10",
+        "span_id": "0x1aede0755c957973",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xc79f3ef42d920203",
+    "start_time": "2026-11-07T00:20:58.609691Z",
+    "end_time": "2026-11-07T00:20:58.660615Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 103
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "save_user_data",
+    "context": {
+        "trace_id": "0xfcc83ac6528042e42c1488555ce92d10",
+        "span_id": "0x52e97d82c0572698",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xc79f3ef42d920203",
+    "start_time": "2026-11-07T00:20:58.660801Z",
+    "end_time": "2026-11-07T00:20:58.741380Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 103,
+        "operation": "database_save",
+        "save.status": "success"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "process_user_request",
+    "context": {
+        "trace_id": "0xfcc83ac6528042e42c1488555ce92d10",
+        "span_id": "0xc79f3ef42d920203",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-11-07T00:20:58.509267Z",
+    "end_time": "2026-11-07T00:20:58.741570Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 103
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "validate_user_data",
+    "context": {
+        "trace_id": "0x85b922ec480fec17a51629a5391e5a9c",
+        "span_id": "0x37472a7186b2d213",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x0221718e614654da",
+    "start_time": "2026-11-07T00:20:58.842057Z",
+    "end_time": "2026-11-07T00:20:58.892831Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 999
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "save_user_data",
+    "context": {
+        "trace_id": "0x85b922ec480fec17a51629a5391e5a9c",
+        "span_id": "0x73929f796d0a8afb",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x0221718e614654da",
+    "start_time": "2026-11-07T00:20:58.892976Z",
+    "end_time": "2026-11-07T00:20:58.974317Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 999,
+        "operation": "database_save",
+        "save.status": "failed"
+    },
+    "events": [
+        {
+            "name": "exception",
+            "timestamp": "2026-11-07T00:20:58.974294Z",
+            "attributes": {
+                "exception.type": "Exception",
+                "exception.message": "Database connection failed",
+                "exception.stacktrace": "Traceback (most recent call last):\n  File \"/home/ubuntu/otel-logging-lab/correlated_logging_demo.py\", line 74, in save_user_data\n    raise Exception(\"Database connection failed\")\nException: Database connection failed\n",
+                "exception.escaped": "False"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "process_user_request",
+    "context": {
+        "trace_id": "0x85b922ec480fec17a51629a5391e5a9c",
+        "span_id": "0x0221718e614654da",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-11-07T00:20:58.741668Z",
+    "end_time": "2026-11-07T00:20:58.974513Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 999
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "validate_user_data",
+    "context": {
+        "trace_id": "0x488225a5db6678f27fdfeace05897faf",
+        "span_id": "0x317806ef6dcd4b92",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xea405e77adb65d5d",
+    "start_time": "2026-11-07T00:20:59.075002Z",
+    "end_time": "2026-11-07T00:20:59.125699Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 105
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "save_user_data",
+    "context": {
+        "trace_id": "0x488225a5db6678f27fdfeace05897faf",
+        "span_id": "0x2eea6e2ea30e0043",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0xea405e77adb65d5d",
+    "start_time": "2026-11-07T00:20:59.125817Z",
+    "end_time": "2026-11-07T00:20:59.206429Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 105,
+        "operation": "database_save",
+        "save.status": "success"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "process_user_request",
+    "context": {
+        "trace_id": "0x488225a5db6678f27fdfeace05897faf",
+        "span_id": "0xea405e77adb65d5d",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-11-07T00:20:58.974607Z",
+    "end_time": "2026-11-07T00:20:59.206656Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "user.id": 105
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.45.2",
+            "service.instance.id": "de113a3e-9a3d-422b-81da-e90ff949ddf9",
+            "service.name": "unknown_service:python"
+        },
+        "schema_url": ""
+    }
+}

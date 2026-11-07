@@ -1,0 +1,7 @@
+spans exported: 15 | log lines: 32 (in-span 30, outside-span trace_id=0: 2)
+in-span log lines whose trace_id+span_id match an exported span: 30/30
+log lines attributed to the correct span name: 15/15
+distinct traces with logs: 5 | user 999 error log in span with recorded exception: True
+ALL_MATCH=yes
+RIGHT_SPAN=yes
+EXC_CORRELATED=yes

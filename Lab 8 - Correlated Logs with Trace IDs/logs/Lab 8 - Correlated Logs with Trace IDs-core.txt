@@ -1,0 +1,12 @@
+========== CORE CHECKS (Lab 8 - Correlated Logs with Trace IDs, 2026-11-07 00:21:27 UTC) ==========
+PASS: Task 1: opentelemetry-api, -sdk, -instrumentation-logging installed in venv
+PASS: Task 2: custom format applied ('- LEVEL - [trace_id=... span_id=...] - message')
+PASS: Task 3.2: demo ran; in-span logs carry 32-hex trace_id + 16-hex span_id
+PASS: Task 3.3: logs outside spans show trace_id=0 (no active span)
+PASS: Task 3.3: every in-span log's trace_id+span_id matches an exported span
+PASS: Task 3.3: logs land in the correct span (Validating->validate_user_data, Saving->save_user_data)
+PASS: Task 3.3: user 999 error log correlated with span that recorded the exception
+PASS: Task 3.4: analyze_logs.py finds 5 traces with nested spans
+PASS: Task 3.6: enhanced demo ran; DEBUG logs emitted (level honoured) and all correlated
+PASS: Task 3.7: verify_correlation.py passed (nested spans found)
+CORE: 10/10 PASS

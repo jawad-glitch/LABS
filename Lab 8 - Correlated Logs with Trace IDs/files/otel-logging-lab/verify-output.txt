@@ -1,0 +1,10 @@
+=== Correlation Verification ===
+Running demo and capturing output...
+Verifying correlation...
+✅ SUCCESS: Found 32 correlated log entries
+✅ SUCCESS: Found 6 unique trace IDs
+✅ SUCCESS: Found 16 unique span IDs
+✅ SUCCESS: Found nested spans (more spans than traces)
+
+🎉 All correlation checks passed!
+Your OpenTelemetry logging correlation is working correctly.

@@ -1,0 +1,56 @@
+=== LOG CORRELATION ANALYSIS ===
+
+Total unique traces found: 5
+Total unique spans found: 15
+Log lines outside any span (trace_id=0): 2
+
+TRACE ID: 14d078566fcb5130d48f129329721823
+  Number of log entries: 6
+  Unique spans in this trace: 3
+    [1dd7ddbe...] Starting to process request for user 101
+    [65cda200...] Validating data for user 101
+    [65cda200...] User 101 data validation successful
+    [00bd1d04...] Saving data for user 101 to database
+    [00bd1d04...] Successfully saved data for user 101
+    [1dd7ddbe...] Completed processing request for user 101
+
+TRACE ID: 781c376af87c12273a564b802bea21ab
+  Number of log entries: 6
+  Unique spans in this trace: 3
+    [0c2f923d...] Starting to process request for user 102
+    [38d9e0ca...] Validating data for user 102
+    [38d9e0ca...] User 102 has incomplete profile data
+    [00351fe8...] Saving data for user 102 to database
+    [00351fe8...] Successfully saved data for user 102
+    [0c2f923d...] Completed processing request for user 102
+
+TRACE ID: fcc83ac6528042e42c1488555ce92d10
+  Number of log entries: 6
+  Unique spans in this trace: 3
+    [c79f3ef4...] Starting to process request for user 103
+    [1aede075...] Validating data for user 103
+    [1aede075...] User 103 data validation successful
+    [52e97d82...] Saving data for user 103 to database
+    [52e97d82...] Successfully saved data for user 103
+    [c79f3ef4...] Completed processing request for user 103
+
+TRACE ID: 85b922ec480fec17a51629a5391e5a9c
+  Number of log entries: 6
+  Unique spans in this trace: 3
+    [0221718e...] Starting to process request for user 999
+    [37472a71...] Validating data for user 999
+    [37472a71...] User 999 data validation successful
+    [73929f79...] Saving data for user 999 to database
+    [73929f79...] Failed to save data for user 999: Database connection failed
+    [0221718e...] Completed processing request for user 999
+
+TRACE ID: 488225a5db6678f27fdfeace05897faf
+  Number of log entries: 6
+  Unique spans in this trace: 3
+    [ea405e77...] Starting to process request for user 105
+    [317806ef...] Validating data for user 105
+    [317806ef...] User 105 data validation successful
+    [2eea6e2e...] Saving data for user 105 to database
+    [2eea6e2e...] Successfully saved data for user 105
+    [ea405e77...] Completed processing request for user 105
+

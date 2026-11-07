@@ -1,0 +1,23 @@
+========== CORE CHECKS (Lab 8 - Consensus Mechanism - Proof of Authority (PoA), 2026-11-07 15:19:06 UTC) ==========
+PASS: Task 2.1: working dir + 3 validator dirs exist
+PASS: Task 2.2/2.3: 3 validator addresses exported (40 hex each)
+PASS: Task 2.4: genesis.json has all 3 validators in extraData + alloc
+PASS: Task 2.4: genesis.json has clique period=15, epoch=30000
+PASS: Task 2.5: genesis JSON valid
+PASS: Task 3.1: init succeeded (log exists)
+FAIL: Task 3.2/3.3: besu started (RPC_READY=1)
+PASS: Task 3.3: block produced (BLOCK_READY=1)
+PASS: Task 3.4: net_version = 1337
+PASS: Task 4.1: eth_blockNumber > 0
+PASS: Task 4.2: latest block has non-zero number
+PASS: Task 4.3: monitor_blocks output shows block numbers
+PASS: Task 4.4: clique_getSigners returned 3 validators
+PASS: Task 4.4: clique_proposals answered
+PASS: Task 4.5: V1 balance non-zero
+PASS: Task 4.5: V2 balance non-zero
+PASS: Task 5.1: poa_status_check complete
+FAIL: Task 5.1: status shows chainId=1337 and Mining: true
+FAIL: Task 5.2: block production produced >=1 block in 20s
+PASS: Task 6.1: besu stopped (process gone)
+PASS: Task 6.2: lab_summary.txt written
+CORE: 18/21 PASS

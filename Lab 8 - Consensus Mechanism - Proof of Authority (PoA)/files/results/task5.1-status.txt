@@ -1,0 +1,21 @@
+=== PoA Network Status Check ===
+
+1. Network ID:
+Network ID: 1337
+
+2. Chain ID:
+Chain ID: 1337
+
+3. Current Block:
+Block Number: 1
+
+4. Connected Peers:
+Peer Count: 0
+
+5. Current Gas Price:
+Gas Price: 1000 wei
+
+6. Mining Status:
+Mining: True
+
+=== Status Check Complete ===

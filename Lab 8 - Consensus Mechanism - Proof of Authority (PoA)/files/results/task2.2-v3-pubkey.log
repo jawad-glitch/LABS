@@ -1,0 +1,1 @@
+2026-11-07 15:15:59.710+00:00 | main | INFO  | KeyPairUtil | Generated new secp256k1 public key 0xf2e151c6bf305f00c30b99da9920cd1e650e18b52ab5058009557174ebb97bcd884e02a8bdd19b50b2d2445603e37b9319264ceea8da60553d69bd07c45d350f and stored it to /home/ubuntu/besu-poa-lab/validator3/key

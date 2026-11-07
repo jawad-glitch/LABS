@@ -1,0 +1,82 @@
+2026-11-07 14:49:12.570+00:00 | main | INFO  | Besu | Starting Besu
+2026-11-07 14:49:13.556+00:00 | main | WARN  | Besu | Forcing --bonsai-limit-trie-logs-enabled=false, since it cannot be enabled with --sync-mode=FULL and --data-storage-format=BONSAI.
+2026-11-07 14:49:13.562+00:00 | main | INFO  | Besu | Connecting to 0 static nodes.
+2026-11-07 14:49:13.627+00:00 | main | INFO  | Besu | jemalloc library not found, memory usage may be reduced by installing it
+2026-11-07 14:49:13.763+00:00 | main | INFO  | Besu | 
+####################################################################################################
+#                                                                                                  #
+# Besu version 24.12.2                                                                             #
+#                                                                                                  #
+# Configuration:                                                                                   #
+# Network: Custom genesis file                                                                     #
+# /home/ubuntu/private-network/genesis.json                                                        #
+# Network Id: 1337                                                                                 #
+# Data storage: Bonsai                                                                             #
+# Sync mode: Full                                                                                  #
+# Sync min peers: 5                                                                                #
+# RPC HTTP APIs: ETH,NET,WEB3                                                                      #
+# RPC HTTP port: 8545                                                                              #
+# Using LAYERED transaction pool implementation                                                    #
+# Using STACKED worldstate update mode                                                             #
+#                                                                                                  #
+# Host:                                                                                            #
+# Java: openjdk-java-21                                                                            #
+# Maximum heap size: 0.94 GB                                                                       #
+# OS: linux-x86_64                                                                                 #
+# glibc: 2.39                                                                                      #
+# Total memory: 3.76 GB                                                                            #
+# CPU cores: 2                                                                                     #
+#                                                                                                  #
+# Plugin Registration Summary:                                                                     #
+# No plugins have been registered.                                                                 #
+# TOTAL = 0 of 0 plugins successfully registered.                                                  #
+#                                                                                                  #
+####################################################################################################
+2026-11-07 14:49:13.766+00:00 | main | INFO  | Besu | Security Module: localfile
+2026-11-07 14:49:13.769+00:00 | main | INFO  | VersionMetadata | Lookup version metadata file in data directory: /home/ubuntu/private-network/data2
+2026-11-07 14:49:13.769+00:00 | main | INFO  | VersionMetadata | Data directory /home/ubuntu/private-network/data2 does not exist - creating it
+2026-11-07 14:49:13.771+00:00 | main | INFO  | VersionMetadata | No version data detected. Writing Besu version 24.12.2 to metadata file
+2026-11-07 14:49:13.909+00:00 | main | INFO  | Besu | Using the native implementation of alt bn128
+2026-11-07 14:49:14.011+00:00 | main | INFO  | Besu | Using the native implementation of modexp
+2026-11-07 14:49:14.012+00:00 | main | INFO  | Besu | Using the native implementation of the signature algorithm
+2026-11-07 14:49:14.034+00:00 | main | INFO  | Besu | Using the native implementation of the blake2bf algorithm
+2026-11-07 14:49:14.505+00:00 | main | INFO  | KeyPairUtil | Generated new secp256k1 public key 0x25e111f80c551bbef001e8c870945b44cf7813ee703931a2155f5349b0b87ab9983c2f0ed972f78169ce1274b337ef3973c57f0df703097ee8b983e7052e6e0f and stored it to /home/ubuntu/private-network/data2/key
+2026-11-07 14:49:14.902+00:00 | main | INFO  | ProtocolScheduleBuilder | Protocol schedule created with milestones: [London:0]
+2026-11-07 14:49:14.910+00:00 | main | INFO  | RocksDBKeyValueStorageFactory | No existing database at /home/ubuntu/private-network/data2. Using default metadata for new db versionedStorageFormat=BaseVersionedStorageFormat{format=BONSAI, version=3}
+2026-11-07 14:49:15.334+00:00 | main | INFO  | FlatDbStrategyProvider | Flat db mode found FULL
+2026-11-07 14:49:15.339+00:00 | main | INFO  | FlatDbStrategyProvider | DB mode with code stored using code hash enabled = true
+2026-11-07 14:49:15.362+00:00 | main | INFO  | FlatDbStrategyProvider | Flat db mode found FULL
+2026-11-07 14:49:15.364+00:00 | main | INFO  | FlatDbStrategyProvider | DB mode with code stored using code hash enabled = true
+2026-11-07 14:49:15.615+00:00 | main | INFO  | TransactionPoolFactory | Enabling transaction pool
+2026-11-07 14:49:15.648+00:00 | main | INFO  | BesuControllerBuilder | TTD difficulty is not present, creating initial sync phase for PoW
+2026-11-07 14:49:15.701+00:00 | main | INFO  | RunnerBuilder | Resolved 0 bootnodes.
+2026-11-07 14:49:15.713+00:00 | main | INFO  | RunnerBuilder | Detecting NAT service.
+2026-11-07 14:49:15.935+00:00 | main | INFO  | Runner | Starting external services ... 
+2026-11-07 14:49:15.937+00:00 | main | INFO  | JsonRpcHttpService | Starting JSON-RPC service on 0.0.0.0:8545
+2026-11-07 14:49:16.161+00:00 | vert.x-eventloop-thread-3 | INFO  | JsonRpcHttpService | JSON-RPC service started and listening on 0.0.0.0:8545
+2026-11-07 14:49:16.170+00:00 | main | INFO  | AutoTransactionLogBloomCachingService | Starting auto transaction log bloom caching service.
+2026-11-07 14:49:16.171+00:00 | main | INFO  | LogBloomCacheMetadata | Lookup cache metadata file in data directory: /home/ubuntu/private-network/data2/caches
+2026-11-07 14:49:16.191+00:00 | main | INFO  | Runner | Starting Ethereum main loop ... 
+2026-11-07 14:49:16.192+00:00 | main | INFO  | NatService | No NAT environment detected so no service could be started
+2026-11-07 14:49:16.193+00:00 | main | INFO  | NetworkRunner | Starting Network.
+2026-11-07 14:49:16.214+00:00 | nioEventLoopGroup-2-1 | INFO  | RlpxAgent | P2P RLPx agent started and listening on /[0:0:0:0:0:0:0:0]:30303.
+2026-11-07 14:49:16.215+00:00 | main | INFO  | PeerDiscoveryAgent | Starting peer discovery agent on host=0.0.0.0, port=30303. IPv6 available.
+2026-11-07 14:49:16.245+00:00 | vert.x-eventloop-thread-3 | INFO  | VertxPeerDiscoveryAgent | Started peer discovery agent successfully, on effective host=0:0:0:0:0:0:0:0 and port=30303
+2026-11-07 14:49:16.249+00:00 | vert.x-eventloop-thread-3 | INFO  | PeerDiscoveryAgent | P2P peer discovery agent started and listening on /[0:0:0:0:0:0:0:0]:30303
+2026-11-07 14:49:16.351+00:00 | vert.x-eventloop-thread-3 | INFO  | PeerDiscoveryAgent | Writing node record to disk. NodeRecord{seq=1, publicKey=0x0325e111f80c551bbef001e8c870945b44cf7813ee703931a2155f5349b0b87ab9, udpAddress=Optional[/127.0.0.1:30303], tcpAddress=Optional[/127.0.0.1:30303], udp6Address=Optional.empty, tcp6Address=Optional.empty, asBase64=-Je4QIQIfkRPk06mNbngfBaNH4AhchNIBvh_RNSAqqJT6WoMIYndHOeRvrBjV4r7pyLKauPq5pjsoQbnsQdxd1fTgLsBg2V0aMfGhECfk7GAgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQMl4RH4DFUbvvAB6MhwlFtEz3gT7nA5MaIVX1NJsLh6uYN0Y3CCdl-DdWRwgnZf, nodeId=0x9f607a1b3eb7e6819214ce75aaa886cebec0795ea50b806817574a442d61250f, customFields={tcp=30303, udp=30303, ip=0x7f000001, eth=[[0x409f93b1, 0x]], id=V4, secp256k1=0x0325e111f80c551bbef001e8c870945b44cf7813ee703931a2155f5349b0b87ab9}}
+2026-11-07 14:49:16.399+00:00 | main | INFO  | DefaultP2PNetwork | Enode URL enode://25e111f80c551bbef001e8c870945b44cf7813ee703931a2155f5349b0b87ab9983c2f0ed972f78169ce1274b337ef3973c57f0df703097ee8b983e7052e6e0f@127.0.0.1:30303
+2026-11-07 14:49:16.401+00:00 | main | INFO  | DefaultP2PNetwork | Node address 0xaaa886cebec0795ea50b806817574a442d61250f
+2026-11-07 14:49:16.428+00:00 | main | INFO  | NetworkRunner | Supported capabilities: [eth/62, eth/63, eth/64, eth/65, eth/66, eth/67, eth/68], [snap/1]
+2026-11-07 14:49:16.428+00:00 | main | INFO  | DefaultSynchronizer | Starting synchronizer.
+2026-11-07 14:49:16.439+00:00 | main | INFO  | TransactionPoolFactory | Enabling transaction handling following initial sync
+2026-11-07 14:49:16.440+00:00 | main | INFO  | FullSyncDownloader | Starting full sync.
+2026-11-07 14:49:16.444+00:00 | main | INFO  | FullSyncTargetManager | Unable to find sync target. Waiting for 5 peers minimum. Currently checking 0 peers for usefulness
+2026-11-07 14:49:16.487+00:00 | main | INFO  | Runner | Ethereum main loop is up.
+2026-11-07 14:49:21.462+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Waiting for 5 peers minimum. Currently checking 0 peers for usefulness
+2026-11-07 14:49:26.299+00:00 | BesuCommand-Shutdown-Hook | INFO  | DefaultSynchronizer | Stopping synchronizer
+2026-11-07 14:49:26.309+00:00 | BesuCommand-Shutdown-Hook | INFO  | NetworkRunner | Stopping Network.
+2026-11-07 14:49:26.367+00:00 | BesuCommand-Shutdown-Hook | INFO  | EthProtocolManager | Stopping eth Subprotocol.
+2026-11-07 14:49:26.370+00:00 | BesuCommand-Shutdown-Hook | INFO  | EthProtocolManager | eth Subprotocol stopped.
+2026-11-07 14:49:26.370+00:00 | BesuCommand-Shutdown-Hook | INFO  | NetworkRunner | Network stopped.
+2026-11-07 14:49:26.373+00:00 | BesuCommand-Shutdown-Hook | INFO  | AutoTransactionLogBloomCachingService | Shutting down Auto transaction logs caching service.
+2026-11-07 14:49:26.374+00:00 | BesuCommand-Shutdown-Hook | INFO  | NatService | No NAT environment detected so no service could be stopped

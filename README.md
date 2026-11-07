@@ -28,4 +28,4 @@
 | [Lab 2 - Run Besu Node](Lab%202%20-%20Run%20Besu%20Node/PROOF.md) | CORE RESULT: 10/10 PASS | 2026-11-07 13:29 |
 | [Lab 3 - Besu CLI Configuration](Lab%203%20-%20Besu%20CLI%20Configuration/PROOF.md) | CORE: 9/12 PASS | 2026-11-07 14:22 |
 | [Lab 4 - Set Up Logging and Data Directories](Lab%204%20-%20Set%20Up%20Logging%20and%20Data%20Directories/PROOF.md) | CORE: 11/12 PASS | 2026-11-07 14:39 |
-| [Lab 5 - Start a Private Network](Lab%205%20-%20Start%20a%20Private%20Network/PROOF.md) | CORE: 1/7 PASS | 2026-11-07 14:46 |
+| [Lab 5 - Start a Private Network](Lab%205%20-%20Start%20a%20Private%20Network/PROOF.md) | CORE: 7/7 PASS | 2026-11-07 14:49 |

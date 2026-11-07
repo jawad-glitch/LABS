@@ -1,0 +1,122 @@
+Collecting opentelemetry-instrumentation-asyncio==0.66b2
+  Downloading opentelemetry_instrumentation_asyncio-0.66b2-py3-none-any.whl.metadata (4.6 kB)
+Requirement already satisfied: opentelemetry-api~=1.14 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-asyncio==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-asyncio==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-asyncio==0.66b2) (0.66b2)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-asyncio==0.66b2) (2.5.2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-asyncio==0.66b2) (26.3)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation-asyncio==0.66b2) (4.16.0)
+Downloading opentelemetry_instrumentation_asyncio-0.66b2-py3-none-any.whl (13 kB)
+Installing collected packages: opentelemetry-instrumentation-asyncio
+Successfully installed opentelemetry-instrumentation-asyncio-0.66b2
+Collecting opentelemetry-instrumentation-dbapi==0.66b2
+  Downloading opentelemetry_instrumentation_dbapi-0.66b2-py3-none-any.whl.metadata (2.0 kB)
+Requirement already satisfied: opentelemetry-api~=1.12 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-dbapi==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-dbapi==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-dbapi==0.66b2) (0.66b2)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-dbapi==0.66b2) (2.5.2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-dbapi==0.66b2) (26.3)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation-dbapi==0.66b2) (4.16.0)
+Downloading opentelemetry_instrumentation_dbapi-0.66b2-py3-none-any.whl (14 kB)
+Installing collected packages: opentelemetry-instrumentation-dbapi
+Successfully installed opentelemetry-instrumentation-dbapi-0.66b2
+Collecting opentelemetry-instrumentation-exceptions==0.66b2
+  Downloading opentelemetry_instrumentation_exceptions-0.66b2-py3-none-any.whl.metadata (2.2 kB)
+Requirement already satisfied: opentelemetry-api<2.0.0,>=1.42.0.dev in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-exceptions==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-exceptions==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-exceptions==0.66b2) (0.66b2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-exceptions==0.66b2) (26.3)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-exceptions==0.66b2) (2.5.2)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation-exceptions==0.66b2) (4.16.0)
+Downloading opentelemetry_instrumentation_exceptions-0.66b2-py3-none-any.whl (8.6 kB)
+Installing collected packages: opentelemetry-instrumentation-exceptions
+Successfully installed opentelemetry-instrumentation-exceptions-0.66b2
+Collecting opentelemetry-instrumentation-logging==0.66b2
+  Downloading opentelemetry_instrumentation_logging-0.66b2-py3-none-any.whl.metadata (1.9 kB)
+Requirement already satisfied: opentelemetry-api~=1.12 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-logging==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-logging==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-logging==0.66b2) (0.66b2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-logging==0.66b2) (26.3)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-logging==0.66b2) (2.5.2)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation-logging==0.66b2) (4.16.0)
+Downloading opentelemetry_instrumentation_logging-0.66b2-py3-none-any.whl (15 kB)
+Installing collected packages: opentelemetry-instrumentation-logging
+Successfully installed opentelemetry-instrumentation-logging-0.66b2
+Collecting opentelemetry-instrumentation-sqlite3==0.66b2
+  Downloading opentelemetry_instrumentation_sqlite3-0.66b2-py3-none-any.whl.metadata (1.9 kB)
+Requirement already satisfied: opentelemetry-api~=1.12 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-sqlite3==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation-dbapi==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-sqlite3==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-sqlite3==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-sqlite3==0.66b2) (0.66b2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-sqlite3==0.66b2) (26.3)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-sqlite3==0.66b2) (2.5.2)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-sqlite3==0.66b2) (4.16.0)
+Downloading opentelemetry_instrumentation_sqlite3-0.66b2-py3-none-any.whl (8.5 kB)
+Installing collected packages: opentelemetry-instrumentation-sqlite3
+Successfully installed opentelemetry-instrumentation-sqlite3-0.66b2
+Collecting opentelemetry-instrumentation-threading==0.66b2
+  Downloading opentelemetry_instrumentation_threading-0.66b2-py3-none-any.whl.metadata (2.1 kB)
+Requirement already satisfied: opentelemetry-api~=1.12 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-threading==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-threading==0.66b2) (0.66b2)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-threading==0.66b2) (2.5.2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-threading==0.66b2) (0.66b2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-threading==0.66b2) (26.3)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-threading==0.66b2) (4.16.0)
+Downloading opentelemetry_instrumentation_threading-0.66b2-py3-none-any.whl (8.5 kB)
+Installing collected packages: opentelemetry-instrumentation-threading
+Successfully installed opentelemetry-instrumentation-threading-0.66b2
+Collecting opentelemetry-instrumentation-urllib==0.66b2
+  Downloading opentelemetry_instrumentation_urllib-0.66b2-py3-none-any.whl.metadata (3.4 kB)
+Requirement already satisfied: opentelemetry-api~=1.12 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-urllib==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-urllib==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-urllib==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-util-http==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-urllib==0.66b2) (0.66b2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-urllib==0.66b2) (26.3)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-urllib==0.66b2) (2.5.2)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation-urllib==0.66b2) (4.16.0)
+Downloading opentelemetry_instrumentation_urllib-0.66b2-py3-none-any.whl (13 kB)
+Installing collected packages: opentelemetry-instrumentation-urllib
+Successfully installed opentelemetry-instrumentation-urllib-0.66b2
+Collecting opentelemetry-instrumentation-wsgi==0.66b2
+  Downloading opentelemetry_instrumentation_wsgi-0.66b2-py3-none-any.whl.metadata (2.1 kB)
+Requirement already satisfied: opentelemetry-api~=1.12 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-wsgi==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-wsgi==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-wsgi==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-util-http==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-wsgi==0.66b2) (0.66b2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-wsgi==0.66b2) (26.3)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-wsgi==0.66b2) (2.5.2)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation-wsgi==0.66b2) (4.16.0)
+Downloading opentelemetry_instrumentation_wsgi-0.66b2-py3-none-any.whl (13 kB)
+Installing collected packages: opentelemetry-instrumentation-wsgi
+Successfully installed opentelemetry-instrumentation-wsgi-0.66b2
+Collecting opentelemetry-instrumentation-grpc==0.66b2
+  Downloading opentelemetry_instrumentation_grpc-0.66b2-py3-none-any.whl.metadata (1.9 kB)
+Requirement already satisfied: opentelemetry-api~=1.12 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-grpc==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-grpc==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-grpc==0.66b2) (0.66b2)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-grpc==0.66b2) (2.5.2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-grpc==0.66b2) (26.3)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation-grpc==0.66b2) (4.16.0)
+Downloading opentelemetry_instrumentation_grpc-0.66b2-py3-none-any.whl (24 kB)
+Installing collected packages: opentelemetry-instrumentation-grpc
+Successfully installed opentelemetry-instrumentation-grpc-0.66b2
+Requirement already satisfied: opentelemetry-instrumentation-requests==0.66b2 in ./.venv/lib/python3.12/site-packages (0.66b2)
+Requirement already satisfied: opentelemetry-api~=1.12 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-requests==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-requests==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-requests==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-util-http==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-requests==0.66b2) (0.66b2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-requests==0.66b2) (26.3)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-requests==0.66b2) (2.5.2)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation-requests==0.66b2) (4.16.0)
+Collecting opentelemetry-instrumentation-urllib3==0.66b2
+  Downloading opentelemetry_instrumentation_urllib3-0.66b2-py3-none-any.whl.metadata (4.2 kB)
+Requirement already satisfied: opentelemetry-api~=1.12 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-urllib3==0.66b2) (1.45.2)
+Requirement already satisfied: opentelemetry-instrumentation==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-urllib3==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-urllib3==0.66b2) (0.66b2)
+Requirement already satisfied: opentelemetry-util-http==0.66b2 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-urllib3==0.66b2) (0.66b2)
+Requirement already satisfied: wrapt<3.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation-urllib3==0.66b2) (2.5.2)
+Requirement already satisfied: packaging>=18.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-instrumentation==0.66b2->opentelemetry-instrumentation-urllib3==0.66b2) (26.3)
+Requirement already satisfied: typing-extensions>=4.5.0 in ./.venv/lib/python3.12/site-packages (from opentelemetry-semantic-conventions==0.66b2->opentelemetry-instrumentation-urllib3==0.66b2) (4.16.0)
+Downloading opentelemetry_instrumentation_urllib3-0.66b2-py3-none-any.whl (13 kB)
+Installing collected packages: opentelemetry-instrumentation-urllib3
+Successfully installed opentelemetry-instrumentation-urllib3-0.66b2

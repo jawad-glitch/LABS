@@ -1,0 +1,10 @@
+[2026-11-06 23:59:58 +0000] [10397] [INFO] Starting gunicorn 26.2.0
+[2026-11-06 23:59:58 +0000] [10397] [INFO] Listening at: http://0.0.0.0:8000 (10397)
+[2026-11-06 23:59:58 +0000] [10397] [INFO] Using worker: sync
+[2026-11-06 23:59:58 +0000] [10470] [INFO] Booting worker with pid: 10470
+[2026-11-06 23:59:58 +0000] [10477] [INFO] Booting worker with pid: 10477
+[2026-11-06 23:59:58 +0000] [10397] [INFO] Control socket listening at /run/user/1000/gunicorn.ctl
+[2026-11-07 00:01:11 +0000] [10397] [INFO] Handling signal: term
+[2026-11-07 00:01:11 +0000] [10470] [INFO] Worker exiting (pid: 10470)
+[2026-11-07 00:01:11 +0000] [10477] [INFO] Worker exiting (pid: 10477)
+[2026-11-07 00:01:12 +0000] [10397] [INFO] Shutting down: Master

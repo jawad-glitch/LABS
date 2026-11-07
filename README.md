@@ -37,3 +37,4 @@
 | [Lab 11 - Deploy and Interact with Smart Contracts](Lab%2011%20-%20Deploy%20and%20Interact%20with%20Smart%20Contracts/PROOF.md) | CORE: 11/19 PASS | 2026-11-07 15:54 |
 | [Lab 12 - Use Besu JSON-RPC API](Lab%2012%20-%20Use%20Besu%20JSON-RPC%20API/PROOF.md) | CORE: 17/19 PASS | 2026-11-07 16:00 |
 | [Lab 13 - Monitor Besu with Prometheus](Lab%2013%20-%20Monitor%20Besu%20with%20Prometheus/PROOF.md) | CORE: 10/14 PASS | 2026-11-07 16:07 |
+| [Lab 14 - Monitor Besu with Grafana](Lab%2014%20-%20Monitor%20Besu%20with%20Grafana/PROOF.md) | CORE: 13/22 PASS | 2026-11-07 16:15 |

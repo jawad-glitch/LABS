@@ -1,0 +1,5 @@
+logger=backgroundsvcs.managerAdapter t=2026-11-07T16:14:40.093306641Z level=info msg=starting module=*supportbundlesimpl.Service
+logger=backgroundsvcs.managerAdapter t=2026-11-07T16:14:40.084903765Z level=info msg=starting module=*ssosettingsimpl.Service
+logger=http.server t=2026-11-07T16:14:40.122837085Z level=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=ngalert.scheduler t=2026-11-07T16:14:40.538482548Z level=info msg="Starting scheduler" tickInterval=10s maxAttempts=3
+logger=ngalert.scheduler t=2026-11-07T16:14:40.539418026Z level=info msg=starting component=ticker first_tick=2026-11-07T16:14:50Z

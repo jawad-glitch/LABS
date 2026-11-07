@@ -1,0 +1,199 @@
+{
+  "uid": "besu-monitoring",
+  "title": "Besu Blockchain Monitoring",
+  "description": "Comprehensive monitoring dashboard for Hyperledger Besu blockchain metrics",
+  "refresh": "5s",
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Current Block Height",
+      "type": "stat",
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "ethereum_blockchain_height",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ag3lipebgpb0gc"
+          }
+        }
+      ],
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Block Rate (blocks/minute)",
+      "type": "timeseries",
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "rate(ethereum_blockchain_height[5m]) * 60",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ag3lipebgpb0gc"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Total Gas Used",
+      "type": "timeseries",
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "besu_blockchain_chain_head_gas_used",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ag3lipebgpb0gc"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Pending Transactions",
+      "type": "stat",
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "besu_transaction_pool_space_used",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ag3lipebgpb0gc"
+          }
+        }
+      ],
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Connected Peers",
+      "type": "gauge",
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "max": 25
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "ethereum_peer_count",
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ag3lipebgpb0gc"
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Documentation",
+      "type": "text",
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 8
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "# Besu Blockchain Monitoring\n\nPanels:\n- Block Height\n- Block Rate\n- Gas Used\n- TxPool\n- Peers"
+      }
+    }
+  ],
+  "schemaVersion": 38,
+  "templating": {
+    "list": [
+      {
+        "name": "DS_PROMETHEUS",
+        "type": "datasource",
+        "query": "prometheus",
+        "current": {
+          "text": "Prometheus-Besu",
+          "value": "Prometheus-Besu"
+        }
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  }
+}

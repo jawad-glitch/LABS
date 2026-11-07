@@ -1,0 +1,4 @@
+M_HEIGHT=ethereum_blockchain_height
+M_PEERS=ethereum_peer_count
+M_GAS=besu_blockchain_chain_head_gas_used
+M_TXPOOL=besu_transaction_pool_space_used

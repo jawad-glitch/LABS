@@ -1,0 +1,403 @@
+# HELP besu_executors_ethscheduler_transactions_active_threads_current Current number of threads executing tasks
+# TYPE besu_executors_ethscheduler_transactions_active_threads_current gauge
+besu_executors_ethscheduler_transactions_active_threads_current 0.0
+# HELP besu_executors_ethscheduler_transactions_queue_length_current Current number of tasks awaiting execution
+# TYPE besu_executors_ethscheduler_transactions_queue_length_current gauge
+besu_executors_ethscheduler_transactions_queue_length_current 0.0
+# HELP besu_executors_ethscheduler_computation_active_threads_current Current number of threads executing tasks
+# TYPE besu_executors_ethscheduler_computation_active_threads_current gauge
+besu_executors_ethscheduler_computation_active_threads_current 0.0
+# HELP besu_blockchain_chain_head_transaction_count Number of transactions in the current chain head block
+# TYPE besu_blockchain_chain_head_transaction_count gauge
+besu_blockchain_chain_head_transaction_count 0.0
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 17.73
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.794067958047E9
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 314.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1048576.0
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 2.87086592E9
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 2.60796416E8
+# HELP ethereum_peer_count The current number of peers connected
+# TYPE ethereum_peer_count gauge
+ethereum_peer_count 0.0
+# HELP besu_network_netty_boss_pending_tasks The number of pending tasks in the Netty boss event loop
+# TYPE besu_network_netty_boss_pending_tasks gauge
+besu_network_netty_boss_pending_tasks 0.0
+# HELP besu_executors_ethscheduler_services_rejected_tasks_total Total number of tasks rejected by this executor
+# TYPE besu_executors_ethscheduler_services_rejected_tasks_total counter
+besu_executors_ethscheduler_services_rejected_tasks_total 0.0
+# HELP besu_executors_ethscheduler_computation_rejected_tasks_total Total number of tasks rejected by this executor
+# TYPE besu_executors_ethscheduler_computation_rejected_tasks_total counter
+besu_executors_ethscheduler_computation_rejected_tasks_total 0.0
+# HELP besu_executors_ethscheduler_timer_submitted_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_timer_submitted_tasks_total gauge
+besu_executors_ethscheduler_timer_submitted_tasks_total 3.0
+# HELP besu_executors_ethscheduler_timer_completed_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_timer_completed_tasks_total gauge
+besu_executors_ethscheduler_timer_completed_tasks_total 1.0
+# HELP besu_blockchain_chain_head_gas_limit Block gas limit of the current chain head block
+# TYPE besu_blockchain_chain_head_gas_limit gauge
+besu_blockchain_chain_head_gas_limit 9.007199254740991E15
+# HELP besu_transaction_pool_space_used The amount of space used by the transactions in the layer
+# TYPE besu_transaction_pool_space_used gauge
+besu_transaction_pool_space_used{layer="ready",} 0.0
+besu_transaction_pool_space_used{layer="sparse",} 0.0
+besu_transaction_pool_space_used{layer="prioritized",} 0.0
+# HELP besu_transaction_pool_unique_senders The number of senders with at least one transaction currently present in the layer
+# TYPE besu_transaction_pool_unique_senders gauge
+besu_transaction_pool_unique_senders{layer="ready",} 0.0
+besu_transaction_pool_unique_senders{layer="sparse",} 0.0
+besu_transaction_pool_unique_senders{layer="prioritized",} 0.0
+# HELP besu_synchronizer_task Internal processing tasks
+# TYPE besu_synchronizer_task summary
+besu_synchronizer_task{taskName="WaitForPeerTask",quantile="0.2",} 1.9371E-5
+besu_synchronizer_task{taskName="WaitForPeerTask",quantile="0.5",} 1.9371E-5
+besu_synchronizer_task{taskName="WaitForPeerTask",quantile="0.8",} 1.9371E-5
+besu_synchronizer_task{taskName="WaitForPeerTask",quantile="0.95",} 1.9371E-5
+besu_synchronizer_task{taskName="WaitForPeerTask",quantile="0.99",} 1.9371E-5
+besu_synchronizer_task{taskName="WaitForPeerTask",quantile="1.0",} 0.001198396
+besu_synchronizer_task_count{taskName="WaitForPeerTask",} 2.0
+besu_synchronizer_task_sum{taskName="WaitForPeerTask",} 0.001217767
+# HELP besu_executors_ethscheduler_services_queue_length_current Current number of tasks awaiting execution
+# TYPE besu_executors_ethscheduler_services_queue_length_current gauge
+besu_executors_ethscheduler_services_queue_length_current 0.0
+# HELP besu_executors_ethscheduler_services_active_threads_current Current number of threads executing tasks
+# TYPE besu_executors_ethscheduler_services_active_threads_current gauge
+besu_executors_ethscheduler_services_active_threads_current 0.0
+# HELP besu_peers_disconnected_total Total number of peers disconnected
+# TYPE besu_peers_disconnected_total counter
+# HELP besu_network_discovery_messages_outbound Total number of P2P discovery messages sent
+# TYPE besu_network_discovery_messages_outbound counter
+# HELP besu_synchronizer_chain_download_pipeline_restarts Number of times the chain download pipeline has been restarted
+# TYPE besu_synchronizer_chain_download_pipeline_restarts counter
+besu_synchronizer_chain_download_pipeline_restarts{reason="error",} 0.0
+besu_synchronizer_chain_download_pipeline_restarts{reason="complete",} 0.0
+# HELP besu_executors_ethscheduler_workers_queue_length_current Current number of tasks awaiting execution
+# TYPE besu_executors_ethscheduler_workers_queue_length_current gauge
+besu_executors_ethscheduler_workers_queue_length_current 0.0
+# HELP besu_transaction_pool_remote_transactions_already_seen_total Total number of received transactions already seen
+# TYPE besu_transaction_pool_remote_transactions_already_seen_total counter
+# HELP besu_executors_ethscheduler_services_completed_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_services_completed_tasks_total gauge
+besu_executors_ethscheduler_services_completed_tasks_total 0.0
+# HELP besu_transaction_pool_rejected_total Count of transactions not accepted to the transaction pool
+# TYPE besu_transaction_pool_rejected_total counter
+# HELP besu_rpc_subscription_subscribe_total Total number of subscriptions
+# TYPE besu_rpc_subscription_subscribe_total counter
+# HELP jvm_buffer_pool_used_bytes Used bytes of a given JVM buffer pool.
+# TYPE jvm_buffer_pool_used_bytes gauge
+jvm_buffer_pool_used_bytes{pool="mapped",} 0.0
+jvm_buffer_pool_used_bytes{pool="direct",} 270337.0
+jvm_buffer_pool_used_bytes{pool="mapped - 'non-volatile memory'",} 0.0
+# HELP jvm_buffer_pool_capacity_bytes Bytes capacity of a given JVM buffer pool.
+# TYPE jvm_buffer_pool_capacity_bytes gauge
+jvm_buffer_pool_capacity_bytes{pool="mapped",} 0.0
+jvm_buffer_pool_capacity_bytes{pool="direct",} 270336.0
+jvm_buffer_pool_capacity_bytes{pool="mapped - 'non-volatile memory'",} 0.0
+# HELP jvm_buffer_pool_used_buffers Used buffers of a given JVM buffer pool.
+# TYPE jvm_buffer_pool_used_buffers gauge
+jvm_buffer_pool_used_buffers{pool="mapped",} 0.0
+jvm_buffer_pool_used_buffers{pool="direct",} 8.0
+jvm_buffer_pool_used_buffers{pool="mapped - 'non-volatile memory'",} 0.0
+# HELP besu_transaction_pool_number_of_transactions The number of transactions currently present in the layer
+# TYPE besu_transaction_pool_number_of_transactions gauge
+besu_transaction_pool_number_of_transactions{layer="ready",} 0.0
+besu_transaction_pool_number_of_transactions{layer="sparse",} 0.0
+besu_transaction_pool_number_of_transactions{layer="prioritized",} 0.0
+# HELP besu_blockchain_chain_head_ommer_count Number of ommers in the current chain head block
+# TYPE besu_blockchain_chain_head_ommer_count gauge
+besu_blockchain_chain_head_ommer_count 0.0
+# HELP besu_executors_ethscheduler_transactions_pool_size_current Current number of threads in the thread pool
+# TYPE besu_executors_ethscheduler_transactions_pool_size_current gauge
+besu_executors_ethscheduler_transactions_pool_size_current 0.0
+# HELP besu_transaction_pool_removed_total Count of transactions removed from the transaction pool
+# TYPE besu_transaction_pool_removed_total counter
+# HELP besu_executors_ethscheduler_blockcreation_active_threads_current Current number of threads executing tasks
+# TYPE besu_executors_ethscheduler_blockcreation_active_threads_current gauge
+besu_executors_ethscheduler_blockcreation_active_threads_current 0.0
+# HELP besu_rpc_subscription_unsubscribe_total Total number of unsubscriptions
+# TYPE besu_rpc_subscription_unsubscribe_total counter
+# HELP besu_network_vertx_eventloop_pending_tasks The number of pending tasks in the Vertx event loop
+# TYPE besu_network_vertx_eventloop_pending_tasks gauge
+besu_network_vertx_eventloop_pending_tasks 0.0
+# HELP besu_network_discovery_inflight_interactions_current Current number of inflight discovery interactions
+# TYPE besu_network_discovery_inflight_interactions_current gauge
+besu_network_discovery_inflight_interactions_current 0.0
+# HELP besu_network_discovery_interaction_count Total number of discovery interactions initiated
+# TYPE besu_network_discovery_interaction_count counter
+# HELP besu_network_vertx_worker_pool_submitted_total Total number of tasks submitted to the Vertx worker pool
+# TYPE besu_network_vertx_worker_pool_submitted_total counter
+besu_network_vertx_worker_pool_submitted_total{poolType="worker",poolName="vert.x-internal-blocking",} 0.0
+besu_network_vertx_worker_pool_submitted_total{poolType="worker",poolName="vert.x-worker-thread",} 3.0
+# HELP besu_transaction_pool_added_total Count of transactions added to the transaction pool
+# TYPE besu_transaction_pool_added_total counter
+# HELP besu_executors_ethscheduler_blockcreation_queue_length_current Current number of tasks awaiting execution
+# TYPE besu_executors_ethscheduler_blockcreation_queue_length_current gauge
+besu_executors_ethscheduler_blockcreation_queue_length_current 0.0
+# HELP besu_blockchain_chain_head_timestamp Timestamp from the current chain head
+# TYPE besu_blockchain_chain_head_timestamp gauge
+besu_blockchain_chain_head_timestamp 0.0
+# HELP besu_executors_ethscheduler_workers_completed_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_workers_completed_tasks_total gauge
+besu_executors_ethscheduler_workers_completed_tasks_total 0.0
+# HELP besu_network_netty_workers_pending_tasks The number of pending tasks in the Netty workers event loop
+# TYPE besu_network_netty_workers_pending_tasks gauge
+besu_network_netty_workers_pending_tasks 0.0
+# HELP besu_network_p2p_messages_inbound Count of each P2P message received inbound.
+# TYPE besu_network_p2p_messages_inbound counter
+# HELP besu_peers_pending_peer_requests_current Number of peer requests currently pending because peers are busy
+# TYPE besu_peers_pending_peer_requests_current gauge
+besu_peers_pending_peer_requests_current 0.0
+# HELP besu_executors_ethscheduler_blockcreation_pool_size_current Current number of threads in the thread pool
+# TYPE besu_executors_ethscheduler_blockcreation_pool_size_current gauge
+besu_executors_ethscheduler_blockcreation_pool_size_current 0.0
+# HELP jvm_memory_bytes_used Used bytes of a given JVM memory area.
+# TYPE jvm_memory_bytes_used gauge
+jvm_memory_bytes_used{area="heap",} 3.7326496E7
+jvm_memory_bytes_used{area="nonheap",} 6.4085024E7
+# HELP jvm_memory_bytes_committed Committed (bytes) of a given JVM memory area.
+# TYPE jvm_memory_bytes_committed gauge
+jvm_memory_bytes_committed{area="heap",} 9.8566144E7
+jvm_memory_bytes_committed{area="nonheap",} 6.651904E7
+# HELP jvm_memory_bytes_max Max (bytes) of a given JVM memory area.
+# TYPE jvm_memory_bytes_max gauge
+jvm_memory_bytes_max{area="heap",} 1.010827264E9
+jvm_memory_bytes_max{area="nonheap",} -1.0
+# HELP jvm_memory_bytes_init Initial bytes of a given JVM memory area.
+# TYPE jvm_memory_bytes_init gauge
+jvm_memory_bytes_init{area="heap",} 6.5011712E7
+jvm_memory_bytes_init{area="nonheap",} 7667712.0
+# HELP jvm_memory_pool_bytes_used Used bytes of a given JVM memory pool.
+# TYPE jvm_memory_pool_bytes_used gauge
+jvm_memory_pool_bytes_used{pool="CodeHeap 'non-nmethods'",} 1451520.0
+jvm_memory_pool_bytes_used{pool="Metaspace",} 4.6346112E7
+jvm_memory_pool_bytes_used{pool="CodeHeap 'profiled nmethods'",} 8632704.0
+jvm_memory_pool_bytes_used{pool="Compressed Class Space",} 5842848.0
+jvm_memory_pool_bytes_used{pool="G1 Eden Space",} 2097152.0
+jvm_memory_pool_bytes_used{pool="G1 Old Gen",} 3.3817088E7
+jvm_memory_pool_bytes_used{pool="G1 Survivor Space",} 1412256.0
+jvm_memory_pool_bytes_used{pool="CodeHeap 'non-profiled nmethods'",} 1811840.0
+# HELP jvm_memory_pool_bytes_committed Committed bytes of a given JVM memory pool.
+# TYPE jvm_memory_pool_bytes_committed gauge
+jvm_memory_pool_bytes_committed{pool="CodeHeap 'non-nmethods'",} 2555904.0
+jvm_memory_pool_bytes_committed{pool="Metaspace",} 4.6727168E7
+jvm_memory_pool_bytes_committed{pool="CodeHeap 'profiled nmethods'",} 8650752.0
+jvm_memory_pool_bytes_committed{pool="Compressed Class Space",} 6029312.0
+jvm_memory_pool_bytes_committed{pool="G1 Eden Space",} 3.8797312E7
+jvm_memory_pool_bytes_committed{pool="G1 Old Gen",} 5.767168E7
+jvm_memory_pool_bytes_committed{pool="G1 Survivor Space",} 2097152.0
+jvm_memory_pool_bytes_committed{pool="CodeHeap 'non-profiled nmethods'",} 2555904.0
+# HELP jvm_memory_pool_bytes_max Max bytes of a given JVM memory pool.
+# TYPE jvm_memory_pool_bytes_max gauge
+jvm_memory_pool_bytes_max{pool="CodeHeap 'non-nmethods'",} 5828608.0
+jvm_memory_pool_bytes_max{pool="Metaspace",} -1.0
+jvm_memory_pool_bytes_max{pool="CodeHeap 'profiled nmethods'",} 1.22912768E8
+jvm_memory_pool_bytes_max{pool="Compressed Class Space",} 1.073741824E9
+jvm_memory_pool_bytes_max{pool="G1 Eden Space",} -1.0
+jvm_memory_pool_bytes_max{pool="G1 Old Gen",} 1.010827264E9
+jvm_memory_pool_bytes_max{pool="G1 Survivor Space",} -1.0
+jvm_memory_pool_bytes_max{pool="CodeHeap 'non-profiled nmethods'",} 1.22916864E8
+# HELP jvm_memory_pool_bytes_init Initial bytes of a given JVM memory pool.
+# TYPE jvm_memory_pool_bytes_init gauge
+jvm_memory_pool_bytes_init{pool="CodeHeap 'non-nmethods'",} 2555904.0
+jvm_memory_pool_bytes_init{pool="Metaspace",} 0.0
+jvm_memory_pool_bytes_init{pool="CodeHeap 'profiled nmethods'",} 2555904.0
+jvm_memory_pool_bytes_init{pool="Compressed Class Space",} 0.0
+jvm_memory_pool_bytes_init{pool="G1 Eden Space",} 4194304.0
+jvm_memory_pool_bytes_init{pool="G1 Old Gen",} 6.0817408E7
+jvm_memory_pool_bytes_init{pool="G1 Survivor Space",} 0.0
+jvm_memory_pool_bytes_init{pool="CodeHeap 'non-profiled nmethods'",} 2555904.0
+# HELP besu_executors_ethscheduler_transactions_rejected_tasks_total Total number of tasks rejected by this executor
+# TYPE besu_executors_ethscheduler_transactions_rejected_tasks_total counter
+besu_executors_ethscheduler_transactions_rejected_tasks_total 0.0
+# HELP besu_executors_ethscheduler_services_submitted_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_services_submitted_tasks_total gauge
+besu_executors_ethscheduler_services_submitted_tasks_total 0.0
+# HELP besu_network_vertx_worker_pool_completed_total Total number of tasks completed by the Vertx worker pool
+# TYPE besu_network_vertx_worker_pool_completed_total counter
+besu_network_vertx_worker_pool_completed_total{poolType="worker",poolName="vert.x-internal-blocking",} 0.0
+besu_network_vertx_worker_pool_completed_total{poolType="worker",poolName="vert.x-worker-thread",} 2.0
+# HELP besu_rpc_request_time Time taken to process a JSON-RPC request
+# TYPE besu_rpc_request_time summary
+besu_rpc_request_time{methodName="web3_clientVersion",quantile="0.2",} 0.002470084
+besu_rpc_request_time{methodName="web3_clientVersion",quantile="0.5",} 0.002470084
+besu_rpc_request_time{methodName="web3_clientVersion",quantile="0.8",} 0.002470084
+besu_rpc_request_time{methodName="web3_clientVersion",quantile="0.95",} 0.002470084
+besu_rpc_request_time{methodName="web3_clientVersion",quantile="0.99",} 0.002470084
+besu_rpc_request_time{methodName="web3_clientVersion",quantile="1.0",} 0.002470084
+besu_rpc_request_time_count{methodName="web3_clientVersion",} 1.0
+besu_rpc_request_time_sum{methodName="web3_clientVersion",} 0.002470084
+# HELP besu_network_discovery_messages_inbound Total number of P2P discovery messages received
+# TYPE besu_network_discovery_messages_inbound counter
+# HELP jvm_gc_collection_seconds Time spent in a given JVM garbage collector in seconds.
+# TYPE jvm_gc_collection_seconds summary
+jvm_gc_collection_seconds_count{gc="G1 Young Generation",} 13.0
+jvm_gc_collection_seconds_sum{gc="G1 Young Generation",} 0.372
+jvm_gc_collection_seconds_count{gc="G1 Old Generation",} 0.0
+jvm_gc_collection_seconds_sum{gc="G1 Old Generation",} 0.0
+# HELP besu_executors_ethscheduler_workers_submitted_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_workers_submitted_tasks_total gauge
+besu_executors_ethscheduler_workers_submitted_tasks_total 0.0
+# HELP ethereum_peer_limit The maximum number of peers this node allows to connect
+# TYPE ethereum_peer_limit gauge
+ethereum_peer_limit 25.0
+# HELP besu_executors_ethscheduler_blockcreation_submitted_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_blockcreation_submitted_tasks_total gauge
+besu_executors_ethscheduler_blockcreation_submitted_tasks_total 0.0
+# HELP besu_executors_ethscheduler_transactions_dropped_tasks_total Total number of tasks rejected by this working queue.
+# TYPE besu_executors_ethscheduler_transactions_dropped_tasks_total counter
+besu_executors_ethscheduler_transactions_dropped_tasks_total 0.0
+# HELP besu_network_vertx_worker_pool_rejected_total Total number of tasks rejected by the Vertx worker pool
+# TYPE besu_network_vertx_worker_pool_rejected_total counter
+besu_network_vertx_worker_pool_rejected_total{poolType="worker",poolName="vert.x-internal-blocking",} 0.0
+besu_network_vertx_worker_pool_rejected_total{poolType="worker",poolName="vert.x-worker-thread",} 0.0
+# HELP besu_executors_ethscheduler_computation_completed_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_computation_completed_tasks_total gauge
+besu_executors_ethscheduler_computation_completed_tasks_total 0.0
+# HELP besu_executors_ethscheduler_timer_active_threads_current Current number of threads executing tasks
+# TYPE besu_executors_ethscheduler_timer_active_threads_current gauge
+besu_executors_ethscheduler_timer_active_threads_current 0.0
+# HELP besu_blockchain_difficulty_total Total difficulty of the chainhead
+# TYPE besu_blockchain_difficulty_total gauge
+besu_blockchain_difficulty_total 65536.0
+# HELP besu_rpc_active_http_connection_count Total no of active rpc http connections
+# TYPE besu_rpc_active_http_connection_count gauge
+besu_rpc_active_http_connection_count 0.0
+# HELP besu_executors_ethscheduler_computation_pool_size_current Current number of threads in the thread pool
+# TYPE besu_executors_ethscheduler_computation_pool_size_current gauge
+besu_executors_ethscheduler_computation_pool_size_current 0.0
+# HELP besu_executors_ethscheduler_timer_pool_size_current Current number of threads in the thread pool
+# TYPE besu_executors_ethscheduler_timer_pool_size_current gauge
+besu_executors_ethscheduler_timer_pool_size_current 1.0
+# HELP besu_executors_ethscheduler_workers_rejected_tasks_total Total number of tasks rejected by this executor
+# TYPE besu_executors_ethscheduler_workers_rejected_tasks_total counter
+besu_executors_ethscheduler_workers_rejected_tasks_total 0.0
+# HELP besu_blockchain_chain_head_gas_used Gas used by the current chain head block
+# TYPE besu_blockchain_chain_head_gas_used gauge
+besu_blockchain_chain_head_gas_used 0.0
+# HELP besu_executors_ethscheduler_blockcreation_rejected_tasks_total Total number of tasks rejected by this executor
+# TYPE besu_executors_ethscheduler_blockcreation_rejected_tasks_total counter
+besu_executors_ethscheduler_blockcreation_rejected_tasks_total 0.0
+# HELP besu_executors_ethscheduler_computation_submitted_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_computation_submitted_tasks_total gauge
+besu_executors_ethscheduler_computation_submitted_tasks_total 0.0
+# HELP besu_network_discovery_interaction_retry_count Total number of interaction retries performed
+# TYPE besu_network_discovery_interaction_retry_count counter
+# HELP besu_executors_ethscheduler_workers_pool_size_current Current number of threads in the thread pool
+# TYPE besu_executors_ethscheduler_workers_pool_size_current gauge
+besu_executors_ethscheduler_workers_pool_size_current 0.0
+# HELP besu_executors_ethscheduler_transactions_submitted_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_transactions_submitted_tasks_total gauge
+besu_executors_ethscheduler_transactions_submitted_tasks_total 0.0
+# HELP process_release Release information
+# TYPE process_release gauge
+process_release{version="besu/v23.10.2/linux-x86_64/openjdk-java-17",} 1.0
+# HELP besu_transaction_pool_messages_expired_total Total number of received transaction pool messages expired and not processed.
+# TYPE besu_transaction_pool_messages_expired_total counter
+besu_transaction_pool_messages_expired_total{message="transactions",} 0.0
+besu_transaction_pool_messages_expired_total{message="new_pooled_transaction_hashes",} 0.0
+# HELP besu_executors_ethscheduler_workers_active_threads_current Current number of threads executing tasks
+# TYPE besu_executors_ethscheduler_workers_active_threads_current gauge
+besu_executors_ethscheduler_workers_active_threads_current 0.0
+# HELP besu_synchronizer_in_sync Whether or not the local node has caught up to the best known peer
+# TYPE besu_synchronizer_in_sync gauge
+besu_synchronizer_in_sync 1.0
+# HELP ethereum_blockchain_height The current height of the canonical chain
+# TYPE ethereum_blockchain_height gauge
+ethereum_blockchain_height 0.0
+# HELP guava_cache_hit_total Cache hit totals
+# TYPE guava_cache_hit_total counter
+guava_cache_hit_total{cache="accountsNodes",} 0.0
+guava_cache_hit_total{cache="storageNodes",} 0.0
+# HELP guava_cache_miss_total Cache miss totals
+# TYPE guava_cache_miss_total counter
+guava_cache_miss_total{cache="accountsNodes",} 0.0
+guava_cache_miss_total{cache="storageNodes",} 0.0
+# HELP guava_cache_requests_total Cache request totals, hits + misses
+# TYPE guava_cache_requests_total counter
+guava_cache_requests_total{cache="accountsNodes",} 0.0
+guava_cache_requests_total{cache="storageNodes",} 0.0
+# HELP guava_cache_eviction_total Cache eviction totals, doesn't include manually removed entries
+# TYPE guava_cache_eviction_total counter
+guava_cache_eviction_total{cache="accountsNodes",} 0.0
+guava_cache_eviction_total{cache="storageNodes",} 0.0
+# HELP guava_cache_load_failure_total Cache load failures
+# TYPE guava_cache_load_failure_total counter
+# HELP guava_cache_loads_total Cache loads: both success and failures
+# TYPE guava_cache_loads_total counter
+# HELP guava_cache_size Cache size
+# TYPE guava_cache_size gauge
+guava_cache_size{cache="accountsNodes",} 0.0
+guava_cache_size{cache="storageNodes",} 0.0
+# HELP guava_cache_load_duration_seconds Cache load duration: both success and failures
+# TYPE guava_cache_load_duration_seconds summary
+# HELP besu_executors_ethscheduler_transactions_completed_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_transactions_completed_tasks_total gauge
+besu_executors_ethscheduler_transactions_completed_tasks_total 0.0
+# HELP besu_executors_ethscheduler_timer_rejected_tasks_total Total number of tasks rejected by this executor
+# TYPE besu_executors_ethscheduler_timer_rejected_tasks_total counter
+besu_executors_ethscheduler_timer_rejected_tasks_total 0.0
+# HELP besu_executors_ethscheduler_blockcreation_completed_tasks_total Total number of tasks executed
+# TYPE besu_executors_ethscheduler_blockcreation_completed_tasks_total gauge
+besu_executors_ethscheduler_blockcreation_completed_tasks_total 0.0
+# HELP besu_executors_ethscheduler_computation_queue_length_current Current number of tasks awaiting execution
+# TYPE besu_executors_ethscheduler_computation_queue_length_current gauge
+besu_executors_ethscheduler_computation_queue_length_current 0.0
+# HELP besu_executors_ethscheduler_timer_queue_length_current Current number of tasks awaiting execution
+# TYPE besu_executors_ethscheduler_timer_queue_length_current gauge
+besu_executors_ethscheduler_timer_queue_length_current 2.0
+# HELP besu_executors_ethscheduler_services_pool_size_current Current number of threads in the thread pool
+# TYPE besu_executors_ethscheduler_services_pool_size_current gauge
+besu_executors_ethscheduler_services_pool_size_current 0.0
+# HELP jvm_threads_current Current thread count of a JVM
+# TYPE jvm_threads_current gauge
+jvm_threads_current 20.0
+# HELP jvm_threads_daemon Daemon thread count of a JVM
+# TYPE jvm_threads_daemon gauge
+jvm_threads_daemon 9.0
+# HELP jvm_threads_peak Peak thread count of a JVM
+# TYPE jvm_threads_peak gauge
+jvm_threads_peak 20.0
+# HELP jvm_threads_started_total Started thread count of a JVM
+# TYPE jvm_threads_started_total counter
+jvm_threads_started_total 20.0
+# HELP jvm_threads_deadlocked Cycles of JVM-threads that are in deadlock waiting to acquire object monitors or ownable synchronizers
+# TYPE jvm_threads_deadlocked gauge
+jvm_threads_deadlocked 0.0
+# HELP jvm_threads_deadlocked_monitor Cycles of JVM-threads that are in deadlock waiting to acquire object monitors
+# TYPE jvm_threads_deadlocked_monitor gauge
+jvm_threads_deadlocked_monitor 0.0
+# HELP jvm_threads_state Current count of threads by state
+# TYPE jvm_threads_state gauge
+jvm_threads_state{state="BLOCKED",} 0.0
+jvm_threads_state{state="WAITING",} 5.0
+jvm_threads_state{state="RUNNABLE",} 9.0
+jvm_threads_state{state="TERMINATED",} 0.0
+jvm_threads_state{state="NEW",} 0.0
+jvm_threads_state{state="TIMED_WAITING",} 6.0
+# HELP besu_peers_connected_total Total number of peers connected
+# TYPE besu_peers_connected_total counter
+besu_peers_connected_total 0.0
+# HELP ethereum_best_known_block_number The estimated highest block available
+# TYPE ethereum_best_known_block_number gauge
+ethereum_best_known_block_number 0.0
+# HELP jvm_classes_loaded The number of classes that are currently loaded in the JVM
+# TYPE jvm_classes_loaded gauge
+jvm_classes_loaded 9306.0
+# HELP jvm_classes_loaded_total The total number of classes that have been loaded since the JVM has started execution
+# TYPE jvm_classes_loaded_total counter
+jvm_classes_loaded_total 9306.0
+# HELP jvm_classes_unloaded_total The total number of classes that have been unloaded since the JVM has started execution
+# TYPE jvm_classes_unloaded_total counter
+jvm_classes_unloaded_total 0.0

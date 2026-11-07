@@ -1,0 +1,1 @@
+{"jsonrpc":"2.0","id":1,"error":{"code":-32604,"message":"The method eth_sendTransaction is not supported. Use eth_sendRawTransaction to send a signed transaction to Besu."}}

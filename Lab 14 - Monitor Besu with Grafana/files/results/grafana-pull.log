@@ -1,0 +1,37 @@
+latest: Pulling from grafana/grafana
+4a2b3a64321a: Pulling fs layer
+7b229517ed22: Pulling fs layer
+bcd7fa5168a7: Pulling fs layer
+d69c4cfa651f: Pulling fs layer
+1bd0660b80e5: Pulling fs layer
+f4e5155cc91f: Pulling fs layer
+9a60019a8816: Pulling fs layer
+1ff600371a0f: Pulling fs layer
+aa465df46998: Pulling fs layer
+06da073526e3: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4a2b3a64321a: Download complete
+bcd7fa5168a7: Download complete
+f4e5155cc91f: Download complete
+7b229517ed22: Download complete
+9a60019a8816: Download complete
+06da073526e3: Download complete
+4f4fb700ef54: Download complete
+d69c4cfa651f: Download complete
+1bd0660b80e5: Download complete
+7b229517ed22: Pull complete
+bcd7fa5168a7: Pull complete
+d69c4cfa651f: Pull complete
+1bd0660b80e5: Pull complete
+f4e5155cc91f: Pull complete
+9a60019a8816: Pull complete
+aa465df46998: Download complete
+1ff600371a0f: Download complete
+1ff600371a0f: Pull complete
+aa465df46998: Pull complete
+06da073526e3: Pull complete
+4f4fb700ef54: Pull complete
+4a2b3a64321a: Pull complete
+Digest: sha256:488984b716c0862639f91a698adbe2862677a5a07bad42da5f03f3030883b205
+Status: Downloaded newer image for grafana/grafana:latest
+docker.io/grafana/grafana:latest

@@ -1,0 +1,5 @@
+block_height -> 0 results (query: ethereum_blockchain_height)
+block_rate -> 0 results (query: rate(ethereum_blockchain_height[5m]) * 60)
+gas_used -> 0 results (query: besu_blockchain_chain_head_gas_used)
+pending -> 0 results (query: besu_transaction_pool_space_used)
+peers -> 0 results (query: ethereum_peer_count)

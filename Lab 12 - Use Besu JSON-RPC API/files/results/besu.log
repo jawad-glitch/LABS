@@ -1,0 +1,142 @@
+2026-11-07 15:58:40.935+00:00 | main | INFO  | Besu | Starting Besu
+2026-11-07 15:58:41.849+00:00 | main | INFO  | Besu | jemalloc library not found, memory usage may be reduced by installing it
+2026-11-07 15:58:42.199+00:00 | main | INFO  | Besu | 
+####################################################################################################
+#                                                                                                  #
+# Besu version 23.10.2                                                                             #
+#                                                                                                  #
+# Configuration:                                                                                   #
+# Network: Dev                                                                                     #
+# Network Id: 2018                                                                                 #
+# Data storage: Forest                                                                             #
+# Sync mode: Full                                                                                  #
+# RPC HTTP APIs: ETH,NET,WEB3                                                                      #
+# RPC HTTP port: 8545                                                                              #
+# Using LAYERED transaction pool implementation                                                    #
+# Using STACKED worldstate update mode                                                             #
+#                                                                                                  #
+# Host:                                                                                            #
+# Java: openjdk-java-17                                                                            #
+# Maximum heap size: 0.94 GB                                                                       #
+# OS: linux-x86_64                                                                                 #
+# glibc: 2.39                                                                                      #
+# Total memory: 3.76 GB                                                                            #
+# CPU cores: 2                                                                                     #
+#                                                                                                  #
+# Plugins:                                                                                         #
+# TOTAL = 0 of 0 plugins successfully loaded                                                       #
+# from /home/ubuntu/besu-installation/besu-23.10.2/plugins                                         #
+#                                                                                                  #
+####################################################################################################
+2026-11-07 15:58:42.202+00:00 | main | INFO  | Besu | Connecting to 0 static nodes.
+2026-11-07 15:58:42.202+00:00 | main | INFO  | Besu | Security Module: localfile
+2026-11-07 15:58:42.306+00:00 | main | INFO  | Besu | Using the native implementation of alt bn128
+2026-11-07 15:58:42.444+00:00 | main | INFO  | Besu | Using the native implementation of modexp
+2026-11-07 15:58:42.445+00:00 | main | INFO  | Besu | Using the native implementation of the signature algorithm
+2026-11-07 15:58:42.479+00:00 | main | INFO  | Besu | Using the native implementation of the blake2bf algorithm
+2026-11-07 15:58:42.695+00:00 | main | INFO  | KeyPairUtil | Generated new secp256k1 public key 0x268a7b704fd1d7c8f105009c60188e16fd6b5cf0f495422d6f6537871dd2b5fd41ff973d4d255679f2787d5df4cf9ce01dfa3d7d987dfe4a0379262bff0c8cc9 and stored it to /home/ubuntu/besu-jsonrpc-lab/data/key
+2026-11-07 15:58:43.273+00:00 | main | INFO  | ProtocolScheduleBuilder | Protocol schedule created with milestones: [London:0]
+2026-11-07 15:58:43.534+00:00 | main | INFO  | RocksDBKeyValueStorageFactory | No existing database detected at /home/ubuntu/besu-jsonrpc-lab/data. Using version 1
+2026-11-07 15:58:44.822+00:00 | main | INFO  | TransactionPoolFactory | Enabling transaction pool
+2026-11-07 15:58:44.911+00:00 | main | INFO  | BesuControllerBuilder | TTD difficulty is not present, creating initial sync phase for PoW
+2026-11-07 15:58:45.001+00:00 | main | INFO  | RunnerBuilder | Detecting NAT service.
+2026-11-07 15:58:45.485+00:00 | main | INFO  | Runner | Starting external services ... 
+2026-11-07 15:58:45.489+00:00 | main | INFO  | JsonRpcHttpService | Starting JSON-RPC service on 0.0.0.0:8545
+2026-11-07 15:58:46.078+00:00 | vert.x-eventloop-thread-1 | INFO  | JsonRpcHttpService | JSON-RPC service started and listening on 0.0.0.0:8545
+2026-11-07 15:58:46.095+00:00 | main | INFO  | AutoTransactionLogBloomCachingService | Starting auto transaction log bloom caching service.
+2026-11-07 15:58:46.099+00:00 | main | INFO  | LogBloomCacheMetadata | Lookup cache metadata file in data directory: /home/ubuntu/besu-jsonrpc-lab/data/caches
+2026-11-07 15:58:46.129+00:00 | main | INFO  | Runner | Starting Ethereum main loop ... 
+2026-11-07 15:58:46.131+00:00 | main | INFO  | NatService | No NAT environment detected so no service could be started
+2026-11-07 15:58:46.132+00:00 | main | INFO  | NetworkRunner | Starting Network.
+2026-11-07 15:58:46.176+00:00 | nioEventLoopGroup-2-1 | INFO  | RlpxAgent | P2P RLPx agent started and listening on /[0:0:0:0:0:0:0:0]:30303.
+2026-11-07 15:58:46.180+00:00 | main | INFO  | PeerDiscoveryAgent | Starting peer discovery agent on host=0.0.0.0, port=30303
+2026-11-07 15:58:46.240+00:00 | vert.x-eventloop-thread-1 | INFO  | VertxPeerDiscoveryAgent | Started peer discovery agent successfully, on effective host=0:0:0:0:0:0:0:0%0 and port=30303
+2026-11-07 15:58:46.251+00:00 | vert.x-eventloop-thread-1 | INFO  | PeerDiscoveryAgent | P2P peer discovery agent started and listening on /[0:0:0:0:0:0:0:0%0]:30303
+2026-11-07 15:58:46.405+00:00 | vert.x-eventloop-thread-1 | INFO  | PeerDiscoveryAgent | Writing node record to disk. NodeRecord{seq=1, publicKey=0x03268a7b704fd1d7c8f105009c60188e16fd6b5cf0f495422d6f6537871dd2b5fd, udpAddress=Optional[/127.0.0.1:30303], tcpAddress=Optional[/127.0.0.1:30303], asBase64=-Je4QFNAVV19VbPi38iRRemZ6z_zmTv162IwcZEa-8eXuX6uWm5yUwxc9ljjtO_nR9SSvP0FFaIjWWU8ow11-N6YHAUBg2V0aMfGhMXIWLWAgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQMmintwT9HXyPEFAJxgGI4W_Wtc8PSVQi1vZTeHHdK1_YN0Y3CCdl-DdWRwgnZf, nodeId=0x05e680af5619794a1ca97cb03d0f6eaf3c3f6443835c28d97f02596f7494d596, customFields={tcp=30303, udp=30303, ip=0x7f000001, eth=[[0xc5c858b5, 0x]], id=V4, secp256k1=0x03268a7b704fd1d7c8f105009c60188e16fd6b5cf0f495422d6f6537871dd2b5fd}}
+2026-11-07 15:58:46.513+00:00 | main | INFO  | DefaultP2PNetwork | Enode URL enode://268a7b704fd1d7c8f105009c60188e16fd6b5cf0f495422d6f6537871dd2b5fd41ff973d4d255679f2787d5df4cf9ce01dfa3d7d987dfe4a0379262bff0c8cc9@127.0.0.1:30303
+2026-11-07 15:58:46.518+00:00 | main | INFO  | DefaultP2PNetwork | Node address 0x3d0f6eaf3c3f6443835c28d97f02596f7494d596
+2026-11-07 15:58:46.573+00:00 | main | INFO  | NetworkRunner | Supported capabilities: [eth/62, eth/63, eth/64, eth/65, eth/66, eth/67, eth/68], [snap/1]
+2026-11-07 15:58:46.578+00:00 | main | INFO  | DefaultSynchronizer | Starting synchronizer.
+2026-11-07 15:58:46.583+00:00 | main | INFO  | TransactionPoolFactory | Enabling transaction handling following initial sync
+2026-11-07 15:58:46.588+00:00 | main | INFO  | FullSyncDownloader | Starting full sync.
+2026-11-07 15:58:46.595+00:00 | main | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:58:46.682+00:00 | main | INFO  | Runner | Ethereum main loop is up.
+2026-11-07 15:58:51.634+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:58:53.987+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #1 / 0 tx / 0 om / 0 (0.0%) gas / (0x4dc39dcd4c3c854502e2e1f16c9fca0fa1c889e28a6ab2465ce7346a5ac1546a) in 7.289s
+2026-11-07 15:58:54.676+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #2 / 0 tx / 0 om / 0 (0.0%) gas / (0x54c6c041a0549005791b1ecd800c78ff9a85a9715f6895ba3fb601b03e8784b5) in 0.764s
+2026-11-07 15:58:54.711+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #3 / 0 tx / 0 om / 0 (0.0%) gas / (0xf27c16c73df61e49f14876b2a7c9697e9996a81e45deeb20ce0d3d4ebc14932f) in 0.042s
+2026-11-07 15:58:55.022+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #4 / 0 tx / 0 om / 0 (0.0%) gas / (0xa17e8784648953d5db6a469841da81a429a19a67ab3b2f85cc1a09add6d41b69) in 0.310s
+2026-11-07 15:58:55.322+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #5 / 0 tx / 0 om / 0 (0.0%) gas / (0x33476a5e877b2787c1a0440d24a81812b837bc911156660dbb16523eec5913c8) in 0.302s
+2026-11-07 15:58:55.413+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #6 / 0 tx / 0 om / 0 (0.0%) gas / (0x318985088edef30100f61d324f5f7d0bb7bed0c529ad553ca24f3ae1b72877f1) in 0.096s
+2026-11-07 15:58:56.640+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:58:57.933+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #7 / 0 tx / 0 om / 0 (0.0%) gas / (0x8d48c401295e73673acb6cfa6724c8725c9ee2f8b3e0b6c81ec418d3db847827) in 2.526s
+2026-11-07 15:58:58.608+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #8 / 0 tx / 0 om / 0 (0.0%) gas / (0x3327cc8936d8ec913f091554476004c74822662f73ed0c646dfcbd6d5ff63cb5) in 0.667s
+2026-11-07 15:58:59.028+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #9 / 0 tx / 0 om / 0 (0.0%) gas / (0x5905e9378bf83c5d5242103fe739a41761bcc2990883e606ef6dab85431382a3) in 0.426s
+2026-11-07 15:58:59.799+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #10 / 0 tx / 0 om / 0 (0.0%) gas / (0x3a9074403df32577057715fb28d97463f0d8bdbc51c20f1e63d09bd91488afb9) in 0.771s
+2026-11-07 15:59:00.150+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #11 / 0 tx / 0 om / 0 (0.0%) gas / (0x3a072246158fbfb61d32b4e4098e4df12d8ae3811b54904d5405ff254b99bc16) in 0.213s
+2026-11-07 15:59:00.286+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #12 / 0 tx / 0 om / 0 (0.0%) gas / (0x033adb0f0472560819acfa1fdd64a064f9c73cc1a63f5ab5a2da164829c928ca) in 0.134s
+2026-11-07 15:59:01.402+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #13 / 0 tx / 0 om / 0 (0.0%) gas / (0x36d7e9cb4ec3f8da9d9863a0a77770a189136031f8492fba1730605095135d29) in 1.113s
+2026-11-07 15:59:01.667+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:02.366+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #14 / 0 tx / 0 om / 0 (0.0%) gas / (0x9b872eef29fc3e6ba39047ea204a2189da80babd8b9444fb4f09c450e06a1120) in 0.963s
+2026-11-07 15:59:02.589+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #15 / 0 tx / 0 om / 0 (0.0%) gas / (0x1e7e2c853dc0d1299c32a5e2e8247e4ddedd2355d6d2e5e7fc72a0dfb5315b6e) in 0.200s
+2026-11-07 15:59:03.982+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #16 / 0 tx / 0 om / 0 (0.0%) gas / (0x018f0fec312d5d637aa8cdf6c96e5021b065b84b7b2fb31138e42244ff4e788f) in 1.389s
+2026-11-07 15:59:06.668+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:06.864+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #17 / 0 tx / 0 om / 0 (0.0%) gas / (0x776b14317793a085e841dd8fd1b37ca96359fde9bb61182ab5e5571d239443c1) in 2.888s
+2026-11-07 15:59:09.455+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #18 / 0 tx / 0 om / 0 (0.0%) gas / (0xbbd2f10739eef68d931a25f6206b66adddecb7331dd0d2db7b5ddf65c04c7394) in 2.589s
+2026-11-07 15:59:09.916+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #19 / 0 tx / 0 om / 0 (0.0%) gas / (0xfef55ba810828e34d3d2ae8149edff5479f8ece333b48311bdc29f9a1993d76f) in 0.468s
+2026-11-07 15:59:10.075+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #20 / 0 tx / 0 om / 0 (0.0%) gas / (0x4da22cc3d728cab429af2a6f7f0abcb03e89e91f530309fd3db0e622f2829827) in 0.161s
+2026-11-07 15:59:10.720+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #21 / 0 tx / 0 om / 0 (0.0%) gas / (0x6bca88226ec7e5f1107ce10175bf02daf53aab58be3743c2535c1ffc48b535ce) in 0.649s
+2026-11-07 15:59:11.696+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:11.752+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #22 / 0 tx / 0 om / 0 (0.0%) gas / (0xa4f6488e23a0b4094a5b80c79b65ea964aa6d5792aa2b6026711ce093d634309) in 1.037s
+2026-11-07 15:59:13.046+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #23 / 0 tx / 0 om / 0 (0.0%) gas / (0xad9eb03ce8b73e5f7a1bcd6122ca8a42eb96f4912ec9e4f00d76b50d1c471c93) in 1.297s
+2026-11-07 15:59:13.377+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #24 / 0 tx / 0 om / 0 (0.0%) gas / (0x3d06d18ec344adb800be3409dddb8f2bb624ba9b762e86b0b1fef782b2ca3b1e) in 0.331s
+2026-11-07 15:59:16.697+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:18.725+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #25 / 0 tx / 0 om / 0 (0.0%) gas / (0x9b1c9a749fe7d2bb7e7c3a1c446acfca025da415ddb1f27bb3a1a362054da758) in 5.348s
+2026-11-07 15:59:19.887+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #26 / 0 tx / 0 om / 0 (0.0%) gas / (0x4f46dd0055bca3ca3bb18bccf5dbb0f705056c6c0f9e04483e2ac5840ad11742) in 1.162s
+2026-11-07 15:59:20.075+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #27 / 0 tx / 0 om / 0 (0.0%) gas / (0xd2393433e920f39b3a0876d393d06e074b499ee42fb975a80b16393508f03d3c) in 0.187s
+2026-11-07 15:59:20.547+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #28 / 0 tx / 0 om / 0 (0.0%) gas / (0x7e9a90fb4b89f6f281be77a6b780302a646ee5e8ee2c9a7f6c2d1e48999590fe) in 0.474s
+2026-11-07 15:59:20.669+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #29 / 0 tx / 0 om / 0 (0.0%) gas / (0x396eb553c5f5055dc5564301487927370b41a2c50120e15460adb7417f8e2e50) in 0.127s
+2026-11-07 15:59:21.346+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #30 / 0 tx / 0 om / 0 (0.0%) gas / (0x34169cd72d4ca63a756aae0d5bc6931764ef242777c153bf280aadd7309fd5a8) in 0.681s
+2026-11-07 15:59:21.454+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #31 / 0 tx / 0 om / 0 (0.0%) gas / (0xf316b11b1342eb1734b1d76ece7eeb67ed176795d056c73c2bbde3f3076e09dd) in 0.106s
+2026-11-07 15:59:21.699+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:22.007+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #32 / 0 tx / 0 om / 0 (0.0%) gas / (0xdb85616575177710c6dd4e4a035fda1073d8504a1f0328dd8a94dae13d6e5828) in 0.558s
+2026-11-07 15:59:22.835+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #33 / 0 tx / 0 om / 0 (0.0%) gas / (0x2533e0a84def476dc5ec69342c33eec13564482f7e05c22df35a842baca625de) in 0.802s
+2026-11-07 15:59:25.323+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #34 / 0 tx / 0 om / 0 (0.0%) gas / (0xa4506895f637d6020752c359857552bbfe139cb975175c2f8b9528096fb295b4) in 2.484s
+2026-11-07 15:59:26.704+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:27.016+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #35 / 0 tx / 0 om / 0 (0.0%) gas / (0x55a72912da71d4b1dd8033a5359c7d81d9f9adabd6f5ca1209984cf04ab781dc) in 1.698s
+2026-11-07 15:59:28.944+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #36 / 0 tx / 0 om / 0 (0.0%) gas / (0x25b3838858c4e1aba6e279c82a2a49c5241675928b99ff421e2356521b58d36d) in 1.925s
+2026-11-07 15:59:29.419+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #37 / 0 tx / 0 om / 0 (0.0%) gas / (0x694593da53e1483b1b62cd4f174dc5952fc28bab5367e13cb5aacbcd3e0564ac) in 0.473s
+2026-11-07 15:59:29.852+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #38 / 0 tx / 0 om / 0 (0.0%) gas / (0x6927752d1f5141f576f97cd3ffe440a3b0aa782d631647f2052a646790fc153f) in 0.436s
+2026-11-07 15:59:29.882+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #39 / 0 tx / 0 om / 0 (0.0%) gas / (0x21c1fa6e1056e60f5c7c077f4353d13ca6d978975bd670d0aa66a82f55b7713f) in 0.031s
+2026-11-07 15:59:30.999+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #40 / 0 tx / 0 om / 0 (0.0%) gas / (0x71de83e37fcfad3fdc8559e07c3327fe4dc7a188c755b50c5bbb37d44399f012) in 1.122s
+2026-11-07 15:59:31.709+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:32.903+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #41 / 0 tx / 0 om / 0 (0.0%) gas / (0x052472066168614b76dce3eff4ce0a1b136e6f0eb23c52a928db4c3b9dcc44cd) in 1.895s
+2026-11-07 15:59:33.351+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #42 / 0 tx / 0 om / 0 (0.0%) gas / (0x81f9f1d99eb039c3973430040562e63497504d70e32e18c2614c8ef97d1d0bfd) in 0.455s
+2026-11-07 15:59:35.632+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #43 / 0 tx / 0 om / 0 (0.0%) gas / (0xe122d92e3143d91f4842d679992777123ad30a585965e7912a318c9bad4a489b) in 2.285s
+2026-11-07 15:59:36.084+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #44 / 0 tx / 0 om / 0 (0.0%) gas / (0x0f7c8679cd1a97cefe568c5838b230e7b3d63534b70a4a239e66187ebfc24168) in 0.454s
+2026-11-07 15:59:36.710+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:37.693+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #45 / 0 tx / 0 om / 0 (0.0%) gas / (0x1a3b3971106de69f5b6abc4a345b8c0688723acaf3722e6a89a058dc511e6c58) in 1.613s
+2026-11-07 15:59:38.172+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #46 / 0 tx / 0 om / 0 (0.0%) gas / (0x56b3a756da638760decb9898a7a45a1b058c877ac88c6f71b9cb9814f682afcc) in 0.482s
+2026-11-07 15:59:39.353+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #47 / 0 tx / 0 om / 0 (0.0%) gas / (0x36f7a7885fbc4e358e80cd0c1c6792c1953674e55be4c59e9663eff628a73023) in 1.074s
+2026-11-07 15:59:40.132+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #48 / 0 tx / 0 om / 0 (0.0%) gas / (0x1682c6e0bcd98955f3c0791189a13423b0516b9816a13da3bf13b4e70f03de89) in 0.786s
+2026-11-07 15:59:41.713+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:43.882+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #49 / 0 tx / 0 om / 0 (0.0%) gas / (0xbc79537ae6b5105d30f5766a1f115bd1c03b542a4533f5194c5160cd74ff9b81) in 3.751s
+2026-11-07 15:59:46.717+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:47.147+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #50 / 0 tx / 0 om / 0 (0.0%) gas / (0xab453cb9a8b7e92ffb5d5ca00ccf89cbb5847a51e06490a12011ea66df5c700f) in 3.269s
+2026-11-07 15:59:47.542+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #51 / 0 tx / 0 om / 0 (0.0%) gas / (0x96b47b3bf3cc631d463ca23645f7ef77d6303cfa537c895158d0235dd01f7956) in 0.398s
+2026-11-07 15:59:48.676+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #52 / 0 tx / 0 om / 0 (0.0%) gas / (0x97bce45f786a8d73dc88ca1ae018d43c1f08dc703a8e4345697e51b3f8864f4c) in 1.137s
+2026-11-07 15:59:49.017+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #53 / 0 tx / 0 om / 0 (0.0%) gas / (0xc8d22b92cd85e569c897840c3955782e585f93e4c028a952fd23c8f27ac2fe51) in 0.340s
+2026-11-07 15:59:49.431+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #54 / 0 tx / 0 om / 0 (0.0%) gas / (0x655784e73bf1f4e4bb0249c6302e199c4f7c955233cc429312c23373c461bcef) in 0.413s
+2026-11-07 15:59:49.963+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #55 / 0 tx / 0 om / 0 (0.0%) gas / (0xcd71453fc7cb8e715c1706a0d1a1958a31af2a393ec58240b63c77c27f33cd0f) in 0.533s
+2026-11-07 15:59:50.404+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #56 / 0 tx / 0 om / 0 (0.0%) gas / (0x29272430e67a7f67b92b0e8a12ba98333d504379f5ef057d1bd056c1cc634aef) in 0.445s
+2026-11-07 15:59:50.454+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #57 / 0 tx / 0 om / 0 (0.0%) gas / (0x7634f57ebbc66603d87aacd577e9d9adeeab97871ba28111fc65bea3744f2264) in 0.053s
+2026-11-07 15:59:50.484+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #58 / 0 tx / 0 om / 0 (0.0%) gas / (0x1b7cc0c3e8fb25dc5934072be8874c8a6bd775800929a5a248b357359c55c293) in 0.034s
+2026-11-07 15:59:50.991+00:00 | MinerExecutor | INFO  | BlockMiner | Produced #59 / 0 tx / 0 om / 0 (0.0%) gas / (0xd6d78d4028cf64ba118a57d694a3305f5144440ac41c10c03167a3796a44ec79) in 0.510s
+2026-11-07 15:59:51.719+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 15:59:51.891+00:00 | BesuCommand-Shutdown-Hook | INFO  | DefaultSynchronizer | Stopping synchronizer
+2026-11-07 15:59:51.900+00:00 | BesuCommand-Shutdown-Hook | INFO  | NetworkRunner | Stopping Network.
+2026-11-07 15:59:52.011+00:00 | BesuCommand-Shutdown-Hook | INFO  | EthProtocolManager | Stopping eth Subprotocol.
+2026-11-07 15:59:52.014+00:00 | BesuCommand-Shutdown-Hook | INFO  | EthProtocolManager | eth Subprotocol stopped.
+2026-11-07 15:59:52.016+00:00 | BesuCommand-Shutdown-Hook | INFO  | NetworkRunner | Network stopped.
+2026-11-07 15:59:52.016+00:00 | BesuCommand-Shutdown-Hook | INFO  | AutoTransactionLogBloomCachingService | Shutting down Auto transaction logs caching service.
+2026-11-07 15:59:52.018+00:00 | BesuCommand-Shutdown-Hook | INFO  | NatService | No NAT environment detected so no service could be stopped

@@ -1,0 +1,5 @@
+total 16
+drwxrwxr-x  4 ubuntu ubuntu 4096 Nov  7 15:58 .
+drwxr-x--- 20 ubuntu ubuntu 4096 Nov  7 15:57 ..
+drwxrwxr-x  2 ubuntu ubuntu 4096 Nov  7 15:58 data
+drwxrwxr-x  2 ubuntu ubuntu 4096 Nov  7 15:58 results

@@ -1,0 +1,21 @@
+========== CORE CHECKS (Lab 12 - Use Besu JSON-RPC API, 2026-11-07 15:59:58 UTC) ==========
+PASS: Task 1.1: besu --version printed
+PASS: Task 1.2: working dir + data dir exist
+PASS: Task 1.3: besu started with RPC on 8545
+PASS: Task 1.4: web3_clientVersion returned result string
+PASS: Task 2.1: eth_blockNumber returned hex result
+PASS: Task 2.1: net_version returned numeric string
+PASS: Task 2.1: net_listening returned boolean
+PASS: Task 2.2: latest block with txs returned block object
+PASS: Task 2.2: block 0x1 returned block object
+PASS: Task 2.2: latest block without txs returned object with number
+PASS: Task 2.3: eth_getBalance returned non-zero balance for coinbase
+PASS: Task 2.3: eth_getTransactionCount returned hex result
+PASS: Task 2.4: eth_getTransactionByHash returned (result:null or result:obj, no RPC error)
+FAIL: Task 2.4: eth_pendingTransactions returned an array
+PASS: Task 2.5: eth_gasPrice returned hex
+FAIL: Task 2.5: eth_chainId returned 0x7e2 (dev=2018)
+PASS: Task 2.5: eth_syncing returned false or sync object
+PASS: Verification: all 3 verify commands returned valid JSON
+PASS: Summary.md generated
+CORE: 17/19 PASS

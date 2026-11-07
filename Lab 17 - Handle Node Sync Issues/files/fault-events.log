@@ -1,0 +1,7 @@
+2026-11-07T16:52:51Z FAULT network_partition injected at node2 block=
+2026-11-07T16:53:08Z FAULT network_partition restored
+2026-11-07T16:56:27Z FAULT peer_starvation at node2 block=
+2026-11-07T16:57:16Z FAULT network_partition restored
+no sst found; corrupting a rocksdb header instead
+2026-11-07T17:00:08Z FAULT db_corruption at node2 block=
+2026-11-07T17:01:02Z FAULT network_partition restored

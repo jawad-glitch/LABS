@@ -1,0 +1,25 @@
+{
+  "report_timestamp": "2026-11-07T17:03:42Z",
+  "nodes": {
+    "node1": {
+      "process_running": false,
+      "rpc_reachable": false,
+      "block_number_hex": "0x0",
+      "block_number_dec": 0,
+      "peer_count_dec": 0,
+      "sync_status": "null",
+      "latest_error_log_line": "Caused by: picocli.CommandLine$ParameterException: Unable to mine without a valid coinbase. Either disable mining (remove --miner-enabled) or specify the beneficiary of mining (via"
+    },
+    "node2": {
+      "process_running": false,
+      "rpc_reachable": false,
+      "block_number_hex": "0x0",
+      "block_number_dec": 0,
+      "peer_count_dec": 0,
+      "sync_status": "null",
+      "latest_error_log_line": "Caused by: picocli.CommandLine$ParameterException: Unable to mine without a valid coinbase. Either disable mining (remove --miner-enabled) or specify the beneficiary of mining (via"
+    }
+  },
+  "chain_consistent": true,
+  "detected_faults": ["node1 peer count is 0", "node2 peer count is 0"]
+}

@@ -1,0 +1,24 @@
+=== recovery at 2026-11-07T16:55:44Z ===
+faults_detected_before: restore_network_and_reconnect
+procedures_applied:    restore_network_and_reconnect
+elapsed_seconds:       174
+final_node1_block:     
+final_node2_block:     
+chain_consistent:      True
+faults_after:          2
+=== recovery at 2026-11-07T16:59:58Z ===
+faults_detected_before: restore_network_and_reconnect
+procedures_applied:    restore_network_and_reconnect
+elapsed_seconds:       244
+final_node1_block:     
+final_node2_block:     
+chain_consistent:      True
+faults_after:          2
+=== recovery at 2026-11-07T17:03:44Z ===
+faults_detected_before: restore_network_and_reconnect
+procedures_applied:    restore_network_and_reconnect
+elapsed_seconds:       217
+final_node1_block:     
+final_node2_block:     
+chain_consistent:      True
+faults_after:          2

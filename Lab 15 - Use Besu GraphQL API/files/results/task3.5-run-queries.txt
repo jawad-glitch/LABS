@@ -1,0 +1,50 @@
+=== Besu GraphQL Query Tests ===
+
+1. Latest Block Information:
+{
+  "data": {
+    "block": {
+      "number": "0x0",
+      "hash": "0x2f2a939c2cdd8918be11a55a1e7db412861ed477ed927d8f122b55ccd0f8bbcb",
+      "timestamp": "0x0"
+    }
+  }
+}
+
+2. Network Gas Price:
+{
+  "data": {
+    "gasPrice": "0x3e8"
+  }
+}
+
+3. Genesis Block:
+{
+  "data": {
+    "block": {
+      "number": "0x0",
+      "hash": "0x2f2a939c2cdd8918be11a55a1e7db412861ed477ed927d8f122b55ccd0f8bbcb",
+      "timestamp": "0x0"
+    }
+  }
+}
+
+4. Coinbase Account Balance:
+{
+  "errors": [
+    {
+      "message": "Validation error (FieldUndefined@[account]) : Field 'account' in type 'Query' is undefined",
+      "locations": [
+        {
+          "line": 1,
+          "column": 3
+        }
+      ],
+      "extensions": {
+        "classification": "ValidationError"
+      }
+    }
+  ]
+}
+
+=== Query Tests Complete ===

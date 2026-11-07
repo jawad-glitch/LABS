@@ -1,0 +1,8 @@
+# Basic block query
+{
+  block {
+    number
+    hash
+    timestamp
+  }
+}

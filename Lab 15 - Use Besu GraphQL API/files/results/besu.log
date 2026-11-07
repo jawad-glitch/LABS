@@ -1,0 +1,96 @@
+2026-11-07 16:23:12.931+00:00 | main | INFO  | Besu | Starting Besu
+2026-11-07 16:23:14.058+00:00 | main | INFO  | Besu | jemalloc library not found, memory usage may be reduced by installing it
+2026-11-07 16:23:14.261+00:00 | main | INFO  | Besu | 
+####################################################################################################
+#                                                                                                  #
+# Besu version 23.10.2                                                                             #
+#                                                                                                  #
+# Configuration:                                                                                   #
+# Network: Dev                                                                                     #
+# Network Id: 2018                                                                                 #
+# Data storage: Forest                                                                             #
+# Sync mode: Full                                                                                  #
+# RPC HTTP APIs: ETH,NET,WEB3                                                                      #
+# RPC HTTP port: 8545                                                                              #
+# Using LAYERED transaction pool implementation                                                    #
+# Using STACKED worldstate update mode                                                             #
+#                                                                                                  #
+# Host:                                                                                            #
+# Java: openjdk-java-17                                                                            #
+# Maximum heap size: 0.94 GB                                                                       #
+# OS: linux-x86_64                                                                                 #
+# glibc: 2.39                                                                                      #
+# Total memory: 3.76 GB                                                                            #
+# CPU cores: 2                                                                                     #
+#                                                                                                  #
+# Plugins:                                                                                         #
+# TOTAL = 0 of 0 plugins successfully loaded                                                       #
+# from /home/ubuntu/besu-installation/besu-23.10.2/plugins                                         #
+#                                                                                                  #
+####################################################################################################
+2026-11-07 16:23:14.269+00:00 | main | INFO  | Besu | Connecting to 0 static nodes.
+2026-11-07 16:23:14.269+00:00 | main | INFO  | Besu | Security Module: localfile
+2026-11-07 16:23:14.415+00:00 | main | INFO  | Besu | Using the native implementation of alt bn128
+2026-11-07 16:23:14.510+00:00 | main | INFO  | Besu | Using the native implementation of modexp
+2026-11-07 16:23:14.513+00:00 | main | INFO  | Besu | Using the native implementation of the signature algorithm
+2026-11-07 16:23:14.546+00:00 | main | INFO  | Besu | Using the native implementation of the blake2bf algorithm
+2026-11-07 16:23:14.802+00:00 | main | INFO  | KeyPairUtil | Generated new secp256k1 public key 0xe73d3763dd75d181b6c39e9d6e4a17aca4120dc9ea428c3c79b47d3003476ba47cdc83c7030fb57c43b3f70a4c72cedddb1467678df1021d74323b8f7c9ed867 and stored it to /home/ubuntu/besu-graphql-lab/./besu-data/key
+2026-11-07 16:23:15.388+00:00 | main | INFO  | ProtocolScheduleBuilder | Protocol schedule created with milestones: [London:0]
+2026-11-07 16:23:15.636+00:00 | main | INFO  | RocksDBKeyValueStorageFactory | No existing database detected at /home/ubuntu/besu-graphql-lab/./besu-data. Using version 1
+2026-11-07 16:23:17.500+00:00 | main | INFO  | TransactionPoolFactory | Enabling transaction pool
+2026-11-07 16:23:17.609+00:00 | main | INFO  | BesuControllerBuilder | TTD difficulty is not present, creating initial sync phase for PoW
+2026-11-07 16:23:17.733+00:00 | main | INFO  | RunnerBuilder | Detecting NAT service.
+2026-11-07 16:23:19.831+00:00 | main | INFO  | Runner | Starting external services ... 
+2026-11-07 16:23:19.832+00:00 | main | INFO  | JsonRpcHttpService | Starting JSON-RPC service on 127.0.0.1:8545
+2026-11-07 16:23:20.281+00:00 | vert.x-eventloop-thread-3 | INFO  | JsonRpcHttpService | JSON-RPC service started and listening on 127.0.0.1:8545
+2026-11-07 16:23:20.287+00:00 | main | INFO  | GraphQLHttpService | Starting GraphQL HTTP service on 0.0.0.0:8547
+2026-11-07 16:23:20.298+00:00 | vert.x-eventloop-thread-3 | INFO  | GraphQLHttpService | GraphQL HTTP service started and listening on 0.0.0.0:8547
+2026-11-07 16:23:20.312+00:00 | main | INFO  | AutoTransactionLogBloomCachingService | Starting auto transaction log bloom caching service.
+2026-11-07 16:23:20.314+00:00 | main | INFO  | LogBloomCacheMetadata | Lookup cache metadata file in data directory: /home/ubuntu/besu-graphql-lab/./besu-data/caches
+2026-11-07 16:23:20.349+00:00 | main | INFO  | Runner | Starting Ethereum main loop ... 
+2026-11-07 16:23:20.350+00:00 | main | INFO  | NatService | No NAT environment detected so no service could be started
+2026-11-07 16:23:20.351+00:00 | main | INFO  | NetworkRunner | Starting Network.
+2026-11-07 16:23:20.390+00:00 | nioEventLoopGroup-2-1 | INFO  | RlpxAgent | P2P RLPx agent started and listening on /[0:0:0:0:0:0:0:0]:30303.
+2026-11-07 16:23:20.392+00:00 | main | INFO  | PeerDiscoveryAgent | Starting peer discovery agent on host=0.0.0.0, port=30303
+2026-11-07 16:23:20.448+00:00 | vert.x-eventloop-thread-3 | INFO  | VertxPeerDiscoveryAgent | Started peer discovery agent successfully, on effective host=0:0:0:0:0:0:0:0%0 and port=30303
+2026-11-07 16:23:20.463+00:00 | vert.x-eventloop-thread-3 | INFO  | PeerDiscoveryAgent | P2P peer discovery agent started and listening on /[0:0:0:0:0:0:0:0%0]:30303
+2026-11-07 16:23:20.586+00:00 | vert.x-eventloop-thread-3 | INFO  | PeerDiscoveryAgent | Writing node record to disk. NodeRecord{seq=1, publicKey=0x03e73d3763dd75d181b6c39e9d6e4a17aca4120dc9ea428c3c79b47d3003476ba4, udpAddress=Optional[/127.0.0.1:30303], tcpAddress=Optional[/127.0.0.1:30303], asBase64=-Je4QLicIXp_D2A9yMG5bS7v2gyaPeayMLwZ5MKn78m8WHkxXYbRVz5hZGepss9-AF4TQhnnPDGeMcvlDXbvp8NugFIBg2V0aMfGhMXIWLWAgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQPnPTdj3XXRgbbDnp1uShespBINyepCjDx5tH0wA0drpIN0Y3CCdl-DdWRwgnZf, nodeId=0x602f6d7999c99d0c1f08e54b04784d45d4661258b2d2fe05cdb0b7d01b50e307, customFields={tcp=30303, udp=30303, ip=0x7f000001, eth=[[0xc5c858b5, 0x]], id=V4, secp256k1=0x03e73d3763dd75d181b6c39e9d6e4a17aca4120dc9ea428c3c79b47d3003476ba4}}
+2026-11-07 16:23:20.669+00:00 | main | INFO  | DefaultP2PNetwork | Enode URL enode://e73d3763dd75d181b6c39e9d6e4a17aca4120dc9ea428c3c79b47d3003476ba47cdc83c7030fb57c43b3f70a4c72cedddb1467678df1021d74323b8f7c9ed867@127.0.0.1:30303
+2026-11-07 16:23:20.674+00:00 | main | INFO  | DefaultP2PNetwork | Node address 0x04784d45d4661258b2d2fe05cdb0b7d01b50e307
+2026-11-07 16:23:20.716+00:00 | main | INFO  | NetworkRunner | Supported capabilities: [eth/62, eth/63, eth/64, eth/65, eth/66, eth/67, eth/68], [snap/1]
+2026-11-07 16:23:20.716+00:00 | main | INFO  | DefaultSynchronizer | Starting synchronizer.
+2026-11-07 16:23:20.723+00:00 | main | INFO  | TransactionPoolFactory | Enabling transaction handling following initial sync
+2026-11-07 16:23:20.732+00:00 | main | INFO  | FullSyncDownloader | Starting full sync.
+2026-11-07 16:23:20.738+00:00 | main | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:23:20.768+00:00 | main | INFO  | Runner | Ethereum main loop is up.
+2026-11-07 16:23:25.771+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:23:30.775+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:23:35.865+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:23:40.866+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:23:45.868+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:23:50.870+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:23:55.871+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:00.872+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:05.873+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:06.695+00:00 | vert.x-worker-thread-0 | WARN  | GraphQL | Query did not validate : '{ block(number: 0) { number hash timestamp parentHash } }'
+2026-11-07 16:24:10.250+00:00 | vert.x-worker-thread-2 | WARN  | GraphQL | Query did not validate : '{ block { number hash timestamp parentHash difficulty totalDifficulty gasUsed gasLimit size transactionCount } }'
+2026-11-07 16:24:10.876+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:15.878+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:20.792+00:00 | vert.x-worker-thread-6 | WARN  | GraphQL | Query did not validate : '{ account(address: "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73") { balance } }'
+2026-11-07 16:24:20.879+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:25.730+00:00 | vert.x-worker-thread-10 | WARN  | GraphQL | Query did not validate : '{ account(address: "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73") { balance } }'
+2026-11-07 16:24:25.880+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:30.882+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:35.883+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:40.884+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:45.885+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:50.886+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:54.845+00:00 | vert.x-worker-thread-2 | WARN  | GraphQL | Query did not validate : '{ account(address: "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73") { balance } }'
+2026-11-07 16:24:55.887+00:00 | EthScheduler-Timer-0 | INFO  | FullSyncTargetManager | Unable to find sync target. Currently checking 0 peers for usefulness
+2026-11-07 16:24:57.502+00:00 | BesuCommand-Shutdown-Hook | INFO  | DefaultSynchronizer | Stopping synchronizer
+2026-11-07 16:24:57.511+00:00 | BesuCommand-Shutdown-Hook | INFO  | NetworkRunner | Stopping Network.
+2026-11-07 16:24:57.561+00:00 | BesuCommand-Shutdown-Hook | INFO  | EthProtocolManager | Stopping eth Subprotocol.
+2026-11-07 16:24:57.585+00:00 | BesuCommand-Shutdown-Hook | INFO  | EthProtocolManager | eth Subprotocol stopped.
+2026-11-07 16:24:57.585+00:00 | BesuCommand-Shutdown-Hook | INFO  | NetworkRunner | Network stopped.
+2026-11-07 16:24:57.586+00:00 | BesuCommand-Shutdown-Hook | INFO  | AutoTransactionLogBloomCachingService | Shutting down Auto transaction logs caching service.
+2026-11-07 16:24:57.587+00:00 | BesuCommand-Shutdown-Hook | INFO  | NatService | No NAT environment detected so no service could be stopped

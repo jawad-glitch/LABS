@@ -1,0 +1,21 @@
+{
+  "errors" : [ {
+    "message" : "Validation error (FieldUndefined@[block/parentHash]) : Field 'parentHash' in type 'Block' is undefined",
+    "locations" : [ {
+      "line" : 1,
+      "column" : 33
+    } ],
+    "extensions" : {
+      "classification" : "ValidationError"
+    }
+  }, {
+    "message" : "Validation error (FieldUndefined@[block/size]) : Field 'size' in type 'Block' is undefined",
+    "locations" : [ {
+      "line" : 1,
+      "column" : 88
+    } ],
+    "extensions" : {
+      "classification" : "ValidationError"
+    }
+  } ]
+}

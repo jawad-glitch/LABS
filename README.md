@@ -38,3 +38,4 @@
 | [Lab 12 - Use Besu JSON-RPC API](Lab%2012%20-%20Use%20Besu%20JSON-RPC%20API/PROOF.md) | CORE: 17/19 PASS | 2026-11-07 16:00 |
 | [Lab 13 - Monitor Besu with Prometheus](Lab%2013%20-%20Monitor%20Besu%20with%20Prometheus/PROOF.md) | CORE: 10/14 PASS | 2026-11-07 16:07 |
 | [Lab 14 - Monitor Besu with Grafana](Lab%2014%20-%20Monitor%20Besu%20with%20Grafana/PROOF.md) | CORE: 18/20 PASS | 2026-11-07 16:19 |
+| [Lab 15 - Use Besu GraphQL API](Lab%2015%20-%20Use%20Besu%20GraphQL%20API/PROOF.md) | CORE: 14/18 PASS | 2026-11-07 16:25 |

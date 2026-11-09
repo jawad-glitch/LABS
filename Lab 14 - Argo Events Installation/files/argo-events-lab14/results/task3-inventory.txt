@@ -1,0 +1,24 @@
+OBJ CustomResourceDefinition eventbus.argoproj.io
+CRDNAMES eventbus.argoproj.io plural=eventbus short=eb kind=EventBus
+OBJ CustomResourceDefinition eventsources.argoproj.io
+CRDNAMES eventsources.argoproj.io plural=eventsources short=es kind=EventSource
+OBJ CustomResourceDefinition sensors.argoproj.io
+CRDNAMES sensors.argoproj.io plural=sensors short=sn kind=Sensor
+OBJ ServiceAccount argo-events-sa
+OBJ ClusterRole argo-events-aggregate-to-admin
+OBJ ClusterRole argo-events-aggregate-to-edit
+OBJ ClusterRole argo-events-aggregate-to-view
+OBJ ClusterRole argo-events-role
+OBJ ClusterRoleBinding argo-events-binding
+OBJ ConfigMap argo-events-controller-config
+JSVERSION latest nats:2.10.29
+JSVERSION 2.8.1 nats:2.8.1
+JSVERSION 2.8.1-alpine nats:2.8.1-alpine
+JSVERSION 2.8.2 nats:2.8.2
+JSVERSION 2.8.2-alpine nats:2.8.2-alpine
+JSVERSION 2.9.1 nats:2.9.1
+JSVERSION 2.9.12 nats:2.9.12
+JSVERSION 2.9.16 nats:2.9.16
+JSVERSION 2.10.29 nats:2.10.29
+OBJ Deployment controller-manager
+IMAGE controller-manager quay.io/argoproj/argo-events:v1.9.11

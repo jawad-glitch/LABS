@@ -1,0 +1,13 @@
+objects: 11
+      4 ClusterRole
+      1 ClusterRoleBinding
+      1 ConfigMap
+      3 CustomResourceDefinition
+      1 Deployment
+      1 ServiceAccount
+Namespace objects inside install.yaml: 0
+CRDNAMES eventbus.argoproj.io plural=eventbus short=eb kind=EventBus
+CRDNAMES eventsources.argoproj.io plural=eventsources short=es kind=EventSource
+CRDNAMES sensors.argoproj.io plural=sensors short=sn kind=Sensor
+OBJ Deployment controller-manager
+IMAGE controller-manager quay.io/argoproj/argo-events:v1.9.11

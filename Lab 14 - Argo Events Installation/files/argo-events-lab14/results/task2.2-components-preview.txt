@@ -1,0 +1,20 @@
+kind: CustomResourceDefinition
+  name: eventbus.argoproj.io
+kind: CustomResourceDefinition
+  name: eventsources.argoproj.io
+kind: CustomResourceDefinition
+  name: sensors.argoproj.io
+kind: ServiceAccount
+  name: argo-events-sa
+kind: ClusterRole
+  name: argo-events-aggregate-to-admin
+kind: ClusterRole
+  name: argo-events-aggregate-to-edit
+kind: ClusterRole
+  name: argo-events-aggregate-to-view
+kind: ClusterRole
+  name: argo-events-role
+kind: ClusterRoleBinding
+  name: argo-events-binding
+  name: argo-events-role
+  name: argo-events-sa

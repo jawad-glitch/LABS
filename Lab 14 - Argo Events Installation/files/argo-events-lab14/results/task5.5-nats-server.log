@@ -1,0 +1,23 @@
+[1] 2026/11/09 13:05:48.300665 [INF] Starting nats-server
+[1] 2026/11/09 13:05:48.300918 [INF]   Version:  2.10.29
+[1] 2026/11/09 13:05:48.300924 [INF]   Git:      [f91ddd8]
+[1] 2026/11/09 13:05:48.300927 [INF]   Name:     NA4AYQOKWD5SWPNHCTURZFA3DVVGZYLXWWFQE2LVPSOLZN6ZP5KRG4IO
+[1] 2026/11/09 13:05:48.300933 [INF]   Node:     ZBLLo8M1
+[1] 2026/11/09 13:05:48.300936 [INF]   ID:       NA4AYQOKWD5SWPNHCTURZFA3DVVGZYLXWWFQE2LVPSOLZN6ZP5KRG4IO
+[1] 2026/11/09 13:05:48.301749 [INF] Starting http monitor on 0.0.0.0:8222
+[1] 2026/11/09 13:05:48.301995 [INF] Starting JetStream
+[1] 2026/11/09 13:05:48.302007 [WRN] Temporary storage directory used, data could be lost on system reboot
+[1] 2026/11/09 13:05:48.302597 [INF]     _ ___ _____ ___ _____ ___ ___   _   __  __
+[1] 2026/11/09 13:05:48.302623 [INF]  _ | | __|_   _/ __|_   _| _ \ __| /_\ |  \/  |
+[1] 2026/11/09 13:05:48.302627 [INF] | || | _|  | | \__ \ | | |   / _| / _ \| |\/| |
+[1] 2026/11/09 13:05:48.302629 [INF]  \__/|___| |_| |___/ |_| |_|_\___/_/ \_\_|  |_|
+[1] 2026/11/09 13:05:48.302632 [INF] 
+[1] 2026/11/09 13:05:48.302635 [INF]          https://docs.nats.io/jetstream
+[1] 2026/11/09 13:05:48.302637 [INF] 
+[1] 2026/11/09 13:05:48.302640 [INF] ---------------- JETSTREAM ----------------
+[1] 2026/11/09 13:05:48.302647 [INF]   Max Memory:      2.82 GB
+[1] 2026/11/09 13:05:48.302652 [INF]   Max Storage:     15.20 GB
+[1] 2026/11/09 13:05:48.302655 [INF]   Store Directory: "/tmp/nats/jetstream"
+[1] 2026/11/09 13:05:48.302658 [INF] -------------------------------------------
+[1] 2026/11/09 13:05:48.303248 [INF] Listening for client connections on 0.0.0.0:4222
+[1] 2026/11/09 13:05:48.303851 [INF] Server is ready

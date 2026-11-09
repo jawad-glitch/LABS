@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: chain-sensor
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: sensor-trigger-sa
+  dependencies:
+  - name: calendar-dep
+    eventSourceName: calendar-eventsource
+    eventName: schedule-trigger
+  triggers:
+  - template:
+      name: create-configmap-trigger
+      k8s:
+        operation: create
+        source:
+          resource:
+            apiVersion: v1
+            kind: ConfigMap
+            metadata:
+              generateName: chain-event-
+              namespace: argo-events
+              labels:
+                trigger-type: chain-event
+            data:
+              message: Chain event triggered
+              timestamp: ''
+              event-id: ''
+        parameters:
+        - src:
+            dependencyName: calendar-dep
+            dataKey: eventTime
+          dest: data.timestamp
+        - src:
+            dependencyName: calendar-dep
+            contextKey: id
+          dest: data.event-id

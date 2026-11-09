@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: argo-events
+  labels:
+    trigger-type: chain-event
+  name: chain-event-wwgwp
+data:
+  message: Chain event triggered
+  timestamp: '{{ .Input.calendar-dep.eventTime }}'
+  event-id: '{{ .Input.calendar-dep.id }}'

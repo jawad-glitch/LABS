@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: webhook-sensor
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: sensor-trigger-sa
+  dependencies:
+    - name: webhook-dep
+      eventSourceName: webhook-eventsource
+      eventName: webhook-trigger
+  triggers:
+    - template:
+        name: webhook-job-trigger
+        k8s:
+          operation: create
+          source:
+            resource:
+              apiVersion: batch/v1
+              kind: Job
+              metadata:
+                generateName: webhook-triggered-job-
+                namespace: argo-events
+              spec:
+                backoffLimit: 1
+                template:
+                  spec:
+                    restartPolicy: Never
+                    containers:
+                    - name: job-container
+                      image: alpine:3.20
+                      command: ["/bin/sh"]
+                      args: ["-c", "echo \"Job triggered by webhook event at $(date)\"; sleep 10"]

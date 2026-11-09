@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: file-eventsource
+  namespace: argo-events
+spec:
+  template:
+    container:
+      volumeMounts:
+        - name: events
+          mountPath: /tmp/events
+    volumes:
+      - name: events
+        emptyDir: {}
+  file:
+    file-trigger:
+      eventType: CREATE
+      watchPathConfig:
+        directory: /tmp/events
+        path: trigger.txt

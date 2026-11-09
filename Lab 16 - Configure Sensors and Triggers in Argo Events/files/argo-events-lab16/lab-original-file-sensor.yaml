@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: file-sensor
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: argo-events-sa
+  dependencies:
+    - name: file-dep
+      eventSourceName: file-eventsource
+      eventName: file-trigger
+  triggers:
+    - template:
+        name: file-pod-trigger
+        k8s:
+          operation: create
+          source:
+            resource:
+              apiVersion: v1
+              kind: Pod
+              metadata:
+                generateName: file-triggered-pod-
+                namespace: argo-events
+              spec:
+                restartPolicy: Never
+                containers:
+                - name: pod-container
+                  image: alpine:latest
+                  command: ["/bin/sh"]
+                  args: ["-c", "echo 'Pod triggered by file event at $(date)'; sleep 30"]

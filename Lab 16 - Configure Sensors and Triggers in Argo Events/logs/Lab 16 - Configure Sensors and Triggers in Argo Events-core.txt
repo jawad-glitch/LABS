@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 16 - Configure Sensors and Triggers in Argo Events, 2026-11-09 13:14:48 UTC) - FAST MODE ==========
+PASS: Task 1-5 [SIMULATED apply]: fixed EventBus/RBAC/4 EventSources/4 Sensors valid (strict, K8s + Argo Events CRDs)
+PASS: Lab bug: argo-events-sa is the controller-manager ServiceAccount in install.yaml v1.9.11 (lab cleanup would delete it); fixed uses sensor-trigger-sa
+PASS: Task 1.4: EventBus = real NATS JetStream (latest) - all 15 published events persisted (messages=15)
+PASS: Task 3.1/4.2: webhook -> Job ran for real (2 jobs); fixed log shows real date, lab original prints literal $(date)
+PASS: Lab bug: original file EventSource (wrong fields, no dir at start) never fired - 0 pods
+PASS: Task 4.3/4.4: fixed file EventSource (eventType+watchPathConfig, emptyDir) -> CREATE -> Pod ran with real date
+PASS: Lab bug: final-test overwrite is a WRITE (ignored by eventType CREATE); rm+create fired a 2nd Pod
+PASS: Task 5.2: chain ConfigMaps - fixed carry real eventTime + event id (3); lab original holds literal Go template text
+PASS: Task 5 (real chaining): resource EventSource saw chain ConfigMaps -> step-2 Job ran 3 times with CHAIN_TS from the ConfigMap
+PASS: Task 4.5: all resources created by fixed sensors (Jobs, Pods, ConfigMaps) valid (strict)
+PASS: Time: fast-mode run finished in 54s (<= 300s)
+CORE: 11/11 PASS

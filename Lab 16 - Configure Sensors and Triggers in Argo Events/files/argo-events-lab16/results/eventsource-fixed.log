@@ -1,0 +1,16 @@
+WEBHOOK webhook-eventsource/webhook-trigger listening 127.0.0.1:12000 POST /webhook
+FILE file-eventsource/file-trigger watching /tmp/events/trigger.txt for CREATE
+CALENDAR calendar-eventsource/schedule-trigger schedule='*/2 * * * *' (compressed to 5.0s)
+RESOURCE resource-eventsource/chain-cm watching configmaps [{'key': 'trigger-type', 'operation': '==', 'value': 'chain-event'}]
+PUBLISHED webhook-eventsource/webhook-trigger webhook
+PUBLISHED file-eventsource/file-trigger file
+PUBLISHED webhook-eventsource/webhook-trigger webhook
+FILE WRITE trigger.txt ignored (eventType filter CREATE)
+FILE REMOVE trigger.txt ignored (eventType filter CREATE)
+PUBLISHED file-eventsource/file-trigger file
+PUBLISHED calendar-eventsource/schedule-trigger calendar
+PUBLISHED resource-eventsource/chain-cm resource
+PUBLISHED calendar-eventsource/schedule-trigger calendar
+PUBLISHED resource-eventsource/chain-cm resource
+PUBLISHED calendar-eventsource/schedule-trigger calendar
+PUBLISHED resource-eventsource/chain-cm resource

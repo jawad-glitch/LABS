@@ -1,0 +1,7 @@
+TRIGGER webhook-sensor/webhook-job-trigger CREATED Job webhook-triggered-job-x0lre
+TRIGGER webhook-sensor/webhook-job-trigger CREATED Job webhook-triggered-job-50iys
+TRIGGER chain-sensor/create-configmap-trigger CREATED ConfigMap chain-event-s9b1x
+TRIGGER chain-sensor/create-configmap-trigger CREATED ConfigMap chain-event-wwgwp
+RUN Job/webhook-triggered-job-x0lre exited rc=0
+RUN Job/webhook-triggered-job-50iys exited rc=0
+TRIGGER chain-sensor/create-configmap-trigger CREATED ConfigMap chain-event-2x8iu

@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: argo-events
+  name: chain-step2-job-jhj3x
+spec:
+  backoffLimit: 1
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: step2
+        image: alpine:3.20
+        command:
+        - /bin/sh
+        - -c
+        args:
+        - 'echo "Chain step 2: ConfigMap created at $CHAIN_TS, processed at $(date)"'
+        env:
+        - name: CHAIN_TS
+          value: '2026-11-09 13:14:12.059815+00:00'

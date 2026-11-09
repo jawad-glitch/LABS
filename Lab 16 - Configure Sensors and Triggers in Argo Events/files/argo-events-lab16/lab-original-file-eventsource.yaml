@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: file-eventsource
+  namespace: argo-events
+spec:
+  file:
+    file-trigger:
+      directory: /tmp/events
+      path: trigger.txt
+      type: CREATE

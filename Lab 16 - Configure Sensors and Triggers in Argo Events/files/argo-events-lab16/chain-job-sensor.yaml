@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: chain-job-sensor
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: sensor-trigger-sa
+  dependencies:
+    - name: chain-cm-dep
+      eventSourceName: resource-eventsource
+      eventName: chain-cm
+  triggers:
+    - template:
+        name: chain-step2-job-trigger
+        k8s:
+          operation: create
+          source:
+            resource:
+              apiVersion: batch/v1
+              kind: Job
+              metadata:
+                generateName: chain-step2-job-
+                namespace: argo-events
+              spec:
+                backoffLimit: 1
+                template:
+                  spec:
+                    restartPolicy: Never
+                    containers:
+                    - name: step2
+                      image: alpine:3.20
+                      command: ["/bin/sh", "-c"]
+                      args: ["echo \"Chain step 2: ConfigMap created at $CHAIN_TS, processed at $(date)\""]
+                      env:
+                      - name: CHAIN_TS
+                        value: ""
+          parameters:
+            - src:
+                dependencyName: chain-cm-dep
+                dataKey: body.data.timestamp
+              dest: spec.template.spec.containers.0.env.0.value

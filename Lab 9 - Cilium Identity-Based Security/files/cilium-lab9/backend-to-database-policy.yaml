@@ -1,0 +1,17 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: backend-to-database
+  namespace: identity-lab
+spec:
+  endpointSelector:
+    matchLabels:
+      tier: database
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        tier: backend
+    toPorts:
+    - ports:
+      - port: "5432"
+        protocol: TCP

@@ -70,3 +70,4 @@
 | [Lab 6 - Kube-Proxy Replacement with Cilium eBPF](Lab%206%20-%20Kube-Proxy%20Replacement%20with%20Cilium%20eBPF/PROOF.md) | CORE: 11/11 PASS | 2026-11-09 14:48 |
 | [Lab 7 - Apply Network Policies with Cilium](Lab%207%20-%20Apply%20Network%20Policies%20with%20Cilium/PROOF.md) | CORE: 4/11 PASS | 2026-11-09 14:51 |
 | [Lab 8 - L7-Aware Network Policies](Lab%208%20-%20L7-Aware%20Network%20Policies/PROOF.md) | CORE: 10/10 PASS | 2026-11-09 14:55 |
+| [Lab 9 - Cilium Identity-Based Security](Lab%209%20-%20Cilium%20Identity-Based%20Security/PROOF.md) | CORE: 6/11 PASS | 2026-11-09 14:59 |

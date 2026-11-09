@@ -1,0 +1,4 @@
+ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS
+101        Disabled           Disabled          2001       k8s:tier=frontend
+102        Enabled            Disabled          2002       k8s:tier=backend
+103        Enabled            Disabled          2003       k8s:tier=database

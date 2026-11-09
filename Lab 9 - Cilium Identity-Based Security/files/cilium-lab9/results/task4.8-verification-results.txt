@@ -1,0 +1,5 @@
+=== Final Communication Tests ===
+✓ Frontend to Backend: ALLOWED
+✓ Backend to Database: ALLOWED
+✓ Frontend to Database: BLOCKED
+✓ Test Client to Backend: BLOCKED

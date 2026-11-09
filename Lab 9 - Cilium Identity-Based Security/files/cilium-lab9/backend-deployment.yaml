@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: identity-lab
+  labels:
+    app: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+        tier: backend
+        role: api
+        security-level: internal
+    spec:
+      containers:
+      - name: backend
+        image: nginx:1.27-alpine
+        ports:
+        - containerPort: 80

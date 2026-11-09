@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database
+  namespace: identity-lab
+  labels:
+    app: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+        tier: database
+        role: storage
+        security-level: restricted
+    spec:
+      containers:
+      - name: database
+        image: busybox:1.36
+        command: ["sh", "-c", "nc -lk -p 5432 -e echo PostgreSQL-Ready"]
+        ports:
+        - containerPort: 5432

@@ -1,0 +1,5 @@
+ID     LABELS
+2001   k8s:io.kubernetes.pod.namespace=identity-lab,k8s:tier=frontend,k8s:role=web,k8s:security-level=public
+2002   k8s:io.kubernetes.pod.namespace=identity-lab,k8s:tier=backend,k8s:role=api,k8s:security-level=internal
+2003   k8s:io.kubernetes.pod.namespace=identity-lab,k8s:tier=database,k8s:role=storage,k8s:security-level=restricted
+2004   k8s:io.kubernetes.pod.namespace=identity-lab,k8s:tier=test

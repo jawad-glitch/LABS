@@ -1,0 +1,16 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-external-frontend
+  namespace: identity-lab
+spec:
+  endpointSelector:
+    matchLabels:
+      tier: frontend
+  ingress:
+  - fromEntities:
+    - "world"
+    toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP

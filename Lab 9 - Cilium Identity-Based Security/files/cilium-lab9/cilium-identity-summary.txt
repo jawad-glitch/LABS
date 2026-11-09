@@ -1,0 +1,34 @@
+=== Cilium Identity-Based Security Lab Summary ===
+Generated on: Mon Nov  9 14:58:56 UTC 2026
+
+Namespace: identity-lab
+
+Pod Labels:
+E1109 14:58:54.462338    4824 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:58:54.462886    4824 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:58:54.464288    4824 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:58:54.464580    4824 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:58:54.466200    4824 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+
+Security Identities:
+ID     LABELS
+2001   k8s:io.kubernetes.pod.namespace=identity-lab,k8s:tier=frontend,k8s:role=web,k8s:security-level=public
+2002   k8s:io.kubernetes.pod.namespace=identity-lab,k8s:tier=backend,k8s:role=api,k8s:security-level=internal
+2003   k8s:io.kubernetes.pod.namespace=identity-lab,k8s:tier=database,k8s:role=storage,k8s:security-level=restricted
+2004   k8s:io.kubernetes.pod.namespace=identity-lab,k8s:tier=test
+
+Applied Network Policies:
+E1109 14:58:55.622316    4874 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:58:55.623191    4874 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:58:55.624775    4874 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:58:55.625233    4874 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:58:55.626783    4874 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+
+Enforcement Verification:
+=== Final Communication Tests ===
+✓ Frontend to Backend: ALLOWED
+✓ Backend to Database: ALLOWED
+✓ Frontend to Database: BLOCKED
+✓ Test Client to Backend: BLOCKED

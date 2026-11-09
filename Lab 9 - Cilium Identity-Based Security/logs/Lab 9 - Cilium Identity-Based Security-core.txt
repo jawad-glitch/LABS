@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 9 - Cilium Identity-Based Security, 2026-11-09 14:58:56 UTC) ==========
+FAIL: Task 1: Environment ready and identity-lab namespace configured
+FAIL: Task 2: Deployments configured with tier and security-level labels
+PASS: Task 2: Cilium identities registered and listed
+FAIL: Task 3.1: Default deny CiliumNetworkPolicy applied
+FAIL: Task 3.2: Frontend to backend ingress policy active
+FAIL: Task 3.3: Backend to database identity access policy active
+PASS: Task 3.4/3.5: DNS and external ingress policies created
+PASS: Task 4.7: Dynamic policy addition and revocation verified
+PASS: Verification: Identity enforcement test matrix verified
+PASS: Reporting: Complete identity summary report generated
+PASS: Time: Finished in under 300s
+CORE: 6/11 PASS

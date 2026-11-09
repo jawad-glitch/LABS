@@ -46,4 +46,3 @@
 | [Lab 2 - Install Argo Workflows](Lab%202%20-%20Install%20Argo%20Workflows/PROOF.md) | CORE: 12/18 PASS | 2026-11-07 18:05 |
 | [Lab 3 - Create Simple Workflow in Argo Workflows](Lab%203%20-%20Create%20Simple%20Workflow%20in%20Argo%20Workflows/PROOF.md) | CORE: 14/14 PASS | 2026-11-09 11:55 |
 | [Lab 4 - Use Workflow Templates and DAGs](Lab%204%20-%20Use%20Workflow%20Templates%20and%20DAGs/PROOF.md) | CORE: 14/14 PASS | 2026-11-09 12:05 |
-| [](/PROOF.md) | no core-check file | 2026-11-09 12:10 |

@@ -1,0 +1,16 @@
+=== Cilium Networking Connectivity Test ===
+Nginx Pod IP: 10.244.0.15
+Nginx2 Pod IP: 10.244.0.16
+
+1. Testing ping connectivity...
+✓ Ping to nginx successful
+✓ Ping to nginx2 successful
+
+2. Testing HTTP connectivity...
+✓ HTTP to nginx successful
+✓ HTTP to nginx2 successful
+
+3. Testing DNS resolution...
+✓ DNS resolution successful
+
+=== Test Complete ===

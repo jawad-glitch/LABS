@@ -1,0 +1,38 @@
+=== Cilium Networking Lab Summary ===
+Date: Mon Nov  9 14:44:47 UTC 2026
+
+Cluster Status:
+node-1 Ready
+
+Cilium Status:
+    /¯¯\
+ /¯¯\__/¯¯\    Cilium:             OK
+ \__/¯¯\__/    Operator:           OK
+ /¯¯\__/¯¯\    ClusterMesh:        disabled
+    \__/
+Deployment        cilium-operator    Desired: 1, Ready: 1/1, Available: 1/1
+DaemonSet         cilium             Desired: 1, Ready: 1/1, Available: 1/1
+Cluster Pods:     4/4 managed by Cilium
+
+Pod Status:
+E1109 14:44:44.182114    4396 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:44:44.182589    4396 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:44:44.184211    4396 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:44:44.184498    4396 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:44:44.185879    4396 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+
+Cilium Endpoints:
+ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS (source:key[=value])   IPv4         STATUS
+101        Disabled           Disabled          1001       k8s:run=nginx                 10.244.0.15    ready
+102        Disabled           Disabled          1002       k8s:run=nginx2                10.244.0.16   ready
+103        Disabled           Disabled          1003       k8s:run=busybox               10.244.0.17  ready
+
+Network Policies:
+E1109 14:44:46.133667    4484 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:44:46.134232    4484 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:44:46.136601    4484 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:44:46.137125    4484 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:44:46.138893    4484 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1109 14:44:46.139433    4484 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?

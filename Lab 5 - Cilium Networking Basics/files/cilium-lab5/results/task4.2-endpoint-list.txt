@@ -1,0 +1,4 @@
+ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS (source:key[=value])   IPv4         STATUS
+101        Disabled           Disabled          1001       k8s:run=nginx                 10.244.0.15    ready
+102        Disabled           Disabled          1002       k8s:run=nginx2                10.244.0.16   ready
+103        Disabled           Disabled          1003       k8s:run=busybox               10.244.0.17  ready

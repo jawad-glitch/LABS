@@ -1,0 +1,1 @@
+2 packets transmitted, 2 packets received, 0% packet loss

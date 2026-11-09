@@ -1,0 +1,14 @@
+========== CORE CHECKS (Lab 5 - Cilium Networking Basics, 2026-11-09 14:44:47 UTC) ==========
+PASS: Task 1: Cilium CLI installed and checksum verified
+PASS: Task 1: Cilium deployed and running as CNI
+FAIL: Task 2: Test pods created (nginx, nginx2, busybox, alpine)
+PASS: Task 2: Pod network configuration inspected (IP address and routes)
+PASS: Task 3: Pod-to-pod ping connectivity successful
+PASS: Task 3: Pod-to-pod HTTP connectivity verified
+PASS: Task 3: DNS resolution verified within cluster
+PASS: Task 4: Cilium endpoints (CEP) registered and active
+PASS: Task 5: Cilium configuration & logs captured
+PASS: Verification: Connectivity test script executed with all checks passing
+PASS: Reporting: Complete summary report generated
+PASS: Time: Finished in under 300s
+CORE: 11/12 PASS

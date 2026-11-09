@@ -66,3 +66,4 @@
 | [Lab 2 - Install Cilium using Helm](Lab%202%20-%20Install%20Cilium%20using%20Helm/PROOF.md) | CORE: 7/10 PASS | 2026-11-09 14:07 |
 | [Lab 3 - Validate Cilium Installation](Lab%203%20-%20Validate%20Cilium%20Installation/PROOF.md) | CORE: 8/12 PASS | 2026-11-09 14:22 |
 | [Lab 4 - Understanding Cilium Architecture](Lab%204%20-%20Understanding%20Cilium%20Architecture/PROOF.md) | CORE: 4/12 PASS | 2026-11-09 14:36 |
+| [Lab 5 - Cilium Networking Basics](Lab%205%20-%20Cilium%20Networking%20Basics/PROOF.md) | CORE: 11/12 PASS | 2026-11-09 14:44 |

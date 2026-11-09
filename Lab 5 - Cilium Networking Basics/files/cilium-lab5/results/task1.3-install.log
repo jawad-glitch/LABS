@@ -1,0 +1,4 @@
+ℹ️  Using Cilium version 1.20.3
+⏭️ Skipping auto kube-proxy detection
+
+Error: Unable to install Cilium: cluster reachability check failed: kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp 127.0.0.1:8080: connect: connection refused

@@ -1,0 +1,4 @@
+NAMESPACE   NAME      SECURITY IDENTITY   ENDPOINT STATE   IPV4
+default     nginx     1001                ready            10.244.0.15
+default     nginx2    1002                ready            10.244.0.16
+default     busybox   1003                ready            10.244.0.17

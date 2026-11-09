@@ -1,0 +1,9 @@
+KubeProxyReplacement:   True   [eth0    172.18.0.2 fc00:f853:ccd:e793::2 fe80::a0f1:19ff:fe17:114 (Direct Routing)]
+Host firewall:          Disabled
+SRv6:                   Disabled
+CNI Chaining:           none
+--
+KubeProxyReplacement Details:
+  Status:               True
+  Socket LB:            Enabled
+  Socket LB Tracing:    Enabled

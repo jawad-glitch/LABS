@@ -1,0 +1,15 @@
+cilium-envoy-8fr4g                                 1/1     Running   0          3m28s
+cilium-envoy-wjml7                                 1/1     Running   0          3m29s
+cilium-operator-85b6b5bb87-mjk9x                   1/1     Running   0          3m29s
+cilium-rvz4m                                       1/1     Running   0          3m29s
+cilium-wgqpl                                       1/1     Running   0          3m28s
+etcd-cilium-lab-control-plane                      1/1     Running   0          5m55s
+hubble-relay-59bb8bbb55-wtnh6                      1/1     Running   0          3m29s
+hubble-ui-647df7f64c-t56zx                         2/2     Running   0          3m29s
+kube-apiserver-cilium-lab-control-plane            1/1     Running   0          5m55s
+kube-controller-manager-cilium-lab-control-plane   1/1     Running   0          5m50s
+kube-scheduler-cilium-lab-control-plane            1/1     Running   0          5m55s
+
+NAME           READY   STATUS    RESTARTS   AGE     IP           NODE                       NOMINATED NODE   READINESS GATES
+cilium-rvz4m   1/1     Running   0          3m29s   172.18.0.3   cilium-lab-control-plane   <none>           <none>
+cilium-wgqpl   1/1     Running   0          3m28s   172.18.0.2   cilium-lab-worker          <none>           <none>

@@ -1,0 +1,101 @@
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+cilium-operator   1/1     1            1           3m33s
+Name:                   cilium-operator
+Namespace:              kube-system
+CreationTimestamp:      Mon, 09 Nov 2026 14:28:36 +0000
+Labels:                 app.kubernetes.io/managed-by=Helm
+                        app.kubernetes.io/name=cilium-operator
+                        app.kubernetes.io/part-of=cilium
+                        helm.sh/chart=cilium-1.20.4
+                        io.cilium/app=operator
+                        name=cilium-operator
+Annotations:            deployment.kubernetes.io/revision: 1
+                        meta.helm.sh/release-name: cilium
+                        meta.helm.sh/release-namespace: kube-system
+Selector:               io.cilium/app=operator,name=cilium-operator
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  100% max unavailable, 25% max surge
+Pod Template:
+  Labels:           app.kubernetes.io/name=cilium-operator
+                    app.kubernetes.io/part-of=cilium
+                    helm.sh/chart=cilium-1.20.4
+                    io.cilium/app=operator
+                    name=cilium-operator
+  Annotations:      prometheus.io/port: 9963
+                    prometheus.io/scrape: true
+  Service Account:  cilium-operator
+  Containers:
+   cilium-operator:
+    Image:       quay.io/cilium/operator-generic:v1.20.4
+    Ports:       9234/TCP (health), 9963/TCP (prometheus)
+    Host Ports:  9234/TCP (health), 9963/TCP (prometheus)
+    Command:
+      cilium-operator-generic
+    Args:
+      --config-dir=/tmp/cilium/config-map
+      --debug=$(CILIUM_DEBUG)
+    Liveness:   http-get http://127.0.0.1:health/healthz delay=60s timeout=3s period=10s #success=1 #failure=3
+    Readiness:  http-get http://127.0.0.1:health/healthz delay=0s timeout=3s period=5s #success=1 #failure=5
+    Environment:
+      K8S_NODE_NAME:             (v1:spec.nodeName)
+      CILIUM_K8S_NAMESPACE:      (v1:metadata.namespace)
+      CILIUM_DEBUG:             <set to the key 'debug' of config map 'cilium-config'>  Optional: true
+      KUBERNETES_SERVICE_HOST:  cilium-lab-control-plane
+      KUBERNETES_SERVICE_PORT:  6443
+    Mounts:
+      /tmp/cilium/config-map from cilium-config-path (ro)
+  Volumes:
+   cilium-config-path:
+    Type:               ConfigMap (a volume populated by a ConfigMap)
+    Name:               cilium-config
+    Optional:           false
+  Priority Class Name:  system-cluster-critical
+  Node-Selectors:       kubernetes.io/os=linux
+  Tolerations:          node-role.kubernetes.io/control-plane op=Exists
+                        node-role.kubernetes.io/master op=Exists
+                        node.cilium.io/agent-not-ready op=Exists
+                        node.cloudprovider.kubernetes.io/uninitialized op=Exists
+                        node.kubernetes.io/not-ready op=Exists
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   cilium-operator-85b6b5bb87 (1/1 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  3m34s  deployment-controller  Scaled up replica set cilium-operator-85b6b5bb87 from 0 to 1
+time=2026-11-09T14:29:48.44179619Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumEndpoint].Start duration=5µs
+time=2026-11-09T14:29:48.440623Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.node-taint-sync nodeName=cilium-lab-worker
+time=2026-11-09T14:29:48.441674548Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.node-taint-sync nodeName=cilium-lab-control-plane
+time=2026-11-09T14:29:48.442593634Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2alpha1.CiliumEndpointSlice].Start duration=2.75µs
+time=2026-11-09T14:29:48.448469645Z level=info msg="Starting CRD identity garbage collector" module=operator.operator-controlplane.leader-lifecycle.k8s-identities-gc interval=15m0s
+time=2026-11-09T14:29:48.449072366Z level=info msg="Start hook executed" module=operator function="identitygc.registerGC.func1 (.../operator/identitygc/gc.go:122)" duration=2.417872ms
+time=2026-11-09T14:29:48.450570542Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/slim/k8s/api/core/v1.Namespace].Start duration=5.531µs
+time=2026-11-09T14:29:48.450913277Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/slim/k8s/api/core/v1.Pod].Start duration=3.82µs
+time=2026-11-09T14:29:48.451183712Z level=info msg="Starting to garbage collect stale CiliumEndpoint custom resources" module=operator.operator-controlplane.leader-lifecycle.k8s-endpoints-gc
+time=2026-11-09T14:29:48.453632344Z level=info msg="Start hook executed" module=operator function=*endpointgc.GC.Start duration=2.448342ms
+time=2026-11-09T14:29:48.457593813Z level=info msg="Start hook executed" module=operator function=unmanagedpods.(*unmanagedPodsController).onStart duration=7.37µs
+time=2026-11-09T14:29:48.465315606Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start detail="to-k8s-ciliumendpointslice-gc (endpointslicegc.(*GC).doGC)" duration=8.631µs
+time=2026-11-09T14:29:48.468004872Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/slim/k8s/api/discovery/v1.EndpointSlice].Start duration=4.37µs
+time=2026-11-09T14:29:48.548394337Z level=info msg="CiliumEndpointSlice CRD cannot be found, skipping garbage collection" module=operator.operator-controlplane.leader-lifecycle.k8s-endpointslice-gc error="customresourcedefinitions.apiextensions.k8s.io \"ciliumendpointslices.cilium.io\" not found"
+time=2026-11-09T14:29:48.972804938Z level=info msg="Start hook executed" module=operator function="namespace.newManager.func1 (.../clustermesh/namespace/namespace.go:46)" duration=500.303869ms
+time=2026-11-09T14:29:48.975968142Z level=info msg="Start hook executed" module=operator function=*resource.resource[*sigs.k8s.io/mcs-api/pkg/apis/v1beta1.ServiceExport].Start duration=767.553µs
+time=2026-11-09T14:29:48.978481766Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumNetworkPolicy].Start duration=707.903µs
+time=2026-11-09T14:29:48.979540144Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumClusterwideNetworkPolicy].Start duration=26.311µs
+time=2026-11-09T14:29:48.981991316Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start detail="cnp-validation (networkpolicy.(*policyValidator).handleCNPEvent)" duration=379.927µs
+time=2026-11-09T14:29:48.983535743Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start detail="ccnp-validation (networkpolicy.(*policyValidator).handleCCNPEvent)" duration=7.401µs
+time=2026-11-09T14:29:48.986215579Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumCIDRGroup].Start duration=5.86µs
+time=2026-11-09T14:29:48.993578366Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start detail="update-config-metric (operator.updateOperatorConfigMetricOnStart.func1 (.../features/operator/features.go:18))" duration=15.101µs
+time=2026-11-09T14:29:48.996311483Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start detail="k8s-reflector-k8s-namespaces-daemon-k8s (k8s.RegisterReflector[...].func1 (pkg/k8s/statedb.go:66))" duration=8.18µs
+time=2026-11-09T14:29:49.001729256Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start detail="derive-desired-mtls-namespace-enrollments (ztunnel.init.Derive[...].func1.1 (.../cilium/statedb/derive.go:60))" duration=5.62µs
+time=2026-11-09T14:29:49.007059528Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2alpha1.CiliumPodIPPool].Start duration=8.98µs
+time=2026-11-09T14:29:49.532119923Z level=info msg="Starting Controller" module=operator.operator-controlplane.leader-lifecycle.controller-runtime controller=secret controllerGroup="" controllerKind=Secret
+time=2026-11-09T14:29:49.532173934Z level=info msg="Starting workers" module=operator.operator-controlplane.leader-lifecycle.controller-runtime controller=secret controllerGroup="" controllerKind=Secret "worker count"=1
+time=2026-11-09T14:29:53.325174934Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.node-taint-sync nodeName=cilium-lab-worker
+time=2026-11-09T14:29:53.811567013Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.node-taint-sync nodeName=cilium-lab-worker
+time=2026-11-09T14:29:56.401272994Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.node-taint-sync nodeName=cilium-lab-control-plane

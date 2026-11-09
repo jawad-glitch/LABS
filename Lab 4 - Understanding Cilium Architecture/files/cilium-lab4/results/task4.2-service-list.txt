@@ -1,0 +1,19 @@
+ID   Frontend                 Service Type   Backend                               
+1    10.96.59.31:443/TCP      ClusterIP      1 => 172.18.0.2:4244/TCP (active)     
+2    10.96.60.236:80/TCP      ClusterIP      1 => 10.244.1.27:4245/TCP (active)    
+3    10.96.152.111:80/TCP     ClusterIP      1 => 10.244.1.169:8081/TCP (active)   
+4    10.96.0.10:53/TCP        ClusterIP      1 => 10.244.1.89:53/TCP (active)      
+                                             2 => 10.244.1.232:53/TCP (active)     
+5    10.96.0.10:53/UDP        ClusterIP      1 => 10.244.1.89:53/UDP (active)      
+                                             2 => 10.244.1.232:53/UDP (active)     
+6    10.96.0.10:9153/TCP      ClusterIP      1 => 10.244.1.89:9153/TCP (active)    
+                                             2 => 10.244.1.232:9153/TCP (active)   
+7    10.96.0.1:443/TCP        ClusterIP      1 => 172.18.0.3:6443/TCP (active)     
+8    0.0.0.0:31110/TCP        NodePort       1 => 10.244.1.88:8080/TCP (active)    
+10   10.96.177.240:8080/TCP   ClusterIP      1 => 10.244.1.88:8080/TCP (active)    
+11   0.0.0.0:31773/TCP        NodePort                                             
+13   10.96.50.125:8080/TCP    ClusterIP                                            
+14   0.0.0.0:32274/TCP        NodePort                                             
+16   10.96.246.147:8080/TCP   ClusterIP                                            
+17   10.96.245.213:80/TCP     ClusterIP                                            
+18   0.0.0.0:4000/TCP         HostPort       1 => 10.244.1.88:8080/TCP (active)    

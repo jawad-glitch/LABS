@@ -1,0 +1,3 @@
+LAST SEEN   TYPE     REASON             OBJECT             MESSAGE
+8m2s        Normal   SuccessfulCreate   daemonset/cilium   Created pod: cilium-rvz4m
+8m2s        Normal   SuccessfulCreate   daemonset/cilium   Created pod: cilium-wgqpl

@@ -1,0 +1,14 @@
+========== CORE CHECKS (Lab 4 - Understanding Cilium Architecture, 2026-11-09 14:36:41 UTC) ==========
+PASS: Setup: 2-node kind without kube-proxy; Cilium 1.20.4 (KPR + Hubble relay/UI) via Helm; cilium status --wait OK
+FAIL: Task 1: cilium/hubble CLIs installed (sha256); status shows Cilium OK, Operator OK, Hubble Relay OK; verbose captured
+FAIL: Task 2: data plane read from agent via cilium-dbg (endpoints, BPF LB, policy); lab host cilium endpoint list fails
+PASS: Task 3.1: hubble-relay + hubble-ui Running; relay config is hubble-relay-config (lab hubble-config does not exist)
+PASS: Task 3.2-3.4: hubble CLI v1.20.4, Hubble UI HTTP 200, hubble status healthy via relay
+FAIL: Task 4.1: KubeProxyReplacement True, 0 kube-proxy pods (lab never enabled KPR)
+FAIL: Task 4.2/4.3: test-app ClusterIP 10.96.245.213 in eBPF service table with 3 backends; client got nginx 20/20
+FAIL: Task 4.3 (Hubble): service traffic spread across 0 distinct test-app backends
+PASS: Task 5.3: cross-namespace ping 0% loss; Hubble shows 1 flows test-ns-1/pod-1 -> test-ns-2/pod-2
+FAIL: Task 5.1/5.2: connectivity test (no-policies) successful; test namespace is cilium-test-1 (not cilium-test)
+FAIL: Task 6: architecture report generated with working commands (status, config view, hubble, cilium-dbg services/policy)
+FAIL: Time: lab finished in 737s (<= 300s)
+CORE: 4/12 PASS

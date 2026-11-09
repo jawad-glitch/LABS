@@ -1,0 +1,1 @@
+Nov  9 14:36:32.222: test-ns-1/pod-1 (ID:36178) -> test-ns-2/pod-2 (ID:4139) to-endpoint FORWARDED (ICMPv4 EchoRequest)

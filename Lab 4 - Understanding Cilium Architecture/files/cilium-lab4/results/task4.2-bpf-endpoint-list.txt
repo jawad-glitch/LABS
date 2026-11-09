@@ -1,0 +1,11 @@
+IP ADDRESS       LOCAL ENDPOINT INFO
+10.244.1.42:0    id=1460  sec_id=30690 flags=0x0000 ifindex=19  mac=EE:B9:6B:D4:3E:D6 nodemac=62:34:24:51:2D:3C parent_ifindex=0   rt_info:0   
+10.244.1.159:0   (localhost)                                                                                                                   
+10.244.1.27:0    id=92    sec_id=60293 flags=0x0000 ifindex=11  mac=02:A0:56:76:4B:AE nodemac=9A:AD:5A:E3:FC:0F parent_ifindex=0   rt_info:0   
+10.244.1.223:0   id=184   sec_id=4     flags=0x0000 ifindex=7   mac=EE:70:D2:6E:0F:E7 nodemac=16:88:51:0E:1C:5B parent_ifindex=0   rt_info:0   
+10.244.1.169:0   id=784   sec_id=661   flags=0x0000 ifindex=13  mac=AE:B8:46:78:48:B3 nodemac=82:78:A5:AD:64:D1 parent_ifindex=0   rt_info:0   
+172.18.0.2:0     (localhost)                                                                                                                   
+10.244.1.88:0    id=3023  sec_id=14820 flags=0x0000 ifindex=21  mac=C2:01:4E:3A:BA:17 nodemac=D2:B0:8C:48:EF:F4 parent_ifindex=0   rt_info:0   
+10.244.1.110:0   id=680   sec_id=34805 flags=0x0000 ifindex=9   mac=1E:BB:14:6D:49:72 nodemac=26:AF:68:78:E8:9B parent_ifindex=0   rt_info:0   
+10.244.1.89:0    id=2969  sec_id=32799 flags=0x0000 ifindex=17  mac=D6:02:42:06:AD:4D nodemac=4A:27:7D:61:F5:D2 parent_ifindex=0   rt_info:0   
+10.244.1.232:0   id=829   sec_id=32799 flags=0x0000 ifindex=15  mac=86:DA:4F:73:A9:21 nodemac=22:F1:C2:53:24:8C parent_ifindex=0   rt_info:0   

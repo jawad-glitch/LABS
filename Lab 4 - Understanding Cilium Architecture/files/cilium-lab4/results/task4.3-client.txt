@@ -1,0 +1,2 @@
+pod "test-client" deleted from default namespace
+error: timed out waiting for the condition

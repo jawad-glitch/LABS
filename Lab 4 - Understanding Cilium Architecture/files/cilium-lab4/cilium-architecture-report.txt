@@ -1,0 +1,228 @@
+=== Cilium Architecture Report ===
+Generated on: Mon Nov  9 14:36:36 UTC 2026
+
+=== Cilium Status ===
+[33m    /¯¯\
+[36m /¯¯[33m\__/[32m¯¯\[0m    Cilium:             [32mOK[0m
+[36m \__[31m/¯¯\[32m__/[0m    Operator:           [32mOK[0m
+[32m /¯¯[31m\__/[35m¯¯\[0m    Envoy DaemonSet:    [32mOK[0m
+[32m \__[34m/¯¯\[35m__/[0m    Hubble Relay:       [32mOK[0m
+[34m[34m[34m    \__/[0m       ClusterMesh:        [36mdisabled[0m
+
+DaemonSet              cilium                   Desired: 2, Ready: [32m2/2[0m, Available: [32m2/2[0m
+DaemonSet              cilium-envoy             Desired: 2, Ready: [32m2/2[0m, Available: [32m2/2[0m
+Deployment             cilium-operator          Desired: 1, Ready: [32m1/1[0m, Available: [32m1/1[0m
+Deployment             hubble-relay             Desired: 1, Ready: [32m1/1[0m, Available: [32m1/1[0m
+Deployment             hubble-ui                Desired: 1, Ready: [32m1/1[0m, Available: [32m1/1[0m
+Containers:            cilium                   Running: [32m2[0m
+                       cilium-envoy             Running: [32m2[0m
+                       cilium-operator          Running: [32m1[0m
+                       clustermesh-apiserver    
+                       hubble-relay             Running: [32m1[0m
+                       hubble-ui                Running: [32m1[0m
+Cluster Pods:          16/16 managed by Cilium
+Helm chart version:    1.20.4
+Image versions         cilium             quay.io/cilium/cilium:v1.20.4: 2
+                       cilium-envoy       quay.io/cilium/cilium-envoy:v1.39.5-1792733054-8c73b2816bc8239e27f1fd53b271884688137459: 2
+                       cilium-operator    quay.io/cilium/operator-generic:v1.20.4: 1
+                       hubble-relay       quay.io/cilium/hubble-relay:v1.20.4: 1
+                       hubble-ui          quay.io/cilium/hubble-ui-backend:v0.13.6@sha256:83b3fc763f3d49948c306bf49b08277383e195904b9ca5c0c0022b2112628787: 1
+                       hubble-ui          quay.io/cilium/hubble-ui:v0.13.6@sha256:049a80a03585c043d0c3121bdc518c72b0fd42bae07e4bcce0fdb8f1e88041d0: 1
+
+=== Cilium Configuration (cilium config view) ===
+agent-not-ready-taint-key                         node.cilium.io/agent-not-ready
+auto-direct-node-routes                           false
+bpf-distributed-lru                               false
+bpf-events-drop-enabled                           true
+bpf-events-policy-verdict-enabled                 true
+bpf-events-trace-enabled                          true
+bpf-lb-acceleration                               disabled
+bpf-lb-algorithm-annotation                       false
+bpf-lb-external-clusterip                         false
+bpf-lb-map-max                                    65536
+bpf-lb-mode-annotation                            false
+bpf-lb-sock                                       false
+bpf-lb-source-range-all-types                     false
+bpf-map-dynamic-size-ratio                        0.0025
+bpf-policy-map-max                                16384
+bpf-policy-stats-map-max                          65536
+bpf-root                                          /sys/fs/bpf
+cgroup-root                                       /run/cilium/cgroupv2
+cilium-endpoint-gc-interval                       5m0s
+cluster-id                                        0
+cluster-name                                      default
+clustermesh-cache-ttl                             0s
+clustermesh-default-global-namespace              true
+clustermesh-enable-endpoint-sync                  false
+clustermesh-enable-mcs-api                        false
+clustermesh-mcs-api-install-crds                  true
+cni-exclusive                                     true
+cni-log-file                                      /var/run/cilium/cilium-cni.log
+custom-cni-conf                                   false
+datapath-mode                                     veth
+datapath-plugins-state-dir                        /var/run/cilium/plugins
+debug                                             false
+debug-verbose                                     
+default-lb-service-ipam                           lbipam
+devices                                           
+direct-routing-skip-unreachable                   false
+dnsproxy-enable-transparent-mode                  true
+dnsproxy-socket-linger-timeout                    10
+egress-gateway-reconciliation-trigger-interval    1s
+enable-auto-protect-node-port-range               true
+enable-bpf-clock-probe                            false
+enable-datapath-plugins                           false
+enable-drift-checker                              true
+enable-dynamic-config                             true
+enable-dynamic-source-lookup-nodeport             false
+enable-endpoint-health-checking                   true
+enable-endpoint-lockdown-on-policy-overflow       false
+enable-health-check-loadbalancer-ip               false
+enable-health-check-nodeport                      true
+enable-health-checking                            true
+enable-host-firewall                              false
+enable-hubble                                     true
+enable-ipv4                                       true
+enable-ipv4-big-tcp                               false
+enable-ipv4-masquerade                            true
+enable-ipv6                                       false
+enable-ipv6-big-tcp                               false
+enable-ipv6-masquerade                            true
+enable-k8s-networkpolicy                          true
+enable-l2-neigh-discovery                         false
+enable-l7-proxy                                   true
+enable-lb-ipam                                    true
+enable-masquerade-to-route-source                 false
+enable-metrics                                    true
+enable-no-service-endpoints-routable              true
+enable-node-selector-labels                       false
+enable-non-default-deny-policies                  true
+enable-policy                                     default
+enable-policy-secrets-sync                        true
+enable-sctp                                       false
+enable-service-topology                           false
+enable-source-ip-verification                     true
+enable-tcx                                        true
+enable-vtep                                       false
+enable-well-known-identities                      false
+enable-xt-socket-fallback                         true
+envoy-access-log-buffer-size                      4096
+envoy-access-log-enabled                          true
+envoy-base-id                                     0
+envoy-keep-cap-netbindservice                     false
+envoy-node-locality-enabled                       false
+external-envoy-proxy                              true
+health-check-icmp-failure-threshold               3
+http-retry-count                                  3
+http-stream-idle-timeout                          300
+hubble-disable-tls                                false
+hubble-listen-address                             :4244
+hubble-network-policy-correlation-enabled         true
+hubble-socket-path                                /var/run/cilium/hubble.sock
+hubble-tls-cert-file                              /var/lib/cilium/tls/hubble/server.crt
+hubble-tls-client-ca-files                        /var/lib/cilium/tls/hubble/client-ca.crt
+hubble-tls-key-file                               /var/lib/cilium/tls/hubble/server.key
+identity-allocation-mode                          crd
+identity-gc-interval                              15m0s
+identity-heartbeat-timeout                        30m0s
+identity-management-mode                          agent
+install-no-conntrack-iptables-rules               false
+ipam                                              kubernetes
+ipam-cilium-node-update-rate                      15s
+iptables-random-fully                             false
+k8s-require-ipv4-pod-cidr                         false
+k8s-require-ipv6-pod-cidr                         false
+kube-proxy-replacement                            true
+kube-proxy-replacement-healthz-bind-address       
+max-connected-clusters                            255
+mesh-auth-enabled                                 false
+mesh-auth-gc-interval                             5m0s
+mesh-auth-queue-size                              1024
+mesh-auth-rotated-identities-queue-size           1024
+metrics-sampling-interval                         5m
+monitor-aggregation                               medium
+monitor-aggregation-flags                         all
+monitor-aggregation-interval                      5s
+nat-map-stats-entries                             32
+nat-map-stats-interval                            30s
+node-port-bind-protection                         true
+nodeport-addresses                                
+nodes-gc-interval                                 5m0s
+operator-api-serve-addr                           127.0.0.1:9234
+operator-prometheus-serve-addr                    :9963
+packetization-layer-pmtud-mode                    blackhole
+policy-cidr-match-mode                            
+policy-default-local-cluster                      true
+policy-deny-response                              none
+policy-secrets-namespace                          cilium-secrets
+policy-secrets-only-from-secrets-namespace        true
+preallocate-bpf-maps                              false
+procfs                                            /host/proc
+proxy-cluster-max-connections                     1024
+proxy-cluster-max-pending-requests                1024
+proxy-cluster-max-requests                        1024
+proxy-connect-timeout                             2
+proxy-idle-timeout-seconds                        60
+proxy-initial-fetch-timeout                       30
+proxy-max-active-downstream-connections           50000
+proxy-max-concurrent-retries                      128
+proxy-max-connection-duration-seconds             0
+proxy-max-requests-per-connection                 0
+proxy-use-original-source-address                 true
+proxy-xff-num-trusted-hops-egress                 0
+proxy-xff-num-trusted-hops-ingress                0
+remove-cilium-node-taints                         true
+routing-mode                                      tunnel
+service-no-backend-response                       reject
+set-cilium-is-up-condition                        true
+set-cilium-node-taints                            true
+synchronize-k8s-nodes                             true
+tofqdns-dns-reject-response-code                  refused
+tofqdns-enable-dns-compression                    true
+tofqdns-endpoint-max-ip-per-hostname              1000
+tofqdns-idle-connection-grace-period              0s
+tofqdns-max-deferred-connection-deletes           10000
+tofqdns-preallocate-identities                    true
+tofqdns-proxy-response-max-delay                  100ms
+tunnel-protocol                                   vxlan
+tunnel-source-port-range                          0-0
+unmanaged-pod-watcher-interval                    15s
+vtep-cidr                                         
+vtep-endpoint                                     
+vtep-mac                                          
+vtep-mask                                         
+write-cni-conf-when-ready                         /host/etc/cni/net.d/05-cilium.conflist
+
+=== Hubble Status ===
+Healthcheck (via localhost:4245): Ok
+Current/Max Flows: 4,555/8,190 (55.62%)
+Flows/s: 42.33
+Connected Nodes: 2/2
+
+=== Service List (cilium-dbg) ===
+ID   Frontend                 Service Type   Backend                               
+1    10.96.59.31:443/TCP      ClusterIP      1 => 172.18.0.2:4244/TCP (active)     
+2    10.96.60.236:80/TCP      ClusterIP      1 => 10.244.1.27:4245/TCP (active)    
+3    10.96.152.111:80/TCP     ClusterIP      1 => 10.244.1.169:8081/TCP (active)   
+4    10.96.0.10:53/TCP        ClusterIP      1 => 10.244.1.89:53/TCP (active)      
+                                             2 => 10.244.1.232:53/TCP (active)     
+5    10.96.0.10:53/UDP        ClusterIP      1 => 10.244.1.89:53/UDP (active)      
+                                             2 => 10.244.1.232:53/UDP (active)     
+6    10.96.0.10:9153/TCP      ClusterIP      1 => 10.244.1.89:9153/TCP (active)    
+                                             2 => 10.244.1.232:9153/TCP (active)   
+7    10.96.0.1:443/TCP        ClusterIP      1 => 172.18.0.3:6443/TCP (active)     
+8    0.0.0.0:31110/TCP        NodePort       1 => 10.244.1.88:8080/TCP (active)    
+10   10.96.177.240:8080/TCP   ClusterIP      1 => 10.244.1.88:8080/TCP (active)    
+11   0.0.0.0:31773/TCP        NodePort       1 => 10.244.1.145:8080/TCP (active)   
+13   10.96.50.125:8080/TCP    ClusterIP      1 => 10.244.1.145:8080/TCP (active)   
+14   0.0.0.0:32274/TCP        NodePort       1 => 10.244.1.145:8080/TCP (active)   
+16   10.96.246.147:8080/TCP   ClusterIP      1 => 10.244.1.145:8080/TCP (active)   
+17   10.96.245.213:80/TCP     ClusterIP      1 => 10.244.1.119:80/TCP (active)     
+                                             2 => 10.244.1.132:80/TCP (active)     
+                                             3 => 10.244.1.178:80/TCP (active)     
+18   0.0.0.0:4000/TCP         HostPort       1 => 10.244.1.88:8080/TCP (active)    
+
+=== Policies ===
+[]
+Revision: 1
+No resources found

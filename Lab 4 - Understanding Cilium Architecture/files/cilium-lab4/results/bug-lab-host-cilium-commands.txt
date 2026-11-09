@@ -1,0 +1,14 @@
+== host: cilium endpoint list
+unknown command "endpoint" for "cilium"
+exit=0
+== host: cilium bpf lb list
+unknown command "bpf" for "cilium"
+
+Did you mean this?
+exit=0
+== host: cilium policy get
+unknown command "policy" for "cilium"
+exit=0
+== host: cilium service list
+unknown command "service" for "cilium"
+exit=0

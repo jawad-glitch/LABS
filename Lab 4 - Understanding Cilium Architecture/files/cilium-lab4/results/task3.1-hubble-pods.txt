@@ -1,0 +1,2 @@
+hubble-relay-59bb8bbb55-wtnh6                      1/1     Running   0          3m40s
+hubble-ui-647df7f64c-t56zx                         2/2     Running   0          3m40s

@@ -1,0 +1,3 @@
+cilium-test-1        Active   4m28s
+cilium-test-ccnp1    Active   4m27s
+cilium-test-ccnp2    Active   4m27s

@@ -1,0 +1,4 @@
+Healthcheck (via localhost:4245): Ok
+Current/Max Flows: 857/8,190 (10.46%)
+Flows/s: 11.22
+Connected Nodes: 2/2

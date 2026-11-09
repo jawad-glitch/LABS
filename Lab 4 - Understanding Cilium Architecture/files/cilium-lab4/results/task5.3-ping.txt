@@ -1,0 +1,8 @@
+PING 10.244.1.46 (10.244.1.46): 56 data bytes
+64 bytes from 10.244.1.46: seq=0 ttl=63 time=0.438 ms
+64 bytes from 10.244.1.46: seq=1 ttl=63 time=0.087 ms
+64 bytes from 10.244.1.46: seq=2 ttl=63 time=0.092 ms
+
+--- 10.244.1.46 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.087/0.205/0.438 ms

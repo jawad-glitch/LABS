@@ -1,0 +1,15 @@
+12:44:47 initial rollout: 5x blue (first rollout skips steps)
+12:44:50 kubectl argo rollouts set image rollout-canary rollouts-demo=argoproj/rollouts-demo:yellow
+12:44:52 setWeight 20 -> canary(yellow)=1 stable(blue)=4
+12:44:55 pause {} (indefinite) - analysis would start at step 2; metric source here = measured traffic
+12:44:55 kubectl argo rollouts promote rollout-canary
+12:44:57 setWeight 40 -> canary(yellow)=2 stable(blue)=3
+12:45:00 pause 30s (simulated)
+12:45:01 setWeight 60 -> canary(yellow)=3 stable(blue)=2
+12:45:04 pause 30s (simulated)
+12:45:06 setWeight 80 -> canary(yellow)=4 stable(blue)=1
+12:45:09 pause 30s (simulated) / or promote --full
+12:45:11 setWeight 100 -> canary(yellow)=5 stable(blue)=0
+12:45:14 set image ...:red -> step 20
+12:45:18 kubectl argo rollouts abort rollout-canary -> canary scaled to 0, stable yellow back to 5 (Rollout Degraded until image reset)
+12:45:29 advanced: setWeight 10 -> 1 canary(yellow) + 9 stable(blue); stableService/canaryService pinned by pod-template-hash

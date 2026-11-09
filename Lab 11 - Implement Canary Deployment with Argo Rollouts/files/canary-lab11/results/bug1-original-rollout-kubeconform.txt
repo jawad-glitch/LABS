@@ -1,0 +1,2 @@
+lab-original-rollout-canary.yaml - Rollout rollout-canary is invalid: problem validating schema. Check JSON formatting: jsonschema validation failed with 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/rollout_v1alpha1.json#' - at '/spec/strategy/canary/analysis': additional properties 'interval' not allowed - at '/spec/strategy/canary': additional properties 'canaryReplicas' not allowed
+Summary: 1 resource found in 1 file - Valid: 0, Invalid: 1, Errors: 0, Skipped: 0

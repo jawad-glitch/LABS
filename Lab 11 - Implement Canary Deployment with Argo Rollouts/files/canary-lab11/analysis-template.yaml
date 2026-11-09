@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: success-rate
+  namespace: canary-demo
+spec:
+  args:
+  - name: service-name
+  metrics:
+  - name: http-success
+    interval: 10s
+    count: 3
+    failureLimit: 1
+    provider:
+      job:
+        spec:
+          backoffLimit: 0
+          template:
+            spec:
+              restartPolicy: Never
+              containers:
+              - name: check
+                image: curlimages/curl:8.5.0
+                command: [/bin/sh, -c]
+                args:
+                - |
+                  ok=0; for i in $(seq 1 20); do
+                    c=$(curl -s -o /dev/null -w "%{http_code}" http://{{args.service-name}}.canary-demo.svc.cluster.local/color) && [ "$c" = 200 ] && ok=$((ok+1)); sleep 0.5
+                  done; echo "ok=$ok/20"; [ $ok -ge 19 ]

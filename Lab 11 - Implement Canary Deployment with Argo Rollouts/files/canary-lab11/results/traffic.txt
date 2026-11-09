@@ -1,0 +1,10 @@
+W0 pods=5 n=100 ok=100 blue=100 yellow=0 red=0 p95=0.001617
+W20 pods=5 n=100 ok=100 blue=77 yellow=23 red=0 p95=0.001901
+W40 pods=5 n=100 ok=100 blue=59 yellow=41 red=0 p95=0.001728
+W60 pods=5 n=100 ok=100 blue=46 yellow=54 red=0 p95=0.001699
+W80 pods=5 n=100 ok=100 blue=24 yellow=76 red=0 p95=0.001565
+W100 pods=5 n=100 ok=100 blue=0 yellow=100 red=0 p95=0.001608
+RED20 pods=5 n=100 ok=100 blue=0 yellow=84 red=16 p95=0.001608
+ABORTED pods=5 n=100 ok=100 blue=0 yellow=100 red=0 p95=0.001735
+ADV-stable-service pods=9 n=100 ok=100 blue=100 yellow=0 red=0 p95=0.001602
+ADV-canary-service pods=1 n=100 ok=100 blue=0 yellow=100 red=0 p95=0.001655

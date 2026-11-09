@@ -1,0 +1,4 @@
+docker.io/argoproj/rollouts-demo:red
+docker.io/argoproj/rollouts-demo:yellow
+docker.io/argoproj/rollouts-demo:blue
+docker.io/prom/prometheus:v3.16.0

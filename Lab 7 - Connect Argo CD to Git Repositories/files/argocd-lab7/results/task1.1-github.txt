@@ -1,0 +1,2 @@
+GitHub repo create: HTTP 403
+MODE=local: token cannot create/push jawad-glitch/argocd-demo-app -> local bare remote /home/ubuntu/argocd-lab7/remote/argocd-demo-app.git (SIMULATED GitHub)

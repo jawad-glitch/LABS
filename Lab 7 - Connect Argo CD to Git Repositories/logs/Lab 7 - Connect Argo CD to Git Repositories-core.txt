@@ -1,0 +1,14 @@
+========== CORE CHECKS (Lab 7 - Connect Argo CD to Git Repositories, 2026-11-09 12:28:58 UTC) - FAST MODE, git=local ==========
+PASS: Task 1.1 [SIMULATED: token cannot create/push GitHub repo]: local bare Git remote created with README
+PASS: Task 1.3: namespace/deployment/service/configmap valid against Kubernetes schemas (strict)
+PASS: Task 1.3 fix: Deployment mounts ConfigMap nginx-config at /usr/share/nginx/html
+PASS: Task 1.4: v1 commit 1ed9ddc pushed to remote main with all 4 manifests
+PASS: Task 2 [SIMULATED login/repo add]: argocd CLI v3.6.1 installed; repo add supports --type/--name; repo get --refresh documented
+FAIL: Task 3.1: real argocd CLI generated the CLI app spec - automated prune+selfHeal
+FAIL: Task 3.2: YAML Application (and CLI spec) valid against Argo CD Application CRD schema
+FAIL: Lab bug evidence: CLI app and YAML app target identical repo/path/destination (shared-resource conflict)
+PASS: Task 3.3/3.4 [SIMULATED sync]: desired state = Namespace + Deployment + Service + ConfigMap in demo-app
+PASS: Task 3.5: GitOps change pushed - remote HEAD has replicas: 3 and Version: 1.1; diff shows both
+PASS: Verification: nginx:1.27-alpine served v1 page (Version: 1.0) then v2 page (Version: 1.1) from the ConfigMap content
+PASS: Time: fast-mode run finished in 12s (<= 300s)
+CORE: 9/12 PASS

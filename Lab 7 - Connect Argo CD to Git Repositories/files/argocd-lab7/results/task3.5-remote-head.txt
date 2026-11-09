@@ -1,0 +1,5 @@
+apiVersion: apps/v1
+  replicas: 3
+apiVersion: v1
+        <p>Version: 1.1</p>
+08e5e28 Update replica count and version

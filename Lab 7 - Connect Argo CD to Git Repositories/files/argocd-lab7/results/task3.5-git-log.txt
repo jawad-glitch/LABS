@@ -1,0 +1,3 @@
+08e5e28 Update replica count and version
+1ed9ddc Add Kubernetes manifests for demo application
+0d9b90c Initial commit

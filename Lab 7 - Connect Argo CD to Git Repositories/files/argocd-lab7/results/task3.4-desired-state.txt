@@ -1,0 +1,5 @@
+ConfigMap demo-app nginx-config
+Deployment demo-app nginx-demo
+MOUNT nginx /usr/share/nginx/html configMap=nginx-config
+Namespace - demo-app
+Service demo-app nginx-demo-service

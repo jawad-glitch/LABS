@@ -1,0 +1,2 @@
+/home/ubuntu/argocd-lab7/cli-app-spec.yaml - failed validation: error unmarshalling resource: error converting YAML to JSON: yaml: mapping values are not allowed in this context
+Summary: 2 resources found in 2 files - Valid: 1, Invalid: 0, Errors: 1, Skipped: 0

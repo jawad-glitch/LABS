@@ -1,0 +1,25 @@
+diff --git a/k8s-manifests/configmap.yaml b/k8s-manifests/configmap.yaml
+index aed6e24..3cf1b83 100644
+--- a/k8s-manifests/configmap.yaml
++++ b/k8s-manifests/configmap.yaml
+@@ -13,6 +13,6 @@ data:
+     <body>
+         <h1>Welcome to Argo CD GitOps Demo!</h1>
+         <p>This application is managed by Argo CD</p>
+-        <p>Version: 1.0</p>
++        <p>Version: 1.1</p>
+     </body>
+     </html>
+diff --git a/k8s-manifests/deployment.yaml b/k8s-manifests/deployment.yaml
+index 1fa128f..6c344fa 100644
+--- a/k8s-manifests/deployment.yaml
++++ b/k8s-manifests/deployment.yaml
+@@ -6,7 +6,7 @@ metadata:
+   labels:
+     app: nginx-demo
+ spec:
+-  replicas: 2
++  replicas: 3
+   selector:
+     matchLabels:
+       app: nginx-demo

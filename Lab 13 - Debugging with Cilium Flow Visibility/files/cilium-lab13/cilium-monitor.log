@@ -1,0 +1,2 @@
+xx drop (Policy denied) flow 0x93b4f6 local default/backend-app-54f6:8080 <- default/test-client:52110
+xx drop (Policy denied) flow 0x93b4f7 local default/backend-app-54f6:8080 <- default/frontend-app-69b7:41202

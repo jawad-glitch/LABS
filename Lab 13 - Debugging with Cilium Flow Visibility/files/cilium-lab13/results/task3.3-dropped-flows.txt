@@ -1,0 +1,2 @@
+Nov 09 14:20:01.120: default/test-client:52110 -> default/backend-service:8080 Policy denied DROPPED (TCP Flags: SYN)
+Nov 09 14:20:01.140: default/frontend-app-69b7-v8x:41202 -> default/backend-service:8080 Policy denied DROPPED (TCP Flags: SYN)

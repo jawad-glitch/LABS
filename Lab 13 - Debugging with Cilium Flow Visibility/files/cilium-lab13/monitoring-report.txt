@@ -1,0 +1,46 @@
+CILIUM FLOW VISIBILITY MONITORING REPORT
+========================================
+Generated: Mon Nov  9 15:18:10 UTC 2026
+
+CLUSTER STATUS:
+NAME                             STATUS     ROLES           AGE   VERSION
+cilium-debug-lab-control-plane   NotReady   control-plane   21s   v1.31.2
+cilium-debug-lab-worker          NotReady   <none>          4s    v1.31.2
+cilium-debug-lab-worker2         NotReady   <none>          3s    v1.31.2
+
+CILIUM STATUS:
+    /¯¯\
+ /¯¯\__/¯¯\    Cilium:             OK
+ \__/¯¯\__/    Operator:           OK
+ /¯¯\__/¯¯\    Hubble Relay:       OK
+ \__/¯¯\__/    ClusterMesh:        disabled
+    \__/
+Deployment        cilium-operator    Desired: 1, Ready: 1/1, Available: 1/1
+DaemonSet         cilium             Desired: 3, Ready: 3/3, Available: 3/3
+Cluster Pods:     6/6 managed by Cilium
+
+HUBBLE STATUS:
+Healthcheck:  Ok
+Current/Max Flows: 4,095/4,095 (100.00%)
+Flows/s: 28.10
+Connected Nodes: 3/3
+
+NETWORK POLICIES:
+
+
+RECENT FLOW SUMMARY:
+     28 "DROPPED"
+     45 "FORWARDED"
+
+CONNECTIVITY TEST RESULTS:
+=== COMPREHENSIVE CONNECTIVITY TEST ===
+Testing at: Mon Nov  9 15:18:09 UTC 2026
+
+TEST 1: Client -> Frontend Service
+✓ SUCCESS: Client can reach frontend
+TEST 2: Client -> Backend Service
+✓ SUCCESS: Client can reach backend
+TEST 3: Frontend -> Backend Service
+✓ SUCCESS: Frontend can reach backend
+
+=== CONNECTIVITY TEST COMPLETE ===

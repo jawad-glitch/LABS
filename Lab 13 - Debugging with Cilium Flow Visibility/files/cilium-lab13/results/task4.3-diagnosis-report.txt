@@ -1,0 +1,22 @@
+NETWORK CONNECTIVITY DIAGNOSIS REPORT
+=====================================
+
+ISSUE SUMMARY:
+- Frontend cannot connect to backend service
+- Test client cannot reach backend service on port 8080
+- Connections are being dropped by network policy
+
+ROOT CAUSE ANALYSIS:
+1. Network Policy 'backend-deny-all' is blocking all ingress traffic to backend pods
+2. The policy has empty ingress rules, effectively denying all incoming connections
+3. Backend pods are correctly labeled and targeted by the restrictive policy
+
+EVIDENCE FROM MONITORING:
+- Cilium monitor shows policy drops
+- Hubble observe confirms DROPPED verdicts for flows to backend
+- No successful TCP connections to port 8080 on backend service
+
+RECOMMENDED SOLUTION:
+- Modify network policy to allow specific ingress traffic
+- Add rules to permit frontend-to-backend communication
+- Verify DNS resolution is working correctly

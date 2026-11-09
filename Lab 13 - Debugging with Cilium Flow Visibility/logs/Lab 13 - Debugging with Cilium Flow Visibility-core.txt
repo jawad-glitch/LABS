@@ -1,0 +1,12 @@
+========== CORE CHECKS (Lab 13 - Debugging with Cilium Flow Visibility, 2026-11-09 15:18:10 UTC) ==========
+PASS: Task 1: Kind cluster cilium-debug-lab initialized and Cilium status verified
+PASS: Task 1: Hubble CLI installed and connectivity confirmed
+PASS: Task 2: Applications deployed (frontend, backend, test-client)
+PASS: Task 2: Restrictive deny-all network policy created
+PASS: Task 3: Real-time flow observation recorded dropped packets
+PASS: Task 4: Root cause diagnosis report documented
+FAIL: Task 5: Corrected policy backend-allow-frontend applied
+PASS: Task 6: Connectivity test confirmed all communications operational
+PASS: Task 7: Comprehensive monitoring report generated
+PASS: Time: Finished in under 300s
+CORE: 9/10 PASS

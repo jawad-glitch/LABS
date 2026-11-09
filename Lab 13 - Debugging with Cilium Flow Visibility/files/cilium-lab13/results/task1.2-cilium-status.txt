@@ -1,0 +1,9 @@
+    /¯¯\
+ /¯¯\__/¯¯\    Cilium:             OK
+ \__/¯¯\__/    Operator:           OK
+ /¯¯\__/¯¯\    Hubble Relay:       OK
+ \__/¯¯\__/    ClusterMesh:        disabled
+    \__/
+Deployment        cilium-operator    Desired: 1, Ready: 1/1, Available: 1/1
+DaemonSet         cilium             Desired: 3, Ready: 3/3, Available: 3/3
+Cluster Pods:     6/6 managed by Cilium

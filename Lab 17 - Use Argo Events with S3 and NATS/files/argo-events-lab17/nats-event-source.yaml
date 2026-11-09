@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: nats-event-source
+  namespace: argo-events
+spec:
+  nats:
+    s3-events:
+      url: nats://nats.argo-events.svc.cluster.local:4222
+      subject: s3.file.uploaded
+      jsonBody: true
+      connectionBackoff:
+        duration: 10s
+        factor: 2
+        jitter: 0.1
+        steps: 5

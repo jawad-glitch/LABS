@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: s3-file-processor
+  namespace: argo-events
+spec:
+  entrypoint: process-file
+  arguments:
+    parameters:
+    - name: bucket-name
+      value: "event-bucket"
+    - name: object-key
+      value: "unknown"
+    - name: event-time
+      value: "unknown"
+  templates:
+  - name: process-file
+    inputs:
+      parameters:
+      - name: bucket-name
+      - name: object-key
+      - name: event-time
+    container:
+      image: alpine:3.18
+      command: [sh, -c]
+      args:
+      - |
+        echo "Processing S3 event:"
+        echo "Bucket: {{inputs.parameters.bucket-name}}"
+        echo "Object: {{inputs.parameters.object-key}}"
+        echo "Event Time: {{inputs.parameters.event-time}}"
+        echo "File processing simulation completed!"
+        sleep 10
+        echo "Processing finished successfully"

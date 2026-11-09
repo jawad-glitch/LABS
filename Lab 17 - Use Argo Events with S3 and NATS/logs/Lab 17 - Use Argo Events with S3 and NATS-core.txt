@@ -1,0 +1,11 @@
+========== CORE CHECKS (Lab 17 - Use Argo Events with S3 and NATS, 2026-11-09 13:19:23 UTC) - FAST MODE ==========
+PASS: Task 1-2 [SIMULATED apply]: EventBus (added - lab had none), NATS+MinIO (labelled, Secret, notify env), EventSource, WorkflowTemplate, Sensor, RBAC+executor RBAC valid (strict)
+FAIL: Lab bug: pip3 install nats-py fails on Ubuntu 24.04 (PEP 668 externally-managed-environment)
+PASS: Task 1.3: NATS broker (nats:2.10-alpine) up; JetStream EventBus stream created
+FAIL: Task 2.1/2.2: MinIO up, bucket event-bucket created, NATS notification (put) attached
+FAIL: Task 3.3/3.4: 5 files uploaded with mc -> MinIO emitted 0 real s3:ObjectCreated:Put events on s3.file.uploaded
+FAIL: Lab bug: original sensor dataKey bucket/key/eventTime cannot resolve (NATS data = {subject, body}) -> 0 errors, 0 workflows
+FAIL: Task 2.5/3.3: fixed sensor submitted 0 workflows from real S3 events, all Succeeded
+FAIL: Task 3.3: workflow step ran for real with values from the S3 record (bucket, object keys incl. verification-test-1794230358.txt, real eventTime)
+PASS: Time: fast-mode run finished in 50s (<= 300s)
+CORE: 3/9 PASS

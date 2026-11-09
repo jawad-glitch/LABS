@@ -1,0 +1,1 @@
+Argo Events v1.9.11 | EventBus JetStream latest (nats:2.10.29) | broker nats:2.10-alpine | MinIO minio/minio:RELEASE.2023-11-20T22-40-07Z

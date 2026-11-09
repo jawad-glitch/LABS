@@ -1,0 +1,6 @@
+Error response from daemon: pull access denied for minio/mc, repository does not exist or may require 'docker login'
+Error response from daemon: pull access denied for minio/minio, repository does not exist or may require 'docker login'
+docker.io/library/alpine:3.18
+docker.io/library/nats:2.10.29
+docker.io/library/nats:2.10-alpine
+docker.io/natsio/nats-box:0.20.2

@@ -1,0 +1,49 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: nats-sensor
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: operate-workflow-sa
+  dependencies:
+  - name: nats-dep
+    eventSourceName: nats-event-source
+    eventName: s3-events
+  triggers:
+  - template:
+      name: s3-workflow-trigger
+      argoWorkflow:
+        operation: submit
+        source:
+          resource:
+            apiVersion: argoproj.io/v1alpha1
+            kind: Workflow
+            metadata:
+              generateName: s3-event-workflow-
+              namespace: argo-events
+            spec:
+              workflowTemplateRef:
+                name: s3-file-processor
+              arguments:
+                parameters:
+                - name: bucket-name
+                  value: event-bucket
+                - name: object-key
+                  value: test-file.txt
+                - name: event-time
+                  value: '2023-12-01T10:00:00Z'
+        parameters:
+        - src:
+            dependencyName: nats-dep
+            dataKey: bucket
+          dest: spec.arguments.parameters.0.value
+        - src:
+            dependencyName: nats-dep
+            dataKey: key
+          dest: spec.arguments.parameters.1.value
+        - src:
+            dependencyName: nats-dep
+            dataKey: eventTime
+          dest: spec.arguments.parameters.2.value
+

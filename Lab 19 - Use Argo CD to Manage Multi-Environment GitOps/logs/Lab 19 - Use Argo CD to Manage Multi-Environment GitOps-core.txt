@@ -1,0 +1,15 @@
+========== CORE CHECKS (Lab 19 - Use Argo CD to Manage Multi-Environment GitOps, 2026-11-09 13:37:51 UTC) - FAST MODE ==========
+PASS: Task 2/3 [SIMULATED apply]: 9 env manifests + 3 Applications + ApplicationSet valid (strict); scripts parse
+PASS: Lab bug: file:// repo unreachable from a container (repo-server analog); network git URL reachable
+PASS: Task 2.3: 4 repos with commits; env repos pushed to network remotes
+PASS: Task 3: dev auto-synced on create; staging/prod OutOfSync until manual sync, then Synced Healthy 2/2 and 3/3
+PASS: Task 4.3: dev commit (1->2 replicas) auto-synced with no manual step - 2 live containers
+PASS: Lab bug: lab sed adds version under both labels: blocks and breaks YAML; fixed edit touches metadata.labels only
+PASS: Task 4.4: prod (manual policy) OutOfSync after commit, Synced with version-label=1.0.1 only after manual sync
+PASS: Task 4.5: killed staging container - not repaired with selfHeal off, repaired by self-heal on
+FAIL: Task 5.3: nginx:invalid-tag auto-synced -> Degraded (real pull failure); git revert -> auto-sync -> Healthy
+PASS: Task 6.1: promote-changes.sh moved nginx:1.27-alpine dev -> staging (commit+push), staging auto-synced; prod untouched
+PASS: Lab bug: original ApplicationSet renders selfHeal as a literal string (invalid Applications); fixed goTemplate+templatePatch renders 3 valid apps, selfHeal true only for dev
+PASS: Final: all 3 environments Synced + Healthy (dev 2, staging 2, prod 3 replicas)
+PASS: Time: fast-mode run finished in 45s (<= 300s)
+CORE: 12/13 PASS

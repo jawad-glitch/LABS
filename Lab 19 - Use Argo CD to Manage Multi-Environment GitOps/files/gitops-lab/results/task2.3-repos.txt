@@ -1,0 +1,8 @@
+=== sample-app-source
+fc04b6e Initial application source
+=== sample-app-dev
+048e8af Initial development environment configuration
+=== sample-app-staging
+2d62450 Initial staging environment configuration
+=== sample-app-prod
+716f429 Initial production environment configuration

@@ -1,0 +1,63 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: file:///home/student/gitops-lab/sample-app-dev
+    targetRevision: HEAD
+    path: manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sample-app-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: '{{eq .env "dev"}}'
+    syncOptions:
+    - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: file:///home/student/gitops-lab/sample-app-staging
+    targetRevision: HEAD
+    path: manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sample-app-staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: '{{eq .env "dev"}}'
+    syncOptions:
+    - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: file:///home/student/gitops-lab/sample-app-prod
+    targetRevision: HEAD
+    path: manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sample-app-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: '{{eq .env "dev"}}'
+    syncOptions:
+    - CreateNamespace=true
+

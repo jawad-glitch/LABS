@@ -1,0 +1,19 @@
+APP sample-app-dev repo=048e8af live-rev=048e8af sync=Synced health=Healthy replicas=1/1 image=nginx:1.26-alpine version-label=- policy=auto selfHeal=True action=auto-sync 
+APP sample-app-staging repo=2d62450 sync=OutOfSync health=Missing policy=manual action=none 
+APP sample-app-prod repo=716f429 sync=OutOfSync health=Missing policy=manual action=none 
+APP sample-app-staging repo=2d62450 live-rev=2d62450 sync=Synced health=Healthy replicas=2/2 image=nginx:1.26-alpine version-label=- policy=manual selfHeal=False action=manual-sync 
+APP sample-app-prod repo=716f429 live-rev=716f429 sync=Synced health=Healthy replicas=3/3 image=nginx:1.26-alpine version-label=- policy=manual selfHeal=False action=manual-sync 
+APP sample-app-dev repo=0dedfe6 live-rev=0dedfe6 sync=Synced health=Healthy replicas=2/2 image=nginx:1.26-alpine version-label=- policy=auto selfHeal=True action=auto-sync 
+APP sample-app-prod repo=513f638 live-rev=716f429 sync=OutOfSync health=Healthy replicas=3/3 image=nginx:1.26-alpine version-label=- policy=manual selfHeal=False action=none 
+APP sample-app-prod repo=513f638 live-rev=513f638 sync=Synced health=Healthy replicas=3/3 image=nginx:1.26-alpine version-label=1.0.1 policy=manual selfHeal=False action=manual-sync 
+APP sample-app-staging repo=2d62450 live-rev=2d62450 sync=Synced health=Healthy replicas=2/2 image=nginx:1.26-alpine version-label=- policy=auto selfHeal=False action=none 
+APP sample-app-staging repo=2d62450 live-rev=2d62450 sync=Synced health=Progressing replicas=1/2 image=nginx:1.26-alpine version-label=- policy=auto selfHeal=False action=drift-detected(selfHeal off) 
+APP sample-app-staging repo=2d62450 live-rev=2d62450 sync=Synced health=Healthy replicas=2/2 image=nginx:1.26-alpine version-label=- policy=auto selfHeal=True action=self-heal 
+APP sample-app-staging repo=44df6b9 live-rev=44df6b9 sync=Synced health=Degraded replicas=0/2 image=nginx:invalid-tag version-label=- policy=auto selfHeal=True action=auto-sync new ReplicaSet ImagePullBackOff: Error response from daemon: failed to resolve reference "docker.io/library/nginx:invalid-tag": docker.io/library/nginx:invalid-tag: not found
+APP sample-app-staging repo=44df6b9 live-rev=44df6b9 sync=Synced health=Degraded replicas=0/2 image=nginx:invalid-tag version-label=- policy=auto selfHeal=True action=none new ReplicaSet ImagePullBackOff: Error response from daemon: failed to resolve reference "docker.io/library/nginx:invalid-tag": docker.io/library/nginx:invalid-tag: not found
+APP sample-app-dev repo=340eaf1 live-rev=340eaf1 sync=Synced health=Healthy replicas=2/2 image=nginx:1.27-alpine version-label=- policy=auto selfHeal=True action=auto-sync 
+APP sample-app-staging repo=9b889fb live-rev=9b889fb sync=Synced health=Healthy replicas=2/2 image=nginx:1.27-alpine version-label=- policy=auto selfHeal=True action=auto-sync 
+APP sample-app-prod repo=513f638 live-rev=513f638 sync=Synced health=Healthy replicas=3/3 image=nginx:1.26-alpine version-label=1.0.1 policy=manual selfHeal=False action=none 
+APP sample-app-dev repo=340eaf1 live-rev=340eaf1 sync=Synced health=Healthy replicas=2/2 image=nginx:1.27-alpine version-label=- policy=auto selfHeal=True action=none 
+APP sample-app-staging repo=9b889fb live-rev=9b889fb sync=Synced health=Healthy replicas=2/2 image=nginx:1.27-alpine version-label=- policy=auto selfHeal=True action=none 
+APP sample-app-prod repo=513f638 live-rev=513f638 sync=Synced health=Healthy replicas=3/3 image=nginx:1.26-alpine version-label=1.0.1 policy=manual selfHeal=False action=none 

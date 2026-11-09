@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: sample-app-environments
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - {env: dev, replicas: "1", resources: small}
+      - {env: staging, replicas: "2", resources: medium}
+      - {env: prod, replicas: "3", resources: large}
+  template:
+    metadata:
+      name: 'sample-app-{{env}}'
+    spec:
+      project: default
+      source:
+        repoURL: 'file:///home/student/gitops-lab/sample-app-{{env}}'
+        targetRevision: HEAD
+        path: manifests
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'sample-app-{{env}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: '{{eq .env "dev"}}'
+        syncOptions:
+        - CreateNamespace=true

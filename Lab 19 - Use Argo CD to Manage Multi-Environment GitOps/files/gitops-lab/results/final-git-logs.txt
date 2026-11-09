@@ -1,0 +1,11 @@
+=== sample-app-dev
+340eaf1 Upgrade dev to nginx 1.27
+0dedfe6 Scale development to 2 replicas
+048e8af Initial development environment configuration
+=== sample-app-staging
+9b889fb Promote image nginx:1.27-alpine from dev (340eaf1) to staging
+44df6b9 Introduce breaking change with invalid image
+2d62450 Initial staging environment configuration
+=== sample-app-prod
+513f638 Add version label to production deployment
+716f429 Initial production environment configuration

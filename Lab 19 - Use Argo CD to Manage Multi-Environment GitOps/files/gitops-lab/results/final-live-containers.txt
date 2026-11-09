@@ -1,0 +1,7 @@
+l19-staging-ygozv nginx:1.27-alpine Up 3 seconds
+l19-staging-uwuez nginx:1.27-alpine Up 3 seconds
+l19-dev-sowun nginx:1.27-alpine Up 6 seconds
+l19-dev-qjcdp nginx:1.27-alpine Up 7 seconds
+l19-prod-orvwe nginx:1.26-alpine Up 19 seconds
+l19-prod-cfafc nginx:1.26-alpine Up 20 seconds
+l19-prod-lmnbn nginx:1.26-alpine Up 20 seconds

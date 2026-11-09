@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: artifact-output-
+spec:
+  entrypoint: generate-artifact
+  templates:
+  - name: generate-artifact
+    outputs:
+      artifacts:
+      - name: result-file
+        path: /tmp/result.txt
+    container:
+      image: alpine:latest
+      command: [sh, -c]
+      args: |
+        - |
+          echo "Workflow execution started at: $(date)" > /tmp/result.txt
+          cat /tmp/result.txt

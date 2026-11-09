@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: artifact-output-
+spec:
+  entrypoint: generate-artifact
+  templates:
+  - name: generate-artifact
+    outputs:
+      artifacts:
+      - name: result-file
+        path: /tmp/result.txt
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args:
+      - |
+        echo "Workflow execution started at: $(date)" > /tmp/result.txt
+        echo "Hostname: $(hostname)" >> /tmp/result.txt
+        echo "Random number: $RANDOM" >> /tmp/result.txt
+        echo "Workflow completed successfully" >> /tmp/result.txt
+        cat /tmp/result.txt

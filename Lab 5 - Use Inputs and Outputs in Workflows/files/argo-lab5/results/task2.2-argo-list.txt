@@ -1,0 +1,10 @@
+NAME                        STATUS    AGE   DURATION   PRIORITY   MESSAGE
+best-practices-ftcdc        Running   4m    4m         0          
+troubleshooting-2mkgt       Running   4m    4m         0          
+troubleshooting-gprr4       Running   4m    4m         0          
+comprehensive-io-7hvgt      Running   4m    4m         0          
+global-params-nlg2j         Running   4m    4m         0          
+multi-step-artifact-lwr5n   Running   4m    4m         0          
+artifact-output-64cxs       Running   4m    4m         0          
+basic-input-bhzjs           Running   4m    4m         0          
+basic-input-tgb6w           Running   4m    4m         0          

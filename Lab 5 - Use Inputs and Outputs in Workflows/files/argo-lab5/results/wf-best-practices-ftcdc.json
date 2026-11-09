@@ -1,0 +1,304 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2"
+        },
+        "creationTimestamp": "2026-11-09T12:16:18Z",
+        "generateName": "best-practices-",
+        "generation": 13,
+        "labels": {
+            "workflows.argoproj.io/archive-strategy": "false",
+            "workflows.argoproj.io/completed": "false",
+            "workflows.argoproj.io/creator": "system-admin",
+            "workflows.argoproj.io/phase": "Running"
+        },
+        "name": "best-practices-ftcdc",
+        "namespace": "argo",
+        "resourceVersion": "1649",
+        "uid": "b6a6b31b-bf9e-4d8c-9d7a-64d4dc00f060"
+    },
+    "spec": {
+        "activeDeadlineSeconds": 300,
+        "arguments": {
+            "parameters": [
+                {
+                    "name": "input-data",
+                    "value": "{\"application\": \"web-app\", \"version\": \"2.0\", \"environment\": \"production\"}"
+                },
+                {
+                    "name": "output-format",
+                    "value": "json"
+                }
+            ]
+        },
+        "entrypoint": "best-practices-demo",
+        "templates": [
+            {
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "input-data"
+                        },
+                        {
+                            "name": "output-format"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "best-practices-demo",
+                "outputs": {
+                    "artifacts": [
+                        {
+                            "from": "{{steps.process.outputs.artifacts.processed-data}}",
+                            "globalName": "final-output",
+                            "name": "final-output"
+                        }
+                    ],
+                    "parameters": [
+                        {
+                            "globalName": "processing-summary",
+                            "name": "processing-summary",
+                            "valueFrom": {
+                                "parameter": "{{steps.process.outputs.parameters.summary}}"
+                            }
+                        }
+                    ]
+                },
+                "steps": [
+                    [
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "data",
+                                        "value": "{{inputs.parameters.input-data}}"
+                                    },
+                                    {
+                                        "name": "format",
+                                        "value": "{{inputs.parameters.output-format}}"
+                                    }
+                                ]
+                            },
+                            "name": "validate",
+                            "template": "input-validator"
+                        }
+                    ],
+                    [
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "validated-data",
+                                        "value": "{{steps.validate.outputs.parameters.clean-data}}"
+                                    },
+                                    {
+                                        "name": "format",
+                                        "value": "{{inputs.parameters.output-format}}"
+                                    }
+                                ]
+                            },
+                            "name": "process",
+                            "template": "data-processor",
+                            "when": "'{{steps.validate.outputs.parameters.is-valid}}' == 'true'"
+                        }
+                    ]
+                ]
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Validating input data and format...\"\nif echo '{{inputs.parameters.data}}' | jq . \u003e /dev/null 2\u003e\u00261; then\n  echo \"JSON validation: PASSED\"; JSON_VALID=true\nelse\n  echo \"JSON validation: FAILED\"; JSON_VALID=false\nfi\ncase \"{{inputs.parameters.format}}\" in\n  \"json\"|\"yaml\"|\"xml\") echo \"Format validation: PASSED\"; FORMAT_VALID=true ;;\n  *) echo \"Format validation: FAILED\"; FORMAT_VALID=false ;;\nesac\nif [ \"$JSON_VALID\" = true ] \u0026\u0026 [ \"$FORMAT_VALID\" = true ]; then\n  echo \"true\" \u003e /tmp/is-valid.txt\n  echo '{{inputs.parameters.data}}' | jq . \u003e /tmp/clean-data.txt\n  echo \"Overall validation: PASSED\"\nelse\n  echo \"false\" \u003e /tmp/is-valid.txt\n  echo \"{}\" \u003e /tmp/clean-data.txt\n  echo \"Overall validation: FAILED\"\nfi\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "data"
+                        },
+                        {
+                            "name": "format"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "input-validator",
+                "outputs": {
+                    "parameters": [
+                        {
+                            "name": "is-valid",
+                            "valueFrom": {
+                                "path": "/tmp/is-valid.txt"
+                            }
+                        },
+                        {
+                            "name": "clean-data",
+                            "valueFrom": {
+                                "path": "/tmp/clean-data.txt"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Processing validated data in {{inputs.parameters.format}} format...\"\nPROCESSED_DATA=$(echo '{{inputs.parameters.validated-data}}' | jq --arg ts \"$(date)\" '. + {\"processed_at\": $ts, \"processor\": \"argo-workflow\", \"status\": \"completed\"}')\ncase \"{{inputs.parameters.format}}\" in\n  \"json\") echo \"$PROCESSED_DATA\" \u003e /tmp/output.json; echo \"Data processed and saved as JSON\" ;;\n  \"yaml\") echo \"$PROCESSED_DATA\" | jq -r 'to_entries[] | \"\\(.key): \\(.value)\"' \u003e /tmp/output.yaml; echo \"Data processed and saved as YAML\" ;;\n  \"xml\")  { echo \"\u003cdata\u003e\"; echo \"$PROCESSED_DATA\" | jq -r 'to_entries[] | \"\u003c\\(.key)\u003e\\(.value)\u003c/\\(.key)\u003e\"'; echo \"\u003c/data\u003e\"; } \u003e /tmp/output.xml; echo \"Data processed and saved as XML\" ;;\nesac\nRECORD_COUNT=$(echo \"$PROCESSED_DATA\" | jq 'keys | length')\necho \"Processed $RECORD_COUNT fields in {{inputs.parameters.format}} format at $(date)\" \u003e /tmp/summary.txt\necho \"Processing completed successfully\"\necho \"Summary: $(cat /tmp/summary.txt)\"\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "validated-data"
+                        },
+                        {
+                            "name": "format"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "data-processor",
+                "outputs": {
+                    "artifacts": [
+                        {
+                            "name": "processed-data",
+                            "path": "/tmp/output.{{inputs.parameters.format}}"
+                        }
+                    ],
+                    "parameters": [
+                        {
+                            "name": "summary",
+                            "valueFrom": {
+                                "path": "/tmp/summary.txt"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {
+                "archiveLogs": true,
+                "s3": {
+                    "accessKeySecret": {
+                        "key": "accesskey",
+                        "name": "my-minio-cred"
+                    },
+                    "bucket": "my-bucket",
+                    "endpoint": "minio:9000",
+                    "insecure": true,
+                    "secretKeySecret": {
+                        "key": "secretkey",
+                        "name": "my-minio-cred"
+                    }
+                }
+            },
+            "configMap": "artifact-repositories",
+            "key": "default-v1",
+            "namespace": "argo"
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            }
+        ],
+        "finishedAt": null,
+        "nodes": {
+            "best-practices-ftcdc": {
+                "children": [
+                    "best-practices-ftcdc-3861249351"
+                ],
+                "displayName": "best-practices-ftcdc",
+                "finishedAt": null,
+                "id": "best-practices-ftcdc",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "input-data",
+                            "value": "{\"application\": \"web-app\", \"version\": \"2.0\", \"environment\": \"production\"}"
+                        },
+                        {
+                            "name": "output-format",
+                            "value": "json"
+                        }
+                    ]
+                },
+                "name": "best-practices-ftcdc",
+                "phase": "Running",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:19Z",
+                "templateName": "best-practices-demo",
+                "templateScope": "local/best-practices-ftcdc",
+                "type": "Steps"
+            },
+            "best-practices-ftcdc-22319333": {
+                "boundaryID": "best-practices-ftcdc",
+                "displayName": "validate",
+                "finishedAt": null,
+                "hostNodeName": "ip-172-31-10-213",
+                "id": "best-practices-ftcdc-22319333",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "value": "{\"application\": \"web-app\", \"version\": \"2.0\", \"environment\": \"production\"}"
+                        },
+                        {
+                            "name": "format",
+                            "value": "json"
+                        }
+                    ]
+                },
+                "message": "ImagePullBackOff: Back-off pulling image \"lab5-tools:1\": ErrImagePull: failed to pull and unpack image \"docker.io/library/lab5-tools:1\": failed to resolve reference \"docker.io/library/lab5-tools:1\": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed",
+                "name": "best-practices-ftcdc[0].validate",
+                "phase": "Pending",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:20Z",
+                "taskResultSynced": false,
+                "templateName": "input-validator",
+                "templateScope": "local/best-practices-ftcdc",
+                "type": "Pod"
+            },
+            "best-practices-ftcdc-3861249351": {
+                "boundaryID": "best-practices-ftcdc",
+                "children": [
+                    "best-practices-ftcdc-22319333"
+                ],
+                "displayName": "[0]",
+                "finishedAt": null,
+                "id": "best-practices-ftcdc-3861249351",
+                "name": "best-practices-ftcdc[0]",
+                "nodeFlag": {},
+                "phase": "Running",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:19Z",
+                "templateScope": "local/best-practices-ftcdc",
+                "type": "StepGroup"
+            }
+        },
+        "phase": "Running",
+        "progress": "0/1",
+        "startedAt": "2026-11-09T12:16:19Z"
+    }
+}

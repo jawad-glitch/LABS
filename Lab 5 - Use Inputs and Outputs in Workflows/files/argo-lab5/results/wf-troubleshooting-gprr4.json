@@ -1,0 +1,229 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2"
+        },
+        "creationTimestamp": "2026-11-09T12:16:17Z",
+        "generateName": "troubleshooting-",
+        "generation": 13,
+        "labels": {
+            "workflows.argoproj.io/completed": "false",
+            "workflows.argoproj.io/creator": "system-admin",
+            "workflows.argoproj.io/phase": "Running"
+        },
+        "name": "troubleshooting-gprr4",
+        "namespace": "argo",
+        "resourceVersion": "1664",
+        "uid": "1ae0a1eb-add7-45e1-96df-fb7badc4aec0"
+    },
+    "spec": {
+        "arguments": {
+            "parameters": [
+                {
+                    "name": "test-mode",
+                    "value": "debug"
+                }
+            ]
+        },
+        "entrypoint": "troubleshooting-demo",
+        "templates": [
+            {
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "test-mode"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "troubleshooting-demo",
+                "outputs": {},
+                "steps": [
+                    [
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "mode",
+                                        "value": "{{inputs.parameters.test-mode}}"
+                                    }
+                                ]
+                            },
+                            "name": "parameter-validation",
+                            "template": "validate-params"
+                        }
+                    ],
+                    [
+                        {
+                            "arguments": {},
+                            "name": "artifact-handling",
+                            "template": "artifact-demo",
+                            "when": "'{{steps.parameter-validation.outputs.parameters.validation-result}}' == 'valid'"
+                        }
+                    ]
+                ]
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Validating parameter: {{inputs.parameters.mode}}\"\ncase \"{{inputs.parameters.mode}}\" in\n  \"debug\"|\"info\"|\"warn\"|\"error\")\n    echo \"valid\" \u003e /tmp/validation.txt\n    echo \"Parameter validation: PASSED\"\n    ;;\n  *)\n    echo \"invalid\" \u003e /tmp/validation.txt\n    echo \"Parameter validation: FAILED - Invalid mode\"\n    ;;\nesac\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "mode"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "validate-params",
+                "outputs": {
+                    "parameters": [
+                        {
+                            "name": "validation-result",
+                            "valueFrom": {
+                                "path": "/tmp/validation.txt"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Creating demonstration artifact...\"\necho \"Timestamp: $(date)\" \u003e /tmp/demo.txt\necho \"Hostname: $(hostname)\" \u003e\u003e /tmp/demo.txt\necho \"Working directory: $(pwd)\" \u003e\u003e /tmp/demo.txt\necho \"Environment variables:\" \u003e\u003e /tmp/demo.txt\nenv | grep -E \"^(PATH|HOME|USER)\" \u003e\u003e /tmp/demo.txt\necho \"Artifact created successfully:\"\ncat /tmp/demo.txt\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {},
+                "metadata": {},
+                "name": "artifact-demo",
+                "outputs": {
+                    "artifacts": [
+                        {
+                            "name": "demo-artifact",
+                            "path": "/tmp/demo.txt"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {
+                "archiveLogs": true,
+                "s3": {
+                    "accessKeySecret": {
+                        "key": "accesskey",
+                        "name": "my-minio-cred"
+                    },
+                    "bucket": "my-bucket",
+                    "endpoint": "minio:9000",
+                    "insecure": true,
+                    "secretKeySecret": {
+                        "key": "secretkey",
+                        "name": "my-minio-cred"
+                    }
+                }
+            },
+            "configMap": "artifact-repositories",
+            "key": "default-v1",
+            "namespace": "argo"
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            }
+        ],
+        "finishedAt": null,
+        "nodes": {
+            "troubleshooting-gprr4": {
+                "children": [
+                    "troubleshooting-gprr4-2689336769"
+                ],
+                "displayName": "troubleshooting-gprr4",
+                "finishedAt": null,
+                "id": "troubleshooting-gprr4",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "test-mode",
+                            "value": "debug"
+                        }
+                    ]
+                },
+                "name": "troubleshooting-gprr4",
+                "phase": "Running",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "templateName": "troubleshooting-demo",
+                "templateScope": "local/troubleshooting-gprr4",
+                "type": "Steps"
+            },
+            "troubleshooting-gprr4-1390200448": {
+                "boundaryID": "troubleshooting-gprr4",
+                "displayName": "parameter-validation",
+                "finishedAt": null,
+                "hostNodeName": "ip-172-31-10-213",
+                "id": "troubleshooting-gprr4-1390200448",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "mode",
+                            "value": "debug"
+                        }
+                    ]
+                },
+                "message": "ImagePullBackOff: Back-off pulling image \"lab5-tools:1\": ErrImagePull: failed to pull and unpack image \"docker.io/library/lab5-tools:1\": failed to resolve reference \"docker.io/library/lab5-tools:1\": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed",
+                "name": "troubleshooting-gprr4[0].parameter-validation",
+                "phase": "Pending",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "taskResultSynced": false,
+                "templateName": "validate-params",
+                "templateScope": "local/troubleshooting-gprr4",
+                "type": "Pod"
+            },
+            "troubleshooting-gprr4-2689336769": {
+                "boundaryID": "troubleshooting-gprr4",
+                "children": [
+                    "troubleshooting-gprr4-1390200448"
+                ],
+                "displayName": "[0]",
+                "finishedAt": null,
+                "id": "troubleshooting-gprr4-2689336769",
+                "name": "troubleshooting-gprr4[0]",
+                "nodeFlag": {},
+                "phase": "Running",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "templateScope": "local/troubleshooting-gprr4",
+                "type": "StepGroup"
+            }
+        },
+        "phase": "Running",
+        "progress": "0/1",
+        "startedAt": "2026-11-09T12:16:17Z"
+    }
+}

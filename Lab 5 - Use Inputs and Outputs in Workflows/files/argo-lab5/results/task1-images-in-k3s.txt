@@ -1,0 +1,1 @@
+quay.io/argoproj/argoexec                    v3.7.18                 9e72d4ed44dfa       66.5MB

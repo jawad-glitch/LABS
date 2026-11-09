@@ -1,0 +1,349 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2"
+        },
+        "creationTimestamp": "2026-11-09T12:16:16Z",
+        "generateName": "global-params-",
+        "generation": 13,
+        "labels": {
+            "workflows.argoproj.io/completed": "false",
+            "workflows.argoproj.io/creator": "system-admin",
+            "workflows.argoproj.io/phase": "Running"
+        },
+        "name": "global-params-nlg2j",
+        "namespace": "argo",
+        "resourceVersion": "1668",
+        "uid": "f0e059a6-1ef5-48e4-8a9a-9d18b936c0d1"
+    },
+    "spec": {
+        "arguments": {
+            "parameters": [
+                {
+                    "name": "project-name",
+                    "value": "my-awesome-app"
+                },
+                {
+                    "name": "build-number",
+                    "value": "42"
+                }
+            ]
+        },
+        "entrypoint": "global-pipeline",
+        "templates": [
+            {
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "project-name"
+                        },
+                        {
+                            "name": "build-number"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "global-pipeline",
+                "outputs": {
+                    "parameters": [
+                        {
+                            "globalName": "final-status",
+                            "name": "final-status",
+                            "valueFrom": {
+                                "parameter": "{{steps.finalize.outputs.parameters.status}}"
+                            }
+                        },
+                        {
+                            "globalName": "build-info",
+                            "name": "build-info",
+                            "valueFrom": {
+                                "parameter": "{{steps.build.outputs.parameters.info}}"
+                            }
+                        }
+                    ]
+                },
+                "steps": [
+                    [
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "project",
+                                        "value": "{{inputs.parameters.project-name}}"
+                                    },
+                                    {
+                                        "name": "build",
+                                        "value": "{{inputs.parameters.build-number}}"
+                                    }
+                                ]
+                            },
+                            "name": "initialize",
+                            "template": "init-step"
+                        }
+                    ],
+                    [
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "init-result",
+                                        "value": "{{steps.initialize.outputs.parameters.init-status}}"
+                                    },
+                                    {
+                                        "name": "project",
+                                        "value": "{{inputs.parameters.project-name}}"
+                                    }
+                                ]
+                            },
+                            "name": "build",
+                            "template": "build-step"
+                        }
+                    ],
+                    [
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "build-result",
+                                        "value": "{{steps.build.outputs.parameters.build-status}}"
+                                    },
+                                    {
+                                        "name": "build-info",
+                                        "value": "{{steps.build.outputs.parameters.info}}"
+                                    }
+                                ]
+                            },
+                            "name": "finalize",
+                            "template": "final-step"
+                        }
+                    ]
+                ]
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Initializing project: {{inputs.parameters.project}}\"\necho \"Build number: {{inputs.parameters.build}}\"\nsleep 2\necho \"initialized\" \u003e /tmp/init-status.txt\necho \"Project {{inputs.parameters.project}} initialized successfully\"\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "project"
+                        },
+                        {
+                            "name": "build"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "init-step",
+                "outputs": {
+                    "parameters": [
+                        {
+                            "name": "init-status",
+                            "valueFrom": {
+                                "path": "/tmp/init-status.txt"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Starting build for project: {{inputs.parameters.project}}\"\necho \"Initialization status: {{inputs.parameters.init-result}}\"\nif [ \"{{inputs.parameters.init-result}}\" = \"initialized\" ]; then\n  echo \"Build proceeding...\"\n  sleep 3\n  echo \"success\" \u003e /tmp/build-status.txt\n  echo \"Build completed at $(date) for {{inputs.parameters.project}}\" \u003e /tmp/build-info.txt\n  echo \"Build completed successfully\"\nelse\n  echo \"failed\" \u003e /tmp/build-status.txt\n  echo \"Build failed - initialization not completed\" \u003e /tmp/build-info.txt\n  echo \"Build failed\"\nfi\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "init-result"
+                        },
+                        {
+                            "name": "project"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "build-step",
+                "outputs": {
+                    "parameters": [
+                        {
+                            "name": "build-status",
+                            "valueFrom": {
+                                "path": "/tmp/build-status.txt"
+                            }
+                        },
+                        {
+                            "name": "info",
+                            "valueFrom": {
+                                "path": "/tmp/build-info.txt"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Finalizing workflow...\"\necho \"Build result: {{inputs.parameters.build-result}}\"\necho \"Build info: {{inputs.parameters.build-info}}\"\nif [ \"{{inputs.parameters.build-result}}\" = \"success\" ]; then\n  echo \"completed-successfully\" \u003e /tmp/final-status.txt\n  echo \"Workflow completed successfully\"\nelse\n  echo \"completed-with-errors\" \u003e /tmp/final-status.txt\n  echo \"Workflow completed with errors\"\nfi\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "build-result"
+                        },
+                        {
+                            "name": "build-info"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "final-step",
+                "outputs": {
+                    "parameters": [
+                        {
+                            "name": "status",
+                            "valueFrom": {
+                                "path": "/tmp/final-status.txt"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {
+                "archiveLogs": true,
+                "s3": {
+                    "accessKeySecret": {
+                        "key": "accesskey",
+                        "name": "my-minio-cred"
+                    },
+                    "bucket": "my-bucket",
+                    "endpoint": "minio:9000",
+                    "insecure": true,
+                    "secretKeySecret": {
+                        "key": "secretkey",
+                        "name": "my-minio-cred"
+                    }
+                }
+            },
+            "configMap": "artifact-repositories",
+            "key": "default-v1",
+            "namespace": "argo"
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            }
+        ],
+        "finishedAt": null,
+        "nodes": {
+            "global-params-nlg2j": {
+                "children": [
+                    "global-params-nlg2j-112776861"
+                ],
+                "displayName": "global-params-nlg2j",
+                "finishedAt": null,
+                "id": "global-params-nlg2j",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "project-name",
+                            "value": "my-awesome-app"
+                        },
+                        {
+                            "name": "build-number",
+                            "value": "42"
+                        }
+                    ]
+                },
+                "name": "global-params-nlg2j",
+                "phase": "Running",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "templateName": "global-pipeline",
+                "templateScope": "local/global-params-nlg2j",
+                "type": "Steps"
+            },
+            "global-params-nlg2j-112776861": {
+                "boundaryID": "global-params-nlg2j",
+                "children": [
+                    "global-params-nlg2j-1398283263"
+                ],
+                "displayName": "[0]",
+                "finishedAt": null,
+                "id": "global-params-nlg2j-112776861",
+                "name": "global-params-nlg2j[0]",
+                "nodeFlag": {},
+                "phase": "Running",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "templateScope": "local/global-params-nlg2j",
+                "type": "StepGroup"
+            },
+            "global-params-nlg2j-1398283263": {
+                "boundaryID": "global-params-nlg2j",
+                "displayName": "initialize",
+                "finishedAt": null,
+                "hostNodeName": "ip-172-31-10-213",
+                "id": "global-params-nlg2j-1398283263",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "project",
+                            "value": "my-awesome-app"
+                        },
+                        {
+                            "name": "build",
+                            "value": "42"
+                        }
+                    ]
+                },
+                "message": "ImagePullBackOff: Back-off pulling image \"lab5-tools:1\": ErrImagePull: failed to pull and unpack image \"docker.io/library/lab5-tools:1\": failed to resolve reference \"docker.io/library/lab5-tools:1\": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed",
+                "name": "global-params-nlg2j[0].initialize",
+                "phase": "Pending",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "taskResultSynced": false,
+                "templateName": "init-step",
+                "templateScope": "local/global-params-nlg2j",
+                "type": "Pod"
+            }
+        },
+        "phase": "Running",
+        "progress": "0/1",
+        "startedAt": "2026-11-09T12:16:17Z"
+    }
+}

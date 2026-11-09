@@ -1,0 +1,4 @@
+quay.io/argoproj/argocli:v3.7.18
+quay.io/argoproj/workflow-controller:v3.7.18
+quay.io/holos/mccutchen/go-httpbin:v2.14.1@sha256:2612f203b1be154524b0dbb65212a158776f0643e2f6e1dad45984fc93413d97
+quay.io/minio/minio:RELEASE.2022-11-17T23-20-09Z@sha256:b2a98df34c3e8d605a5e96f0bc1657dd440a5bd53d95465a7b342e736da9c6cf quay.io/argoproj/argoexec:v3.7.18

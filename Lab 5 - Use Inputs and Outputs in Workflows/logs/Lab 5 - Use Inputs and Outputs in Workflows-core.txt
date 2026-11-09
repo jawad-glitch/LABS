@@ -1,0 +1,16 @@
+========== CORE CHECKS (Lab 5 - Use Inputs and Outputs in Workflows, 2026-11-09 12:21:19 UTC) ==========
+FAIL: Task 1.1: cluster Ready; Argo v3.7.18 controller/server + MinIO up; S3 artifact repository configured
+PASS: Task 1.2: argo CLI = v3.7.18, namespace argo set in context
+FAIL: Task 2.2: default params -> Message: Hello World to Student (basic-input-bhzjs)
+FAIL: Task 2.3: -p override -> Message: Welcome to Argo Workflows to DevOps Engineer (basic-input-tgb6w)
+FAIL: Task 3.1/3.2: artifact-output Succeeded, result-file saved to S3 repo, contents logged
+PASS: Lab bug evidence: original args-as-string YAML rejected by argo lint; all 7 fixed workflows lint clean
+FAIL: Task 3.3/3.4: artifact passed between steps - processor read item1..3 and wrote status processed
+FAIL: Task 4.2: comprehensive I/O Succeeded - mysql/production/2.1.0 config, sha256 hash param, validation + HTML report artifact
+FAIL: Task 4.3: per-step logs (setup-config, validate-config, generate-report) via step pods
+FAIL: Task 5: global outputs in .status.outputs - final-status=completed-successfully, build-info for my-awesome-app
+FAIL: Task 6.2: valid mode -> artifact-handling Succeeded; invalid-mode -> validation FAILED + artifact-handling Skipped
+FAIL: Task 6.4: best-practices Succeeded - summary Processed 6 fields in json, global final-output artifact
+PASS: Task 7: outputs summary written for all 9 workflows, argo delete --all left 0
+FAIL: Time budget: lab finished in 483s (<= 300s)
+CORE: 3/14 PASS

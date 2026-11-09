@@ -1,0 +1,16 @@
+Name:                basic-input-bhzjs
+Namespace:           argo
+ServiceAccount:      unset (will run with the default ServiceAccount)
+Status:              Running
+Conditions:          
+ PodRunning          False
+Created:             Mon Nov 09 12:16:14 +0000 (4 minutes ago)
+Started:             Mon Nov 09 12:16:14 +0000 (4 minutes ago)
+Duration:            4 minutes 42 seconds
+Progress:            0/1
+Parameters:          
+  message:           Hello World
+  recipient:         Student
+
+[39mSTEP[0m                  TEMPLATE       PODNAME            DURATION  MESSAGE
+ [33m◷[0m basic-input-bhzjs  print-message  basic-input-bhzjs  4m        ImagePullBackOff: Back-off pulling image "lab5-tools:1": ErrImagePull: failed to pull and unpack image "docker.io/library/lab5-tools:1": failed to resolve reference "docker.io/library/lab5-tools:1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed  

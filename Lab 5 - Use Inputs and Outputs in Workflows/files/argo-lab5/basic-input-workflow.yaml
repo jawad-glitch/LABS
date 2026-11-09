@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: basic-input-
+spec:
+  entrypoint: print-message
+  arguments:
+    parameters:
+    - name: message
+      value: "Hello World"
+    - name: recipient
+      value: "Student"
+  templates:
+  - name: print-message
+    inputs:
+      parameters:
+      - name: message
+      - name: recipient
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args: ["echo 'Message: {{inputs.parameters.message}} to {{inputs.parameters.recipient}}'"]

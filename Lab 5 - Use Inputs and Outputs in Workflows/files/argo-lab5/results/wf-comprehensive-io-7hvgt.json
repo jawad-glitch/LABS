@@ -1,0 +1,346 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2"
+        },
+        "creationTimestamp": "2026-11-09T12:16:16Z",
+        "generateName": "comprehensive-io-",
+        "generation": 13,
+        "labels": {
+            "workflows.argoproj.io/completed": "false",
+            "workflows.argoproj.io/creator": "system-admin",
+            "workflows.argoproj.io/phase": "Running"
+        },
+        "name": "comprehensive-io-7hvgt",
+        "namespace": "argo",
+        "resourceVersion": "1665",
+        "uid": "b7148bcf-3f61-4c92-b9d2-bd2b30efe47f"
+    },
+    "spec": {
+        "arguments": {
+            "parameters": [
+                {
+                    "name": "environment",
+                    "value": "production"
+                },
+                {
+                    "name": "version",
+                    "value": "2.1.0"
+                },
+                {
+                    "name": "config-data",
+                    "value": "{\"database\": \"mysql\", \"cache\": \"memcached\", \"logging\": \"info\", \"replicas\": 3}"
+                }
+            ]
+        },
+        "entrypoint": "main-pipeline",
+        "templates": [
+            {
+                "dag": {
+                    "tasks": [
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "env",
+                                        "value": "{{inputs.parameters.environment}}"
+                                    },
+                                    {
+                                        "name": "ver",
+                                        "value": "{{inputs.parameters.version}}"
+                                    },
+                                    {
+                                        "name": "config",
+                                        "value": "{{inputs.parameters.config-data}}"
+                                    }
+                                ]
+                            },
+                            "name": "setup-config",
+                            "template": "config-generator"
+                        },
+                        {
+                            "arguments": {
+                                "artifacts": [
+                                    {
+                                        "from": "{{tasks.setup-config.outputs.artifacts.config-artifact}}",
+                                        "name": "config-file"
+                                    }
+                                ],
+                                "parameters": [
+                                    {
+                                        "name": "environment",
+                                        "value": "{{inputs.parameters.environment}}"
+                                    }
+                                ]
+                            },
+                            "dependencies": [
+                                "setup-config"
+                            ],
+                            "name": "validate-config",
+                            "template": "config-validator"
+                        },
+                        {
+                            "arguments": {
+                                "artifacts": [
+                                    {
+                                        "from": "{{tasks.validate-config.outputs.artifacts.validation-result}}",
+                                        "name": "validated-config"
+                                    }
+                                ],
+                                "parameters": [
+                                    {
+                                        "name": "version",
+                                        "value": "{{inputs.parameters.version}}"
+                                    }
+                                ]
+                            },
+                            "dependencies": [
+                                "validate-config"
+                            ],
+                            "name": "generate-report",
+                            "template": "report-generator"
+                        }
+                    ]
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "environment"
+                        },
+                        {
+                            "name": "version"
+                        },
+                        {
+                            "name": "config-data"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "main-pipeline",
+                "outputs": {}
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Generating configuration for environment: {{inputs.parameters.env}}\"\necho \"Version: {{inputs.parameters.ver}}\"\necho '{{inputs.parameters.config}}' | jq --arg env \"{{inputs.parameters.env}}\" --arg ver \"{{inputs.parameters.ver}}\" --arg ts \"$(date)\" \\\n  '. + {\"environment\": $env, \"version\": $ver, \"generated_at\": $ts}' \u003e /tmp/config.json\nCONFIG_HASH=$(sha256sum /tmp/config.json | cut -d' ' -f1)\necho $CONFIG_HASH \u003e /tmp/hash.txt\necho \"Generated configuration:\"\ncat /tmp/config.json\necho \"Config hash: $CONFIG_HASH\"\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "env"
+                        },
+                        {
+                            "name": "ver"
+                        },
+                        {
+                            "name": "config"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "config-generator",
+                "outputs": {
+                    "artifacts": [
+                        {
+                            "name": "config-artifact",
+                            "path": "/tmp/config.json"
+                        }
+                    ],
+                    "parameters": [
+                        {
+                            "name": "config-hash",
+                            "valueFrom": {
+                                "path": "/tmp/hash.txt"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Validating configuration for environment: {{inputs.parameters.environment}}\"\ncat /tmp/input-config.json\nVALIDATION_STATUS=\"valid\"\nVALIDATION_MESSAGE=\"Configuration is valid for {{inputs.parameters.environment}} environment\"\njq -n --arg status \"$VALIDATION_STATUS\" \\\n      --arg message \"$VALIDATION_MESSAGE\" \\\n      --arg validated_at \"$(date)\" \\\n      --argjson config \"$(cat /tmp/input-config.json)\" \\\n      '{\"validation_status\": $status, \"message\": $message, \"validated_at\": $validated_at, \"original_config\": $config}' \u003e /tmp/validation.json\necho \"Validation result:\"\ncat /tmp/validation.json\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "artifacts": [
+                        {
+                            "name": "config-file",
+                            "path": "/tmp/input-config.json"
+                        }
+                    ],
+                    "parameters": [
+                        {
+                            "name": "environment"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "config-validator",
+                "outputs": {
+                    "artifacts": [
+                        {
+                            "name": "validation-result",
+                            "path": "/tmp/validation.json"
+                        }
+                    ]
+                }
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Generating final report for version: {{inputs.parameters.version}}\"\nSTATUS=$(jq -r '.validation_status' /tmp/validated.json)\nMESSAGE=$(jq -r '.message' /tmp/validated.json)\nVALIDATED_AT=$(jq -r '.validated_at' /tmp/validated.json)\ncat \u003e /tmp/report.html \u003c\u003c HTML\n\u003c!DOCTYPE html\u003e\n\u003chtml\u003e\n\u003chead\u003e\n    \u003ctitle\u003eConfiguration Report - Version {{inputs.parameters.version}}\u003c/title\u003e\n    \u003cstyle\u003e\n        body { font-family: Arial, sans-serif; margin: 20px; }\n        .header { background-color: #f0f0f0; padding: 10px; }\n        .status { color: green; font-weight: bold; }\n        .config { background-color: #f9f9f9; padding: 10px; border: 1px solid #ddd; }\n    \u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cdiv class=\"header\"\u003e\n        \u003ch1\u003eConfiguration Report\u003c/h1\u003e\n        \u003cp\u003eVersion: {{inputs.parameters.version}}\u003c/p\u003e\n        \u003cp\u003eGenerated: $(date)\u003c/p\u003e\n    \u003c/div\u003e\n    \u003ch2\u003eValidation Results\u003c/h2\u003e\n    \u003cp class=\"status\"\u003eStatus: $STATUS\u003c/p\u003e\n    \u003cp\u003eMessage: $MESSAGE\u003c/p\u003e\n    \u003cp\u003eValidated At: $VALIDATED_AT\u003c/p\u003e\n    \u003ch2\u003eConfiguration Details\u003c/h2\u003e\n    \u003cdiv class=\"config\"\u003e\n        \u003cpre\u003e$(jq '.original_config' /tmp/validated.json)\u003c/pre\u003e\n    \u003c/div\u003e\n\u003c/body\u003e\n\u003c/html\u003e\nHTML\necho \"Report generated successfully\"\necho \"Report preview:\"\nhead -20 /tmp/report.html\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "artifacts": [
+                        {
+                            "name": "validated-config",
+                            "path": "/tmp/validated.json"
+                        }
+                    ],
+                    "parameters": [
+                        {
+                            "name": "version"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "report-generator",
+                "outputs": {
+                    "artifacts": [
+                        {
+                            "name": "final-report",
+                            "path": "/tmp/report.html"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {
+                "archiveLogs": true,
+                "s3": {
+                    "accessKeySecret": {
+                        "key": "accesskey",
+                        "name": "my-minio-cred"
+                    },
+                    "bucket": "my-bucket",
+                    "endpoint": "minio:9000",
+                    "insecure": true,
+                    "secretKeySecret": {
+                        "key": "secretkey",
+                        "name": "my-minio-cred"
+                    }
+                }
+            },
+            "configMap": "artifact-repositories",
+            "key": "default-v1",
+            "namespace": "argo"
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            }
+        ],
+        "finishedAt": null,
+        "nodes": {
+            "comprehensive-io-7hvgt": {
+                "children": [
+                    "comprehensive-io-7hvgt-3813571677"
+                ],
+                "displayName": "comprehensive-io-7hvgt",
+                "finishedAt": null,
+                "id": "comprehensive-io-7hvgt",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "environment",
+                            "value": "production"
+                        },
+                        {
+                            "name": "version",
+                            "value": "2.1.0"
+                        },
+                        {
+                            "name": "config-data",
+                            "value": "{\"database\": \"mysql\", \"cache\": \"memcached\", \"logging\": \"info\", \"replicas\": 3}"
+                        }
+                    ]
+                },
+                "name": "comprehensive-io-7hvgt",
+                "phase": "Running",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "templateName": "main-pipeline",
+                "templateScope": "local/comprehensive-io-7hvgt",
+                "type": "DAG"
+            },
+            "comprehensive-io-7hvgt-3813571677": {
+                "boundaryID": "comprehensive-io-7hvgt",
+                "displayName": "setup-config",
+                "finishedAt": null,
+                "hostNodeName": "ip-172-31-10-213",
+                "id": "comprehensive-io-7hvgt-3813571677",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "env",
+                            "value": "production"
+                        },
+                        {
+                            "name": "ver",
+                            "value": "2.1.0"
+                        },
+                        {
+                            "name": "config",
+                            "value": "{\"database\": \"mysql\", \"cache\": \"memcached\", \"logging\": \"info\", \"replicas\": 3}"
+                        }
+                    ]
+                },
+                "message": "ImagePullBackOff: Back-off pulling image \"lab5-tools:1\": ErrImagePull: failed to pull and unpack image \"docker.io/library/lab5-tools:1\": failed to resolve reference \"docker.io/library/lab5-tools:1\": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed",
+                "name": "comprehensive-io-7hvgt.setup-config",
+                "phase": "Pending",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "taskResultSynced": false,
+                "templateName": "config-generator",
+                "templateScope": "local/comprehensive-io-7hvgt",
+                "type": "Pod"
+            }
+        },
+        "phase": "Running",
+        "progress": "0/1",
+        "startedAt": "2026-11-09T12:16:17Z"
+    }
+}

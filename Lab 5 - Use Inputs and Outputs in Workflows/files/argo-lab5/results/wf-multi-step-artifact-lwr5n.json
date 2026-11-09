@@ -1,0 +1,183 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2"
+        },
+        "creationTimestamp": "2026-11-09T12:16:15Z",
+        "generateName": "multi-step-artifact-",
+        "generation": 13,
+        "labels": {
+            "workflows.argoproj.io/completed": "false",
+            "workflows.argoproj.io/creator": "system-admin",
+            "workflows.argoproj.io/phase": "Running"
+        },
+        "name": "multi-step-artifact-lwr5n",
+        "namespace": "argo",
+        "resourceVersion": "1632",
+        "uid": "3f3281d6-9a39-4c4d-a03b-d993435a26e6"
+    },
+    "spec": {
+        "arguments": {},
+        "entrypoint": "artifact-pipeline",
+        "templates": [
+            {
+                "dag": {
+                    "tasks": [
+                        {
+                            "arguments": {},
+                            "name": "generate-data",
+                            "template": "data-generator"
+                        },
+                        {
+                            "arguments": {
+                                "artifacts": [
+                                    {
+                                        "from": "{{tasks.generate-data.outputs.artifacts.generated-data}}",
+                                        "name": "input-data"
+                                    }
+                                ]
+                            },
+                            "dependencies": [
+                                "generate-data"
+                            ],
+                            "name": "process-data",
+                            "template": "data-processor"
+                        }
+                    ]
+                },
+                "inputs": {},
+                "metadata": {},
+                "name": "artifact-pipeline",
+                "outputs": {}
+            },
+            {
+                "container": {
+                    "args": [
+                        "jq -n --arg ts \"$(date)\" '{\"timestamp\": $ts, \"data\": [\"item1\", \"item2\", \"item3\"], \"count\": 3}' \u003e /tmp/data.json\necho \"Generated data:\"\ncat /tmp/data.json\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {},
+                "metadata": {},
+                "name": "data-generator",
+                "outputs": {
+                    "artifacts": [
+                        {
+                            "name": "generated-data",
+                            "path": "/tmp/data.json"
+                        }
+                    ]
+                }
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Processing input data:\"\ncat /tmp/input.json\njq --arg ts \"$(date)\" '. + {\"processed_at\": $ts, \"status\": \"processed\"}' /tmp/input.json \u003e /tmp/processed.json\necho \"Processed data:\"\ncat /tmp/processed.json\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "artifacts": [
+                        {
+                            "name": "input-data",
+                            "path": "/tmp/input.json"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "data-processor",
+                "outputs": {
+                    "artifacts": [
+                        {
+                            "name": "processed-data",
+                            "path": "/tmp/processed.json"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {
+                "archiveLogs": true,
+                "s3": {
+                    "accessKeySecret": {
+                        "key": "accesskey",
+                        "name": "my-minio-cred"
+                    },
+                    "bucket": "my-bucket",
+                    "endpoint": "minio:9000",
+                    "insecure": true,
+                    "secretKeySecret": {
+                        "key": "secretkey",
+                        "name": "my-minio-cred"
+                    }
+                }
+            },
+            "configMap": "artifact-repositories",
+            "key": "default-v1",
+            "namespace": "argo"
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            }
+        ],
+        "finishedAt": null,
+        "nodes": {
+            "multi-step-artifact-lwr5n": {
+                "children": [
+                    "multi-step-artifact-lwr5n-810732435"
+                ],
+                "displayName": "multi-step-artifact-lwr5n",
+                "finishedAt": null,
+                "id": "multi-step-artifact-lwr5n",
+                "name": "multi-step-artifact-lwr5n",
+                "phase": "Running",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:15Z",
+                "templateName": "artifact-pipeline",
+                "templateScope": "local/multi-step-artifact-lwr5n",
+                "type": "DAG"
+            },
+            "multi-step-artifact-lwr5n-810732435": {
+                "boundaryID": "multi-step-artifact-lwr5n",
+                "displayName": "generate-data",
+                "finishedAt": null,
+                "hostNodeName": "ip-172-31-10-213",
+                "id": "multi-step-artifact-lwr5n-810732435",
+                "message": "ImagePullBackOff: Back-off pulling image \"lab5-tools:1\": ErrImagePull: failed to pull and unpack image \"docker.io/library/lab5-tools:1\": failed to resolve reference \"docker.io/library/lab5-tools:1\": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed",
+                "name": "multi-step-artifact-lwr5n.generate-data",
+                "phase": "Pending",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:15Z",
+                "taskResultSynced": false,
+                "templateName": "data-generator",
+                "templateScope": "local/multi-step-artifact-lwr5n",
+                "type": "Pod"
+            }
+        },
+        "phase": "Running",
+        "progress": "0/1",
+        "startedAt": "2026-11-09T12:16:15Z"
+    }
+}

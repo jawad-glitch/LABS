@@ -1,0 +1,129 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: global-params-
+spec:
+  entrypoint: global-pipeline
+  arguments:
+    parameters:
+    - name: project-name
+      value: "argo-demo"
+    - name: build-number
+      value: "100"
+  templates:
+  - name: global-pipeline
+    inputs:
+      parameters:
+      - name: project-name
+      - name: build-number
+    outputs:
+      parameters:
+      - name: final-status
+        globalName: final-status
+        valueFrom:
+          parameter: "{{steps.finalize.outputs.parameters.status}}"
+      - name: build-info
+        globalName: build-info
+        valueFrom:
+          parameter: "{{steps.build.outputs.parameters.info}}"
+    steps:
+    - - name: initialize
+        template: init-step
+        arguments:
+          parameters:
+          - name: project
+            value: "{{inputs.parameters.project-name}}"
+          - name: build
+            value: "{{inputs.parameters.build-number}}"
+    - - name: build
+        template: build-step
+        arguments:
+          parameters:
+          - name: init-result
+            value: "{{steps.initialize.outputs.parameters.init-status}}"
+          - name: project
+            value: "{{inputs.parameters.project-name}}"
+    - - name: finalize
+        template: final-step
+        arguments:
+          parameters:
+          - name: build-result
+            value: "{{steps.build.outputs.parameters.build-status}}"
+          - name: build-info
+            value: "{{steps.build.outputs.parameters.info}}"
+  - name: init-step
+    inputs:
+      parameters:
+      - name: project
+      - name: build
+    outputs:
+      parameters:
+      - name: init-status
+        valueFrom:
+          path: /tmp/init-status.txt
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args:
+      - |
+        echo "Initializing project: {{inputs.parameters.project}}"
+        echo "Build number: {{inputs.parameters.build}}"
+        sleep 2
+        echo "initialized" > /tmp/init-status.txt
+        echo "Project {{inputs.parameters.project}} initialized successfully"
+  - name: build-step
+    inputs:
+      parameters:
+      - name: init-result
+      - name: project
+    outputs:
+      parameters:
+      - name: build-status
+        valueFrom:
+          path: /tmp/build-status.txt
+      - name: info
+        valueFrom:
+          path: /tmp/build-info.txt
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args:
+      - |
+        echo "Starting build for project: {{inputs.parameters.project}}"
+        echo "Initialization status: {{inputs.parameters.init-result}}"
+        if [ "{{inputs.parameters.init-result}}" = "initialized" ]; then
+          echo "Build proceeding..."
+          sleep 3
+          echo "success" > /tmp/build-status.txt
+          echo "Build completed at $(date) for {{inputs.parameters.project}}" > /tmp/build-info.txt
+          echo "Build completed successfully"
+        else
+          echo "failed" > /tmp/build-status.txt
+          echo "Build failed - initialization not completed" > /tmp/build-info.txt
+          echo "Build failed"
+        fi
+  - name: final-step
+    inputs:
+      parameters:
+      - name: build-result
+      - name: build-info
+    outputs:
+      parameters:
+      - name: status
+        valueFrom:
+          path: /tmp/final-status.txt
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args:
+      - |
+        echo "Finalizing workflow..."
+        echo "Build result: {{inputs.parameters.build-result}}"
+        echo "Build info: {{inputs.parameters.build-info}}"
+        if [ "{{inputs.parameters.build-result}}" = "success" ]; then
+          echo "completed-successfully" > /tmp/final-status.txt
+          echo "Workflow completed successfully"
+        else
+          echo "completed-with-errors" > /tmp/final-status.txt
+          echo "Workflow completed with errors"
+        fi

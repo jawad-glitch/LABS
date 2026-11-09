@@ -1,0 +1,68 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: troubleshooting-
+spec:
+  entrypoint: troubleshooting-demo
+  arguments:
+    parameters:
+    - name: test-mode
+      value: "debug"
+  templates:
+  - name: troubleshooting-demo
+    inputs:
+      parameters:
+      - name: test-mode
+    steps:
+    - - name: parameter-validation
+        template: validate-params
+        arguments:
+          parameters:
+          - name: mode
+            value: "{{inputs.parameters.test-mode}}"
+    - - name: artifact-handling
+        template: artifact-demo
+        when: "'{{steps.parameter-validation.outputs.parameters.validation-result}}' == 'valid'"
+  - name: validate-params
+    inputs:
+      parameters:
+      - name: mode
+    outputs:
+      parameters:
+      - name: validation-result
+        valueFrom:
+          path: /tmp/validation.txt
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args:
+      - |
+        echo "Validating parameter: {{inputs.parameters.mode}}"
+        case "{{inputs.parameters.mode}}" in
+          "debug"|"info"|"warn"|"error")
+            echo "valid" > /tmp/validation.txt
+            echo "Parameter validation: PASSED"
+            ;;
+          *)
+            echo "invalid" > /tmp/validation.txt
+            echo "Parameter validation: FAILED - Invalid mode"
+            ;;
+        esac
+  - name: artifact-demo
+    outputs:
+      artifacts:
+      - name: demo-artifact
+        path: /tmp/demo.txt
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args:
+      - |
+        echo "Creating demonstration artifact..."
+        echo "Timestamp: $(date)" > /tmp/demo.txt
+        echo "Hostname: $(hostname)" >> /tmp/demo.txt
+        echo "Working directory: $(pwd)" >> /tmp/demo.txt
+        echo "Environment variables:" >> /tmp/demo.txt
+        env | grep -E "^(PATH|HOME|USER)" >> /tmp/demo.txt
+        echo "Artifact created successfully:"
+        cat /tmp/demo.txt

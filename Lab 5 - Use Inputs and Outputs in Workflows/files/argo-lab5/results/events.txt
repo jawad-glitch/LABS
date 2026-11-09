@@ -1,0 +1,155 @@
+LAST SEEN   TYPE      REASON                OBJECT                                                   MESSAGE
+4m58s       Normal    Scheduled             pod/multi-step-artifact-lwr5n-data-generator-810732435   Successfully assigned argo/multi-step-artifact-lwr5n-data-generator-810732435 to ip-172-31-10-213
+4m56s       Normal    Scheduled             pod/global-params-nlg2j-init-step-1398283263             Successfully assigned argo/global-params-nlg2j-init-step-1398283263 to ip-172-31-10-213
+4m56s       Normal    Scheduled             pod/comprehensive-io-7hvgt-config-generator-3813571677   Successfully assigned argo/comprehensive-io-7hvgt-config-generator-3813571677 to ip-172-31-10-213
+4m56s       Normal    Scheduled             pod/troubleshooting-2mkgt-validate-params-3108333260     Successfully assigned argo/troubleshooting-2mkgt-validate-params-3108333260 to ip-172-31-10-213
+7m25s       Normal    Scheduled             pod/workflow-controller-6446b5594-d7cvr                  Successfully assigned argo/workflow-controller-6446b5594-d7cvr to ip-172-31-10-213
+5m          Normal    Scheduled             pod/basic-input-bhzjs                                    Successfully assigned argo/basic-input-bhzjs to ip-172-31-10-213
+4m54s       Normal    Scheduled             pod/best-practices-ftcdc-input-validator-22319333        Successfully assigned argo/best-practices-ftcdc-input-validator-22319333 to ip-172-31-10-213
+4m59s       Normal    Scheduled             pod/artifact-output-64cxs                                Successfully assigned argo/artifact-output-64cxs to ip-172-31-10-213
+7m25s       Normal    Scheduled             pod/httpbin-5ffc6df597-j99nm                             Successfully assigned argo/httpbin-5ffc6df597-j99nm to ip-172-31-10-213
+5m          Normal    Scheduled             pod/basic-input-tgb6w                                    Successfully assigned argo/basic-input-tgb6w to ip-172-31-10-213
+7m25s       Normal    Scheduled             pod/minio-fcbb79d47-dhzhk                                Successfully assigned argo/minio-fcbb79d47-dhzhk to ip-172-31-10-213
+7m25s       Normal    Scheduled             pod/argo-server-7c587c9bbb-zggt2                         Successfully assigned argo/argo-server-7c587c9bbb-zggt2 to ip-172-31-10-213
+4m56s       Normal    Scheduled             pod/troubleshooting-gprr4-validate-params-1390200448     Successfully assigned argo/troubleshooting-gprr4-validate-params-1390200448 to ip-172-31-10-213
+7m26s       Normal    ScalingReplicaSet     deployment/argo-server                                   Scaled up replica set argo-server-7c587c9bbb from 0 to 1
+7m26s       Normal    ScalingReplicaSet     deployment/workflow-controller                           Scaled up replica set workflow-controller-6446b5594 from 0 to 1
+7m26s       Normal    SuccessfulCreate      replicaset/workflow-controller-6446b5594                 Created pod: workflow-controller-6446b5594-d7cvr
+7m26s       Normal    ScalingReplicaSet     deployment/httpbin                                       Scaled up replica set httpbin-5ffc6df597 from 0 to 1
+7m26s       Normal    SuccessfulCreate      replicaset/httpbin-5ffc6df597                            Created pod: httpbin-5ffc6df597-j99nm
+7m26s       Normal    SuccessfulCreate      replicaset/minio-fcbb79d47                               Created pod: minio-fcbb79d47-dhzhk
+7m26s       Normal    ScalingReplicaSet     deployment/minio                                         Scaled up replica set minio-fcbb79d47 from 0 to 1
+7m26s       Normal    SuccessfulCreate      replicaset/argo-server-7c587c9bbb                        Created pod: argo-server-7c587c9bbb-zggt2
+7m24s       Normal    Pulled                pod/httpbin-5ffc6df597-j99nm                             Container image "quay.io/holos/mccutchen/go-httpbin:v2.14.1@sha256:2612f203b1be154524b0dbb65212a158776f0643e2f6e1dad45984fc93413d97" already present on machine and can be accessed by the pod
+7m23s       Normal    Pulled                pod/workflow-controller-6446b5594-d7cvr                  Container image "quay.io/argoproj/workflow-controller:v3.7.18" already present on machine and can be accessed by the pod
+7m23s       Normal    Pulled                pod/argo-server-7c587c9bbb-zggt2                         Container image "quay.io/argoproj/argocli:v3.7.18" already present on machine and can be accessed by the pod
+7m23s       Normal    Created               pod/httpbin-5ffc6df597-j99nm                             Container created
+7m23s       Normal    Created               pod/workflow-controller-6446b5594-d7cvr                  Container created
+7m22s       Normal    Started               pod/argo-server-7c587c9bbb-zggt2                         Container started
+7m22s       Normal    Created               pod/argo-server-7c587c9bbb-zggt2                         Container created
+7m22s       Normal    LeaderElection        lease/workflow-controller                                workflow-controller-6446b5594-d7cvr became leader
+7m22s       Normal    Started               pod/httpbin-5ffc6df597-j99nm                             Container started
+7m22s       Normal    Started               pod/workflow-controller-6446b5594-d7cvr                  Container started
+5m          Normal    WorkflowRunning       workflow/basic-input-bhzjs                               Workflow Running
+5m          Normal    WorkflowRunning       workflow/basic-input-tgb6w                               Workflow Running
+5m          Normal    WorkflowRunning       workflow/artifact-output-64cxs                           Workflow Running
+4m59s       Normal    Created               pod/basic-input-bhzjs                                    Container created
+4m59s       Normal    WorkflowNodeRunning   workflow/multi-step-artifact-lwr5n                       Running node multi-step-artifact-lwr5n
+4m59s       Normal    Pulled                pod/basic-input-bhzjs                                    Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m59s       Normal    WorkflowRunning       workflow/multi-step-artifact-lwr5n                       Workflow Running
+4m58s       Normal    Created               pod/basic-input-tgb6w                                    Container created
+4m58s       Normal    Created               pod/artifact-output-64cxs                                Container created
+4m58s       Normal    Started               pod/basic-input-bhzjs                                    Container started
+4m58s       Normal    Pulled                pod/artifact-output-64cxs                                Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m58s       Normal    Pulled                pod/basic-input-tgb6w                                    Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m57s       Normal    WorkflowRunning       workflow/global-params-nlg2j                             Workflow Running
+4m57s       Normal    Created               pod/multi-step-artifact-lwr5n-data-generator-810732435   Container created
+4m57s       Normal    WorkflowRunning       workflow/comprehensive-io-7hvgt                          Workflow Running
+4m57s       Normal    WorkflowNodeRunning   workflow/comprehensive-io-7hvgt                          Running node comprehensive-io-7hvgt
+4m57s       Normal    WorkflowNodeRunning   workflow/troubleshooting-gprr4                           Running node troubleshooting-gprr4
+4m57s       Normal    Started               pod/artifact-output-64cxs                                Container started
+4m57s       Normal    WorkflowNodeRunning   workflow/troubleshooting-gprr4                           Running node troubleshooting-gprr4[0]
+4m57s       Normal    WorkflowNodeRunning   workflow/global-params-nlg2j                             Running node global-params-nlg2j
+4m57s       Normal    Started               pod/basic-input-tgb6w                                    Container started
+4m57s       Normal    Pulled                pod/multi-step-artifact-lwr5n-data-generator-810732435   Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m57s       Normal    WorkflowRunning       workflow/troubleshooting-gprr4                           Workflow Running
+4m57s       Normal    WorkflowNodeRunning   workflow/global-params-nlg2j                             Running node global-params-nlg2j[0]
+4m57s       Normal    WorkflowRunning       workflow/troubleshooting-2mkgt                           Workflow Running
+4m56s       Normal    Started               pod/multi-step-artifact-lwr5n-data-generator-810732435   Container started
+4m55s       Normal    WorkflowNodeRunning   workflow/troubleshooting-2mkgt                           Running node troubleshooting-2mkgt[0]
+4m55s       Normal    WorkflowRunning       workflow/best-practices-ftcdc                            Workflow Running
+4m55s       Normal    WorkflowNodeRunning   workflow/troubleshooting-2mkgt                           Running node troubleshooting-2mkgt
+4m54s       Normal    WorkflowNodeRunning   workflow/best-practices-ftcdc                            Running node best-practices-ftcdc[0]
+4m54s       Normal    WorkflowNodeRunning   workflow/best-practices-ftcdc                            Running node best-practices-ftcdc
+4m54s       Normal    Pulled                pod/troubleshooting-2mkgt-validate-params-3108333260     Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m54s       Normal    Created               pod/global-params-nlg2j-init-step-1398283263             Container created
+4m54s       Normal    Pulled                pod/global-params-nlg2j-init-step-1398283263             Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m53s       Normal    Created               pod/comprehensive-io-7hvgt-config-generator-3813571677   Container created
+4m53s       Normal    Created               pod/troubleshooting-gprr4-validate-params-1390200448     Container created
+4m53s       Normal    Pulled                pod/troubleshooting-gprr4-validate-params-1390200448     Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m53s       Normal    Started               pod/global-params-nlg2j-init-step-1398283263             Container started
+4m53s       Normal    Pulled                pod/comprehensive-io-7hvgt-config-generator-3813571677   Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m53s       Normal    Created               pod/troubleshooting-2mkgt-validate-params-3108333260     Container created
+4m52s       Normal    Pulled                pod/best-practices-ftcdc-input-validator-22319333        Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m52s       Normal    Started               pod/troubleshooting-gprr4-validate-params-1390200448     Container started
+4m52s       Normal    Created               pod/best-practices-ftcdc-input-validator-22319333        Container created
+4m52s       Normal    Started               pod/troubleshooting-2mkgt-validate-params-3108333260     Container started
+4m52s       Normal    Started               pod/comprehensive-io-7hvgt-config-generator-3813571677   Container started
+4m51s       Normal    Started               pod/best-practices-ftcdc-input-validator-22319333        Container started
+4m38s       Warning   Failed                pod/minio-fcbb79d47-dhzhk                                Error: ErrImagePull
+4m38s       Normal    Pulling               pod/minio-fcbb79d47-dhzhk                                Pulling image "quay.io/minio/minio:RELEASE.2022-11-17T23-20-09Z@sha256:b2a98df34c3e8d605a5e96f0bc1657dd440a5bd53d95465a7b342e736da9c6cf"
+4m38s       Warning   Failed                pod/minio-fcbb79d47-dhzhk                                Failed to pull image "quay.io/minio/minio:RELEASE.2022-11-17T23-20-09Z@sha256:b2a98df34c3e8d605a5e96f0bc1657dd440a5bd53d95465a7b342e736da9c6cf": failed to pull and unpack image "quay.io/minio/minio@sha256:b2a98df34c3e8d605a5e96f0bc1657dd440a5bd53d95465a7b342e736da9c6cf": failed to resolve reference "quay.io/minio/minio@sha256:b2a98df34c3e8d605a5e96f0bc1657dd440a5bd53d95465a7b342e736da9c6cf": unexpected status from HEAD request to https://quay.io/v2/minio/minio/manifests/sha256:b2a98df34c3e8d605a5e96f0bc1657dd440a5bd53d95465a7b342e736da9c6cf: 401 UNAUTHORIZED
+4m35s       Normal    Created               pod/best-practices-ftcdc-input-validator-22319333        Container created
+4m35s       Normal    Pulled                pod/multi-step-artifact-lwr5n-data-generator-810732435   Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m35s       Normal    Pulled                pod/comprehensive-io-7hvgt-config-generator-3813571677   Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m35s       Normal    Created               pod/troubleshooting-2mkgt-validate-params-3108333260     Container created
+4m35s       Normal    Pulled                pod/troubleshooting-2mkgt-validate-params-3108333260     Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m35s       Normal    Created               pod/comprehensive-io-7hvgt-config-generator-3813571677   Container created
+4m35s       Normal    Created               pod/multi-step-artifact-lwr5n-data-generator-810732435   Container created
+4m35s       Normal    Pulled                pod/best-practices-ftcdc-input-validator-22319333        Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m35s       Normal    Pulled                pod/troubleshooting-gprr4-validate-params-1390200448     Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m35s       Normal    Created               pod/troubleshooting-gprr4-validate-params-1390200448     Container created
+4m35s       Normal    Created               pod/basic-input-bhzjs                                    Container created
+4m35s       Normal    Pulled                pod/basic-input-bhzjs                                    Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m35s       Normal    Created               pod/artifact-output-64cxs                                Container created
+4m35s       Normal    Pulled                pod/artifact-output-64cxs                                Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m34s       Normal    Created               pod/basic-input-tgb6w                                    Container created
+4m34s       Normal    Pulled                pod/basic-input-tgb6w                                    Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m34s       Normal    Started               pod/artifact-output-64cxs                                Container started
+4m34s       Normal    Started               pod/basic-input-bhzjs                                    Container started
+4m34s       Normal    Started               pod/troubleshooting-gprr4-validate-params-1390200448     Container started
+4m34s       Normal    Started               pod/comprehensive-io-7hvgt-config-generator-3813571677   Container started
+4m34s       Normal    Started               pod/best-practices-ftcdc-input-validator-22319333        Container started
+4m34s       Normal    Started               pod/multi-step-artifact-lwr5n-data-generator-810732435   Container started
+4m34s       Normal    Started               pod/troubleshooting-2mkgt-validate-params-3108333260     Container started
+4m34s       Normal    Created               pod/global-params-nlg2j-init-step-1398283263             Container created
+4m34s       Normal    Pulled                pod/global-params-nlg2j-init-step-1398283263             Container image "quay.io/argoproj/argoexec:v3.7.18" already present on machine and can be accessed by the pod
+4m33s       Normal    Started               pod/global-params-nlg2j-init-step-1398283263             Container started
+4m32s       Normal    Started               pod/basic-input-tgb6w                                    Container started
+2m15s       Warning   Failed                pod/minio-fcbb79d47-dhzhk                                Error: ImagePullBackOff
+2m          Normal    BackOff               pod/minio-fcbb79d47-dhzhk                                Back-off pulling image "quay.io/minio/minio:RELEASE.2022-11-17T23-20-09Z@sha256:b2a98df34c3e8d605a5e96f0bc1657dd440a5bd53d95465a7b342e736da9c6cf"
+105s        Normal    Pulling               pod/multi-step-artifact-lwr5n-data-generator-810732435   Pulling image "lab5-tools:1"
+105s        Warning   Failed                pod/multi-step-artifact-lwr5n-data-generator-810732435   Failed to pull image "lab5-tools:1": failed to pull and unpack image "docker.io/library/lab5-tools:1": failed to resolve reference "docker.io/library/lab5-tools:1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+105s        Warning   Failed                pod/multi-step-artifact-lwr5n-data-generator-810732435   Error: ErrImagePull
+101s        Warning   Failed                pod/best-practices-ftcdc-input-validator-22319333        Error: ErrImagePull
+101s        Normal    Pulling               pod/best-practices-ftcdc-input-validator-22319333        Pulling image "lab5-tools:1"
+101s        Warning   Failed                pod/best-practices-ftcdc-input-validator-22319333        Failed to pull image "lab5-tools:1": failed to pull and unpack image "docker.io/library/lab5-tools:1": failed to resolve reference "docker.io/library/lab5-tools:1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+99s         Warning   Failed                pod/basic-input-tgb6w                                    Failed to pull image "lab5-tools:1": failed to pull and unpack image "docker.io/library/lab5-tools:1": failed to resolve reference "docker.io/library/lab5-tools:1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+99s         Warning   Failed                pod/basic-input-tgb6w                                    Error: ErrImagePull
+99s         Normal    Pulling               pod/artifact-output-64cxs                                Pulling image "lab5-tools:1"
+99s         Warning   Failed                pod/artifact-output-64cxs                                Failed to pull image "lab5-tools:1": failed to pull and unpack image "docker.io/library/lab5-tools:1": failed to resolve reference "docker.io/library/lab5-tools:1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+99s         Warning   Failed                pod/artifact-output-64cxs                                Error: ErrImagePull
+99s         Normal    Pulling               pod/basic-input-tgb6w                                    Pulling image "lab5-tools:1"
+96s         Normal    Pulling               pod/troubleshooting-gprr4-validate-params-1390200448     Pulling image "lab5-tools:1"
+96s         Warning   Failed                pod/troubleshooting-gprr4-validate-params-1390200448     Error: ErrImagePull
+96s         Warning   Failed                pod/troubleshooting-gprr4-validate-params-1390200448     Failed to pull image "lab5-tools:1": failed to pull and unpack image "docker.io/library/lab5-tools:1": failed to resolve reference "docker.io/library/lab5-tools:1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+95s         Warning   Failed                pod/global-params-nlg2j-init-step-1398283263             Failed to pull image "lab5-tools:1": failed to pull and unpack image "docker.io/library/lab5-tools:1": failed to resolve reference "docker.io/library/lab5-tools:1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+95s         Normal    Pulling               pod/global-params-nlg2j-init-step-1398283263             Pulling image "lab5-tools:1"
+95s         Warning   Failed                pod/global-params-nlg2j-init-step-1398283263             Error: ErrImagePull
+94s         Warning   Failed                pod/comprehensive-io-7hvgt-config-generator-3813571677   Error: ErrImagePull
+94s         Warning   Failed                pod/comprehensive-io-7hvgt-config-generator-3813571677   Failed to pull image "lab5-tools:1": failed to pull and unpack image "docker.io/library/lab5-tools:1": failed to resolve reference "docker.io/library/lab5-tools:1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+94s         Normal    Pulling               pod/comprehensive-io-7hvgt-config-generator-3813571677   Pulling image "lab5-tools:1"
+92s         Warning   Failed                pod/troubleshooting-2mkgt-validate-params-3108333260     Error: ErrImagePull
+92s         Warning   Failed                pod/troubleshooting-2mkgt-validate-params-3108333260     Failed to pull image "lab5-tools:1": failed to pull and unpack image "docker.io/library/lab5-tools:1": failed to resolve reference "docker.io/library/lab5-tools:1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+92s         Normal    Pulling               pod/troubleshooting-2mkgt-validate-params-3108333260     Pulling image "lab5-tools:1"
+86s         Warning   Failed                pod/basic-input-bhzjs                                    Failed to pull image "lab5-tools:1": failed to pull and unpack image "docker.io/library/lab5-tools:1": failed to resolve reference "docker.io/library/lab5-tools:1": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+86s         Normal    Pulling               pod/basic-input-bhzjs                                    Pulling image "lab5-tools:1"
+86s         Warning   Failed                pod/basic-input-bhzjs                                    Error: ErrImagePull
+59s         Normal    BackOff               pod/artifact-output-64cxs                                Back-off pulling image "lab5-tools:1"
+57s         Normal    BackOff               pod/global-params-nlg2j-init-step-1398283263             Back-off pulling image "lab5-tools:1"
+55s         Normal    BackOff               pod/troubleshooting-2mkgt-validate-params-3108333260     Back-off pulling image "lab5-tools:1"
+55s         Normal    BackOff               pod/troubleshooting-gprr4-validate-params-1390200448     Back-off pulling image "lab5-tools:1"
+48s         Normal    BackOff               pod/basic-input-tgb6w                                    Back-off pulling image "lab5-tools:1"
+48s         Normal    BackOff               pod/basic-input-bhzjs                                    Back-off pulling image "lab5-tools:1"
+48s         Normal    BackOff               pod/multi-step-artifact-lwr5n-data-generator-810732435   Back-off pulling image "lab5-tools:1"
+47s         Warning   Failed                pod/artifact-output-64cxs                                Error: ImagePullBackOff
+46s         Warning   Failed                pod/global-params-nlg2j-init-step-1398283263             Error: ImagePullBackOff
+44s         Warning   Failed                pod/troubleshooting-gprr4-validate-params-1390200448     Error: ImagePullBackOff
+44s         Normal    BackOff               pod/best-practices-ftcdc-input-validator-22319333        Back-off pulling image "lab5-tools:1"
+42s         Warning   Failed                pod/troubleshooting-2mkgt-validate-params-3108333260     Error: ImagePullBackOff
+41s         Normal    BackOff               pod/comprehensive-io-7hvgt-config-generator-3813571677   Back-off pulling image "lab5-tools:1"
+37s         Warning   Failed                pod/basic-input-tgb6w                                    Error: ImagePullBackOff
+36s         Warning   Failed                pod/basic-input-bhzjs                                    Error: ImagePullBackOff
+35s         Warning   Failed                pod/multi-step-artifact-lwr5n-data-generator-810732435   Error: ImagePullBackOff
+29s         Warning   Failed                pod/best-practices-ftcdc-input-validator-22319333        Error: ImagePullBackOff
+28s         Warning   Failed                pod/comprehensive-io-7hvgt-config-generator-3813571677   Error: ImagePullBackOff

@@ -1,0 +1,115 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: best-practices-
+  labels:
+    workflows.argoproj.io/archive-strategy: "false"
+spec:
+  entrypoint: best-practices-demo
+  arguments:
+    parameters:
+    - name: input-data
+      value: '{"name": "demo", "version": "1.0"}'
+    - name: output-format
+      value: "json"
+  activeDeadlineSeconds: 300
+  templates:
+  - name: best-practices-demo
+    inputs:
+      parameters:
+      - name: input-data
+      - name: output-format
+    outputs:
+      parameters:
+      - name: processing-summary
+        globalName: processing-summary
+        valueFrom:
+          parameter: "{{steps.process.outputs.parameters.summary}}"
+      artifacts:
+      - name: final-output
+        globalName: final-output
+        from: "{{steps.process.outputs.artifacts.processed-data}}"
+    steps:
+    - - name: validate
+        template: input-validator
+        arguments:
+          parameters:
+          - name: data
+            value: "{{inputs.parameters.input-data}}"
+          - name: format
+            value: "{{inputs.parameters.output-format}}"
+    - - name: process
+        template: data-processor
+        arguments:
+          parameters:
+          - name: validated-data
+            value: "{{steps.validate.outputs.parameters.clean-data}}"
+          - name: format
+            value: "{{inputs.parameters.output-format}}"
+        when: "'{{steps.validate.outputs.parameters.is-valid}}' == 'true'"
+  - name: input-validator
+    inputs:
+      parameters:
+      - name: data
+      - name: format
+    outputs:
+      parameters:
+      - name: is-valid
+        valueFrom:
+          path: /tmp/is-valid.txt
+      - name: clean-data
+        valueFrom:
+          path: /tmp/clean-data.txt
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args:
+      - |
+        echo "Validating input data and format..."
+        if echo '{{inputs.parameters.data}}' | jq . > /dev/null 2>&1; then
+          echo "JSON validation: PASSED"; JSON_VALID=true
+        else
+          echo "JSON validation: FAILED"; JSON_VALID=false
+        fi
+        case "{{inputs.parameters.format}}" in
+          "json"|"yaml"|"xml") echo "Format validation: PASSED"; FORMAT_VALID=true ;;
+          *) echo "Format validation: FAILED"; FORMAT_VALID=false ;;
+        esac
+        if [ "$JSON_VALID" = true ] && [ "$FORMAT_VALID" = true ]; then
+          echo "true" > /tmp/is-valid.txt
+          echo '{{inputs.parameters.data}}' | jq . > /tmp/clean-data.txt
+          echo "Overall validation: PASSED"
+        else
+          echo "false" > /tmp/is-valid.txt
+          echo "{}" > /tmp/clean-data.txt
+          echo "Overall validation: FAILED"
+        fi
+  - name: data-processor
+    inputs:
+      parameters:
+      - name: validated-data
+      - name: format
+    outputs:
+      parameters:
+      - name: summary
+        valueFrom:
+          path: /tmp/summary.txt
+      artifacts:
+      - name: processed-data
+        path: "/tmp/output.{{inputs.parameters.format}}"
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args:
+      - |
+        echo "Processing validated data in {{inputs.parameters.format}} format..."
+        PROCESSED_DATA=$(echo '{{inputs.parameters.validated-data}}' | jq --arg ts "$(date)" '. + {"processed_at": $ts, "processor": "argo-workflow", "status": "completed"}')
+        case "{{inputs.parameters.format}}" in
+          "json") echo "$PROCESSED_DATA" > /tmp/output.json; echo "Data processed and saved as JSON" ;;
+          "yaml") echo "$PROCESSED_DATA" | jq -r 'to_entries[] | "\(.key): \(.value)"' > /tmp/output.yaml; echo "Data processed and saved as YAML" ;;
+          "xml")  { echo "<data>"; echo "$PROCESSED_DATA" | jq -r 'to_entries[] | "<\(.key)>\(.value)</\(.key)>"'; echo "</data>"; } > /tmp/output.xml; echo "Data processed and saved as XML" ;;
+        esac
+        RECORD_COUNT=$(echo "$PROCESSED_DATA" | jq 'keys | length')
+        echo "Processed $RECORD_COUNT fields in {{inputs.parameters.format}} format at $(date)" > /tmp/summary.txt
+        echo "Processing completed successfully"
+        echo "Summary: $(cat /tmp/summary.txt)"

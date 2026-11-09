@@ -1,0 +1,130 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2"
+        },
+        "creationTimestamp": "2026-11-09T12:16:14Z",
+        "generateName": "basic-input-",
+        "generation": 13,
+        "labels": {
+            "workflows.argoproj.io/completed": "false",
+            "workflows.argoproj.io/creator": "system-admin",
+            "workflows.argoproj.io/phase": "Running"
+        },
+        "name": "basic-input-bhzjs",
+        "namespace": "argo",
+        "resourceVersion": "1689",
+        "uid": "7e1ebaca-1879-453a-831f-138af2e888e0"
+    },
+    "spec": {
+        "arguments": {
+            "parameters": [
+                {
+                    "name": "message",
+                    "value": "Hello World"
+                },
+                {
+                    "name": "recipient",
+                    "value": "Student"
+                }
+            ]
+        },
+        "entrypoint": "print-message",
+        "templates": [
+            {
+                "container": {
+                    "args": [
+                        "echo 'Message: {{inputs.parameters.message}} to {{inputs.parameters.recipient}}'"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "message"
+                        },
+                        {
+                            "name": "recipient"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "print-message",
+                "outputs": {}
+            }
+        ]
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {
+                "archiveLogs": true,
+                "s3": {
+                    "accessKeySecret": {
+                        "key": "accesskey",
+                        "name": "my-minio-cred"
+                    },
+                    "bucket": "my-bucket",
+                    "endpoint": "minio:9000",
+                    "insecure": true,
+                    "secretKeySecret": {
+                        "key": "secretkey",
+                        "name": "my-minio-cred"
+                    }
+                }
+            },
+            "configMap": "artifact-repositories",
+            "key": "default-v1",
+            "namespace": "argo"
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            }
+        ],
+        "finishedAt": null,
+        "nodes": {
+            "basic-input-bhzjs": {
+                "displayName": "basic-input-bhzjs",
+                "finishedAt": null,
+                "hostNodeName": "ip-172-31-10-213",
+                "id": "basic-input-bhzjs",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "value": "Hello World"
+                        },
+                        {
+                            "name": "recipient",
+                            "value": "Student"
+                        }
+                    ]
+                },
+                "message": "ImagePullBackOff: Back-off pulling image \"lab5-tools:1\": ErrImagePull: failed to pull and unpack image \"docker.io/library/lab5-tools:1\": failed to resolve reference \"docker.io/library/lab5-tools:1\": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed",
+                "name": "basic-input-bhzjs",
+                "phase": "Pending",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:14Z",
+                "taskResultSynced": false,
+                "templateName": "print-message",
+                "templateScope": "local/basic-input-bhzjs",
+                "type": "Pod"
+            }
+        },
+        "phase": "Running",
+        "progress": "0/1",
+        "startedAt": "2026-11-09T12:16:14Z"
+    }
+}

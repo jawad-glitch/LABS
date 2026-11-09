@@ -1,0 +1,39 @@
+=== All Workflows Created in This Lab ===
+NAME                        STATUS    AGE   DURATION   PRIORITY   MESSAGE
+best-practices-ftcdc        Running   4m    4m         0          
+troubleshooting-2mkgt       Running   4m    4m         0          
+troubleshooting-gprr4       Running   4m    4m         0          
+comprehensive-io-7hvgt      Running   4m    4m         0          
+global-params-nlg2j         Running   4m    4m         0          
+multi-step-artifact-lwr5n   Running   4m    4m         0          
+artifact-output-64cxs       Running   4m    4m         0          
+basic-input-bhzjs           Running   4m    4m         0          
+basic-input-tgb6w           Running   4m    4m         0          
+=== Workflow Outputs Summary ===
+Workflow: best-practices-ftcdc
+No outputs
+---
+Workflow: troubleshooting-2mkgt
+No outputs
+---
+Workflow: troubleshooting-gprr4
+No outputs
+---
+Workflow: comprehensive-io-7hvgt
+No outputs
+---
+Workflow: global-params-nlg2j
+No outputs
+---
+Workflow: multi-step-artifact-lwr5n
+No outputs
+---
+Workflow: artifact-output-64cxs
+No outputs
+---
+Workflow: basic-input-bhzjs
+No outputs
+---
+Workflow: basic-input-tgb6w
+No outputs
+---

@@ -1,0 +1,13 @@
+Kubernetes control plane is running at https://127.0.0.1:6443
+CoreDNS is running at https://127.0.0.1:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+NAME   STATUS   AGE
+argo   Active   2m27s
+
+NAME                                  READY   STATUS             RESTARTS   AGE
+argo-server-7c587c9bbb-zggt2          1/1     Running            0          2m24s
+httpbin-5ffc6df597-j99nm              1/1     Running            0          2m24s
+minio-fcbb79d47-dhzhk                 0/1     ImagePullBackOff   0          2m24s
+workflow-controller-6446b5594-d7cvr   1/1     Running            0          2m24s

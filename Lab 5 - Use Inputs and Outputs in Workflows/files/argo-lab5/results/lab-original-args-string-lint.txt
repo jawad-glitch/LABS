@@ -1,0 +1,4 @@
+[4mlab-original-artifact-output.yaml[0m:
+   [31m✖[0m in "artifact-output-" (Workflow): json: cannot unmarshal string into Go struct field Container.spec.templates.container.args of type []string
+
+[31m✖ 1 linting errors found![0m

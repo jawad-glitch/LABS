@@ -1,0 +1,229 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2"
+        },
+        "creationTimestamp": "2026-11-09T12:16:17Z",
+        "generateName": "troubleshooting-",
+        "generation": 13,
+        "labels": {
+            "workflows.argoproj.io/completed": "false",
+            "workflows.argoproj.io/creator": "system-admin",
+            "workflows.argoproj.io/phase": "Running"
+        },
+        "name": "troubleshooting-2mkgt",
+        "namespace": "argo",
+        "resourceVersion": "1680",
+        "uid": "88ce46b4-a460-493c-8cb0-5fa2fd5c4e88"
+    },
+    "spec": {
+        "arguments": {
+            "parameters": [
+                {
+                    "name": "test-mode",
+                    "value": "invalid-mode"
+                }
+            ]
+        },
+        "entrypoint": "troubleshooting-demo",
+        "templates": [
+            {
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "test-mode"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "troubleshooting-demo",
+                "outputs": {},
+                "steps": [
+                    [
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "mode",
+                                        "value": "{{inputs.parameters.test-mode}}"
+                                    }
+                                ]
+                            },
+                            "name": "parameter-validation",
+                            "template": "validate-params"
+                        }
+                    ],
+                    [
+                        {
+                            "arguments": {},
+                            "name": "artifact-handling",
+                            "template": "artifact-demo",
+                            "when": "'{{steps.parameter-validation.outputs.parameters.validation-result}}' == 'valid'"
+                        }
+                    ]
+                ]
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Validating parameter: {{inputs.parameters.mode}}\"\ncase \"{{inputs.parameters.mode}}\" in\n  \"debug\"|\"info\"|\"warn\"|\"error\")\n    echo \"valid\" \u003e /tmp/validation.txt\n    echo \"Parameter validation: PASSED\"\n    ;;\n  *)\n    echo \"invalid\" \u003e /tmp/validation.txt\n    echo \"Parameter validation: FAILED - Invalid mode\"\n    ;;\nesac\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "mode"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "validate-params",
+                "outputs": {
+                    "parameters": [
+                        {
+                            "name": "validation-result",
+                            "valueFrom": {
+                                "path": "/tmp/validation.txt"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "container": {
+                    "args": [
+                        "echo \"Creating demonstration artifact...\"\necho \"Timestamp: $(date)\" \u003e /tmp/demo.txt\necho \"Hostname: $(hostname)\" \u003e\u003e /tmp/demo.txt\necho \"Working directory: $(pwd)\" \u003e\u003e /tmp/demo.txt\necho \"Environment variables:\" \u003e\u003e /tmp/demo.txt\nenv | grep -E \"^(PATH|HOME|USER)\" \u003e\u003e /tmp/demo.txt\necho \"Artifact created successfully:\"\ncat /tmp/demo.txt\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {},
+                "metadata": {},
+                "name": "artifact-demo",
+                "outputs": {
+                    "artifacts": [
+                        {
+                            "name": "demo-artifact",
+                            "path": "/tmp/demo.txt"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {
+                "archiveLogs": true,
+                "s3": {
+                    "accessKeySecret": {
+                        "key": "accesskey",
+                        "name": "my-minio-cred"
+                    },
+                    "bucket": "my-bucket",
+                    "endpoint": "minio:9000",
+                    "insecure": true,
+                    "secretKeySecret": {
+                        "key": "secretkey",
+                        "name": "my-minio-cred"
+                    }
+                }
+            },
+            "configMap": "artifact-repositories",
+            "key": "default-v1",
+            "namespace": "argo"
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            }
+        ],
+        "finishedAt": null,
+        "nodes": {
+            "troubleshooting-2mkgt": {
+                "children": [
+                    "troubleshooting-2mkgt-1588350917"
+                ],
+                "displayName": "troubleshooting-2mkgt",
+                "finishedAt": null,
+                "id": "troubleshooting-2mkgt",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "test-mode",
+                            "value": "invalid-mode"
+                        }
+                    ]
+                },
+                "name": "troubleshooting-2mkgt",
+                "phase": "Running",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "templateName": "troubleshooting-demo",
+                "templateScope": "local/troubleshooting-2mkgt",
+                "type": "Steps"
+            },
+            "troubleshooting-2mkgt-1588350917": {
+                "boundaryID": "troubleshooting-2mkgt",
+                "children": [
+                    "troubleshooting-2mkgt-3108333260"
+                ],
+                "displayName": "[0]",
+                "finishedAt": null,
+                "id": "troubleshooting-2mkgt-1588350917",
+                "name": "troubleshooting-2mkgt[0]",
+                "nodeFlag": {},
+                "phase": "Running",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "templateScope": "local/troubleshooting-2mkgt",
+                "type": "StepGroup"
+            },
+            "troubleshooting-2mkgt-3108333260": {
+                "boundaryID": "troubleshooting-2mkgt",
+                "displayName": "parameter-validation",
+                "finishedAt": null,
+                "hostNodeName": "ip-172-31-10-213",
+                "id": "troubleshooting-2mkgt-3108333260",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "mode",
+                            "value": "invalid-mode"
+                        }
+                    ]
+                },
+                "message": "ImagePullBackOff: Back-off pulling image \"lab5-tools:1\": ErrImagePull: failed to pull and unpack image \"docker.io/library/lab5-tools:1\": failed to resolve reference \"docker.io/library/lab5-tools:1\": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed",
+                "name": "troubleshooting-2mkgt[0].parameter-validation",
+                "phase": "Pending",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:17Z",
+                "taskResultSynced": false,
+                "templateName": "validate-params",
+                "templateScope": "local/troubleshooting-2mkgt",
+                "type": "Pod"
+            }
+        },
+        "phase": "Running",
+        "progress": "0/1",
+        "startedAt": "2026-11-09T12:16:17Z"
+    }
+}

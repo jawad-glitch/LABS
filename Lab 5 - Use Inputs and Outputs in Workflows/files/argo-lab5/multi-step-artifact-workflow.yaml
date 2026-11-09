@@ -1,0 +1,51 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: multi-step-artifact-
+spec:
+  entrypoint: artifact-pipeline
+  templates:
+  - name: artifact-pipeline
+    dag:
+      tasks:
+      - name: generate-data
+        template: data-generator
+      - name: process-data
+        template: data-processor
+        dependencies: [generate-data]
+        arguments:
+          artifacts:
+          - name: input-data
+            from: "{{tasks.generate-data.outputs.artifacts.generated-data}}"
+  - name: data-generator
+    outputs:
+      artifacts:
+      - name: generated-data
+        path: /tmp/data.json
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args:
+      - |
+        jq -n --arg ts "$(date)" '{"timestamp": $ts, "data": ["item1", "item2", "item3"], "count": 3}' > /tmp/data.json
+        echo "Generated data:"
+        cat /tmp/data.json
+  - name: data-processor
+    inputs:
+      artifacts:
+      - name: input-data
+        path: /tmp/input.json
+    outputs:
+      artifacts:
+      - name: processed-data
+        path: /tmp/processed.json
+    container:
+      image: lab5-tools:1
+      command: [sh, -c]
+      args:
+      - |
+        echo "Processing input data:"
+        cat /tmp/input.json
+        jq --arg ts "$(date)" '. + {"processed_at": $ts, "status": "processed"}' /tmp/input.json > /tmp/processed.json
+        echo "Processed data:"
+        cat /tmp/processed.json

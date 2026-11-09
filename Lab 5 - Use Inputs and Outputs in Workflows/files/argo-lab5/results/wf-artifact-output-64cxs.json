@@ -1,0 +1,105 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2"
+        },
+        "creationTimestamp": "2026-11-09T12:16:14Z",
+        "generateName": "artifact-output-",
+        "generation": 13,
+        "labels": {
+            "workflows.argoproj.io/completed": "false",
+            "workflows.argoproj.io/creator": "system-admin",
+            "workflows.argoproj.io/phase": "Running"
+        },
+        "name": "artifact-output-64cxs",
+        "namespace": "argo",
+        "resourceVersion": "1656",
+        "uid": "28d99618-a53b-415a-9f27-93c2194ef1ac"
+    },
+    "spec": {
+        "arguments": {},
+        "entrypoint": "generate-artifact",
+        "templates": [
+            {
+                "container": {
+                    "args": [
+                        "echo \"Workflow execution started at: $(date)\" \u003e /tmp/result.txt\necho \"Hostname: $(hostname)\" \u003e\u003e /tmp/result.txt\necho \"Random number: $RANDOM\" \u003e\u003e /tmp/result.txt\necho \"Workflow completed successfully\" \u003e\u003e /tmp/result.txt\ncat /tmp/result.txt\n"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "lab5-tools:1",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {},
+                "metadata": {},
+                "name": "generate-artifact",
+                "outputs": {
+                    "artifacts": [
+                        {
+                            "name": "result-file",
+                            "path": "/tmp/result.txt"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {
+                "archiveLogs": true,
+                "s3": {
+                    "accessKeySecret": {
+                        "key": "accesskey",
+                        "name": "my-minio-cred"
+                    },
+                    "bucket": "my-bucket",
+                    "endpoint": "minio:9000",
+                    "insecure": true,
+                    "secretKeySecret": {
+                        "key": "secretkey",
+                        "name": "my-minio-cred"
+                    }
+                }
+            },
+            "configMap": "artifact-repositories",
+            "key": "default-v1",
+            "namespace": "argo"
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            }
+        ],
+        "finishedAt": null,
+        "nodes": {
+            "artifact-output-64cxs": {
+                "displayName": "artifact-output-64cxs",
+                "finishedAt": null,
+                "hostNodeName": "ip-172-31-10-213",
+                "id": "artifact-output-64cxs",
+                "message": "ImagePullBackOff: Back-off pulling image \"lab5-tools:1\": ErrImagePull: failed to pull and unpack image \"docker.io/library/lab5-tools:1\": failed to resolve reference \"docker.io/library/lab5-tools:1\": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed",
+                "name": "artifact-output-64cxs",
+                "phase": "Pending",
+                "progress": "0/1",
+                "startedAt": "2026-11-09T12:16:14Z",
+                "taskResultSynced": false,
+                "templateName": "generate-artifact",
+                "templateScope": "local/artifact-output-64cxs",
+                "type": "Pod"
+            }
+        },
+        "phase": "Running",
+        "progress": "0/1",
+        "startedAt": "2026-11-09T12:16:14Z"
+    }
+}

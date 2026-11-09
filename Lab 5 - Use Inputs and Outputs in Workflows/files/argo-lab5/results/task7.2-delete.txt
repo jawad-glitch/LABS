@@ -1,0 +1,9 @@
+Workflow 'best-practices-ftcdc' deleted
+Workflow 'troubleshooting-2mkgt' deleted
+Workflow 'troubleshooting-gprr4' deleted
+Workflow 'comprehensive-io-7hvgt' deleted
+Workflow 'global-params-nlg2j' deleted
+Workflow 'multi-step-artifact-lwr5n' deleted
+Workflow 'artifact-output-64cxs' deleted
+Workflow 'basic-input-bhzjs' deleted
+Workflow 'basic-input-tgb6w' deleted

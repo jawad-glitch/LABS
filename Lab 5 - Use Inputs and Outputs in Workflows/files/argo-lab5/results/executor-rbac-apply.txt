@@ -1,0 +1,2 @@
+role.rbac.authorization.k8s.io/lab-executor created
+rolebinding.rbac.authorization.k8s.io/lab-executor-default created

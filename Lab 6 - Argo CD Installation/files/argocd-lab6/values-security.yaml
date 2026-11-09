@@ -1,0 +1,9 @@
+configs:
+  cm:
+    accounts.developer: "apiKey, login"
+  rbac:
+    policy.csv: |
+      p, role:developer, applications, get, */*, allow
+      g, developer, role:developer
+  secret:
+    argocdServerAdminPassword: '$2a$10$8vDyAbO78ejrWfeFXinIi.HlgMPWRgx7u5DUYfQtcRzAtS73mO6cK'

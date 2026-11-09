@@ -1,0 +1,1 @@
+argo-cd chart 10.17.0, Argo CD v3.6.1

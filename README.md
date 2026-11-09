@@ -47,3 +47,4 @@
 | [Lab 3 - Create Simple Workflow in Argo Workflows](Lab%203%20-%20Create%20Simple%20Workflow%20in%20Argo%20Workflows/PROOF.md) | CORE: 14/14 PASS | 2026-11-09 11:55 |
 | [Lab 4 - Use Workflow Templates and DAGs](Lab%204%20-%20Use%20Workflow%20Templates%20and%20DAGs/PROOF.md) | CORE: 14/14 PASS | 2026-11-09 12:05 |
 | [Lab 5 - Use Inputs and Outputs in Workflows](Lab%205%20-%20Use%20Inputs%20and%20Outputs%20in%20Workflows/PROOF.md) | CORE: 3/14 PASS | 2026-11-09 12:21 |
+| [Lab 6 - Argo CD Installation](Lab%206%20-%20Argo%20CD%20Installation/PROOF.md) | CORE: 13/13 PASS | 2026-11-09 12:25 |

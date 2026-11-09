@@ -1,0 +1,15 @@
+========== CORE CHECKS (Lab 6 - Argo CD Installation, 2026-11-09 12:25:42 UTC) - FAST MODE ==========
+PASS: Task 2.1: Helm 3.x installed and checksum-verified (v3.22.1+gd6c1a0e)
+PASS: Task 2.2: argo repo added, argo/argo-cd found (chart 10.17.0, Argo CD v3.6.1)
+PASS: Task 1.2/3.1 [SIMULATED install - rendered, not applied]: chart renders for release argocd in ns argocd
+PASS: Task 3.1: every rendered object + namespace passes Kubernetes schema validation (kubeconform)
+PASS: Task 3.3: all components present - server, repo-server, dex, redis, applicationset, notifications (Deployments) + application-controller (StatefulSet)
+PASS: Task 3.3: services - argocd-server on 80,443 plus repo-server, redis, dex
+PASS: Architecture: Argo CD CRDs (Application, AppProject, ApplicationSet) and controller/server RBAC rendered
+PASS: Images: every Argo CD container pinned to quay.io/argoproj/argocd:v3.6.1
+PASS: Task 5.1: argocd CLI matches server version v3.6.1 (checksum verified)
+PASS: Task 4.1 [SIMULATED]: initial admin secret is runtime-created (absent from chart); jsonpath+base64 decode verified on simulated secret
+PASS: Task 4.2/4.3/5.2 [SIMULATED]: port-forward/UI/login not run (no cluster); argocd login/app list syntax verified
+PASS: Security: real bcrypt admin hash + developer account/RBAC set via Helm values (rendered into argocd-cm, argocd-rbac-cm, argocd-secret)
+PASS: Time: fast-mode run finished in 35s (<= 300s)
+CORE: 13/13 PASS

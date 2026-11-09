@@ -1,0 +1,125 @@
+OBJ NetworkPolicy argocd-application-controller
+OBJ NetworkPolicy argocd-notifications-controller
+OBJ NetworkPolicy argocd-repo-server
+OBJ NetworkPolicy argocd-server
+OBJ NetworkPolicy argocd-dex-server
+OBJ NetworkPolicy argocd-redis
+OBJ ServiceAccount argocd-application-controller
+OBJ ServiceAccount argocd-applicationset-controller
+OBJ ServiceAccount argocd-notifications-controller
+OBJ ServiceAccount argocd-repo-server
+OBJ ServiceAccount argocd-server
+OBJ ServiceAccount argocd-dex-server
+OBJ Secret argocd-notifications-secret
+OBJ Secret argocd-secret
+KEY Secret argocd-secret admin.password
+KEY Secret argocd-secret admin.passwordMtime
+OBJ ConfigMap argocd-cm
+KEY ConfigMap argocd-cm accounts.developer
+KEY ConfigMap argocd-cm admin.enabled
+KEY ConfigMap argocd-cm application.instanceLabelKey
+KEY ConfigMap argocd-cm application.sync.impersonation.enabled
+KEY ConfigMap argocd-cm exec.enabled
+KEY ConfigMap argocd-cm resource.customizations.ignoreResourceUpdates.ConfigMap
+KEY ConfigMap argocd-cm resource.customizations.ignoreResourceUpdates.Endpoints
+KEY ConfigMap argocd-cm resource.customizations.ignoreResourceUpdates.all
+KEY ConfigMap argocd-cm resource.customizations.ignoreResourceUpdates.apps_ReplicaSet
+KEY ConfigMap argocd-cm resource.customizations.ignoreResourceUpdates.argoproj.io_Application
+KEY ConfigMap argocd-cm resource.customizations.ignoreResourceUpdates.argoproj.io_Rollout
+KEY ConfigMap argocd-cm resource.customizations.ignoreResourceUpdates.autoscaling_HorizontalPodAutoscaler
+KEY ConfigMap argocd-cm resource.customizations.ignoreResourceUpdates.discovery.k8s.io_EndpointSlice
+KEY ConfigMap argocd-cm resource.exclusions
+KEY ConfigMap argocd-cm statusbadge.enabled
+KEY ConfigMap argocd-cm timeout.hard.reconciliation
+KEY ConfigMap argocd-cm timeout.reconciliation
+KEY ConfigMap argocd-cm timeout.reconciliation.jitter
+KEY ConfigMap argocd-cm url
+OBJ ConfigMap argocd-cmd-params-cm
+KEY ConfigMap argocd-cmd-params-cm applicationsetcontroller.enable.leader.election
+KEY ConfigMap argocd-cmd-params-cm applicationsetcontroller.log.format
+KEY ConfigMap argocd-cmd-params-cm applicationsetcontroller.log.level
+KEY ConfigMap argocd-cmd-params-cm commitserver.log.format
+KEY ConfigMap argocd-cmd-params-cm commitserver.log.level
+KEY ConfigMap argocd-cmd-params-cm controller.log.format
+KEY ConfigMap argocd-cmd-params-cm controller.log.level
+KEY ConfigMap argocd-cmd-params-cm dexserver.log.format
+KEY ConfigMap argocd-cmd-params-cm dexserver.log.level
+KEY ConfigMap argocd-cmd-params-cm notificationscontroller.log.format
+KEY ConfigMap argocd-cmd-params-cm notificationscontroller.log.level
+KEY ConfigMap argocd-cmd-params-cm redis.server
+KEY ConfigMap argocd-cmd-params-cm repo.server
+KEY ConfigMap argocd-cmd-params-cm reposerver.log.format
+KEY ConfigMap argocd-cmd-params-cm reposerver.log.level
+KEY ConfigMap argocd-cmd-params-cm server.dex.server
+KEY ConfigMap argocd-cmd-params-cm server.dex.server.strict.tls
+KEY ConfigMap argocd-cmd-params-cm server.log.format
+KEY ConfigMap argocd-cmd-params-cm server.log.level
+KEY ConfigMap argocd-cmd-params-cm server.repo.server.strict.tls
+OBJ ConfigMap argocd-gpg-keys-cm
+OBJ ConfigMap argocd-notifications-cm
+KEY ConfigMap argocd-notifications-cm context
+OBJ ConfigMap argocd-rbac-cm
+KEY ConfigMap argocd-rbac-cm policy.csv
+KEY ConfigMap argocd-rbac-cm policy.default
+KEY ConfigMap argocd-rbac-cm policy.matchMode
+KEY ConfigMap argocd-rbac-cm scopes
+OBJ ConfigMap argocd-ssh-known-hosts-cm
+KEY ConfigMap argocd-ssh-known-hosts-cm ssh_known_hosts
+OBJ ConfigMap argocd-tls-certs-cm
+OBJ ConfigMap argocd-redis-health-configmap
+KEY ConfigMap argocd-redis-health-configmap redis_liveness.sh
+KEY ConfigMap argocd-redis-health-configmap redis_readiness.sh
+OBJ CustomResourceDefinition applications.argoproj.io
+OBJ CustomResourceDefinition applicationsets.argoproj.io
+OBJ CustomResourceDefinition appprojects.argoproj.io
+OBJ ClusterRole argocd-application-controller
+OBJ ClusterRole argocd-notifications-controller
+OBJ ClusterRole argocd-server
+OBJ ClusterRoleBinding argocd-application-controller
+OBJ ClusterRoleBinding argocd-notifications-controller
+OBJ ClusterRoleBinding argocd-server
+OBJ Role argocd-application-controller
+OBJ Role argocd-applicationset-controller
+OBJ Role argocd-notifications-controller
+OBJ Role argocd-repo-server
+OBJ Role argocd-server
+OBJ Role argocd-dex-server
+OBJ RoleBinding argocd-application-controller
+OBJ RoleBinding argocd-applicationset-controller
+OBJ RoleBinding argocd-notifications-controller
+OBJ RoleBinding argocd-repo-server
+OBJ RoleBinding argocd-server
+OBJ RoleBinding argocd-dex-server
+OBJ Service argocd-application-controller
+SVCPORTS argocd-application-controller 
+OBJ Service argocd-applicationset-controller
+SVCPORTS argocd-applicationset-controller 7000
+OBJ Service argocd-repo-server
+SVCPORTS argocd-repo-server 8081
+OBJ Service argocd-server
+SVCPORTS argocd-server 80,443
+OBJ Service argocd-dex-server
+SVCPORTS argocd-dex-server 5556,5557
+OBJ Service argocd-redis
+SVCPORTS argocd-redis 6379
+OBJ Deployment argocd-applicationset-controller
+IMAGE argocd-applicationset-controller quay.io/argoproj/argocd:v3.6.1
+OBJ Deployment argocd-notifications-controller
+IMAGE argocd-notifications-controller quay.io/argoproj/argocd:v3.6.1
+OBJ Deployment argocd-repo-server
+IMAGE argocd-repo-server quay.io/argoproj/argocd:v3.6.1
+IMAGE argocd-repo-server quay.io/argoproj/argocd:v3.6.1
+OBJ Deployment argocd-server
+IMAGE argocd-server quay.io/argoproj/argocd:v3.6.1
+OBJ Deployment argocd-dex-server
+IMAGE argocd-dex-server ghcr.io/dexidp/dex:v2.46.1
+IMAGE argocd-dex-server quay.io/argoproj/argocd:v3.6.1
+OBJ Deployment argocd-redis
+IMAGE argocd-redis ecr-public.aws.com/docker/library/redis:8.6.4-alpine
+OBJ StatefulSet argocd-application-controller
+IMAGE argocd-application-controller quay.io/argoproj/argocd:v3.6.1
+OBJ ServiceAccount argocd-redis-secret-init
+OBJ Role argocd-redis-secret-init
+OBJ RoleBinding argocd-redis-secret-init
+OBJ Job argocd-redis-secret-init
+IMAGE argocd-redis-secret-init quay.io/argoproj/argocd:v3.6.1

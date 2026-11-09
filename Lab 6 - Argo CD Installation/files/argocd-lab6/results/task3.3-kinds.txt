@@ -1,0 +1,14 @@
+Objects rendered: 60
+      3 ClusterRole
+      3 ClusterRoleBinding
+      8 ConfigMap
+      3 CustomResourceDefinition
+      6 Deployment
+      1 Job
+      6 NetworkPolicy
+      7 Role
+      7 RoleBinding
+      2 Secret
+      6 Service
+      7 ServiceAccount
+      1 StatefulSet

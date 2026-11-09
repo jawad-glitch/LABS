@@ -1,0 +1,1 @@
+hubble v1.20.2@HEAD-90adec1 compiled with go1.27.1 on linux/amd64

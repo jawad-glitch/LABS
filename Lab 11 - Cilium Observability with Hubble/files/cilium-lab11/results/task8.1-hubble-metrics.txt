@@ -1,0 +1,5 @@
+# HELP hubble_flows_processed_total Total number of flows processed by Hubble
+# TYPE hubble_flows_processed_total counter
+hubble_flows_processed_total{protocol="TCP",type="Capture"} 124
+hubble_flows_processed_total{protocol="HTTP",type="Capture"} 38
+hubble_drop_total{reason="PolicyDenied"} 5

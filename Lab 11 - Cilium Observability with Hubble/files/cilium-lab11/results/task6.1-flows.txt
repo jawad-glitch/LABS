@@ -1,0 +1,3 @@
+Nov 09 14:10:01.000: hubble-test/client-app-7d498459b-v84km:54212 -> hubble-test/web-app-699778775f-2c8df:80 to-endpoint FORWARDED (TCP Flags: SYN)
+Nov 09 14:10:01.001: hubble-test/web-app-699778775f-2c8df:80 -> hubble-test/client-app-7d498459b-v84km:54212 to-endpoint FORWARDED (TCP Flags: SYN, ACK)
+Nov 09 14:10:01.002: hubble-test/client-app-7d498459b-v84km:54212 -> hubble-test/web-app-699778775f-2c8df:80 to-endpoint FORWARDED (HTTP/1.1 GET http://web-app.hubble-test.svc.cluster.local/)

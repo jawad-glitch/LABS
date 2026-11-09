@@ -1,0 +1,1 @@
+hubble-test/client-app -> hubble-test/web-app:80 (TCP, HTTP)

@@ -1,0 +1,2 @@
+hubble-relay-547dfb6f98-k7lm2   1/1   Running   0   2m
+hubble-ui-676b98bd94-p9txr      1/1   Running   0   2m

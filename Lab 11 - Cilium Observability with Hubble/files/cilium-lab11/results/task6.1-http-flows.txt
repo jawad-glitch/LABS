@@ -1,0 +1,2 @@
+Nov 09 14:10:01.002: hubble-test/client-app-7d498459b-v84km:54212 -> hubble-test/web-app-699778775f-2c8df:80 http-request FORWARDED (HTTP/1.1 GET http://web-app.hubble-test.svc.cluster.local/)
+Nov 09 14:10:01.004: hubble-test/web-app-699778775f-2c8df:80 -> hubble-test/client-app-7d498459b-v84km:54212 http-response FORWARDED (HTTP/1.1 200 615 bytes)

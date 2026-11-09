@@ -1,0 +1,19 @@
+=== Cilium Hubble Observability Lab Summary ===
+Generated on: Mon Nov  9 15:04:49 UTC 2026
+
+Hubble Status:
+Healthcheck:  Ok
+Current/Max Flows: 4,095/4,095 (100.00%)
+Flows/s: 24.50
+Connected Nodes: 2/2
+
+Observed HTTP Flows:
+Nov 09 14:10:01.002: hubble-test/client-app-7d498459b-v84km:54212 -> hubble-test/web-app-699778775f-2c8df:80 http-request FORWARDED (HTTP/1.1 GET http://web-app.hubble-test.svc.cluster.local/)
+Nov 09 14:10:01.004: hubble-test/web-app-699778775f-2c8df:80 -> hubble-test/client-app-7d498459b-v84km:54212 http-response FORWARDED (HTTP/1.1 200 615 bytes)
+
+Policy Enforcement Observation:
+Nov 09 14:10:05.120: hubble-test/client-app-7d498459b-v84km:58214 -> hubble-test/web-app-699778775f-2c8df:80 Policy denied DROPPED (TCP Flags: SYN)
+Nov 09 14:10:10.450: hubble-test/client-app-7d498459b-v84km:59302 -> hubble-test/web-app-699778775f-2c8df:80 to-endpoint FORWARDED (TCP Flags: SYN)
+
+Service Dependencies:
+hubble-test/client-app -> hubble-test/web-app:80 (TCP, HTTP)

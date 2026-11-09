@@ -1,0 +1,71 @@
+NAMESPACE            LAST SEEN   TYPE      REASON                    OBJECT                                                 MESSAGE
+default              70s         Normal    NodeHasSufficientMemory   node/my-cluster-control-plane                          Node my-cluster-control-plane status is now: NodeHasSufficientMemory
+default              70s         Normal    NodeHasNoDiskPressure     node/my-cluster-control-plane                          Node my-cluster-control-plane status is now: NodeHasNoDiskPressure
+default              70s         Normal    NodeHasSufficientPID      node/my-cluster-control-plane                          Node my-cluster-control-plane status is now: NodeHasSufficientPID
+default              70s         Normal    NodeAllocatableEnforced   node/my-cluster-control-plane                          Updated Node Allocatable limit across pods
+kube-system          69s         Normal    Pulled                    pod/kube-controller-manager-my-cluster-control-plane   Container image "registry.k8s.io/kube-controller-manager:v1.37.0" already present on machine and can be accessed by the pod
+kube-system          64s         Normal    Started                   pod/kube-controller-manager-my-cluster-control-plane   Container started
+kube-system          65s         Normal    Created                   pod/etcd-my-cluster-control-plane                      Container created
+kube-system          63s         Normal    Started                   pod/etcd-my-cluster-control-plane                      Container started
+kube-system          69s         Normal    Pulled                    pod/kube-apiserver-my-cluster-control-plane            Container image "registry.k8s.io/kube-apiserver:v1.37.0" already present on machine and can be accessed by the pod
+kube-system          65s         Normal    Created                   pod/kube-apiserver-my-cluster-control-plane            Container created
+kube-system          64s         Normal    Started                   pod/kube-apiserver-my-cluster-control-plane            Container started
+kube-system          69s         Normal    Pulled                    pod/etcd-my-cluster-control-plane                      Container image "registry.k8s.io/etcd:3.7.0-0" already present on machine and can be accessed by the pod
+kube-system          65s         Normal    Created                   pod/kube-controller-manager-my-cluster-control-plane   Container created
+kube-system          64s         Normal    Started                   pod/kube-scheduler-my-cluster-control-plane            Container started
+kube-system          65s         Normal    Created                   pod/kube-scheduler-my-cluster-control-plane            Container created
+kube-system          69s         Normal    Pulled                    pod/kube-scheduler-my-cluster-control-plane            Container image "registry.k8s.io/kube-scheduler:v1.37.0" already present on machine and can be accessed by the pod
+kube-system          52s         Normal    LeaderElection            lease/kube-controller-manager                          my-cluster-control-plane_19840bb7-cf44-4f4a-898f-90c364b2443f became leader
+kube-system          51s         Warning   Unhealthy                 pod/kube-scheduler-my-cluster-control-plane            Readiness probe failed: HTTP probe failed with statuscode: 500
+kube-system          50s         Normal    LeaderElection            lease/kube-scheduler                                   my-cluster-control-plane_90bcafbc-12b6-4a8b-9632-56c469c85cf0 became leader
+default              48s         Normal    NodeAllocatableEnforced   node/my-cluster-control-plane                          Updated Node Allocatable limit across pods
+default              49s         Normal    Starting                  node/my-cluster-control-plane                          Starting kubelet.
+default              48s         Normal    NodeHasSufficientPID      node/my-cluster-control-plane                          Node my-cluster-control-plane status is now: NodeHasSufficientPID
+default              48s         Normal    NodeHasNoDiskPressure     node/my-cluster-control-plane                          Node my-cluster-control-plane status is now: NodeHasNoDiskPressure
+default              48s         Normal    NodeHasSufficientMemory   node/my-cluster-control-plane                          Node my-cluster-control-plane status is now: NodeHasSufficientMemory
+kube-system          45s         Warning   NodeNotReady              pod/kube-controller-manager-my-cluster-control-plane   Node is not ready
+kube-system          45s         Warning   NodeNotReady              pod/kube-scheduler-my-cluster-control-plane            Node is not ready
+kube-system          45s         Warning   NodeNotReady              pod/kube-apiserver-my-cluster-control-plane            Node is not ready
+default              45s         Normal    RegisteredNode            node/my-cluster-control-plane                          Node my-cluster-control-plane event: Registered Node my-cluster-control-plane in Controller
+kube-system          45s         Warning   NodeNotReady              pod/etcd-my-cluster-control-plane                      Node is not ready
+kube-system          44s         Normal    Scheduled                 pod/kube-proxy-wrvqx                                   Successfully assigned kube-system/kube-proxy-wrvqx to my-cluster-control-plane
+kube-system          44s         Normal    ScalingReplicaSet         deployment/coredns                                     Scaled up replica set coredns-559f6c778d from 0 to 2
+kube-system          44s         Normal    SuccessfulCreate          daemonset/kube-proxy                                   Created pod: kube-proxy-wrvqx
+kube-system          43s         Warning   FailedMount               pod/kube-proxy-wrvqx                                   MountVolume.SetUp failed for volume "kube-api-access-9wbtq" : configmap "kube-root-ca.crt" not found
+kube-system          43s         Normal    SuccessfulCreate          replicaset/coredns-559f6c778d                          Created pod: coredns-559f6c778d-48f7q
+kube-system          43s         Warning   FailedScheduling          pod/coredns-559f6c778d-48f7q                           0/1 nodes are available: 1 node(s) had untolerated taint(s). preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+kube-system          43s         Normal    Scheduled                 pod/kindnet-c5x2h                                      Successfully assigned kube-system/kindnet-c5x2h to my-cluster-control-plane
+local-path-storage   43s         Normal    SuccessfulCreate          replicaset/local-path-provisioner-75f7fc7dc5           Created pod: local-path-provisioner-75f7fc7dc5-hqsms
+kube-system          44s         Normal    SuccessfulCreate          replicaset/coredns-559f6c778d                          Created pod: coredns-559f6c778d-f6blt
+kube-system          44s         Normal    SuccessfulCreate          daemonset/kindnet                                      Created pod: kindnet-c5x2h
+local-path-storage   43s         Normal    ScalingReplicaSet         deployment/local-path-provisioner                      Scaled up replica set local-path-provisioner-75f7fc7dc5 from 0 to 1
+kube-system          44s         Warning   FailedScheduling          pod/coredns-559f6c778d-f6blt                           0/1 nodes are available: 1 node(s) had untolerated taint(s). preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+local-path-storage   43s         Warning   FailedScheduling          pod/local-path-provisioner-75f7fc7dc5-hqsms            0/1 nodes are available: 1 node(s) had untolerated taint(s). preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+kube-system          42s         Normal    Pulled                    pod/kube-proxy-wrvqx                                   Container image "registry.k8s.io/kube-proxy:v1.37.0" already present on machine and can be accessed by the pod
+kube-system          42s         Normal    Pulled                    pod/kindnet-c5x2h                                      Container image "docker.io/kindest/kindnetd:v20260820-69b56db7" already present on machine and can be accessed by the pod
+kube-system          39s         Normal    Created                   pod/kube-proxy-wrvqx                                   Container created
+kube-system          39s         Normal    Created                   pod/kindnet-c5x2h                                      Container created
+kube-system          39s         Normal    Started                   pod/kube-proxy-wrvqx                                   Container started
+default              37s         Normal    Starting                  node/my-cluster-control-plane                          
+kube-system          38s         Normal    Started                   pod/kindnet-c5x2h                                      Container started
+kube-system          28s         Normal    Scheduled                 pod/coredns-559f6c778d-f6blt                           Successfully assigned kube-system/coredns-559f6c778d-f6blt to my-cluster-control-plane
+kube-system          28s         Normal    Scheduled                 pod/coredns-559f6c778d-48f7q                           Successfully assigned kube-system/coredns-559f6c778d-48f7q to my-cluster-control-plane
+default              28s         Normal    NodeReady                 node/my-cluster-control-plane                          Node my-cluster-control-plane status is now: NodeReady
+local-path-storage   28s         Normal    Scheduled                 pod/local-path-provisioner-75f7fc7dc5-hqsms            Successfully assigned local-path-storage/local-path-provisioner-75f7fc7dc5-hqsms to my-cluster-control-plane
+kube-system          26s         Normal    Pulled                    pod/coredns-559f6c778d-48f7q                           Container image "registry.k8s.io/coredns/coredns:v1.14.6" already present on machine and can be accessed by the pod
+local-path-storage   26s         Normal    Pulled                    pod/local-path-provisioner-75f7fc7dc5-hqsms            Container image "docker.io/kindest/local-path-provisioner:v20260820-69b56db7" already present on machine and can be accessed by the pod
+kube-system          25s         Normal    Pulled                    pod/coredns-559f6c778d-f6blt                           Container image "registry.k8s.io/coredns/coredns:v1.14.6" already present on machine and can be accessed by the pod
+local-path-storage   23s         Normal    Created                   pod/local-path-provisioner-75f7fc7dc5-hqsms            Container created
+kube-system          23s         Normal    Created                   pod/coredns-559f6c778d-48f7q                           Container created
+kube-system          22s         Normal    Created                   pod/coredns-559f6c778d-f6blt                           Container created
+local-path-storage   22s         Normal    Started                   pod/local-path-provisioner-75f7fc7dc5-hqsms            Container started
+kube-system          22s         Normal    Started                   pod/coredns-559f6c778d-f6blt                           Container started
+kube-system          22s         Normal    Started                   pod/coredns-559f6c778d-48f7q                           Container started
+kube-system          21s         Warning   Unhealthy                 pod/coredns-559f6c778d-f6blt                           Readiness probe failed: Get "http://10.244.0.4:8181/ready": dial tcp 10.244.0.4:8181: connect: connection refused
+default              9s          Normal    SuccessfulCreate          replicaset/nginx-test-875fc9c4c                        Created pod: nginx-test-875fc9c4c-w8229
+default              9s          Normal    Scheduled                 pod/nginx-test-875fc9c4c-w8229                         Successfully assigned default/nginx-test-875fc9c4c-w8229 to my-cluster-control-plane
+default              9s          Normal    ScalingReplicaSet         deployment/nginx-test                                  Scaled up replica set nginx-test-875fc9c4c from 0 to 1
+default              8s          Normal    Pulling                   pod/nginx-test-875fc9c4c-w8229                         Pulling image "nginx:1.27-alpine"
+default              4s          Normal    Pulled                    pod/nginx-test-875fc9c4c-w8229                         Successfully pulled image "nginx:1.27-alpine" in 3.573s (3.573s including waiting). Image size: 20984244 bytes.
+default              4s          Normal    Created                   pod/nginx-test-875fc9c4c-w8229                         Container created
+default              4s          Normal    Started                   pod/nginx-test-875fc9c4c-w8229                         Container started

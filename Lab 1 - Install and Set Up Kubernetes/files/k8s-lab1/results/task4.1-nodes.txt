@@ -1,0 +1,90 @@
+NAME                       STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION            CONTAINER-RUNTIME
+my-cluster-control-plane   Ready    control-plane   44s   v1.37.0   172.18.0.2    <none>        Debian GNU/Linux 13 (trixie)   6.14.0-1018-aws (amd64)   containerd://2.3.4
+
+NAME                       STATUS   ROLES           AGE   VERSION   LABELS
+my-cluster-control-plane   Ready    control-plane   45s   v1.37.0   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,ingress-ready=true,kubernetes.io/arch=amd64,kubernetes.io/hostname=my-cluster-control-plane,kubernetes.io/os=linux,node-role.kubernetes.io/control-plane=
+
+Name:               my-cluster-control-plane
+Roles:              control-plane
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    ingress-ready=true
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=my-cluster-control-plane
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/control-plane=
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 09 Nov 2026 13:59:26 +0000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  my-cluster-control-plane
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 09 Nov 2026 14:00:03 +0000
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 09 Nov 2026 13:59:53 +0000   Mon, 09 Nov 2026 13:59:24 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 09 Nov 2026 13:59:53 +0000   Mon, 09 Nov 2026 13:59:24 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 09 Nov 2026 13:59:53 +0000   Mon, 09 Nov 2026 13:59:24 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 09 Nov 2026 13:59:53 +0000   Mon, 09 Nov 2026 13:59:53 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  172.18.0.2
+  Hostname:    my-cluster-control-plane
+Capacity:
+  cpu:                2
+  ephemeral-storage:  30083776512
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             3941328Ki
+  pods:               110
+Allocatable:
+  cpu:                2
+  ephemeral-storage:  30083776512
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             3941328Ki
+  pods:               110
+System Info:
+  Machine ID:                 d8c29f92bc7749419d5459cf0487d435
+  System UUID:                7d8d2991-4b47-465c-8f6a-ee2f5370294e
+  Boot ID:                    ea83b722-d940-4061-a680-6a29183f73ff
+  Kernel Version:             6.14.0-1018-aws
+  OS Image:                   Debian GNU/Linux 13 (trixie)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://2.3.4
+  Kubelet Version:            v1.37.0
+PodCIDR:                      10.244.0.0/24
+PodCIDRs:                     10.244.0.0/24
+ProviderID:                   kind://docker/my-cluster/my-cluster-control-plane
+Non-terminated Pods:          (9 in total)
+  Namespace                   Name                                                CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                                ------------  ----------  ---------------  -------------  ---
+  kube-system                 coredns-559f6c778d-48f7q                            100m (5%)     0 (0%)      70Mi (1%)        170Mi (4%)     33s
+  kube-system                 coredns-559f6c778d-f6blt                            100m (5%)     0 (0%)      70Mi (1%)        170Mi (4%)     34s
+  kube-system                 etcd-my-cluster-control-plane                       100m (5%)     0 (0%)      100Mi (2%)       0 (0%)         45s
+  kube-system                 kindnet-c5x2h                                       100m (5%)     0 (0%)      50Mi (1%)        0 (0%)         34s
+  kube-system                 kube-apiserver-my-cluster-control-plane             250m (12%)    0 (0%)      0 (0%)           0 (0%)         45s
+  kube-system                 kube-controller-manager-my-cluster-control-plane    200m (10%)    0 (0%)      0 (0%)           0 (0%)         45s
+  kube-system                 kube-proxy-wrvqx                                    0 (0%)        0 (0%)      0 (0%)           0 (0%)         34s
+  kube-system                 kube-scheduler-my-cluster-control-plane             100m (5%)     0 (0%)      0 (0%)           0 (0%)         45s
+  local-path-storage          local-path-provisioner-75f7fc7dc5-hqsms             0 (0%)        0 (0%)      0 (0%)           0 (0%)         33s
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                950m (47%)  0 (0%)
+  memory             290Mi (7%)  340Mi (8%)
+  ephemeral-storage  0 (0%)      0 (0%)
+  hugepages-1Gi      0 (0%)      0 (0%)
+  hugepages-2Mi      0 (0%)      0 (0%)
+Events:
+  Type    Reason                   Age   From             Message
+  ----    ------                   ----  ----             -------
+  Normal  NodeHasSufficientMemory  38s   kubelet          Node my-cluster-control-plane status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    38s   kubelet          Node my-cluster-control-plane status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     38s   kubelet          Node my-cluster-control-plane status is now: NodeHasSufficientPID
+  Normal  RegisteredNode           35s   node-controller  Node my-cluster-control-plane event: Registered Node my-cluster-control-plane in Controller
+  Normal  NodeReady                18s   kubelet          Node my-cluster-control-plane status is now: NodeReady

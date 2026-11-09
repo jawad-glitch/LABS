@@ -1,0 +1,3 @@
+118:source <(kubectl completion bash)
+119:alias k=kubectl
+120:complete -o default -F __start_kubectl k

@@ -1,0 +1,4 @@
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-test   1/1     1            1           5s
+NAME                         READY   STATUS    RESTARTS   AGE   IP           NODE                       NOMINATED NODE   READINESS GATES
+nginx-test-875fc9c4c-w8229   1/1     Running   0          5s    10.244.0.5   my-cluster-control-plane   <none>           <none>

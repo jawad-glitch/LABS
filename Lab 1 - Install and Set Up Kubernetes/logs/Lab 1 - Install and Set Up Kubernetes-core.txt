@@ -1,0 +1,15 @@
+========== CORE CHECKS (Lab 1 - Install and Set Up Kubernetes, 2026-11-09 14:00:23 UTC) ==========
+PASS: Task 1: Docker CE running (preinstalled, no duplicate repo/keyring added), hello-world ran
+PASS: Task 2.1: kind v0.33.0 installed (sha256 verified)
+FAIL: Task 2.2: kubectl v1.37.2 installed (sha256 verified)
+PASS: Task 2.3: completion + alias k in ~/.bashrc exactly once each (idempotent)
+PASS: Task 3: cluster my-cluster created, context kind-my-cluster current, API reachable
+PASS: Task 4.1: node my-cluster-control-plane Ready, label ingress-ready=true, host ports 80/443 mapped
+PASS: Task 4.2: all kube-system pods Running (apiserver, etcd, coredns, kube-proxy, CNI)
+PASS: Task 4.3: nginx-test deployment rolled out (nginx:1.27-alpine) - 1/1 Running
+PASS: Task 4.4: lab curl localhost:NodePort fails (HTTP 000) - node IP:NodePort serves the nginx page (HTTP 200)
+PASS: Task 5.1: api-resources listed (72 lines), events + kubeconfig captured
+PASS: Task 5.2: test-namespace created and set as context namespace
+PASS: Lab bug: cleanup without -n fails NotFound (context ns = test-namespace); -n default works; context reset
+PASS: Time: lab finished in 118s (<= 300s)
+CORE: 12/13 PASS

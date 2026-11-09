@@ -1,0 +1,4 @@
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP        51s
+nginx-test   NodePort    10.96.80.143   <none>        80:31822/TCP   2s
+NodePort=31822 | lab: curl localhost:31822 -> HTTP 000 | fixed: curl 172.18.0.2:31822 (node IP) -> HTTP 200

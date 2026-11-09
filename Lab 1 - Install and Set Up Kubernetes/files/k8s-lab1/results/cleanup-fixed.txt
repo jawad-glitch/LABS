@@ -1,0 +1,3 @@
+deployment.apps "nginx-test" deleted from default namespace
+service "nginx-test" deleted from default namespace
+namespace "test-namespace" deleted

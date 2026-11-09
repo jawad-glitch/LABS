@@ -1,0 +1,12 @@
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/nginx-test-875fc9c4c-w8229   1/1     Running   0          8s
+
+NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service/kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP        51s
+service/nginx-test   NodePort    10.96.80.143   <none>        80:31822/TCP   2s
+
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx-test   1/1     1            1           8s
+
+NAME                                   DESIRED   CURRENT   READY   AGE
+replicaset.apps/nginx-test-875fc9c4c   1         1         1       8s

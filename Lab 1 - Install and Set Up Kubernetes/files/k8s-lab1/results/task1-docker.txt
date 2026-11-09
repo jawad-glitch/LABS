@@ -1,0 +1,4 @@
+Docker version 29.6.0, build fb59821
+server=29.6.0 driver=overlayfs cgroup=systemd
+/etc/apt/sources.list.d/docker.sources
+docker.asc

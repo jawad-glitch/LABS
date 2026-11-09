@@ -1,0 +1,18 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: DATA+OMITTED
+    server: https://127.0.0.1:46467
+  name: kind-my-cluster
+contexts:
+- context:
+    cluster: kind-my-cluster
+    user: kind-my-cluster
+  name: kind-my-cluster
+current-context: kind-my-cluster
+kind: Config
+users:
+- name: kind-my-cluster
+  user:
+    client-certificate-data: DATA+OMITTED
+    client-key-data: DATA+OMITTED

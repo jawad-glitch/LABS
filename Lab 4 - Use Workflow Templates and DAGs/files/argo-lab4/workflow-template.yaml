@@ -1,0 +1,70 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: dag-workflow-template
+  namespace: argo
+spec:
+  entrypoint: dag-example
+  arguments:
+    parameters:
+    - name: environment
+      value: "dev"
+    - name: batch-size
+      value: "100"
+  templates:
+  - name: dag-example
+    dag:
+      tasks:
+      - name: task-a
+        template: print-message
+        arguments:
+          parameters:
+          - name: message
+            value: "Starting Task A - Data Preparation (env={{workflow.parameters.environment}}, batch={{workflow.parameters.batch-size}})"
+      - name: task-b
+        template: print-message
+        dependencies: [task-a]
+        arguments:
+          parameters:
+          - name: message
+            value: "Task B - Data Processing (depends on A)"
+      - name: task-c
+        template: print-message
+        dependencies: [task-a]
+        arguments:
+          parameters:
+          - name: message
+            value: "Task C - Data Validation (depends on A)"
+      - name: task-d
+        template: print-message
+        dependencies: [task-b, task-c]
+        arguments:
+          parameters:
+          - name: message
+            value: "Task D - Final Report (depends on B and C)"
+      - name: task-e
+        template: long-running-task
+        dependencies: [task-a]
+        arguments:
+          parameters:
+          - name: duration
+            value: "30"
+          - name: task-name
+            value: "Background Processing"
+  - name: print-message
+    inputs:
+      parameters:
+      - name: message
+    container:
+      image: alpine:3.18
+      command: [sh, -c]
+      args: ["echo '{{inputs.parameters.message}}' && echo \"Timestamp: $(date)\" && sleep 5"]
+  - name: long-running-task
+    inputs:
+      parameters:
+      - name: duration
+      - name: task-name
+    container:
+      image: alpine:3.18
+      command: [sh, -c]
+      args: ["echo 'Starting {{inputs.parameters.task-name}}' && sleep {{inputs.parameters.duration}} && echo 'Completed {{inputs.parameters.task-name}}'"]

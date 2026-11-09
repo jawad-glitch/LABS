@@ -1,0 +1,24 @@
+Name:                simple-dag-run-v96mp
+Namespace:           argo
+ServiceAccount:      unset
+Status:              Succeeded
+Conditions:          
+ PodRunning          False
+ Completed           True
+Created:             Mon Nov 09 12:02:26 +0000 (2 minutes ago)
+Started:             Mon Nov 09 12:02:27 +0000 (2 minutes ago)
+Finished:            Mon Nov 09 12:04:46 +0000 (14 seconds ago)
+Duration:            2 minutes 19 seconds
+Progress:            5/5
+ResourcesDuration:   21s*(1 cpu),5m0s*(100Mi memory)
+Parameters:          
+  environment:       dev
+  batch-size:        100
+
+[39mSTEP[0m                     TEMPLATE           PODNAME                                            DURATION  MESSAGE
+ [32m✔[0m simple-dag-run-v96mp  dag-example                                                                       
+ ├─[32m✔[0m task-a              print-message      simple-dag-run-v96mp-print-message-3443934944      31s         
+ ├─[32m✔[0m task-b              print-message      simple-dag-run-v96mp-print-message-3494267801      1m          
+ ├─[32m✔[0m task-c              print-message      simple-dag-run-v96mp-print-message-3477490182      1m          
+ ├─[32m✔[0m task-e              long-running-task  simple-dag-run-v96mp-long-running-task-3511045420  1m          
+ └─[32m✔[0m task-d              print-message      simple-dag-run-v96mp-print-message-3527823039      18s         

@@ -1,0 +1,17 @@
+=== Workflow Performance Report ===
+Workflow: simple-dag-run-v96mp
+Generated: Mon Nov  9 12:05:04 UTC 2026
+
+Status: Succeeded
+Started: 2026-11-09T12:02:27Z
+Finished: 2026-11-09T12:04:46Z
+
+=== Task Execution Times ===
+task-a: Succeeded (2026-11-09T12:02:27Z to 2026-11-09T12:02:58Z)
+task-c: Succeeded (2026-11-09T12:03:08Z to 2026-11-09T12:04:16Z)
+task-b: Succeeded (2026-11-09T12:03:08Z to 2026-11-09T12:04:18Z)
+task-e: Succeeded (2026-11-09T12:03:08Z to 2026-11-09T12:04:42Z)
+task-d: Succeeded (2026-11-09T12:04:26Z to 2026-11-09T12:04:44Z)
+
+=== Resource Usage ===
+Resource metrics not available (no metrics-server)

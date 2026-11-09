@@ -1,0 +1,15 @@
+[33mparam-dag-run-rh74d-print-message-2063609202: Starting Task A - Data Preparation (env=production, batch=1000)[0m
+[33mparam-dag-run-rh74d-print-message-2063609202: Timestamp: Mon Nov  9 12:02:52 UTC 2026[0m
+[33mparam-dag-run-rh74d-print-message-2063609202: time="2026-11-09T12:02:58.491Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m
+[37mparam-dag-run-rh74d-print-message-2046831583: Task B - Data Processing (depends on A)[0m
+[37mparam-dag-run-rh74d-print-message-2046831583: Timestamp: Mon Nov  9 12:04:10 UTC 2026[0m
+[33mparam-dag-run-rh74d-long-running-task-1996498726: Starting Background Processing[0m
+[35mparam-dag-run-rh74d-print-message-2030053964: Task C - Data Validation (depends on A)[0m
+[35mparam-dag-run-rh74d-print-message-2030053964: Timestamp: Mon Nov  9 12:04:11 UTC 2026[0m
+[37mparam-dag-run-rh74d-print-message-2046831583: time="2026-11-09T12:04:15.565Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m
+[35mparam-dag-run-rh74d-print-message-2030053964: time="2026-11-09T12:04:17.840Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m
+[36mparam-dag-run-rh74d-print-message-2013276345: Task D - Final Report (depends on B and C)[0m
+[36mparam-dag-run-rh74d-print-message-2013276345: Timestamp: Mon Nov  9 12:04:38 UTC 2026[0m
+[33mparam-dag-run-rh74d-long-running-task-1996498726: Completed Background Processing[0m
+[33mparam-dag-run-rh74d-long-running-task-1996498726: time="2026-11-09T12:04:41.605Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m
+[36mparam-dag-run-rh74d-print-message-2013276345: time="2026-11-09T12:04:43.250Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m

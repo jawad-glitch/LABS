@@ -1,0 +1,57 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: conditional-dag-template
+  namespace: argo
+spec:
+  entrypoint: conditional-dag
+  arguments:
+    parameters:
+    - name: run-tests
+      value: "true"
+    - name: environment
+      value: "dev"
+  templates:
+  - name: conditional-dag
+    dag:
+      tasks:
+      - name: build
+        template: build-app
+      - name: test
+        template: run-tests
+        dependencies: [build]
+        when: "'{{workflow.parameters.run-tests}}' == 'true'"
+      - name: deploy-dev
+        template: deploy
+        dependencies: [build]
+        when: "'{{workflow.parameters.environment}}' == 'dev'"
+        arguments:
+          parameters:
+          - name: env
+            value: "development"
+      - name: deploy-prod
+        template: deploy
+        dependencies: [test]
+        when: "'{{workflow.parameters.environment}}' == 'prod'"
+        arguments:
+          parameters:
+          - name: env
+            value: "production"
+  - name: build-app
+    container:
+      image: alpine:3.18
+      command: [sh, -c]
+      args: ["echo 'Building application...' && sleep 10 && echo 'Build completed successfully'"]
+  - name: run-tests
+    container:
+      image: alpine:3.18
+      command: [sh, -c]
+      args: ["echo 'Running tests...' && sleep 15 && echo 'All tests passed'"]
+  - name: deploy
+    inputs:
+      parameters:
+      - name: env
+    container:
+      image: alpine:3.18
+      command: [sh, -c]
+      args: ["echo 'Deploying to {{inputs.parameters.env}} environment...' && sleep 8 && echo 'Deployment completed'"]

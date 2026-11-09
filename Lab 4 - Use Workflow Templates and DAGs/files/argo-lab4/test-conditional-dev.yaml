@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: conditional-dev-
+  namespace: argo
+spec:
+  workflowTemplateRef:
+    name: conditional-dag-template
+  arguments:
+    parameters:
+    - name: run-tests
+      value: "true"
+    - name: environment
+      value: "dev"

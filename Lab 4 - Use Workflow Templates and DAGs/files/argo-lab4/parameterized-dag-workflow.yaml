@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: param-dag-run-
+  namespace: argo
+spec:
+  workflowTemplateRef:
+    name: dag-workflow-template
+  arguments:
+    parameters:
+    - name: environment
+      value: "production"
+    - name: batch-size
+      value: "1000"

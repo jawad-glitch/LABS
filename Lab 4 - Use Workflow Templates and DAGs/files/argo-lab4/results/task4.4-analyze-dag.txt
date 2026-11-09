@@ -1,0 +1,17 @@
+=== DAG Execution Analysis ===
+Workflow: simple-dag-run-v96mp
+
+=== Task Execution Order (sorted by startedAt) ===
+task-a: Succeeded (Started: 2026-11-09T12:02:27Z, Finished: 2026-11-09T12:02:58Z)
+task-c: Succeeded (Started: 2026-11-09T12:03:08Z, Finished: 2026-11-09T12:04:16Z)
+task-b: Succeeded (Started: 2026-11-09T12:03:08Z, Finished: 2026-11-09T12:04:18Z)
+task-e: Succeeded (Started: 2026-11-09T12:03:08Z, Finished: 2026-11-09T12:04:42Z)
+task-d: Succeeded (Started: 2026-11-09T12:04:26Z, Finished: 2026-11-09T12:04:44Z)
+
+=== Dependency Graph ===
+Task A -> Task B, Task C, Task E (parallel)
+Task B + Task C -> Task D
+Task E runs independently after Task A
+
+=== Resource Usage ===
+Metrics not available (no metrics-server)

@@ -1,0 +1,3 @@
+[34msimple-dag-run-v96mp-print-message-3443934944: Starting Task A - Data Preparation (env=dev, batch=100)[0m
+[34msimple-dag-run-v96mp-print-message-3443934944: Timestamp: Mon Nov  9 12:02:52 UTC 2026[0m
+[34msimple-dag-run-v96mp-print-message-3443934944: time="2026-11-09T12:02:57.575Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m

@@ -1,0 +1,3 @@
+Name:                dag-workflow-template
+Namespace:           argo
+Created:             Mon Nov 09 12:02:25 +0000 (1 second ago)

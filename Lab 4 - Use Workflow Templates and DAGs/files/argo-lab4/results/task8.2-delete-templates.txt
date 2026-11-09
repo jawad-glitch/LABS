@@ -1,0 +1,2 @@
+workflowtemplate.argoproj.io "dag-workflow-template" deleted from argo namespace
+workflowtemplate.argoproj.io "conditional-dag-template" deleted from argo namespace

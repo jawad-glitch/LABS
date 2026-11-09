@@ -1,0 +1,5 @@
+time="2026-11-09T12:05:00.783Z" level=error msg="container task-a is not valid for pod simple-dag-run-v96mp-print-message-3494267801" namespace=argo podName=simple-dag-run-v96mp-print-message-3494267801 workflow=simple-dag-run-v96mp
+time="2026-11-09T12:05:00.785Z" level=error msg="container task-a is not valid for pod simple-dag-run-v96mp-print-message-3477490182" namespace=argo podName=simple-dag-run-v96mp-print-message-3477490182 workflow=simple-dag-run-v96mp
+time="2026-11-09T12:05:00.786Z" level=error msg="container task-a is not valid for pod simple-dag-run-v96mp-print-message-3527823039" namespace=argo podName=simple-dag-run-v96mp-print-message-3527823039 workflow=simple-dag-run-v96mp
+time="2026-11-09T12:05:00.786Z" level=error msg="container task-a is not valid for pod simple-dag-run-v96mp-print-message-3443934944" namespace=argo podName=simple-dag-run-v96mp-print-message-3443934944 workflow=simple-dag-run-v96mp
+time="2026-11-09T12:05:00.786Z" level=error msg="container task-a is not valid for pod simple-dag-run-v96mp-long-running-task-3511045420" namespace=argo podName=simple-dag-run-v96mp-long-running-task-3511045420 workflow=simple-dag-run-v96mp

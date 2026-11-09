@@ -1,0 +1,15 @@
+[34msimple-dag-run-v96mp-print-message-3443934944: Starting Task A - Data Preparation (env=dev, batch=100)[0m
+[34msimple-dag-run-v96mp-print-message-3443934944: Timestamp: Mon Nov  9 12:02:52 UTC 2026[0m
+[34msimple-dag-run-v96mp-print-message-3443934944: time="2026-11-09T12:02:57.575Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m
+[32msimple-dag-run-v96mp-print-message-3477490182: Task C - Data Validation (depends on A)[0m
+[32msimple-dag-run-v96mp-print-message-3477490182: Timestamp: Mon Nov  9 12:04:10 UTC 2026[0m
+[37msimple-dag-run-v96mp-print-message-3494267801: Task B - Data Processing (depends on A)[0m
+[37msimple-dag-run-v96mp-print-message-3494267801: Timestamp: Mon Nov  9 12:04:11 UTC 2026[0m
+[35msimple-dag-run-v96mp-long-running-task-3511045420: Starting Background Processing[0m
+[32msimple-dag-run-v96mp-print-message-3477490182: time="2026-11-09T12:04:15.952Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m
+[37msimple-dag-run-v96mp-print-message-3494267801: time="2026-11-09T12:04:17.786Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m
+[35msimple-dag-run-v96mp-print-message-3527823039: Task D - Final Report (depends on B and C)[0m
+[35msimple-dag-run-v96mp-print-message-3527823039: Timestamp: Mon Nov  9 12:04:38 UTC 2026[0m
+[35msimple-dag-run-v96mp-long-running-task-3511045420: Completed Background Processing[0m
+[35msimple-dag-run-v96mp-long-running-task-3511045420: time="2026-11-09T12:04:41.994Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m
+[35msimple-dag-run-v96mp-print-message-3527823039: time="2026-11-09T12:04:43.193Z" level=info msg="sub-process exited" argo=true error="<nil>"[0m

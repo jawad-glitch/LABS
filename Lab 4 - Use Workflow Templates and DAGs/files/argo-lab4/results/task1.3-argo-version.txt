@@ -1,0 +1,8 @@
+argo: v3.7.18
+  BuildDate: 2026-08-14T10:21:19Z
+  GitCommit: 66e32e5cc367f223e2ecf4fbe852b95eaed83034
+  GitTreeState: clean
+  GitTag: v3.7.18
+  GoVersion: go1.25.12
+  Compiler: gc
+  Platform: linux/amd64

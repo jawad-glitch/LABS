@@ -1,0 +1,23 @@
+Name:                conditional-prod-rvccm
+Namespace:           argo
+ServiceAccount:      unset
+Status:              Succeeded
+Conditions:          
+ PodRunning          False
+ Completed           True
+Created:             Mon Nov 09 12:02:28 +0000 (2 minutes ago)
+Started:             Mon Nov 09 12:02:28 +0000 (2 minutes ago)
+Finished:            Mon Nov 09 12:04:31 +0000 (30 seconds ago)
+Duration:            2 minutes 3 seconds
+Progress:            2/2
+ResourcesDuration:   8s*(1 cpu),1m50s*(100Mi memory)
+Parameters:          
+  run-tests:         false
+  environment:       prod
+
+[39mSTEP[0m                       TEMPLATE         PODNAME                                      DURATION  MESSAGE
+ [32m✔[0m conditional-prod-rvccm  conditional-dag                                                                                                   
+ ├─[32m✔[0m build                 build-app        conditional-prod-rvccm-build-app-2577664525  35s                                                 
+ ├─[39m○[0m deploy-dev            deploy                                                                  when ''prod' == 'dev'' evaluated false    
+ ├─[32m✔[0m deploy-prod           deploy           conditional-prod-rvccm-deploy-1795841626     1m                                                  
+ └─[39m○[0m test                  run-tests                                                               when ''false' == 'true'' evaluated false  

@@ -1,0 +1,1 @@
+Argo Workflows v3.7.18 (newest v3; lab pinned v3.5.2)

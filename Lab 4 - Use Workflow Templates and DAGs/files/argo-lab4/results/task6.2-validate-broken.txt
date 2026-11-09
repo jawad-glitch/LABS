@@ -1,0 +1,14 @@
+=== Validating Workflow Template ===
+File: /home/ubuntu/argo-lab4/results/broken-template.yaml
+
+1. Checking YAML syntax...
+   ✓ YAML syntax is valid
+2. Checking required fields...
+   ✓ Kind is WorkflowTemplate
+   ✗ Entrypoint is missing
+3. Server-side dry run (API server)...
+   ✓ Accepted by API server
+4. argo lint (Argo's own validation)...
+   ✓ argo lint passed
+
+Validation complete! (1 problem(s))

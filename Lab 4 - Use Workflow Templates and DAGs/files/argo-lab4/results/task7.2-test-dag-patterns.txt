@@ -1,0 +1,24 @@
+=== Testing DAG Execution Patterns ===
+1. Submitting test workflow...
+   Submitted: simple-dag-run-bxnxq
+2. Waiting for workflow completion...
+simple-dag-run-bxnxq Succeeded at 2026-11-09 12:04:47 +0000 UTC
+3. Analyzing execution pattern...
+
+Expected execution order:
+   Task A (first)
+   Task B, C, E (parallel, after A)
+   Task D (after B and C complete)
+
+Actual execution:
+task-a: Succeeded (Started: 2026-11-09T12:02:32Z)
+task-b: Succeeded (Started: 2026-11-09T12:03:08Z)
+task-c: Succeeded (Started: 2026-11-09T12:03:08Z)
+task-e: Succeeded (Started: 2026-11-09T12:03:08Z)
+task-d: Succeeded (Started: 2026-11-09T12:04:22Z)
+
+4. Verifying DAG constraints...
+   ✓ Task B started after Task A
+   ✓ Task D started after Task B and Task C
+
+Test completed!

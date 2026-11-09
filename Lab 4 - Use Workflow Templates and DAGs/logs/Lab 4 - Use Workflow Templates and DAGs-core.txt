@@ -1,0 +1,16 @@
+========== CORE CHECKS (Lab 4 - Use Workflow Templates and DAGs, 2026-11-09 12:05:06 UTC) ==========
+PASS: Task 1.1: cluster up, node Ready (v1.37.2+k3s1)
+PASS: Task 1.2/1.3: Argo v3.7.18 controller + server available, argo CLI = v3.7.18
+PASS: Task 2.4/5.1: both WorkflowTemplates listed by argo template list
+PASS: Task 3.2: simple-dag-run-v96mp (from template) Succeeded, all 5 DAG tasks Succeeded
+PASS: Task 4.4/7.2: DAG order from real timestamps - A before B/C/E, D after B and C, B||C parallel
+PASS: Task 3.3: parameters reach the template (param run env=production, batch=1000; default run dev/100)
+PASS: Task 4.3: task-a pod logs (simple-dag-run-v96mp-print-message-3443934944) with real timestamp (quoting fixed)
+PASS: Task 5.2 dev: build+test+deploy-dev Succeeded, deploy-prod Skipped
+PASS: Task 5.2 prod: build Succeeded, test Skipped, deploy-prod Succeeded, deploy-dev Skipped
+PASS: Task 4.4/6.2/6.3: analyze sorted 5 tasks; validator passes good file, rejects broken; monitor reports Succeeded
+PASS: Task 7.1: --from runs test-dag-49d7f and test-conditional-fbv67 Succeeded
+PASS: Task 7.2: test-dag-patterns.sh - both dependency checks pass, no violations
+PASS: Task 8: cleanup left 0 workflows and 0 workflowtemplates
+PASS: Time budget: lab finished in 227s (<= 300s)
+CORE: 14/14 PASS

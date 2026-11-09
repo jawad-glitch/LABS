@@ -1,0 +1,23 @@
+Name:                conditional-dev-nb2fp
+Namespace:           argo
+ServiceAccount:      unset
+Status:              Succeeded
+Conditions:          
+ PodRunning          False
+ Completed           True
+Created:             Mon Nov 09 12:02:27 +0000 (2 minutes ago)
+Started:             Mon Nov 09 12:02:28 +0000 (2 minutes ago)
+Finished:            Mon Nov 09 12:04:33 +0000 (28 seconds ago)
+Duration:            2 minutes 5 seconds
+Progress:            3/3
+ResourcesDuration:   16s*(1 cpu),3m20s*(100Mi memory)
+Parameters:          
+  run-tests:         true
+  environment:       dev
+
+[39mSTEP[0m                      TEMPLATE         PODNAME                                    DURATION  MESSAGE
+ [32m✔[0m conditional-dev-nb2fp  conditional-dag                                                                                               
+ ├─[32m✔[0m build                build-app        conditional-dev-nb2fp-build-app-205832966  35s                                               
+ ├─[32m✔[0m deploy-dev           deploy           conditional-dev-nb2fp-deploy-564691591     1m                                                
+ ├─[32m✔[0m test                 run-tests        conditional-dev-nb2fp-run-tests-854002630  1m                                                
+ └─[39m○[0m deploy-prod          deploy                                                                when ''dev' == 'prod'' evaluated false  

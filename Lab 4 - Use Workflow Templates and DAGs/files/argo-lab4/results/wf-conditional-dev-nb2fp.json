@@ -1,0 +1,439 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2"
+        },
+        "creationTimestamp": "2026-11-09T12:02:27Z",
+        "generateName": "conditional-dev-",
+        "generation": 10,
+        "labels": {
+            "workflows.argoproj.io/completed": "true",
+            "workflows.argoproj.io/creator": "system-admin",
+            "workflows.argoproj.io/phase": "Succeeded"
+        },
+        "name": "conditional-dev-nb2fp",
+        "namespace": "argo",
+        "resourceVersion": "1398",
+        "uid": "9c67032b-a909-4bca-8927-2d9c138a5702"
+    },
+    "spec": {
+        "arguments": {
+            "parameters": [
+                {
+                    "name": "run-tests",
+                    "value": "true"
+                },
+                {
+                    "name": "environment",
+                    "value": "dev"
+                }
+            ]
+        },
+        "workflowTemplateRef": {
+            "name": "conditional-dag-template"
+        }
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {},
+            "default": true
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            },
+            {
+                "status": "True",
+                "type": "Completed"
+            }
+        ],
+        "finishedAt": "2026-11-09T12:04:33Z",
+        "nodes": {
+            "conditional-dev-nb2fp": {
+                "children": [
+                    "conditional-dev-nb2fp-205832966"
+                ],
+                "displayName": "conditional-dev-nb2fp",
+                "finishedAt": "2026-11-09T12:04:33Z",
+                "id": "conditional-dev-nb2fp",
+                "name": "conditional-dev-nb2fp",
+                "outboundNodes": [
+                    "conditional-dev-nb2fp-564691591",
+                    "conditional-dev-nb2fp-1323376669"
+                ],
+                "phase": "Succeeded",
+                "progress": "3/3",
+                "resourcesDuration": {
+                    "cpu": 16,
+                    "memory": 200
+                },
+                "startedAt": "2026-11-09T12:02:28Z",
+                "templateName": "conditional-dag",
+                "templateScope": "local/",
+                "type": "DAG"
+            },
+            "conditional-dev-nb2fp-1323376669": {
+                "boundaryID": "conditional-dev-nb2fp",
+                "displayName": "deploy-prod",
+                "finishedAt": "2026-11-09T12:04:33Z",
+                "id": "conditional-dev-nb2fp-1323376669",
+                "message": "when ''dev' == 'prod'' evaluated false",
+                "name": "conditional-dev-nb2fp.deploy-prod",
+                "nodeFlag": {},
+                "phase": "Skipped",
+                "startedAt": "2026-11-09T12:04:33Z",
+                "templateName": "deploy",
+                "templateScope": "local/",
+                "type": "Skipped"
+            },
+            "conditional-dev-nb2fp-205832966": {
+                "boundaryID": "conditional-dev-nb2fp",
+                "children": [
+                    "conditional-dev-nb2fp-564691591",
+                    "conditional-dev-nb2fp-854002630"
+                ],
+                "displayName": "build",
+                "finishedAt": "2026-11-09T12:03:03Z",
+                "hostNodeName": "ip-172-31-10-253",
+                "id": "conditional-dev-nb2fp-205832966",
+                "name": "conditional-dev-nb2fp.build",
+                "outputs": {
+                    "exitCode": "0"
+                },
+                "phase": "Succeeded",
+                "progress": "1/1",
+                "resourcesDuration": {
+                    "cpu": 2,
+                    "memory": 42
+                },
+                "startedAt": "2026-11-09T12:02:28Z",
+                "taskResultSynced": true,
+                "templateName": "build-app",
+                "templateScope": "local/",
+                "type": "Pod"
+            },
+            "conditional-dev-nb2fp-564691591": {
+                "boundaryID": "conditional-dev-nb2fp",
+                "displayName": "deploy-dev",
+                "finishedAt": "2026-11-09T12:04:20Z",
+                "hostNodeName": "ip-172-31-10-253",
+                "id": "conditional-dev-nb2fp-564691591",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "env",
+                            "value": "development"
+                        }
+                    ]
+                },
+                "name": "conditional-dev-nb2fp.deploy-dev",
+                "outputs": {
+                    "exitCode": "0"
+                },
+                "phase": "Succeeded",
+                "progress": "1/1",
+                "resourcesDuration": {
+                    "cpu": 6,
+                    "memory": 70
+                },
+                "startedAt": "2026-11-09T12:03:13Z",
+                "taskResultSynced": true,
+                "templateName": "deploy",
+                "templateScope": "local/",
+                "type": "Pod"
+            },
+            "conditional-dev-nb2fp-854002630": {
+                "boundaryID": "conditional-dev-nb2fp",
+                "children": [
+                    "conditional-dev-nb2fp-1323376669"
+                ],
+                "displayName": "test",
+                "finishedAt": "2026-11-09T12:04:26Z",
+                "hostNodeName": "ip-172-31-10-253",
+                "id": "conditional-dev-nb2fp-854002630",
+                "name": "conditional-dev-nb2fp.test",
+                "outputs": {
+                    "exitCode": "0"
+                },
+                "phase": "Succeeded",
+                "progress": "1/1",
+                "resourcesDuration": {
+                    "cpu": 8,
+                    "memory": 88
+                },
+                "startedAt": "2026-11-09T12:03:14Z",
+                "taskResultSynced": true,
+                "templateName": "run-tests",
+                "templateScope": "local/",
+                "type": "Pod"
+            }
+        },
+        "phase": "Succeeded",
+        "progress": "3/3",
+        "resourcesDuration": {
+            "cpu": 16,
+            "memory": 200
+        },
+        "startedAt": "2026-11-09T12:02:28Z",
+        "storedTemplates": {
+            "namespaced/conditional-dag-template/build-app": {
+                "container": {
+                    "args": [
+                        "echo 'Building application...' \u0026\u0026 sleep 10 \u0026\u0026 echo 'Build completed successfully'"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "alpine:3.18",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {},
+                "metadata": {},
+                "name": "build-app",
+                "outputs": {}
+            },
+            "namespaced/conditional-dag-template/conditional-dag": {
+                "dag": {
+                    "tasks": [
+                        {
+                            "arguments": {},
+                            "name": "build",
+                            "template": "build-app"
+                        },
+                        {
+                            "arguments": {},
+                            "dependencies": [
+                                "build"
+                            ],
+                            "name": "test",
+                            "template": "run-tests",
+                            "when": "'{{workflow.parameters.run-tests}}' == 'true'"
+                        },
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "env",
+                                        "value": "development"
+                                    }
+                                ]
+                            },
+                            "dependencies": [
+                                "build"
+                            ],
+                            "name": "deploy-dev",
+                            "template": "deploy",
+                            "when": "'{{workflow.parameters.environment}}' == 'dev'"
+                        },
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "env",
+                                        "value": "production"
+                                    }
+                                ]
+                            },
+                            "dependencies": [
+                                "test"
+                            ],
+                            "name": "deploy-prod",
+                            "template": "deploy",
+                            "when": "'{{workflow.parameters.environment}}' == 'prod'"
+                        }
+                    ]
+                },
+                "inputs": {},
+                "metadata": {},
+                "name": "conditional-dag",
+                "outputs": {}
+            },
+            "namespaced/conditional-dag-template/deploy": {
+                "container": {
+                    "args": [
+                        "echo 'Deploying to {{inputs.parameters.env}} environment...' \u0026\u0026 sleep 8 \u0026\u0026 echo 'Deployment completed'"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "alpine:3.18",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "env"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "deploy",
+                "outputs": {}
+            },
+            "namespaced/conditional-dag-template/run-tests": {
+                "container": {
+                    "args": [
+                        "echo 'Running tests...' \u0026\u0026 sleep 15 \u0026\u0026 echo 'All tests passed'"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "alpine:3.18",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {},
+                "metadata": {},
+                "name": "run-tests",
+                "outputs": {}
+            }
+        },
+        "storedWorkflowTemplateSpec": {
+            "arguments": {
+                "parameters": [
+                    {
+                        "name": "run-tests",
+                        "value": "true"
+                    },
+                    {
+                        "name": "environment",
+                        "value": "dev"
+                    }
+                ]
+            },
+            "entrypoint": "conditional-dag",
+            "templates": [
+                {
+                    "dag": {
+                        "tasks": [
+                            {
+                                "arguments": {},
+                                "name": "build",
+                                "template": "build-app"
+                            },
+                            {
+                                "arguments": {},
+                                "dependencies": [
+                                    "build"
+                                ],
+                                "name": "test",
+                                "template": "run-tests",
+                                "when": "'{{workflow.parameters.run-tests}}' == 'true'"
+                            },
+                            {
+                                "arguments": {
+                                    "parameters": [
+                                        {
+                                            "name": "env",
+                                            "value": "development"
+                                        }
+                                    ]
+                                },
+                                "dependencies": [
+                                    "build"
+                                ],
+                                "name": "deploy-dev",
+                                "template": "deploy",
+                                "when": "'{{workflow.parameters.environment}}' == 'dev'"
+                            },
+                            {
+                                "arguments": {
+                                    "parameters": [
+                                        {
+                                            "name": "env",
+                                            "value": "production"
+                                        }
+                                    ]
+                                },
+                                "dependencies": [
+                                    "test"
+                                ],
+                                "name": "deploy-prod",
+                                "template": "deploy",
+                                "when": "'{{workflow.parameters.environment}}' == 'prod'"
+                            }
+                        ]
+                    },
+                    "inputs": {},
+                    "metadata": {},
+                    "name": "conditional-dag",
+                    "outputs": {}
+                },
+                {
+                    "container": {
+                        "args": [
+                            "echo 'Building application...' \u0026\u0026 sleep 10 \u0026\u0026 echo 'Build completed successfully'"
+                        ],
+                        "command": [
+                            "sh",
+                            "-c"
+                        ],
+                        "image": "alpine:3.18",
+                        "name": "",
+                        "resources": {}
+                    },
+                    "inputs": {},
+                    "metadata": {},
+                    "name": "build-app",
+                    "outputs": {}
+                },
+                {
+                    "container": {
+                        "args": [
+                            "echo 'Running tests...' \u0026\u0026 sleep 15 \u0026\u0026 echo 'All tests passed'"
+                        ],
+                        "command": [
+                            "sh",
+                            "-c"
+                        ],
+                        "image": "alpine:3.18",
+                        "name": "",
+                        "resources": {}
+                    },
+                    "inputs": {},
+                    "metadata": {},
+                    "name": "run-tests",
+                    "outputs": {}
+                },
+                {
+                    "container": {
+                        "args": [
+                            "echo 'Deploying to {{inputs.parameters.env}} environment...' \u0026\u0026 sleep 8 \u0026\u0026 echo 'Deployment completed'"
+                        ],
+                        "command": [
+                            "sh",
+                            "-c"
+                        ],
+                        "image": "alpine:3.18",
+                        "name": "",
+                        "resources": {}
+                    },
+                    "inputs": {
+                        "parameters": [
+                            {
+                                "name": "env"
+                            }
+                        ]
+                    },
+                    "metadata": {},
+                    "name": "deploy",
+                    "outputs": {}
+                }
+            ],
+            "workflowTemplateRef": {
+                "name": "conditional-dag-template"
+            }
+        }
+    }
+}

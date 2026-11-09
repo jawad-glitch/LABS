@@ -1,0 +1,2 @@
+pod/argo-server-7f79487488-r7p7j condition met
+pod/workflow-controller-6446b5594-t8j6x condition met

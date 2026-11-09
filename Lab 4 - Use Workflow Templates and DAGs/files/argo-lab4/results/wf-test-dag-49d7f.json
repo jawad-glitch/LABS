@@ -1,0 +1,543 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2"
+        },
+        "creationTimestamp": "2026-11-09T12:02:29Z",
+        "generateName": "test-dag-",
+        "generation": 13,
+        "labels": {
+            "workflows.argoproj.io/completed": "true",
+            "workflows.argoproj.io/creator": "system-admin",
+            "workflows.argoproj.io/phase": "Succeeded",
+            "workflows.argoproj.io/workflow-template": "dag-workflow-template"
+        },
+        "name": "test-dag-49d7f",
+        "namespace": "argo",
+        "resourceVersion": "1494",
+        "uid": "d1f4cda3-7930-46a9-9ed6-9f5f09ab53c8"
+    },
+    "spec": {
+        "arguments": {},
+        "workflowTemplateRef": {
+            "name": "dag-workflow-template"
+        }
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {},
+            "default": true
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            },
+            {
+                "status": "True",
+                "type": "Completed"
+            }
+        ],
+        "finishedAt": "2026-11-09T12:04:46Z",
+        "nodes": {
+            "test-dag-49d7f": {
+                "children": [
+                    "test-dag-49d7f-1987413210"
+                ],
+                "displayName": "test-dag-49d7f",
+                "finishedAt": "2026-11-09T12:04:46Z",
+                "id": "test-dag-49d7f",
+                "name": "test-dag-49d7f",
+                "outboundNodes": [
+                    "test-dag-49d7f-1937080353",
+                    "test-dag-49d7f-1920302734"
+                ],
+                "phase": "Succeeded",
+                "progress": "5/5",
+                "resourcesDuration": {
+                    "cpu": 24,
+                    "memory": 305
+                },
+                "startedAt": "2026-11-09T12:02:29Z",
+                "templateName": "dag-example",
+                "templateScope": "local/",
+                "type": "DAG"
+            },
+            "test-dag-49d7f-1920302734": {
+                "boundaryID": "test-dag-49d7f",
+                "displayName": "task-e",
+                "finishedAt": "2026-11-09T12:04:40Z",
+                "hostNodeName": "ip-172-31-10-253",
+                "id": "test-dag-49d7f-1920302734",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "duration",
+                            "value": "30"
+                        },
+                        {
+                            "name": "task-name",
+                            "value": "Background Processing"
+                        }
+                    ]
+                },
+                "name": "test-dag-49d7f.task-e",
+                "outputs": {
+                    "exitCode": "0"
+                },
+                "phase": "Succeeded",
+                "progress": "1/1",
+                "resourcesDuration": {
+                    "cpu": 10,
+                    "memory": 116
+                },
+                "startedAt": "2026-11-09T12:03:11Z",
+                "taskResultSynced": true,
+                "templateName": "long-running-task",
+                "templateScope": "local/",
+                "type": "Pod"
+            },
+            "test-dag-49d7f-1937080353": {
+                "boundaryID": "test-dag-49d7f",
+                "displayName": "task-d",
+                "finishedAt": "2026-11-09T12:04:44Z",
+                "hostNodeName": "ip-172-31-10-253",
+                "id": "test-dag-49d7f-1937080353",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "value": "Task D - Final Report (depends on B and C)"
+                        }
+                    ]
+                },
+                "name": "test-dag-49d7f.task-d",
+                "outputs": {
+                    "exitCode": "0"
+                },
+                "phase": "Succeeded",
+                "progress": "1/1",
+                "resourcesDuration": {
+                    "cpu": 0,
+                    "memory": 17
+                },
+                "startedAt": "2026-11-09T12:04:26Z",
+                "taskResultSynced": true,
+                "templateName": "print-message",
+                "templateScope": "local/",
+                "type": "Pod"
+            },
+            "test-dag-49d7f-1953857972": {
+                "boundaryID": "test-dag-49d7f",
+                "children": [
+                    "test-dag-49d7f-1937080353"
+                ],
+                "displayName": "task-c",
+                "finishedAt": "2026-11-09T12:04:17Z",
+                "hostNodeName": "ip-172-31-10-253",
+                "id": "test-dag-49d7f-1953857972",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "value": "Task C - Data Validation (depends on A)"
+                        }
+                    ]
+                },
+                "name": "test-dag-49d7f.task-c",
+                "outputs": {
+                    "exitCode": "0"
+                },
+                "phase": "Succeeded",
+                "progress": "1/1",
+                "resourcesDuration": {
+                    "cpu": 6,
+                    "memory": 72
+                },
+                "startedAt": "2026-11-09T12:03:11Z",
+                "taskResultSynced": true,
+                "templateName": "print-message",
+                "templateScope": "local/",
+                "type": "Pod"
+            },
+            "test-dag-49d7f-1970635591": {
+                "boundaryID": "test-dag-49d7f",
+                "children": [
+                    "test-dag-49d7f-1937080353"
+                ],
+                "displayName": "task-b",
+                "finishedAt": "2026-11-09T12:04:19Z",
+                "hostNodeName": "ip-172-31-10-253",
+                "id": "test-dag-49d7f-1970635591",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "value": "Task B - Data Processing (depends on A)"
+                        }
+                    ]
+                },
+                "name": "test-dag-49d7f.task-b",
+                "outputs": {
+                    "exitCode": "0"
+                },
+                "phase": "Succeeded",
+                "progress": "1/1",
+                "resourcesDuration": {
+                    "cpu": 6,
+                    "memory": 70
+                },
+                "startedAt": "2026-11-09T12:03:11Z",
+                "taskResultSynced": true,
+                "templateName": "print-message",
+                "templateScope": "local/",
+                "type": "Pod"
+            },
+            "test-dag-49d7f-1987413210": {
+                "boundaryID": "test-dag-49d7f",
+                "children": [
+                    "test-dag-49d7f-1970635591",
+                    "test-dag-49d7f-1953857972",
+                    "test-dag-49d7f-1920302734"
+                ],
+                "displayName": "task-a",
+                "finishedAt": "2026-11-09T12:02:59Z",
+                "hostNodeName": "ip-172-31-10-253",
+                "id": "test-dag-49d7f-1987413210",
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "value": "Starting Task A - Data Preparation (env=dev, batch=100)"
+                        }
+                    ]
+                },
+                "name": "test-dag-49d7f.task-a",
+                "outputs": {
+                    "exitCode": "0"
+                },
+                "phase": "Succeeded",
+                "progress": "1/1",
+                "resourcesDuration": {
+                    "cpu": 2,
+                    "memory": 30
+                },
+                "startedAt": "2026-11-09T12:02:29Z",
+                "taskResultSynced": true,
+                "templateName": "print-message",
+                "templateScope": "local/",
+                "type": "Pod"
+            }
+        },
+        "phase": "Succeeded",
+        "progress": "5/5",
+        "resourcesDuration": {
+            "cpu": 24,
+            "memory": 305
+        },
+        "startedAt": "2026-11-09T12:02:29Z",
+        "storedTemplates": {
+            "namespaced/dag-workflow-template/dag-example": {
+                "dag": {
+                    "tasks": [
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "message",
+                                        "value": "Starting Task A - Data Preparation (env={{workflow.parameters.environment}}, batch={{workflow.parameters.batch-size}})"
+                                    }
+                                ]
+                            },
+                            "name": "task-a",
+                            "template": "print-message"
+                        },
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "message",
+                                        "value": "Task B - Data Processing (depends on A)"
+                                    }
+                                ]
+                            },
+                            "dependencies": [
+                                "task-a"
+                            ],
+                            "name": "task-b",
+                            "template": "print-message"
+                        },
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "message",
+                                        "value": "Task C - Data Validation (depends on A)"
+                                    }
+                                ]
+                            },
+                            "dependencies": [
+                                "task-a"
+                            ],
+                            "name": "task-c",
+                            "template": "print-message"
+                        },
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "message",
+                                        "value": "Task D - Final Report (depends on B and C)"
+                                    }
+                                ]
+                            },
+                            "dependencies": [
+                                "task-b",
+                                "task-c"
+                            ],
+                            "name": "task-d",
+                            "template": "print-message"
+                        },
+                        {
+                            "arguments": {
+                                "parameters": [
+                                    {
+                                        "name": "duration",
+                                        "value": "30"
+                                    },
+                                    {
+                                        "name": "task-name",
+                                        "value": "Background Processing"
+                                    }
+                                ]
+                            },
+                            "dependencies": [
+                                "task-a"
+                            ],
+                            "name": "task-e",
+                            "template": "long-running-task"
+                        }
+                    ]
+                },
+                "inputs": {},
+                "metadata": {},
+                "name": "dag-example",
+                "outputs": {}
+            },
+            "namespaced/dag-workflow-template/long-running-task": {
+                "container": {
+                    "args": [
+                        "echo 'Starting {{inputs.parameters.task-name}}' \u0026\u0026 sleep {{inputs.parameters.duration}} \u0026\u0026 echo 'Completed {{inputs.parameters.task-name}}'"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "alpine:3.18",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "duration"
+                        },
+                        {
+                            "name": "task-name"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "long-running-task",
+                "outputs": {}
+            },
+            "namespaced/dag-workflow-template/print-message": {
+                "container": {
+                    "args": [
+                        "echo '{{inputs.parameters.message}}' \u0026\u0026 echo \"Timestamp: $(date)\" \u0026\u0026 sleep 5"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "alpine:3.18",
+                    "name": "",
+                    "resources": {}
+                },
+                "inputs": {
+                    "parameters": [
+                        {
+                            "name": "message"
+                        }
+                    ]
+                },
+                "metadata": {},
+                "name": "print-message",
+                "outputs": {}
+            }
+        },
+        "storedWorkflowTemplateSpec": {
+            "arguments": {
+                "parameters": [
+                    {
+                        "name": "environment",
+                        "value": "dev"
+                    },
+                    {
+                        "name": "batch-size",
+                        "value": "100"
+                    }
+                ]
+            },
+            "entrypoint": "dag-example",
+            "templates": [
+                {
+                    "dag": {
+                        "tasks": [
+                            {
+                                "arguments": {
+                                    "parameters": [
+                                        {
+                                            "name": "message",
+                                            "value": "Starting Task A - Data Preparation (env={{workflow.parameters.environment}}, batch={{workflow.parameters.batch-size}})"
+                                        }
+                                    ]
+                                },
+                                "name": "task-a",
+                                "template": "print-message"
+                            },
+                            {
+                                "arguments": {
+                                    "parameters": [
+                                        {
+                                            "name": "message",
+                                            "value": "Task B - Data Processing (depends on A)"
+                                        }
+                                    ]
+                                },
+                                "dependencies": [
+                                    "task-a"
+                                ],
+                                "name": "task-b",
+                                "template": "print-message"
+                            },
+                            {
+                                "arguments": {
+                                    "parameters": [
+                                        {
+                                            "name": "message",
+                                            "value": "Task C - Data Validation (depends on A)"
+                                        }
+                                    ]
+                                },
+                                "dependencies": [
+                                    "task-a"
+                                ],
+                                "name": "task-c",
+                                "template": "print-message"
+                            },
+                            {
+                                "arguments": {
+                                    "parameters": [
+                                        {
+                                            "name": "message",
+                                            "value": "Task D - Final Report (depends on B and C)"
+                                        }
+                                    ]
+                                },
+                                "dependencies": [
+                                    "task-b",
+                                    "task-c"
+                                ],
+                                "name": "task-d",
+                                "template": "print-message"
+                            },
+                            {
+                                "arguments": {
+                                    "parameters": [
+                                        {
+                                            "name": "duration",
+                                            "value": "30"
+                                        },
+                                        {
+                                            "name": "task-name",
+                                            "value": "Background Processing"
+                                        }
+                                    ]
+                                },
+                                "dependencies": [
+                                    "task-a"
+                                ],
+                                "name": "task-e",
+                                "template": "long-running-task"
+                            }
+                        ]
+                    },
+                    "inputs": {},
+                    "metadata": {},
+                    "name": "dag-example",
+                    "outputs": {}
+                },
+                {
+                    "container": {
+                        "args": [
+                            "echo '{{inputs.parameters.message}}' \u0026\u0026 echo \"Timestamp: $(date)\" \u0026\u0026 sleep 5"
+                        ],
+                        "command": [
+                            "sh",
+                            "-c"
+                        ],
+                        "image": "alpine:3.18",
+                        "name": "",
+                        "resources": {}
+                    },
+                    "inputs": {
+                        "parameters": [
+                            {
+                                "name": "message"
+                            }
+                        ]
+                    },
+                    "metadata": {},
+                    "name": "print-message",
+                    "outputs": {}
+                },
+                {
+                    "container": {
+                        "args": [
+                            "echo 'Starting {{inputs.parameters.task-name}}' \u0026\u0026 sleep {{inputs.parameters.duration}} \u0026\u0026 echo 'Completed {{inputs.parameters.task-name}}'"
+                        ],
+                        "command": [
+                            "sh",
+                            "-c"
+                        ],
+                        "image": "alpine:3.18",
+                        "name": "",
+                        "resources": {}
+                    },
+                    "inputs": {
+                        "parameters": [
+                            {
+                                "name": "duration"
+                            },
+                            {
+                                "name": "task-name"
+                            }
+                        ]
+                    },
+                    "metadata": {},
+                    "name": "long-running-task",
+                    "outputs": {}
+                }
+            ],
+            "workflowTemplateRef": {
+                "name": "dag-workflow-template"
+            }
+        }
+    }
+}

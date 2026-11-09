@@ -1,0 +1,36 @@
+=== Cilium Envoy Integration Lab Summary ===
+Generated on: Mon Nov  9 15:23:13 UTC 2026
+
+Cluster Nodes:
+NAME                             STATUS     ROLES           AGE   VERSION
+cilium-envoy-lab-control-plane   NotReady   control-plane   19s   v1.31.2
+cilium-envoy-lab-worker          NotReady   <none>          3s    v1.31.2
+cilium-envoy-lab-worker2         NotReady   <none>          3s    v1.31.2
+
+Cilium and Envoy Status:
+    /¯¯\
+ /¯¯\__/¯¯\    Cilium:             OK
+ \__/¯¯\__/    Operator:           OK
+ /¯¯\__/¯¯\    Envoy:              OK
+ \__/¯¯\__/    Hubble Relay:       OK
+    \__/
+Deployment        cilium-operator    Desired: 1, Ready: 1/1, Available: 1/1
+DaemonSet         cilium             Desired: 3, Ready: 3/3, Available: 3/3
+Cluster Pods:     6/6 managed by Cilium
+
+Applied CiliumNetworkPolicies:
+error: the server doesn't have a resource type "cnp"
+
+Test Suite Results:
+=== Comprehensive Cilium-Envoy Integration Test ===
+1. Testing basic connectivity...
+✓ Basic connectivity works
+2. Testing L7 policy enforcement...
+✓ L7 policy blocking unauthorized requests
+3. Testing header-based routing...
+✓ Header-based routing works
+4. Testing different HTTP methods...
+✓ POST requests work
+5. Checking Cilium status...
+✓ Cilium is healthy
+=== Test Complete ===

@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 14 - Integrating Cilium with Envoy Proxy, 2026-11-09 15:23:13 UTC) ==========
+PASS: Task 1: Kind cluster cilium-envoy-lab created and nodes verified
+PASS: Task 1: Cilium installed with Envoy and L7 proxy enabled
+PASS: Task 2: Multi-version backends (v1, v2) and frontend deployed
+FAIL: Task 3.1: L7 basic HTTP policy frontend-to-backend-l7 applied
+PASS: Task 3.2: Advanced header-based routing policies created
+PASS: Task 3.3: CiliumEnvoyConfig applied for traffic management
+PASS: Task 4: Basic HTTP GET/POST connectivity and path routing verified
+PASS: Task 4: Security policy enforcement validated (unauthorized routes blocked)
+PASS: Task 5: Rate limit and JWT authentication policies deployed
+PASS: Task 6: comprehensive-test.sh executed with all test assertions passing
+PASS: Time: Finished in under 300s
+CORE: 10/11 PASS

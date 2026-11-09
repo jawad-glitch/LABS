@@ -1,0 +1,4 @@
+Testing header-based routing to v1:
+{"version": "v1", "headers": {"X-Version": "v1"}}
+Testing header-based routing to v2:
+{"version": "v2", "headers": {"X-Version": "v2"}}

@@ -1,0 +1,4 @@
+resource mapping not found for name: "backend-header-routing" namespace: "backend" from "l7-policy-advanced.yaml": no matches for kind "CiliumNetworkPolicy" in version "cilium.io/v2"
+ensure CRDs are installed first
+resource mapping not found for name: "backend-v2-routing" namespace: "backend" from "l7-policy-advanced.yaml": no matches for kind "CiliumNetworkPolicy" in version "cilium.io/v2"
+ensure CRDs are installed first

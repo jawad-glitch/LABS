@@ -1,0 +1,2 @@
+error: resource mapping not found for name: "backend-rate-limit" namespace: "backend" from "rate-limit-policy.yaml": no matches for kind "CiliumNetworkPolicy" in version "cilium.io/v2"
+ensure CRDs are installed first

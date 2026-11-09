@@ -1,0 +1,2 @@
+error: resource mapping not found for name: "backend-lb-config" namespace: "backend" from "envoy-config.yaml": no matches for kind "CiliumEnvoyConfig" in version "cilium.io/v2"
+ensure CRDs are installed first

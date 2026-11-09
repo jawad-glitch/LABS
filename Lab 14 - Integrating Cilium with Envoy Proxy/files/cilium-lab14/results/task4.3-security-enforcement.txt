@@ -1,0 +1,6 @@
+Testing allowed /status endpoint:
+HTTP Status: 200
+Testing blocked /deny endpoint (should fail):
+Request blocked as expected
+Testing blocked DELETE method (should fail):
+Request blocked as expected

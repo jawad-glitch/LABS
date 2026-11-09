@@ -1,0 +1,53 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: backend-header-routing
+  namespace: backend
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+      version: v1
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        "k8s:io.kubernetes.pod.namespace": frontend
+    toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP
+      rules:
+        http:
+        - method: "GET"
+          path: "/headers"
+          headers:
+          - "X-Version: v1"
+        - method: "GET"
+          path: "/user-agent"
+---
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: backend-v2-routing
+  namespace: backend
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+      version: v2
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        "k8s:io.kubernetes.pod.namespace": frontend
+    toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP
+      rules:
+        http:
+        - method: "GET"
+          path: "/headers"
+          headers:
+          - "X-Version: v2"
+        - method: "POST"
+          path: "/anything"

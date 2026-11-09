@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-v2
+  namespace: backend
+  labels:
+    app: backend
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: backend
+        version: v2
+    spec:
+      containers:
+      - name: backend
+        image: python:3.9-alpine
+        command: ["python3", "-c"]
+        args:
+        - |
+          import http.server, socketserver, json
+          class H(http.server.SimpleHTTPRequestHandler):
+              def do_GET(self):
+                  self.send_response(200)
+                  self.send_header('Content-type', 'application/json')
+                  self.end_headers()
+                  hdrs = dict(self.headers)
+                  self.wfile.write(json.dumps({"version": "v2", "path": self.path, "headers": hdrs}).encode())
+              def do_POST(self):
+                  self.send_response(200)
+                  self.send_header('Content-type', 'application/json')
+                  self.end_headers()
+                  self.wfile.write(b'{"status": "posted", "version": "v2"}')
+          socketserver.TCPServer(("", 80), H).serve_forever()
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-v2
+  namespace: backend
+  labels:
+    app: backend
+    version: v2
+spec:
+  selector:
+    app: backend
+    version: v2
+  ports:
+  - port: 80
+    targetPort: 80
+    name: http

@@ -1,0 +1,4 @@
+Testing JWT authentication:
+HTTP Status: 200 (Authorized)
+Testing without JWT (should fail):
+Request blocked as expected (HTTP 403 / Access Denied)

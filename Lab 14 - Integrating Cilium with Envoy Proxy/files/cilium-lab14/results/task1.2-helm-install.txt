@@ -1,0 +1,2 @@
+Release "cilium" does not exist. Installing it now.
+Error: execution error at (cilium/templates/cilium-configmap.yaml:77:5): kubeProxyReplacement must be explicitly set to a valid value (true or false) to continue.

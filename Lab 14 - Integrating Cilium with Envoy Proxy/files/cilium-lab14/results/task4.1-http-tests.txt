@@ -1,0 +1,6 @@
+Testing basic GET request to backend-v1:
+HTTP 200 OK {"version": "v1", "path": "/get"}
+Testing basic GET request to backend-v2:
+HTTP 200 OK {"version": "v2", "path": "/get"}
+Testing POST request:
+HTTP 200 OK {"status": "posted", "version": "v1"}

@@ -1,0 +1,27 @@
+apiVersion: cilium.io/v2
+kind: CiliumEnvoyConfig
+metadata:
+  name: backend-lb-config
+  namespace: backend
+spec:
+  services:
+  - name: backend-v1
+    namespace: backend
+  - name: backend-v2
+    namespace: backend
+  backendServices:
+  - name: backend-v1
+    namespace: backend
+    ports:
+    - "80"
+  - name: backend-v2
+    namespace: backend
+    ports:
+    - "80"
+  resources:
+  - "@type": type.googleapis.com/envoy.config.listener.v3.Listener
+    name: backend-listener
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8080

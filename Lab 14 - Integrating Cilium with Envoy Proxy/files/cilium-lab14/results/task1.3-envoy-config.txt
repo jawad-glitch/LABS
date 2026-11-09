@@ -1,0 +1,4 @@
+enable-envoy-config: true
+enable-l7-proxy: true
+envoy:
+  enabled: true

@@ -1,0 +1,2 @@
+error: resource mapping not found for name: "frontend-to-backend-l7" namespace: "backend" from "l7-policy-basic.yaml": no matches for kind "CiliumNetworkPolicy" in version "cilium.io/v2"
+ensure CRDs are installed first

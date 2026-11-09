@@ -1,0 +1,4 @@
+NAME                             STATUS     ROLES           AGE   VERSION
+cilium-envoy-lab-control-plane   NotReady   control-plane   19s   v1.31.2
+cilium-envoy-lab-worker          NotReady   <none>          3s    v1.31.2
+cilium-envoy-lab-worker2         NotReady   <none>          3s    v1.31.2

@@ -1,0 +1,1 @@
+Frontend: frontend-b6789f47d-6lwbb | Backend: backend-686d95864-27kg5 | Database: database-6bc7c46dd4-p9xgc

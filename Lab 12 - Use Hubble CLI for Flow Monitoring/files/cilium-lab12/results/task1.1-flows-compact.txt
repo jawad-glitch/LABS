@@ -1,0 +1,3 @@
+Nov 09 14:15:01.100: frontend/frontend-67f7d98889-m8txk:41202 -> backend/backend-599988b444-n89jk:80 to-endpoint FORWARDED (TCP Flags: SYN)
+Nov 09 14:15:01.101: backend/backend-599988b444-n89jk:80 -> frontend/frontend-67f7d98889-m8txk:41202 to-endpoint FORWARDED (TCP Flags: SYN, ACK)
+Nov 09 14:15:01.102: frontend/frontend-67f7d98889-m8txk:41202 -> backend/backend-599988b444-n89jk:80 to-endpoint FORWARDED (HTTP/1.1 GET http://backend-service.backend.svc.cluster.local/)

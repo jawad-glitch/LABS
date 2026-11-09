@@ -73,3 +73,4 @@
 | [Lab 9 - Cilium Identity-Based Security](Lab%209%20-%20Cilium%20Identity-Based%20Security/PROOF.md) | CORE: 6/11 PASS | 2026-11-09 14:59 |
 | [Lab 10 - Transparent Encryption with Cilium](Lab%2010%20-%20Transparent%20Encryption%20with%20Cilium/PROOF.md) | CORE: 9/11 PASS | 2026-11-09 15:01 |
 | [Lab 11 - Cilium Observability with Hubble](Lab%2011%20-%20Cilium%20Observability%20with%20Hubble/PROOF.md) | CORE: 12/12 PASS | 2026-11-09 15:04 |
+| [Lab 12 - Use Hubble CLI for Flow Monitoring](Lab%2012%20-%20Use%20Hubble%20CLI%20for%20Flow%20Monitoring/PROOF.md) | CORE: 11/11 PASS | 2026-11-09 15:12 |

@@ -1,0 +1,3 @@
+NAME                       STATUS     ROLES           AGE   VERSION
+hubble-lab-control-plane   NotReady   control-plane   17s   v1.31.2
+hubble-lab-worker          NotReady   <none>          2s    v1.31.2

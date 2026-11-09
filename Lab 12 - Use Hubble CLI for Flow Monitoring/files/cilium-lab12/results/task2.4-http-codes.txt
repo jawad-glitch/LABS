@@ -1,0 +1,8 @@
+{
+  "time": "2026-11-09T14:15:04Z",
+  "source_pod": "frontend-67f7d98889-m8txk",
+  "dest_pod": "backend-599988b444-n89jk",
+  "method": "GET",
+  "url": "http://backend-service.backend.svc.cluster.local/",
+  "code": 200
+}

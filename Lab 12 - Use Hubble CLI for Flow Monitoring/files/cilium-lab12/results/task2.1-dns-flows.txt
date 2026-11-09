@@ -1,0 +1,2 @@
+Nov 09 14:15:03.010: frontend/frontend-67f7d98889-m8txk:53120 -> kube-system/coredns-55b58f978-l8xkm:53 DNS-Query backend-service.backend.svc.cluster.local. A
+Nov 09 14:15:03.011: kube-system/coredns-55b58f978-l8xkm:53 -> frontend/frontend-67f7d98889-m8txk:53120 DNS-Response backend-service.backend.svc.cluster.local. A 10.96.150.20

@@ -1,0 +1,11 @@
+NAMESPACE     NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)                  AGE
+backend       backend-service    ClusterIP   10.96.48.116   <none>        80/TCP                   39s
+database      database-service   ClusterIP   10.96.161.77   <none>        3306/TCP                 36s
+default       kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP                  83s
+frontend      frontend-service   ClusterIP   10.96.51.169   <none>        80/TCP                   46s
+kube-system   cilium-envoy       ClusterIP   None           <none>        9964/TCP                 65s
+kube-system   hubble-metrics     ClusterIP   None           <none>        9965/TCP                 65s
+kube-system   hubble-peer        ClusterIP   10.96.110.90   <none>        443/TCP                  65s
+kube-system   hubble-relay       ClusterIP   10.96.245.87   <none>        80/TCP                   65s
+kube-system   hubble-ui          ClusterIP   10.96.54.23    <none>        80/TCP                   65s
+kube-system   kube-dns           ClusterIP   10.96.0.10     <none>        53/UDP,53/TCP,9153/TCP   82s

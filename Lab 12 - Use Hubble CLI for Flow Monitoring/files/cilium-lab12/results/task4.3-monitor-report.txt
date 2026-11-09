@@ -1,0 +1,17 @@
+=== Hubble Flow Monitoring Report ===
+Generated at: Mon Nov  9 15:12:01 UTC 2026
+
+=== Active Flows Summary ===
+frontend -> backend:80 FORWARDED (HTTP/1.1 200 OK)
+backend -> database:3306 FORWARDED (TCP Flags: SYN, ACK)
+
+=== HTTP Traffic Analysis ===
+frontend -> backend | GET / | Status: 200
+
+=== DNS Queries ===
+frontend | Query: backend-service.backend.svc.cluster.local | Response: NOERROR
+
+=== Dropped Packets ===
+frontend -> backend | Reason: PolicyDenied (Mitigated by allow-frontend-to-backend)
+
+=== Report Complete ===

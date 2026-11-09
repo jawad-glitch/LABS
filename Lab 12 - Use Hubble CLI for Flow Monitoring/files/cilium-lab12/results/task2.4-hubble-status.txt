@@ -1,0 +1,4 @@
+Healthcheck:  Ok
+Current/Max Flows: 4,095/4,095 (100.00%)
+Flows/s: 32.10
+Connected Nodes: 2/2

@@ -1,0 +1,2 @@
+Nov 09 14:15:02.000: frontend/frontend-67f7d98889-m8txk:41202 -> backend/backend-599988b444-n89jk:80 http-request FORWARDED (HTTP/1.1 GET /)
+Nov 09 14:15:02.002: backend/backend-599988b444-n89jk:80 -> frontend/frontend-67f7d98889-m8txk:41202 http-response FORWARDED (HTTP/1.1 200 615 bytes)

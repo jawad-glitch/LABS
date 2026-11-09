@@ -1,0 +1,9 @@
+NAMESPACE            NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
+backend              backend                  0/1     1            0           40s
+database             database                 0/1     1            0           36s
+frontend             frontend                 0/1     1            0           46s
+kube-system          cilium-operator          0/2     2            0           65s
+kube-system          coredns                  0/2     2            0           82s
+kube-system          hubble-relay             0/1     1            0           65s
+kube-system          hubble-ui                0/1     1            0           65s
+local-path-storage   local-path-provisioner   0/1     1            0           78s

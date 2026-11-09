@@ -1,0 +1,71 @@
+EVT sample-app T2.3-initial status=Healthy reason=- step=0/8 weight=100 stable=1.24 canary=- pods=5/0 manualPause=0 simclock=0s traffic=1.24:40
+CMD kubectl argo rollouts set image sample-app sample-app=nginx:1.25-alpine -n rollout-demo
+EVT sample-app T3.1-after-set-image status=Paused reason=CanaryPauseStep step=1/8 weight=20 stable=1.24 canary=1.25 pods=4/1 manualPause=0 simclock=0s traffic=1.24:32,1.25:8
+CMD kubectl argo rollouts pause sample-app -n rollout-demo
+EVT sample-app T3.2-manual-pause status=Paused reason=PauseCondition-manual step=1/8 weight=20 stable=1.24 canary=1.25 pods=4/1 manualPause=1 simclock=0s traffic=1.24:33,1.25:7
+CMD kubectl argo rollouts promote sample-app -n rollout-demo   (lab: resume)
+EVT sample-app T3.4-promote status=Paused reason=PauseDuration-30s step=3/8 weight=40 stable=1.24 canary=1.25 pods=3/2 manualPause=0 simclock=0s traffic=1.24:24,1.25:16
+CLK +30s simulated (sim clock 30s)
+EVT sample-app T3.4-t30 status=Paused reason=PauseDuration-30s step=5/8 weight=60 stable=1.24 canary=1.25 pods=2/3 manualPause=0 simclock=30s traffic=1.24:13,1.25:27
+CLK +30s simulated (sim clock 60s)
+EVT sample-app T3.4-t60 status=Paused reason=PauseDuration-30s step=7/8 weight=80 stable=1.24 canary=1.25 pods=1/4 manualPause=0 simclock=60s traffic=1.24:7,1.25:33
+CLK +30s simulated (sim clock 90s)
+EVT sample-app T3.4-done status=Healthy reason=- step=8/8 weight=100 stable=1.25 canary=- pods=5/0 manualPause=0 simclock=90s traffic=1.25:40
+CMD kubectl argo rollouts set image sample-app sample-app=nginx:1.26-alpine -n rollout-demo
+EVT sample-app T3.5-set-image status=Paused reason=CanaryPauseStep step=1/8 weight=20 stable=1.25 canary=1.26 pods=4/1 manualPause=0 simclock=90s traffic=1.25:35,1.26:5
+CMD kubectl argo rollouts promote sample-app -n rollout-demo   (lab: resume)
+EVT sample-app T3.5-promote-gate status=Paused reason=PauseDuration-30s step=3/8 weight=40 stable=1.25 canary=1.26 pods=3/2 manualPause=0 simclock=90s traffic=1.25:29,1.26:11
+CMD kubectl argo rollouts pause sample-app -n rollout-demo
+EVT sample-app T3.5-manual-pause-during-timed-pause status=Paused reason=PauseCondition-manual step=3/8 weight=40 stable=1.25 canary=1.26 pods=3/2 manualPause=1 simclock=90s traffic=1.25:30,1.26:10
+CLK +60s simulated (sim clock 150s)
+EVT sample-app T3.5-tick-while-manually-paused status=Paused reason=PauseCondition-manual step=3/8 weight=40 stable=1.25 canary=1.26 pods=3/2 manualPause=1 simclock=150s traffic=1.25:28,1.26:12
+CMD kubectl argo rollouts promote sample-app -n rollout-demo   (lab: resume)
+EVT sample-app T3.5-promote status=Paused reason=PauseDuration-30s step=5/8 weight=60 stable=1.25 canary=1.26 pods=2/3 manualPause=0 simclock=150s traffic=1.25:20,1.26:20
+CLK +30s simulated (sim clock 180s)
+EVT sample-app T3.5-t30 status=Paused reason=PauseDuration-30s step=7/8 weight=80 stable=1.25 canary=1.26 pods=1/4 manualPause=0 simclock=180s traffic=1.25:5,1.26:35
+CLK +30s simulated (sim clock 210s)
+EVT sample-app T3.5-done status=Healthy reason=- step=8/8 weight=100 stable=1.26 canary=- pods=5/0 manualPause=0 simclock=210s traffic=1.26:40
+CMD kubectl argo rollouts set image sample-app sample-app=nginx:1.27-alpine -n rollout-demo
+EVT sample-app T6.2-set-image status=Paused reason=CanaryPauseStep step=1/8 weight=20 stable=1.26 canary=1.27 pods=4/1 manualPause=0 simclock=210s traffic=1.26:34,1.27:6
+CMD kubectl argo rollouts pause sample-app -n rollout-demo
+EVT sample-app T6.2-pause status=Paused reason=PauseCondition-manual step=1/8 weight=20 stable=1.26 canary=1.27 pods=4/1 manualPause=1 simclock=210s traffic=1.26:30,1.27:10
+CMD kubectl argo rollouts promote sample-app -n rollout-demo   (lab: resume)
+EVT sample-app T6.2-promote status=Paused reason=PauseDuration-30s step=3/8 weight=40 stable=1.26 canary=1.27 pods=3/2 manualPause=0 simclock=210s traffic=1.26:21,1.27:19
+CMD kubectl argo rollouts promote sample-app -n rollout-demo   (lab: resume)
+EVT sample-app T6.2-promote2 status=Paused reason=PauseDuration-30s step=5/8 weight=60 stable=1.26 canary=1.27 pods=2/3 manualPause=0 simclock=210s traffic=1.26:12,1.27:28
+CLK +30s simulated (sim clock 240s)
+EVT sample-app T6.2-t30 status=Paused reason=PauseDuration-30s step=7/8 weight=80 stable=1.26 canary=1.27 pods=1/4 manualPause=0 simclock=240s traffic=1.26:12,1.27:28
+CLK +30s simulated (sim clock 270s)
+EVT sample-app T6.2-t60 status=Healthy reason=- step=8/8 weight=100 stable=1.27 canary=- pods=5/0 manualPause=0 simclock=270s traffic=1.27:40
+CLK +30s simulated (sim clock 300s)
+EVT sample-app T6.2-done status=Healthy reason=- step=8/8 weight=100 stable=1.27 canary=- pods=5/0 manualPause=0 simclock=300s traffic=1.27:40
+EVT auto-pause-app T4.3-initial status=Healthy reason=- step=0/7 weight=100 stable=1.24 canary=- pods=4/0 manualPause=0 simclock=300s traffic=1.24:40
+CMD kubectl argo rollouts set image auto-pause-app auto-pause-app=nginx:1.25-alpine -n rollout-demo
+EVT auto-pause-app T4.3-set-image status=Paused reason=PauseDuration-20s step=1/7 weight=25 stable=1.24 canary=1.25 pods=3/1 manualPause=0 simclock=300s traffic=1.24:25,1.25:15
+CLK +20s simulated (sim clock 320s)
+EVT auto-pause-app analysis-simple-success-rate result=Successful measurements=2 (interval 15s compressed to 2s)
+EVT auto-pause-app T4.3-after-pause-and-analysis status=Paused reason=PauseDuration-20s step=4/7 weight=50 stable=1.24 canary=1.25 pods=2/2 manualPause=0 simclock=320s traffic=1.24:23,1.25:17
+CLK +20s simulated (sim clock 340s)
+EVT auto-pause-app T4.3-t40 status=Paused reason=PauseDuration-20s step=6/7 weight=75 stable=1.24 canary=1.25 pods=1/3 manualPause=0 simclock=340s traffic=1.24:15,1.25:25
+CLK +20s simulated (sim clock 360s)
+EVT auto-pause-app T4.3-done status=Healthy reason=- step=7/7 weight=100 stable=1.25 canary=- pods=4/0 manualPause=0 simclock=360s traffic=1.25:40
+EVT manual-gate-app T5.2-initial status=Healthy reason=- step=0/10 weight=100 stable=1.24 canary=- pods=6/0 manualPause=0 simclock=360s traffic=1.24:40
+CMD kubectl argo rollouts set image manual-gate-app manual-gate-app=nginx:1.25-alpine -n rollout-demo
+EVT manual-gate-app T5.2-gate1 status=Paused reason=CanaryPauseStep step=1/10 weight=16 stable=1.24 canary=1.25 pods=5/1 manualPause=0 simclock=360s traffic=1.24:33,1.25:7
+CMD kubectl argo rollouts promote manual-gate-app -n rollout-demo   (lab: resume)
+EVT manual-gate-app T5.2-gate2 status=Paused reason=CanaryPauseStep step=3/10 weight=33 stable=1.24 canary=1.25 pods=4/2 manualPause=0 simclock=360s traffic=1.24:26,1.25:14
+CMD kubectl argo rollouts promote manual-gate-app -n rollout-demo   (lab: resume)
+EVT manual-gate-app T5.2-timed50 status=Paused reason=PauseDuration-30s step=5/10 weight=50 stable=1.24 canary=1.25 pods=3/3 manualPause=0 simclock=360s traffic=1.24:20,1.25:20
+CLK +30s simulated (sim clock 390s)
+EVT manual-gate-app T5.2-gate3 status=Paused reason=CanaryPauseStep step=7/10 weight=66 stable=1.24 canary=1.25 pods=2/4 manualPause=0 simclock=390s traffic=1.24:12,1.25:28
+CMD kubectl argo rollouts promote manual-gate-app -n rollout-demo   (lab: resume)
+EVT manual-gate-app T5.2-timed83 status=Paused reason=PauseDuration-15s step=9/10 weight=83 stable=1.24 canary=1.25 pods=1/5 manualPause=0 simclock=390s traffic=1.24:5,1.25:35
+CLK +15s simulated (sim clock 405s)
+EVT manual-gate-app T5.2-done status=Healthy reason=- step=10/10 weight=100 stable=1.25 canary=- pods=6/0 manualPause=0 simclock=405s traffic=1.25:40
+CMD kubectl argo rollouts set image manual-gate-app manual-gate-app=nginx:1.26-alpine -n rollout-demo
+EVT manual-gate-app T5.3-paused-gate1 status=Paused reason=CanaryPauseStep step=1/10 weight=16 stable=1.25 canary=1.26 pods=5/1 manualPause=0 simclock=405s traffic=1.25:35,1.26:5
+CMD kubectl argo rollouts abort manual-gate-app -n rollout-demo
+EVT manual-gate-app T5.3-aborted status=Degraded reason=RolloutAborted step=1/10 weight=0 stable=1.25 canary=1.26 pods=6/0 manualPause=0 simclock=405s traffic=1.25:40
+CMD kubectl argo rollouts undo manual-gate-app -n rollout-demo (back to stable revision)
+CMD kubectl argo rollouts set image manual-gate-app manual-gate-app=nginx:1.25-alpine -n rollout-demo
+EVT manual-gate-app T5.3-undo status=Healthy reason=- step=0/10 weight=100 stable=1.25 canary=- pods=6/0 manualPause=0 simclock=405s traffic=1.25:40

@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: simple-success-rate
+  namespace: rollout-demo
+spec:
+  args:
+  - name: service-name
+  metrics:
+  - name: simple-check
+    interval: 15s
+    count: 2
+    provider:
+      job:
+        spec:
+          backoffLimit: 1
+          template:
+            spec:
+              restartPolicy: Never
+              containers:
+              - name: checker
+                image: curlimages/curl:7.85.0
+                command: ["/bin/sh", "-c"]
+                args:
+                - |
+                  echo "Checking {{args.service-name}}..."
+                  if curl -sf -o /dev/null http://{{args.service-name}}.rollout-demo.svc.cluster.local; then
+                    echo "Health check passed"; exit 0
+                  else
+                    echo "Health check failed"; exit 1
+                  fi

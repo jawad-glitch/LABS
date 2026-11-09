@@ -1,0 +1,55 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: auto-pause-app
+  namespace: rollout-demo
+spec:
+  replicas: 4
+  strategy:
+    canary:
+      steps:
+      - setWeight: 25
+      - pause: {duration: 20s}
+      - analysis:
+          templates:
+          - templateName: simple-success-rate
+          args:
+          - name: service-name
+            value: auto-pause-app-service
+      - setWeight: 50
+      - pause: {duration: 20s}
+      - setWeight: 75
+      - pause: {duration: 20s}
+  selector:
+    matchLabels:
+      app: auto-pause-app
+  template:
+    metadata:
+      labels:
+        app: auto-pause-app
+    spec:
+      containers:
+      - name: auto-pause-app
+        image: nginx:1.24-alpine
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auto-pause-app-service
+  namespace: rollout-demo
+spec:
+  selector:
+    app: auto-pause-app
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP

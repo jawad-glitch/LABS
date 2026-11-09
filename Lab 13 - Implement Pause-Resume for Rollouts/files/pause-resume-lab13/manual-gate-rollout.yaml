@@ -1,0 +1,53 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: manual-gate-app
+  namespace: rollout-demo
+spec:
+  replicas: 6
+  strategy:
+    canary:
+      steps:
+      - setWeight: 16
+      - pause: {}
+      - setWeight: 33
+      - pause: {}
+      - setWeight: 50
+      - pause: {duration: 30s}
+      - setWeight: 66
+      - pause: {}
+      - setWeight: 83
+      - pause: {duration: 15s}
+  selector:
+    matchLabels:
+      app: manual-gate-app
+  template:
+    metadata:
+      labels:
+        app: manual-gate-app
+    spec:
+      containers:
+      - name: manual-gate-app
+        image: nginx:1.24-alpine
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: manual-gate-app-service
+  namespace: rollout-demo
+spec:
+  selector:
+    app: manual-gate-app
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP

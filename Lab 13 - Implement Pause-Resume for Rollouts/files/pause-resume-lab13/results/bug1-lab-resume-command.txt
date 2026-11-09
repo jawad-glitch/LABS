@@ -1,0 +1,3 @@
+Error: unknown command "resume" for "kubectl-argo-rollouts"
+Run 'kubectl-argo-rollouts --help' for usage.
+exit=1

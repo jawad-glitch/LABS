@@ -64,3 +64,4 @@
 | [Lab 20 - Troubleshooting Argo Tools](Lab%2020%20-%20Troubleshooting%20Argo%20Tools/PROOF.md) | CORE: 12/13 PASS | 2026-11-09 13:55 |
 | [Lab 1 - Install and Set Up Kubernetes](Lab%201%20-%20Install%20and%20Set%20Up%20Kubernetes/PROOF.md) | CORE: 12/13 PASS | 2026-11-09 14:00 |
 | [Lab 2 - Install Cilium using Helm](Lab%202%20-%20Install%20Cilium%20using%20Helm/PROOF.md) | CORE: 7/10 PASS | 2026-11-09 14:07 |
+| [Lab 3 - Validate Cilium Installation](Lab%203%20-%20Validate%20Cilium%20Installation/PROOF.md) | CORE: 8/12 PASS | 2026-11-09 14:22 |

@@ -1,0 +1,44 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0@if6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 52:7f:df:3c:59:28 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 172.18.0.3/16 brd 172.18.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fc00:f853:ccd:e793::3/64 scope global nodad 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::507f:dfff:fe3c:5928/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+3: cilium_net@cilium_host: <BROADCAST,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 2e:7a:89:9a:53:87 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::2c7a:89ff:fe9a:5387/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+4: cilium_host@cilium_net: <BROADCAST,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether c2:e8:2b:8f:07:6e brd ff:ff:ff:ff:ff:ff
+    inet 10.244.1.94/32 scope global cilium_host
+       valid_lft forever preferred_lft forever
+    inet6 fe80::c0e8:2bff:fe8f:76e/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+5: cilium_vxlan: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/ether 5e:8d:a4:14:41:68 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::5c8d:a4ff:fe14:4168/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+7: lxc_health@if6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 6a:45:cf:6c:11:bd brd ff:ff:ff:ff:ff:ff link-netnsid 1
+    inet6 fe80::6845:cfff:fe6c:11bd/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+9: lxcd4c6474e6a68@if8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether a2:88:f8:cc:20:54 brd ff:ff:ff:ff:ff:ff link-netnsid 3
+    inet6 fe80::a088:f8ff:fecc:2054/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+11: lxc8e9e9c6a15bc@if10: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether a2:6c:26:ee:33:0d brd ff:ff:ff:ff:ff:ff link-netnsid 2
+    inet6 fe80::a06c:26ff:feee:330d/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+13: lxcb3b361925a4a@if12: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 52:d2:5f:c4:f7:d4 brd ff:ff:ff:ff:ff:ff link-netnsid 4
+    inet6 fe80::50d2:5fff:fec4:f7d4/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever

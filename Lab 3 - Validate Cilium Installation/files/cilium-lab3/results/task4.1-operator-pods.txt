@@ -1,0 +1,2 @@
+NAME                               READY   STATUS    RESTARTS   AGE   IP           NODE                NOMINATED NODE   READINESS GATES
+cilium-operator-77b647479f-66h7h   1/1     Running   0          98s   172.18.0.3   cilium-lab-worker   <none>           <none>

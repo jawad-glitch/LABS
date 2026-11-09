@@ -1,0 +1,12 @@
+##### Read-write configurations #####
+Debug                             : Disabled
+DebugLB                           : Disabled
+DropNotification                  : Enabled
+MonitorAggregationLevel           : Medium
+PolicyAuditMode                   : Disabled
+PolicyTracing                     : Disabled
+PolicyVerdictNotification         : Enabled
+SourceIPVerification              : Enabled
+TraceNotification                 : Enabled
+MonitorNumPages                   : 64
+PolicyEnforcement                 : default

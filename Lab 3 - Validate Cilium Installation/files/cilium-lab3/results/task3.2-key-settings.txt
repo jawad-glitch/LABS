@@ -1,0 +1,5 @@
+enable-ipv4                                       true
+ipam                                              kubernetes
+prometheus-serve-addr                             :9962
+routing-mode                                      tunnel
+tunnel-protocol                                   vxlan

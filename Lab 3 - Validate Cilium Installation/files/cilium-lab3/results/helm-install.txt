@@ -1,0 +1,13 @@
+Release "cilium" does not exist. Installing it now.
+NAME: cilium
+LAST DEPLOYED: Mon Nov  9 14:19:16 2026
+NAMESPACE: kube-system
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+You have successfully installed Cilium with Hubble.
+
+Your release version is 1.20.4.
+
+For any further help, visit https://docs.cilium.io/en/v1.20/gettinghelp

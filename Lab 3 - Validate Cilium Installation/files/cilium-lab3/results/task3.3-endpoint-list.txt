@@ -1,0 +1,47 @@
+ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS (source:key[=value])                                                         IPv6   IPv4           STATUS   
+           ENFORCEMENT        ENFORCEMENT                                                                                                                            
+87         Disabled           Disabled          1          reserved:host                                                                                             waiting-to-regenerate   
+154        Disabled           Disabled          339        gen:io.cilium.k8s.named-ports-1=metrics.TCP.9153_readiness-probe.TCP.8181                  10.244.1.135   regenerating            
+                                                           gen:io.cilium.k8s.named-ports=dns.UDP.53_dns-tcp.TCP.53_liveness-probe.TCP.8080                                                   
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system                                                        
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=coredns                                                                                   
+                                                           k8s:io.kubernetes.pod.namespace=kube-system                                                                                       
+                                                           k8s:k8s-app=kube-dns                                                                                                              
+323        Disabled           Disabled          5086       k8s:io.cilium.k8s.namespace.labels.app.kubernetes.io/name=cilium-cli                       10.244.1.110   waiting-to-regenerate   
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=cilium-test-1                                                      
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=client                                                                                    
+                                                           k8s:io.kubernetes.pod.namespace=cilium-test-1                                                                                     
+                                                           k8s:kind=client                                                                                                                   
+                                                           k8s:name=client                                                                                                                   
+338        Disabled           Disabled          339        gen:io.cilium.k8s.named-ports-1=metrics.TCP.9153_readiness-probe.TCP.8181                  10.244.1.61    waiting-to-regenerate   
+                                                           gen:io.cilium.k8s.named-ports=dns.UDP.53_dns-tcp.TCP.53_liveness-probe.TCP.8080                                                   
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system                                                        
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=coredns                                                                                   
+                                                           k8s:io.kubernetes.pod.namespace=kube-system                                                                                       
+                                                           k8s:k8s-app=kube-dns                                                                                                              
+1055       Disabled           Disabled          60406      k8s:app=local-path-provisioner                                                             10.244.1.183   waiting-to-regenerate   
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=local-path-storage                                                 
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=local-path-provisioner-service-account                                                    
+                                                           k8s:io.kubernetes.pod.namespace=local-path-storage                                                                                
+1105       Disabled           Disabled          4          reserved:health                                                                            10.244.1.165   regenerating            
+1736       Disabled           Disabled          12513      gen:io.cilium.k8s.named-ports=dns-53.TCP.53_dns-udp-53.UDP.53_http-8080.TCP.8080           10.244.1.4     waiting-to-regenerate   
+                                                           k8s:io.cilium.k8s.namespace.labels.app.kubernetes.io/name=cilium-cli                                                              
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=cilium-test-1                                                      
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=echo-same-node                                                                            
+                                                           k8s:io.kubernetes.pod.namespace=cilium-test-1                                                                                     
+                                                           k8s:kind=echo                                                                                                                     
+                                                           k8s:name=echo-same-node                                                                                                           
+                                                           k8s:other=echo                                                                                                                    
+2599       Disabled           Disabled          10907      k8s:io.cilium.k8s.namespace.labels.app.kubernetes.io/name=cilium-cli                       10.244.1.211   waiting-to-regenerate   
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=cilium-test-1                                                      
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=client2                                                                                   
+                                                           k8s:io.kubernetes.pod.namespace=cilium-test-1                                                                                     
+                                                           k8s:kind=client                                                                                                                   
+                                                           k8s:name=client2                                                                                                                  
+                                                           k8s:other=client                                                                                                                  

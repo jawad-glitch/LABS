@@ -1,0 +1,2 @@
+NAME     DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+cilium   2         2         2       2            2           kubernetes.io/os=linux   88s

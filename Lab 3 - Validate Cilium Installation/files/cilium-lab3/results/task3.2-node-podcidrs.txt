@@ -1,0 +1,3 @@
+NAME                       PODCIDR
+cilium-lab-control-plane   10.244.0.0/24
+cilium-lab-worker          10.244.1.0/24

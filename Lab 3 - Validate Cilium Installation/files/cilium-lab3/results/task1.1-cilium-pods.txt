@@ -1,0 +1,3 @@
+NAME           READY   STATUS    RESTARTS   AGE   IP           NODE                       NOMINATED NODE   READINESS GATES
+cilium-tzjlh   1/1     Running   0          86s   172.18.0.3   cilium-lab-worker          <none>           <none>
+cilium-zsjq2   1/1     Running   0          86s   172.18.0.2   cilium-lab-control-plane   <none>           <none>

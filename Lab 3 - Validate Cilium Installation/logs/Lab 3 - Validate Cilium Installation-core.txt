@@ -1,0 +1,14 @@
+========== CORE CHECKS (Lab 3 - Validate Cilium Installation, 2026-11-09 14:21:55 UTC) ==========
+PASS: Setup: 2-node kind (no default CNI) + Cilium 1.20.4 via Helm; cilium status --wait OK
+PASS: Task 1.1/1.3: 2 agent pods Running 1/1; DaemonSet DESIRED=CURRENT=READY=2
+FAIL: Task 2.1: cilium status - Cilium OK, Operator OK (Hubble Relay disabled by default, not OK as lab expects)
+PASS: Task 2.3: cilium connectivity test (no-policies, concurrency 1) all tests successful
+PASS: Task 3.1/3.4: cilium_host, cilium_net, cilium_vxlan and lxc* interfaces exist (agent pod + kind node netns)
+PASS: Lab bug: EC2 host shows 0 cilium/lxc interfaces - they live inside the kind node namespace
+FAIL: Task 3.2: ipam=kubernetes, enable-ipv4=true, tunnel routing (cilium config view); in-pod cilium config fails (renamed cilium-dbg)
+FAIL: Task 3.3: cilium-dbg endpoint list - all endpoints ready (lab cilium endpoint list fails)
+PASS: Task 4: operator Running, Cilium CRDs installed, both nodes registered as CiliumNodes
+PASS: Task 5.1: agent metrics served on node:9962 (1239 cilium_* samples, prometheus.enabled fix)
+PASS: Task 5.2: DNS resolves kubernetes.default via CoreDNS; cross-node pod ping over cilium_vxlan 0% loss
+FAIL: Time: lab finished in 318s (<= 300s)
+CORE: 8/12 PASS

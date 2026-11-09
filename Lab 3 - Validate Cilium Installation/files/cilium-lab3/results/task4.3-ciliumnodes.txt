@@ -1,0 +1,3 @@
+NAME                       CILIUMINTERNALIP   INTERNALIP   AGE
+cilium-lab-control-plane   10.244.0.168       172.18.0.2   49s
+cilium-lab-worker          10.244.1.94        172.18.0.3   47s

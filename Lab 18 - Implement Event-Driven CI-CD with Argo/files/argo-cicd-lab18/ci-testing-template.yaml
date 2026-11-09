@@ -1,0 +1,73 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata: {name: ci-testing-template, namespace: argo}
+spec:
+  entrypoint: ci-pipeline
+  serviceAccountName: ci-workflow
+  arguments:
+    parameters:
+    - {name: repo-url, value: "https://github.com/octocat/Hello-World.git"}
+    - {name: branch, value: "master"}
+  volumeClaimTemplates:
+  - metadata: {name: workspace}
+    spec:
+      accessModes: [ReadWriteOnce]
+      resources: {requests: {storage: 1Gi}}
+  templates:
+  - name: ci-pipeline
+    dag:
+      tasks:
+      - name: clone-repo
+        template: git-clone
+        arguments:
+          parameters:
+          - {name: repo-url, value: "{{workflow.parameters.repo-url}}"}
+          - {name: branch, value: "{{workflow.parameters.branch}}"}
+      - {name: run-tests, template: test-code, dependencies: [clone-repo]}
+      - {name: build-image, template: package-build, dependencies: [run-tests]}
+  - name: git-clone
+    inputs:
+      parameters:
+      - {name: repo-url}
+      - {name: branch}
+    container:
+      image: alpine/git:latest
+      command: [sh, -c]
+      args:
+      - |
+        set -e
+        rm -rf /workspace/source
+        git clone -q --depth 1 {{inputs.parameters.repo-url}} /workspace/source
+        cd /workspace/source
+        git fetch -q --depth 1 origin {{inputs.parameters.branch}}
+        git checkout -q FETCH_HEAD
+        echo "Checked out {{inputs.parameters.branch}} at $(git log -1 --format='%h %s')"
+        ls -la /workspace/source
+      volumeMounts: [{name: workspace, mountPath: /workspace}]
+  - name: test-code
+    container:
+      image: node:22-alpine
+      command: [sh, -c]
+      args:
+      - |
+        set -e
+        cd /workspace/source
+        echo "Running tests..."
+        N=$(find . -path ./.git -prune -o -type f -print | wc -l); echo "files in checkout: $N"
+        [ "$N" -gt 0 ]
+        node -e 'console.log("node", process.version, "test harness OK")'
+        echo "✅ All tests passed!"
+      volumeMounts: [{name: workspace, mountPath: /workspace}]
+  - name: package-build
+    container:
+      image: alpine:3.20
+      command: [sh, -c]
+      args:
+      - |
+        set -e
+        cd /workspace/source
+        echo "Building package..."
+        tar --exclude=.git -czf /workspace/build.tgz .
+        ls -la /workspace/build.tgz
+        echo "✅ Image built successfully! (package artifact; use kaniko/buildkit for real images - no docker.sock on kind/containerd)"
+      volumeMounts: [{name: workspace, mountPath: /workspace}]

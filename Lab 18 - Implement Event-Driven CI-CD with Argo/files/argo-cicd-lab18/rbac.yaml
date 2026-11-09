@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: ci-workflow, namespace: argo}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata: {name: ci-workflow-executor, namespace: argo}
+rules:
+- apiGroups: [argoproj.io]
+  resources: [workflowtaskresults]
+  verbs: [create, patch]
+- apiGroups: [""]
+  resources: [pods]
+  verbs: [get, list, watch, patch]
+- apiGroups: [""]
+  resources: [pods/log]
+  verbs: [get, list]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata: {name: ci-workflow-executor, namespace: argo}
+roleRef: {apiGroup: rbac.authorization.k8s.io, kind: Role, name: ci-workflow-executor}
+subjects: [{kind: ServiceAccount, name: ci-workflow, namespace: argo}]
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: ci-sensor-sa, namespace: argo-events}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata: {name: ci-sensor-submit, namespace: argo}
+rules:
+- apiGroups: [argoproj.io]
+  resources: [workflows]
+  verbs: [create, get, list, watch]
+- apiGroups: [argoproj.io]
+  resources: [workflowtemplates]
+  verbs: [get, list]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata: {name: ci-sensor-submit, namespace: argo}
+roleRef: {apiGroup: rbac.authorization.k8s.io, kind: Role, name: ci-sensor-submit}
+subjects: [{kind: ServiceAccount, name: ci-sensor-sa, namespace: argo-events}]
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: ci-eventsource-sa, namespace: argo-events}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata: {name: ci-eventsource-watch, namespace: argo}
+rules:
+- apiGroups: [argoproj.io]
+  resources: [workflows]
+  verbs: [get, list, watch]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata: {name: ci-eventsource-watch, namespace: argo}
+roleRef: {apiGroup: rbac.authorization.k8s.io, kind: Role, name: ci-eventsource-watch}
+subjects: [{kind: ServiceAccount, name: ci-eventsource-sa, namespace: argo-events}]

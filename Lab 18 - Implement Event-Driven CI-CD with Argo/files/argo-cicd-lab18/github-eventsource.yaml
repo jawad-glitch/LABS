@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata: {name: github-event-source, namespace: argo-events}
+spec:
+  service:
+    ports:
+      - {port: 12000, targetPort: 12000}
+  github:
+    example:
+      repositories:
+        - owner: octocat
+          names: [Hello-World]
+      webhook:
+        endpoint: /push
+        port: "12000"
+        method: POST
+      events: [push]
+      webhookSecret: {name: github-access, key: secret}
+      contentType: json

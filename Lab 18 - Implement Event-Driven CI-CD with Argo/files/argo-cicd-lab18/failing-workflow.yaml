@@ -1,0 +1,8 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata: {generateName: test-failure-, namespace: argo}
+spec:
+  entrypoint: failing-step
+  templates:
+  - name: failing-step
+    container: {image: "alpine:3.20", command: [sh, -c], args: ["echo failing on purpose; exit 1"]}

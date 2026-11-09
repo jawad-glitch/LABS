@@ -1,0 +1,11 @@
+spec:
+  dependencies:
+  - name: workflow-dep
+    filters:
+      data:
+      - path: body.object.metadata.labels.workflows\.argoproj\.io/phase
+        type: string
+        value: ["Succeeded"]
+      - path: body.object.metadata.generateName
+        type: string
+        value: ["ci-pipeline-"]

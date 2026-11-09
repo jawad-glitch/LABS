@@ -1,0 +1,9 @@
+spec:
+  templates:
+  - name: git-clone
+    outputs: {artifacts: [{name: source, path: /tmp/source}]}
+  - name: test-code
+    inputs: {artifacts: [{name: source-code, path: /tmp/source}]}
+  - name: docker-build
+    container: {image: "docker:20.10.7-dind", volumeMounts: [{name: docker-sock, mountPath: /var/run/docker.sock}]}
+    volumes: [{name: docker-sock, hostPath: {path: /var/run/docker.sock}}]

@@ -1,0 +1,53 @@
+{
+ "context": {
+  "id": "d0e9dcd7c1d843258bedcce1b46cbbb6",
+  "source": "workflow-event-source",
+  "subject": "example",
+  "type": "resource",
+  "time": "2026-11-09T13:33:08.958610+00:00"
+ },
+ "data": {
+  "type": "UPDATE",
+  "body": {
+   "apiVersion": "argoproj.io/v1alpha1",
+   "kind": "Workflow",
+   "metadata": {
+    "generateName": "cd-pipeline-",
+    "namespace": "argo",
+    "name": "cd-pipeline-fh1j6",
+    "labels": {
+     "workflows.argoproj.io/phase": "Succeeded",
+     "workflows.argoproj.io/completed": "true"
+    }
+   },
+   "spec": {
+    "workflowTemplateRef": {
+     "name": "cd-deployment-template"
+    },
+    "arguments": {
+     "parameters": [
+      {
+       "name": "environment",
+       "value": "staging"
+      },
+      {
+       "name": "image-tag",
+       "value": "latest"
+      }
+     ]
+    }
+   },
+   "status": {
+    "nodes": {
+     "deploy-to-staging": "Succeeded",
+     "run-smoke-tests": "Succeeded",
+     "deploy-to-production": "Succeeded"
+    },
+    "phase": "Succeeded"
+   }
+  },
+  "group": "argoproj.io",
+  "version": "v1alpha1",
+  "resource": "workflows"
+ }
+}

@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata: {name: github-ci-sensor, namespace: argo-events}
+spec:
+  template: {serviceAccountName: ci-sensor-sa}
+  dependencies:
+  - {name: github-dep, eventSourceName: github-event-source, eventName: example}
+  triggers:
+  - template:
+      name: github-workflow-trigger
+      argoWorkflow:
+        operation: submit
+        source:
+          resource:
+            apiVersion: argoproj.io/v1alpha1
+            kind: Workflow
+            metadata: {generateName: ci-pipeline-, namespace: argo}
+            spec:
+              workflowTemplateRef: {name: ci-testing-template}
+              arguments:
+                parameters:
+                - {name: repo-url, value: "https://github.com/octocat/Hello-World.git"}
+                - {name: branch, value: "master"}
+        parameters:
+        - src: {dependencyName: github-dep, dataKey: body.repository.clone_url}
+          dest: spec.arguments.parameters.0.value
+        - src: {dependencyName: github-dep, dataKey: body.ref}
+          dest: spec.arguments.parameters.1.value

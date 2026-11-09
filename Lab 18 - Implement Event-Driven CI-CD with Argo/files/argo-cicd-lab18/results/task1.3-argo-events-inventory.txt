@@ -1,0 +1,12 @@
+OBJ CustomResourceDefinition eventbus.argoproj.io
+OBJ CustomResourceDefinition eventsources.argoproj.io
+OBJ CustomResourceDefinition sensors.argoproj.io
+OBJ ServiceAccount argo-events-sa
+OBJ ClusterRole argo-events-aggregate-to-admin
+OBJ ClusterRole argo-events-aggregate-to-edit
+OBJ ClusterRole argo-events-aggregate-to-view
+OBJ ClusterRole argo-events-role
+OBJ ClusterRoleBinding argo-events-binding
+OBJ ConfigMap argo-events-controller-config
+JS latest nats:2.10.29
+OBJ Deployment controller-manager

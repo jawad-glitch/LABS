@@ -1,0 +1,48 @@
+{
+ "context": {
+  "id": "607f81891a5348d59e79123c6b936874",
+  "source": "github-event-source",
+  "subject": "example",
+  "type": "github",
+  "time": "2026-11-09T13:32:51.406052+00:00"
+ },
+ "data": {
+  "headers": {
+   "Host": [
+    "127.0.0.1:12000"
+   ],
+   "User-Agent": [
+    "curl/8.5.0"
+   ],
+   "Accept": [
+    "*/*"
+   ],
+   "Content-Type": [
+    "application/json"
+   ],
+   "X-GitHub-Event": [
+    "push"
+   ],
+   "X-Hub-Signature-256": [
+    "sha256=c068d283501d3a08a013d65a94f54ffe4e611c5bc3776360dc8dd9fa51ac9395"
+   ],
+   "Content-Length": [
+    "222"
+   ]
+  },
+  "body": {
+   "ref": "refs/heads/master",
+   "repository": {
+    "name": "Hello-World",
+    "full_name": "octocat/Hello-World",
+    "clone_url": "https://github.com/octocat/Hello-World.git"
+   },
+   "pusher": {
+    "name": "testuser"
+   },
+   "head_commit": {
+    "message": "lab18 push"
+   }
+  }
+ }
+}

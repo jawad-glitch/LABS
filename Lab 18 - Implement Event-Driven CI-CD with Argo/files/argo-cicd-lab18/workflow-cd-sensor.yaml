@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata: {name: workflow-cd-sensor, namespace: argo-events}
+spec:
+  template: {serviceAccountName: ci-sensor-sa}
+  dependencies:
+  - name: workflow-dep
+    eventSourceName: workflow-event-source
+    eventName: example
+    filters:
+      data:
+      - path: body.metadata.labels.workflows\.argoproj\.io/phase
+        type: string
+        value: ["Succeeded"]
+      - path: body.metadata.generateName
+        type: string
+        value: ["ci-pipeline-"]
+  triggers:
+  - template:
+      name: cd-workflow-trigger
+      argoWorkflow:
+        operation: submit
+        source:
+          resource:
+            apiVersion: argoproj.io/v1alpha1
+            kind: Workflow
+            metadata: {generateName: cd-pipeline-, namespace: argo}
+            spec:
+              workflowTemplateRef: {name: cd-deployment-template}
+              arguments:
+                parameters:
+                - {name: environment, value: "staging"}
+                - {name: image-tag, value: "latest"}

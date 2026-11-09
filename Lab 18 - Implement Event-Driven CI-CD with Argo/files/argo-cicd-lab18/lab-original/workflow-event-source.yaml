@@ -1,0 +1,7 @@
+spec:
+  resource:
+    example:
+      eventTypes: [ADD, UPDATE]
+      filter:
+        labels:
+          workflows.argoproj.io/phase: Succeeded

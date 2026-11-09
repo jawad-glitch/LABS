@@ -1,0 +1,1 @@
+Argo Events v1.9.11 | Argo Workflows v4.1.6 | EventBus JetStream latest (nats:2.10.29) | argo-workflows default branch=main, master exists=0

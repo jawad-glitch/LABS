@@ -1,0 +1,6 @@
+ORIG-CI-SENSOR resolved params: [{"name": "repo-url", "value": "refs/heads/master"}, {"name": "branch", "value": "main"}]
+ORIG-CI-TEMPLATE artifacts used: True -> You need to configure artifact storage. More information on how to do this can be found in the docs: https://argo-workflows.readthedocs.io/en/latest/configure-artifact-repository/
+ORIG-CD-SENSOR filter on real CI-success event: False path body.object.metadata.labels.workflows\.argoproj\.io/phase -> None (want ['Succeeded'])
+FIXED-CD-SENSOR filter on same event: True all data filters matched
+ORIG-WORKFLOW-ES labels filter valid list: False
+ORIG-REPO-URL refs/heads/master

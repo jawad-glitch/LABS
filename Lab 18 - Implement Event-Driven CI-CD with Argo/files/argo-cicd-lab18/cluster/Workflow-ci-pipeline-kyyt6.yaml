@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: ci-pipeline-
+  namespace: argo
+  name: ci-pipeline-kyyt6
+  labels:
+    workflows.argoproj.io/phase: Succeeded
+    workflows.argoproj.io/completed: 'true'
+spec:
+  workflowTemplateRef:
+    name: ci-testing-template
+  arguments:
+    parameters:
+    - name: repo-url
+      value: https://github.com/octocat/Hello-World.git
+    - name: branch
+      value: refs/heads/master
+status:
+  nodes:
+    clone-repo: Succeeded
+    run-tests: Succeeded
+    build-image: Succeeded
+  phase: Succeeded

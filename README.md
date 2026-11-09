@@ -59,3 +59,4 @@
 | [Lab 15 - Configure Event Sources in Argo Events](Lab%2015%20-%20Configure%20Event%20Sources%20in%20Argo%20Events/PROOF.md) | CORE: 7/10 PASS | 2026-11-09 13:09 |
 | [Lab 16 - Configure Sensors and Triggers in Argo Events](Lab%2016%20-%20Configure%20Sensors%20and%20Triggers%20in%20Argo%20Events/PROOF.md) | CORE: 11/11 PASS | 2026-11-09 13:14 |
 | [Lab 17 - Use Argo Events with S3 and NATS](Lab%2017%20-%20Use%20Argo%20Events%20with%20S3%20and%20NATS/PROOF.md) | CORE: 3/9 PASS | 2026-11-09 13:19 |
+| [Lab 18 - Implement Event-Driven CI-CD with Argo](Lab%2018%20-%20Implement%20Event-Driven%20CI-CD%20with%20Argo/PROOF.md) | CORE: 11/12 PASS | 2026-11-09 13:33 |

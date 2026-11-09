@@ -1,0 +1,41 @@
+GITHUB-ES listening 127.0.0.1:12000 /push events=['push'] signed=True
+SUBMITTED test-ci-pipeline-s5ecv by kubectl create args=[{"name": "repo-url", "value": "https://github.com/octocat/Hello-World.git"}, {"name": "branch", "value": "master"}]
+WORKFLOW test-ci-pipeline-s5ecv Running 
+TASK test-ci-pipeline-s5ecv/clone-repo start image=alpine/git:latest
+SUBMITTED test-failure-1uqrf by kubectl create args=[]
+WORKFLOW test-failure-1uqrf Running 
+TASK test-failure-1uqrf/failing-step start image=alpine:3.20
+GITHUB-ES POST /push -> 400 event type None not in ['push']
+SUBMITTED ci-pipeline-kyyt6 by sensor github-ci-sensor args=[{"name": "repo-url", "value": "https://github.com/octocat/Hello-World.git"}, {"name": "branch", "value": "refs/heads/master"}]
+EVENT github-event-source/example github
+WORKFLOW ci-pipeline-kyyt6 Running 
+GITHUB-ES POST /push -> 200 success
+TASK ci-pipeline-kyyt6/clone-repo start image=alpine/git:latest
+TASK test-failure-1uqrf/failing-step rc=1
+WORKFLOW test-failure-1uqrf Failed 
+TASK test-ci-pipeline-s5ecv/clone-repo rc=0
+TASK test-ci-pipeline-s5ecv/run-tests start image=node:22-alpine
+TASK ci-pipeline-kyyt6/clone-repo rc=0
+TASK ci-pipeline-kyyt6/run-tests start image=node:22-alpine
+TASK test-ci-pipeline-s5ecv/run-tests rc=0
+TASK test-ci-pipeline-s5ecv/build-image start image=alpine:3.20
+TASK ci-pipeline-kyyt6/run-tests rc=0
+TASK ci-pipeline-kyyt6/build-image start image=alpine:3.20
+TASK test-ci-pipeline-s5ecv/build-image rc=0
+WORKFLOW test-ci-pipeline-s5ecv Succeeded 
+EVENT workflow-event-source/example resource
+SENSOR workflow-cd-sensor FILTERED path body.metadata.generateName -> 'test-ci-pipeline-' (want ['ci-pipeline-'])
+TASK ci-pipeline-kyyt6/build-image rc=0
+WORKFLOW ci-pipeline-kyyt6 Succeeded 
+EVENT workflow-event-source/example resourceSUBMITTED cd-pipeline-fh1j6 by sensor workflow-cd-sensor args=[{"name": "environment", "value": "staging"}, {"name": "image-tag", "value": "latest"}]
+
+WORKFLOW cd-pipeline-fh1j6 Running 
+TASK cd-pipeline-fh1j6/deploy-to-staging start image=alpine:3.20
+TASK cd-pipeline-fh1j6/deploy-to-staging rc=0
+TASK cd-pipeline-fh1j6/run-smoke-tests start image=curlimages/curl:7.85.0
+TASK cd-pipeline-fh1j6/run-smoke-tests rc=0
+TASK cd-pipeline-fh1j6/deploy-to-production start image=alpine:3.20
+TASK cd-pipeline-fh1j6/deploy-to-production rc=0
+WORKFLOW cd-pipeline-fh1j6 Succeeded 
+EVENT workflow-event-source/example resource
+SENSOR workflow-cd-sensor FILTERED path body.metadata.generateName -> 'cd-pipeline-' (want ['ci-pipeline-'])

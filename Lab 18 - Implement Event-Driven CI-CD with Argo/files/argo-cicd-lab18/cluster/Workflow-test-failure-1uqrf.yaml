@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: test-failure-
+  namespace: argo
+  name: test-failure-1uqrf
+  labels:
+    workflows.argoproj.io/phase: Failed
+    workflows.argoproj.io/completed: 'true'
+spec:
+  entrypoint: failing-step
+  templates:
+  - name: failing-step
+    container:
+      image: alpine:3.20
+      command:
+      - sh
+      - -c
+      args:
+      - echo failing on purpose; exit 1
+status:
+  nodes:
+    failing-step: Failed
+  phase: Failed

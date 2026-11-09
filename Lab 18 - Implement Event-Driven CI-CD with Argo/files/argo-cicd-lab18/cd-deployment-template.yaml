@@ -1,0 +1,54 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata: {name: cd-deployment-template, namespace: argo}
+spec:
+  entrypoint: cd-pipeline
+  serviceAccountName: ci-workflow
+  arguments:
+    parameters:
+    - {name: environment, value: "staging"}
+    - {name: image-tag, value: "latest"}
+  templates:
+  - name: cd-pipeline
+    dag:
+      tasks:
+      - name: deploy-to-staging
+        template: deploy-app
+        when: "'{{workflow.parameters.environment}}' == 'staging'"
+        arguments:
+          parameters:
+          - {name: environment, value: "{{workflow.parameters.environment}}"}
+          - {name: image-tag, value: "{{workflow.parameters.image-tag}}"}
+      - name: run-smoke-tests
+        template: smoke-tests
+        dependencies: [deploy-to-staging]
+        when: "'{{workflow.parameters.environment}}' == 'staging'"
+      - name: deploy-to-production
+        template: deploy-app
+        dependencies: [run-smoke-tests]
+        arguments:
+          parameters:
+          - {name: environment, value: "production"}
+          - {name: image-tag, value: "{{workflow.parameters.image-tag}}"}
+  - name: deploy-app
+    inputs:
+      parameters:
+      - {name: environment}
+      - {name: image-tag}
+    container:
+      image: alpine:3.20
+      command: [sh, -c]
+      args:
+      - |
+        echo "Deploying to {{inputs.parameters.environment}} environment"
+        echo "Using image tag: {{inputs.parameters.image-tag}}"
+        echo "✅ Deployment completed successfully!"
+  - name: smoke-tests
+    container:
+      image: curlimages/curl:7.85.0
+      command: [sh, -c]
+      args:
+      - |
+        echo "Running smoke tests..."
+        sleep 10
+        echo "✅ Smoke tests passed!"

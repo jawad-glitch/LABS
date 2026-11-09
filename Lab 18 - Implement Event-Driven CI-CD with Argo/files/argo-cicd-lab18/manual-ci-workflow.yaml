@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata: {generateName: test-ci-pipeline-, namespace: argo}
+spec:
+  workflowTemplateRef: {name: ci-testing-template}
+  arguments:
+    parameters:
+    - {name: repo-url, value: "https://github.com/octocat/Hello-World.git"}
+    - {name: branch, value: "master"}

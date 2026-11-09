@@ -1,0 +1,2 @@
+METRIC very-strict-success-rate failureLimit=2 measurements=0.9078:Failed,0.9228:Failed,0.9287:Failed failures=3 phase=Failed
+ANALYSISRUN phase=Failed

@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: strict-success-rate
+  namespace: default
+spec:
+  args:
+  - name: service-name
+  metrics:
+  - name: very-strict-success-rate
+    interval: 20s
+    count: 3
+    successCondition: result[0] >= 0.99
+    failureLimit: 2
+    provider:
+      prometheus:
+        address: http://prometheus-service.prometheus.svc.cluster.local:9090
+        query: |
+          sum(rate(http_requests_total{job="{{args.service-name}}",status=~"2.."}[1m])) /
+          sum(rate(http_requests_total{job="{{args.service-name}}"}[1m]))

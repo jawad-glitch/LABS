@@ -1,0 +1,61 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: sample-app-rollout
+  namespace: default
+spec:
+  replicas: 5
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause: {duration: 30s}
+      - analysis:
+          templates:
+          - templateName: success-rate
+          args:
+          - name: service-name
+            value: sample-app-service
+      - setWeight: 40
+      - pause: {duration: 30s}
+      - analysis:
+          templates:
+          - templateName: success-rate
+          args:
+          - name: service-name
+            value: sample-app-service
+      - setWeight: 60
+      - pause: {duration: 30s}
+      - setWeight: 80
+      - pause: {duration: 30s}
+      - analysis:
+          templates:
+          - templateName: success-rate
+          args:
+          - name: service-name
+            value: sample-app-service
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+      - name: sample-app
+        image: python:3.12-alpine
+        command: [python, /app/app.py]
+        env:
+        - {name: VERSION, value: "v1"}
+        - {name: ERROR_RATE, value: "0"}
+        ports:
+        - {name: metrics, containerPort: 8080}
+        readinessProbe:
+          httpGet: {path: /metrics, port: 8080}
+        volumeMounts:
+        - {name: code, mountPath: /app}
+      volumes:
+      - name: code
+        configMap:
+          name: sample-app-code

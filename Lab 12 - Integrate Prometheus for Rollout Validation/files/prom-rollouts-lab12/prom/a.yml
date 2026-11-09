@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 5s
+scrape_configs:
+- job_name: sample-app-service
+  metrics_path: /metrics
+  static_configs:
+  - targets: ['l12-a-canary-1:8080','l12-a-stable-1:8080','l12-a-stable-2:8080','l12-a-stable-3:8080','l12-a-stable-4:8080']

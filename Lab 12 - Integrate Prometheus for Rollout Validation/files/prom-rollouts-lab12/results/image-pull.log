@@ -1,0 +1,4 @@
+docker.io/library/python:3.13-alpine
+docker.io/library/python:3.12-alpine
+docker.io/prom/prometheus:v3.16.0
+docker.io/library/nginx:1.20

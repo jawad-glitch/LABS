@@ -1,0 +1,11 @@
+========== CORE CHECKS (Lab 12 - Integrate Prometheus for Rollout Validation, 2026-11-09 12:51:23 UTC) - FAST MODE ==========
+PASS: Lab bug: prometheus-instance.yaml has duplicate apiVersion key (rejected); all fixed manifests parse strictly
+FAIL: Lab bug: operator bundle v0.95.1 largest CRD 0 bytes > 262144 -> server-side apply required; bundle schema-valid
+PASS: Lab bug: nginx:1.20 has no nc and sh echo -e prints -e -> the lab metrics server cannot serve /metrics
+PASS: Fixed manifests valid (strict): Prometheus CR (+serviceMonitorNamespaceSelector), RBAC, ServiceMonitor, app, AnalysisTemplates (+count), Rollouts
+PASS: Task 2.2/2.3 [SIMULATED discovery]: Prometheus v3.16.0 scrapes all 5 app pods (up=5), http_requests_total + response_time_seconds collected
+PASS: Task 3.3: lab success-rate query on healthy canary -> 3 measurements >= 0.95 -> Successful
+PASS: Task 3.3: lab p95 response-time query -> <= 0.5s on all measurements -> Successful; AnalysisRun Successful
+PASS: Task 3.6: strict template on faulty canary (20% 5xx) -> values < 0.99, failures > failureLimit 2 -> AnalysisRun Failed (rollout aborts)
+PASS: Time: fast-mode run finished in 74s (<= 300s)
+CORE: 8/9 PASS

@@ -1,0 +1,18 @@
+=== http_requests_total ===
+{'__name__': 'http_requests_total', 'instance': 'l12-a-stable-1:8080', 'job': 'sample-app-service', 'method': 'GET', 'status': '200'} 122
+{'__name__': 'http_requests_total', 'instance': 'l12-a-stable-3:8080', 'job': 'sample-app-service', 'method': 'GET', 'status': '200'} 123
+{'__name__': 'http_requests_total', 'instance': 'l12-a-stable-4:8080', 'job': 'sample-app-service', 'method': 'GET', 'status': '200'} 133
+{'__name__': 'http_requests_total', 'instance': 'l12-a-stable-2:8080', 'job': 'sample-app-service', 'method': 'GET', 'status': '200'} 153
+{'__name__': 'http_requests_total', 'instance': 'l12-a-canary-1:8080', 'job': 'sample-app-service', 'method': 'GET', 'status': '200'} 135
+=== response_time_seconds_count ===
+{'__name__': 'response_time_seconds_count', 'instance': 'l12-a-stable-1:8080', 'job': 'sample-app-service'} 122
+{'__name__': 'response_time_seconds_count', 'instance': 'l12-a-stable-3:8080', 'job': 'sample-app-service'} 123
+{'__name__': 'response_time_seconds_count', 'instance': 'l12-a-stable-4:8080', 'job': 'sample-app-service'} 133
+{'__name__': 'response_time_seconds_count', 'instance': 'l12-a-stable-2:8080', 'job': 'sample-app-service'} 153
+{'__name__': 'response_time_seconds_count', 'instance': 'l12-a-canary-1:8080', 'job': 'sample-app-service'} 135
+=== up{job="sample-app-service"} ===
+{'__name__': 'up', 'instance': 'l12-a-stable-1:8080', 'job': 'sample-app-service'} 1
+{'__name__': 'up', 'instance': 'l12-a-stable-3:8080', 'job': 'sample-app-service'} 1
+{'__name__': 'up', 'instance': 'l12-a-stable-4:8080', 'job': 'sample-app-service'} 1
+{'__name__': 'up', 'instance': 'l12-a-stable-2:8080', 'job': 'sample-app-service'} 1
+{'__name__': 'up', 'instance': 'l12-a-canary-1:8080', 'job': 'sample-app-service'} 1

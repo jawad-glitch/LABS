@@ -53,3 +53,4 @@
 | [Lab 9 - Argo Rollouts Installation](Lab%209%20-%20Argo%20Rollouts%20Installation/PROOF.md) | CORE: 9/9 PASS | 2026-11-09 12:35 |
 | [Lab 10 - Implement Blue-Green Deployment with Argo Rollouts](Lab%2010%20-%20Implement%20Blue-Green%20Deployment%20with%20Argo%20Rollouts/PROOF.md) | CORE: 11/12 PASS | 2026-11-09 12:40 |
 | [Lab 11 - Implement Canary Deployment with Argo Rollouts](Lab%2011%20-%20Implement%20Canary%20Deployment%20with%20Argo%20Rollouts/PROOF.md) | CORE: 11/12 PASS | 2026-11-09 12:45 |
+| [Lab 12 - Integrate Prometheus for Rollout Validation](Lab%2012%20-%20Integrate%20Prometheus%20for%20Rollout%20Validation/PROOF.md) | CORE: 8/9 PASS | 2026-11-09 12:51 |

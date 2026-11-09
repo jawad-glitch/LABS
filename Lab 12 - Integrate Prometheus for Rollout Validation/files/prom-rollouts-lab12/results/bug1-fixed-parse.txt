@@ -1,0 +1,6 @@
+OK prometheus-instance.yaml
+OK sample-app.yaml
+OK analysis-template.yaml
+OK failing-analysis-template.yaml
+OK rollout-with-analysis.yaml
+OK rollout-strict-analysis.yaml

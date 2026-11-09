@@ -1,0 +1,99 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: demo-app-rollout
+  namespace: blue-green-demo
+spec:
+  replicas: 3
+  strategy:
+    blueGreen:
+      activeService: demo-app-active
+      previewService: demo-app-preview
+      autoPromotionEnabled: false
+      scaleDownDelaySeconds: 30
+      prePromotionAnalysis:
+        templates:
+        - templateName: success-rate
+        args:
+        - name: service-name
+          value: demo-app-preview
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+      - name: demo-app
+        image: nginx:1.26-alpine
+        ports:
+        - containerPort: 80
+        env:
+        - name: v1.0SION
+          value: "v1.0"
+        volumeMounts:
+        - name: html-volume
+          mountPath: /usr/share/nginx/html
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+      volumes:
+      - name: html-volume
+        configMap:
+          name: app-html-v1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-active
+  namespace: blue-green-demo
+  labels:
+    app: demo-app
+spec:
+  selector:
+    app: demo-app
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-preview
+  namespace: blue-green-demo
+  labels:
+    app: demo-app
+spec:
+  selector:
+    app: demo-app
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-html-v1
+  namespace: blue-green-demo
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Demo App v1.0</title>
+        <style>body { background-color: #4CAF50; color: white; text-align: center; font-family: Arial, sans-serif; padding: 50px; }</style>
+    </head>
+    <body>
+        <h1>Demo Application - Blue-Green Deployment</h1>
+        <h2>Version: v1.0 (Green Environment)</h2>
+        <p>This is the stable version running in production</p>
+    </body>
+    </html>

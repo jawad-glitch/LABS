@@ -1,0 +1,1 @@
+{"spec":{"template":{"spec":{"volumes":[{"name":"html-volume","configMap":{"name":"app-html-v2"}}],"containers":[{"name":"demo-app","env":[{"name":"VERSION","value":"v2.0"}]}]}}}}

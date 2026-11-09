@@ -1,0 +1,32 @@
+12:39:13 ReplicaSet rs-v1 up: image=nginx:1.26-alpine configMap=app-html-v1
+12:39:13 selectors -> rs-v1 serves: demo-app-active demo-app-preview
+T3.3-initial active=[Version: v1.0] preview=[Version: v1.0]
+12:39:16 ReplicaSet rs-v2 up: image=nginx:1.27-alpine configMap=app-html-v2
+12:39:16 selectors -> rs-v1 serves: demo-app-active
+12:39:17 selectors -> rs-v2 serves: demo-app-preview
+T4.4-bluegreen active=[Version: v1.0] preview=[Version: v2.0]
+12:39:29 prePromotionAnalysis (v2): exit=0 All requests successful
+12:39:29 kubectl argo rollouts promote (manual, autoPromotionEnabled=false)
+12:39:30 selectors -> rs-v2 serves: demo-app-active demo-app-preview
+12:39:30 ReplicaSet rs-v1 scaled down (after scaleDownDelaySeconds in a real cluster)
+T4.6-promoted active=[Version: v2.0] preview=[Version: v2.0]
+12:39:31 kubectl argo rollouts undo -> new revision with v1 template goes to PREVIEW
+12:39:32 ReplicaSet rs-v1b up: image=nginx:1.26-alpine configMap=app-html-v1
+12:39:33 selectors -> rs-v2 serves: demo-app-active
+12:39:33 selectors -> rs-v1b serves: demo-app-preview
+T6-after-undo-before-promote active=[Version: v2.0] preview=[Version: v1.0]
+12:39:45 prePromotionAnalysis (undo): exit=0 All requests successful
+12:39:45 kubectl argo rollouts promote (needed after undo)
+12:39:46 selectors -> rs-v1b serves: demo-app-active demo-app-preview
+12:39:46 ReplicaSet rs-v2 scaled down (after scaleDownDelaySeconds in a real cluster)
+T6-after-undo-promote active=[Version: v1.0] preview=[Version: v1.0]
+12:39:47 apply rollout-auto-promote.yaml (autoPromotionEnabled=true) + JSON patch v3
+12:39:48 ReplicaSet rs-v3 up: image=nginx:1.27-alpine configMap=app-html-v3
+12:39:49 selectors -> rs-v1b serves: demo-app-active
+12:39:49 selectors -> rs-v3 serves: demo-app-preview
+T7-v3-preview active=[Version: v1.0] preview=[Version: v3.0]
+12:40:02 prePromotionAnalysis (v3): exit=0 All requests successful
+12:40:02 auto-promotion after successful analysis (no manual promote)
+12:40:02 selectors -> rs-v3 serves: demo-app-active demo-app-preview
+12:40:02 ReplicaSet rs-v1b scaled down (after scaleDownDelaySeconds in a real cluster)
+T7-auto-promoted active=[Version: v3.0] preview=[Version: v3.0]

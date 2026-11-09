@@ -1,0 +1,14 @@
+========== CORE CHECKS (Lab 10 - Implement Blue-Green Deployment with Argo Rollouts, 2026-11-09 12:40:05 UTC) - FAST MODE ==========
+PASS: Lab bug 1: original rollout.yaml rejected - duplicate key autoPromotionEnabled; all fixed manifests parse strictly
+PASS: Task 2: all manifests valid vs Kubernetes + Rollout/AnalysisTemplate/Application CRD schemas (strict)
+PASS: Lab bug 2: lab merge patch wipes container image+volumeMounts; JSON patch keeps them and sets nginx:1.27-alpine/app-html-v2/v2.0 in one revision
+FAIL: Task 1.2: kubectl-argo-rollouts v1.10.2 installed; promote/undo/status/history commands present
+PASS: Task 3.3 [SIMULATED cluster, real traffic]: active service serves v1.0
+PASS: Task 4.3/4.4: blue-green - preview serves v2.0 while active still serves v1.0
+PASS: Task 2.4: AnalysisTemplate job script (10 HTTP checks vs preview) passed before each promotion
+PASS: Task 4.5/4.6: after promote active serves v2.0 and old ReplicaSet scaled down
+PASS: Task 6 (lab fix): undo puts v1.0 in preview but active stays v2.0 until promote
+PASS: Task 6.2: after promote, rollback complete - active serves v1.0
+PASS: Task 7: auto-promotion - v3.0 promoted after analysis without manual promote
+PASS: Time: fast-mode run finished in 64s (<= 300s)
+CORE: 11/12 PASS

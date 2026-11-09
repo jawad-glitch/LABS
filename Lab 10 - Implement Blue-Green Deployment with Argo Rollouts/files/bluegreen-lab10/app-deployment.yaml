@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+  namespace: blue-green-demo
+  labels:
+    app: demo-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+      - name: demo-app
+        image: nginx:1.26-alpine
+        ports:
+        - containerPort: 80
+        env:
+        - name: VERSION
+          value: "v1.0"
+        volumeMounts:
+        - name: html-volume
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: html-volume
+        configMap:
+          name: app-html
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-service
+  namespace: blue-green-demo
+spec:
+  selector:
+    app: demo-app
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-html
+  namespace: blue-green-demo
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Demo App v1.0</title>
+        <style>body { background-color: #4CAF50; color: white; text-align: center; font-family: Arial, sans-serif; padding: 50px; }</style>
+    </head>
+    <body>
+        <h1>Demo Application - Blue-Green Deployment</h1>
+        <h2>Version: v1.0 (Green)</h2>
+        <p>This is the initial version of our application</p>
+    </body>
+    </html>

@@ -1,0 +1,1 @@
+rs-v3 nginx:1.27-alpine app=demo-app,lab10=1,maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>,rollouts-pod-template-hash=rs-v3

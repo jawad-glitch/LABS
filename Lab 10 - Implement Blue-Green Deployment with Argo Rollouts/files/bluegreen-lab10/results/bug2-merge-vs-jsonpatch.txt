@@ -1,0 +1,8 @@
+MERGE container keys: ['env', 'name']
+MERGE image: None
+MERGE volumeMounts: None
+JSONPATCH container keys: ['env', 'image', 'name', 'ports', 'resources', 'volumeMounts']
+JSONPATCH image: nginx:1.27-alpine
+JSONPATCH env: [{'name': 'v1.0SION', 'value': 'v2.0'}]
+JSONPATCH configMap: app-html-v2
+JSONPATCH volumeMounts: [{'name': 'html-volume', 'mountPath': '/usr/share/nginx/html'}]

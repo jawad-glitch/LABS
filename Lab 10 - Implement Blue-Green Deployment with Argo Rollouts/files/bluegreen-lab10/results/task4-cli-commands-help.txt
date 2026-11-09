@@ -1,0 +1,15 @@
+== promote
+Promote a rollout
+
+Promotes a rollout paused at a canary step, or a paused blue-green pre-promotion.
+== undo
+Rollback to the previous rollout.
+
+Usage:
+== status
+Watch rollout until it finishes or the timeout is exceeded. Returns success if
+the rollout is healthy upon completion and an error otherwise.
+
+== history
+Error: unknown command "history" for "kubectl-argo-rollouts"
+Run 'kubectl-argo-rollouts --help' for usage.

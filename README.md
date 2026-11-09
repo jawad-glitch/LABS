@@ -51,3 +51,4 @@
 | [Lab 7 - Connect Argo CD to Git Repositories](Lab%207%20-%20Connect%20Argo%20CD%20to%20Git%20Repositories/PROOF.md) | CORE: 9/12 PASS | 2026-11-09 12:29 |
 | [Lab 8 - Use Argo CD for Application Deployment](Lab%208%20-%20Use%20Argo%20CD%20for%20Application%20Deployment/PROOF.md) | CORE: 11/11 PASS | 2026-11-09 12:32 |
 | [Lab 9 - Argo Rollouts Installation](Lab%209%20-%20Argo%20Rollouts%20Installation/PROOF.md) | CORE: 9/9 PASS | 2026-11-09 12:35 |
+| [Lab 10 - Implement Blue-Green Deployment with Argo Rollouts](Lab%2010%20-%20Implement%20Blue-Green%20Deployment%20with%20Argo%20Rollouts/PROOF.md) | CORE: 11/12 PASS | 2026-11-09 12:40 |

@@ -1,0 +1,6 @@
+OK rollout.yaml
+OK rollout-auto-promote.yaml
+OK app-deployment.yaml
+OK analysis-template.yaml
+OK app-html-v2-configmap.yaml
+OK app-html-v3-configmap.yaml

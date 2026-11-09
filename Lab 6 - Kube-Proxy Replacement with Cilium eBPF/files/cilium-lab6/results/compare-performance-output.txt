@@ -1,0 +1,4 @@
+=== Performance Comparison ===
+Testing eBPF-based load balancing performance...
+eBPF load balancing completed 50 requests in: 0.84 seconds
+Average time per request: 0.0168 seconds

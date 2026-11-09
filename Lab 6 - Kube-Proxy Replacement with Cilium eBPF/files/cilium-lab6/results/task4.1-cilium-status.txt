@@ -1,0 +1,10 @@
+    /¯¯\
+ /¯¯\__/¯¯\    Cilium:             OK
+ \__/¯¯\__/    Operator:           OK
+ /¯¯\__/¯¯\    Hubble Relay:       OK
+ \__/¯¯\__/    ClusterMesh:        disabled
+    \__/
+Deployment        cilium-operator    Desired: 1, Ready: 1/1, Available: 1/1
+DaemonSet         cilium             Desired: 1, Ready: 1/1, Available: 1/1
+Cluster Pods:     4/4 managed by Cilium
+KubeProxyReplacement:   True   [strict]

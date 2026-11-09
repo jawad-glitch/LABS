@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 6 - Kube-Proxy Replacement with Cilium eBPF, 2026-11-09 14:48:11 UTC) ==========
+PASS: Task 1: Kubernetes cluster and node status verified
+PASS: Task 2: Test Deployment & Service deployed in cilium-test
+PASS: Task 3: Cilium configured with kubeProxyReplacement=strict in values
+PASS: Task 3: Kube-proxy DaemonSet disabled or removed
+PASS: Task 4: Cilium status confirms KubeProxyReplacement is active
+PASS: Task 4: eBPF load balancer table contains active backend mappings
+PASS: Task 4: NodePort service created and mapped in eBPF
+PASS: Task 5: Hubble UI service configuration validated
+PASS: Task 6: Validation script executed and all checks passed
+PASS: Task 6: Performance comparison script generated and run
+PASS: Time: Finished in under 300s
+CORE: 11/11 PASS

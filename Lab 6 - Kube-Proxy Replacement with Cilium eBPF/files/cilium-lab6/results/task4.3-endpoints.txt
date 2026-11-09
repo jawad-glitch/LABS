@@ -1,0 +1,3 @@
+ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   IPv4         STATUS
+1001       Disabled           Disabled          2001       10.244.0.15  ready
+1002       Disabled           Disabled          2001       10.244.0.16  ready

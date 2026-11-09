@@ -49,3 +49,4 @@
 | [Lab 5 - Use Inputs and Outputs in Workflows](Lab%205%20-%20Use%20Inputs%20and%20Outputs%20in%20Workflows/PROOF.md) | CORE: 3/14 PASS | 2026-11-09 12:21 |
 | [Lab 6 - Argo CD Installation](Lab%206%20-%20Argo%20CD%20Installation/PROOF.md) | CORE: 13/13 PASS | 2026-11-09 12:25 |
 | [Lab 7 - Connect Argo CD to Git Repositories](Lab%207%20-%20Connect%20Argo%20CD%20to%20Git%20Repositories/PROOF.md) | CORE: 9/12 PASS | 2026-11-09 12:29 |
+| [Lab 8 - Use Argo CD for Application Deployment](Lab%208%20-%20Use%20Argo%20CD%20for%20Application%20Deployment/PROOF.md) | CORE: 11/11 PASS | 2026-11-09 12:32 |

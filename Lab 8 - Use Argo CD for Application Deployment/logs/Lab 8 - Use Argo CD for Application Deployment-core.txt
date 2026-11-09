@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 8 - Use Argo CD for Application Deployment, 2026-11-09 12:32:27 UTC) - FAST MODE ==========
+PASS: Task 1.2 [SIMULATED apply]: Argo CD v3.6.1 install.yaml (pinned tag) passes Kubernetes schema validation
+PASS: Task 1.2 bug: largest CRD is 387270 bytes > 262144 annotation limit -> client-side apply fails, server-side apply required
+PASS: Task 1.2: all components in manifest - server, repo-server, dex, redis, applicationset, notifications + application-controller StatefulSet
+PASS: Task 1.4: sample-app repo on main with v1 commit; deployment + service valid against K8s schemas
+PASS: Lab bug evidence: file:// repo NOT reachable from a container (pod analog), network git URL IS reachable
+PASS: Task 1.5: Application valid against Argo CD CRD schema; https repoURL, finalizer, automated prune+selfHeal
+PASS: Task 2.1 [SIMULATED login]: argocd CLI = manifest version v3.6.1 (no skew), checksum verified
+PASS: Task 2.4: replica change committed AND pushed (lab omitted push) - remote main has replicas: 3
+PASS: Task 3.1/3.5 [SIMULATED pods]: nginx:1.27-alpine (deployment image) serves Welcome to nginx page
+PASS: Task 3.2 [SIMULATED service]: busybox reaches sample-app-service by name on shared network and gets nginx page
+PASS: Time: fast-mode run finished in 24s (<= 300s)
+CORE: 11/11 PASS

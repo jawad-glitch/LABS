@@ -1,0 +1,13 @@
+diff --git a/deployment.yaml b/deployment.yaml
+index 3502970..b63f6d6 100644
+--- a/deployment.yaml
++++ b/deployment.yaml
+@@ -5,7 +5,7 @@ metadata:
+   labels:
+     app: sample-app
+ spec:
+-  replicas: 2
++  replicas: 3
+   selector:
+     matchLabels:
+       app: sample-app

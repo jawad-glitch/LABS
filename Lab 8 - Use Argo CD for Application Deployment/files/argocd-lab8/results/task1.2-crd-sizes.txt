@@ -1,0 +1,3 @@
+CRDSIZE appprojects.argoproj.io 12103
+CRDSIZE applications.argoproj.io 204100
+CRDSIZE applicationsets.argoproj.io 387270

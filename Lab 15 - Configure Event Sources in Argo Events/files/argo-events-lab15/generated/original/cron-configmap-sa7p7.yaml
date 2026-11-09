@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: argo-events
+  name: cron-configmap-sa7p7
+data:
+  message: Cron event triggered!
+  event_time: ''
+spec:
+  data:
+    event_time: '2026-11-09 13:09:32.607112+00:00'

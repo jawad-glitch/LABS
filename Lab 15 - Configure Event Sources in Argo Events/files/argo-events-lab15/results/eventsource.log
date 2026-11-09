@@ -1,0 +1,8 @@
+WEBHOOK listening 127.0.0.1:12000 POST /github (eventsource webhook-eventsource/github-webhook)
+WEBHOOK listening 127.0.0.1:31000 POST /github (eventsource webhook-eventsource/github-webhook)
+CALENDAR cron-eventsource/cron-trigger schedule='*/2 * * * *' (compressed to every 4.0s)
+PUBLISHED webhook-eventsource/cron-trigger webhook
+PUBLISHED webhook-eventsource/cron-trigger webhook
+PUBLISHED cron-eventsource/cron-trigger calendar
+PUBLISHED cron-eventsource/cron-trigger calendar
+PUBLISHED cron-eventsource/cron-trigger calendar

@@ -1,0 +1,68 @@
+# Lab 15 - Configure Event Sources in Argo Events - completion proof
+Completed (UTC): 2026-11-09 13:09:46 | EC2: i-0851b1d8b76f3264f | host: ip-172-31-10-104 | user: ubuntu
+
+## Core checks
+```
+========== CORE CHECKS (Lab 15 - Configure Event Sources in Argo Events, 2026-11-09 13:09:40 UTC) - FAST MODE ==========
+PASS: Task 1-3 [SIMULATED apply]: EventBus (JetStream latest), RBAC, EventSources, NodePort Service, Sensors valid (strict, K8s + Argo Events CRDs)
+PASS: Task 1.3: EventBus = real NATS JetStream from nats:2.10.29, stream for eventbus.default.> created
+PASS: Task 2.1/4.2: webhook EventSource (POST /github, 12000 + NodePort 31000) accepts lab payload (HTTP 200) and rejects GET (HTTP 405)
+FAIL: Task 2.3: webhook event travelled the bus to the sensor - fixed sensor created ConfigMap with repository=test-repo, commit_message from payload
+PASS: Lab bug: dest spec.data.* puts values under spec - original sensor ConfigMaps fail strict schema; fixed (dest data.*) all valid
+FAIL: Lab bug: fixed name webhook-configmap -> 2nd webhook (verify script) fails with AlreadyExists or unresolved params; fixed sensor created 2 (generateName + defaults)
+PASS: Task 3: calendar EventSource (schedule */2, compressed to 4s) fired 3 events; fixed cron sensor created 3 ConfigMaps with data.event_time set
+PASS: Task 4.3: all events persisted on the EventBus stream (messages=5 = 2 webhook + 3 cron)
+FAIL: Cleanup/verify fixes: ConfigMaps carry app labels (label cleanup works); verify-lab.sh parses
+PASS: Time: fast-mode run finished in 25s (<= 300s)
+CORE: 7/10 PASS
+```
+
+## Docker snapshot
+```
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+IMAGE                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+nats:2.10.29             5498ba57b947       22.4MB         6.19MB        
+natsio/nats-box:0.20.2   5162fca0f56e        141MB         47.3MB        
+```
+
+## Files
+```
+./argo-events-lab15/cron-eventsource.yaml
+./argo-events-lab15/cron-sensor.yaml
+./argo-events-lab15/eventbus.yaml
+./argo-events-lab15/events_sim.py
+./argo-events-lab15/generated/fixed/cron-configmap-1xl17.yaml
+./argo-events-lab15/generated/fixed/cron-configmap-26qql.yaml
+./argo-events-lab15/generated/fixed/cron-configmap-t4obp.yaml
+./argo-events-lab15/generated/original/cron-configmap-94oxj.yaml
+./argo-events-lab15/generated/original/cron-configmap-i5s95.yaml
+./argo-events-lab15/generated/original/cron-configmap-sa7p7.yaml
+./argo-events-lab15/lab-original-cron-eventsource.yaml
+./argo-events-lab15/lab-original-cron-sensor.yaml
+./argo-events-lab15/lab-original-webhook-sensor.yaml
+./argo-events-lab15/results/SIMULATED.md
+./argo-events-lab15/results/bug-original-generated-kubeconform.txt
+./argo-events-lab15/results/elapsed.txt
+./argo-events-lab15/results/eventbus-nats.log
+./argo-events-lab15/results/eventsource.log
+./argo-events-lab15/results/fixed-generated-kubeconform.txt
+./argo-events-lab15/results/install-kubeconform.log
+./argo-events-lab15/results/nats-pull.log
+./argo-events-lab15/results/natsbox-pull.log
+./argo-events-lab15/results/sensor-fixed.log
+./argo-events-lab15/results/sensor-original.log
+./argo-events-lab15/results/task-kubeconform.txt
+./argo-events-lab15/results/task1.3-eventbus-jsz.json
+./argo-events-lab15/results/task1.3-stream-add.txt
+./argo-events-lab15/results/task3.1-cron-next-fires.txt
+./argo-events-lab15/results/task4.2-webhook-codes.txt
+./argo-events-lab15/results/task4.2-webhook-response.txt
+./argo-events-lab15/results/task4.3-stream-info.json
+./argo-events-lab15/results/versions.txt
+./argo-events-lab15/verify-lab.sh
+./argo-events-lab15/webhook-eventsource.yaml
+./argo-events-lab15/webhook-rbac.yaml
+./argo-events-lab15/webhook-sensor.yaml
+./argo-events-lab15/webhook-service.yaml
+```

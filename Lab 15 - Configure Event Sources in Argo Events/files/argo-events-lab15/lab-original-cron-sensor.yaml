@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: cron-sensor
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: operate-workflow-sa
+  dependencies:
+    - name: cron-dep
+      eventSourceName: cron-eventsource
+      eventName: cron-trigger
+  triggers:
+    - template:
+        name: cron-workflow-trigger
+        k8s:
+          operation: create
+          source:
+            resource:
+              apiVersion: v1
+              kind: ConfigMap
+              metadata:
+                generateName: cron-configmap-
+                namespace: argo-events
+              data:
+                message: "Cron event triggered!"
+                event_time: ""
+          parameters:
+            - src:
+                dependencyName: cron-dep
+                dataKey: eventTime
+              dest: spec.data.event_time

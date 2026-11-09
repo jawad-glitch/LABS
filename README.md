@@ -56,3 +56,4 @@
 | [Lab 12 - Integrate Prometheus for Rollout Validation](Lab%2012%20-%20Integrate%20Prometheus%20for%20Rollout%20Validation/PROOF.md) | CORE: 8/9 PASS | 2026-11-09 12:51 |
 | [Lab 13 - Implement Pause-Resume for Rollouts](Lab%2013%20-%20Implement%20Pause-Resume%20for%20Rollouts/PROOF.md) | CORE: 12/12 PASS | 2026-11-09 13:02 |
 | [Lab 14 - Argo Events Installation](Lab%2014%20-%20Argo%20Events%20Installation/PROOF.md) | CORE: 9/9 PASS | 2026-11-09 13:05 |
+| [Lab 15 - Configure Event Sources in Argo Events](Lab%2015%20-%20Configure%20Event%20Sources%20in%20Argo%20Events/PROOF.md) | CORE: 7/10 PASS | 2026-11-09 13:09 |

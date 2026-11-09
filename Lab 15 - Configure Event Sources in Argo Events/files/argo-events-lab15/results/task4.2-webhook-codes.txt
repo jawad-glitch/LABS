@@ -1,0 +1,1 @@
+webhook POST (lab payload) via NodePort 31000: HTTP 200 | GET: HTTP 405 | verify-lab POST via 12000: HTTP 200

@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: webhook-sensor
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: operate-workflow-sa
+  dependencies:
+    - name: github-webhook-dep
+      eventSourceName: webhook-eventsource
+      eventName: github-webhook
+  triggers:
+    - template:
+        name: webhook-workflow-trigger
+        k8s:
+          operation: create
+          source:
+            resource:
+              apiVersion: v1
+              kind: ConfigMap
+              metadata:
+                name: webhook-configmap
+                namespace: argo-events
+              data:
+                message: "Webhook event received!"
+                timestamp: ""
+          parameters:
+            - src:
+                dependencyName: github-webhook-dep
+                dataKey: body.repository.name
+              dest: spec.data.repository
+            - src:
+                dependencyName: github-webhook-dep
+                dataKey: body.head_commit.message
+              dest: spec.data.commit_message

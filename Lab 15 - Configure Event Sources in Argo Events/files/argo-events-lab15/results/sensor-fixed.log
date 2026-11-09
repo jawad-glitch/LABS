@@ -1,0 +1,3 @@
+TRIGGER cron-sensor/cron-workflow-trigger CREATED ConfigMap cron-configmap-26qql
+TRIGGER cron-sensor/cron-workflow-trigger CREATED ConfigMap cron-configmap-1xl17
+TRIGGER cron-sensor/cron-workflow-trigger CREATED ConfigMap cron-configmap-t4obp

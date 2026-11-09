@@ -1,0 +1,25 @@
+{
+  "memory": 0,
+  "storage": 0,
+  "reserved_memory": 0,
+  "reserved_storage": 0,
+  "accounts": 1,
+  "ha_assets": 0,
+  "api": {
+    "total": 0,
+    "errors": 0
+  },
+  "server_id": "NC4MEIZHACLHCGJ2AGXLNFWLW5FTSA65EBSXKY5LKNPQDXCJ2TVM6VEQ",
+  "now": "2026-11-09T13:09:22.554824081Z",
+  "config": {
+    "max_memory": 3026946048,
+    "max_storage": 16324362240,
+    "store_dir": "/tmp/nats/jetstream",
+    "sync_interval": 120000000000
+  },
+  "streams": 0,
+  "consumers": 0,
+  "messages": 0,
+  "bytes": 0,
+  "total": 1
+}

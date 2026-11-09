@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: argo-events
+  labels:
+    app: cron-configmap
+  name: cron-configmap-26qql
+data:
+  message: Cron event triggered!
+  event_time: '2026-11-09 13:09:28.606612+00:00'

@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: cron-eventsource
+  namespace: argo-events
+spec:
+  calendar:
+    cron-trigger:
+      schedule: "*/2 * * * *"
+      interval: "2m"
+      timezone: "UTC"

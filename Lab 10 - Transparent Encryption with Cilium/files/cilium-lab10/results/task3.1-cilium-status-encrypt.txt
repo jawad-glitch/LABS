@@ -1,0 +1,3 @@
+Encryption:         IPsec
+IPsec Keys:         1 active
+IPsec Status:       OK

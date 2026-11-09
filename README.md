@@ -71,3 +71,4 @@
 | [Lab 7 - Apply Network Policies with Cilium](Lab%207%20-%20Apply%20Network%20Policies%20with%20Cilium/PROOF.md) | CORE: 4/11 PASS | 2026-11-09 14:51 |
 | [Lab 8 - L7-Aware Network Policies](Lab%208%20-%20L7-Aware%20Network%20Policies/PROOF.md) | CORE: 10/10 PASS | 2026-11-09 14:55 |
 | [Lab 9 - Cilium Identity-Based Security](Lab%209%20-%20Cilium%20Identity-Based%20Security/PROOF.md) | CORE: 6/11 PASS | 2026-11-09 14:59 |
+| [Lab 10 - Transparent Encryption with Cilium](Lab%2010%20-%20Transparent%20Encryption%20with%20Cilium/PROOF.md) | CORE: 9/11 PASS | 2026-11-09 15:01 |

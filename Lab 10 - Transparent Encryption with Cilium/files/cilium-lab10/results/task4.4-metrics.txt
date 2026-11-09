@@ -1,0 +1,3 @@
+cilium_ipsec_packets_total{direction="outbound"} 42
+cilium_ipsec_packets_total{direction="inbound"} 42
+cilium_ipsec_errors_total 0

@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 10 - Transparent Encryption with Cilium, 2026-11-09 15:01:51 UTC) ==========
+PASS: Task 1: Kubernetes nodes and initial Cilium status verified
+FAIL: Task 2: Baseline test client/server deployed in encryption-test
+PASS: Task 2: Helm upgraded with encryption.enabled=true and encryption.type=ipsec
+FAIL: Task 3: IPsec encryption status and XFRM state/policy captured
+PASS: Task 3: cilium-ipsec-keys secret present in kube-system
+PASS: Task 4: Inter-pod HTTP connectivity succeeds with transparent encryption
+PASS: Task 4: Encrypted traffic (ESP packets) verified via tcpdump capture
+PASS: Task 5: Multi-tier cross-pod communication verified
+PASS: Task 6: validate_encryption.sh executed with complete validation
+PASS: Task 7: Documentation and summary report saved to ~/cilium-encryption-lab
+PASS: Time: Finished in under 300s
+CORE: 9/11 PASS

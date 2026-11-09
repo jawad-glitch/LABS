@@ -1,0 +1,2 @@
+NAME  	NAMESPACE  	REVISION	UPDATED                                	STATUS  	CHART        	APP VERSION
+cilium	kube-system	1       	2026-11-09 14:05:10.790247293 +0000 UTC	deployed	cilium-1.20.4	1.20.4     

@@ -63,3 +63,4 @@
 | [Lab 19 - Use Argo CD to Manage Multi-Environment GitOps](Lab%2019%20-%20Use%20Argo%20CD%20to%20Manage%20Multi-Environment%20GitOps/PROOF.md) | CORE: 12/13 PASS | 2026-11-09 13:37 |
 | [Lab 20 - Troubleshooting Argo Tools](Lab%2020%20-%20Troubleshooting%20Argo%20Tools/PROOF.md) | CORE: 12/13 PASS | 2026-11-09 13:55 |
 | [Lab 1 - Install and Set Up Kubernetes](Lab%201%20-%20Install%20and%20Set%20Up%20Kubernetes/PROOF.md) | CORE: 12/13 PASS | 2026-11-09 14:00 |
+| [Lab 2 - Install Cilium using Helm](Lab%202%20-%20Install%20Cilium%20using%20Helm/PROOF.md) | CORE: 7/10 PASS | 2026-11-09 14:07 |

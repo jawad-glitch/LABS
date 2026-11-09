@@ -1,0 +1,4 @@
+etcd-cilium-lab-control-plane                      1/1     Running   0          16s
+kube-apiserver-cilium-lab-control-plane            1/1     Running   0          16s
+kube-controller-manager-cilium-lab-control-plane   1/1     Running   0          16s
+kube-scheduler-cilium-lab-control-plane            1/1     Running   0          16s

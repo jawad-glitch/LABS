@@ -1,0 +1,2 @@
+cilium-envoy   ClusterIP   None           <none>        9964/TCP                 95s
+hubble-peer    ClusterIP   10.96.248.54   <none>        443/TCP                  95s

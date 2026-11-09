@@ -1,0 +1,26 @@
+NAME                                               READY   STATUS    RESTARTS   AGE     IP             NODE                       NOMINATED NODE   READINESS GATES
+cilium-envoy-4mwv4                                 1/1     Running   0          81s     172.18.0.2     cilium-lab-control-plane   <none>           <none>
+cilium-operator-77b647479f-kvznm                   1/1     Running   0          81s     172.18.0.2     cilium-lab-control-plane   <none>           <none>
+cilium-slnz5                                       1/1     Running   0          81s     172.18.0.2     cilium-lab-control-plane   <none>           <none>
+coredns-559f6c778d-5d6cz                           1/1     Running   0          2m23s   10.244.0.215   cilium-lab-control-plane   <none>           <none>
+coredns-559f6c778d-66v5q                           1/1     Running   0          2m23s   10.244.0.121   cilium-lab-control-plane   <none>           <none>
+etcd-cilium-lab-control-plane                      1/1     Running   0          2m35s   172.18.0.2     cilium-lab-control-plane   <none>           <none>
+kube-apiserver-cilium-lab-control-plane            1/1     Running   0          2m35s   172.18.0.2     cilium-lab-control-plane   <none>           <none>
+kube-controller-manager-cilium-lab-control-plane   1/1     Running   0          2m35s   172.18.0.2     cilium-lab-control-plane   <none>           <none>
+kube-proxy-k4qjb                                   1/1     Running   0          2m23s   172.18.0.2     cilium-lab-control-plane   <none>           <none>
+kube-scheduler-cilium-lab-control-plane            1/1     Running   0          2m35s   172.18.0.2     cilium-lab-control-plane   <none>           <none>
+
+NAME           READY   STATUS    RESTARTS   AGE   IP           NODE                       NOMINATED NODE   READINESS GATES
+cilium-slnz5   1/1     Running   0          82s   172.18.0.2   cilium-lab-control-plane   <none>           <none>
+
+NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+cilium         1         1         1       1            1           kubernetes.io/os=linux   84s
+cilium-envoy   1         1         1       1            1           kubernetes.io/os=linux   84s
+kube-proxy     1         1         1       1            1           kubernetes.io/os=linux   2m33s
+
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+cilium-operator   1/1     1            1           84s
+coredns           2/2     2            2           2m34s
+
+NAME                       STATUS   ROLES           AGE     VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION            CONTAINER-RUNTIME
+cilium-lab-control-plane   Ready    control-plane   2m39s   v1.37.0   172.18.0.2    <none>        Debian GNU/Linux 13 (trixie)   6.14.0-1018-aws (amd64)   containerd://2.3.4

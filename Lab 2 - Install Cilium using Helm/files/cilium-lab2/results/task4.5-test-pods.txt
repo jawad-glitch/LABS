@@ -1,0 +1,3 @@
+NAME         READY   STATUS    RESTARTS   AGE   IP            NODE                       NOMINATED NODE   READINESS GATES
+test-pod     1/1     Running   0          4s    10.244.0.91   cilium-lab-control-plane   <none>           <none>
+test-pod-2   1/1     Running   0          2s    10.244.0.7    cilium-lab-control-plane   <none>           <none>

@@ -1,0 +1,34 @@
+ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS (source:key[=value])                                                         IPv6   IPv4           STATUS   
+           ENFORCEMENT        ENFORCEMENT                                                                                                                            
+375        Disabled           Disabled          1280       gen:io.cilium.k8s.named-ports-1=metrics.TCP.9153_readiness-probe.TCP.8181                  10.244.0.215   ready   
+                                                           gen:io.cilium.k8s.named-ports=dns.UDP.53_dns-tcp.TCP.53_liveness-probe.TCP.8080                                   
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system                                        
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=coredns                                                                   
+                                                           k8s:io.kubernetes.pod.namespace=kube-system                                                                       
+                                                           k8s:k8s-app=kube-dns                                                                                              
+496        Disabled           Disabled          1          k8s:node-role.kubernetes.io/control-plane                                                                 ready   
+                                                           reserved:host                                                                                                     
+954        Disabled           Disabled          10618      k8s:app=local-path-provisioner                                                             10.244.0.90    ready   
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=local-path-storage                                 
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=local-path-provisioner-service-account                                    
+                                                           k8s:io.kubernetes.pod.namespace=local-path-storage                                                                
+1044       Disabled           Disabled          4          reserved:health                                                                            10.244.0.194   ready   
+2583       Disabled           Disabled          30352      k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=default                     10.244.0.7     ready   
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=default                                                                   
+                                                           k8s:io.kubernetes.pod.namespace=default                                                                           
+                                                           k8s:run=test-pod-2                                                                                                
+2684       Disabled           Disabled          1280       gen:io.cilium.k8s.named-ports-1=metrics.TCP.9153_readiness-probe.TCP.8181                  10.244.0.121   ready   
+                                                           gen:io.cilium.k8s.named-ports=dns.UDP.53_dns-tcp.TCP.53_liveness-probe.TCP.8080                                   
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system                                        
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=coredns                                                                   
+                                                           k8s:io.kubernetes.pod.namespace=kube-system                                                                       
+                                                           k8s:k8s-app=kube-dns                                                                                              
+2863       Disabled           Disabled          12740      k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=default                     10.244.0.91    ready   
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                          
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=default                                                                   
+                                                           k8s:io.kubernetes.pod.namespace=default                                                                           
+                                                           k8s:run=test-pod                                                                                                  

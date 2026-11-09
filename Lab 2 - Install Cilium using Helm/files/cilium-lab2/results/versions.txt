@@ -1,0 +1,1 @@
+latest stable Cilium chart: 1.20.4 (lab pinned 1.11.0)

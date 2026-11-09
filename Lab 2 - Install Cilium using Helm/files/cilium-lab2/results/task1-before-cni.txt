@@ -1,0 +1,11 @@
+NAME                       STATUS     ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION            CONTAINER-RUNTIME
+cilium-lab-control-plane   NotReady   control-plane   15s   v1.37.0   172.18.0.2    <none>        Debian GNU/Linux 13 (trixie)   6.14.0-1018-aws (amd64)   containerd://2.3.4
+
+NAME                                               READY   STATUS    RESTARTS   AGE   IP           NODE                       NOMINATED NODE   READINESS GATES
+coredns-559f6c778d-5d6cz                           0/1     Pending   0          4s    <none>       <none>                     <none>           <none>
+coredns-559f6c778d-66v5q                           0/1     Pending   0          4s    <none>       <none>                     <none>           <none>
+etcd-cilium-lab-control-plane                      1/1     Running   0          16s   172.18.0.2   cilium-lab-control-plane   <none>           <none>
+kube-apiserver-cilium-lab-control-plane            1/1     Running   0          16s   172.18.0.2   cilium-lab-control-plane   <none>           <none>
+kube-controller-manager-cilium-lab-control-plane   1/1     Running   0          16s   172.18.0.2   cilium-lab-control-plane   <none>           <none>
+kube-proxy-k4qjb                                   1/1     Running   0          4s    172.18.0.2   cilium-lab-control-plane   <none>           <none>
+kube-scheduler-cilium-lab-control-plane            1/1     Running   0          16s   172.18.0.2   cilium-lab-control-plane   <none>           <none>

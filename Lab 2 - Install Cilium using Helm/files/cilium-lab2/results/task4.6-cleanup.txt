@@ -1,0 +1,2 @@
+pod "test-pod" deleted from default namespace
+pod "test-pod-2" deleted from default namespace

@@ -1,0 +1,12 @@
+========== CORE CHECKS (Lab 2 - Install Cilium using Helm, 2026-11-09 14:06:50 UTC) ==========
+PASS: Tools: kind, kubectl, helm v3, cilium CLI v0.20.2 installed (sha256 verified)
+FAIL: Task 1: cluster created without default CNI - node NotReady / CoreDNS not Running before Cilium
+FAIL: Task 2: cilium repo added (https://helm.cilium.io/), versions listed incl. lab 1.11.0 and latest 1.20.4
+PASS: Task 3: helm release cilium deployed with pinned current chart cilium-1.20.4 (not EOL 1.11.0)
+PASS: Task 3.2/4.1/4.3: cilium status --wait OK - agent DaemonSet ready, operator available
+PASS: Task 4.4: node Ready and CoreDNS Running now that Cilium provides the CNI
+PASS: Task 4.5: pods got Cilium IPs in node PodCIDR 10.244.0.0/24; pod-to-pod ping 0% loss; CoreDNS resolves
+FAIL: Lab bug: in-pod cilium status fails (binary renamed); cilium-dbg status reports OK
+PASS: Task 5: agent logs + cilium-config (ipam=kubernetes) + services captured
+PASS: Time: lab finished in 246s (<= 300s)
+CORE: 7/10 PASS

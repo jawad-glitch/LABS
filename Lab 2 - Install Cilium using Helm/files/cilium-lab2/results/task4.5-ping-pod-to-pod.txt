@@ -1,0 +1,8 @@
+PING 10.244.0.7 (10.244.0.7): 56 data bytes
+64 bytes from 10.244.0.7: seq=0 ttl=63 time=2.932 ms
+64 bytes from 10.244.0.7: seq=1 ttl=63 time=0.086 ms
+64 bytes from 10.244.0.7: seq=2 ttl=63 time=0.093 ms
+
+--- 10.244.0.7 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.086/1.037/2.932 ms

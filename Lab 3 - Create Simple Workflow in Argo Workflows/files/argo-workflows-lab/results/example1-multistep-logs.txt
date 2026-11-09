@@ -1,0 +1,12 @@
+[37mmulti-step-ph7ph-print-message-3351832160: Step 1: Initializing workflow[0m
+[37mmulti-step-ph7ph-print-message-3351832160: time=2026-11-09T11:54:58.733Z level=INFO msg="waiting for signals" signalPath=/var/run/argo/ctr/main/signal argo=true[0m
+[37mmulti-step-ph7ph-print-message-3351832160: time=2026-11-09T11:55:01.742Z level=INFO msg="sub-process exited" error=<nil> argo=true[0m
+[37mmulti-step-ph7ph-print-message-3351832160: time=2026-11-09T11:55:01.742Z level=INFO msg="file signal handler exiting due to context cancellation" argo=true[0m
+[35mmulti-step-ph7ph-print-message-741424284: time=2026-11-09T11:55:11.431Z level=INFO msg="waiting for signals" argo=true signalPath=/var/run/argo/ctr/main/signal[0m
+[35mmulti-step-ph7ph-print-message-741424284: Step 2: Processing data[0m
+[35mmulti-step-ph7ph-print-message-741424284: time=2026-11-09T11:55:14.435Z level=INFO msg="sub-process exited" argo=true error=<nil>[0m
+[35mmulti-step-ph7ph-print-message-741424284: time=2026-11-09T11:55:14.436Z level=INFO msg="file signal handler exiting due to context cancellation" argo=true[0m
+[34mmulti-step-ph7ph-print-message-3075526676: time=2026-11-09T11:55:21.914Z level=INFO msg="waiting for signals" argo=true signalPath=/var/run/argo/ctr/main/signal[0m
+[34mmulti-step-ph7ph-print-message-3075526676: Step 3: Workflow completed[0m
+[34mmulti-step-ph7ph-print-message-3075526676: time=2026-11-09T11:55:24.917Z level=INFO msg="sub-process exited" argo=true error=<nil>[0m
+[34mmulti-step-ph7ph-print-message-3075526676: time=2026-11-09T11:55:24.917Z level=INFO msg="file signal handler exiting due to context cancellation" argo=true[0m

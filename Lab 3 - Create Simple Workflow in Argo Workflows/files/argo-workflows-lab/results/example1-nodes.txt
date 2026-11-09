@@ -1,0 +1,7 @@
+StepGroup Succeeded [0]
+StepGroup Succeeded [1]
+Pod Succeeded step2
+Steps Succeeded multi-step-ph7ph
+StepGroup Succeeded [2]
+Pod Succeeded step3
+Pod Succeeded step1

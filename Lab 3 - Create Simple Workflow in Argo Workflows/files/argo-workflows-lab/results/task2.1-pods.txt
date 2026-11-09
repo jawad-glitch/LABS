@@ -1,0 +1,3 @@
+NAME                                                  READY   STATUS    RESTARTS   AGE
+argo-workflows-server-5d8c8f8b-s28lg                  1/1     Running   0          37s
+argo-workflows-workflow-controller-6b5ff6d9bb-rd78m   1/1     Running   0          37s

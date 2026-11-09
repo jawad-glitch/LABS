@@ -1,0 +1,6 @@
+Name:                hello-world-lkcdx
+Namespace:           argo
+ServiceAccount:      unset (will run with the default ServiceAccount)
+Status:              Pending
+Created:             Mon Nov 09 11:54:36 +0000 (now)
+Progress:            

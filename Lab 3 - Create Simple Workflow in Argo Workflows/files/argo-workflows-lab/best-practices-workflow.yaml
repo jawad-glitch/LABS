@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: data-processing-
+  labels:
+    project: "analytics"
+    environment: "development"
+    team: "data-engineering"
+spec:
+  entrypoint: main
+  serviceAccountName: workflow-executor
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+  templates:
+  - name: main
+    retryStrategy:
+      limit: 3
+      retryPolicy: "Always"
+      backoff:
+        duration: "1m"
+        factor: 2
+    container:
+      image: alpine:3.16
+      command: [sh, -c]
+      args: ["echo \"best-practice run as uid=$(id -u)\""]
+      resources:
+        requests: {memory: "64Mi", cpu: "100m"}
+        limits: {memory: "128Mi", cpu: "200m"}

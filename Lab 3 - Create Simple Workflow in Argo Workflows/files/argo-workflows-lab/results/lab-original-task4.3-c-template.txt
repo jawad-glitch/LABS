@@ -1,0 +1,1 @@
+time=2026-11-09T11:55:31.066Z level=ERROR msg="Failed to get pod logs" namespace=argo workflow=hello-world-xfqlc podName=hello-world-xfqlc error="container hello-world-template is not valid for pod hello-world-xfqlc"

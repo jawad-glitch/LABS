@@ -1,0 +1,7 @@
+[32mhello-world-xfqlc: Hello World from Argo Workflows![0m
+[32mhello-world-xfqlc: Current date:[0m
+[32mhello-world-xfqlc: Mon Nov  9 11:54:56 UTC 2026[0m
+[32mhello-world-xfqlc: Workflow execution completed successfully![0m
+[32mhello-world-xfqlc: time=2026-11-09T11:54:56.903Z level=INFO msg="waiting for signals" argo=true signalPath=/var/run/argo/ctr/main/signal[0m
+[32mhello-world-xfqlc: time=2026-11-09T11:54:56.905Z level=INFO msg="sub-process exited" error=<nil> argo=true[0m
+[32mhello-world-xfqlc: time=2026-11-09T11:54:56.906Z level=INFO msg="file signal handler exiting due to context cancellation" argo=true[0m

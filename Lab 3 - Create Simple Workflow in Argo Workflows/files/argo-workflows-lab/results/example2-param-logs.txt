@@ -1,0 +1,4 @@
+[32mparameterized-5fq68: Welcome, DevOps Engineer![0m
+[32mparameterized-5fq68: time=2026-11-09T11:54:58.835Z level=INFO msg="waiting for signals" argo=true signalPath=/var/run/argo/ctr/main/signal[0m
+[32mparameterized-5fq68: time=2026-11-09T11:54:58.836Z level=INFO msg="sub-process exited" argo=true error=<nil>[0m
+[32mparameterized-5fq68: time=2026-11-09T11:54:58.837Z level=INFO msg="file signal handler exiting due to context cancellation" argo=true[0m

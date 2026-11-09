@@ -1,0 +1,4 @@
+docker.io/library/alpine:3.16
+quay.io/argoproj/workflow-controller:v4.1.6
+quay.io/argoproj/argoexec:v4.1.6
+quay.io/argoproj/argocli:v4.1.6

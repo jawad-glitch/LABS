@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: multi-step-
+spec:
+  entrypoint: multi-step-template
+  templates:
+  - name: multi-step-template
+    steps:
+    - - name: step1
+        template: print-message
+        arguments:
+          parameters:
+          - name: message
+            value: "Step 1: Initializing workflow"
+    - - name: step2
+        template: print-message
+        arguments:
+          parameters:
+          - name: message
+            value: "Step 2: Processing data"
+    - - name: step3
+        template: print-message
+        arguments:
+          parameters:
+          - name: message
+            value: "Step 3: Workflow completed"
+  - name: print-message
+    inputs:
+      parameters:
+      - name: message
+    container:
+      image: alpine:3.16
+      command: [sh, -c]
+      args: ["echo '{{inputs.parameters.message}}' && sleep 2"]

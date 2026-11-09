@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: hello-world-
+  labels:
+    workflows.argoproj.io/archive-strategy: "false"
+spec:
+  entrypoint: hello-world-template
+  templates:
+  - name: hello-world-template
+    container:
+      image: alpine:3.16
+      command: [sh, -c]
+      args: ["echo 'Hello World from Argo Workflows!' && echo 'Current date:' && date && echo 'Workflow execution completed successfully!'"]
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "100m"
+        limits:
+          memory: "128Mi"
+          cpu: "200m"

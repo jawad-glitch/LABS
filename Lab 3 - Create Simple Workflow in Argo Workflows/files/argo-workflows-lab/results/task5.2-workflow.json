@@ -1,0 +1,106 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Workflow",
+    "metadata": {
+        "annotations": {
+            "workflows.argoproj.io/pod-name-format": "v2",
+            "workflows.argoproj.io/trace-id": "f21c40c022336cac3477ede1a91f3c0e"
+        },
+        "creationTimestamp": "2026-11-09T11:54:36Z",
+        "generateName": "hello-world-",
+        "generation": 5,
+        "labels": {
+            "workflows.argoproj.io/archive-strategy": "false",
+            "workflows.argoproj.io/completed": "true",
+            "workflows.argoproj.io/creator": "kubernetes-admin",
+            "workflows.argoproj.io/phase": "Succeeded"
+        },
+        "name": "hello-world-xfqlc",
+        "namespace": "argo",
+        "resourceVersion": "1061",
+        "uid": "f0aa0ef7-5ff9-4530-ae16-263f11180e45"
+    },
+    "spec": {
+        "arguments": {},
+        "entrypoint": "hello-world-template",
+        "templates": [
+            {
+                "container": {
+                    "args": [
+                        "echo 'Hello World from Argo Workflows!' \u0026\u0026 echo 'Current date:' \u0026\u0026 date \u0026\u0026 echo 'Workflow execution completed successfully!'"
+                    ],
+                    "command": [
+                        "sh",
+                        "-c"
+                    ],
+                    "image": "alpine:3.16",
+                    "name": "",
+                    "resources": {
+                        "limits": {
+                            "cpu": "200m",
+                            "memory": "128Mi"
+                        },
+                        "requests": {
+                            "cpu": "100m",
+                            "memory": "64Mi"
+                        }
+                    }
+                },
+                "inputs": {},
+                "metadata": {},
+                "name": "hello-world-template",
+                "outputs": {}
+            }
+        ]
+    },
+    "status": {
+        "artifactGCStatus": {
+            "notSpecified": true
+        },
+        "artifactRepositoryRef": {
+            "artifactRepository": {},
+            "default": true
+        },
+        "conditions": [
+            {
+                "status": "False",
+                "type": "PodRunning"
+            },
+            {
+                "status": "True",
+                "type": "Completed"
+            }
+        ],
+        "finishedAt": "2026-11-09T11:55:07Z",
+        "nodes": {
+            "hello-world-xfqlc": {
+                "displayName": "hello-world-xfqlc",
+                "finishedAt": "2026-11-09T11:54:57Z",
+                "hostNodeName": "argo-control-plane",
+                "id": "hello-world-xfqlc",
+                "name": "hello-world-xfqlc",
+                "outputs": {
+                    "exitCode": "0"
+                },
+                "phase": "Succeeded",
+                "progress": "1/1",
+                "resourcesDuration": {
+                    "cpu": 0,
+                    "memory": 8
+                },
+                "startedAt": "2026-11-09T11:54:36Z",
+                "taskResultSynced": true,
+                "templateName": "hello-world-template",
+                "templateScope": "local/hello-world-xfqlc",
+                "type": "Pod"
+            }
+        },
+        "phase": "Succeeded",
+        "progress": "1/1",
+        "resourcesDuration": {
+            "cpu": 0,
+            "memory": 8
+        },
+        "startedAt": "2026-11-09T11:54:36Z"
+    }
+}

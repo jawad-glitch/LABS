@@ -1,0 +1,16 @@
+Name:                hello-world-xfqlc
+Namespace:           argo
+ServiceAccount:      unset (will run with the default ServiceAccount)
+Status:              Succeeded
+Conditions:          
+ PodRunning          False
+ Completed           True
+Created:             Mon Nov 09 11:54:36 +0000 (54 seconds ago)
+Started:             Mon Nov 09 11:54:36 +0000 (54 seconds ago)
+Finished:            Mon Nov 09 11:55:07 +0000 (23 seconds ago)
+Duration:            31 seconds
+Progress:            1/1
+ResourcesDuration:   0s*(1 cpu),8s*(100Mi memory)
+
+[39mSTEP[0m                  TEMPLATE              PODNAME            DURATION  MESSAGE
+ [32m✔[0m hello-world-xfqlc  hello-world-template  hello-world-xfqlc  21s         

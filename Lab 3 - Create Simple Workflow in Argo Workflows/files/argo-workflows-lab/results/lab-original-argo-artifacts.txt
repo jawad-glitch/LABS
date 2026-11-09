@@ -1,0 +1,3 @@
+Error: unknown command "artifacts" for "argo"
+Run 'argo --help' for usage.
+exit=1

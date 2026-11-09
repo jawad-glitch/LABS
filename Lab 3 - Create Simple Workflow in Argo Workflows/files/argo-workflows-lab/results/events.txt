@@ -1,0 +1,135 @@
+LAST SEEN   TYPE      REASON                  OBJECT                                                     MESSAGE
+2m26s       Normal    Scheduled               pod/argo-workflows-crd-install-5h7hg                       Successfully assigned argo/argo-workflows-crd-install-5h7hg to argo-control-plane
+2m26s       Normal    Pulling                 pod/argo-workflows-crd-install-5h7hg                       Pulling image "quay.io/argoproj/argo-workflows-crdinstaller:v4.1.6"
+2m26s       Normal    SuccessfulCreate        job/argo-workflows-crd-install                             Created pod: argo-workflows-crd-install-5h7hg
+2m23s       Normal    Pulled                  pod/argo-workflows-crd-install-5h7hg                       Successfully pulled image "quay.io/argoproj/argo-workflows-crdinstaller:v4.1.6" in 2.577s (2.578s including waiting). Image size: 22173561 bytes.
+2m23s       Normal    Created                 pod/argo-workflows-crd-install-5h7hg                       Container created
+2m23s       Normal    Started                 pod/argo-workflows-crd-install-5h7hg                       Container started
+96s         Normal    Completed               job/argo-workflows-crd-install                             Job completed
+95s         Normal    Scheduled               pod/argo-workflows-workflow-controller-6b5ff6d9bb-rd78m    Successfully assigned argo/argo-workflows-workflow-controller-6b5ff6d9bb-rd78m to argo-control-plane
+95s         Normal    ScalingReplicaSet       deployment/argo-workflows-workflow-controller              Scaled up replica set argo-workflows-workflow-controller-6b5ff6d9bb from 0 to 1
+95s         Normal    SuccessfulCreate        replicaset/argo-workflows-workflow-controller-6b5ff6d9bb   Created pod: argo-workflows-workflow-controller-6b5ff6d9bb-rd78m
+95s         Normal    Scheduled               pod/argo-workflows-server-5d8c8f8b-s28lg                   Successfully assigned argo/argo-workflows-server-5d8c8f8b-s28lg to argo-control-plane
+95s         Normal    SuccessfulCreate        replicaset/argo-workflows-server-5d8c8f8b                  Created pod: argo-workflows-server-5d8c8f8b-s28lg
+95s         Normal    ScalingReplicaSet       deployment/argo-workflows-server                           Scaled up replica set argo-workflows-server-5d8c8f8b from 0 to 1
+94s         Normal    Pulling                 pod/argo-workflows-server-5d8c8f8b-s28lg                   Pulling image "quay.io/argoproj/argocli:v4.1.6"
+94s         Normal    Pulling                 pod/argo-workflows-workflow-controller-6b5ff6d9bb-rd78m    Pulling image "quay.io/argoproj/workflow-controller:v4.1.6"
+90s         Normal    Started                 pod/argo-workflows-workflow-controller-6b5ff6d9bb-rd78m    Container started
+90s         Normal    Pulled                  pod/argo-workflows-workflow-controller-6b5ff6d9bb-rd78m    Successfully pulled image "quay.io/argoproj/workflow-controller:v4.1.6" in 4.13s (4.13s including waiting). Image size: 50246435 bytes.
+90s         Normal    Created                 pod/argo-workflows-workflow-controller-6b5ff6d9bb-rd78m    Container created
+84s         Normal    Pulled                  pod/argo-workflows-server-5d8c8f8b-s28lg                   Successfully pulled image "quay.io/argoproj/argocli:v4.1.6" in 6.669s (10.676s including waiting). Image size: 76596726 bytes.
+83s         Normal    Started                 pod/argo-workflows-server-5d8c8f8b-s28lg                   Container started
+83s         Normal    Created                 pod/argo-workflows-server-5d8c8f8b-s28lg                   Container created
+57s         Normal    WorkflowRunning         workflow/hello-world-lkcdx                                 Workflow Running
+57s         Normal    Scheduled               pod/hello-world-xfqlc                                      Successfully assigned argo/hello-world-xfqlc to argo-control-plane
+57s         Normal    WorkflowRunning         workflow/hello-world-xfqlc                                 Workflow Running
+57s         Normal    Scheduled               pod/hello-world-lkcdx                                      Successfully assigned argo/hello-world-lkcdx to argo-control-plane
+56s         Normal    WorkflowRunning         workflow/multi-step-ph7ph                                  Workflow Running
+56s         Normal    WorkflowNodeRunning     workflow/multi-step-ph7ph                                  Running node multi-step-ph7ph
+56s         Normal    Pulling                 pod/hello-world-lkcdx                                      Pulling image "quay.io/argoproj/argoexec:v4.1.6"
+56s         Normal    WorkflowRunning         workflow/parameterized-5fq68                               Workflow Running
+56s         Normal    WorkflowNodeRunning     workflow/multi-step-ph7ph                                  Running node multi-step-ph7ph[0]
+56s         Normal    Pulling                 pod/hello-world-xfqlc                                      Pulling image "quay.io/argoproj/argoexec:v4.1.6"
+56s         Normal    Scheduled               pod/parameterized-5fq68                                    Successfully assigned argo/parameterized-5fq68 to argo-control-plane
+56s         Normal    Scheduled               pod/multi-step-ph7ph-print-message-3351832160              Successfully assigned argo/multi-step-ph7ph-print-message-3351832160 to argo-control-plane
+55s         Normal    Pulling                 pod/multi-step-ph7ph-print-message-3351832160              Pulling image "quay.io/argoproj/argoexec:v4.1.6"
+55s         Normal    Scheduled               pod/data-processing-4v4vl-main-452444889                   Successfully assigned argo/data-processing-4v4vl-main-452444889 to argo-control-plane
+55s         Normal    WorkflowRunning         workflow/data-processing-4v4vl                             Workflow Running
+55s         Normal    WorkflowNodeRunning     workflow/data-processing-4v4vl                             Running node data-processing-4v4vl
+54s         Normal    Pulling                 pod/parameterized-5fq68                                    Pulling image "quay.io/argoproj/argoexec:v4.1.6"
+54s         Normal    Pulling                 pod/data-processing-4v4vl-main-452444889                   Pulling image "quay.io/argoproj/argoexec:v4.1.6"
+52s         Normal    Created                 pod/hello-world-lkcdx                                      Container created
+52s         Normal    Pulled                  pod/hello-world-xfqlc                                      Successfully pulled image "quay.io/argoproj/argoexec:v4.1.6" in 220ms (4.168s including waiting). Image size: 70232826 bytes.
+52s         Normal    Created                 pod/hello-world-xfqlc                                      Container created
+52s         Normal    Pulled                  pod/multi-step-ph7ph-print-message-3351832160              Successfully pulled image "quay.io/argoproj/argoexec:v4.1.6" in 254ms (3.284s including waiting). Image size: 70232826 bytes.
+52s         Normal    Pulled                  pod/hello-world-lkcdx                                      Successfully pulled image "quay.io/argoproj/argoexec:v4.1.6" in 4.358s (4.358s including waiting). Image size: 70232826 bytes.
+51s         Normal    Pulled                  pod/parameterized-5fq68                                    Successfully pulled image "quay.io/argoproj/argoexec:v4.1.6" in 246ms (3.013s including waiting). Image size: 70232826 bytes.
+51s         Normal    Created                 pod/parameterized-5fq68                                    Container created
+51s         Normal    Created                 pod/multi-step-ph7ph-print-message-3351832160              Container created
+51s         Normal    Started                 pod/hello-world-xfqlc                                      Container started
+51s         Normal    Started                 pod/hello-world-lkcdx                                      Container started
+51s         Normal    Pulled                  pod/data-processing-4v4vl-main-452444889                   Successfully pulled image "quay.io/argoproj/argoexec:v4.1.6" in 225ms (2.514s including waiting). Image size: 70232826 bytes.
+51s         Normal    Created                 pod/data-processing-4v4vl-main-452444889                   Container created
+50s         Normal    Started                 pod/multi-step-ph7ph-print-message-3351832160              Container started
+50s         Normal    Started                 pod/data-processing-4v4vl-main-452444889                   Container started
+48s         Normal    Started                 pod/parameterized-5fq68                                    Container started
+42s         Normal    Pulled                  pod/parameterized-5fq68                                    Container image "quay.io/argoproj/argoexec:v4.1.6" already present on machine and can be accessed by the pod
+42s         Normal    Pulled                  pod/multi-step-ph7ph-print-message-3351832160              Container image "quay.io/argoproj/argoexec:v4.1.6" already present on machine and can be accessed by the pod
+42s         Normal    Pulled                  pod/data-processing-4v4vl-main-452444889                   Container image "quay.io/argoproj/argoexec:v4.1.6" already present on machine and can be accessed by the pod
+42s         Normal    Created                 pod/data-processing-4v4vl-main-452444889                   Container created
+42s         Normal    Created                 pod/parameterized-5fq68                                    Container created
+42s         Normal    Pulled                  pod/hello-world-lkcdx                                      Container image "quay.io/argoproj/argoexec:v4.1.6" already present on machine and can be accessed by the pod
+42s         Normal    Created                 pod/hello-world-lkcdx                                      Container created
+42s         Normal    Created                 pod/multi-step-ph7ph-print-message-3351832160              Container created
+42s         Normal    Pulled                  pod/hello-world-xfqlc                                      Container image "quay.io/argoproj/argoexec:v4.1.6" already present on machine and can be accessed by the pod
+42s         Normal    Created                 pod/hello-world-xfqlc                                      Container created
+41s         Normal    Started                 pod/hello-world-xfqlc                                      Container started
+41s         Normal    Pulling                 pod/hello-world-xfqlc                                      Pulling image "alpine:3.16"
+41s         Normal    Started                 pod/hello-world-lkcdx                                      Container started
+41s         Normal    Started                 pod/data-processing-4v4vl-main-452444889                   Container started
+41s         Normal    Pulling                 pod/data-processing-4v4vl-main-452444889                   Pulling image "alpine:3.16"
+41s         Normal    Pulling                 pod/hello-world-lkcdx                                      Pulling image "alpine:3.16"
+40s         Warning   Unhealthy               pod/argo-workflows-server-5d8c8f8b-s28lg                   Readiness probe failed: Get "http://10.244.0.7:2746/": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+40s         Normal    Pulled                  pod/hello-world-lkcdx                                      Successfully pulled image "alpine:3.16" in 1.312s (1.312s including waiting). Image size: 2811474 bytes.
+39s         Normal    Pulled                  pod/hello-world-xfqlc                                      Successfully pulled image "alpine:3.16" in 225ms (1.399s including waiting). Image size: 2811474 bytes.
+39s         Normal    Started                 pod/hello-world-lkcdx                                      Container started
+39s         Normal    Created                 pod/hello-world-xfqlc                                      Container created
+39s         Normal    Created                 pod/hello-world-lkcdx                                      Container created
+39s         Normal    Created                 pod/data-processing-4v4vl-main-452444889                   Container created
+39s         Normal    Pulled                  pod/data-processing-4v4vl-main-452444889                   Successfully pulled image "alpine:3.16" in 198ms (1.363s including waiting). Image size: 2811474 bytes.
+38s         Normal    Started                 pod/hello-world-xfqlc                                      Container started
+38s         Normal    Started                 pod/data-processing-4v4vl-main-452444889                   Container started
+38s         Normal    Created                 pod/multi-step-ph7ph-print-message-3351832160              Container created
+38s         Normal    Pulled                  pod/multi-step-ph7ph-print-message-3351832160              Container image "alpine:3.16" already present on machine and can be accessed by the pod
+38s         Normal    Started                 pod/multi-step-ph7ph-print-message-3351832160              Container started
+37s         Normal    Pulled                  pod/parameterized-5fq68                                    Container image "alpine:3.16" already present on machine and can be accessed by the pod
+37s         Normal    Created                 pod/parameterized-5fq68                                    Container created
+37s         Normal    Started                 pod/parameterized-5fq68                                    Container started
+36s         Normal    WorkflowNodeRunning     workflow/multi-step-ph7ph                                  Running node multi-step-ph7ph[0].step1
+36s         Normal    WorkflowNodeRunning     workflow/hello-world-lkcdx                                 Running node hello-world-lkcdx
+36s         Normal    WorkflowNodeRunning     workflow/hello-world-xfqlc                                 Running node hello-world-xfqlc
+36s         Normal    Started                 pod/parameterized-5fq68                                    Container started
+36s         Normal    Started                 pod/multi-step-ph7ph-print-message-3351832160              Container started
+35s         Normal    WorkflowNodeRunning     workflow/parameterized-5fq68                               Running node parameterized-5fq68
+35s         Normal    WorkflowNodeRunning     workflow/data-processing-4v4vl                             Running node data-processing-4v4vl(0)
+26s         Normal    WorkflowSucceeded       workflow/hello-world-lkcdx                                 Workflow completed
+26s         Normal    Scheduled               pod/multi-step-ph7ph-print-message-741424284               Successfully assigned argo/multi-step-ph7ph-print-message-741424284 to argo-control-plane
+26s         Normal    WorkflowNodeSucceeded   workflow/hello-world-xfqlc                                 Succeeded node hello-world-xfqlc
+26s         Normal    WorkflowSucceeded       workflow/hello-world-xfqlc                                 Workflow completed
+26s         Normal    WorkflowNodeSucceeded   workflow/hello-world-lkcdx                                 Succeeded node hello-world-lkcdx
+25s         Normal    WorkflowSucceeded       workflow/parameterized-5fq68                               Workflow completed
+25s         Normal    WorkflowNodeSucceeded   workflow/multi-step-ph7ph                                  Succeeded node multi-step-ph7ph[0].step1
+25s         Normal    WorkflowNodeSucceeded   workflow/parameterized-5fq68                               Succeeded node parameterized-5fq68
+25s         Normal    WorkflowSucceeded       workflow/data-processing-4v4vl                             Workflow completed
+25s         Normal    WorkflowNodeRunning     workflow/multi-step-ph7ph                                  Running node multi-step-ph7ph[1]
+25s         Normal    Pulled                  pod/multi-step-ph7ph-print-message-741424284               Container image "quay.io/argoproj/argoexec:v4.1.6" already present on machine and can be accessed by the pod
+25s         Normal    WorkflowNodeSucceeded   workflow/multi-step-ph7ph                                  Succeeded node multi-step-ph7ph[0]
+25s         Normal    Created                 pod/multi-step-ph7ph-print-message-741424284               Container created
+24s         Normal    Started                 pod/multi-step-ph7ph-print-message-741424284               Container started
+24s         Normal    WorkflowNodeSucceeded   workflow/data-processing-4v4vl                             Succeeded node data-processing-4v4vl
+24s         Normal    WorkflowNodeSucceeded   workflow/data-processing-4v4vl                             Succeeded node data-processing-4v4vl(0)
+23s         Normal    Pulled                  pod/multi-step-ph7ph-print-message-741424284               Container image "quay.io/argoproj/argoexec:v4.1.6" already present on machine and can be accessed by the pod
+23s         Normal    Created                 pod/multi-step-ph7ph-print-message-741424284               Container created
+23s         Normal    Started                 pod/multi-step-ph7ph-print-message-741424284               Container started
+23s         Normal    Created                 pod/multi-step-ph7ph-print-message-741424284               Container created
+23s         Normal    Pulled                  pod/multi-step-ph7ph-print-message-741424284               Container image "alpine:3.16" already present on machine and can be accessed by the pod
+22s         Normal    Started                 pod/multi-step-ph7ph-print-message-741424284               Container started
+16s         Normal    Scheduled               pod/multi-step-ph7ph-print-message-3075526676              Successfully assigned argo/multi-step-ph7ph-print-message-3075526676 to argo-control-plane
+15s         Normal    WorkflowNodeSucceeded   workflow/multi-step-ph7ph                                  Succeeded node multi-step-ph7ph[1]
+15s         Normal    Created                 pod/multi-step-ph7ph-print-message-3075526676              Container created
+15s         Normal    WorkflowNodeSucceeded   workflow/multi-step-ph7ph                                  Succeeded node multi-step-ph7ph[1].step2
+15s         Normal    WorkflowNodeRunning     workflow/multi-step-ph7ph                                  Running node multi-step-ph7ph[1].step2
+15s         Normal    WorkflowNodeRunning     workflow/multi-step-ph7ph                                  Running node multi-step-ph7ph[2]
+15s         Normal    Pulled                  pod/multi-step-ph7ph-print-message-3075526676              Container image "quay.io/argoproj/argoexec:v4.1.6" already present on machine and can be accessed by the pod
+14s         Normal    Started                 pod/multi-step-ph7ph-print-message-3075526676              Container started
+13s         Normal    Pulled                  pod/multi-step-ph7ph-print-message-3075526676              Container image "quay.io/argoproj/argoexec:v4.1.6" already present on machine and can be accessed by the pod
+13s         Normal    Created                 pod/multi-step-ph7ph-print-message-3075526676              Container created
+12s         Normal    Started                 pod/multi-step-ph7ph-print-message-3075526676              Container started
+12s         Normal    Pulled                  pod/multi-step-ph7ph-print-message-3075526676              Container image "alpine:3.16" already present on machine and can be accessed by the pod
+12s         Normal    Started                 pod/multi-step-ph7ph-print-message-3075526676              Container started
+12s         Normal    Created                 pod/multi-step-ph7ph-print-message-3075526676              Container created
+5s          Normal    WorkflowNodeSucceeded   workflow/multi-step-ph7ph                                  Succeeded node multi-step-ph7ph[2].step3
+5s          Normal    WorkflowNodeRunning     workflow/multi-step-ph7ph                                  Running node multi-step-ph7ph[2].step3
+5s          Normal    WorkflowNodeSucceeded   workflow/multi-step-ph7ph                                  Succeeded node multi-step-ph7ph[2]
+5s          Normal    WorkflowNodeSucceeded   workflow/multi-step-ph7ph                                  Succeeded node multi-step-ph7ph
+5s          Normal    WorkflowSucceeded       workflow/multi-step-ph7ph                                  Workflow completed

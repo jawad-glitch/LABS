@@ -1,0 +1,4 @@
+[32mdata-processing-4v4vl-main-452444889: time=2026-11-09T11:54:57.055Z level=INFO msg="waiting for signals" argo=true signalPath=/var/run/argo/ctr/main/signal[0m
+[32mdata-processing-4v4vl-main-452444889: best-practice run as uid=1000[0m
+[32mdata-processing-4v4vl-main-452444889: time=2026-11-09T11:54:58.059Z level=INFO msg="file signal handler exiting due to context cancellation" argo=true[0m
+[32mdata-processing-4v4vl-main-452444889: time=2026-11-09T11:54:58.058Z level=INFO msg="sub-process exited" argo=true error=<nil>[0m

@@ -1,0 +1,16 @@
+========== CORE CHECKS (Lab 3 - Create Simple Workflow in Argo Workflows, 2026-11-09 11:55:35 UTC) ==========
+PASS: Task 1: hello-world.yaml accepted by API server (Workflow CRD schema, dry-run=server)
+PASS: Task 2.1: argo-workflows-workflow-controller and argo-workflows-server available (Argo v4.1.6)
+PASS: Task 2.2: argo submit printed Name hello-world-* in Namespace argo
+PASS: Task 2.3: --output name captured hello-world-xfqlc
+PASS: Task 3: argo list + get + watch show hello-world-xfqlc Succeeded
+PASS: Task 4.1: logs show greeting, real date line and completion line
+PASS: Task 4.2/4.3: follow logs returned, per-pod main-container logs (hello-world-xfqlc)
+PASS: Task 1/Best practice: pod got requests 100m/64Mi, limits 200m/128Mi
+PASS: Task 5.1/5.2: Status Succeeded, no artifacts in workflow status (argo artifacts not a CLI command - captured)
+PASS: Example 1: multi-step multi-step-ph7ph Succeeded, 3 step pods Succeeded, 3 messages logged
+PASS: Example 2: -p overrides -> "Welcome, DevOps Engineer!"
+PASS: Best practices: labels + workflow-executor SA + retryStrategy, ran as uid=1000
+PASS: Task 5.3: argo delete + delete --completed left 0 workflows
+PASS: Time budget: lab finished in 280s (<= 300s)
+CORE: 14/14 PASS

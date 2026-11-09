@@ -1,0 +1,17 @@
+OBJ CustomResourceDefinition analysisruns.argoproj.io
+OBJ CustomResourceDefinition analysistemplates.argoproj.io
+OBJ CustomResourceDefinition clusteranalysistemplates.argoproj.io
+OBJ CustomResourceDefinition experiments.argoproj.io
+OBJ CustomResourceDefinition rollouts.argoproj.io
+OBJ ServiceAccount argo-rollouts
+OBJ ClusterRole argo-rollouts
+OBJ ClusterRole argo-rollouts-aggregate-to-admin
+OBJ ClusterRole argo-rollouts-aggregate-to-edit
+OBJ ClusterRole argo-rollouts-aggregate-to-view
+OBJ ClusterRoleBinding argo-rollouts
+OBJ ConfigMap argo-rollouts-config
+OBJ Secret argo-rollouts-notification-secret
+OBJ Service argo-rollouts-metrics
+SVCPORTS argo-rollouts-metrics 8090
+OBJ Deployment argo-rollouts
+IMAGE argo-rollouts quay.io/argoproj/argo-rollouts:v1.10.2

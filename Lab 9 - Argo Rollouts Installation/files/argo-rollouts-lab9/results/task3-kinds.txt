@@ -1,0 +1,10 @@
+objects: 15
+      4 ClusterRole
+      1 ClusterRoleBinding
+      1 ConfigMap
+      5 CustomResourceDefinition
+      1 Deployment
+      1 Secret
+      1 Service
+      1 ServiceAccount
+Namespace object inside install.yaml: 0

@@ -1,0 +1,6 @@
+Testing blocked GET /json:
+HTTP Status: 403 (Blocked by L7 Policy)
+Testing blocked PUT /get:
+HTTP Status: 403 (Blocked by L7 Policy)
+Testing blocked DELETE /delete:
+HTTP Status: 403 (Blocked by L7 Policy)

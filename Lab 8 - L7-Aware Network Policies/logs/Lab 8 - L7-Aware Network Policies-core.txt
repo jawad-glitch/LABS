@@ -1,0 +1,12 @@
+========== CORE CHECKS (Lab 8 - L7-Aware Network Policies, 2026-11-09 14:55:04 UTC) ==========
+PASS: Task 1: Environment verified and test apps deployed in l7-policy-demo
+PASS: Task 2: L7 HTTP policy defined and applied
+PASS: Task 3: Allowed vs blocked HTTP method/path enforcement validated
+PASS: Task 4: DNS-based egress policy created for client pod
+PASS: Task 5: Header-based L7 CiliumNetworkPolicy applied
+PASS: Task 6: Cilium policy tracing verified L7 verdict
+PASS: Task 7: Optimized L7 policy created and applied
+PASS: Task 8: Comprehensive test script executed with all checks passing
+PASS: Reporting: Complete L7 policy audit report generated
+PASS: Time: Finished in under 300s
+CORE: 10/10 PASS

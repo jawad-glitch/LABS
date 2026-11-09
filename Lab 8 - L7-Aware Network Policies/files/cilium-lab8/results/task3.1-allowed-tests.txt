@@ -1,0 +1,6 @@
+Testing allowed GET /get:
+HTTP Status: 200
+Testing allowed GET /status/200:
+HTTP Status: 200
+Testing allowed POST /post:
+HTTP Status: 200

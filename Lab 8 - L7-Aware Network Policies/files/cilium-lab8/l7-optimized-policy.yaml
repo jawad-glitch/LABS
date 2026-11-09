@@ -1,0 +1,29 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: l7-optimized-policy
+  namespace: l7-policy-demo
+spec:
+  endpointSelector:
+    matchLabels:
+      app: httpbin
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: client
+    toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP
+      rules:
+        http:
+        - method: "GET"
+          path: "/get"
+        - method: "GET"
+          path: "/status/200"
+        - method: "GET"
+          path: "/status/.*"
+        - method: "POST"
+          path: "/post"
+          headers:
+          - "Content-Type: application/json"

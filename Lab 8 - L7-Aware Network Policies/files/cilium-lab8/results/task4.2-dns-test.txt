@@ -1,0 +1,6 @@
+Testing allowed DNS resolution:
+Server:         10.96.0.10
+Address:        10.96.0.10:53
+Name:   httpbin-service.l7-policy-demo.svc.cluster.local
+Address: 10.96.100.200
+HTTP Status: 200

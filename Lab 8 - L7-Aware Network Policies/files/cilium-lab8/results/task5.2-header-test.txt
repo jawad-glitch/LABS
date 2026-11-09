@@ -1,0 +1,6 @@
+Testing request with correct header:
+HTTP Status: 200
+Testing request with incorrect header:
+HTTP Status: 403 (Access Denied)
+Testing request without header:
+HTTP Status: 403 (Access Denied)

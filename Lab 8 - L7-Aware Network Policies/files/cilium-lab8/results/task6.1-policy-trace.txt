@@ -1,0 +1,8 @@
+----------------------------------------------------------------
+Policy trace from [k8s:app=client, k8s:io.kubernetes.pod.namespace=l7-policy-demo]
+                to [k8s:app=httpbin, k8s:io.kubernetes.pod.namespace=l7-policy-demo]
+Port: 80/TCP
+Resolving ingress policy for [k8s:app=httpbin]
+* Rule [l7-header-policy]: ALLOWED (L7 Parser: http)
+Final verdict: ALLOWED
+----------------------------------------------------------------

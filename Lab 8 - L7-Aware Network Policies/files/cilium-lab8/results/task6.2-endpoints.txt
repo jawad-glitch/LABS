@@ -1,0 +1,3 @@
+ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS
+101        Enabled            Disabled          3001       k8s:app=httpbin,k8s:io.kubernetes.pod.namespace=l7-policy-demo
+102        Disabled           Enabled           3002       k8s:app=client,k8s:io.kubernetes.pod.namespace=l7-policy-demo

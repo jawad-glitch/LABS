@@ -1,0 +1,3 @@
+Checking /c.yml
+ SUCCESS: /c.yml is valid prometheus config file syntax
+

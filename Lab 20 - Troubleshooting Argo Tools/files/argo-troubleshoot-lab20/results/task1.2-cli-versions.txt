@@ -1,0 +1,3 @@
+argo: v4.1.6
+argocd: v3.6.1+94037c4
+kubectl-argo-rollouts: v1.10.2+be8a622

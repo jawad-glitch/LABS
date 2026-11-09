@@ -1,0 +1,4 @@
+T3.2-initial pods=5 1.26=40 1.27=0
+T3.3-during-bad-canary pods=5 1.26=40 1.27=0
+T3.6-weight40 pods=5 1.26=19 1.27=21
+T3.6-promoted pods=5 1.26=0 1.27=40

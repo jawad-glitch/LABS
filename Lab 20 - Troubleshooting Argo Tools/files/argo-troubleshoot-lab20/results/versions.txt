@@ -1,0 +1,1 @@
+argo v4.1.6 | argocd v3.6.1 | rollouts v1.10.2 | prometheus v3.16.0

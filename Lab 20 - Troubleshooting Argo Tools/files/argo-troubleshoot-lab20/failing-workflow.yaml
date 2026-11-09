@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: failing-workflow-
+  namespace: argo
+spec:
+  entrypoint: failing-steps
+  templates:
+  - name: failing-steps
+    steps:
+    - - name: step1
+        template: success-step
+    - - name: step2
+        template: failing-step
+    - - name: step3
+        template: success-step
+  - name: success-step
+    container:
+      image: alpine:3.20
+      command: [sh, -c]
+      args: ["echo 'This step succeeds'; sleep 5"]
+  - name: failing-step
+    container:
+      image: alpine:3.20
+      command: [sh, -c]
+      args: ["echo 'This step will fail'; exit 1"]

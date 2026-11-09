@@ -1,0 +1,2 @@
+canary (setWeight 20) pod for nginx:invalid-tag: ErrImagePull/ImagePullBackOff - rollout stalls at step 0, then Degraded after progressDeadlineSeconds
+kubectl argo rollouts abort/undo rollout-demo -> canary RS scaled to 0

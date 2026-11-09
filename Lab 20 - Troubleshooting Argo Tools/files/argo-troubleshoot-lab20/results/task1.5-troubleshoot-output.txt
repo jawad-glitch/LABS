@@ -1,0 +1,2 @@
+== failed node -> pod failing-workflow-57f1a2-step2 (main container, with timestamps)
+2026-11-09T13:54:37.682450384Z This step will fail

@@ -1,0 +1,3 @@
+metrics service: argo-rollouts-metrics [8090]
+controller pod annotations: {}
+prometheus.io/scrape present: False

@@ -1,0 +1,4 @@
+step1 Succeeded exit=0 pod=failing-workflow-57f1a2-step1
+step2 Failed exit=1 message="Error (exit code 1)" pod=failing-workflow-57f1a2-step2
+step3 Omitted (previous step failed)
+workflow failing-workflow-57f1a2 phase=Failed

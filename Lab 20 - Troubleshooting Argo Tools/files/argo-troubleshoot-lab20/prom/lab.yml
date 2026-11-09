@@ -1,0 +1,20 @@
+global:
+  scrape_interval: 15s
+scrape_configs:
+- job_name: 'argo-rollouts'
+  kubernetes_sd_configs:
+  - role: pod
+    namespaces:
+      names:
+      - argo-rollouts
+  relabel_configs:
+  - source_labels: [__meta_kubernetes_pod_label_app_kubernetes_io_name]
+    action: keep
+    regex: argo-rollouts
+  - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+    action: keep
+    regex: true
+  - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+    action: replace
+    target_label: __metrics_path__
+    regex: (.+)

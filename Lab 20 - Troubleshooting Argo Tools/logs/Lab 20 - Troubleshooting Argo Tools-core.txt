@@ -1,0 +1,15 @@
+========== CORE CHECKS (Lab 20 - Troubleshooting Argo Tools, 2026-11-09 13:55:37 UTC) - FAST MODE ==========
+PASS: Task 1.2: argo v4.1.6, argocd v3.6.1, kubectl-argo-rollouts v1.10.2 installed (checksum verified)
+PASS: All fixed manifests valid (strict): workflow, git-repo manifests, Argo CD app, Rollout+services+AnalysisTemplate, Prometheus; scripts parse
+PASS: Task 1.1-1.3 [SIMULATED controller, real steps]: step1 Succeeded, step2 Failed exit 1, step3 Omitted -> workflow Failed
+PASS: Task 1.3-1.5: failed node located from status, its main-container logs with timestamps show the error; argo logs -c is a container flag (lab misuse)
+PASS: Task 2 insight: lab ConfigMap is valid K8s (syncs fine) - only the embedded config.yaml is broken
+PASS: Task 2.4: real sync-health causes - nonexistent-image pull fails; Service targetPort 8080 refused by nginx (listens 80)
+PASS: Task 2.5: fixed manifests - nginx:1.27-alpine serves HTTP 200 through sample-app-service:80; fix committed
+FAIL: Lab bug: Prometheus v3.16.0 exits with the lab console flags; fixed flags reach /-/ready; fixed scrape config passes promtool
+PASS: Lab bug: lab keep-rule requires prometheus.io/scrape, absent on the real Rollouts v1.10.2 controller pod (0 targets); fixed scrapes the :8090 metrics Service
+PASS: Task 3.3 [SIMULATED controller, real pods]: nginx:invalid-tag canary cannot pull; stable pods keep serving 100% (1.26=40/40)
+PASS: Task 3.6: undo + valid image 1.27 - canary passed HTTP analysis, mixed traffic at 40%, 100% on 1.27 after promote
+PASS: Lab bug: kubectl argo rollouts history does not exist (CLI v1.10.2) - fixed script uses get rollout
+PASS: Time: fast-mode run finished in 93s (<= 300s)
+CORE: 12/13 PASS

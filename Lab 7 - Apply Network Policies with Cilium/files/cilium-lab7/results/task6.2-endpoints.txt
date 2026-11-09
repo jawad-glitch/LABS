@@ -1,0 +1,4 @@
+ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS
+101        Enabled            Disabled          1001       k8s:app=backend
+102        Disabled           Enabled           1002       k8s:app=frontend
+103        Enabled            Disabled          1003       k8s:app=database

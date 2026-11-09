@@ -1,0 +1,21 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-frontend-to-backend
+  namespace: development
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+      tier: backend
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: frontend
+        tier: frontend
+    toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP
+      - port: "8080"
+        protocol: TCP

@@ -68,3 +68,4 @@
 | [Lab 4 - Understanding Cilium Architecture](Lab%204%20-%20Understanding%20Cilium%20Architecture/PROOF.md) | CORE: 4/12 PASS | 2026-11-09 14:36 |
 | [Lab 5 - Cilium Networking Basics](Lab%205%20-%20Cilium%20Networking%20Basics/PROOF.md) | CORE: 11/12 PASS | 2026-11-09 14:44 |
 | [Lab 6 - Kube-Proxy Replacement with Cilium eBPF](Lab%206%20-%20Kube-Proxy%20Replacement%20with%20Cilium%20eBPF/PROOF.md) | CORE: 11/11 PASS | 2026-11-09 14:48 |
+| [Lab 7 - Apply Network Policies with Cilium](Lab%207%20-%20Apply%20Network%20Policies%20with%20Cilium/PROOF.md) | CORE: 4/11 PASS | 2026-11-09 14:51 |

@@ -1,0 +1,13 @@
+=== Network Policy Connectivity Test ===
+
+Frontend Pod: frontend
+Backend Pod: backend
+
+Test 1: Frontend to Backend Service
+✓ PASS: Frontend can reach Backend
+Test 2: Backend to Database Service
+✓ PASS: Backend can reach Database
+Test 3: Frontend to Database Service (should be blocked)
+✓ PASS: Frontend correctly blocked from Database
+
+=== Test Complete ===

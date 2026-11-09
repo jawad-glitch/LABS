@@ -1,0 +1,20 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-backend-to-database
+  namespace: production
+spec:
+  endpointSelector:
+    matchLabels:
+      app: database
+      tier: database
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: backend
+        tier: backend
+        k8s:io.kubernetes.pod.namespace: development
+    toPorts:
+    - ports:
+      - port: "3306"
+        protocol: TCP

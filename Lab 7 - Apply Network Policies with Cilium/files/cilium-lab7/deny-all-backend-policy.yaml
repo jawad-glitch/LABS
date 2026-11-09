@@ -1,0 +1,11 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: deny-all-backend
+  namespace: development
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+      tier: backend
+  ingress: []

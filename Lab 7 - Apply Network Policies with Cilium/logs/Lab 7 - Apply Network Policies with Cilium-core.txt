@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 7 - Apply Network Policies with Cilium, 2026-11-09 14:51:51 UTC) ==========
+PASS: Task 1: Cilium installation and node health verified
+FAIL: Task 2: Namespaces created (development, production, testing)
+FAIL: Task 2: Multi-tier applications deployed (frontend, backend, database)
+FAIL: Task 4.1: Deny-all backend CiliumNetworkPolicy applied
+FAIL: Task 4.3: Ingress allow policy (frontend-to-backend) applied
+FAIL: Task 4.5: Cross-namespace database access policy created
+FAIL: Task 4.6: Backend egress policy defined and applied
+FAIL: Task 5.3: Advanced frontend policy with L4 port rules configured
+PASS: Task 6: Verification script executed with authorized and unauthorized checks
+PASS: Task 7: Cilium endpoints reflect active policy enforcement state
+PASS: Time: Finished in under 300s
+CORE: 4/11 PASS

@@ -1,0 +1,25 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: backend-egress-policy
+  namespace: development
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+      tier: backend
+  egress:
+  - toEndpoints:
+    - matchLabels:
+        app: database
+        tier: database
+        k8s:io.kubernetes.pod.namespace: production
+    toPorts:
+    - ports:
+      - port: "3306"
+        protocol: TCP
+  - toFQDNs:
+    - matchName: "kubernetes.default.svc.cluster.local"
+  - toEndpoints:
+    - matchLabels:
+        k8s:io.kubernetes.pod.namespace: kube-system

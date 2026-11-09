@@ -1,0 +1,31 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: advanced-frontend-policy
+  namespace: development
+spec:
+  endpointSelector:
+    matchLabels:
+      app: frontend
+      tier: frontend
+  ingress:
+  - fromEndpoints:
+    - matchLabels: {}
+      toPorts:
+      - ports:
+        - port: "80"
+          protocol: TCP
+  egress:
+  - toEndpoints:
+    - matchLabels:
+        app: backend
+        tier: backend
+      toPorts:
+      - ports:
+        - port: "80"
+          protocol: TCP
+  - toFQDNs:
+    - matchName: "kubernetes.default.svc.cluster.local"
+  - toEndpoints:
+    - matchLabels:
+        k8s:io.kubernetes.pod.namespace: kube-system

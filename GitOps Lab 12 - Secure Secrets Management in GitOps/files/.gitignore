@@ -1,0 +1,11 @@
+# NEVER commit plaintext Secrets or the controller private key
+*secret.yaml
+!manifests/**/sealed-*.yaml
+sealed-secrets-backup*.yaml
+*sealed-secrets-key*
+*.key
+*.tmp
+*.log
+kubeseal
+*.tar.gz
+results/

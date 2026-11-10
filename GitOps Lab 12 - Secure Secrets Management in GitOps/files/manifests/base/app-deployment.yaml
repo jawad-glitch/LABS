@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  namespace: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: webapp}
+  template:
+    metadata:
+      labels: {app: webapp}
+    spec:
+      containers:
+      - name: webapp
+        image: nginx:1.27-alpine
+        env:
+        - {name: DB_USERNAME, valueFrom: {secretKeyRef: {name: database-credentials, key: username}}}
+        - {name: DB_PASSWORD, valueFrom: {secretKeyRef: {name: database-credentials, key: password}}}
+        - {name: API_KEY, valueFrom: {secretKeyRef: {name: database-credentials, key: apikey}}}
+        ports: [{containerPort: 80}]

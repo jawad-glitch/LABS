@@ -93,3 +93,4 @@
 | [GitOps Lab 9 - Multi-Environment GitOps with Argo CD](GitOps%20Lab%209%20-%20Multi-Environment%20GitOps%20with%20Argo%20CD/PROOF.md) | no core-check file | 2026-11-10 08:46 |
 | [GitOps Lab 10 - Continuous Delivery with GitOps](GitOps%20Lab%2010%20-%20Continuous%20Delivery%20with%20GitOps/PROOF.md) | no core-check file | 2026-11-10 08:49 |
 | [GitOps Lab 11 - RBAC in GitOps Tools](GitOps%20Lab%2011%20-%20RBAC%20in%20GitOps%20Tools/PROOF.md) | no core-check file | 2026-11-10 08:54 |
+| [GitOps Lab 12 - Secure Secrets Management in GitOps](GitOps%20Lab%2012%20-%20Secure%20Secrets%20Management%20in%20GitOps/PROOF.md) | no core-check file | 2026-11-10 09:02 |

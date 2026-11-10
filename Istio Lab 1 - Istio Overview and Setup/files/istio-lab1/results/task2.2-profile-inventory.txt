@@ -1,0 +1,11 @@
+default DEPLOYMENTS istio-ingressgateway,istiod
+default SERVICES istio-ingressgateway,istiod
+default CRDS 15
+default GATEWAY_CRS 0
+default ISTIOD_REQUESTS {'cpu': '500m', 'memory': '2048Mi'}
+CRD_LIST authorizationpolicies.security.istio.io destinationrules.networking.istio.io envoyfilters.networking.istio.io gateways.networking.istio.io peerauthentications.security.istio.io proxyconfigs.networking.istio.io requestauthentications.security.istio.io serviceentries.networking.istio.io sidecars.networking.istio.io telemetries.telemetry.istio.io trafficextensions.extensions.istio.io virtualservices.networking.istio.io wasmplugins.extensions.istio.io workloadentries.networking.istio.io workloadgroups.networking.istio.io
+demo DEPLOYMENTS istio-egressgateway,istio-ingressgateway,istiod
+demo SERVICES istio-egressgateway,istio-ingressgateway,istiod
+demo CRDS 15
+demo GATEWAY_CRS 0
+demo ISTIOD_REQUESTS {'cpu': '10m', 'memory': '100Mi'}

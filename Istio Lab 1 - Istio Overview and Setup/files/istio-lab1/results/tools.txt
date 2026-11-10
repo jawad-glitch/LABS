@@ -1,0 +1,3 @@
+kubectl present
+kubeconform present
+istioctl 1.32.0 installed (sha256 OK)

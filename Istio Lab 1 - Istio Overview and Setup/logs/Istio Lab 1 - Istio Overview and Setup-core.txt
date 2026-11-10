@@ -1,0 +1,13 @@
+========== CORE CHECKS (Istio Lab 1 - Istio Overview and Setup, 2026-11-10 10:05:41 UTC) - CLUSTER RUNTIME SIMULATED, ISTIO TOOLING REAL ==========
+PASS: Task 2.1: istioctl 1.32.0 installed from the release tarball (sha256 verified); docker/kubectl present
+PASS: Task 2.2: lab command renders the DEFAULT profile - istiod + istio-ingressgateway, no egress gateway; manifests valid
+PASS: Lab bug: comment says 'demo profile' - demo adds istio-egressgateway (differs from what was installed)
+PASS: Task 3.3: Istio CRDs present in the release (15), incl. virtualservices/gateways/destinationrules
+PASS: Lab bug: installation creates no Gateway resource (kubectl get gateway -A shows nothing)
+PASS: Lab caveat: istiod requests in default profile recorded (memory vs 3.8 GB VM)
+PASS: Task 3.2: istioctl command availability recorded (verify-install / precheck / proxy-status / proxy-config / kube-inject)
+FAIL: Task 4.2 (real injector): istio-proxy (1.32.0 proxyv2) injected into nginx-test; mode recorded
+FAIL: Task 4.2: injected pod would report 2 ready containers (nginx + istio-proxy) regardless of sidecar mode
+PASS: Task 4.1: pinned app + injected manifests schema-valid; full-mode script parses
+PASS: Time: finished in 90s (<= 300s)
+CORE: 9/11 PASS

@@ -1,0 +1,4 @@
+client version: 1.32.0
+Docker version 29.6.0, build fb59821
+Client Version: v1.36.2
+Kustomize Version: v5.8.1

@@ -1,0 +1,1 @@
+GATEWAY_URL=127.0.0.1:8092 (envoy 1.40.3-dev)

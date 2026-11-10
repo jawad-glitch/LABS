@@ -1,0 +1,6 @@
+GET / -> 200 | Version: 1.0.0 Hostname: hello-frontend-1
+GET /frontend -> 200 | Version: 1.0.0 Hostname: hello-frontend-2
+GET /backend -> 200 | Version: 2.0.0 Hostname: hello-backend-1
+Hello, world!
+Version: 2.0.0
+Hostname: hello-backend-1

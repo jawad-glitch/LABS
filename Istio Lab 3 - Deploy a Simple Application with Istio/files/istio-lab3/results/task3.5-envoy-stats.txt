@@ -1,0 +1,8 @@
+cluster.outbound|8080||hello-backend.default.svc.cluster.local.lb_healthy_panic: 0
+cluster.outbound|8080||hello-backend.default.svc.cluster.local.lb_local_cluster_not_ok: 0
+cluster.outbound|8080||hello-backend.default.svc.cluster.local.lb_recalculate_zone_structures: 0
+cluster.outbound|8080||hello-backend.default.svc.cluster.local.lb_subsets_active: 0
+cluster.outbound|8080||hello-backend.default.svc.cluster.local.lb_subsets_created: 0
+cluster.outbound|8080||hello-backend.default.svc.cluster.local.lb_subsets_fallback: 0
+cluster.outbound|8080||hello-backend.default.svc.cluster.local.lb_subsets_fallback_panic: 0
+cluster.outbound|8080||hello-backend.default.svc.cluster.local.lb_subsets_removed: 0

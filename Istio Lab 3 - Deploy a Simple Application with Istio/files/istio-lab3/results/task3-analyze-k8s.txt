@@ -1,0 +1,9 @@
+
+✔ No validation issues found when analyzing:
+  - /home/ubuntu/istio-lab3/k8s/hello-backend.yaml
+  - /home/ubuntu/istio-lab3/k8s/hello-destinationrule.yaml
+  - /home/ubuntu/istio-lab3/k8s/hello-frontend.yaml
+  - /home/ubuntu/istio-lab3/k8s/hello-gateway.yaml
+  - /home/ubuntu/istio-lab3/k8s/hello-virtualservice.yaml
+  - /tmp/tmp.0rHXA2tGgc/ingressgw.yaml
+rc=0

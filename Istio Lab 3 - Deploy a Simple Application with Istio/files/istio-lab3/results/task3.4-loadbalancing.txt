@@ -1,0 +1,2 @@
+frontend (/ x20, LEAST_REQUEST): 8 Hostname: hello-frontend-1;12 Hostname: hello-frontend-2
+backend (/backend x20, ROUND_ROBIN): 10 Hostname: hello-backend-1;10 Hostname: hello-backend-2

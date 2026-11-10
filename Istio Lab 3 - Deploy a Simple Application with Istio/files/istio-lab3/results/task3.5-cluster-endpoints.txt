@@ -1,0 +1,4 @@
+outbound|8080||hello-backend.default.svc.cluster.local::172.18.0.4:8080 healthy
+outbound|8080||hello-backend.default.svc.cluster.local::172.18.0.5:8080 healthy
+outbound|8080||hello-frontend.default.svc.cluster.local::172.18.0.2:8080 healthy
+outbound|8080||hello-frontend.default.svc.cluster.local::172.18.0.3:8080 healthy

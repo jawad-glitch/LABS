@@ -1,0 +1,8 @@
+== hello-frontend-1
+2026/11/10 10:14:37 Serving request: /
+2026/11/10 10:14:37 Serving request: /
+2026/11/10 10:14:37 Serving request: /
+== hello-backend-1
+2026/11/10 10:14:38 Serving request: /
+2026/11/10 10:14:38 Serving request: /
+2026/11/10 10:14:38 Serving request: /

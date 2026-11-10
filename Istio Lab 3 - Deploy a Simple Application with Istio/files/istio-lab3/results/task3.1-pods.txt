@@ -1,0 +1,4 @@
+hello-backend-2 gcr.io/google-samples/hello-app:2.0 Up 2 seconds
+hello-backend-1 gcr.io/google-samples/hello-app:2.0 Up 2 seconds
+hello-frontend-2 gcr.io/google-samples/hello-app:1.0 Up 3 seconds
+hello-frontend-1 gcr.io/google-samples/hello-app:1.0 Up 4 seconds

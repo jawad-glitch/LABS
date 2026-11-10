@@ -103,3 +103,4 @@
 | [GitOps Lab 20 - Disaster Recovery with GitOps](GitOps%20Lab%2020%20-%20Disaster%20Recovery%20with%20GitOps/PROOF.md) | CORE: 11/11 PASS | 2026-11-10 09:53 |
 | [Istio Lab 1 - Istio Overview and Setup](Istio%20Lab%201%20-%20Istio%20Overview%20and%20Setup/PROOF.md) | CORE: 9/11 PASS | 2026-11-10 10:05 |
 | [Istio Lab 2 - Istio Architecture and Components](Istio%20Lab%202%20-%20Istio%20Architecture%20and%20Components/PROOF.md) | CORE: 9/12 PASS | 2026-11-10 10:11 |
+| [Istio Lab 3 - Deploy a Simple Application with Istio](Istio%20Lab%203%20-%20Deploy%20a%20Simple%20Application%20with%20Istio/PROOF.md) | CORE: 9/11 PASS | 2026-11-10 10:14 |

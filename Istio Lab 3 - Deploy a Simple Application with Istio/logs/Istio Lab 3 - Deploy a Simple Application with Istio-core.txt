@@ -1,0 +1,13 @@
+========== CORE CHECKS (Istio Lab 3 - Deploy a Simple Application with Istio, 2026-11-10 10:14:38 UTC) - CLUSTER/ISTIOD SIMULATED, PODS + ENVOY GATEWAY REAL ==========
+PASS: Task 1: hello-app 1.0/2.0 images pulled (source recorded); istioctl 1.32.0 + proxyv2 available
+PASS: Tasks 1-2: Deployments/Services/Gateway/VirtualService/DestinationRules (networking.istio.io/v1) schema-valid
+PASS: Validation: istioctl analyze (offline, incl. real ingressgateway workload) reports no errors on the fixed set
+PASS: Task 3.1: 2 frontend + 2 backend pods running
+PASS: Task 3.4: via gateway / and /frontend -> Version 1.0.0 (frontend); /backend -> Version 2.0.0 (backend); all HTTP 200
+PASS: DestinationRules applied: requests spread across both frontend pods and both backend pods
+PASS: Lab bug: hello-app ignores MESSAGE - 'Hello from Backend Service!' never appears in the response
+FAIL: Task 3.5: gateway stats count upstream requests per cluster; 4 endpoints discovered via Service DNS
+FAIL: Task 3.6: app logs and gateway access log captured
+PASS: Full-mode script parses (NodePort GATEWAY_URL, rollout status, no -it)
+PASS: Time: finished in 33s (<= 300s)
+CORE: 9/11 PASS

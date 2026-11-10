@@ -1,0 +1,2 @@
+[2026-11-10 10:14:36.547][1][warning][main] [external/envoy+/source/server/server.cc:1059] There is no configured limit to the number of allowed active downstream connections. Configure a limit in `envoy.resource_monitors.global_downstream_max_connections` resource monitor.
+[2026-11-10T10:14:37.119Z] "GET / HTTP/1.1" 200 - 0 56 1 1 "-" "curl/8.5.0" "65dd753d-1fb6-4dc1-95e4-b839697bde9e" "127.0.0.1:8092" "172.18.0.2:8080"

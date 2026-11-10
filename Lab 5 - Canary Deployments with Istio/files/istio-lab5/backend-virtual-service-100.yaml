@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: backend-virtual-service
+  namespace: canary-demo
+spec:
+  hosts:
+  - backend-service
+  http:
+  - route:
+    - destination:
+        host: backend-service
+        subset: v2
+      weight: 100

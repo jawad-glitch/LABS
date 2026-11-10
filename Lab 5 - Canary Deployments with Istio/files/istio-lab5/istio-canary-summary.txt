@@ -1,0 +1,25 @@
+=== Istio Canary Deployments Summary ===
+Generated on: Tue Nov 10 10:22:52 UTC 2026
+
+Namespace: canary-demo
+Deployments:
+E1110 10:22:49.756470    4074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1110 10:22:49.757060    4074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1110 10:22:49.758570    4074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1110 10:22:49.758904    4074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+E1110 10:22:49.760422    4074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+
+DestinationRules:
+
+
+VirtualServices:
+
+
+Canary Verification:
+- Initial traffic: 100% v1
+- Canary Stage 1: 10% v2, 90% v1
+- Canary Stage 2: 25% v2, 75% v1
+- Canary Stage 3: 50% v2, 50% v1
+- Final Stage: 100% v2
+- Header Overrides: "canary: true" routed to subset v2

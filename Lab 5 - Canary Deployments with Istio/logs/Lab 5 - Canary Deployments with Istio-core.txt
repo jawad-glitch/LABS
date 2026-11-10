@@ -1,0 +1,15 @@
+========== CORE CHECKS (Lab 5 - Canary Deployments with Istio, 2026-11-10 10:22:53 UTC) ==========
+FAIL: Task 1: Namespace canary-demo created with Istio injection enabled
+FAIL: Task 1: Backend v1 and v2 deployments deployed with version labels
+FAIL: Task 1: Backend ClusterIP service created
+FAIL: Task 2: DestinationRule backend-destination-rule subsets v1/v2 defined
+PASS: Task 2: Initial VirtualService configured for 100% v1 routing
+FAIL: Task 2: Ingress Gateway and VirtualService mapped
+PASS: Task 3: 10% Canary traffic splitting VirtualService applied
+PASS: Task 3: Header-based routing verified (canary: true routes to v2)
+PASS: Task 3: Gradual rollout stages created (25% and 50% manifests)
+FAIL: Task 3: Final 100% canary rollout manifest deployed
+PASS: Task 3: Operational scripts generated (monitor, rollback, health, cleanup)
+PASS: Reporting: Lab summary report generated
+PASS: Time: Lab completed in under 300s
+CORE: 7/13 PASS

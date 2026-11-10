@@ -1,0 +1,18 @@
+- list: shop_api_allowed_secret_readers
+  items: [python, python3, python3.12, vault]
+
+- rule: Shop API Vault Secret Read by Unexpected Process
+  desc: >
+    A process other than the application interpreter or vault-agent opened a
+    Vault-rendered secret file in the shop-api workload (Docker runtime: container.name
+    stands in for k8s.ns.name/k8s.pod.name used in the in-cluster version).
+  condition: >
+    open_read and container
+    and container.name = "shop-api"
+    and fd.name startswith /vault/secrets/
+    and not proc.name in (shop_api_allowed_secret_readers)
+  output: >
+    Vault secret read by unexpected process (user=%user.name uid=%user.uid
+    proc=%proc.name cmdline=%proc.cmdline file=%fd.name container=%container.name)
+  priority: WARNING
+  tags: [aiops, secrets, mitre_credential_access, T1552]

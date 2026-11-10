@@ -1,0 +1,7 @@
+create deployments               yes
+get secrets                      no
+create pods/exec                 no
+create rolebindings              no
+delete deployments               no
+create deployments -n default    no
+shop-api on deployments/secrets/pods: no,no,no

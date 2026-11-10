@@ -1,0 +1,5 @@
+terraform 1.7.5 (sha256 OK)
+tfsec v1.28.6 sha256 OK
+trivy v0.76.2 (sha256 OK)
+gator v3.23.1 sha256 OK
+kyverno v1.19.2 sha256 OK

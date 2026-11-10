@@ -1,0 +1,2 @@
+lab check 'denied client blocked' PASSES with a non-existent pod (false pass)
+lab check 'Calico or NetworkPolicy capable' PASSES without Calico (calico-system absent: yes)

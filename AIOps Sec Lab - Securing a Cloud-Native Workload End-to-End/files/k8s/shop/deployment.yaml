@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shop-api
+  namespace: shop
+  labels: {app: shop-api}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: shop-api}
+  template:
+    metadata:
+      labels: {app: shop-api}
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "shop-api"
+        vault.hashicorp.com/agent-inject-secret-db.env: "secret/data/shop/db"
+        vault.hashicorp.com/agent-inject-template-db.env: |
+          {{- with secret "secret/data/shop/db" -}}
+          DB_USER={{ .Data.data.username }}
+          DB_PASS={{ .Data.data.password }}
+          {{- end }}
+    spec:
+      serviceAccountName: shop-api
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+      - name: api
+        image: shop/api:1.0.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - {name: https, containerPort: 8443}
+        env:
+        - {name: DB_SECRET_FILE, value: /vault/secrets/db.env}
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          capabilities: {drop: ["ALL"]}
+        resources:
+          requests: {cpu: 50m, memory: 64Mi}
+          limits: {cpu: 250m, memory: 128Mi}
+        readinessProbe:
+          httpGet: {path: /healthz, port: 8443, scheme: HTTPS}
+          initialDelaySeconds: 3
+          periodSeconds: 5
+        volumeMounts:
+        - {name: tls, mountPath: /tls, readOnly: true}
+      volumes:
+      - name: tls
+        secret: {secretName: shop-api-tls}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: shop-api, namespace: shop}
+spec:
+  selector: {app: shop-api}
+  ports:
+  - {name: https, port: 443, targetPort: 8443}

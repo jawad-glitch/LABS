@@ -1,0 +1,18 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata: {name: require-limits}
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+  - name: require-cpu-mem-limits
+    match:
+      any:
+      - resources: {kinds: ["Pod"], namespaces: ["shop"]}
+    validate:
+      message: "CPU and memory limits are required in namespace shop."
+      pattern:
+        spec:
+          containers:
+          - resources:
+              limits: {cpu: "?*", memory: "?*"}

@@ -1,0 +1,4 @@
+bad-nginx      DENIED   shop-allowed-repos|shop-pod-security
+busybox        DENIED   shop-allowed-repos|shop-pod-security
+bad-deploy     ALLOWED  
+shop-api-pod   ALLOWED  

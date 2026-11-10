@@ -1,0 +1,7 @@
+tls.crt: OK
+subject=CN = shop-api.shop.svc
+issuer=CN = aiops-lab-root-ca
+X509v3 Subject Alternative Name: 
+    DNS:shop-api, DNS:shop-api.shop.svc, DNS:shop-api.shop.svc.cluster.local
+X509v3 Extended Key Usage: 
+    TLS Web Server Authentication

@@ -1,0 +1,16 @@
+benchmark used: k3s-cis-1.7
+== Summary node ==
+7 checks PASS
+0 checks FAIL
+9 checks WARN
+7 checks INFO
+== Summary policies ==
+0 checks PASS
+0 checks FAIL
+29 checks WARN
+6 checks INFO
+== Summary total ==
+7 checks PASS
+0 checks FAIL
+38 checks WARN
+13 checks INFO

@@ -1,0 +1,4 @@
+BTF: /sys/kernel/btf/vmlinux
+2026-11-10T18:51:03+0000: Loading rules from:
+2026-11-10T18:51:03+0000:    /etc/falco/rules.d/aiops-rules.yaml | schema validation: ok
+2026-11-10T18:51:03+0000: Opening 'syscall' source with modern BPF probe.

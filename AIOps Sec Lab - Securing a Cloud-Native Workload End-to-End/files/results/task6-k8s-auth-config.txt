@@ -1,0 +1,7 @@
+Success! Data written to: auth/kubernetes/config
+WARNING! The following warnings were returned from Vault:
+
+  * Role shop-api does not have an audience configured. While audiences are
+  not required, consider specifying one if your use case would benefit from
+  additional JWT claim verification.
+

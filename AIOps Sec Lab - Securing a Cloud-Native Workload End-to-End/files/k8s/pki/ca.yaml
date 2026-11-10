@@ -1,0 +1,33 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata: {name: selfsigned-bootstrap}
+spec: {selfSigned: {}}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata: {name: aiops-root-ca, namespace: cert-manager}
+spec:
+  isCA: true
+  commonName: aiops-lab-root-ca
+  secretName: aiops-root-ca
+  duration: 87600h
+  privateKey: {algorithm: ECDSA, size: 256}
+  issuerRef: {name: selfsigned-bootstrap, kind: ClusterIssuer, group: cert-manager.io}
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata: {name: aiops-ca}
+spec: {ca: {secretName: aiops-root-ca}}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata: {name: shop-api-tls, namespace: shop}
+spec:
+  secretName: shop-api-tls
+  duration: 2160h
+  renewBefore: 360h
+  commonName: shop-api.shop.svc
+  dnsNames: [shop-api, shop-api.shop.svc, shop-api.shop.svc.cluster.local]
+  privateKey: {algorithm: RSA, size: 2048, rotationPolicy: Always}
+  usages: ["server auth", "digital signature", "key encipherment"]
+  issuerRef: {name: aiops-ca, kind: ClusterIssuer, group: cert-manager.io}

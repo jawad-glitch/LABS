@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: bad-deploy, namespace: shop}
+spec:
+  selector: {matchLabels: {app: bad}}
+  template:
+    metadata: {labels: {app: bad}}
+    spec:
+      containers: [{name: nginx, image: "nginx:1.27"}]

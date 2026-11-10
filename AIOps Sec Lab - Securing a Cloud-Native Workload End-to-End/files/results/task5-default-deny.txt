@@ -1,0 +1,1 @@
+default-deny: client-allowed -> kubernetes.default.svc exit=28 (6 = DNS blocked)

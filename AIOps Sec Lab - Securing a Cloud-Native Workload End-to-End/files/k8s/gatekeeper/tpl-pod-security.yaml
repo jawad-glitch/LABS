@@ -1,0 +1,34 @@
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata: {name: k8srequirednonroot}
+spec:
+  crd: {spec: {names: {kind: K8sRequiredNonRoot}}}
+  targets:
+  - target: admission.k8s.gatekeeper.sh
+    rego: |
+      package k8srequirednonroot
+
+      input_containers[c] { c := input.review.object.spec.containers[_] }
+      input_containers[c] { c := input.review.object.spec.initContainers[_] }
+
+      container_nonroot(c) { c.securityContext.runAsNonRoot == true }
+      container_nonroot(c) {
+        not c.securityContext.runAsNonRoot == false
+        input.review.object.spec.securityContext.runAsNonRoot == true
+      }
+
+      violation[{"msg": msg}] {
+        c := input_containers[_]
+        not container_nonroot(c)
+        msg := sprintf("container <%v> must run with runAsNonRoot: true", [c.name])
+      }
+      violation[{"msg": msg}] {
+        c := input_containers[_]
+        c.securityContext.privileged == true
+        msg := sprintf("container <%v> must not be privileged", [c.name])
+      }
+      violation[{"msg": msg}] {
+        c := input_containers[_]
+        not c.securityContext.allowPrivilegeEscalation == false
+        msg := sprintf("container <%v> must set allowPrivilegeEscalation: false", [c.name])
+      }

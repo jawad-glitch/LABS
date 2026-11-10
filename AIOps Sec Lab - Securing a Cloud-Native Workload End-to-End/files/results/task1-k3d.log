@@ -1,0 +1,21 @@
+k3d v5.9.0 sha256 OK
+[36mINFO[0m[0000] Prep: Network                                
+[36mINFO[0m[0000] Created network 'k3d-aiops-sec'              
+[36mINFO[0m[0000] Created image volume k3d-aiops-sec-images    
+[36mINFO[0m[0000] Starting new tools node...                   
+[36mINFO[0m[0001] Creating node 'k3d-aiops-sec-server-0'       
+[36mINFO[0m[0003] Pulling image 'ghcr.io/k3d-io/k3d-tools:5.9.0' 
+[36mINFO[0m[0004] Pulling image 'rancher/k3s:v1.30.4-k3s1'     
+[36mINFO[0m[0029] Starting node 'k3d-aiops-sec-tools'          
+[36mINFO[0m[0033] Using the k3d-tools node to gather environment information 
+[36mINFO[0m[0034] HostIP: using network gateway 172.18.0.1 address 
+[36mINFO[0m[0034] Starting cluster 'aiops-sec'                 
+[36mINFO[0m[0034] Starting servers...                          
+[36mINFO[0m[0034] Starting node 'k3d-aiops-sec-server-0'       
+[36mINFO[0m[0047] All agents already running.                  
+[36mINFO[0m[0047] All helpers already running.                 
+[36mINFO[0m[0047] Injecting records for hostAliases (incl. host.k3d.internal) and for 1 network members into CoreDNS configmap... 
+[36mINFO[0m[0051] Cluster 'aiops-sec' created successfully!    
+[36mINFO[0m[0051] You can now use it like this:                
+kubectl cluster-info
+CLUSTER_OK

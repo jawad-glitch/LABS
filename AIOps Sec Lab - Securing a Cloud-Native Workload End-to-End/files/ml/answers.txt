@@ -1,0 +1,11 @@
+1. No single attack event is unique, but each attack window combines many distinct rules (n_rules), several process names (n_procs),
+   shells (n_shell), secret reads (n_secret), a high max priority and night-time. Isolation Forest isolates points that are unusual on
+   several features at once, so these combined weak signals land in very short isolation paths (high scores).
+2. A ranker only has to put real incidents in front of the analyst first; reviewing a handful of extra windows is cheap, missing the
+   intrusion is not. To cut false positives: lower contamination, add features that separate the benign deploy hook (time-of-day,
+   parent process, known CI identity), or train per-namespace baselines.
+3. n_shell, n_secret and n_rules/max_prio: the live windows contain terminal shells plus Vault secret reads by cat, which almost never
+   co-occur in the baseline, so they are flagged even with night=0.
+4. Evasion: spread actions over many 5-minute windows and processes that look like the baseline (low-and-slow), or read the secret
+   with python (allow-listed). Compensating controls: the Vault policy limits what a stolen token can read (Task 6), NetworkPolicy
+   blocks exfiltration egress (Tasks 5/6), Gatekeeper/Kyverno block privileged or unknown images (Tasks 4/5), Falco rules still alert.

@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: shop-api, namespace: shop}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: shop-api}}
+  template:
+    metadata: {labels: {app: shop-api}}
+    spec:
+      containers:
+      - name: api
+        image: shop/api:1.0.0
+        ports: [{containerPort: 8443}]

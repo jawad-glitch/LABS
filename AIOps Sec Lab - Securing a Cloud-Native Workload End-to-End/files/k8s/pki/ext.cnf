@@ -1,0 +1,4 @@
+subjectAltName=DNS:shop-api,DNS:shop-api.shop.svc,DNS:shop-api.shop.svc.cluster.local
+extendedKeyUsage=serverAuth
+keyUsage=critical,digitalSignature,keyEncipherment
+basicConstraints=CA:FALSE

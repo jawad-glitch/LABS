@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: nolimits, namespace: shop}
+spec:
+  selector: {matchLabels: {app: nl}}
+  template:
+    metadata: {labels: {app: nl}}
+    spec:
+      containers: [{name: api, image: "shop/api:1.0.0"}]

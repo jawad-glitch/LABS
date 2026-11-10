@@ -1,0 +1,4 @@
+shop-api SA login -> token issued: yes
+read secret/shop/db username: shop_app
+read secret/admin/root: Code: 403 permission denied
+ci-deployer SA login on role shop-api: Code: 403 service account name not authorized

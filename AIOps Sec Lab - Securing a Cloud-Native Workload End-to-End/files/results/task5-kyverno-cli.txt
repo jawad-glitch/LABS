@@ -1,0 +1,21 @@
+--- require-limits vs Pod
+policy require-limits -> resource shop/Pod/nolimit failed:
+1 - require-cpu-mem-limits validation error: CPU and memory limits are required in namespace shop. rule require-cpu-mem-limits failed at path /spec/containers/0/resources/
+
+pass: 0, fail: 1, warn: 0, error: 0, skip: 0 
+--- require-limits vs Deployment (autogen)
+policy require-limits -> resource shop/Deployment/nolimits failed:
+1 - autogen-require-cpu-mem-limits validation error: CPU and memory limits are required in namespace shop. rule autogen-require-cpu-mem-limits failed at path /spec/template/spec/containers/0/resources/
+
+pass: 0, fail: 1, warn: 0, error: 0, skip: 0 
+--- require-limits vs hardened shop-api Pod
+Applying 3 policy rule(s) to 1 resource(s)...
+
+pass: 1, fail: 0, warn: 0, error: 0, skip: 0 
+--- generate-default-deny vs labelled Namespace
+---
+
+
+Generate:
+Generation completed successfully.
+pass: 1, fail: 0, warn: 0, error: 0, skip: 0 

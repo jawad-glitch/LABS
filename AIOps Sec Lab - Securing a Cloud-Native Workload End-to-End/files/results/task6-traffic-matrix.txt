@@ -1,0 +1,4 @@
+client-allowed -> shop-api.shop.svc: 
+client-denied -> shop-api.shop.svc exit=7   (lab expects 6)
+client-denied -> 10.42.0.7:8443 exit=7
+netpols: allow-dns-egress,clients-to-shop-api,default-deny-all,shop-api-flows

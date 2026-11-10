@@ -1,0 +1,1 @@
+manifest gates: insecure exit=1 (Failures: 3 (HIGH: 3) | hardened exit=0

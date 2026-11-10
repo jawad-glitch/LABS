@@ -1,0 +1,1 @@
+/usr/local/bin/docker-entrypoint.sh: exec: line 110: agent: not found

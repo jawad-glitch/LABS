@@ -1,0 +1,4 @@
+networkpolicy.networking.k8s.io "backend-blackhole" deleted from test-apps namespace
+pod "dns-isolated" deleted from test-apps namespace
+ciliumnetworkpolicy.cilium.io "dns-isolated-dns-visibility" deleted from test-apps namespace
+remediated at 2026-11-10T08:13:35Z

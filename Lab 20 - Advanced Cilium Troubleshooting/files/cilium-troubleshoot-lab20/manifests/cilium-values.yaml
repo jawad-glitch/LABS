@@ -1,0 +1,11 @@
+image: {pullPolicy: IfNotPresent, useDigest: false}
+operator: {replicas: 1, image: {useDigest: false}}
+envoy: {image: {useDigest: false}}
+ipam: {mode: kubernetes}
+prometheus: {enabled: true}
+hubble:
+  enabled: true
+  relay: {enabled: true, image: {useDigest: false}}
+  ui: {enabled: true}
+  metrics:
+    enabled: [dns, "drop:sourceContext=pod;destinationContext=pod", tcp, flow, port-distribution, icmp, httpV2]

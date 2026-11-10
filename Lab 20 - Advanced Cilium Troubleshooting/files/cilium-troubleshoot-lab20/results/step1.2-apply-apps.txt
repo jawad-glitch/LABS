@@ -1,0 +1,7 @@
+namespace/test-apps created
+deployment.apps/frontend created
+service/frontend created
+deployment.apps/backend created
+service/backend created
+deployment.apps/database created
+service/database created

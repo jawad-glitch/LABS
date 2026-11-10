@@ -1,0 +1,18 @@
+Release "cilium" does not exist. Installing it now.
+NAME: cilium
+LAST DEPLOYED: Tue Nov 10 07:59:59 2026
+NAMESPACE: kube-system
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+You have successfully installed Cilium with Hubble Relay and Hubble UI.
+
+WARNINGS:
+- WARNING: TLS is not enabled for the Hubble Relay server (hubble.relay.tls.server.enabled=false).
+  This means Hubble Relay communications may not be encrypted. For more information about the security
+  implications and suggested controls, please see: https://docs.cilium.io/en/stable/security/threat-model/#hubble-data-attacker
+
+Your release version is 1.20.4.
+
+For any further help, visit https://docs.cilium.io/en/v1.20/gettinghelp

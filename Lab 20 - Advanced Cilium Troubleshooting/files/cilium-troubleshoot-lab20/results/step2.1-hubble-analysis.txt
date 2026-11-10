@@ -1,0 +1,4 @@
+BACKEND_DROPS 50
+EX_BACKEND verdict=DROPPED reason=POLICY_DENIED src=frontend-c864bc8b9-lxspf dst=backend-6d869d7bd5-qwv6j port=80
+DNS_ERRORS 0
+EX_DNS 

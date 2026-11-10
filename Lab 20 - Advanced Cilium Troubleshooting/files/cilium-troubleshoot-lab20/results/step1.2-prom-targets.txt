@@ -1,0 +1,2 @@
+cilium-agent up http://172.18.0.2:9962/metrics
+hubble up http://172.18.0.2:9965/metrics

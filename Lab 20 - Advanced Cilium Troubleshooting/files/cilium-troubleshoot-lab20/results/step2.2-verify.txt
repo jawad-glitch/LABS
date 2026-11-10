@@ -1,0 +1,1 @@
+after: curl frontend->backend HTTP 200 (20/20 ok) | backend->db OK | DROPPED since remediation: 0 | Policy-denied rate[20s]=0

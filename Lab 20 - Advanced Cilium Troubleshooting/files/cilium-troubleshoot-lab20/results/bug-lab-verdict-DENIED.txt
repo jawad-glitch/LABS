@@ -1,0 +1,2 @@
+invalid argument "DENIED" for "--verdict" flag: invalid --verdict value: DENIED
+exit=1

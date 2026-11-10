@@ -1,0 +1,42 @@
+Server:		8.8.8.8
+Address:	8.8.8.8:53
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+Server:		8.8.8.8
+Address:	8.8.8.8:53
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+Server:		8.8.8.8
+Address:	8.8.8.8:53
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+Server:		8.8.8.8
+Address:	8.8.8.8:53
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+Server:		8.8.8.8
+Address:	8.8.8.8:53
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+Server:		8.8.8.8
+Address:	8.8.8.8:53
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+
+** server can't find backend.test-apps.svc.cluster.local: NXDOMAIN
+

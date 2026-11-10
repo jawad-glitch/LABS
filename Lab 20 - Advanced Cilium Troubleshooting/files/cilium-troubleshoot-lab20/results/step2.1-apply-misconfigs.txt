@@ -1,0 +1,3 @@
+networkpolicy.networking.k8s.io/backend-blackhole unchanged
+pod/dns-isolated unchanged
+ciliumnetworkpolicy.cilium.io/dns-isolated-dns-visibility unchanged

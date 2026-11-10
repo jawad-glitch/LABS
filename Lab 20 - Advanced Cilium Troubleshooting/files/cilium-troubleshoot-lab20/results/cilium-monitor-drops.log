@@ -1,0 +1,27 @@
+Listening for events on 2 CPUs with 64x4096 of shared memory
+Press Ctrl-C to quit
+time=2026-11-10T08:13:02.78106944Z level=info msg="Initializing dissection cache..."
+xx drop (Policy denied) flow 0x663a1032 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:35124 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xac79126a to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:35128 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xbb388b6b to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:48402 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x35140f36 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:48404 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x9fbb6b94 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:48412 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x7f9f2ec5 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:48426 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x3856bc06 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:48438 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xb602198b to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:48444 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x990ab094 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:48452 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x2cc17faa to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:48462 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xf423fe11 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:48478 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x934d97d4 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:48492 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x82d41e8e to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:34700 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xab4e236c to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:34704 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xa4b41dbc to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:34714 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x10bd4977 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:34728 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x4d105179 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:34736 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xfe96c0e5 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:34744 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0x2b1fa0da to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:34756 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xdf2e9c87 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:34758 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xeaa1c644 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:34768 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xebe66c32 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:34774 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xa69c7b09 to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:37836 -> 10.244.0.210:80 tcp SYN
+xx drop (Policy denied) flow 0xf2ae5c8d to endpoint 867, ifindex 19, file bpf_lxc.c:2401, , identity 16245->62702: 10.244.0.114:37848 -> 10.244.0.210:80 tcp SYN

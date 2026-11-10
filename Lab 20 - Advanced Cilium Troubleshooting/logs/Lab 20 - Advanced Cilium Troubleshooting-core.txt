@@ -1,0 +1,15 @@
+========== CORE CHECKS (Lab 20 - Advanced Cilium Troubleshooting, 2026-11-10 08:14:05 UTC) ==========
+FAIL: Step 1.1: Cilium 1.20.4 as sole CNI; cilium status OK incl. Hubble Relay OK and Hubble UI OK
+PASS: Step 1.1: hubble CLI v1.20.4 via Relay - status healthy with non-zero flows/s
+PASS: Step 1.2: Prometheus scrapes agent :9962 and Hubble :9965 (both up); cilium_endpoint = 11 (> 0)
+PASS: Step 1.2: test-apps frontend/backend/database Running with tier labels; baseline 200 + db reachable
+PASS: Step 2.1 A: cilium monitor drop log references backend IP 10.244.0.210 (24 lines, Policy denied)
+PASS: Step 2.1 A: Hubble DROPPED flows with destination tier=backend (50)
+FAIL: Step 2.1 B: dns-isolated cannot resolve svc names; Hubble port-53 flows show DNS errors (0)
+PASS: Step 2.1: Prometheus Policy-denied drop rate during failure = 0.217391 (> 0)
+PASS: Step 2.2: frontend curl to backend = 200; backend->database OK; dns-isolated removed
+PASS: Step 2.2: zero DROPPED test-apps flows since remediation; drop rate back to 0 (< 0.05/s)
+FAIL: Lab bugs evidenced: --verdict DENIED invalid in hubble CLI; in-pod cilium monitor renamed (cilium-dbg)
+PASS: incident-report.txt: 4 sections with failure (0.217391) and post-remediation (0) rates
+FAIL: Time: lab finished in 1013s (<= 300s)
+CORE: 9/13 PASS

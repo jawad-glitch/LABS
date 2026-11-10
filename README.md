@@ -81,3 +81,4 @@
 | [Ansible I - Automating a Two-Tier Web Platform](Ansible%20I%20-%20Automating%20a%20Two-Tier%20Web%20Platform/PROOF.md) | CORE: 8/14 PASS | 2026-11-10 07:15 |
 | [Lab 16 - Configuring Cilium with Service Meshes](Lab%2016%20-%20Configuring%20Cilium%20with%20Service%20Meshes/PROOF.md) | CORE: 11/11 PASS | 2026-11-10 07:23 |
 | [Lab 17 - Multi-Cluster Cilium Setup](Lab%2017%20-%20Multi-Cluster%20Cilium%20Setup/PROOF.md) | CORE: 10/11 PASS | 2026-11-10 07:26 |
+| [Lab 20 - Advanced Cilium Troubleshooting](Lab%2020%20-%20Advanced%20Cilium%20Troubleshooting/PROOF.md) | CORE: 9/13 PASS | 2026-11-10 08:14 |

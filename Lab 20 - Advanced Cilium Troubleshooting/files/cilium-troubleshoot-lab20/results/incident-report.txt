@@ -1,0 +1,20 @@
+INCIDENT REPORT - test-apps connectivity (2026-11-10 08:14:05 UTC, Cilium 1.20.4, single-node kind)
+Failure window: 2026-11-10T08:13:01Z .. remediation 2026-11-10T08:13:35Z
+
+== Symptom ==
+A (backend black-hole): frontend requests to http://backend.test-apps.svc.cluster.local timed out (25 of 25 returned no HTTP status, curl code 000) while backend pods stayed Running/Ready.
+B (DNS isolation): pod dns-isolated could not resolve backend.test-apps.svc.cluster.local (12 failed lookups) - 8.8.8.8 answered NXDOMAIN because it has no cluster zone.
+
+== Cilium Monitor Signature ==
+A: cilium-dbg monitor --type drop showed "24 drop (Policy denied)" events towards backend 10.244.0.210:80 (24 drop lines referencing the backend IP).
+B: no datapath drop - DNS packets were forwarded; the failure is an application-level NXDOMAIN, so cilium monitor --type drop stays silent for it.
+
+== Hubble Signature ==
+A: verdict DROPPED (policy-verdict events print DENIED), drop reason POLICY_DENIED, source label tier=frontend, destination label tier=backend, port 80/TCP. Example: verdict=DROPPED reason=POLICY_DENIED src=frontend-c864bc8b9-lxspf dst=backend-6d869d7bd5-qwv6j port=80
+B: source pod test-apps/dns-isolated, destination world 8.8.8.8 port 53/UDP, verdict FORWARDED, L7 dns-response with error: 
+
+== Prometheus Indicator ==
+Metric: cilium_drop_count_total{reason="Policy denied"} (agent :9962), corroborated by hubble_drop_total (:9965).
+Failure window: sum(rate(cilium_drop_count_total{reason="Policy denied"}[2m])) = 0.217391 drops/s (hubble_drop_total rate = 0.443478/s).
+After remediation: sum(rate(cilium_drop_count_total{reason="Policy denied"}[20s])) = 0 drops/s -> returned to near zero.
+B has no drop-counter signature; watch hubble_dns_responses_total{rcode="Non-Existent Domain"} instead.

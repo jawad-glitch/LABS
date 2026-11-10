@@ -1,0 +1,4 @@
+NAME                        READY   STATUS    RESTARTS   AGE   IP             NODE                       NOMINATED NODE   READINESS GATES   TIER
+backend-6d869d7bd5-qwv6j    1/1     Running   0          18s   10.244.0.210   cilium-lab-control-plane   <none>           <none>            backend
+database-7d87b6ffd5-fns78   1/1     Running   0          17s   10.244.0.138   cilium-lab-control-plane   <none>           <none>            database
+frontend-c864bc8b9-lxspf    1/1     Running   0          18s   10.244.0.114   cilium-lab-control-plane   <none>           <none>            frontend

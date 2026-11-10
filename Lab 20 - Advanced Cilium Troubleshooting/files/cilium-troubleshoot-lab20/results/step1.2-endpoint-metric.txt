@@ -1,0 +1,2 @@
+LAB  cilium_endpoint_count -> series=0 value=0
+REAL cilium_endpoint       -> series=1 value=10

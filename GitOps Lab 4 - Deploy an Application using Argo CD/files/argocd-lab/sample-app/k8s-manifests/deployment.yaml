@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-nginx-app
+  labels:
+    app: sample-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-nginx
+  template:
+    metadata:
+      labels:
+        app: sample-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.27-alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: html
+          mountPath: /usr/share/nginx/html
+        resources:
+          requests: {memory: "64Mi", cpu: "250m"}
+          limits: {memory: "128Mi", cpu: "500m"}
+      volumes:
+      - name: html
+        configMap:
+          name: nginx-config

@@ -1,0 +1,3 @@
+Deployment argocd-applicationset-controller,argocd-dex-server,argocd-notifications-controller,argocd-redis,argocd-repo-server,argocd-server
+StatefulSet argocd-application-controller
+LARGEST_CRD applicationsets.argoproj.io 387270 bytes (client-side apply annotation limit 262144)

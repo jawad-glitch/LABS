@@ -1,0 +1,6 @@
+/home/ubuntu/argocd-lab/rendered/sample-nginx-app__guestbook.yaml - Service guestbook-ui failed validation: error unmarshalling resource: error converting YAML to JSON: yaml: unmarshal errors:
+  line 21: key "apiVersion" already set in map
+  line 22: key "kind" already set in map
+  line 24: key "metadata" already set in map
+  line 26: key "spec" already set in map
+Summary: 12 resources found in 10 files - Valid: 11, Invalid: 0, Errors: 1, Skipped: 0

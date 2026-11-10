@@ -1,0 +1,5 @@
+sample-nginx-app     Service     guestbook-ui                        selector={'app': 'guestbook-ui'} ports=[80]
+local-sample-app     Service     local-sample-app-helm-guestbook     selector={'app': 'helm-guestbook', 'release': 'local-sample-app'} ports=[80]
+local-sample-app     Deployment  local-sample-app-helm-guestbook     images=['gcr.io/google-samples/gb-frontend:v5'] podLabels={'app': 'helm-guestbook', 'release': 'local-sample-app'}
+updated-sample-app   Service     kustomize-guestbook-ui              selector={'app': 'guestbook-ui'} ports=[80]
+updated-sample-app   Deployment  kustomize-guestbook-ui              images=['gcr.io/google-samples/gb-frontend:v5'] podLabels={'app': 'guestbook-ui'}

@@ -1,0 +1,12 @@
+diff -ru /tmp/tmp.Qo8Gb6J9Me/v1/deployment.yaml k8s-manifests/deployment.yaml
+--- /tmp/tmp.Qo8Gb6J9Me/v1/deployment.yaml	2026-11-10 08:30:15.585344873 +0000
++++ k8s-manifests/deployment.yaml	2026-11-10 08:30:15.589519322 +0000
+@@ -5,7 +5,7 @@
+   labels:
+     app: sample-nginx
+ spec:
+-  replicas: 2
++  replicas: 3
+   selector:
+     matchLabels:
+       app: sample-nginx

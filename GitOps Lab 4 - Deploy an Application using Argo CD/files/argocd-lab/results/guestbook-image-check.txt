@@ -1,0 +1,1 @@
+guestbook image gcr.io/google-samples/gb-frontend:v5 -> pullable

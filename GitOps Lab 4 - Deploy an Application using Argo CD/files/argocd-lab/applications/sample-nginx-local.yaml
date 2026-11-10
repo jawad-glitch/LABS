@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-nginx-local
+spec:
+  destination:
+    namespace: sample-app
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: k8s-manifests
+    repoURL: git://gitops-git.argocd.svc.cluster.local/sample-app.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

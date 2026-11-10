@@ -1,0 +1,2 @@
+aef60ac Scale sample-nginx-app to 3 replicas
+7bd4b39 sample-app v1: nginx + ConfigMap page (2 replicas)

@@ -1,0 +1,1 @@
+VM memory 3848 MiB vs lab 'minikube start --memory=4096' -> exceeds VM: minikube refuses to start

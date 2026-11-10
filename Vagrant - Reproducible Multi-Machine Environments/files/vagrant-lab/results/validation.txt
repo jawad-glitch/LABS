@@ -1,0 +1,36 @@
+== Setup
+PASS  Vagrant 2.4.x installed
+FAIL  Docker usable without sudo
+PASS  Ansible in venv
+== Task 1
+FAIL  Base image 1.0.0 built
+FAIL  First machine cleaned up
+== Task 2 / Task 6 boxes
+FAIL  Catalog lists 1.0.0 and 1.1.0
+FAIL  Box 1.0.0 installed
+FAIL  Box 1.1.0 installed
+== Task 3
+FAIL  web machine running
+FAIL  web /healthz returns ok
+FAIL  web meta shows provisioner env
+== Task 4 / Task 5
+FAIL  cluster app1 running
+FAIL  cluster app2 running
+FAIL  cluster lb running
+FAIL  lb balances across 2 backends
+FAIL  apps deployed by Ansible (v2.0)
+FAIL  per-host color variables applied
+== Task 6
+FAIL  fleet tools running
+FAIL  fleet legacy running
+FAIL  fleet scratch not autostarted
+FAIL  tools runs box 1.1.0
+FAIL  legacy runs box 1.0.0
+FAIL  triggers wrote events log
+== Task 7
+FAIL  troubleshoot Vagrantfile valid
+FAIL  troubleshoot machine running
+FAIL  troubleshoot serves content
+FAIL  sshd restored as container CMD
+
+Result: 2 passed, 25 failed

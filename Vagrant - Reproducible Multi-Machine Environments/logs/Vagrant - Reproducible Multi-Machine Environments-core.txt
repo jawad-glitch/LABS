@@ -1,0 +1,9 @@
+========== CORE CHECKS (Vagrant - Reproducible Multi-Machine Environments, 2026-11-10 06:16:38 UTC) ==========
+FAIL: Official Check: 26/26 tests passed
+FAIL: Web Server: Forwarded port 8080 responding
+FAIL: Cluster: Load balancer active on port 8090
+FAIL: Cluster: App tier deployed with Ansible 2.0
+FAIL: Fleet: Tools on 1.1.0, Legacy on 1.0.0, Scratch not autostarted
+FAIL: Troubleshoot: Host port 8095 serving tshoot ok
+PASS: Timing: Lab completed in under 300s
+CORE: 1/7 PASS

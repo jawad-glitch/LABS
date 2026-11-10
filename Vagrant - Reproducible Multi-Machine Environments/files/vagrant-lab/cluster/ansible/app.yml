@@ -1,0 +1,44 @@
+---
+- name: Deploy the lab app
+  hosts: all
+  become: true
+  vars:
+    app_dir: /opt/app
+    app_port: 5000
+  tasks:
+    - name: App dir
+      ansible.builtin.file:
+        path: "{{ app_dir }}"
+        state: directory
+        mode: "0755"
+    - name: App code
+      ansible.builtin.copy:
+        src: ../app/app.py
+        dest: "{{ app_dir }}/app.py"
+        mode: "0755"
+      register: app_code
+    - name: Render environment file
+      ansible.builtin.template:
+        src: templates/app.env.j2
+        dest: /etc/lab-app.env
+        mode: "0644"
+      register: app_env
+    - name: Check whether the app is running
+      ansible.builtin.command: pgrep -f /opt/app/app.py
+      register: app_proc
+      changed_when: false
+      failed_when: false
+    - name: Stop the app because code or config changed
+      ansible.builtin.command: pkill -f /opt/app/app.py
+      when: app_proc.rc == 0 and (app_code is changed or app_env is changed)
+      register: app_stopped
+    - name: Start the app with rendered environment
+      ansible.builtin.shell: |
+        set -a; . /etc/lab-app.env; set +a
+        setsid nohup python3 {{ app_dir }}/app.py > /var/log/app.log 2>&1 < /dev/null &
+    - name: Assert healthy
+      ansible.builtin.uri:
+        url: "http://127.0.0.1:{{ app_port }}/healthz"
+        return_content: true
+      register: health
+      failed_when: health.content != "ok\n"

@@ -1,4 +1,4 @@
-# KCA / Backstage Lab Submissions
+# Backstage Lab Submissions
 
 | Lab | Result | Completed (UTC) |
 |---|---|---|

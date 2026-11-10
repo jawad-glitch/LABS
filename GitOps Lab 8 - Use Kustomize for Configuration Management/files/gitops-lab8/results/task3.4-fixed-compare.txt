@@ -1,0 +1,4 @@
+env          webapp           replicas memReq     ENVIRONMENT  image          selector
+development  ConfigMap-webapp 1        32Mi       development  nginx:1.27-alpine {'app': 'webapp'}
+staging      ConfigMap-webapp 2        64Mi       staging      nginx:1.27     {'app': 'webapp'}
+production   ConfigMap-webapp 3        128Mi      production   nginx:1.27     {'app': 'webapp'}

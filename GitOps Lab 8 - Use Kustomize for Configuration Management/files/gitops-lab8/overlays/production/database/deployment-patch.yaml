@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: database}
+spec:
+  template:
+    spec:
+      containers:
+      - name: database
+        env: [{name: POSTGRES_PASSWORD, value: "prodpass789"}]
+        resources: {requests: {memory: "512Mi", cpu: "500m"}, limits: {memory: "1Gi", cpu: "1000m"}}

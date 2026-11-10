@@ -1,0 +1,191 @@
+apiVersion: v1
+data:
+  app.properties: |
+    app.name=webapp
+    app.version=1.0.0
+    log.level=ERROR
+    debug.enabled=false
+    monitoring.enabled=true
+    security.enabled=true
+    performance.optimization=true
+  nginx.conf: |
+    server { listen 80; server_name localhost; location / { root /usr/share/nginx/html; index index.html index.htm; } }
+kind: ConfigMap
+metadata:
+  annotations:
+    kustomize.config.k8s.io/managed: "true"
+  labels:
+    environment: production
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: prod
+  name: ConfigMap-webapp-config
+  namespace: production
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kustomize.config.k8s.io/managed: "true"
+  labels:
+    app: database
+    environment: production
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: prod
+  name: ConfigMap-database-service
+  namespace: production
+spec:
+  ports:
+  - port: 5432
+    protocol: TCP
+    targetPort: 5432
+  selector:
+    app: database
+    environment: production
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: prod
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kustomize.config.k8s.io/managed: "true"
+  labels:
+    app: webapp
+    environment: production
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: prod
+  name: ConfigMap-webapp-service
+  namespace: production
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: webapp
+    environment: production
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: prod
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kustomize.config.k8s.io/managed: "true"
+  labels:
+    app: database
+    environment: production
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: prod
+  name: ConfigMap-database
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+      environment: production
+      managed-by: kustomize
+      project: kustomize-lab
+      tier: prod
+  template:
+    metadata:
+      annotations:
+        kustomize.config.k8s.io/managed: "true"
+      labels:
+        app: database
+        environment: production
+        managed-by: kustomize
+        project: kustomize-lab
+        tier: prod
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_PASSWORD
+          value: prodpass789
+        - name: POSTGRES_DB
+          value: appdb
+        - name: POSTGRES_USER
+          value: appuser
+        image: postgres:13
+        name: database
+        ports:
+        - containerPort: 5432
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+          requests:
+            cpu: 500m
+            memory: 512Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kustomize.config.k8s.io/managed: "true"
+  labels:
+    app: webapp
+    environment: production
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: prod
+  name: ConfigMap-webapp
+  namespace: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webapp
+      environment: production
+      managed-by: kustomize
+      project: kustomize-lab
+      tier: prod
+  template:
+    metadata:
+      annotations:
+        kustomize.config.k8s.io/managed: "true"
+      labels:
+        app: webapp
+        environment: production
+        managed-by: kustomize
+        project: kustomize-lab
+        tier: prod
+    spec:
+      containers:
+      - env:
+        - name: ENVIRONMENT
+          value: production
+        - name: DEBUG
+          value: "false"
+        image: nginx:1.21
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        name: webapp
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 256Mi
+          requests:
+            cpu: 500m
+            memory: 128Mi

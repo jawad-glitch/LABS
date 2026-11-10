@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: {name: webapp-config}
+data:
+  app.properties: |
+    app.name=webapp
+    app.version=1.0.0-staging
+    log.level=WARN
+    debug.enabled=false
+    monitoring.enabled=true

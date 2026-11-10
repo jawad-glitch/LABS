@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: {name: webapp-config}
+data:
+  app.properties: |
+    app.name=webapp
+    app.version=1.0.0
+    log.level=ERROR
+    debug.enabled=false
+    monitoring.enabled=true
+    security.enabled=true
+    performance.optimization=true

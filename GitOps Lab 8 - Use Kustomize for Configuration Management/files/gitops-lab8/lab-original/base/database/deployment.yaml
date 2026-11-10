@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: database, labels: {app: database}}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: database}}
+  template:
+    metadata: {labels: {app: database}}
+    spec:
+      containers:
+      - name: database
+        image: postgres:13
+        ports: [{containerPort: 5432}]
+        env: [{name: POSTGRES_DB, value: "appdb"}, {name: POSTGRES_USER, value: "appuser"}, {name: POSTGRES_PASSWORD, value: "defaultpass"}]
+        resources: {requests: {memory: "256Mi", cpu: "250m"}, limits: {memory: "512Mi", cpu: "500m"}}

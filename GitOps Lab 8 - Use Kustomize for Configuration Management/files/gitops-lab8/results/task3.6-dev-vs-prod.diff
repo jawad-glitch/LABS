@@ -1,0 +1,142 @@
+5,7c5,10
+<     app.version=1.0.0-dev
+<     log.level=DEBUG
+<     debug.enabled=true
+---
+>     app.version=1.0.0
+>     log.level=ERROR
+>     debug.enabled=false
+>     monitoring.enabled=true
+>     security.enabled=true
+>     performance.optimization=true
+15c18
+<     environment: development
+---
+>     environment: production
+18c21
+<     tier: dev
+---
+>     tier: prod
+20c23
+<   namespace: development
+---
+>   namespace: production
+29c32
+<     environment: development
+---
+>     environment: production
+32c35
+<     tier: dev
+---
+>     tier: prod
+34c37
+<   namespace: development
+---
+>   namespace: production
+51c54
+<     environment: development
+---
+>     environment: production
+54c57
+<     tier: dev
+---
+>     tier: prod
+56c59
+<   namespace: development
+---
+>   namespace: production
+73c76
+<     environment: development
+---
+>     environment: production
+76c79
+<     tier: dev
+---
+>     tier: prod
+78c81
+<   namespace: development
+---
+>   namespace: production
+90c93
+<         environment: development
+---
+>         environment: production
+93c96
+<         tier: dev
+---
+>         tier: prod
+98c101
+<           value: devpass123
+---
+>           value: prodpass789
+109,110c112,113
+<             cpu: 200m
+<             memory: 256Mi
+---
+>             cpu: 1000m
+>             memory: 1Gi
+112,113c115,116
+<             cpu: 100m
+<             memory: 128Mi
+---
+>             cpu: 500m
+>             memory: 512Mi
+122c125
+<     environment: development
+---
+>     environment: production
+125c128
+<     tier: dev
+---
+>     tier: prod
+127c130
+<   namespace: development
+---
+>   namespace: production
+129c132
+<   replicas: 1
+---
+>   replicas: 3
+139c142
+<         environment: development
+---
+>         environment: production
+142c145
+<         tier: dev
+---
+>         tier: prod
+147c150
+<           value: development
+---
+>           value: production
+149,150c152,159
+<           value: "true"
+<         image: nginx:1.27-alpine
+---
+>           value: "false"
+>         image: nginx:1.27
+>         livenessProbe:
+>           httpGet:
+>             path: /
+>             port: 80
+>           initialDelaySeconds: 30
+>           periodSeconds: 10
+153a163,168
+>         readinessProbe:
+>           httpGet:
+>             path: /
+>             port: 80
+>           initialDelaySeconds: 5
+>           periodSeconds: 5
+156,157c171,172
+<             cpu: 200m
+<             memory: 64Mi
+---
+>             cpu: 1000m
+>             memory: 256Mi
+159,160c174,175
+<             cpu: 100m
+<             memory: 32Mi
+---
+>             cpu: 500m
+>             memory: 128Mi

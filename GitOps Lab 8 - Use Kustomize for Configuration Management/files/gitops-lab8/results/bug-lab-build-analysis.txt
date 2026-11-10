@@ -1,0 +1,12 @@
+development deployments(sorted)=['ConfigMap-database', 'ConfigMap-webapp'] items[0]=ConfigMap-database
+development webapp selector={'app': 'webapp', 'environment': 'development', 'managed-by': 'kustomize', 'project': 'kustomize-lab', 'tier': 'dev'}
+development probes liveness=None readiness=None
+development namespace-objects=0
+staging deployments(sorted)=['ConfigMap-database', 'ConfigMap-webapp'] items[0]=ConfigMap-database
+staging webapp selector={'app': 'webapp', 'environment': 'staging', 'managed-by': 'kustomize', 'project': 'kustomize-lab', 'tier': 'staging'}
+staging probes liveness=None readiness=None
+staging namespace-objects=0
+production deployments(sorted)=['ConfigMap-database', 'ConfigMap-webapp'] items[0]=ConfigMap-database
+production webapp selector={'app': 'webapp', 'environment': 'production', 'managed-by': 'kustomize', 'project': 'kustomize-lab', 'tier': 'prod'}
+production probes liveness=/health readiness=/ready
+production namespace-objects=0

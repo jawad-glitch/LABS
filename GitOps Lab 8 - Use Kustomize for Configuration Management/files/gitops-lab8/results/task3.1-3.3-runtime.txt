@@ -1,0 +1,3 @@
+development pods=1 ENVIRONMENT=development DEBUG=true memlimit=67108864 image=nginx:1.27-alpine
+staging pods=2 ENVIRONMENT=staging DEBUG=false memlimit=134217728 image=nginx:1.27
+production pods=3 ENVIRONMENT=production DEBUG=false memlimit=268435456 image=nginx:1.27

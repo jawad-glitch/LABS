@@ -1,0 +1,30 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: development-overlay
+resources:
+- ../../base
+namespace: development
+patches:
+- path: webapp/deployment-patch.yaml
+  target:
+    kind: Deployment
+    name: webapp
+- path: database/deployment-patch.yaml
+  target:
+    kind: Deployment
+    name: database
+- path: webapp/configmap-patch.yaml
+  target:
+    kind: ConfigMap
+    name: webapp-config
+namePrefix: ConfigMap-
+images:
+- name: nginx
+  newTag: 1.27-alpine
+labels:
+- pairs:
+    environment: development
+    tier: dev
+  includeSelectors: false
+  includeTemplates: true

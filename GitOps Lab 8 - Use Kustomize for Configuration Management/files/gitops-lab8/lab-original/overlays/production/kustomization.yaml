@@ -1,0 +1,29 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: production-overlay
+resources:
+- ../../base
+namespace: production
+commonLabels:
+  environment: production
+  tier: prod
+patches:
+- path: webapp/deployment-patch.yaml
+  target:
+    kind: Deployment
+    name: webapp
+- path: database/deployment-patch.yaml
+  target:
+    kind: Deployment
+    name: database
+- path: webapp/configmap-patch.yaml
+  target:
+    kind: ConfigMap
+    name: webapp-config
+namePrefix: ConfigMap-
+images:
+- name: nginx
+  newTag: ""
+- name: postgres
+  newTag: "13"

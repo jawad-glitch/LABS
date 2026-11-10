@@ -1,0 +1,3 @@
+lab probe /health -> HTTP 404
+lab probe /ready  -> HTTP 404
+fixed probe /     -> HTTP 200

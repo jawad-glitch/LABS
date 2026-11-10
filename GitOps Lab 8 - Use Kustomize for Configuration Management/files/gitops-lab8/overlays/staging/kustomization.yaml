@@ -1,0 +1,32 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: staging-overlay
+resources:
+- ../../base
+namespace: staging
+patches:
+- path: webapp/deployment-patch.yaml
+  target:
+    kind: Deployment
+    name: webapp
+- path: database/deployment-patch.yaml
+  target:
+    kind: Deployment
+    name: database
+- path: webapp/configmap-patch.yaml
+  target:
+    kind: ConfigMap
+    name: webapp-config
+namePrefix: ConfigMap-
+images:
+- name: nginx
+  newTag: '1.27'
+- name: postgres
+  newTag: 17-alpine
+labels:
+- pairs:
+    environment: staging
+    tier: staging
+  includeSelectors: false
+  includeTemplates: true

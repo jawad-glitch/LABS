@@ -1,0 +1,3 @@
+development webapp replicas after base 2->3: 1
+staging webapp replicas after base 2->3: 2
+production webapp replicas after base 2->3: 3

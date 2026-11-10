@@ -1,0 +1,5 @@
+flux-dev-kustomization.yaml
+flux-namespaces-kustomization.yaml
+flux-prod-kustomization.yaml
+flux-source.yaml
+flux-staging-kustomization.yaml

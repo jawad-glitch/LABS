@@ -1,0 +1,177 @@
+apiVersion: v1
+data:
+  app.properties: |
+    app.name=webapp
+    app.version=1.0.0-staging
+    log.level=WARN
+    debug.enabled=false
+    monitoring.enabled=true
+  nginx.conf: |
+    server { listen 80; server_name localhost; location / { root /usr/share/nginx/html; index index.html index.htm; } }
+kind: ConfigMap
+metadata:
+  annotations:
+    kustomize.config.k8s.io/managed: "true"
+  labels:
+    environment: staging
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: staging
+  name: ConfigMap-webapp-config
+  namespace: staging
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kustomize.config.k8s.io/managed: "true"
+  labels:
+    app: database
+    environment: staging
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: staging
+  name: ConfigMap-database-service
+  namespace: staging
+spec:
+  ports:
+  - port: 5432
+    protocol: TCP
+    targetPort: 5432
+  selector:
+    app: database
+    environment: staging
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: staging
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kustomize.config.k8s.io/managed: "true"
+  labels:
+    app: webapp
+    environment: staging
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: staging
+  name: ConfigMap-webapp-service
+  namespace: staging
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: webapp
+    environment: staging
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: staging
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kustomize.config.k8s.io/managed: "true"
+  labels:
+    app: database
+    environment: staging
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: staging
+  name: ConfigMap-database
+  namespace: staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+      environment: staging
+      managed-by: kustomize
+      project: kustomize-lab
+      tier: staging
+  template:
+    metadata:
+      annotations:
+        kustomize.config.k8s.io/managed: "true"
+      labels:
+        app: database
+        environment: staging
+        managed-by: kustomize
+        project: kustomize-lab
+        tier: staging
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_PASSWORD
+          value: stagingpass456
+        - name: POSTGRES_DB
+          value: appdb
+        - name: POSTGRES_USER
+          value: appuser
+        image: postgres:13
+        name: database
+        ports:
+        - containerPort: 5432
+        resources:
+          limits:
+            cpu: 400m
+            memory: 512Mi
+          requests:
+            cpu: 200m
+            memory: 256Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kustomize.config.k8s.io/managed: "true"
+  labels:
+    app: webapp
+    environment: staging
+    managed-by: kustomize
+    project: kustomize-lab
+    tier: staging
+  name: ConfigMap-webapp
+  namespace: staging
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webapp
+      environment: staging
+      managed-by: kustomize
+      project: kustomize-lab
+      tier: staging
+  template:
+    metadata:
+      annotations:
+        kustomize.config.k8s.io/managed: "true"
+      labels:
+        app: webapp
+        environment: staging
+        managed-by: kustomize
+        project: kustomize-lab
+        tier: staging
+    spec:
+      containers:
+      - env:
+        - name: ENVIRONMENT
+          value: staging
+        - name: DEBUG
+          value: "false"
+        image: nginx:1.21
+        name: webapp
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 400m
+            memory: 128Mi
+          requests:
+            cpu: 200m
+            memory: 64Mi

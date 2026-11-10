@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: webapp}
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+      - name: webapp
+        env: [{name: ENVIRONMENT, value: "staging"}, {name: DEBUG, value: "false"}]
+        resources: {requests: {memory: "64Mi", cpu: "200m"}, limits: {memory: "128Mi", cpu: "400m"}}

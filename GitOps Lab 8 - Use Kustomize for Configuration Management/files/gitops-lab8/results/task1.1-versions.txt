@@ -1,0 +1,4 @@
+Client Version: v1.36.2
+Kustomize Version: v5.8.1
+flux: v2.10.0
+git version 2.43.0

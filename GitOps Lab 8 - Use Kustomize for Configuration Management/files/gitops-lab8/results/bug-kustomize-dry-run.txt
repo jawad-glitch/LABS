@@ -1,0 +1,2 @@
+error: unknown flag: --dry-run
+See 'kubectl kustomize --help' for usage.

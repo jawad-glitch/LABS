@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: nginx-app-repo
+  namespace: flux-system
+spec:
+  ignore: |-
+    /*
+    !/apps/
+  interval: 1m0s
+  ref:
+    branch: main
+  url: http://172.17.0.1:8765/flux-lab-repo.git

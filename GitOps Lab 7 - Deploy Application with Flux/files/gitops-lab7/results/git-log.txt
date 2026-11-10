@@ -1,0 +1,2 @@
+c30c51a Update nginx to 1.27 and scale to 3 replicas
+fd70645 Add nginx application manifests

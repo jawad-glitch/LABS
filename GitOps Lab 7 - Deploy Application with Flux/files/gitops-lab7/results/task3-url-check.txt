@@ -1,0 +1,2 @@
+LAB   apiVersion=source.toolkit.fluxcd.io/v1beta2 url=file:///home/$(whoami)/flux-lab-repo.git literal_$(whoami)=True matches_CRD_pattern=False
+FIXED apiVersion=source.toolkit.fluxcd.io/v1 url=http://172.17.0.1:8765/flux-lab-repo.git literal_$(whoami)=False matches_CRD_pattern=True

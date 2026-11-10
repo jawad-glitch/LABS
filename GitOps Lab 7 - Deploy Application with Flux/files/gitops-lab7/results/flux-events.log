@@ -1,0 +1,11 @@
+08:39:33 GitRepository/flux-system/nginx-app-repo stored artifact main@sha1:fd70645
+08:39:34 Deployment/default/nginx-deployment configured (+pod nginx:1.26-alpine)
+08:39:35 Deployment/default/nginx-deployment configured (+pod nginx:1.26-alpine)
+08:39:35 Kustomization/flux-system/nginx-app Applied revision main@sha1:fd70645 Ready=True (2/2)
+08:39:37 GitRepository/flux-system/nginx-app-repo stored artifact main@sha1:c30c51a
+08:39:38 Deployment/default/nginx-deployment configured (+pod nginx:1.27-alpine)
+08:39:38 Deployment/default/nginx-deployment configured (+pod nginx:1.27-alpine)
+08:39:39 Deployment/default/nginx-deployment configured (+pod nginx:1.27-alpine)
+08:39:39 replaced/pruned pod 502d3e0379bc
+08:39:40 replaced/pruned pod 8b3e6061457e
+08:39:40 Kustomization/flux-system/nginx-app Applied revision main@sha1:c30c51a Ready=True (3/3)

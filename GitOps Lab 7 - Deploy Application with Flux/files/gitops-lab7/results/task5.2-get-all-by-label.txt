@@ -1,0 +1,2 @@
+502d3e0379bc nginx:1.26-alpine
+8b3e6061457e nginx:1.26-alpine

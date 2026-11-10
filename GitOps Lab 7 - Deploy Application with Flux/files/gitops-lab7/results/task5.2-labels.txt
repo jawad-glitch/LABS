@@ -1,0 +1,2 @@
+service labels {'app.kubernetes.io/managed-by': 'flux', 'app.kubernetes.io/name': 'nginx-app'} | selector {'app': 'nginx'}
+deployment labels {'app': 'nginx', 'app.kubernetes.io/managed-by': 'flux', 'app.kubernetes.io/name': 'nginx-app'} | pod labels {'app': 'nginx', 'app.kubernetes.io/managed-by': 'flux', 'app.kubernetes.io/name': 'nginx-app'} | selector {'app': 'nginx'}

@@ -1,0 +1,3 @@
+gitrepositories.source.toolkit.fluxcd.io served: ['v1'] storage: ['v1']
+GITREPO_V1_URL_PATTERN ^(http|https|ssh)://.*$
+kustomizations.kustomize.toolkit.fluxcd.io served: ['v1'] storage: ['v1']

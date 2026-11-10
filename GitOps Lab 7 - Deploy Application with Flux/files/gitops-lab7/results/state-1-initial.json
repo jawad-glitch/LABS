@@ -1,0 +1,1 @@
+{"revision": "main@sha1:fd70645", "ready": true, "replicas": 2, "desired": 2, "image": "nginx:1.26-alpine", "pod_labels": {"app": "nginx", "app.kubernetes.io/managed-by": "flux", "app.kubernetes.io/name": "nginx-app"}, "objects": ["Service/nginx-service", "Deployment/nginx-deployment"]}

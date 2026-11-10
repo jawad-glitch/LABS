@@ -1,0 +1,3 @@
+error: src refspec main does not match any
+error: failed to push some refs to '../defb.git'
+this VM's git default branch: master | lab 'git push origin main' rc=1

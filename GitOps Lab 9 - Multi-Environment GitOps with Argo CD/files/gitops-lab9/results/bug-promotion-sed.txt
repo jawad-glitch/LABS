@@ -1,0 +1,2 @@
+sed 1.0.0-dev->1.0.1-stage changed nothing on stage
+changes under k8s-manifests/stage from the promotion: 0 lines

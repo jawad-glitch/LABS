@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-app
+  namespace: prod
+  labels: {app: gitops-app, environment: prod}
+spec:
+  replicas: 3
+  selector:
+    matchLabels: {app: gitops-app}
+  template:
+    metadata:
+      labels: {app: gitops-app, environment: prod}
+    spec:
+      containers:
+      - name: app
+        image: nginx:1.27-alpine
+        ports: [{containerPort: 80}]
+        env: [{name: ENVIRONMENT, value: "production"}]
+        resources: {requests: {memory: "256Mi", cpu: "200m"}, limits: {memory: "512Mi", cpu: "500m"}}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: gitops-app-service, namespace: prod}
+spec:
+  selector: {app: gitops-app}
+  ports: [{port: 80, targetPort: 80}]
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Namespace
+metadata: {name: prod}

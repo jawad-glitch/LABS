@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-app-prod
+spec:
+  destination:
+    namespace: prod
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: k8s-manifests/prod
+    repoURL: http://172.17.0.1:8767/gitops-multi-env.git
+    targetRevision: prod
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true

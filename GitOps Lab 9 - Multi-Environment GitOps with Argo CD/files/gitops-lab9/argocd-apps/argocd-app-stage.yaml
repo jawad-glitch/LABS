@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-app-stage
+spec:
+  destination:
+    namespace: stage
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: k8s-manifests/stage
+    repoURL: http://172.17.0.1:8767/gitops-multi-env.git
+    targetRevision: stage
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

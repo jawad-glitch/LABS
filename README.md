@@ -90,3 +90,4 @@
 | [GitOps Lab 6 - Install and Configure Flux](GitOps%20Lab%206%20-%20Install%20and%20Configure%20Flux/PROOF.md) | no core-check file | 2026-11-10 08:36 |
 | [GitOps Lab 7 - Deploy Application with Flux](GitOps%20Lab%207%20-%20Deploy%20Application%20with%20Flux/PROOF.md) | no core-check file | 2026-11-10 08:39 |
 | [GitOps Lab 8 - Use Kustomize for Configuration Management](GitOps%20Lab%208%20-%20Use%20Kustomize%20for%20Configuration%20Management/PROOF.md) | no core-check file | 2026-11-10 08:43 |
+| [GitOps Lab 9 - Multi-Environment GitOps with Argo CD](GitOps%20Lab%209%20-%20Multi-Environment%20GitOps%20with%20Argo%20CD/PROOF.md) | no core-check file | 2026-11-10 08:46 |

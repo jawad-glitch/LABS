@@ -1,0 +1,4 @@
+e16e3b5 Introduce deployment error for rollback testing
+811317a Scale dev environment to 2 replicas
+c590421 Update dev environment configuration
+c02c1e4 Initial commit: Add application and base manifests

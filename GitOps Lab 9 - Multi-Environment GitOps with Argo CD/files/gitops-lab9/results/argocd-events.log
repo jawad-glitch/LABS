@@ -1,0 +1,24 @@
+08:46:23 [gitops-app-dev] rev c590421 syncing: live 0 (matching 0) -> desired 1 image=nginx:1.27-alpine
+08:46:25 [gitops-app-dev] rev c590421 created pod (nginx:1.27-alpine)
+08:46:25 [gitops-app-dev] rev c590421 Synced/Healthy running=1 desired=1
+08:46:25 [gitops-app-stage] rev 8d9fbfb syncing: live 0 (matching 0) -> desired 2 image=nginx:1.27-alpine
+08:46:26 [gitops-app-stage] rev 8d9fbfb created pod (nginx:1.27-alpine)
+08:46:26 [gitops-app-stage] rev 8d9fbfb created pod (nginx:1.27-alpine)
+08:46:26 [gitops-app-stage] rev 8d9fbfb Synced/Healthy running=2 desired=2
+08:46:27 [gitops-app-prod] rev da378a1 OutOfSync (live 0, desired 3) - automated sync disabled, waiting for manual sync
+08:46:27 [gitops-app-prod] rev da378a1 OutOfSync/Missing running=0 desired=3
+08:46:27 [gitops-app-prod] rev da378a1 syncing: live 0 (matching 0) -> desired 3 image=nginx:1.27-alpine
+08:46:28 [gitops-app-prod] rev da378a1 created pod (nginx:1.27-alpine)
+08:46:28 [gitops-app-prod] rev da378a1 created pod (nginx:1.27-alpine)
+08:46:29 [gitops-app-prod] rev da378a1 created pod (nginx:1.27-alpine)
+08:46:29 [gitops-app-prod] rev da378a1 Synced/Healthy running=3 desired=3
+08:46:30 [gitops-app-dev] rev 811317a syncing: live 1 (matching 1) -> desired 2 image=nginx:1.27-alpine
+08:46:31 [gitops-app-dev] rev 811317a created pod (nginx:1.27-alpine)
+08:46:31 [gitops-app-dev] rev 811317a Synced/Healthy running=2 desired=2
+08:46:32 [gitops-app-stage] rev d276139 Synced/Healthy running=2 desired=2
+08:46:32 [gitops-app-dev] rev e16e3b5 syncing: live 2 (matching 0) -> desired 2 image=nginx:nonexistent-tag
+08:46:32 [gitops-app-dev] rev e16e3b5 pod create FAILED for nginx:nonexistent-tag: Run 'docker run --help' for more information - keeping 2 old pods (rollout stuck)
+08:46:32 [gitops-app-dev] rev e16e3b5 OutOfSync/Degraded running=2 desired=2
+08:46:33 [gitops-app-dev] rev e16e3b5 syncing: live 2 (matching 0) -> desired 2 image=nginx:nonexistent-tag
+08:46:33 [gitops-app-dev] rev e16e3b5 pod create FAILED for nginx:nonexistent-tag: Run 'docker run --help' for more information - keeping 2 old pods (rollout stuck)
+08:46:33 [gitops-app-dev] rev e16e3b5 OutOfSync/Degraded running=2 desired=2

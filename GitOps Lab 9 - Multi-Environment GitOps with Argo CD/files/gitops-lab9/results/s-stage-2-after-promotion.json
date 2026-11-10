@@ -1,0 +1,1 @@
+{"app": "gitops-app-stage", "branch": "stage", "revision": "d276139", "auto": true, "desired": 2, "running": 2, "matching": 2, "image": "nginx:1.27-alpine", "sync": "Synced", "health": "Healthy"}

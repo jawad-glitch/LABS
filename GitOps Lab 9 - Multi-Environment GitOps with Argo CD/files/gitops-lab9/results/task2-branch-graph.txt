@@ -1,0 +1,4 @@
+* da378a1 Update production environment configuration
+* 8d9fbfb Update staging environment configuration
+* c590421 Update dev environment configuration
+* c02c1e4 Initial commit: Add application and base manifests

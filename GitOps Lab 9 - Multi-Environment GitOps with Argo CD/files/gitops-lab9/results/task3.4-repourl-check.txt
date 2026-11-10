@@ -1,0 +1,6 @@
+argocd-app-dev.yaml repoURL=/tmp/gitops-multi-env isURL=False
+argocd-app-prod.yaml repoURL=/tmp/gitops-multi-env isURL=False
+argocd-app-stage.yaml repoURL=/tmp/gitops-multi-env isURL=False
+argocd-app-dev.yaml repoURL=http://172.17.0.1:8767/gitops-multi-env.git isURL=True
+argocd-app-prod.yaml repoURL=http://172.17.0.1:8767/gitops-multi-env.git isURL=True
+argocd-app-stage.yaml repoURL=http://172.17.0.1:8767/gitops-multi-env.git isURL=True

@@ -1,0 +1,7 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: {name: gitops-app-dev, namespace: argocd}
+spec:
+  project: default
+  source: {repoURL: "/tmp/gitops-multi-env", targetRevision: dev, path: k8s-manifests/dev}
+  destination: {server: "https://kubernetes.default.svc", namespace: dev}

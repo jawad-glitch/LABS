@@ -1,0 +1,3 @@
+dev: env-badge dev">DEVELOPMENT ENVIRONMENT< Version: 1.0.0-dev
+stage: env-badge stage">STAGING ENVIRONMENT< Version: 1.0.0-stage
+prod: env-badge prod">PRODUCTION ENVIRONMENT< Version: 1.0.0

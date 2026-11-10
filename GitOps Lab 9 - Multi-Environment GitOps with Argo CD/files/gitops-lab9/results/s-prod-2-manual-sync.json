@@ -1,0 +1,1 @@
+{"app": "gitops-app-prod", "branch": "prod", "revision": "da378a1", "auto": false, "desired": 3, "running": 3, "matching": 3, "image": "nginx:1.27-alpine", "sync": "Synced", "health": "Healthy"}

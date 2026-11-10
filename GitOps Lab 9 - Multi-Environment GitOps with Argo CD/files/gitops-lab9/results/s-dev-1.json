@@ -1,0 +1,1 @@
+{"app": "gitops-app-dev", "branch": "dev", "revision": "c590421", "auto": true, "desired": 1, "running": 1, "matching": 1, "image": "nginx:1.27-alpine", "sync": "Synced", "health": "Healthy"}

@@ -1,0 +1,1 @@
+remote: local-bare /home/ubuntu/gitops-remote/gitops-lab-demo.git

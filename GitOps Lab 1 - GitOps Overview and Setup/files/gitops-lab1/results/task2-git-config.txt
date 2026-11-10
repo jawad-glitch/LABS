@@ -1,0 +1,4 @@
+git version 2.43.0
+user.name=jawad-glitch
+user.email=jawad-glitch@users.noreply.github.com
+init.defaultbranch=main

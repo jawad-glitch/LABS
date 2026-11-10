@@ -1,0 +1,7 @@
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+sample-app   1/1     1            1           5s
+NAME                          READY   STATUS    RESTARTS   AGE   IP           NODE                NOMINATED NODE   READINESS GATES
+sample-app-54bd9d6577-jfmsn   1/1     Running   0          6s    10.244.1.2   gitops-lab-worker   <none>           <none>
+NAME                 TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+kubernetes           ClusterIP   10.96.0.1     <none>        443/TCP   53s
+sample-app-service   ClusterIP   10.96.2.154   <none>        80/TCP    6s

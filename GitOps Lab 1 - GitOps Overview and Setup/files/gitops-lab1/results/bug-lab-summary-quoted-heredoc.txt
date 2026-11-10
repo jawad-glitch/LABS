@@ -1,0 +1,3 @@
+Git Version: $(git --version)
+kubectl Version: $(kubectl version --client --short)
+Nodes: $(kubectl get nodes --no-headers | wc -l)

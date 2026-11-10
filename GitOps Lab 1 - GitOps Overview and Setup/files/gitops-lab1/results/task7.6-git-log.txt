@@ -1,0 +1,3 @@
+4e3594a Scale sample application to 2 replicas
+0ea0113 Initial GitOps repository structure
+7f1b985 Initial commit

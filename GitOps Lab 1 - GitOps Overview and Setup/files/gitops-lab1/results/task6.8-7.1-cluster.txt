@@ -1,0 +1,25 @@
+Kubernetes control plane is running at https://127.0.0.1:34653
+CoreDNS is running at https://127.0.0.1:34653/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+NAME                       STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION            CONTAINER-RUNTIME    LABELS
+gitops-lab-control-plane   Ready    control-plane   49s   v1.37.0   172.18.0.2    <none>        Debian GNU/Linux 13 (trixie)   6.14.0-1018-aws (amd64)   containerd://2.3.4   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,ingress-ready=true,kubernetes.io/arch=amd64,kubernetes.io/hostname=gitops-lab-control-plane,kubernetes.io/os=linux,node-role.kubernetes.io/control-plane=,node.kubernetes.io/exclude-from-external-load-balancers=
+gitops-lab-worker          Ready    <none>          29s   v1.37.0   172.18.0.3    <none>        Debian GNU/Linux 13 (trixie)   6.14.0-1018-aws (amd64)   containerd://2.3.4   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=gitops-lab-worker,kubernetes.io/os=linux
+NAME                 STATUS   AGE
+default              Active   49s
+kube-node-lease      Active   49s
+kube-public          Active   49s
+kube-system          Active   49s
+local-path-storage   Active   38s
+NAMESPACE            NAME                                               READY   STATUS    RESTARTS   AGE
+kube-system          coredns-559f6c778d-c6fg9                           1/1     Running   0          38s
+kube-system          coredns-559f6c778d-mvbq2                           1/1     Running   0          38s
+kube-system          etcd-gitops-lab-control-plane                      1/1     Running   0          50s
+kube-system          kindnet-lj2z6                                      1/1     Running   0          30s
+kube-system          kindnet-xqz6x                                      1/1     Running   0          39s
+kube-system          kube-apiserver-gitops-lab-control-plane            1/1     Running   0          49s
+kube-system          kube-controller-manager-gitops-lab-control-plane   1/1     Running   0          49s
+kube-system          kube-proxy-fxz9k                                   1/1     Running   0          39s
+kube-system          kube-proxy-qfkwj                                   1/1     Running   0          30s
+kube-system          kube-scheduler-gitops-lab-control-plane            1/1     Running   0          49s
+local-path-storage   local-path-provisioner-75f7fc7dc5-l5dll            1/1     Running   0          37s

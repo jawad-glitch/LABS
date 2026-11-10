@@ -1,0 +1,19 @@
+GitOps Lab Environment Summary
+==============================
+
+Git Version: git version 2.43.0
+kubectl Version: Client Version: v1.36.2
+Helm Version: v3.22.1+gd6c1a0e
+kind Version: kind v0.33.0 go1.26.7 linux/amd64
+Docker Version: Docker version 29.6.0, build fb59821
+
+Cluster Information:
+- Cluster Name: gitops-lab
+- Nodes: 2
+- Namespaces: 5
+
+Repository:
+- Local Path: /home/ubuntu/gitops-lab-demo
+- Remote (local-bare): /home/ubuntu/gitops-remote/gitops-lab-demo.git
+
+Setup Date: Tue Nov 10 08:21:00 UTC 2026

@@ -1,0 +1,3 @@
+deploying commit 0ea0113
+deployment.apps/sample-app created
+service/sample-app-service created

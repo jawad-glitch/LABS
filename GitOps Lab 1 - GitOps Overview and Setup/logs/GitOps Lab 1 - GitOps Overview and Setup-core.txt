@@ -1,0 +1,13 @@
+========== CORE CHECKS (GitOps Lab 1 - GitOps Overview and Setup, 2026-11-10 08:21:00 UTC) ==========
+PASS: Tasks 2/4/5/6: git, kubectl, helm v3, kind, docker available (kubectl/helm/kind sha256-verified)
+PASS: Task 2.4: git user.name/user.email configured
+PASS: Task 3: repo gitops-lab-demo on local-bare remote - initial structure pushed; all 8 dirs survive a fresh clone (.gitkeep)
+PASS: Task 4.5: kubectl completion + alias k in ~/.bashrc exactly once
+PASS: Task 6: kind cluster gitops-lab with 2 Ready nodes; control-plane labelled ingress-ready=true
+PASS: Task 7.2/7.3: sample-app deployed from a fresh clone of the remote - 1/1 ready, service present
+PASS: Task 5.5/5.6: stable + bitnami repos listed
+PASS: Task 7.4/7.5: helm release my-nginx deployed and its pod Running
+PASS: Task 7.6/7.7: scale commit pushed to remote; apply from fresh clone -> 2/2 replicas ready; 2+ commits in history
+PASS: Lab bug: quoted heredoc keeps $(...) literal; kubectl --short flag removed - fixed summary has real values
+PASS: Time: lab finished in 179s (<= 300s)
+CORE: 11/11 PASS

@@ -1,0 +1,6 @@
+"stable" has been added to your repositories
+"bitnami" has been added to your repositories
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "bitnami" chart repository
+Update Complete. ⎈Happy Helming!⎈

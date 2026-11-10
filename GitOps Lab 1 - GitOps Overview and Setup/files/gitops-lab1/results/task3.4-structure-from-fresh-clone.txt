@@ -1,0 +1,11 @@
+applications
+applications/dev
+applications/prod
+applications/staging
+clusters
+clusters/dev
+clusters/local
+clusters/prod
+infrastructure
+infrastructure/base
+infrastructure/overlays

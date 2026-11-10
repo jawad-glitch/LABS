@@ -1,12 +1,12 @@
 # AIOps Sec Lab - Securing a Cloud-Native Workload End-to-End - completion proof
-Completed (UTC): 2026-11-10 18:51:30 | EC2: i-0c9768683dc3d3660 | host: ip-172-31-10-42 | user: ubuntu
+Completed (UTC): 2026-11-10 19:00:31 | EC2: i-0c9768683dc3d3660 | host: ip-172-31-10-42 | user: ubuntu
 
 ## Core checks
 ```
-========== CORE CHECKS (AIOps Sec Lab - Securing a Cloud-Native Workload End-to-End, 2026-11-10 18:51:18 UTC) ==========
+========== CORE CHECKS (AIOps Sec Lab - Securing a Cloud-Native Workload End-to-End, 2026-11-10 19:00:19 UTC) ==========
 PASS: Task 1: k3d cluster Ready; kube-bench baseline saved (benchmark used: k3s-cis-1.7)
 FAIL: Task 2: insecure Terraform fails Checkov (exit 1) and tfsec (exit 1)
-FAIL: Task 2: fixed Terraform passes Checkov and tfsec (explicit, logged excludes); validate OK
+PASS: Task 2: fixed Terraform passes Checkov and tfsec (explicit, logged excludes); validate OK
 PASS: Task 2: applied to LocalStack - policy scoped (ListBucket + Get/Put orders/*), no s3:*, PAB all true, versioning, SSE
 FAIL: Task 3: v0 (bullseye, root) fails the image gate; hardened current-alpine image passes, runs as 10001
 PASS: Task 3: lab alpine3.20 base gate result recorded (EOL base)
@@ -20,10 +20,10 @@ FAIL: Lab bug: expected client-denied exit=6 is wrong once DNS is allowed (real 
 PASS: Task 6 (Vault k8s auth vs k3d): shop-api SA reads shop/db (shop_app); admin/root 403; ci-deployer SA rejected
 FAIL: Task 6: Vault Agent rendered DB_USER/DB_PASS into tmpfs; app over TLS (private CA, hostname verified) reports db_secret_loaded true; no DB Secret in k8s
 FAIL: Task 7 (Falco 0.45.2): Terminal shell + custom Vault-secret rule fired for the intruder; none for the python app
-FAIL: Task 8: Isolation Forest puts >=3 attack windows in the top 5 (got ); live Falco windows flagged: 
+FAIL: Task 8: Isolation Forest puts >=3 attack windows in the top 5 (got 3); live Falco windows flagged: 0
 PASS: Lab bug: two validate.sh checks pass vacuously (non-existent pod / no Calico)
-FAIL: Time: finished in 420s (<= 300s)
-CORE: 9/19 PASS
+FAIL: Time: finished in 481s (<= 300s)
+CORE: 10/19 PASS
 ```
 
 ## Cluster snapshot
@@ -31,12 +31,12 @@ CORE: 9/19 PASS
 error: the server doesn't have a resource type "clusterpolicy"
 
 NAMESPACE     NAME                                      READY   STATUS             RESTARTS   AGE
-default       kube-bench-n7zfb                          0/1     Completed          0          5m47s
-kube-system   coredns-576bfc4dc7-hvsqb                  1/1     Running            0          5m59s
-kube-system   local-path-provisioner-6795b5f9d8-gzldx   1/1     Running            0          5m59s
-shop          client-allowed                            1/1     Running            0          4m8s
-shop          client-denied                             1/1     Running            0          4m8s
-shop          shop-api-6b87554b8-926rx                  0/1     ImagePullBackOff   0          4m8s
+default       kube-bench-flbtw                          0/1     Completed          0          6m11s
+kube-system   coredns-576bfc4dc7-6m5k6                  1/1     Running            0          6m28s
+kube-system   local-path-provisioner-6795b5f9d8-2w2b5   1/1     Running            0          6m28s
+shop          client-allowed                            1/1     Running            0          4m5s
+shop          client-denied                             1/1     Running            0          4m5s
+shop          shop-api-6b87554b8-nft2h                  0/1     ImagePullBackOff   0          4m5s
 
 NAME	NAMESPACE	REVISION	UPDATED	STATUS	CHART	APP VERSION
 ```
@@ -44,7 +44,7 @@ NAME	NAMESPACE	REVISION	UPDATED	STATUS	CHART	APP VERSION
 ## Docker snapshot
 ```
 CONTAINER ID   IMAGE                      COMMAND                  CREATED         STATUS         PORTS                     NAMES
-6fecdd2b7bf0   rancher/k3s:v1.30.4-k3s1   "/bin/k3d-entrypoint…"   6 minutes ago   Up 6 minutes   0.0.0.0:34219->6443/tcp   k3d-aiops-sec-server-0
+e4e4569626e9   rancher/k3s:v1.30.4-k3s1   "/bin/k3d-entrypoint…"   6 minutes ago   Up 6 minutes   0.0.0.0:45261->6443/tcp   k3d-aiops-sec-server-0
 
 IMAGE                            ID             DISK USAGE   CONTENT SIZE   EXTRA
 aquasec/kube-bench:v0.8.0        ea3e33bc3c4e        194MB         54.6MB        
@@ -57,13 +57,16 @@ python:3.12-alpine               e064671ca452       74.8MB         18.7MB
 python:3.12-alpine3.20           25849f9599e0       73.5MB         18.3MB        
 python:3.9-slim-bullseye         b9e06687fbfc        190MB         48.3MB        
 rancher/k3s:v1.30.4-k3s1         983a88efba91        282MB         71.7MB   U    
-shop/api:0.9.0                   a0054f54cd78        187MB         45.5MB        
+shop/api:0.9.0                   3607d1e26a7d        187MB         45.5MB        
+shop/api:1.0.0                   f240087609d7       74.2MB         18.1MB        
+shop/api:1.0.0-alpine3.20        0802531d797e       72.8MB         17.6MB        
 ```
 
 ## Files
 ```
-./app/Dockerfile.3.12-alpine
-./app/Dockerfile.3.12-alpine3.20
+./app/Dockerfile
+./app/Dockerfile.alpine
+./app/Dockerfile.alpine3.20
 ./app/Dockerfile.v0
 ./app/app.py
 ./falco-live.jsonl
@@ -97,7 +100,9 @@ shop/api:0.9.0                   a0054f54cd78        187MB         45.5MB
 ./ml/answers.txt
 ./ml/events_week.csv
 ./ml/gen_events.py
+./ml/live_scored.csv
 ./ml/triage.py
+./ml/triage_report.csv
 ./results/SIMULATED.md
 ./results/bug-validate-false-pass.txt
 ./results/elapsed.txt

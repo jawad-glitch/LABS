@@ -1,0 +1,16 @@
+windows: 2090  attack windows: 4  flagged: 10
+
+TOP ANOMALIES (training week)
+2024-09-06 03:10 shop/shop-api                       score=0.034 attack=1 | n_shell=7 (z=41.3), n_secret=4 (z=21.2), n_rules=4 (z=18.1)
+2024-09-06 03:20 shop/shop-api                       score=0.031 attack=1 | n_procs=4 (z=24.6), n_rules=5 (z=24.2), max_prio=5 (z=20.9)
+2024-09-06 03:25 shop/shop-api                       score=0.031 attack=1 | n_procs=4 (z=24.6), n_rules=5 (z=24.2), max_prio=5 (z=20.9)
+2024-09-07 17:40 shop/shop-api                       score=0.006 attack=0 | n_secret=2 (z=10.6), max_prio=3 (z=6.9), n_shell=0 (z=-0.0)
+2024-09-06 08:45 shop/shop-api                       score=0.006 attack=0 | n_secret=2 (z=10.6), max_prio=3 (z=6.9), n_shell=0 (z=-0.0)
+2024-09-04 16:40 shop/shop-api                       score=0.006 attack=0 | n_secret=2 (z=10.6), max_prio=3 (z=6.9), n_shell=0 (z=-0.0)
+2024-09-04 10:25 shop/shop-api                       score=0.006 attack=0 | n_secret=2 (z=10.6), max_prio=3 (z=6.9), n_shell=0 (z=-0.0)
+2024-09-03 17:05 shop/shop-api                       score=0.006 attack=0 | n_secret=2 (z=10.6), max_prio=3 (z=6.9), n_shell=0 (z=-0.0)
+
+recall=1.00 precision=0.40
+
+LIVE FALCO WINDOWS
+19:00 shop/shop-api                           score=-0.254 flagged=False | n_shell=3 (z=17.7), n_events=3 (z=1.0), n_procs=1 (z=-0.0)

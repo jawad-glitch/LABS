@@ -1,1 +1,5 @@
-timeout: failed to run command ‘/home/ubuntu/aiops-lab/.venv-sec/bin/checkov’: No such file or directory
+terraform scan results:
+
+Passed checks: 5, Failed checks: 0, Skipped checks: 0
+
+

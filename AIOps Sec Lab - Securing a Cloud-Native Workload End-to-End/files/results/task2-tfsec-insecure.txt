@@ -170,11 +170,11 @@ Results #9-10 HIGH IAM policy document uses sensitive action 's3:*' on wildcarde
 
   timings
   ──────────────────────────────────────────
-  disk i/o             798.042µs
-  parsing              4.794055ms
-  adaptation           3.413339ms
-  checks               23.56105ms
-  total                32.566486ms
+  disk i/o             39.775µs
+  parsing              696.463µs
+  adaptation           4.987565ms
+  checks               24.09505ms
+  total                29.818853ms
 
   counts
   ──────────────────────────────────────────

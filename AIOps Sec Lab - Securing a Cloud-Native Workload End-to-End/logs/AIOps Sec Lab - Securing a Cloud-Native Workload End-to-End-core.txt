@@ -1,7 +1,7 @@
-========== CORE CHECKS (AIOps Sec Lab - Securing a Cloud-Native Workload End-to-End, 2026-11-10 18:51:18 UTC) ==========
+========== CORE CHECKS (AIOps Sec Lab - Securing a Cloud-Native Workload End-to-End, 2026-11-10 19:00:19 UTC) ==========
 PASS: Task 1: k3d cluster Ready; kube-bench baseline saved (benchmark used: k3s-cis-1.7)
 FAIL: Task 2: insecure Terraform fails Checkov (exit 1) and tfsec (exit 1)
-FAIL: Task 2: fixed Terraform passes Checkov and tfsec (explicit, logged excludes); validate OK
+PASS: Task 2: fixed Terraform passes Checkov and tfsec (explicit, logged excludes); validate OK
 PASS: Task 2: applied to LocalStack - policy scoped (ListBucket + Get/Put orders/*), no s3:*, PAB all true, versioning, SSE
 FAIL: Task 3: v0 (bullseye, root) fails the image gate; hardened current-alpine image passes, runs as 10001
 PASS: Task 3: lab alpine3.20 base gate result recorded (EOL base)
@@ -15,7 +15,7 @@ FAIL: Lab bug: expected client-denied exit=6 is wrong once DNS is allowed (real 
 PASS: Task 6 (Vault k8s auth vs k3d): shop-api SA reads shop/db (shop_app); admin/root 403; ci-deployer SA rejected
 FAIL: Task 6: Vault Agent rendered DB_USER/DB_PASS into tmpfs; app over TLS (private CA, hostname verified) reports db_secret_loaded true; no DB Secret in k8s
 FAIL: Task 7 (Falco 0.45.2): Terminal shell + custom Vault-secret rule fired for the intruder; none for the python app
-FAIL: Task 8: Isolation Forest puts >=3 attack windows in the top 5 (got ); live Falco windows flagged: 
+FAIL: Task 8: Isolation Forest puts >=3 attack windows in the top 5 (got 3); live Falco windows flagged: 0
 PASS: Lab bug: two validate.sh checks pass vacuously (non-existent pod / no Calico)
-FAIL: Time: finished in 420s (<= 300s)
-CORE: 9/19 PASS
+FAIL: Time: finished in 481s (<= 300s)
+CORE: 10/19 PASS

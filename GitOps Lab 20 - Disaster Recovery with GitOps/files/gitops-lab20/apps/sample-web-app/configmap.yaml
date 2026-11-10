@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-app-html
+  namespace: sample-app
+data:
+  index.html: |
+    <html><body><h1>sample-web-app</h1><p>Release: v1.0-baseline (GitOps DR lab)</p></body></html>

@@ -1,0 +1,2 @@
+scenario-a-deployment-deletion: 4.2
+scenario-b-namespace-deletion: 4.1

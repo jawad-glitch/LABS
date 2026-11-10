@@ -1,0 +1,6 @@
+PASS check 1: namespace sample-app Active
+FAIL check 2: web-app ready replicas == 3 (running=0 current=0)
+FAIL check 3: service web-app has endpoints (0)
+FAIL check 4: Argo CD sample-web-app = OutOfSync Missing
+FAIL check 5: HTTP GET to an nginx pod = 000
+Exit code: 1

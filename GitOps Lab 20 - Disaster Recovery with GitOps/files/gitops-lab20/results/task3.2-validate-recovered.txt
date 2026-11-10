@@ -1,0 +1,6 @@
+PASS check 1: namespace sample-app Active
+PASS check 2: web-app ready replicas == 3 (running=3 current=3)
+PASS check 3: service web-app has endpoints (3)
+PASS check 4: Argo CD sample-web-app = Synced Healthy
+PASS check 5: HTTP GET to an nginx pod = 200
+Exit code: 0

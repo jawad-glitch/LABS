@@ -1,0 +1,1 @@
+initial: {"sync":"Synced","health":"Healthy","running":3,"image":"nginx:1.27-alpine"} | page: Release: v1.0-baseline (GitOps DR lab) | created-by: sample-web-app

@@ -1,0 +1,1 @@
+after rollback: {"revision":"4a561de","image":"nginx:1.27-alpine","sync":"Synced","health":"Healthy","running":3} | HEAD=Revert "v2.0: bump nginx image (broken tag)"

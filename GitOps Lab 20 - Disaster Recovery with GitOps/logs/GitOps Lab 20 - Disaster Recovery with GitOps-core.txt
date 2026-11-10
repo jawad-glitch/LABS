@@ -1,0 +1,13 @@
+========== CORE CHECKS (GitOps Lab 20 - Disaster Recovery with GitOps, 2026-11-10 09:53:40 UTC) - K3S/ARGO CD SIMULATED, RECOVERY + PODS + GIT REAL ==========
+PASS: Task 1: argocd v3.6.1 (sha256), kubectl, git, curl, jq report versions
+PASS: Task 2.1: manifests valid (ns sample-app, 3 replicas, ClusterIP, ConfigMap); tag v1.0-baseline before Application; Application automated+selfHeal+CreateNamespace
+PASS: Task 2.1: controller synced from Git (no manual apply): Synced/Healthy, 3 pods, custom page, tracking label sample-web-app
+PASS: Scenario A: Deployment deleted -> autonomously restored to 3 Ready in 4.2s (< 120s)
+PASS: Scenario B: namespace deleted -> recreated (CreateNamespace) + 3 Running in 4.1s (< 180s)
+PASS: ~/recovery-times.txt has both lines in the required format
+PASS: Task 3.1: v2.0-broken tagged; new pod ErrImagePull -> Degraded; 3 old pods still Running and serving v1.0 (lab grep -c Running stays 3)
+PASS: Task 3.1: history baseline -> broken -> rollback (revert is HEAD); cluster back to nginx:1.27-alpine Synced/Healthy x3
+PASS: Task 3.2: dr-validate.sh clean run - 5 PASS, exit 0
+PASS: Task 3.2: dr-validate.sh on degraded state - FAIL check 2 and check 5, exit 1; recovers to exit 0 after controller resumes
+PASS: Time: finished in 44s (<= 300s)
+CORE: 11/11 PASS

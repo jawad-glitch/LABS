@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-web-app
+spec:
+  destination:
+    namespace: sample-app
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/sample-web-app
+    repoURL: http://172.17.0.1:8774/gitops-dr.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

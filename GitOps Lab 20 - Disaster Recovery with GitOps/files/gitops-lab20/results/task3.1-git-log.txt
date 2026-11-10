@@ -1,0 +1,3 @@
+4a561de Revert "v2.0: bump nginx image (broken tag)"
+4fb4e2f v2.0: bump nginx image (broken tag)
+84588a2 v1.0-baseline: nginx x3, ClusterIP service, ConfigMap index page

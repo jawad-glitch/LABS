@@ -1,0 +1,2 @@
+broken: {"revision":"4fb4e2f","image":"nginx:99.99.99-nonexistent","health":"Degraded","running":3,"errimagepull_pods":1} | Running-like count (lab grep -c Running) = 3 | page still: Release: v1.0-baseline (GitOps DR lab)
+09:53:25 [sample-web-app] rev 4fb4e2f new pod ErrImagePull nginx:99.99.99-nonexistent (old pods kept: 3)

@@ -1,0 +1,7 @@
+09:53:10 [sample-web-app] rev 84588a2 namespace sample-app missing -> created (CreateNamespace=true)
+09:53:10 [sample-web-app] rev 84588a2 Deployment web-app missing/empty -> applying (selfHeal), 3 x nginx:1.27-alpine
+09:53:16 [sample-web-app] rev 84588a2 Deployment web-app missing/empty -> applying (selfHeal), 3 x nginx:1.27-alpine
+09:53:20 [sample-web-app] rev 84588a2 namespace sample-app missing -> created (CreateNamespace=true)
+09:53:20 [sample-web-app] rev 84588a2 Deployment web-app missing/empty -> applying (selfHeal), 3 x nginx:1.27-alpine
+09:53:25 [sample-web-app] rev 4fb4e2f new pod ErrImagePull nginx:99.99.99-nonexistent (old pods kept: 3)
+09:53:35 [sample-web-app] rev 4a561de Deployment web-app missing/empty -> applying (selfHeal), 3 x nginx:1.27-alpine

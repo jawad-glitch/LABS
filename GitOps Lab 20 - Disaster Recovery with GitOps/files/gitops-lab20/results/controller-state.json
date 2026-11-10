@@ -1,0 +1,1 @@
+{"revision": "4a561de", "image": "nginx:1.27-alpine", "desired": 3, "running": 3, "ready_current": 3, "errimagepull_pods": 0, "namespace": "Active", "sync": "Synced", "health": "Healthy", "ts": 1794304420.0494237}

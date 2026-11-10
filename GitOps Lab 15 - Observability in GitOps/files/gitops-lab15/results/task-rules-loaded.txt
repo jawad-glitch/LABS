@@ -1,0 +1,1 @@
+rule groups loaded: 1 ['argocd:application_sync_failure_rate', 'argocd:application_health_degraded', 'ArgoCDSyncFailure', 'ArgoCDAppDegraded']

@@ -1,0 +1,2 @@
+docker.io/grafana/grafana:13.3.0
+docker.io/prom/prometheus:v3.16.0

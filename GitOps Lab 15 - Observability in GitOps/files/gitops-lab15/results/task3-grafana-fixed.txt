@@ -1,0 +1,3 @@
+datasources: [('prometheus', 'prometheus', 'prometheus')]
+datasource health: {"details":{"application":"Prometheus","features":{"rulerApiEnabled":false}},"message":"Successfully queried the Prometheus API.","status":"OK"}
+dashboard: [('ArgoCD GitOps Dashboard', 'argocd-gitops')]

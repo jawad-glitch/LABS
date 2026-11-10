@@ -1,0 +1,4 @@
+argocd-application-controller up
+argocd-repo-server up
+argocd-server up
+prometheus unknown

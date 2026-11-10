@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+- name: gitops
+  folder: GitOps
+  type: file
+  options:
+    path: /var/lib/grafana/dashboards

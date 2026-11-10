@@ -1,0 +1,14 @@
+========== CORE CHECKS (GitOps Lab 15 - Observability in GitOps, 2026-11-10 09:22:19 UTC) - ARGO CD/CLUSTER SIMULATED, PROMETHEUS + GRAFANA REAL ==========
+PASS: Lab bug: application-controller is a StatefulSet (wait/rollout on deployment/... fail)
+PASS: Lab bug: install.yaml already ships metrics Services on 8082/8083/8084 (lab duplicates them)
+PASS: Lab bug: *.metrics.enabled are not argocd-cmd-params-cm keys Argo CD reads (CMDPARAMS_KEYS_READ 192 found)
+PASS: promtool: lab config + rules valid but rule_files empty; fixed rules valid
+PASS: Task 2: Prometheus v3.16.0 scrapes all 3 Argo CD jobs (up) [exporter simulated]; rules LOADED (lab: never loaded)
+PASS: Lab bug: Grafana as written has NO datasource and no dashboard (ConfigMap never mounted, JSON never imported)
+PASS: Task 3 fixed: Grafana v13.3.0 provisioned datasource (health OK) + ArgoCD GitOps Dashboard
+PASS: Panel query via Grafana API returns live frames (health_status breakdown)
+PASS: Scenario: healthy 2/2 Synced+Healthy -> 1 OutOfSync/Degraded; failed-sync rate > 0
+PASS: Rules evaluated: recording health_degraded=1, failure_rate>0; alerts ArgoCDAppDegraded firing, ArgoCDSyncFailure pending (for: 5m)
+PASS: Fixed Prometheus RBAC (networking.k8s.io ingresses) schema-valid; all ports bound to 127.0.0.1
+PASS: Time: finished in 139s (<= 300s)
+CORE: 12/12 PASS

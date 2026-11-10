@@ -1,0 +1,12 @@
+--- lab config
+Checking /w/prometheus.yml
+ SUCCESS: /w/prometheus.yml is valid prometheus config file syntax
+
+--- lab rules
+Checking /w/argocd.rules
+  SUCCESS: 3 rules found
+
+--- fixed rules
+Checking /w/rules/argocd.rules.yml
+  SUCCESS: 4 rules found
+

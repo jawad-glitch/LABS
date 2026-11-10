@@ -1,0 +1,7 @@
+degraded: count by sync   -> sync_status:Synced=1; sync_status:OutOfSync=1
+degraded: count by health -> health_status:Healthy=1; health_status:Degraded=1
+failed sync rate          -> =0.5602639393939394
+git requests              -> job:argocd-repo-server,repo:https://github.com/argoproj/argocd-example-apps.git,request_type:ls-remote=47
+recording health_degraded -> =1
+recording failure_rate    -> =0.5437306060606061
+alerts                    -> [('ArgoCDSyncFailure', 'pending'), ('ArgoCDAppDegraded', 'firing')]

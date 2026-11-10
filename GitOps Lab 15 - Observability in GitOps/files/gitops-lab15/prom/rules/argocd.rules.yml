@@ -1,0 +1,17 @@
+groups:
+- name: argocd
+  rules:
+  - record: argocd:application_sync_failure_rate
+    expr: sum(rate(argocd_app_sync_total{phase="Failed"}[1m]))
+  - record: argocd:application_health_degraded
+    expr: count(argocd_app_info{health_status!="Healthy"})
+  - alert: ArgoCDSyncFailure
+    expr: argocd:application_sync_failure_rate > 0.1
+    for: 5m
+    labels: {severity: warning}
+    annotations: {summary: "ArgoCD sync failure rate is high"}
+  - alert: ArgoCDAppDegraded
+    expr: argocd:application_health_degraded > 0
+    for: 15s
+    labels: {severity: critical}
+    annotations: {summary: "{{ $value }} Argo CD application(s) not Healthy"}

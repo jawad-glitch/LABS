@@ -1,0 +1,4 @@
+server.metrics.enabled: NOT a key Argo CD reads from argocd-cmd-params-cm
+controller.metrics.enabled: NOT a key Argo CD reads from argocd-cmd-params-cm
+reposerver.metrics.enabled: NOT a key Argo CD reads from argocd-cmd-params-cm
+application.instanceLabelKey: NOT a key Argo CD reads from argocd-cmd-params-cm

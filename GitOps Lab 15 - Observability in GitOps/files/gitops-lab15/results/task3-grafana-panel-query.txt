@@ -1,0 +1,1 @@
+grafana panel query frames: 2 [{'health_status': 'Healthy'}, {'health_status': 'Degraded'}]

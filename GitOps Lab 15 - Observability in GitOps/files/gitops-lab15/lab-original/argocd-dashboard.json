@@ -1,0 +1,1 @@
+{"dashboard": {"id": null, "title": "ArgoCD GitOps Dashboard", "panels": [{"id": 4, "type": "graph", "title": "Sync Operations Over Time", "targets": [{"expr": "rate(argocd_app_sync_total[5m])", "refId": "A"}]}]}}

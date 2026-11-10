@@ -1,0 +1,1 @@
+{"apps": [{"name": "sample-nginx-app", "dest": "default", "sync": "OutOfSync", "health": "Degraded", "syncs": {"Succeeded": 1, "Failed": 35}}, {"name": "guestbook", "dest": "guestbook", "sync": "Synced", "health": "Healthy", "syncs": {"Succeeded": 3, "Failed": 0}}], "grpc": 141, "git": {"https://github.com/argoproj/argocd-example-apps.git": 47}}

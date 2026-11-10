@@ -1,0 +1,1 @@
+Prometheus v3.16.0 | Grafana v13.3.0 | Argo CD v3.6.1

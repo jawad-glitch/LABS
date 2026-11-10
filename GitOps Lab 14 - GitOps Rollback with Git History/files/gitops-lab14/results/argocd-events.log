@@ -1,0 +1,29 @@
+09:11:26 [sample-app] rev dc6b272 OutOfSync -> desired 3 x nginx:1.20 (template 44a353754a)
+09:11:27 [sample-app] rev dc6b272 pod created (nginx:1.20)
+09:11:28 [sample-app] rev dc6b272 pod created (nginx:1.20)
+09:11:28 [sample-app] rev dc6b272 pod created (nginx:1.20)
+09:11:28 [sample-app] rev dc6b272 Synced/Healthy running=3 images=['nginx:1.20']
+09:11:29 [sample-app] rev 585e6a5 OutOfSync -> desired 5 x nginx:1.21 (template 4b746ffa9b)
+09:11:30 [sample-app] rev 585e6a5 pod created (nginx:1.21)
+09:11:31 [sample-app] rev 585e6a5 pod created (nginx:1.21)
+09:11:31 [sample-app] rev 585e6a5 pod created (nginx:1.21)
+09:11:32 [sample-app] rev 585e6a5 pod created (nginx:1.21)
+09:11:32 [sample-app] rev 585e6a5 pod created (nginx:1.21)
+09:11:32 [sample-app] rev 585e6a5 old pod 6086488f9d57 removed
+09:11:33 [sample-app] rev 585e6a5 old pod 7e607a7096aa removed
+09:11:33 [sample-app] rev 585e6a5 old pod 500a67877b3a removed
+09:11:33 [sample-app] rev 585e6a5 Synced/Healthy running=5 images=['nginx:1.21']
+09:11:34 [sample-app] rev 832f3e1 OutOfSync -> desired 5 x nginx:this-tag-does-not-exist (template 2ee22b3882)
+09:11:35 [sample-app] rev 832f3e1 ErrImagePull nginx:this-tag-does-not-exist: Run 'docker run --help' for more information - old ReplicaSet pods kept
+09:11:35 [sample-app] rev 832f3e1 OutOfSync/Degraded running=5 images=['nginx:1.21']
+09:11:36 [sample-app] rev 77b1b00 Synced/Healthy running=5 images=['nginx:1.21']
+09:11:37 [sample-app] rev b09c1b4 OutOfSync -> desired 3 x nginx:1.20 (template 44a353754a)
+09:11:37 [sample-app] rev b09c1b4 pod created (nginx:1.20)
+09:11:38 [sample-app] rev b09c1b4 pod created (nginx:1.20)
+09:11:38 [sample-app] rev b09c1b4 pod created (nginx:1.20)
+09:11:39 [sample-app] rev b09c1b4 old pod 8bfccff2a060 removed
+09:11:39 [sample-app] rev b09c1b4 old pod 0dea4e4f7df7 removed
+09:11:40 [sample-app] rev b09c1b4 old pod eef44b3d1552 removed
+09:11:40 [sample-app] rev b09c1b4 old pod ee3701473192 removed
+09:11:40 [sample-app] rev b09c1b4 old pod 17bd2300b06b removed
+09:11:41 [sample-app] rev b09c1b4 Synced/Healthy running=3 images=['nginx:1.20']

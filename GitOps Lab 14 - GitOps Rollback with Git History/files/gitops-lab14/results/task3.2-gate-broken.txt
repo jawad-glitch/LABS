@@ -1,0 +1,5 @@
+PASS: k8s-manifests/configmap.yaml
+PASS: k8s-manifests/deployment.yaml
+PASS: k8s-manifests/namespace.yaml
+PASS: k8s-manifests/service.yaml
+FAIL: image name contains forbidden string 'broken'

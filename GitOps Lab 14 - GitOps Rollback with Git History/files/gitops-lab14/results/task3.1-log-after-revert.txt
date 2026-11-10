@@ -1,0 +1,4 @@
+77b1b00 Revert "v2.1.0: BROKEN image"
+832f3e1 v2.1.0: BROKEN image
+585e6a5 v2.0.0: nginx 1.21, 5 replicas, resources
+dc6b272 v1.0.0: nginx 1.20, 3 replicas

@@ -1,0 +1,2 @@
+Already up to date.
+after lab merge: HEAD subject='Revert "v2.1.0: BROKEN image"', image=image: nginx:1.21, replicas=replicas: 5

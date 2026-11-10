@@ -1,0 +1,2 @@
+dc6b272 v1.0.0: nginx 1.20, 3 replicas
+v1.0.0

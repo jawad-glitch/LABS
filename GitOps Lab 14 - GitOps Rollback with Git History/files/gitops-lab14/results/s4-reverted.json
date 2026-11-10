@@ -1,0 +1,1 @@
+{"revision": "77b1b00", "desired": 5, "running": 5, "images": ["nginx:1.21"], "sync": "Synced", "health": "Healthy"}

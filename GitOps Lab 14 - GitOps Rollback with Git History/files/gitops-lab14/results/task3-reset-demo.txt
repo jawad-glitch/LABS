@@ -1,0 +1,2 @@
+remote main after alice's reset --hard v2.0.0 + push --force: 6 commits (v2.1.0 commit on main: 2)
+bob (cloned before the rewrite) pushes: rc=0 

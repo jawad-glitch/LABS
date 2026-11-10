@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app
+spec:
+  destination:
+    namespace: sample-app
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: k8s-manifests
+    repoURL: http://172.17.0.1:8769/gitops-rollback-lab.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

@@ -1,0 +1,14 @@
+========== CORE CHECKS (GitOps Lab 14 - GitOps Rollback with Git History, 2026-11-10 09:11:42 UTC) - CLUSTER/ARGO CD SIMULATED, GIT + PODS REAL ==========
+FAIL: Task 1: argocd v3.6.1/kubectl/kubeconform (sha256); lab's v2.11.0 install.yaml largest CRD > 262144 (needs --server-side)
+PASS: Task 2.1: one commit + tag v1.0.0; 4 manifests schema-valid; lab dry-run=client fails without a cluster
+PASS: Task 2.2: Application (prune+selfHeal, CreateNamespace) generated with reachable http repo; both specs CRD-valid
+PASS: v1.0.0 synced: 3 pods nginx:1.20 serving v1.0.0
+PASS: v2.0.0 synced: 5 pods nginx:1.21 serving v2.0.0; memory limit 128Mi enforced
+PASS: v2.1.0: Degraded (ErrImagePull), 5 old nginx:1.21 pods kept - but they serve the BROKEN ConfigMap content
+PASS: Task 3.1a: git revert keeps v2.1.0 in history + adds revert commit; cluster back to v2.0.0 Synced/Healthy
+PASS: Lab bug: branch-at-v1.0.0 + merge --no-ff is a no-op (Already up to date; still nginx:1.21 x5)
+PASS: Fixed tag rollback (tree restored from v1.0.0 in a new commit): 3 pods nginx:1.20 serving v1.0.0, Synced
+FAIL: git reset --hard + push --force rewrites shared main (v2.1.0 gone) and the collaborator push is rejected
+PASS: Task 3.2: gate exits 1 on nginx:broken-test, 0 when restored; committed last as 'chore: add pre-commit validation gate'
+PASS: Time: finished in 54s (<= 300s)
+CORE: 10/12 PASS

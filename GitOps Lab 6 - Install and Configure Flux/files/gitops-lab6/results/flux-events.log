@@ -1,0 +1,21 @@
+08:36:33 GitRepository flux-gitops-demo: stored artifact for revision main@sha1:4e836ba
+08:36:34 drift/changes: live=0 desired=2 (ns default)
+08:36:35 Deployment/default/nginx-demo configured (+1 pod nginx:1.27-alpine)
+08:36:35 Deployment/default/nginx-demo configured (+1 pod nginx:1.27-alpine)
+08:36:35 Kustomization nginx-demo: Applied revision main@sha1:4e836ba (Ready=True, replicas 2/2)
+08:36:36 GitRepository flux-gitops-demo: stored artifact for revision main@sha1:90a5111
+08:36:36 drift/changes: live=2 desired=3 (ns default)
+08:36:37 Deployment/default/nginx-demo configured (+1 pod nginx:1.27-alpine)
+08:36:37 Kustomization nginx-demo: Applied revision main@sha1:90a5111 (Ready=True, replicas 3/3)
+08:36:38 GitRepository flux-gitops-demo: stored artifact for revision main@sha1:90a5111
+08:36:39 drift/changes: live=1 desired=3 (ns default)
+08:36:39 Deployment/default/nginx-demo configured (+1 pod nginx:1.27-alpine)
+08:36:40 Deployment/default/nginx-demo configured (+1 pod nginx:1.27-alpine)
+08:36:40 Kustomization nginx-demo: Applied revision main@sha1:90a5111 (Ready=True, replicas 3/3)
+08:36:42 GitRepository flux-gitops-demo: stored artifact for revision main@sha1:90a5111
+08:36:42 drift/changes: live=0 desired=3 (ns default)
+08:36:42 Deployment/default/nginx-demo configured (+1 pod nginx:1.27-alpine)
+08:36:43 Deployment/default/nginx-demo configured (+1 pod nginx:1.27-alpine)
+08:36:44 Deployment/default/nginx-demo configured (+1 pod nginx:1.27-alpine)
+08:36:44 Kustomization nginx-demo: Applied revision main@sha1:90a5111 (Ready=True, replicas 3/3)
+08:36:45 Kustomization nginx-demo deleted/suspended - no reconcile

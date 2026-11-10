@@ -1,0 +1,1 @@
+{"revision": "main@sha1:4e836ba", "ready": true, "replicas": 2, "desired": 2, "image": "nginx:1.27-alpine", "services": ["nginx-demo-service"]}

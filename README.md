@@ -87,3 +87,4 @@
 | [GitOps Lab 3 - Connect GitHub Repository with Argo CD](GitOps%20Lab%203%20-%20Connect%20GitHub%20Repository%20with%20Argo%20CD/PROOF.md) | no core-check file | 2026-11-10 08:27 |
 | [GitOps Lab 4 - Deploy an Application using Argo CD](GitOps%20Lab%204%20-%20Deploy%20an%20Application%20using%20Argo%20CD/PROOF.md) | no core-check file | 2026-11-10 08:30 |
 | [GitOps Lab 5 - GitOps Principles and Reconciliation](GitOps%20Lab%205%20-%20GitOps%20Principles%20and%20Reconciliation/PROOF.md) | no core-check file | 2026-11-10 08:33 |
+| [GitOps Lab 6 - Install and Configure Flux](GitOps%20Lab%206%20-%20Install%20and%20Configure%20Flux/PROOF.md) | no core-check file | 2026-11-10 08:36 |

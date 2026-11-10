@@ -1,0 +1,6 @@
+kind: Kustomization
+  interval: 1m0s
+  path: ./apps/nginx
+  prune: true
+    name: flux-gitops-demo
+  targetNamespace: default

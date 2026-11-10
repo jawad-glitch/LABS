@@ -1,0 +1,2 @@
+90a5111 Scale nginx deployment to 3 replicas
+4e836ba Add nginx demo application

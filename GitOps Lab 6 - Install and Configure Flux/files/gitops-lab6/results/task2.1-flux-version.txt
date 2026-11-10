@@ -1,0 +1,2 @@
+flux version 2.10.0
+/usr/local/bin/flux

@@ -1,0 +1,3 @@
+lab cleanup 'kubectl delete -f deployment.yaml' -> pods now 0
+next reconcile (Kustomization still exists) -> pods back: 3
+fixed: 'flux delete kustomization nginx-demo' (prune) -> pods stay at 0

@@ -1,0 +1,13 @@
+DEPLOYMENTS helm-controller(helm-controller:v1.7.1) kustomize-controller(kustomize-controller:v1.10.1) notification-controller(notification-controller:v1.10.0) source-controller(source-controller:v1.10.1)
+CRDS 11
+alerts.notification.toolkit.fluxcd.io
+buckets.source.toolkit.fluxcd.io
+externalartifacts.source.toolkit.fluxcd.io
+gitrepositories.source.toolkit.fluxcd.io
+helmcharts.source.toolkit.fluxcd.io
+helmreleases.helm.toolkit.fluxcd.io
+helmrepositories.source.toolkit.fluxcd.io
+kustomizations.kustomize.toolkit.fluxcd.io
+ocirepositories.source.toolkit.fluxcd.io
+providers.notification.toolkit.fluxcd.io
+receivers.notification.toolkit.fluxcd.io

@@ -1,0 +1,11 @@
+./apps/sample-app/base/configmap.yaml
+./apps/sample-app/base/deployment.yaml
+./apps/sample-app/base/kustomization.yaml
+./apps/sample-app/base/service.yaml
+./apps/sample-app/overlays/blue/configmap-patch.yaml
+./apps/sample-app/overlays/blue/deployment-patch.yaml
+./apps/sample-app/overlays/blue/kustomization.yaml
+./apps/sample-app/overlays/green/configmap-patch.yaml
+./apps/sample-app/overlays/green/deployment-patch.yaml
+./apps/sample-app/overlays/green/kustomization.yaml
+./traffic-router/production-service.yaml

@@ -1,0 +1,1 @@
+{"app": "sample-app-green", "revision": "2c78592", "namespace": "green-env", "desired": 3, "running": 3, "alias": "sample-app.green-env", "sync": "Synced", "health": "Healthy"}

@@ -1,0 +1,4 @@
+7830c0a Revert "release: green v2.1 (bad)"
+2c78592 release: green v2.1 (bad)
+ee57bca traffic: switch production to green
+a3bfa14 Blue-green repo: base, overlays, traffic-router (ExternalName -> blue), Argo CD apps

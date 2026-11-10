@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: production-service
+  namespace: default
+  annotations: {gitops/active-environment: green}
+spec:
+  type: ExternalName
+  externalName: sample-app.green-env.svc.cluster.local

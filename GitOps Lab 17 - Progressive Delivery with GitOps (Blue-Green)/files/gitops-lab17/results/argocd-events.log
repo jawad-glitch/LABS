@@ -1,0 +1,8 @@
+09:29:38 [sample-app-blue] rev a3bfa14 blue-env/sample-app 3/3 pods, alias sample-app.blue-env, Healthy
+09:29:40 [sample-app-green] rev a3bfa14 green-env/sample-app 3/3 pods, alias sample-app.green-env, Healthy
+09:29:42 [traffic-router] rev a3bfa14 production-service -> sample-app.blue-env.svc.cluster.local
+09:29:44 [traffic-router] rev a3bfa14 production-service -> sample-app.blue-env.svc.cluster.local
+09:29:45 [traffic-router] rev ee57bca production-service -> sample-app.green-env.svc.cluster.local
+09:29:50 [sample-app-green] rev ee57bca green-env/sample-app 3/3 pods, alias sample-app.green-env, Healthy
+09:29:52 [sample-app-green] rev 2c78592 green-env/sample-app 3/3 pods, alias sample-app.green-env, Healthy
+09:29:54 [sample-app-green] rev 7830c0a green-env/sample-app 3/3 pods, alias sample-app.green-env, Healthy

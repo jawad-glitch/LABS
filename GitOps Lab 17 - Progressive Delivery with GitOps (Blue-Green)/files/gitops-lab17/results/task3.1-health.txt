@@ -1,0 +1,8 @@
+HEALTH CHECK PASSED: blue
+exit=0
+(green scaled to 0 replicas)
+HEALTH CHECK FAILED: green - only 0/3 replicas Ready
+exit=1
+(green restored to 3 via sync)
+HEALTH CHECK PASSED: green
+exit=0

@@ -1,0 +1,5 @@
+kubectl present
+yq v4.54.3 installed (sha256 OK)
+kubeconform installed
+argocd v3.6.1 installed (sha256 OK)
+yq (https://github.com/mikefarah/yq/) version v4.54.3

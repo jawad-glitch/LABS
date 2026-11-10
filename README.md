@@ -98,3 +98,4 @@
 | [GitOps Lab 14 - GitOps Rollback with Git History](GitOps%20Lab%2014%20-%20GitOps%20Rollback%20with%20Git%20History/PROOF.md) | CORE: 10/12 PASS | 2026-11-10 09:11 |
 | [GitOps Lab 15 - Observability in GitOps](GitOps%20Lab%2015%20-%20Observability%20in%20GitOps/PROOF.md) | CORE: 12/12 PASS | 2026-11-10 09:22 |
 | [GitOps Lab 16 - Troubleshooting GitOps Workflows](GitOps%20Lab%2016%20-%20Troubleshooting%20GitOps%20Workflows/PROOF.md) | CORE: 11/12 PASS | 2026-11-10 09:26 |
+| [GitOps Lab 17 - Progressive Delivery with GitOps (Blue-Green)](GitOps%20Lab%2017%20-%20Progressive%20Delivery%20with%20GitOps%20%28Blue-Green%29/PROOF.md) | CORE: 9/10 PASS | 2026-11-10 09:30 |

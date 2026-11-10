@@ -1,0 +1,12 @@
+========== CORE CHECKS (GitOps Lab 17 - Progressive Delivery with GitOps (Blue-Green), 2026-11-10 09:29:55 UTC) - CLUSTER/ARGO CD SIMULATED, PODS + TRAFFIC + GIT REAL ==========
+PASS: Task 1: argocd v3.6.1, kubectl, kubeconform, yq v4.54.3 (sha256); lab docker.list uses 'jammy' on noble
+FAIL: Task 2.1: exact layout (base 4 files, 2 overlays x 3 files, argocd-apps/*); blue-env/green-env builds with environment label; schema-valid
+PASS: Task 2.1: 3 Applications (envs automated+prune+CreateNamespace; traffic-router +selfHeal) CRD-valid; pushed to remote
+PASS: Task 2.1 acceptance [real pods]: 3 blue pods serve Environment: Blue v1.0; 3 green pods serve Environment: Green v2.0
+PASS: Task 2.2: switch blue -> production serves Blue; switch green -> Green (through the production entry point, not pod IPs)
+PASS: Task 2.2: invalid-arg exits 1 with usage; each switch is a Git commit (traffic-router stays Synced)
+PASS: Task 3.1: validate-health blue PASSED (0); green at 0 replicas FAILED (1); restored PASSED (0)
+PASS: Task 3.2: bad release live - green body is exactly BROKEN (also via production)
+PASS: Task 3.2: git revert -> green Synced/Healthy serving v2.0 (bad commit kept in history, no kubectl patch)
+PASS: Time: finished in 44s (<= 300s)
+CORE: 9/10 PASS

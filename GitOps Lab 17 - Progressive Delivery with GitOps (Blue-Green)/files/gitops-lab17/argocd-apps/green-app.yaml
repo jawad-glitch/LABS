@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app-green
+spec:
+  destination:
+    namespace: green-env
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/sample-app/overlays/green
+    repoURL: http://172.17.0.1:8771/gitops-blue-green.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true

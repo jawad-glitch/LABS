@@ -1,0 +1,2 @@
+blue-env: 3 pods | pod 172.18.0.4: Environment: Blue Version: v1.0
+green-env: 3 pods | pod 172.18.0.7: Environment: Green Version: v2.0

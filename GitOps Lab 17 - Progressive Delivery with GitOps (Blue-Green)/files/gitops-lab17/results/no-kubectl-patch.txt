@@ -1,0 +1,2 @@
+switch-traffic.sh:0
+validate-health.sh:0

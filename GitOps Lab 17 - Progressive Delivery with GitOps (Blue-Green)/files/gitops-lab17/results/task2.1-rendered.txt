@@ -1,0 +1,2 @@
+blue.yaml blue-env replicas 3 selector {'app': 'sample-app', 'environment': 'blue'}
+green.yaml green-env replicas 3 selector {'app': 'sample-app', 'environment': 'green'}

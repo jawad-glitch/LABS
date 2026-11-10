@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-app-html
+data:
+  index.html: |
+    <html><body><h1>Sample App</h1></body></html>

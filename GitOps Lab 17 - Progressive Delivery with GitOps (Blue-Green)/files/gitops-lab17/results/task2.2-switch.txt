@@ -1,0 +1,8 @@
+Active environment: blue
+production -> Environment: Blue Version: v1.0 | router Synced blue
+Active environment: green
+production -> Environment: Green Version: v2.0 | router Synced green
+Usage: ./switch-traffic.sh blue|green  (got: 'invalid-arg')
+invalid-arg exit=1
+ee57bca traffic: switch production to green
+a3bfa14 Blue-green repo: base, overlays, traffic-router (ExternalName -> blue), Argo CD apps

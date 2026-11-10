@@ -1,0 +1,9 @@
+name: ci
+on: {push: {branches: [main], paths: [app-source/**]}}
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    permissions: {contents: write}
+    steps:
+    - uses: actions/checkout@v4
+    - run: ./ci-pipeline.sh "${{ github.event.head_commit.message }}"

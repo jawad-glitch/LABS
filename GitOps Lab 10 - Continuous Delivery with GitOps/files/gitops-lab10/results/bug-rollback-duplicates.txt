@@ -1,0 +1,2 @@
+Deployment/gitops-demo-app appears 2 times
+ConfigMap/app-content appears 2 times

@@ -1,0 +1,1 @@
+{"revision": "c55193e", "template": "1a24c474b4", "configmap": "app-content-7f469c25f4", "image": "nginx:1.27-alpine", "desired": 2, "running": 2, "sync": "Synced", "health": "Healthy"}

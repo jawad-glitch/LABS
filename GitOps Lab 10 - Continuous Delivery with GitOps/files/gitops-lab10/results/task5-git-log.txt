@@ -1,0 +1,5 @@
+16c1422 CI: release 1.0.3 - Feature update #3 - Enhanced functionality
+6af6447 CI: release 1.0.2 - Feature update #2 - Enhanced functionality
+c55193e CI: release 1.0.1 - Feature update #1 - Enhanced functionality
+18d9196 Add Argo CD Application (http repoURL)
+55bb950 Initial commit: GitOps demo application setup

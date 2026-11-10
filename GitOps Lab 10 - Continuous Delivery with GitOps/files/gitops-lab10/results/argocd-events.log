@@ -1,0 +1,28 @@
+08:49:31 [gitops-demo-app] rev 18d9196 OutOfSync -> rolling out template 59dab19d97 (configMap app-content-46bd5cg6hf, image nginx:1.27-alpine)
+08:49:34 [gitops-demo-app] rev 18d9196 pod created
+08:49:34 [gitops-demo-app] rev 18d9196 pod created
+08:49:34 [gitops-demo-app] rev 18d9196 Synced/Healthy running=2
+08:49:36 [gitops-demo-app] rev c55193e OutOfSync -> rolling out template 1a24c474b4 (configMap app-content-7f469c25f4, image nginx:1.27-alpine)
+08:49:36 [gitops-demo-app] rev c55193e pod created
+08:49:37 [gitops-demo-app] rev c55193e pod created
+08:49:37 [gitops-demo-app] rev c55193e old pod cdd66fa64098 removed
+08:49:38 [gitops-demo-app] rev c55193e old pod e8efe39fab34 removed
+08:49:38 [gitops-demo-app] rev c55193e Synced/Healthy running=2
+08:49:39 [gitops-demo-app] rev 6af6447 OutOfSync -> rolling out template 1716cff0ce (configMap app-content-9k75dmdk2b, image nginx:1.27-alpine)
+08:49:40 [gitops-demo-app] rev 6af6447 pod created
+08:49:40 [gitops-demo-app] rev 6af6447 pod created
+08:49:40 [gitops-demo-app] rev 6af6447 old pod f263f31d54ab removed
+08:49:41 [gitops-demo-app] rev 6af6447 old pod 16a04224ac4e removed
+08:49:41 [gitops-demo-app] rev 6af6447 Synced/Healthy running=2
+08:49:42 [gitops-demo-app] rev 16c1422 OutOfSync -> rolling out template 1b5b85d787 (configMap app-content-kgdmt6k7hm, image nginx:1.27-alpine)
+08:49:43 [gitops-demo-app] rev 16c1422 pod created
+08:49:43 [gitops-demo-app] rev 16c1422 pod created
+08:49:44 [gitops-demo-app] rev 16c1422 old pod 6cdc5c7f4bdd removed
+08:49:44 [gitops-demo-app] rev 16c1422 old pod 4e495f5c83f9 removed
+08:49:44 [gitops-demo-app] rev 16c1422 Synced/Healthy running=2
+08:49:45 [gitops-demo-app] rev 92972d1 OutOfSync -> rolling out template 68640b306e (configMap app-content-kgdmt6k7hm, image nginx:nonexistent-tag)
+08:49:45 [gitops-demo-app] rev 92972d1 new pod FAILED (nginx:nonexistent-tag): Run 'docker run --help' for more information - old pods kept serving
+08:49:45 [gitops-demo-app] rev 92972d1 OutOfSync/Degraded running=2
+08:49:46 [gitops-demo-app] rev 92972d1 OutOfSync -> rolling out template 68640b306e (configMap app-content-kgdmt6k7hm, image nginx:nonexistent-tag)
+08:49:46 [gitops-demo-app] rev 92972d1 new pod FAILED (nginx:nonexistent-tag): Run 'docker run --help' for more information - old pods kept serving
+08:49:46 [gitops-demo-app] rev 92972d1 OutOfSync/Degraded running=2

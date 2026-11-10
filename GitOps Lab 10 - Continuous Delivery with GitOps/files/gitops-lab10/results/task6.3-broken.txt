@@ -1,0 +1,2 @@
+during broken release pods serve:Version: 1.0.3 Version: 1.0.3
+after revert pods serve:Version: 1.0.3 Version: 1.0.3

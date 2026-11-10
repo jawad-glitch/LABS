@@ -1,0 +1,2 @@
+fatal: not a git repository (or any of the parent directories): .git
+cp -r ~/gitops-lab/* /tmp/gitops-lab/ -> .git copied: NO (git rev-parse rc=128)

@@ -1,0 +1,1 @@
+{"revision": "92972d1", "template": "68640b306e", "configmap": "app-content-kgdmt6k7hm", "image": "nginx:nonexistent-tag", "desired": 2, "running": 2, "sync": "OutOfSync", "health": "Degraded"}

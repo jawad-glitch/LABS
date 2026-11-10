@@ -1,0 +1,5 @@
+=== GitOps Lab Test Report (real state) - Tue Nov 10 08:49:47 UTC 2026 ===
+Test 2 Deployment: running=2 desired=2 -> PASS
+Test 3 Sync: OutOfSync/Degraded -> FAIL
+Test 4 Serving: Version: 1.0.3 Version: 1.0.3 -> PASS
+Test 5 Git: 6 commits -> PASS

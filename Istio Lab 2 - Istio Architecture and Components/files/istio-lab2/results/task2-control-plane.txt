@@ -1,0 +1,8 @@
+ISTIO_SYSTEM_DEPLOYMENTS ['istio-ingressgateway', 'istiod']
+ISTIOD_LABELS istiod pilot
+ISTIOD_IMAGE docker.io/istio/pilot:1.32.0
+ISTIOD_CONTAINER_PORTS [8080, 15010, 15012, 15014, 15017]
+ISTIOD_READINESS port=8080 path=/ready
+ISTIOD_SERVICE_PORTS [('grpc-xds', 15010), ('http-monitoring', 15014), ('https-dns', 15012), ('https-webhook', 443)]
+MESH_accessLogFile ''
+WEBHOOKS ['istio-sidecar-injector', 'istio-validator-istio-system', 'istiod-default-validator']

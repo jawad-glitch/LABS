@@ -1,0 +1,4 @@
+admin /ready: LIVE
+listeners: virtualInbound::0.0.0.0:15006
+clusters: inbound|80||::127.0.0.1:80::health_flags::healthy
+http.inbound_0.0.0.0_80.downstream_rq_2xx: 5

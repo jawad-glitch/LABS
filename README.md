@@ -102,3 +102,4 @@
 | [GitOps Lab 18 - Progressive Delivery with GitOps (Canary)](GitOps%20Lab%2018%20-%20Progressive%20Delivery%20with%20GitOps%20%28Canary%29/PROOF.md) | CORE: 11/12 PASS | 2026-11-10 09:44 |
 | [GitOps Lab 20 - Disaster Recovery with GitOps](GitOps%20Lab%2020%20-%20Disaster%20Recovery%20with%20GitOps/PROOF.md) | CORE: 11/11 PASS | 2026-11-10 09:53 |
 | [Istio Lab 1 - Istio Overview and Setup](Istio%20Lab%201%20-%20Istio%20Overview%20and%20Setup/PROOF.md) | CORE: 9/11 PASS | 2026-11-10 10:05 |
+| [Istio Lab 2 - Istio Architecture and Components](Istio%20Lab%202%20-%20Istio%20Architecture%20and%20Components/PROOF.md) | CORE: 9/12 PASS | 2026-11-10 10:11 |

@@ -1,0 +1,14 @@
+========== CORE CHECKS (Istio Lab 2 - Istio Architecture and Components, 2026-11-10 10:11:28 UTC) - CLUSTER SIMULATED, ISTIO TOOLING + ENVOY REAL ==========
+PASS: Task 1: istioctl 1.32.0 (sha256) works offline; istio/pilot + istio/proxyv2 1.32.0 images pulled
+PASS: Task 2.1: istio-system = istiod + istio-ingressgateway only (lab expected-output 'istio-proxy-xxx' pod does not exist)
+PASS: Task 2.2-2.4: istiod label app=istiod; service exposes 15010/15012/15014 (+443 webhook)
+PASS: Lab bug: istiod readiness is :8080/ready, not 15014/ready
+FAIL: Lab bug: istiod image is distroless - no sh/curl (kubectl exec ... curl fails)
+FAIL: Task 3.3/3.4 (real injector): istio-proxy gets admin/status/metrics ports; readiness 15021/healthz/ready
+PASS: Task 5.2 (real Envoy version: 74027068e941c7a295be2bb7938f53fe4722a593/1.40.3-dev/Clean/RELEASE/BoringSSL): admin /ready LIVE; virtualInbound listener; inbound|80|| cluster healthy
+PASS: Task 6.1: 5 requests through the Envoy sidecar -> 5 x HTTP 200; Envoy stats count them
+PASS: Lab bug: default mesh accessLogFile empty -> no access logs (0 lines for 5 requests)
+FAIL: Fix: access logging enabled (Telemetry resource, schema-valid) -> 5 access log lines
+PASS: Tool availability in proxyv2 recorded (curl/netstat/pilot-agent); istioctl flags recorded; full-mode script parses
+PASS: Time: finished in 115s (<= 300s)
+CORE: 9/12 PASS

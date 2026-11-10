@@ -1,0 +1,2 @@
+istio/pilot:1.32.0 sh=yes curl=yes
+istio/proxyv2:1.32.0 sh=yes curl=yes netstat=yes pilot-agent=yes envoy=yes

@@ -1,0 +1,4 @@
+istioctl proxy-status --revision: NOT available
+istioctl proxy-config listener: available
+istioctl proxy-config route: available
+istioctl proxy-config endpoint: available

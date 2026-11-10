@@ -1,0 +1,2 @@
+ansible [core 2.16.20]
+ansible-lint 24.2.3 using ansible-core:2.16.20 ansible-compat:26.11.0 ruamel-yaml:0.19.1 ruamel-yaml-clib:None

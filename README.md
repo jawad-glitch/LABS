@@ -77,3 +77,4 @@
 | [Lab 13 - Debugging with Cilium Flow Visibility](Lab%2013%20-%20Debugging%20with%20Cilium%20Flow%20Visibility/PROOF.md) | CORE: 9/10 PASS | 2026-11-09 15:18 |
 | [Lab 14 - Integrating Cilium with Envoy Proxy](Lab%2014%20-%20Integrating%20Cilium%20with%20Envoy%20Proxy/PROOF.md) | CORE: 10/11 PASS | 2026-11-09 15:23 |
 | [Vagrant - Reproducible Multi-Machine Environments](Vagrant%20-%20Reproducible%20Multi-Machine%20Environments/PROOF.md) | CORE: 5/7 PASS | 2026-11-10 06:32 |
+| [Ansible Configuration Management - Multi-Tier Platform](Ansible%20Configuration%20Management%20-%20Multi-Tier%20Platform/PROOF.md) | CORE: 11/12 PASS | 2026-11-10 06:56 |

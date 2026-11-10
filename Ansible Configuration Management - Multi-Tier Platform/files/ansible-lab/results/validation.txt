@@ -1,0 +1,19 @@
+PASS  T1 three managed nodes are running
+PASS  T1 all nodes answer ansible ping
+PASS  T1 inventory has webservers and dbservers
+PASS  T2 alice is in devops on every node
+PASS  T2 root SSH login disabled everywhere
+PASS  T3 custom fact present on every node
+PASS  T3 web2 overrides app_env via host_vars
+PASS  T4 web tier serves the Acme Shop page
+PASS  T4 health endpoint answers ok
+PASS  T5 database password file is vault-encrypted
+PASS  T5 appuser reaches appdb from web1
+PASS  T6 status page deployed and playbook lint-clean
+PASS  T7 both web nodes serve version 1.1.0
+PASS  T7 deploy playbook has rescue/rollback
+PASS  T8 site.yml is idempotent (changed=0 x3)
+PASS  T8 whole project passes ansible-lint
+PASS  T8 inventory report generated
+----------------------------------------
+Passed: 17   Failed: 0

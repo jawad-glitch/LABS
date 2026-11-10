@@ -1,0 +1,14 @@
+========== CORE CHECKS (Ansible Configuration Management - Multi-Tier Platform, 2026-11-10 06:56:43 UTC) ==========
+PASS: Task 1: web1/web2/db1 systemd nodes running, ansible ping OK, inventory groups present
+PASS: Task 2: alice in devops on all 3 nodes; PermitRootLogin no everywhere
+PASS: Task 3: custom fact team=platform on all nodes; web2 app_env=canary (host_vars wins)
+PASS: Task 4: webserver role - Acme Shop on 8081/8082, /healthz ok
+PASS: Task 5: vault-encrypted secret; appuser reaches appdb on db1 from web1
+PASS: Task 6: repaired playbook deploys status page and is lint-clean
+PASS: Task 7: rolling deploy (serial 1, rescue rollback) - both nodes serve 1.1.0
+PASS: Task 8: site.yml idempotent (changed=0 on 3 hosts)
+PASS: Task 8: whole project passes ansible-lint
+PASS: Task 8: inventory report rendered with web1 and db1 rows
+PASS: Validation: 17/17 checklist items PASS
+FAIL: Timing: completed in 1005s (<= 300s)
+CORE: 11/12 PASS

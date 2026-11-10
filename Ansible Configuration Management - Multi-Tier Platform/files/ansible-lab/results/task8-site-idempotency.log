@@ -1,0 +1,156 @@
+
+PLAY [Apply baseline configuration] ********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web1]
+ok: [web2]
+ok: [db1]
+
+TASK [Install baseline packages] ***********************************************
+ok: [db1]
+ok: [web2]
+ok: [web1]
+
+TASK [Create admin group] ******************************************************
+ok: [db1]
+ok: [web2]
+ok: [web1]
+
+TASK [Create admin users] ******************************************************
+ok: [db1] => (item=alice)
+ok: [web2] => (item=alice)
+ok: [web1] => (item=alice)
+ok: [web1] => (item=bob)
+ok: [web2] => (item=bob)
+ok: [db1] => (item=bob)
+
+TASK [Grant admin group sudo rights] *******************************************
+ok: [web2]
+ok: [web1]
+ok: [db1]
+
+TASK [Deploy message of the day] ***********************************************
+ok: [web1]
+ok: [web2]
+ok: [db1]
+
+TASK [Harden SSH daemon] *******************************************************
+ok: [web1] => (item=PermitRootLogin)
+ok: [db1] => (item=PermitRootLogin)
+ok: [web2] => (item=PermitRootLogin)
+ok: [web1] => (item=PasswordAuthentication)
+ok: [web2] => (item=PasswordAuthentication)
+ok: [db1] => (item=PasswordAuthentication)
+ok: [web1] => (item=X11Forwarding)
+ok: [web2] => (item=X11Forwarding)
+ok: [db1] => (item=X11Forwarding)
+
+PLAY [Publish custom facts and summarise hosts] ********************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web1]
+ok: [db1]
+ok: [web2]
+
+TASK [Create custom facts directory] *******************************************
+ok: [web2]
+ok: [web1]
+ok: [db1]
+
+TASK [Deploy lab custom fact] **************************************************
+ok: [web1]
+ok: [db1]
+ok: [web2]
+
+TASK [Flush handlers so new facts are available now] ***************************
+
+TASK [Flush handlers so new facts are available now] ***************************
+
+TASK [Flush handlers so new facts are available now] ***************************
+
+TASK [Measure uptime] **********************************************************
+ok: [db1]
+ok: [web2]
+ok: [web1]
+
+TASK [Build host summary] ******************************************************
+ok: [web1]
+ok: [web2]
+ok: [db1]
+
+TASK [Print host summary] ******************************************************
+ok: [web1] => {
+    "host_summary": "web1 | tier=webservers | team=platform | env=staging | up 21 minutes"
+}
+ok: [web2] => {
+    "host_summary": "web2 | tier=webservers | team=platform | env=canary | up 21 minutes"
+}
+ok: [db1] => {
+    "host_summary": "db1 | tier=dbservers | team=platform | env=dev | up 21 minutes"
+}
+
+PLAY [Configure web tier] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web1]
+ok: [web2]
+
+TASK [webserver : Install nginx] ***********************************************
+ok: [web1]
+ok: [web2]
+
+TASK [webserver : Create document root] ****************************************
+ok: [web1]
+ok: [web2]
+
+TASK [webserver : Deploy virtual host] *****************************************
+ok: [web1]
+ok: [web2]
+
+TASK [webserver : Enable virtual host] *****************************************
+ok: [web1]
+ok: [web2]
+
+TASK [webserver : Disable default site] ****************************************
+ok: [web2]
+ok: [web1]
+
+TASK [webserver : Deploy index page] *******************************************
+ok: [web1]
+ok: [web2]
+
+TASK [webserver : Record deployed version] *************************************
+ok: [web1]
+ok: [web2]
+
+TASK [webserver : Ensure nginx is running and enabled] *************************
+ok: [web2]
+ok: [web1]
+
+PLAY [Configure database tier] *************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [db1]
+
+TASK [database : Install MariaDB server and Python driver] *********************
+ok: [db1]
+
+TASK [database : Configure listen address] *************************************
+ok: [db1]
+
+TASK [database : Ensure MariaDB is running and enabled] ************************
+ok: [db1]
+
+TASK [database : Apply pending MariaDB restart before creating objects] ********
+
+TASK [database : Create application database] **********************************
+ok: [db1]
+
+TASK [database : Create application user] **************************************
+ok: [db1]
+
+PLAY RECAP *********************************************************************
+db1                        : ok=19   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web1                       : ok=22   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web2                       : ok=22   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

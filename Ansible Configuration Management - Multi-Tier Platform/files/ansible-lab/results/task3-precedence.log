@@ -1,0 +1,24 @@
+
+PLAY [Show variable precedence] ************************************************
+
+TASK [Show the effective app_env of each host] *********************************
+ok: [web1] => {
+    "msg": "web1 -> app_env=staging"
+}
+ok: [web2] => {
+    "msg": "web2 -> app_env=canary"
+}
+ok: [db1] => {
+    "msg": "db1 -> app_env=dev"
+}
+
+TASK [Read another host's variable through hostvars] ***************************
+ok: [web1] => {
+    "msg": "db1 sees web2 as canary; webservers = ['web1', 'web2']"
+}
+
+PLAY RECAP *********************************************************************
+db1                        : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web2                       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

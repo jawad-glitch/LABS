@@ -1,0 +1,29 @@
+
+PLAY [Configure database tier] *************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [db1]
+
+TASK [database : Install MariaDB server and Python driver] *********************
+changed: [db1]
+
+TASK [database : Configure listen address] *************************************
+changed: [db1]
+
+TASK [database : Ensure MariaDB is running and enabled] ************************
+changed: [db1]
+
+TASK [database : Apply pending MariaDB restart before creating objects] ********
+
+RUNNING HANDLER [database : Restart mariadb] ***********************************
+changed: [db1]
+
+TASK [database : Create application database] **********************************
+changed: [db1]
+
+TASK [database : Create application user] **************************************
+changed: [db1]
+
+PLAY RECAP *********************************************************************
+db1                        : ok=7    changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

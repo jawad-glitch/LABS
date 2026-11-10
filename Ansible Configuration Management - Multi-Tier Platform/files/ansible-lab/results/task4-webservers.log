@@ -1,0 +1,51 @@
+
+PLAY [Configure web tier] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web1]
+ok: [web2]
+
+TASK [webserver : Install nginx] ***********************************************
+changed: [web2]
+changed: [web1]
+
+TASK [webserver : Create document root] ****************************************
+changed: [web1]
+changed: [web2]
+
+TASK [webserver : Deploy virtual host] *****************************************
+changed: [web1]
+changed: [web2]
+
+TASK [webserver : Enable virtual host] *****************************************
+changed: [web2]
+changed: [web1]
+
+TASK [webserver : Disable default site] ****************************************
+changed: [web1]
+changed: [web2]
+
+TASK [webserver : Deploy index page] *******************************************
+changed: [web1]
+changed: [web2]
+
+TASK [webserver : Record deployed version] *************************************
+changed: [web1]
+changed: [web2]
+
+TASK [webserver : Ensure nginx is running and enabled] *************************
+changed: [web2]
+changed: [web1]
+
+RUNNING HANDLER [webserver : Check nginx configuration] ************************
+ok: [web2]
+ok: [web1]
+
+RUNNING HANDLER [webserver : Reload nginx] *************************************
+changed: [web1]
+changed: [web2]
+
+PLAY RECAP *********************************************************************
+web1                       : ok=11   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web2                       : ok=11   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

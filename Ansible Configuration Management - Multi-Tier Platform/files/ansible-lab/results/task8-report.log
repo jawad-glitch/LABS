@@ -1,0 +1,16 @@
+
+PLAY [Generate inventory report on the control node] ***************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web1]
+ok: [web2]
+ok: [db1]
+
+TASK [Render report] ***********************************************************
+changed: [web1 -> localhost(127.0.0.1)]
+
+PLAY RECAP *********************************************************************
+db1                        : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web1                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web2                       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

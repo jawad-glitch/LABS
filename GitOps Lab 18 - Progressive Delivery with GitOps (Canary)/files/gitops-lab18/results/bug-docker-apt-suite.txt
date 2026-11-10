@@ -1,0 +1,1 @@
+VM codename: noble (lab docker.list: jammy)

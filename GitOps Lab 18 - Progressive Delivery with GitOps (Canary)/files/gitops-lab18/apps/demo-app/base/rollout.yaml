@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: demo-app
+spec:
+  replicas: 5
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels: {app: demo-app}
+  template:
+    metadata:
+      labels: {app: demo-app}
+    spec:
+      containers:
+      - name: demo-app
+        image: demo-app:v1.0
+        ports: [{name: http, containerPort: 80}]
+        readinessProbe: {httpGet: {path: /health, port: 80}, periodSeconds: 3}
+  strategy:
+    canary:
+      canaryService: demo-app-canary
+      stableService: demo-app-stable
+      trafficRouting:
+        nginx:
+          stableIngress: demo-app
+          additionalIngressAnnotations:
+            canary-by-header: X-Canary
+            canary-by-header-value: "true"
+      steps:
+      - setWeight: 20
+      - pause: {}
+      - setWeight: 40
+      - pause: {}
+      - setWeight: 60
+      - pause: {}
+      - setWeight: 80
+      - pause: {}

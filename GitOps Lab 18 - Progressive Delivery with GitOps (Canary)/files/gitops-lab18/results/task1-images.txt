@@ -1,0 +1,4 @@
+built demo-app:v1.0 (health ok)
+built demo-app:v2.0 (health ok)
+built demo-app:v3.0 (health ok)
+built demo-app:v4.0 (health degraded)

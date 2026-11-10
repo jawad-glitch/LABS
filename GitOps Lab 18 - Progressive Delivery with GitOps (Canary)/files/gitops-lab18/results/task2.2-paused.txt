@@ -1,0 +1,1 @@
+STATUS phase=Paused step=1 weight=20 stable=demo-app:v1.0 canary=demo-app:v2.0 pods={"demo-app:v1.0": 5, "demo-app:v2.0": 1} lastAnalysis=- 

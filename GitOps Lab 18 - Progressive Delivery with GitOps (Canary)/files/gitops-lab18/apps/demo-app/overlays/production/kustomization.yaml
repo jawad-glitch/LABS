@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: production
+resources:
+- ../../base
+- analysis-template.yaml
+patches:
+- path: image-patch.yaml
+  target: {kind: Rollout, name: demo-app}
+- path: steps-patch.yaml
+  target: {kind: Rollout, name: demo-app}

@@ -1,0 +1,142 @@
+{
+ "stable": "demo-app:v3.0",
+ "canary": null,
+ "spec_image": "demo-app:v3.0",
+ "step": 0,
+ "weight": 0,
+ "phase": "Healthy",
+ "pods": {
+  "stable": [
+   "8e49695037382d5644d590cf18f95dec8a42b8fe2c8e52a2ebc943401768d239",
+   "91a33b7c6d34ba13f2533ca09b4c9edafedd1611f32270dcfd5b5198d9e0782e",
+   "9db5802dcb736279450656510be8bda1f52f58acbea7702e1d7634f406850872",
+   "bcf05be17bf85f27225525230352b9780e1574ed24687768975813c7d4cbbd70",
+   "7ec6c4d19e3e2c2be6a34bca63ab3716344ecbd92118a73f173a01981740b393"
+  ],
+  "canary": []
+ },
+ "revisions": [
+  "demo-app:v1.0",
+  "demo-app:v2.0",
+  "demo-app:v3.0"
+ ],
+ "runs": [
+  {
+   "name": "demo-app-v3.0-1",
+   "template": "health-check",
+   "condition": "result.status == \"ok\"",
+   "measurements": [
+    {
+     "value": "{\"status\":\"ok\",\"version\":\"v3.0\"}",
+     "phase": "Successful"
+    },
+    {
+     "value": "{\"status\":\"ok\",\"version\":\"v3.0\"}",
+     "phase": "Successful"
+    },
+    {
+     "value": "{\"status\":\"ok\",\"version\":\"v3.0\"}",
+     "phase": "Successful"
+    }
+   ],
+   "phase": "Successful"
+  },
+  {
+   "name": "demo-app-v4.0-2",
+   "template": "health-check",
+   "condition": "result.status == \"ok\"",
+   "measurements": [
+    {
+     "value": "{\"status\":\"degraded\",\"version\":\"v4.0\"}",
+     "phase": "Failed"
+    },
+    {
+     "value": "{\"status\":\"degraded\",\"version\":\"v4.0\"}",
+     "phase": "Failed"
+    }
+   ],
+   "phase": "Failed"
+  },
+  {
+   "name": "demo-app-v4.0-3",
+   "template": "health-check",
+   "condition": "result.status == \"ok\"",
+   "measurements": [
+    {
+     "value": "{\"status\":\"degraded\",\"version\":\"v4.0\"}",
+     "phase": "Failed"
+    },
+    {
+     "value": "{\"status\":\"degraded\",\"version\":\"v4.0\"}",
+     "phase": "Failed"
+    }
+   ],
+   "phase": "Failed"
+  }
+ ],
+ "replicas": 5,
+ "steps": [
+  {
+   "setWeight": 20
+  },
+  {
+   "analysis": {
+    "templates": [
+     {
+      "templateName": "health-check"
+     }
+    ]
+   }
+  },
+  {
+   "setWeight": 40
+  },
+  {
+   "pause": {}
+  },
+  {
+   "setWeight": 60
+  },
+  {
+   "pause": {
+    "duration": "10s"
+   }
+  },
+  {
+   "setWeight": 80
+  },
+  {
+   "pause": {
+    "duration": "10s"
+   }
+  }
+ ],
+ "templates": {
+  "health-check": {
+   "apiVersion": "argoproj.io/v1alpha1",
+   "kind": "AnalysisTemplate",
+   "metadata": {
+    "name": "health-check",
+    "namespace": "production"
+   },
+   "spec": {
+    "metrics": [
+     {
+      "count": 3,
+      "failureLimit": 1,
+      "interval": "5s",
+      "name": "health",
+      "provider": {
+       "web": {
+        "timeoutSeconds": 5,
+        "url": "http://demo-app-canary.production.svc.cluster.local/health"
+       }
+      },
+      "successCondition": "result.status == \"ok\""
+     }
+    ]
+   }
+  }
+ },
+ "git_rev": "0198e78"
+}

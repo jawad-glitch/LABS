@@ -1,0 +1,4 @@
+kubectl present
+kubeconform installed
+kubectl-argo-rollouts v1.10.2 sha256 OK
+argocd v3.6.1 installed (sha256 OK)

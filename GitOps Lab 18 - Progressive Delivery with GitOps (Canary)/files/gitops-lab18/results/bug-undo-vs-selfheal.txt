@@ -1,0 +1,4 @@
+STATUS phase=Degraded step=1 weight=0 stable=demo-app:v3.0 canary=demo-app:v4.0 pods={"demo-app:v3.0": 5} lastAnalysis=Failed manual abort
+STATUS phase=Healthy step=0 weight=0 stable=demo-app:v3.0 canary=None pods={"demo-app:v3.0": 5} lastAnalysis=Failed 
+-- Argo CD selfHeal (live spec != Git) --
+STATUS phase=Degraded step=1 weight=0 stable=demo-app:v3.0 canary=demo-app:v4.0 pods={"demo-app:v3.0": 5} lastAnalysis=Failed metric "health" assessed Failed

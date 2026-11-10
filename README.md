@@ -99,3 +99,4 @@
 | [GitOps Lab 15 - Observability in GitOps](GitOps%20Lab%2015%20-%20Observability%20in%20GitOps/PROOF.md) | CORE: 12/12 PASS | 2026-11-10 09:22 |
 | [GitOps Lab 16 - Troubleshooting GitOps Workflows](GitOps%20Lab%2016%20-%20Troubleshooting%20GitOps%20Workflows/PROOF.md) | CORE: 11/12 PASS | 2026-11-10 09:26 |
 | [GitOps Lab 17 - Progressive Delivery with GitOps (Blue-Green)](GitOps%20Lab%2017%20-%20Progressive%20Delivery%20with%20GitOps%20%28Blue-Green%29/PROOF.md) | CORE: 9/10 PASS | 2026-11-10 09:30 |
+| [GitOps Lab 18 - Progressive Delivery with GitOps (Canary)](GitOps%20Lab%2018%20-%20Progressive%20Delivery%20with%20GitOps%20%28Canary%29/PROOF.md) | CORE: 11/12 PASS | 2026-11-10 09:37 |

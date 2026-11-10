@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: health-check
+spec:
+  metrics:
+  - name: health
+    interval: 5s
+    count: 3
+    failureLimit: 1
+    successCondition: result.status == "ok"
+    provider:
+      web:
+        url: http://demo-app-canary.production.svc.cluster.local/health
+        timeoutSeconds: 5

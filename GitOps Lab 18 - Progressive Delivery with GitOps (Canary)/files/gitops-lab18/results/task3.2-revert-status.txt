@@ -1,0 +1,1 @@
+STATUS phase=Healthy step=0 weight=0 stable=demo-app:v3.0 canary=None pods={"demo-app:v3.0": 5} lastAnalysis=Failed 

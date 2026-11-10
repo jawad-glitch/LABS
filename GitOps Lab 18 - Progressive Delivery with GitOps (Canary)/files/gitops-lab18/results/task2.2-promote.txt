@@ -1,0 +1,4 @@
+STATUS phase=Paused step=3 weight=40 stable=demo-app:v1.0 canary=demo-app:v2.0 pods={"demo-app:v1.0": 5, "demo-app:v2.0": 2} lastAnalysis=- 
+STATUS phase=Paused step=5 weight=60 stable=demo-app:v1.0 canary=demo-app:v2.0 pods={"demo-app:v1.0": 5, "demo-app:v2.0": 3} lastAnalysis=- 
+STATUS phase=Paused step=7 weight=80 stable=demo-app:v1.0 canary=demo-app:v2.0 pods={"demo-app:v1.0": 5, "demo-app:v2.0": 4} lastAnalysis=- 
+STATUS phase=Healthy step=0 weight=0 stable=demo-app:v2.0 canary=None pods={"demo-app:v2.0": 5} lastAnalysis=- 

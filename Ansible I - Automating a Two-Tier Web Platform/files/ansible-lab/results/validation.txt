@@ -1,0 +1,21 @@
+Running full site.yml for the idempotency check (takes a minute)...
+[PASS] Setup: ansible-core 2.15 in venv (2.16 if 2.15 cannot run on this Python)
+[PASS] Setup: web1, web2, db1 running
+[PASS] T1: project ansible.cfg is active
+[PASS] T1: inventory groups web and db
+[PASS] T2: all hosts answer ping
+[PASS] T3: alice is in devops on all hosts
+[PASS] T3: sudoers drop-in is valid
+[PASS] T4: host_vars override (web2 lightgreen)
+[PASS] T5: web1 health endpoint
+[PASS] T5: web2 health endpoint
+[PASS] T6: roles common, webserver, redis exist
+[PASS] T7: vault file is encrypted
+[PASS] T7: web nodes authenticate to Redis
+[PASS] T7: Redis rejects unauthenticated clients
+[PASS] T7: env file not world-readable
+[PASS] T8: release 1.1.0 on both web nodes
+[PASS] T8: web play is rolling (serial)
+[FAIL] T8: site.yml idempotent (no changed/failed)
+----------------------------------------
+Passed: 17   Failed: 1

@@ -1,0 +1,31 @@
+---
+- ansible.builtin.import_playbook: playbooks/bootstrap.yml
+
+- name: Common baseline
+  hosts: all
+  become: true
+  roles:
+    - role: common
+      tags: [common]
+
+- name: Cache tier
+  hosts: db
+  become: true
+  roles:
+    - role: redis
+      tags: [redis]
+
+- name: Web tier (rolling)
+  hosts: web
+  become: true
+  serial: 1
+  roles:
+    - role: webserver
+      tags: [web]
+
+- name: Load balancer
+  hosts: lb
+  become: true
+  roles:
+    - role: loadbalancer
+      tags: [lb]

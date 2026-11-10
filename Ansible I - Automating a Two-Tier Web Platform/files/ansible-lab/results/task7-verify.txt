@@ -1,0 +1,14 @@
+0
+secret not in plaintext
+db1 | CHANGED | rc=0 >>
+bind 0.0.0.0
+port 6379
+web2 | CHANGED | rc=0 >>
+PONG
+web1 | CHANGED | rc=0 >>
+PONG
+web1 | CHANGED | rc=0 >>
+NOAUTH Authentication required.
+web1 | FAILED | rc=1 >>
+cat: /etc/lab-app.env: Permission deniednon-zero return code
+<p>Cache backend: db1:6379</p>

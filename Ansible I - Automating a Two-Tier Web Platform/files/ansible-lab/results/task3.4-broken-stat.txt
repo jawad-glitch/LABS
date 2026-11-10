@@ -1,0 +1,6 @@
+web1 | SUCCESS => 
+    ansible_facts:
+        discovered_interpreter_python: /usr/bin/python3
+    changed: false
+    stat:
+        exists: false

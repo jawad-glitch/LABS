@@ -1,0 +1,14 @@
+
+playbook: site.yml
+
+  play #1 (all): Bootstrap Python on fresh nodes	TAGS: [always]
+      TASK TAGS: [always]
+
+  play #2 (all): Common baseline	TAGS: []
+      TASK TAGS: [common]
+
+  play #3 (db): Cache tier	TAGS: []
+      TASK TAGS: [redis]
+
+  play #4 (web): Web tier (rolling)	TAGS: []
+      TASK TAGS: [web]

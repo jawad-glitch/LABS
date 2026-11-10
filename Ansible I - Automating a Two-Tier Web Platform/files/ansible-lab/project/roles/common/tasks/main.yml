@@ -1,0 +1,39 @@
+---
+- name: Install baseline packages
+  ansible.builtin.apt:
+    name: "{{ baseline_packages }}"
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Ensure admin group exists
+  ansible.builtin.group:
+    name: "{{ admin_group }}"
+    state: present
+
+- name: Create admin users
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    comment: "{{ item.comment }}"
+    shell: /bin/bash
+    groups: "{{ admin_group }}"
+    append: true
+    state: present
+  loop: "{{ admin_users }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: Allow devops group to manage services
+  ansible.builtin.copy:
+    dest: /etc/sudoers.d/devops
+    content: "%devops ALL=(root) NOPASSWD: /usr/sbin/service nginx *, /usr/sbin/service redis-server *\n"
+    owner: root
+    group: root
+    mode: "0440"
+    validate: "visudo -cf %s"
+
+- name: Deploy message of the day
+  ansible.builtin.template:
+    src: motd.j2
+    dest: /etc/motd
+    mode: "0644"

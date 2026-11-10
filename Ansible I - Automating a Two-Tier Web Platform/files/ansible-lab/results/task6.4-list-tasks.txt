@@ -1,0 +1,20 @@
+
+playbook: site.yml
+
+  play #1 (all): Common baseline	TAGS: []
+    tasks:
+      common : Install baseline packages	TAGS: []
+      common : Ensure admin group exists	TAGS: []
+      common : Create admin users	TAGS: []
+      common : Allow devops group to manage services	TAGS: []
+      common : Deploy message of the day	TAGS: []
+
+  play #2 (web): Web tier	TAGS: []
+    tasks:
+      webserver : Install nginx	TAGS: []
+      webserver : Create web root	TAGS: []
+      webserver : Deploy index page	TAGS: []
+      webserver : Deploy nginx site configuration	TAGS: []
+      webserver : Enable lab site	TAGS: []
+      webserver : Disable default site	TAGS: []
+      webserver : Ensure nginx is running	TAGS: []

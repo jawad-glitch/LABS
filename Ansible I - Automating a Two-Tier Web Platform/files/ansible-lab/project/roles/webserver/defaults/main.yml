@@ -1,0 +1,6 @@
+---
+nginx_listen_port: 80
+web_root: /var/www/lab
+site_name: Lab Portal
+app_release: "1.0.0"
+app_banner_color: white

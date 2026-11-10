@@ -1,0 +1,16 @@
+========== CORE CHECKS (Ansible I - Automating a Two-Tier Web Platform, 2026-11-10 07:15:19 UTC) ==========
+PASS: Setup: venv ansible-core 2.15; image without Python; 3 nodes on 127.0.0.1; raw SSH + passwordless sudo on all 3
+PASS: Task 1: project ansible.cfg active; inventory lab > web(web1,web2), db(db1); web2 port 2222 + http 8082
+FAIL: Task 2: pre-bootstrap modules fail (python3 not found); raw bootstrap changed then idempotent; host-down + wrong-user UNREACHABLE diagnosed
+FAIL: Task 3: baseline applied then changed=0; validate blocked broken sudoers (never written); alice in devops x3; sudoers parsed OK x3
+PASS: Task 4: precedence all<group<host (lightgrey/lightblue/lightgreen), -e red wins everywhere, assert Platform supported x3
+PASS: Task 5: chained handlers validate then reload; re-run changed=0; web1 Release 1.0.0; web2 health ok; nginx -t ok x2
+PASS: Task 6: roles scaffolded by ansible-galaxy; refactor run changed=0; inventory lightgreen beats role default white
+PASS: Task 7: vault-encrypted secret (not in plaintext); redis bind 0.0.0.0/port 6379; web nodes PONG with password; NOAUTH without; env file denied to unprivileged user
+PASS: Task 8.2: drift found by --check --diff (page untouched), corrected by apply
+PASS: Task 8.3: rolling release 1.1.0 with serial 1 - web play ran twice (web1 then web2); both serve 1.1.0
+FAIL: Task 8.4: bad port contained - web1 failed in validate handler, web2 untouched (listen 80), both still healthy; recovered and converged
+FAIL: Challenge: lb1 upstream generated from inventory round-robins web1/web2; site.yml idempotent
+FAIL: Validation checklist: 18/18 PASS
+FAIL: Time: lab finished in 840s (<= 300s)
+CORE: 8/14 PASS

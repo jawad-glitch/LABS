@@ -1,0 +1,3 @@
+Python 3.12.3
+ansible [core 2.15.13]
+pin in use: 2.15

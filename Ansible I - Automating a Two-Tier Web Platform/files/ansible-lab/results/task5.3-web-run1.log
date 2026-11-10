@@ -1,0 +1,47 @@
+
+PLAY [Deploy web tier] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web1]
+ok: [web2]
+
+TASK [Install nginx] ***********************************************************
+changed: [web1]
+changed: [web2]
+
+TASK [Create web root] *********************************************************
+changed: [web1]
+changed: [web2]
+
+TASK [Deploy index page] *******************************************************
+changed: [web2]
+changed: [web1]
+
+TASK [Deploy nginx site configuration] *****************************************
+changed: [web1]
+changed: [web2]
+
+TASK [Enable lab site] *********************************************************
+changed: [web2]
+changed: [web1]
+
+TASK [Disable default site] ****************************************************
+changed: [web2]
+changed: [web1]
+
+TASK [Ensure nginx is running] *************************************************
+changed: [web1]
+changed: [web2]
+
+RUNNING HANDLER [Validate nginx configuration] *********************************
+ok: [web1]
+ok: [web2]
+
+RUNNING HANDLER [Reload nginx] *************************************************
+changed: [web1]
+changed: [web2]
+
+PLAY RECAP *********************************************************************
+web1                       : ok=10   changed=8    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web2                       : ok=10   changed=8    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

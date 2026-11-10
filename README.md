@@ -78,3 +78,4 @@
 | [Lab 14 - Integrating Cilium with Envoy Proxy](Lab%2014%20-%20Integrating%20Cilium%20with%20Envoy%20Proxy/PROOF.md) | CORE: 10/11 PASS | 2026-11-09 15:23 |
 | [Vagrant - Reproducible Multi-Machine Environments](Vagrant%20-%20Reproducible%20Multi-Machine%20Environments/PROOF.md) | CORE: 5/7 PASS | 2026-11-10 06:32 |
 | [Ansible Configuration Management - Multi-Tier Platform](Ansible%20Configuration%20Management%20-%20Multi-Tier%20Platform/PROOF.md) | CORE: 11/12 PASS | 2026-11-10 06:56 |
+| [Ansible I - Automating a Two-Tier Web Platform](Ansible%20I%20-%20Automating%20a%20Two-Tier%20Web%20Platform/PROOF.md) | CORE: 8/14 PASS | 2026-11-10 07:15 |

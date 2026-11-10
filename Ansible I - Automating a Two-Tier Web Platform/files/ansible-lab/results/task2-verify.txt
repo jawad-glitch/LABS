@@ -1,0 +1,4 @@
+3
+web2 | CHANGED | rc=0 | (stdout) Python 3.10.12
+db1 | CHANGED | rc=0 | (stdout) Python 3.10.12
+web1 | CHANGED | rc=0 | (stdout) Python 3.10.12

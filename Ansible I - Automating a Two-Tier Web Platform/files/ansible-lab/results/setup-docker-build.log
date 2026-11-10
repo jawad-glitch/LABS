@@ -1,0 +1,182 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 790B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:22.04
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/ubuntu:22.04@sha256:076e7bf82319619f28dd0aa9c02ab34b055ad37100395b4f49a2ffba04fb5e11
+#4 resolve docker.io/library/ubuntu:22.04@sha256:076e7bf82319619f28dd0aa9c02ab34b055ad37100395b4f49a2ffba04fb5e11 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 135B done
+#5 DONE 0.1s
+
+#4 [1/4] FROM docker.io/library/ubuntu:22.04@sha256:076e7bf82319619f28dd0aa9c02ab34b055ad37100395b4f49a2ffba04fb5e11
+#4 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 7.34MB / 29.75MB 0.2s
+#4 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 18.87MB / 29.75MB 0.3s
+#4 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 29.75MB / 29.75MB 0.5s
+#4 sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 29.75MB / 29.75MB 0.5s done
+#4 extracting sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f
+#4 extracting sha256:0626d3cc316c9fea3d4891e2ec19b8f371fe22ffb915622f6072a2ee2ca9017f 1.8s done
+#4 DONE 2.4s
+
+#6 [2/4] RUN apt-get update  && apt-get install -y --no-install-recommends openssh-server sudo ca-certificates  && rm -rf /var/lib/apt/lists/*  && mkdir -p /run/sshd  && useradd -m -s /bin/bash ansible  && usermod -p '*' ansible  && echo 'ansible ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/ansible  && chmod 440 /etc/sudoers.d/ansible  && mkdir -p /home/ansible/.ssh && chmod 700 /home/ansible/.ssh  && sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+#6 0.557 Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+#6 0.739 Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+#6 0.964 Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+#6 1.064 Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+#6 1.161 Get:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+#6 1.666 Get:6 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1328 kB]
+#6 1.762 Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+#6 1.780 Get:8 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+#6 1.787 Get:9 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+#6 1.840 Get:10 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [104 kB]
+#6 1.845 Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [8368 kB]
+#6 2.058 Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1631 kB]
+#6 2.091 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4844 kB]
+#6 2.215 Get:14 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+#6 2.217 Get:15 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.9 kB]
+#6 2.602 Get:16 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [8038 kB]
+#6 3.288 Get:17 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4496 kB]
+#6 3.450 Get:18 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [96.7 kB]
+#6 5.414 Fetched 49.4 MB in 5s (9868 kB/s)
+#6 5.414 Reading package lists...
+#6 7.640 Reading package lists...
+#6 9.725 Building dependency tree...
+#6 10.19 Reading state information...
+#6 10.88 The following additional packages will be installed:
+#6 10.88   libbsd0 libcbor0.8 libedit2 libfido2-1 libmd0 libwrap0 openssh-client
+#6 10.88   openssh-sftp-server openssl ucf
+#6 10.88 Suggested packages:
+#6 10.88   keychain libpam-ssh monkeysphere ssh-askpass molly-guard ufw
+#6 10.88 Recommended packages:
+#6 10.88   xauth default-logind | logind | libpam-systemd ncurses-term ssh-import-id
+#6 11.02 The following NEW packages will be installed:
+#6 11.02   ca-certificates libbsd0 libcbor0.8 libedit2 libfido2-1 libmd0 libwrap0
+#6 11.02   openssh-client openssh-server openssh-sftp-server openssl sudo ucf
+#6 11.22 0 upgraded, 13 newly installed, 0 to remove and 3 not upgraded.
+#6 11.22 Need to get 3901 kB of archives.
+#6 11.22 After this operation, 11.0 MB of additional disk space will be used.
+#6 11.22 Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 libmd0 amd64 1.0.4-1build1 [23.0 kB]
+#6 11.38 Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 libbsd0 amd64 0.11.5-1 [44.8 kB]
+#6 11.47 Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 libedit2 amd64 3.1-20210910-1build1 [96.8 kB]
+#6 11.57 Get:4 http://archive.ubuntu.com/ubuntu jammy/main amd64 libcbor0.8 amd64 0.8.0-2ubuntu1 [24.6 kB]
+#6 11.59 Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 libfido2-1 amd64 1.10.0-1 [82.8 kB]
+#6 11.63 Get:6 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 openssh-client amd64 1:8.9p1-3ubuntu0.18 [905 kB]
+#6 11.79 Get:7 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 openssh-sftp-server amd64 1:8.9p1-3ubuntu0.18 [38.9 kB]
+#6 11.79 Get:8 http://archive.ubuntu.com/ubuntu jammy/main amd64 ucf all 3.0043 [56.1 kB]
+#6 11.80 Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 libwrap0 amd64 7.6.q-31build2 [47.9 kB]
+#6 11.80 Get:10 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 openssh-server amd64 1:8.9p1-3ubuntu0.18 [436 kB]
+#6 11.83 Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 openssl amd64 3.0.2-0ubuntu1.30 [1186 kB]
+#6 11.89 Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 ca-certificates all 20260816ubuntu0.22.04.2 [140 kB]
+#6 11.90 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 sudo amd64 1.9.9-1ubuntu2.7 [820 kB]
+#6 12.15 debconf: delaying package configuration, since apt-utils is not installed
+#6 12.22 Fetched 3901 kB in 1s (4494 kB/s)
+#6 12.27 Selecting previously unselected package libmd0:amd64.
+#6 12.27 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4393 files and directories currently installed.)
+#6 12.27 Preparing to unpack .../00-libmd0_1.0.4-1build1_amd64.deb ...
+#6 12.29 Unpacking libmd0:amd64 (1.0.4-1build1) ...
+#6 12.35 Selecting previously unselected package libbsd0:amd64.
+#6 12.35 Preparing to unpack .../01-libbsd0_0.11.5-1_amd64.deb ...
+#6 12.36 Unpacking libbsd0:amd64 (0.11.5-1) ...
+#6 12.40 Selecting previously unselected package libedit2:amd64.
+#6 12.40 Preparing to unpack .../02-libedit2_3.1-20210910-1build1_amd64.deb ...
+#6 12.41 Unpacking libedit2:amd64 (3.1-20210910-1build1) ...
+#6 12.46 Selecting previously unselected package libcbor0.8:amd64.
+#6 12.47 Preparing to unpack .../03-libcbor0.8_0.8.0-2ubuntu1_amd64.deb ...
+#6 12.47 Unpacking libcbor0.8:amd64 (0.8.0-2ubuntu1) ...
+#6 12.52 Selecting previously unselected package libfido2-1:amd64.
+#6 12.52 Preparing to unpack .../04-libfido2-1_1.10.0-1_amd64.deb ...
+#6 12.53 Unpacking libfido2-1:amd64 (1.10.0-1) ...
+#6 12.58 Selecting previously unselected package openssh-client.
+#6 12.58 Preparing to unpack .../05-openssh-client_1%3a8.9p1-3ubuntu0.18_amd64.deb ...
+#6 12.59 Unpacking openssh-client (1:8.9p1-3ubuntu0.18) ...
+#6 12.67 Selecting previously unselected package openssh-sftp-server.
+#6 12.67 Preparing to unpack .../06-openssh-sftp-server_1%3a8.9p1-3ubuntu0.18_amd64.deb ...
+#6 12.68 Unpacking openssh-sftp-server (1:8.9p1-3ubuntu0.18) ...
+#6 12.73 Selecting previously unselected package ucf.
+#6 12.73 Preparing to unpack .../07-ucf_3.0043_all.deb ...
+#6 12.74 Moving old data out of the way
+#6 12.74 Unpacking ucf (3.0043) ...
+#6 12.81 Selecting previously unselected package libwrap0:amd64.
+#6 12.81 Preparing to unpack .../08-libwrap0_7.6.q-31build2_amd64.deb ...
+#6 12.81 Unpacking libwrap0:amd64 (7.6.q-31build2) ...
+#6 12.87 Selecting previously unselected package openssh-server.
+#6 12.87 Preparing to unpack .../09-openssh-server_1%3a8.9p1-3ubuntu0.18_amd64.deb ...
+#6 12.89 Unpacking openssh-server (1:8.9p1-3ubuntu0.18) ...
+#6 12.96 Selecting previously unselected package openssl.
+#6 12.96 Preparing to unpack .../10-openssl_3.0.2-0ubuntu1.30_amd64.deb ...
+#6 12.97 Unpacking openssl (3.0.2-0ubuntu1.30) ...
+#6 13.05 Selecting previously unselected package ca-certificates.
+#6 13.05 Preparing to unpack .../11-ca-certificates_20260816ubuntu0.22.04.2_all.deb ...
+#6 13.06 Unpacking ca-certificates (20260816ubuntu0.22.04.2) ...
+#6 13.16 Selecting previously unselected package sudo.
+#6 13.16 Preparing to unpack .../12-sudo_1.9.9-1ubuntu2.7_amd64.deb ...
+#6 13.17 Unpacking sudo (1.9.9-1ubuntu2.7) ...
+#6 13.25 Setting up libcbor0.8:amd64 (0.8.0-2ubuntu1) ...
+#6 13.26 Setting up libwrap0:amd64 (7.6.q-31build2) ...
+#6 13.28 Setting up sudo (1.9.9-1ubuntu2.7) ...
+#6 13.40 Setting up ucf (3.0043) ...
+#6 13.52 Setting up libmd0:amd64 (1.0.4-1build1) ...
+#6 13.54 Setting up libfido2-1:amd64 (1.10.0-1) ...
+#6 13.56 Setting up openssl (3.0.2-0ubuntu1.30) ...
+#6 13.58 Setting up libbsd0:amd64 (0.11.5-1) ...
+#6 13.60 Setting up libedit2:amd64 (3.1-20210910-1build1) ...
+#6 13.62 Setting up ca-certificates (20260816ubuntu0.22.04.2) ...
+#6 14.19 Clearing symlinks in /etc/ssl/certs...
+#6 14.19 done.
+#6 14.19 Updating certificates in /etc/ssl/certs...
+#6 14.95 120 added, 0 removed; done.
+#6 14.99 Setting up openssh-client (1:8.9p1-3ubuntu0.18) ...
+#6 15.09 update-alternatives: using /usr/bin/ssh to provide /usr/bin/rsh (rsh) in auto mode
+#6 15.09 update-alternatives: warning: skip creation of /usr/share/man/man1/rsh.1.gz because associated file /usr/share/man/man1/ssh.1.gz (of link group rsh) doesn't exist
+#6 15.10 update-alternatives: using /usr/bin/slogin to provide /usr/bin/rlogin (rlogin) in auto mode
+#6 15.10 update-alternatives: warning: skip creation of /usr/share/man/man1/rlogin.1.gz because associated file /usr/share/man/man1/slogin.1.gz (of link group rlogin) doesn't exist
+#6 15.10 update-alternatives: using /usr/bin/scp to provide /usr/bin/rcp (rcp) in auto mode
+#6 15.10 update-alternatives: warning: skip creation of /usr/share/man/man1/rcp.1.gz because associated file /usr/share/man/man1/scp.1.gz (of link group rcp) doesn't exist
+#6 15.12 Setting up openssh-sftp-server (1:8.9p1-3ubuntu0.18) ...
+#6 15.13 Setting up openssh-server (1:8.9p1-3ubuntu0.18) ...
+#6 15.32 
+#6 15.32 Creating config file /etc/ssh/sshd_config with new version
+#6 15.35 Creating SSH2 RSA key; this may take some time ...
+#6 16.54 3072 SHA256:FgZTiO6mlr9YtR/7OxwUBaY+rZPCtshUFfPYWaGaEeY root@buildkitsandbox (RSA)
+#6 16.55 Creating SSH2 ECDSA key; this may take some time ...
+#6 16.56 256 SHA256:XmooZisFKS4qbpKF1p2usrpZ9zkWC8NcfIl5gJpQYtY root@buildkitsandbox (ECDSA)
+#6 16.56 Creating SSH2 ED25519 key; this may take some time ...
+#6 16.58 256 SHA256:B3ateiUtti5WlTvAx4h+wmU5soQ+STLQMYLv8PJK8ms root@buildkitsandbox (ED25519)
+#6 16.72 invoke-rc.d: could not determine current runlevel
+#6 16.72 invoke-rc.d: policy-rc.d denied execution of start.
+#6 17.02 Processing triggers for libc-bin (2.35-0ubuntu3.15) ...
+#6 17.06 Processing triggers for ca-certificates (20260816ubuntu0.22.04.2) ...
+#6 17.07 Updating certificates in /etc/ssl/certs...
+#6 17.67 0 added, 0 removed; done.
+#6 17.67 Running hooks in /etc/ca-certificates/update.d...
+#6 17.67 done.
+#6 DONE 17.9s
+
+#7 [3/4] COPY ansible_lab.pub /home/ansible/.ssh/authorized_keys
+#7 DONE 0.1s
+
+#8 [4/4] RUN chown -R ansible:ansible /home/ansible/.ssh && chmod 600 /home/ansible/.ssh/authorized_keys
+#8 DONE 0.3s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 1.0s done
+#9 exporting manifest sha256:c1dd9238e330afc3dcc2115bb8cf040de650950f485421c0946630f2140288ff 0.0s done
+#9 exporting config sha256:11573b44d51ddcde1802abcab0328062398c3990ca3ae29419ad6e79a50a846b 0.0s done
+#9 exporting attestation manifest sha256:410d1c8bf6a5bae7ec22af560500a1dcc41794216fc4bc01e47c7b9abc051cf2 0.0s done
+#9 exporting manifest list sha256:dea2fbff9e7777d2ec7a5ff6fd3a049711f37f4228e0ea2985d3577abca35cb4 0.0s done
+#9 naming to docker.io/library/ansible-lab-node:22.04
+#9 naming to docker.io/library/ansible-lab-node:22.04 done
+#9 unpacking to docker.io/library/ansible-lab-node:22.04
+#9 unpacking to docker.io/library/ansible-lab-node:22.04 0.3s done
+#9 DONE 1.5s

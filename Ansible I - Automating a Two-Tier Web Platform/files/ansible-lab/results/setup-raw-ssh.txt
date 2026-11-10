@@ -1,0 +1,6 @@
+web1
+sudo-ok
+web2
+sudo-ok
+db1
+sudo-ok

@@ -1,0 +1,3 @@
+- Role common was created successfully
+- Role webserver was created successfully
+- Role redis was created successfully

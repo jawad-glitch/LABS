@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head><title>{{ site_name }} on {{ inventory_hostname }}</title></head>
+<body style="background-color: {{ app_banner_color }};">
+<h1>Served by {{ inventory_hostname }}</h1>
+<p>Environment: {{ env_name }}</p>
+<p>Release: {{ app_release }}</p>
+<p>Platform: {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}</p>
+</body>
+</html>

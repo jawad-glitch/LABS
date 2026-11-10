@@ -1,0 +1,17 @@
+roles/webserver
+roles/webserver/README.md
+roles/webserver/defaults
+roles/webserver/defaults/main.yml
+roles/webserver/files
+roles/webserver/handlers
+roles/webserver/handlers/main.yml
+roles/webserver/meta
+roles/webserver/meta/main.yml
+roles/webserver/tasks
+roles/webserver/tasks/main.yml
+roles/webserver/templates
+roles/webserver/tests
+roles/webserver/tests/inventory
+roles/webserver/tests/test.yml
+roles/webserver/vars
+roles/webserver/vars/main.yml

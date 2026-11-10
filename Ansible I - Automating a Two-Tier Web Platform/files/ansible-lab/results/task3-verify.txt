@@ -1,0 +1,14 @@
+db1 | CHANGED | rc=0 | (stdout) alice devops
+web2 | CHANGED | rc=0 | (stdout) alice devops
+web1 | CHANGED | rc=0 | (stdout) alice devops
+web2 | CHANGED | rc=0 | (stdout) /etc/sudoers.d/devops: parsed OK
+db1 | CHANGED | rc=0 | (stdout) /etc/sudoers.d/devops: parsed OK
+web1 | CHANGED | rc=0 | (stdout) /etc/sudoers.d/devops: parsed OK
+web2 | CHANGED | rc=0 >>
+#
+# Ansible managed
+#
+Welcome to web2 (LAB environment)
+OS     : Ubuntu 22.04
+Groups : lab, web
+This host is managed by Ansible. Manual changes will be overwritten.

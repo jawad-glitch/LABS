@@ -1,0 +1,33 @@
+db1 | FAILED! => 
+    ansible_facts:
+        discovered_interpreter_python: /usr/bin/python
+    changed: false
+    module_stderr: |-
+        /bin/sh: 1: /usr/bin/python: not found
+    module_stdout: ''
+    msg: |-
+        The module failed to execute correctly, you probably need to set the interpreter.
+        See stdout/stderr for the exact error
+    rc: 127
+web1 | FAILED! => 
+    ansible_facts:
+        discovered_interpreter_python: /usr/bin/python
+    changed: false
+    module_stderr: |-
+        /bin/sh: 1: /usr/bin/python: not found
+    module_stdout: ''
+    msg: |-
+        The module failed to execute correctly, you probably need to set the interpreter.
+        See stdout/stderr for the exact error
+    rc: 127
+web2 | FAILED! => 
+    ansible_facts:
+        discovered_interpreter_python: /usr/bin/python
+    changed: false
+    module_stderr: |-
+        /bin/sh: 1: /usr/bin/python: not found
+    module_stdout: ''
+    msg: |-
+        The module failed to execute correctly, you probably need to set the interpreter.
+        See stdout/stderr for the exact error
+    rc: 127

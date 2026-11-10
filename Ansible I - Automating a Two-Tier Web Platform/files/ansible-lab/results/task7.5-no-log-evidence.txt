@@ -1,0 +1,3 @@
+TASK [redis : Configure Redis password] ****************************************
+changed: [db1]
+

@@ -1,0 +1,3 @@
+    "app_banner_color": "lightgrey",
+    "app_banner_color": "lightblue",
+    "app_banner_color": "lightgreen",

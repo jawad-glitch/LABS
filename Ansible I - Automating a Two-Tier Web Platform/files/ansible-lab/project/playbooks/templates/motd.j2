@@ -1,0 +1,5 @@
+{{ ansible_managed | comment }}
+Welcome to {{ ansible_facts['hostname'] }} ({{ env_name | upper }} environment)
+OS     : {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}
+Groups : {{ group_names | join(', ') }}
+This host is managed by Ansible. Manual changes will be overwritten.

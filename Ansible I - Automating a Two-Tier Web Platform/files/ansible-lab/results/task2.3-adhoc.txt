@@ -1,0 +1,14 @@
+db1 | SUCCESS => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"},"changed": false,"ping": "pong"}
+web2 | SUCCESS => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"},"changed": false,"ping": "pong"}
+web1 | SUCCESS => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"},"changed": false,"ping": "pong"}
+web2 | CHANGED | rc=0 >>
+web2
+web1 | CHANGED | rc=0 >>
+web1
+db1 | CHANGED => {"ansible_facts": {"discovered_interpreter_
+db1 | SUCCESS => {"ansible_facts": {"discovered_interpreter_
+- name: Manages apt-packages
+  apt:
+      allow_change_held_packages:   # Allows changing the version of a package which is
+                             # on the apt hold
+                             # list

@@ -1,0 +1,18 @@
+  config file = /home/ubuntu/ansible-lab/project/ansible.cfg
+@all:
+  |--@ungrouped:
+  |--@lab:
+  |  |--@web:
+  |  |  |--web1
+  |  |  |--web2
+  |  |--@db:
+  |  |  |--db1
+{
+    "ansible_host": "127.0.0.1",
+    "ansible_port": 2222,
+    "env_name": "lab",
+    "http_host_port": 8082
+}
+DEFAULT_HOST_LIST(/home/ubuntu/ansible-lab/project/ansible.cfg) = ['/home/ubuntu/ansible-lab/project/inventory/hosts.yml']
+DEFAULT_REMOTE_USER(/home/ubuntu/ansible-lab/project/ansible.cfg) = ansible
+INTERPRETER_PYTHON(/home/ubuntu/ansible-lab/project/ansible.cfg) = auto_silent

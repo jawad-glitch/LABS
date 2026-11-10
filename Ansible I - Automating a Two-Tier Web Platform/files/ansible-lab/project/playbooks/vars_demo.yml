@@ -1,0 +1,35 @@
+---
+- name: Explore variables, facts and magic variables
+  hosts: all
+  tasks:
+    - name: Show the effective value of app_banner_color
+      ansible.builtin.debug:
+        msg: "{{ inventory_hostname }} groups={{ group_names | join(',') }} color={{ app_banner_color }} env={{ env_name }}"
+
+    - name: Locate the cache server via magic variables
+      ansible.builtin.debug:
+        msg: "Cache host is {{ groups['db'][0] }} (ssh port {{ hostvars[groups['db'][0]]['ansible_port'] }})"
+      run_once: true
+
+    - name: Check whether /etc/motd exists
+      ansible.builtin.stat:
+        path: /etc/motd
+      register: motd_file
+
+    - name: Report motd size only when present
+      ansible.builtin.debug:
+        msg: "motd present, {{ motd_file.stat.size }} bytes"
+      when: motd_file.stat.exists
+
+    - name: Show vCPUs only on web servers
+      ansible.builtin.debug:
+        msg: "{{ inventory_hostname }} sees {{ ansible_facts['processor_vcpus'] }} vCPU(s)"
+      when: "'web' in group_names"
+
+    - name: Assert supported platform
+      ansible.builtin.assert:
+        that:
+          - ansible_facts['distribution'] == 'Ubuntu'
+          - ansible_facts['distribution_version'] == '22.04'
+        fail_msg: "Unsupported platform {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}"
+        success_msg: "Platform supported"

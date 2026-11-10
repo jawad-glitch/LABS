@@ -1,0 +1,6 @@
+db1                        : ok=14   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+<h1>Served by web1</h1>
+<p>Release: 1.1.0</p>
+<h1>Served by web2</h1>
+<p>Release: 1.1.0</p>
+2

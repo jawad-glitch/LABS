@@ -1,0 +1,40 @@
+---
+- name: Install Redis server
+  ansible.builtin.apt:
+    name: redis-server
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Configure Redis bind address
+  ansible.builtin.lineinfile:
+    path: "{{ redis_conf }}"
+    regexp: '^bind '
+    line: "bind {{ redis_bind }}"
+  notify: Restart redis
+
+- name: Configure Redis port
+  ansible.builtin.lineinfile:
+    path: "{{ redis_conf }}"
+    regexp: '^port '
+    line: "port {{ redis_port }}"
+  notify: Restart redis
+
+- name: Configure Redis password
+  ansible.builtin.lineinfile:
+    path: "{{ redis_conf }}"
+    regexp: '^#?\s*requirepass '
+    line: "requirepass {{ redis_password }}"
+  no_log: true
+  notify: Restart redis
+
+- name: Ensure Redis is running
+  ansible.builtin.service:
+    name: "{{ redis_service }}"
+    state: started
+
+- name: Wait for Redis to accept connections
+  ansible.builtin.wait_for:
+    host: 127.0.0.1
+    port: "{{ redis_port }}"
+    timeout: 15

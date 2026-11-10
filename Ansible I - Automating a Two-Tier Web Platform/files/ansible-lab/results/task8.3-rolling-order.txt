@@ -1,0 +1,9 @@
+PLAY [Bootstrap Python on fresh nodes] *****************************************
+PLAY [Common baseline] *********************************************************
+PLAY [Cache tier] **************************************************************
+PLAY [Web tier (rolling)] ******************************************************
+changed: [web1]
+changed: [web1]
+PLAY [Web tier (rolling)] ******************************************************
+changed: [web2]
+changed: [web2]

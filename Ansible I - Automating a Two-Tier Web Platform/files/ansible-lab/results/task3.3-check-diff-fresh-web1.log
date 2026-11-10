@@ -1,0 +1,54 @@
+
+PLAY [Apply baseline configuration] ********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web1]
+
+TASK [Install baseline packages] ***********************************************
+The following additional packages will be installed:
+  libbrotli1 libcurl4 libldap-2.5-0 libldap-common libnghttp2-14 libnl-3-200
+  libnl-genl-3-200 libpsl5 librtmp1 libsasl2-2 libsasl2-modules
+  libsasl2-modules-db libssh-4 publicsuffix
+Suggested packages:
+  lm-sensors lsof strace libsasl2-modules-gssapi-mit
+  | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp
+  libsasl2-modules-sql
+The following NEW packages will be installed:
+  curl htop less libbrotli1 libcurl4 libldap-2.5-0 libldap-common
+  libnghttp2-14 libnl-3-200 libnl-genl-3-200 libpsl5 librtmp1 libsasl2-2
+  libsasl2-modules libsasl2-modules-db libssh-4 publicsuffix tree
+0 upgraded, 18 newly installed, 0 to remove and 4 not upgraded.
+changed: [web1]
+
+TASK [Ensure admin group exists] ***********************************************
+changed: [web1]
+
+TASK [Create admin users] ******************************************************
+changed: [web1] => (item=alice)
+changed: [web1] => (item=bob)
+
+TASK [Allow devops group to manage services] ***********************************
+--- before
++++ after: /home/ubuntu/.ansible/tmp/ansible-local-109983grtx5tm/tmp4mt2xzrw
+@@ -0,0 +1 @@
++%devops ALL=(root) NOPASSWD: /usr/sbin/service nginx *, /usr/sbin/service redis-server *
+
+changed: [web1]
+
+TASK [Deploy message of the day] ***********************************************
+--- before
++++ after: /home/ubuntu/.ansible/tmp/ansible-local-109983grtx5tm/tmphv63vigr/motd.j2
+@@ -0,0 +1,7 @@
++#
++# Ansible managed
++#
++Welcome to web1 (LAB environment)
++OS     : Ubuntu 22.04
++Groups : lab, web
++This host is managed by Ansible. Manual changes will be overwritten.
+
+changed: [web1]
+
+PLAY RECAP *********************************************************************
+web1                       : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

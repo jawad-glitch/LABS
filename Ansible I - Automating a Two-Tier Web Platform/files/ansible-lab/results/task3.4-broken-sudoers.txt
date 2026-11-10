@@ -1,0 +1,14 @@
+web1 | FAILED! => 
+    ansible_facts:
+        discovered_interpreter_python: /usr/bin/python3
+    changed: false
+    checksum: f3ea6329504a51ae8dd16382643345c50e378ae3
+    exit_status: 1
+    msg: failed to validate
+    stderr: |-
+        /home/ansible/.ansible/tmp/ansible-tmp-1794294333.4085464-12740-201055552471112/source:1:19: syntax error
+        %devops ALL=(root NOPASSWD: ALL
+                          ^~~~~~~~~
+    stderr_lines: <omitted>
+    stdout: ''
+    stdout_lines: <omitted>

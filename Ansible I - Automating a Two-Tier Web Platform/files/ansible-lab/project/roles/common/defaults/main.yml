@@ -1,0 +1,6 @@
+---
+baseline_packages: [curl, htop, tree, less]
+admin_group: devops
+admin_users:
+  - { name: alice, comment: "Alice Admin" }
+  - { name: bob,   comment: "Bob Operator" }

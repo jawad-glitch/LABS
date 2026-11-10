@@ -1,0 +1,4 @@
+NAMES     STATUS         PORTS
+db1       Up 1 second    80/tcp, 127.0.0.1:2223->22/tcp
+web2      Up 1 second    127.0.0.1:2222->22/tcp, 127.0.0.1:8082->80/tcp
+web1      Up 2 seconds   127.0.0.1:2221->22/tcp, 127.0.0.1:8081->80/tcp

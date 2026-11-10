@@ -1,0 +1,56 @@
+
+PLAY [Explore variables, facts and magic variables] ****************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web1]
+ok: [web2]
+ok: [db1]
+
+TASK [Show the effective value of app_banner_color] ****************************
+ok: [web1] => 
+    msg: web1 groups=lab,web color=red env=lab
+ok: [web2] => 
+    msg: web2 groups=lab,web color=red env=lab
+ok: [db1] => 
+    msg: db1 groups=db,lab color=red env=lab
+
+TASK [Locate the cache server via magic variables] *****************************
+ok: [web1] => 
+    msg: Cache host is db1 (ssh port 2223)
+
+TASK [Check whether /etc/motd exists] ******************************************
+ok: [web1]
+ok: [web2]
+ok: [db1]
+
+TASK [Report motd size only when present] **************************************
+ok: [web1] => 
+    msg: motd present, 165 bytes
+ok: [web2] => 
+    msg: motd present, 165 bytes
+ok: [db1] => 
+    msg: motd present, 163 bytes
+
+TASK [Show vCPUs only on web servers] ******************************************
+ok: [web1] => 
+    msg: web1 sees 2 vCPU(s)
+ok: [web2] => 
+    msg: web2 sees 2 vCPU(s)
+skipping: [db1]
+
+TASK [Assert supported platform] ***********************************************
+ok: [web1] => 
+    changed: false
+    msg: Platform supported
+ok: [web2] => 
+    changed: false
+    msg: Platform supported
+ok: [db1] => 
+    changed: false
+    msg: Platform supported
+
+PLAY RECAP *********************************************************************
+db1                        : ok=5    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+web1                       : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web2                       : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

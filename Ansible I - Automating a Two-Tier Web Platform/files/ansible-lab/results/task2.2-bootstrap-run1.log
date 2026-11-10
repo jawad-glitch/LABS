@@ -1,0 +1,13 @@
+
+PLAY [Bootstrap Python on fresh nodes] *****************************************
+
+TASK [Install python3 and python3-apt if missing] ******************************
+changed: [web2]
+changed: [web1]
+changed: [db1]
+
+PLAY RECAP *********************************************************************
+db1                        : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web1                       : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web2                       : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

@@ -1,0 +1,2 @@
+REFACTOR OK: no changes
+<body style="background-color: lightgreen;">

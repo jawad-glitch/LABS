@@ -1,0 +1,6 @@
+web1 | UNREACHABLE! => 
+    changed: false
+    msg: |-
+        Data could not be sent to remote host "127.0.0.1". Make sure this host can be reached over ssh: Warning: Permanently added '[127.0.0.1]:2221' (ED25519) to the list of known hosts.
+        root@127.0.0.1: Permission denied (publickey).
+    unreachable: true

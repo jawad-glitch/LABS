@@ -1,0 +1,164 @@
+
+PLAY [Bootstrap Python on fresh nodes] *****************************************
+
+TASK [Install python3 and python3-apt if missing] ******************************
+ok: [web1]
+ok: [db1]
+ok: [web2]
+changed: [lb1]
+
+PLAY [Common baseline] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [lb1]
+ok: [web1]
+ok: [db1]
+ok: [web2]
+
+TASK [common : Install baseline packages] **************************************
+ok: [db1]
+ok: [web2]
+ok: [web1]
+changed: [lb1]
+
+TASK [common : Ensure admin group exists] **************************************
+ok: [db1]
+ok: [web2]
+ok: [web1]
+changed: [lb1]
+
+TASK [common : Create admin users] *********************************************
+ok: [db1] => (item=alice)
+ok: [web2] => (item=alice)
+ok: [web1] => (item=alice)
+changed: [lb1] => (item=alice)
+ok: [db1] => (item=bob)
+ok: [web2] => (item=bob)
+ok: [web1] => (item=bob)
+changed: [lb1] => (item=bob)
+
+TASK [common : Allow devops group to manage services] **************************
+changed: [lb1]
+ok: [web1]
+ok: [web2]
+ok: [db1]
+
+TASK [common : Deploy message of the day] **************************************
+ok: [web1]
+ok: [web2]
+ok: [db1]
+changed: [lb1]
+
+PLAY [Cache tier] **************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [db1]
+
+TASK [redis : Install Redis server] ********************************************
+ok: [db1]
+
+TASK [redis : Configure Redis bind address] ************************************
+ok: [db1]
+
+TASK [redis : Configure Redis port] ********************************************
+ok: [db1]
+
+TASK [redis : Configure Redis password] ****************************************
+ok: [db1]
+
+TASK [redis : Ensure Redis is running] *****************************************
+changed: [db1]
+
+TASK [redis : Wait for Redis to accept connections] ****************************
+ok: [db1]
+
+PLAY [Web tier (rolling)] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web1]
+
+TASK [webserver : Install nginx and redis client tools] ************************
+ok: [web1]
+
+TASK [webserver : Create web root] *********************************************
+ok: [web1]
+
+TASK [webserver : Deploy index page] *******************************************
+ok: [web1]
+
+TASK [webserver : Deploy application environment file (contains secret)] *******
+ok: [web1]
+
+TASK [webserver : Deploy nginx site configuration] *****************************
+ok: [web1]
+
+TASK [webserver : Enable lab site] *********************************************
+ok: [web1]
+
+TASK [webserver : Disable default site] ****************************************
+ok: [web1]
+
+TASK [webserver : Ensure nginx is running] *************************************
+ok: [web1]
+
+PLAY [Web tier (rolling)] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web2]
+
+TASK [webserver : Install nginx and redis client tools] ************************
+ok: [web2]
+
+TASK [webserver : Create web root] *********************************************
+ok: [web2]
+
+TASK [webserver : Deploy index page] *******************************************
+ok: [web2]
+
+TASK [webserver : Deploy application environment file (contains secret)] *******
+ok: [web2]
+
+TASK [webserver : Deploy nginx site configuration] *****************************
+ok: [web2]
+
+TASK [webserver : Enable lab site] *********************************************
+ok: [web2]
+
+TASK [webserver : Disable default site] ****************************************
+ok: [web2]
+
+TASK [webserver : Ensure nginx is running] *************************************
+ok: [web2]
+
+PLAY [Load balancer] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [lb1]
+
+TASK [loadbalancer : Install nginx] ********************************************
+changed: [lb1]
+
+TASK [loadbalancer : Deploy load balancer configuration] ***********************
+changed: [lb1]
+
+TASK [loadbalancer : Enable load balancer site] ********************************
+changed: [lb1]
+
+TASK [loadbalancer : Disable default site] *************************************
+changed: [lb1]
+
+TASK [loadbalancer : Ensure nginx is running] **********************************
+changed: [lb1]
+
+RUNNING HANDLER [loadbalancer : Validate nginx configuration] ******************
+ok: [lb1]
+
+RUNNING HANDLER [loadbalancer : Reload nginx] **********************************
+changed: [lb1]
+
+PLAY RECAP *********************************************************************
+db1                        : ok=14   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+lb1                        : ok=15   changed=12   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web1                       : ok=16   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web2                       : ok=16   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

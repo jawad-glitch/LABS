@@ -1,0 +1,4 @@
+ok web1
+ok web2
+web1 | CHANGED | rc=0 | (stdout)     listen abc default_server;
+web2 | CHANGED | rc=0 | (stdout)     listen 80 default_server;

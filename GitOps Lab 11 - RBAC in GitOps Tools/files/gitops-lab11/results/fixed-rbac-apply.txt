@@ -1,0 +1,10 @@
+serviceaccount/flux-production created
+role.rbac.authorization.k8s.io/flux-production-deployer created
+rolebinding.rbac.authorization.k8s.io/flux-production-deployer created
+serviceaccount/flux-staging created
+role.rbac.authorization.k8s.io/flux-staging-deployer created
+rolebinding.rbac.authorization.k8s.io/flux-staging-deployer created
+serviceaccount/flux-readonly created
+clusterrolebinding.rbac.authorization.k8s.io/flux-readonly-view created
+clusterrole.rbac.authorization.k8s.io/flux-readonly-crds created
+clusterrolebinding.rbac.authorization.k8s.io/flux-readonly-crds created

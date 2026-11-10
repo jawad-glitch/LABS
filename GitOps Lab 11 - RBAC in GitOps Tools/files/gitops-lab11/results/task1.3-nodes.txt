@@ -1,0 +1,2 @@
+NAME                        STATUS   ROLES           AGE   VERSION
+gitops-rbac-control-plane   Ready    control-plane   42s   v1.37.0

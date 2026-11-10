@@ -1,0 +1,18 @@
+serviceaccount/flux-production unchanged (server dry run)
+serviceaccount/flux-staging unchanged (server dry run)
+serviceaccount/flux-readonly unchanged (server dry run)
+clusterrole.rbac.authorization.k8s.io/flux-production-role created (server dry run)
+clusterrole.rbac.authorization.k8s.io/flux-staging-role created (server dry run)
+clusterrole.rbac.authorization.k8s.io/flux-readonly-role created (server dry run)
+clusterrolebinding.rbac.authorization.k8s.io/flux-production-binding created (server dry run)
+clusterrolebinding.rbac.authorization.k8s.io/flux-staging-binding created (server dry run)
+clusterrolebinding.rbac.authorization.k8s.io/flux-readonly-binding created (server dry run)
+resource mapping not found for name: "production-apps" namespace: "flux-system" from "flux-lab-original/production-kustomization.yaml": no matches for kind "Kustomization" in version "kustomize.toolkit.fluxcd.io/v1beta2"
+ensure CRDs are installed first
+resource mapping not found for name: "production-repo" namespace: "flux-system" from "flux-lab-original/production-source.yaml": no matches for kind "GitRepository" in version "source.toolkit.fluxcd.io/v1beta2"
+ensure CRDs are installed first
+resource mapping not found for name: "staging-apps" namespace: "flux-system" from "flux-lab-original/staging-kustomization.yaml": no matches for kind "Kustomization" in version "kustomize.toolkit.fluxcd.io/v1beta2"
+ensure CRDs are installed first
+resource mapping not found for name: "staging-repo" namespace: "flux-system" from "flux-lab-original/staging-source.yaml": no matches for kind "GitRepository" in version "source.toolkit.fluxcd.io/v1beta2"
+ensure CRDs are installed first
+rc=1

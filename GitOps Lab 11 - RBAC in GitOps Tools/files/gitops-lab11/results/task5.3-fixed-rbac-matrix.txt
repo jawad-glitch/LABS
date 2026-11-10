@@ -1,0 +1,12 @@
+SA               CHECK                                                RESULT
+flux-production  create deployments -n production                     yes
+flux-production  create deployments -n staging                        no
+flux-production  delete namespaces                                    no
+flux-production  get secrets -n kube-system                           no
+flux-staging     create deployments -n staging                        yes
+flux-staging     delete deployments -n production                     no
+flux-staging     get secrets -n kube-system                           no
+flux-readonly    list deployments -n production                       yes
+flux-readonly    list gitrepositories.source.toolkit.fluxcd.io -n flux-system yes
+flux-readonly    get secrets -n kube-system                           no
+flux-readonly    create deployments -n default                        no

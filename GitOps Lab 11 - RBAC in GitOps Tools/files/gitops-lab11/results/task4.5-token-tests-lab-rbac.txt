@@ -1,0 +1,2 @@
+readonly get pods -n flux-system: allowed
+readonly create deployment -n default: created

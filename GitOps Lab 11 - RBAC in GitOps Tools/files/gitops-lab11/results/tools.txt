@@ -1,0 +1,5 @@
+kind v0.33.0 installed (sha256 OK)
+kubectl present
+kubeconform installed
+flux v2.10.0 installed (sha256 OK)
+argocd v3.6.1 installed (sha256 OK)

@@ -1,0 +1,16 @@
+USER     ACTION RESOURCE OBJECT       RESULT
+alice    get applications default/test-nginx 
+alice    sync applications default/test-nginx 
+alice    delete applications default/test-nginx 
+alice    get repositories argocd      
+alice    get clusters argocd          
+bob      create applications default/test-nginx 
+bob      delete applications default/test-nginx 
+bob      create repositories argocd   
+bob      create projects argocd       
+charlie  get applications default/test-nginx 
+charlie  sync applications default/test-nginx 
+charlie  get clusters argocd          
+admin    delete clusters argocd       
+dave     get applications default/test-nginx 
+dave     sync applications default/test-nginx 

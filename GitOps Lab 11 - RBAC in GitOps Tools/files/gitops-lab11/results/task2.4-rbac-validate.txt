@@ -1,0 +1,1 @@
+{"level":"fatal","msg":"could not get config to create k8s client: invalid configuration: no configuration has been provided, try setting KUBERNETES_MASTER environment variable","time":"2026-11-10T08:52:54Z"}

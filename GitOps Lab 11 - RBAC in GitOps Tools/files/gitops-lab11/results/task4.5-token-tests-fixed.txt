@@ -1,0 +1,1 @@
+fixed readonly get secrets -n kube-system (real token): 

@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 4 - Traffic Management with Virtual Services, 2026-11-10 10:19:13 UTC) ==========
+FAIL: Task 1: Istio installation and namespace ready
+FAIL: Task 1: Microservices deployed (frontend, backend-v1, backend-v2)
+FAIL: Task 1: DestinationRule backend-dr subsets v1 and v2 active
+FAIL: Task 1: VirtualService frontend-vs deployed
+FAIL: Task 2: Backend-vs configured with weighted & header routing
+FAIL: Task 2: Gateway backend-gateway and external VirtualService configured
+PASS: Task 3: Header-based routing verified (v1 and v2 targets)
+PASS: Task 3: Internal test client able to resolve backend service
+PASS: Task 3: traffic-test.sh executed and verified all test scenarios
+PASS: Reporting: Complete traffic management summary generated
+PASS: Time: Lab completed in under 300s
+CORE: 5/11 PASS

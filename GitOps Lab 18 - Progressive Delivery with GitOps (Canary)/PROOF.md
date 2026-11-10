@@ -1,9 +1,9 @@
 # GitOps Lab 18 - Progressive Delivery with GitOps (Canary) - completion proof
-Completed (UTC): 2026-11-10 09:37:56 | EC2: i-0636de89a965f9611 | host: ip-172-31-10-252 | user: ubuntu
+Completed (UTC): 2026-11-10 09:44:02 | EC2: i-05bd44828df4beeae | host: ip-172-31-10-47 | user: ubuntu
 
 ## Core checks
 ```
-========== CORE CHECKS (GitOps Lab 18 - Progressive Delivery with GitOps (Canary), 2026-11-10 09:37:50 UTC) - CLUSTER/CONTROLLERS SIMULATED, PODS + INGRESS + ANALYSIS REAL ==========
+========== CORE CHECKS (GitOps Lab 18 - Progressive Delivery with GitOps (Canary), 2026-11-10 09:43:54 UTC) - CLUSTER/CONTROLLERS SIMULATED, PODS + INGRESS + ANALYSIS REAL ==========
 PASS: Task 1: argocd v3.6.1 (sha256) + kubectl-argo-rollouts v1.10.2 report versions; 4 demo-app images built
 PASS: Task 2.1: Rollout (canary 20/40/60/80, canary+stable svc, nginx stableIngress) + Application (automated/prune/selfHeal) CRD-valid
 PASS: Task 2.1: initial sync - Healthy, 5 pods demo-app:v1.0
@@ -15,7 +15,7 @@ PASS: Task 3.1: web AnalysisTemplate valid; v3.0 analysis Successful (3 x status
 PASS: Task 3.2: v4.0 analysis Failed (status degraded, failureLimit 1) -> auto-aborted Degraded, 100% traffic on v3.0
 FAIL: Lab bug: abort+undo is reverted by Argo CD selfHeal (Git still v4.0) - canary v4.0 restarts and fails again
 PASS: GitOps rollback (git revert): Healthy, all 5 pods demo-app:v3.0, zero v4.0 pods, 100% traffic v3.0
-PASS: Time: finished in 110s (<= 300s)
+PASS: Time: finished in 107s (<= 300s)
 CORE: 11/12 PASS
 ```
 
@@ -24,10 +24,10 @@ CORE: 11/12 PASS
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 IMAGE               ID             DISK USAGE   CONTENT SIZE   EXTRA
-demo-app:v1.0       02ba6ebcd7ac       73.6MB           21MB        
-demo-app:v2.0       f0d3bde84fd4       73.6MB           21MB        
-demo-app:v3.0       23e6d9adbd0e       73.6MB           21MB        
-demo-app:v4.0       3a54ec7cd550       73.6MB           21MB        
+demo-app:v1.0       4411ea2a9ddd       73.6MB           21MB        
+demo-app:v2.0       21daa04efc46       73.6MB           21MB        
+demo-app:v3.0       170e1f38b908       73.6MB           21MB        
+demo-app:v4.0       b79fb7f20ad9       73.6MB           21MB        
 nginx:1.27-alpine   65645c7bb6a0       74.5MB         21.9MB        
 ```
 

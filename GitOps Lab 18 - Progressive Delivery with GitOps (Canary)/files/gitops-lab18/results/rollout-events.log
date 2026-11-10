@@ -1,44 +1,44 @@
-09:36:44 [demo-app] initial: 5 stable pods demo-app:v1.0
-09:36:46 [demo-app] Argo CD sync 0b6401c: live Rollout image demo-app:v1.0 != Git demo-app:v2.0 -> applying
-09:36:46 [demo-app] new revision demo-app:v2.0: canary started
-09:36:47 [demo-app] step 1 setWeight 20: canary demo-app:v2.0 pods=1, stable pods=5
-09:36:47 [demo-app] step 2 pause {} - Paused (CanaryPauseStep) at weight 20
-09:36:51 [demo-app] promote: resuming from step 2
-09:36:52 [demo-app] step 3 setWeight 40: canary demo-app:v2.0 pods=2, stable pods=5
-09:36:52 [demo-app] step 4 pause {} - Paused (CanaryPauseStep) at weight 40
-09:36:54 [demo-app] promote: resuming from step 4
-09:36:55 [demo-app] step 5 setWeight 60: canary demo-app:v2.0 pods=3, stable pods=5
-09:36:55 [demo-app] step 6 pause {} - Paused (CanaryPauseStep) at weight 60
-09:36:57 [demo-app] promote: resuming from step 6
-09:36:58 [demo-app] step 7 setWeight 80: canary demo-app:v2.0 pods=4, stable pods=5
-09:36:58 [demo-app] step 8 pause {} - Paused (CanaryPauseStep) at weight 80
-09:37:00 [demo-app] promote: resuming from step 8
-09:37:05 [demo-app] fully promoted: stable is now demo-app:v2.0 (5 pods)
-09:37:08 [demo-app] Argo CD sync 6b37eba: live Rollout image demo-app:v2.0 != Git demo-app:v3.0 -> applying
-09:37:08 [demo-app] new revision demo-app:v3.0: canary started
-09:37:09 [demo-app] step 1 setWeight 20: canary demo-app:v3.0 pods=1, stable pods=5
-09:37:09 [demo-app] AnalysisRun demo-app-v3.0-1 measurement 1: {"status":"ok","version":"v3.0"} -> Successful
-09:37:14 [demo-app] AnalysisRun demo-app-v3.0-1 measurement 2: {"status":"ok","version":"v3.0"} -> Successful
-09:37:20 [demo-app] AnalysisRun demo-app-v3.0-1 measurement 3: {"status":"ok","version":"v3.0"} -> Successful
-09:37:20 [demo-app] AnalysisRun demo-app-v3.0-1 Successful (failures 0, failureLimit 1)
-09:37:21 [demo-app] step 3 setWeight 40: canary demo-app:v3.0 pods=2, stable pods=5
-09:37:21 [demo-app] step 4 pause {} - Paused (CanaryPauseStep) at weight 40
-09:37:26 [demo-app] fully promoted: stable is now demo-app:v3.0 (5 pods)
-09:37:27 [demo-app] Argo CD sync d2dacb3: live Rollout image demo-app:v3.0 != Git demo-app:v4.0 -> applying
-09:37:27 [demo-app] new revision demo-app:v4.0: canary started
-09:37:28 [demo-app] step 1 setWeight 20: canary demo-app:v4.0 pods=1, stable pods=5
-09:37:28 [demo-app] AnalysisRun demo-app-v4.0-2 measurement 1: {"status":"degraded","version":"v4.0"} -> Failed
-09:37:33 [demo-app] AnalysisRun demo-app-v4.0-2 measurement 2: {"status":"degraded","version":"v4.0"} -> Failed
-09:37:33 [demo-app] AnalysisRun demo-app-v4.0-2 Failed (failures 2, failureLimit 1)
-09:37:35 [demo-app] Rollout aborted: metric "health" assessed Failed -> 100% traffic on stable demo-app:v3.0
-09:37:37 [demo-app] Rollout aborted: manual abort -> 100% traffic on stable demo-app:v3.0
-09:37:38 [demo-app] undo: live Rollout spec set to previous revision demo-app:v3.0 (Git unchanged)
-09:37:39 [demo-app] Argo CD sync d2dacb3: live Rollout image demo-app:v3.0 != Git demo-app:v4.0 -> applying
-09:37:39 [demo-app] new revision demo-app:v4.0: canary started
-09:37:40 [demo-app] step 1 setWeight 20: canary demo-app:v4.0 pods=1, stable pods=5
-09:37:40 [demo-app] AnalysisRun demo-app-v4.0-3 measurement 1: {"status":"degraded","version":"v4.0"} -> Failed
-09:37:45 [demo-app] AnalysisRun demo-app-v4.0-3 measurement 2: {"status":"degraded","version":"v4.0"} -> Failed
-09:37:45 [demo-app] AnalysisRun demo-app-v4.0-3 Failed (failures 2, failureLimit 1)
-09:37:46 [demo-app] Rollout aborted: metric "health" assessed Failed -> 100% traffic on stable demo-app:v3.0
-09:37:47 [demo-app] Argo CD sync 0198e78: live Rollout image demo-app:v4.0 != Git demo-app:v3.0 -> applying
-09:37:48 [demo-app] spec matches stable demo-app:v3.0: canary dropped
+09:42:46 [demo-app] initial: 5 stable pods demo-app:v1.0
+09:42:47 [demo-app] Argo CD sync 9af3c21: live Rollout image demo-app:v1.0 != Git demo-app:v2.0 -> applying
+09:42:47 [demo-app] new revision demo-app:v2.0: canary started
+09:42:48 [demo-app] step 1 setWeight 20: canary demo-app:v2.0 pods=1, stable pods=5
+09:42:48 [demo-app] step 2 pause {} - Paused (CanaryPauseStep) at weight 20
+09:42:52 [demo-app] promote: resuming from step 2
+09:42:53 [demo-app] step 3 setWeight 40: canary demo-app:v2.0 pods=2, stable pods=5
+09:42:53 [demo-app] step 4 pause {} - Paused (CanaryPauseStep) at weight 40
+09:42:54 [demo-app] promote: resuming from step 4
+09:42:56 [demo-app] step 5 setWeight 60: canary demo-app:v2.0 pods=3, stable pods=5
+09:42:56 [demo-app] step 6 pause {} - Paused (CanaryPauseStep) at weight 60
+09:42:57 [demo-app] promote: resuming from step 6
+09:42:58 [demo-app] step 7 setWeight 80: canary demo-app:v2.0 pods=4, stable pods=5
+09:42:58 [demo-app] step 8 pause {} - Paused (CanaryPauseStep) at weight 80
+09:43:00 [demo-app] promote: resuming from step 8
+09:43:04 [demo-app] fully promoted: stable is now demo-app:v2.0 (5 pods)
+09:43:07 [demo-app] Argo CD sync e78f1aa: live Rollout image demo-app:v2.0 != Git demo-app:v3.0 -> applying
+09:43:07 [demo-app] new revision demo-app:v3.0: canary started
+09:43:08 [demo-app] step 1 setWeight 20: canary demo-app:v3.0 pods=1, stable pods=5
+09:43:09 [demo-app] AnalysisRun demo-app-v3.0-1 measurement 1: {"status":"ok","version":"v3.0"} -> Successful
+09:43:14 [demo-app] AnalysisRun demo-app-v3.0-1 measurement 2: {"status":"ok","version":"v3.0"} -> Successful
+09:43:19 [demo-app] AnalysisRun demo-app-v3.0-1 measurement 3: {"status":"ok","version":"v3.0"} -> Successful
+09:43:19 [demo-app] AnalysisRun demo-app-v3.0-1 Successful (failures 0, failureLimit 1)
+09:43:20 [demo-app] step 3 setWeight 40: canary demo-app:v3.0 pods=2, stable pods=5
+09:43:20 [demo-app] step 4 pause {} - Paused (CanaryPauseStep) at weight 40
+09:43:27 [demo-app] fully promoted: stable is now demo-app:v3.0 (5 pods)
+09:43:28 [demo-app] Argo CD sync eb891cf: live Rollout image demo-app:v3.0 != Git demo-app:v4.0 -> applying
+09:43:28 [demo-app] new revision demo-app:v4.0: canary started
+09:43:29 [demo-app] step 1 setWeight 20: canary demo-app:v4.0 pods=1, stable pods=5
+09:43:29 [demo-app] AnalysisRun demo-app-v4.0-2 measurement 1: {"status":"degraded","version":"v4.0"} -> Failed
+09:43:34 [demo-app] AnalysisRun demo-app-v4.0-2 measurement 2: {"status":"degraded","version":"v4.0"} -> Failed
+09:43:34 [demo-app] AnalysisRun demo-app-v4.0-2 Failed (failures 2, failureLimit 1)
+09:43:36 [demo-app] Rollout aborted: metric "health" assessed Failed -> 100% traffic on stable demo-app:v3.0
+09:43:38 [demo-app] Rollout aborted: manual abort -> 100% traffic on stable demo-app:v3.0
+09:43:40 [demo-app] undo: live Rollout spec set to previous revision demo-app:v3.0 (Git unchanged)
+09:43:41 [demo-app] Argo CD sync eb891cf: live Rollout image demo-app:v3.0 != Git demo-app:v4.0 -> applying
+09:43:41 [demo-app] new revision demo-app:v4.0: canary started
+09:43:42 [demo-app] step 1 setWeight 20: canary demo-app:v4.0 pods=1, stable pods=5
+09:43:42 [demo-app] AnalysisRun demo-app-v4.0-3 measurement 1: {"status":"degraded","version":"v4.0"} -> Failed
+09:43:48 [demo-app] AnalysisRun demo-app-v4.0-3 measurement 2: {"status":"degraded","version":"v4.0"} -> Failed
+09:43:48 [demo-app] AnalysisRun demo-app-v4.0-3 Failed (failures 2, failureLimit 1)
+09:43:49 [demo-app] Rollout aborted: metric "health" assessed Failed -> 100% traffic on stable demo-app:v3.0
+09:43:50 [demo-app] Argo CD sync e8bb777: live Rollout image demo-app:v4.0 != Git demo-app:v3.0 -> applying
+09:43:51 [demo-app] spec matches stable demo-app:v3.0: canary dropped

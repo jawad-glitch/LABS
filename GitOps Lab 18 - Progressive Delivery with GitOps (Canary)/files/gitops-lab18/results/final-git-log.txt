@@ -1,7 +1,7 @@
-0198e78 Revert "release v4.0"
-d2dacb3 release v4.0
-6b37eba release v3.0
-534d43a add AnalysisTemplate health-check (web) + analysis step after 20%
-0b6401c release v2.0
-37cae09 Argo CD Application (automated, prune, selfHeal)
-899fb31 demo-app v1.0: Rollout canary 20/40/60/80, stable/canary services, nginx ingress
+e8bb777 Revert "release v4.0"
+eb891cf release v4.0
+e78f1aa release v3.0
+9dccd64 add AnalysisTemplate health-check (web) + analysis step after 20%
+9af3c21 release v2.0
+cd680d6 Argo CD Application (automated, prune, selfHeal)
+61d7086 demo-app v1.0: Rollout canary 20/40/60/80, stable/canary services, nginx ingress

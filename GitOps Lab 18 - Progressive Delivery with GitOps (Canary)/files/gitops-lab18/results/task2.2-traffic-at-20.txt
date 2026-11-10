@@ -1,3 +1,3 @@
 direct stable service: Version: v1.0 | direct canary service: Version: v2.0
-ingress, no header (50 req): 40 v1.0 10 v2.0
+ingress, no header (50 req): 39 v1.0 11 v2.0
 ingress, X-Canary: true (50 req): 50 v2.0

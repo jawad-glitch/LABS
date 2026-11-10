@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 17 - Multi-Cluster Cilium Setup, 2026-11-10 07:26:17 UTC) - CLUSTER RUNTIME SIMULATED ==========
+PASS: Task 1: docker, helm v3, cilium CLI v0.20.2 (sha256), kubeconform available
+PASS: Task 3 (real CLI): lab install flags checked - 4 of the lab-specific flags absent; --set/--version present
+PASS: Task 3.3/4.2: cilium clustermesh enable/connect/status exist in CLI v0.20.2
+PASS: Task 2: kind configs - pod and service CIDRs of both clusters do not overlap
+PASS: Task 3 fixed: chart 1.20.4 renders cluster1(id 1) and cluster2(id 2) with clustermesh-apiserver + KPR; schema-valid
+PASS: Lab bug: *.svc.clusterset.local needs MCS-API (chart clustermesh.mcsapi, default off); fixed uses one global web-service in both clusters
+FAIL: Tasks 5/8: fixed apps + global service + labelled test pods valid; page includes CLUSTER_NAME for the LB test
+PASS: Lab bug: lab CNP uses fromClusters - rejected by the CiliumNetworkPolicy CRD schema
+PASS: Lab bug + fix: lab policy denies its own unlabelled test pod; fixed allows test-client cross-cluster, denies unauthorized
+PASS: Lab bug: cilium service list / hubble observe / endpoint list are not cilium CLI commands
+PASS: Time: finished in 23s (<= 300s); runtime steps documented in SIMULATED.md
+CORE: 10/11 PASS

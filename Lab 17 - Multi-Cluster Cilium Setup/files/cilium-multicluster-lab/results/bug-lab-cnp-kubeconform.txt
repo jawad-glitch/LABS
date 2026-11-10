@@ -1,0 +1,2 @@
+lab-original/cross-cluster-policy.yaml - CiliumNetworkPolicy cross-cluster-policy is invalid: problem validating schema. Check JSON formatting: jsonschema validation failed with 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/cilium.io/ciliumnetworkpolicy_v2.json#' - at '/spec/ingress/1': additional properties 'fromClusters' not allowed
+Summary: 1 resource found in 1 file - Valid: 0, Invalid: 1, Errors: 0, Skipped: 0

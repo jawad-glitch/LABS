@@ -1,0 +1,11 @@
+== cilium service list --help
+unknown command "service" for "cilium"
+exit=0
+== cilium hubble observe --help
+Hubble observability
+
+Usage:
+exit=0
+== cilium endpoint list --help
+unknown command "endpoint" for "cilium"
+exit=0

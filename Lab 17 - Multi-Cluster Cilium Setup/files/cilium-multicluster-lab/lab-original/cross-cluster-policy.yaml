@@ -1,0 +1,18 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: cross-cluster-policy
+spec:
+  endpointSelector:
+    matchLabels:
+      app: web-app
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: web-app
+  - fromClusters:
+    - cluster2
+    toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP

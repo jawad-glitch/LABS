@@ -1,0 +1,2 @@
+render cluster1 rc=0
+render cluster2 rc=0

@@ -1,0 +1,5 @@
+cluster1/pods 10.1.0.0/16
+cluster1/services 10.101.0.0/16
+cluster2/pods 10.2.0.0/16
+cluster2/services 10.102.0.0/16
+OVERLAPS: none

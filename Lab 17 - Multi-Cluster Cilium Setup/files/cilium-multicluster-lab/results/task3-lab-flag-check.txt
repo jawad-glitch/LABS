@@ -1,0 +1,6 @@
+--enable-cluster-mesh ABSENT
+--config ABSENT
+--cluster-name ABSENT
+--cluster-id ABSENT
+--set PRESENT
+--version PRESENT

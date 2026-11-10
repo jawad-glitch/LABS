@@ -1,0 +1,11 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: cluster1
+networking:
+  disableDefaultCNI: true
+  kubeProxyMode: "none"
+  podSubnet: "10.1.0.0/16"
+  serviceSubnet: "10.101.0.0/16"
+nodes:
+- role: control-plane
+- role: worker

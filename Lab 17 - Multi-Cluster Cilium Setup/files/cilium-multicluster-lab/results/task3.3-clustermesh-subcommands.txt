@@ -1,0 +1,25 @@
+Multi Cluster Management
+
+Usage:
+  cilium clustermesh [command]
+
+Available Commands:
+  connect                              Connect to a remote cluster
+  disable                              Disable ClusterMesh ability in a cluster using Helm
+  disconnect                           Disconnect from a remote cluster
+  enable                               Enable ClusterMesh ability in a cluster using Helm
+  inspect-policy-default-local-cluster List policies that would be affected by changing policy-default-local-cluster on a cluster
+  status                               Show status of ClusterMesh
+
+Flags:
+  -h, --help   help for clustermesh
+
+Global Flags:
+      --as string                  Username to impersonate for the operation. User could be a regular user or a service account in a namespace.
+      --as-group stringArray       Group to impersonate for the operation, this flag can be repeated to specify multiple groups.
+      --context string             Kubernetes configuration context
+      --helm-release-name string   Helm release name (default "cilium")
+      --kubeconfig string          Path to the kubeconfig file
+  -n, --namespace string           Namespace Cilium is running in. Can also be set via CILIUM_NAMESPACE env var (default "kube-system")
+
+Use "cilium clustermesh [command] --help" for more information about a command.

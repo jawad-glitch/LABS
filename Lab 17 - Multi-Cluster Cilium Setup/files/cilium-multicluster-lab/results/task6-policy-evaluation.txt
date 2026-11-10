@@ -1,0 +1,8 @@
+LAB | test-connectivity@cluster1 (lab: no labels)             -> DENY
+LAB | test-connectivity@cluster1 (fixed: app=test-client)     -> DENY
+LAB | unauthorized-test@cluster1                              -> DENY
+LAB | web-app@cluster2                                        -> ALLOW
+FIXED | test-connectivity@cluster1 (lab: no labels)             -> DENY
+FIXED | test-connectivity@cluster1 (fixed: app=test-client)     -> ALLOW
+FIXED | unauthorized-test@cluster1                              -> DENY
+FIXED | web-app@cluster2                                        -> ALLOW

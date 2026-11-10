@@ -1,0 +1,2 @@
+cluster1 cluster-name=cluster1 cluster-id=1 kpr=true routing=tunnel deployments=cilium-operator,clustermesh-apiserver,hubble-relay
+cluster2 cluster-name=cluster2 cluster-id=2 kpr=true routing=tunnel deployments=cilium-operator,clustermesh-apiserver,hubble-relay

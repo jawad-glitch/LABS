@@ -1,0 +1,4 @@
+LAB  commonLabels Service selector:    {'app': 'nginx', 'environment': 'demo', 'managed-by': 'argocd'}
+LAB  commonLabels Deployment selector: {'app': 'nginx', 'environment': 'demo', 'managed-by': 'argocd'}
+FIXED labels      Service selector:    {'app': 'nginx'}
+FIXED labels      Deployment selector: {'app': 'nginx'}

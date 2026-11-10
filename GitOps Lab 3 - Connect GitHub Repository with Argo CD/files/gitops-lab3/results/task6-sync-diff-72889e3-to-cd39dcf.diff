@@ -1,0 +1,11 @@
+--- /home/ubuntu/gitops-lab3/rendered/desired-72889e3.yaml	2026-11-10 08:27:07.133547956 +0000
++++ /home/ubuntu/gitops-lab3/rendered/desired-cd39dcf.yaml	2026-11-10 08:27:09.019595173 +0000
+@@ -35,7 +35,7 @@
+   name: nginx-deployment
+   namespace: demo-app
+ spec:
+-  replicas: 2
++  replicas: 3
+   selector:
+     matchLabels:
+       app: nginx

@@ -1,0 +1,9 @@
+repoURL   lab=https://github.com/YOUR_USERNAME/gitops-demo-app.git    generated=/home/ubuntu/gitops-remote/gitops-demo-app.git <- differs
+path      lab=.                                                       generated=. 
+rev       lab=HEAD                                                    generated=HEAD 
+dest      lab=('https://kubernetes.default.svc', 'demo-app')          generated=('https://kubernetes.default.svc', 'demo-app') 
+prune     lab=True                                                    generated=True 
+selfHeal  lab=True                                                    generated=True 
+opts      lab=['CreateNamespace=true']                                generated=['CreateNamespace=true'] 
+retry     lab={'limit': 2, 'backoff': {'duration': '5s', 'factor': 2, 'maxDuration': '3m'}} generated={'backoff': {'duration': '5s', 'factor': 2, 'maxDuration': '3m0s'}, 'limit': 2} <- differs
+SECRET name=repo-2429309132 type-label=repository url=/home/ubuntu/gitops-remote/gitops-demo-app.git

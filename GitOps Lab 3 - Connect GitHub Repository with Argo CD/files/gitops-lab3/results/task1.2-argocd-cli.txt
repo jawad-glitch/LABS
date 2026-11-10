@@ -1,0 +1,2 @@
+argocd CLI v3.6.1 installed (sha256 OK)
+argocd: v3.6.1+94037c4

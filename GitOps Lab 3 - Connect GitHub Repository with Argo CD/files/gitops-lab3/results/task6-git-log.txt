@@ -1,0 +1,2 @@
+cd39dcf Scale nginx deployment to 3 replicas
+72889e3 Initial commit: Add nginx application manifests

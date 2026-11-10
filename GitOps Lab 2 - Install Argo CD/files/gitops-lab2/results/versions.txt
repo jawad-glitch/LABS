@@ -1,0 +1,1 @@
+argo/argo-cd chart 10.17.1 (app v3.6.1)

@@ -1,0 +1,10 @@
+configs:
+  secret:
+    argocdServerAdminPassword: '<bcrypt-hash-redacted>'
+  rbac:
+    policy.default: role:readonly
+    policy.csv: |
+      p, role:admin, applications, *, */*, allow
+      p, role:admin, clusters, *, *, allow
+      p, role:admin, repositories, *, *, allow
+      g, admin, role:admin

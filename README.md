@@ -83,3 +83,4 @@
 | [Lab 17 - Multi-Cluster Cilium Setup](Lab%2017%20-%20Multi-Cluster%20Cilium%20Setup/PROOF.md) | CORE: 10/11 PASS | 2026-11-10 07:26 |
 | [Lab 20 - Advanced Cilium Troubleshooting](Lab%2020%20-%20Advanced%20Cilium%20Troubleshooting/PROOF.md) | CORE: 9/13 PASS | 2026-11-10 08:14 |
 | [GitOps Lab 1 - GitOps Overview and Setup](GitOps%20Lab%201%20-%20GitOps%20Overview%20and%20Setup/PROOF.md) | CORE: 11/11 PASS | 2026-11-10 08:21 |
+| [GitOps Lab 2 - Install Argo CD](GitOps%20Lab%202%20-%20Install%20Argo%20CD/PROOF.md) | no core-check file | 2026-11-10 08:24 |

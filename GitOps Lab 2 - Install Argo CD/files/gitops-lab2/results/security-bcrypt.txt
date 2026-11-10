@@ -1,0 +1,1 @@
+bcrypt hash prefix: $2a$ (length 60)

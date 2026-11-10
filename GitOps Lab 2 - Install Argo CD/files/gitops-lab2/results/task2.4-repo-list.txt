@@ -1,0 +1,2 @@
+NAME	URL                                 
+argo	https://argoproj.github.io/argo-helm

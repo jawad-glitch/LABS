@@ -1,0 +1,16 @@
+=== Declarative ===
+/home/ubuntu/gitops-demo/applications/demo-app/configmap.yaml
+/home/ubuntu/gitops-demo/applications/demo-app/deployment.yaml
+/home/ubuntu/gitops-demo/applications/demo-app/kustomization.yaml
+/home/ubuntu/gitops-demo/applications/demo-app/namespace.yaml
+/home/ubuntu/gitops-demo/applications/demo-app/service.yaml
+=== Versioned ===
+
+=== Automated sync policy ===
+{"automated": {"prune": true, "selfHeal": true}, "syncOptions": ["CreateNamespace=true"]}
+=== Monitored ===
+Synced Healthy rev 27abaf0
+27abaf0 Add ConfigMap for application configuration
+e5269c6 Scale application to 4 replicas, update nginx to 1.27, and adjust resources
+5e1ca83 Add Argo CD Application (git:// repoURL)
+fd98e21 Initial commit: Add demo application manifests

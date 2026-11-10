@@ -1,0 +1,1 @@
+argocd CLI v3.6.1 installed (sha256 OK)

@@ -1,0 +1,18 @@
+08:33:17 rev 5e1ca83 OutOfSync: live=0 (matching=0) desired=2 image=nginx:1.26-alpine
+08:33:18 created pod (template 8dc7e4c944, nginx:1.26-alpine)
+08:33:19 created pod (template 8dc7e4c944, nginx:1.26-alpine)
+08:33:19 rev 5e1ca83 Synced/Healthy replicas=2 image=nginx:1.26-alpine configmaps=[]
+08:33:20 rev e5269c6 OutOfSync: live=2 (matching=0) desired=4 image=nginx:1.27-alpine
+08:33:21 created pod (template 9b599de805, nginx:1.27-alpine)
+08:33:21 created pod (template 9b599de805, nginx:1.27-alpine)
+08:33:22 created pod (template 9b599de805, nginx:1.27-alpine)
+08:33:23 created pod (template 9b599de805, nginx:1.27-alpine)
+08:33:23 deleted pod 2db3825c3588 (stale or surplus)
+08:33:24 deleted pod 9ba178986a88 (stale or surplus)
+08:33:24 rev e5269c6 Synced/Healthy replicas=4 image=nginx:1.27-alpine configmaps=[]
+08:33:27 rev e5269c6 OutOfSync: live=1 (matching=1) desired=4 image=nginx:1.27-alpine
+08:33:27 created pod (template 9b599de805, nginx:1.27-alpine)
+08:33:28 created pod (template 9b599de805, nginx:1.27-alpine)
+08:33:29 created pod (template 9b599de805, nginx:1.27-alpine)
+08:33:29 rev e5269c6 Synced/Healthy replicas=4 image=nginx:1.27-alpine configmaps=[]
+08:33:30 rev 27abaf0 Synced/Healthy replicas=4 image=nginx:1.27-alpine configmaps=['demo-app-config']

@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: demo-app
+spec:
+  destination:
+    namespace: demo-app
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: applications/demo-app
+    repoURL: git://172.17.0.1/gitops-demo.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

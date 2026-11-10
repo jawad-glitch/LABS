@@ -1,0 +1,17 @@
+{
+ "revision": "5e1ca83",
+ "sync": "Synced",
+ "health": "Healthy",
+ "replicas": 2,
+ "desired": 2,
+ "image": "nginx:1.26-alpine",
+ "env": {},
+ "limits": {
+  "memory": "128m",
+  "cpus": "0.5"
+ },
+ "configmaps": {},
+ "services": [
+  "demo-app-service"
+ ]
+}

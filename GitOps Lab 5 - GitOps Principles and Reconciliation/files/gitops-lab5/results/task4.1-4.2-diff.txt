@@ -1,0 +1,22 @@
+diff --git a/applications/demo-app/deployment.yaml b/applications/demo-app/deployment.yaml
+index 9deadf9..6e416d9 100644
+--- a/applications/demo-app/deployment.yaml
++++ b/applications/demo-app/deployment.yaml
+@@ -6,7 +6,7 @@ metadata:
+   labels:
+     app: demo-app
+ spec:
+-  replicas: 2
++  replicas: 4
+   selector:
+     matchLabels:
+       app: demo-app
+@@ -17,7 +17,7 @@ spec:
+     spec:
+       containers:
+       - name: demo-app
+-        image: nginx:1.26-alpine
++        image: nginx:1.27-alpine
+         ports:
+         - containerPort: 80
+         resources:

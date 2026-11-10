@@ -1,0 +1,3 @@
+argocd-application-controller kind: StatefulSet
+argocd-repo-server kind: Deployment
+largest CRD bytes: 387270 (client-side apply limit 262144)

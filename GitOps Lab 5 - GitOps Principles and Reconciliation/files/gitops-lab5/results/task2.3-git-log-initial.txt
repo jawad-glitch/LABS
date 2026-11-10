@@ -1,0 +1,1 @@
+fd98e21 Initial commit: Add demo application manifests

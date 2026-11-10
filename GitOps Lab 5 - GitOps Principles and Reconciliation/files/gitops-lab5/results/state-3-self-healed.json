@@ -1,0 +1,19 @@
+{
+ "revision": "e5269c6",
+ "sync": "Synced",
+ "health": "Healthy",
+ "replicas": 4,
+ "desired": 4,
+ "image": "nginx:1.27-alpine",
+ "env": {
+  "ENVIRONMENT": "development"
+ },
+ "limits": {
+  "memory": "256m",
+  "cpus": "0.2"
+ },
+ "configmaps": {},
+ "services": [
+  "demo-app-service"
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "revision": "27abaf0",
+ "sync": "Synced",
+ "health": "Healthy",
+ "replicas": 4,
+ "desired": 4,
+ "image": "nginx:1.27-alpine",
+ "env": {
+  "ENVIRONMENT": "development"
+ },
+ "limits": {
+  "memory": "256m",
+  "cpus": "0.2"
+ },
+ "configmaps": {
+  "demo-app-config": [
+   "app.properties",
+   "nginx.conf"
+  ]
+ },
+ "services": [
+  "demo-app-service"
+ ]
+}

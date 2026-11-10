@@ -1,4 +1,4 @@
-shop/api:0.9.0 gate exit=1 findings=ERR    
-shop/api:1.0.0-alpine3.20 gate exit=1 findings=ERR    
-shop/api:1.0.0 gate exit=1 findings=ERR    
+shop/api:0.9.0 gate exit=1 findings=36  CVE-2025-68973/gpgv CVE-2026-33845/libgnutls30 CVE-2026-42010/libgnutls30
+shop/api:1.0.0-alpine3.20 gate exit=1 findings=20  CVE-2026-31789/libcrypto3 CVE-2025-15467/libcrypto3 CVE-2025-69421/libcrypto3
+shop/api:1.0.0 gate exit=0 findings=0  
 user: 10001:10001 (v0: '')

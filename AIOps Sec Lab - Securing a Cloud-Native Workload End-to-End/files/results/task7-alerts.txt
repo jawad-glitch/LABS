@@ -1,1 +1,2 @@
       5 Notice	Terminal shell in container	sh
+      5 Warning	Shop API Vault Secret Read by Unexpected Process	cat

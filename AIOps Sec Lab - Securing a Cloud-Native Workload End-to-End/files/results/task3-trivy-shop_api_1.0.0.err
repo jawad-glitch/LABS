@@ -1,7 +1,8 @@
-2026-11-10T19:18:49Z	FATAL	Fatal error	run error: image scan error: scan error: unable to initialize a scan service: unable to initialize artifact: unable to initialize container image: unable to find the specified image "shop/api:1.0.0" in ["docker" "containerd" "podman" "remote"]: 4 errors occurred:
-	* docker error: unable to inspect the image (shop/api:1.0.0): permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
-	* containerd error: failed to list images from containerd client: connection error: desc = "transport: Error while dialing: dial unix /run/containerd/containerd.sock: connect: permission denied"
-	* podman error: unable to initialize Podman client: no podman socket found: stat /run/user/1000/podman/podman.sock: no such file or directory
-	* remote error: GET https://index.docker.io/v2/shop/api/manifests/1.0.0: UNAUTHORIZED: authentication required; [map[Action:pull Class: Name:shop/api Type:repository]]
-
-
+2026-11-10T19:24:23Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-10T19:24:23Z	INFO	[secret] Secret scanning is enabled
+2026-11-10T19:24:23Z	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2026-11-10T19:24:23Z	INFO	[secret] Please see https://trivy.dev/docs/v0.76/guide/scanner/secret#recommendation for faster secret detection
+2026-11-10T19:24:24Z	INFO	[python] Licenses acquired from one or more METADATA files may be subject to additional terms. Use `--debug` flag to see all affected packages.
+2026-11-10T19:24:24Z	INFO	Detected OS	family="alpine" version="3.24.4"
+2026-11-10T19:24:24Z	INFO	[alpine] Detecting vulnerabilities...	os_version="3.24" repository="3.24" pkg_num=38
+2026-11-10T19:24:24Z	INFO	Number of language-specific files	num=0

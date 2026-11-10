@@ -1,5 +1,5 @@
 pid_file = "/tmp/pidfile"
-exit_after_auth = true
+exit_after_auth = false
 vault { address = "http://l8-vault:8200" }
 auto_auth {
   method "kubernetes" {

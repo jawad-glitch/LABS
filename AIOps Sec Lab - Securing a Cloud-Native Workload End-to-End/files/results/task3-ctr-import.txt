@@ -1,0 +1,2 @@
+unpacking docker.io/shop/api:1.0.0 (sha256:2743a6cb3ea304bf53c6486cff47d9611e352954c6397fc370fc58fa8b026ac6)...done
+node images: docker.io/shop/api:1.0.0

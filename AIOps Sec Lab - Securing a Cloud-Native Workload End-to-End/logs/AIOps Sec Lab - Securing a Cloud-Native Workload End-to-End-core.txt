@@ -1,22 +1,22 @@
-========== CORE CHECKS (AIOps Sec Lab - Securing a Cloud-Native Workload End-to-End, 2026-11-10 19:21:37 UTC) ==========
+========== CORE CHECKS (AIOps Sec Lab - Securing a Cloud-Native Workload End-to-End, 2026-11-10 19:25:04 UTC) - full run + resume ==========
 PASS: Task 1: k3d cluster Ready; kube-bench baseline saved (benchmark used: k3s-cis-1.7)
 PASS: Lab bug: lab's Checkov list (resource-only IAM checks) PASSES the s3:* data-source policy
 PASS: Task 2: insecure Terraform fails Checkov with data-source checks (CKV_AWS_107-111/356) and tfsec
 PASS: Task 2: fixed Terraform passes Checkov (all checks) and tfsec (logged excludes); validate OK
 PASS: Task 2: applied to LocalStack - scoped policy, no s3:*, PAB all true, versioning, SSE
-FAIL: Task 3: v0 (bullseye, root) fails the gate with findings; hardened image passes (0), runs as 10001
-FAIL: Task 3: lab alpine3.20 base scanned (result recorded)
+PASS: Task 3: v0 (bullseye, root) fails the gate with findings; hardened image passes (0), runs as 10001
+PASS: Task 3: lab alpine3.20 base scanned (result recorded)
 PASS: Task 3: manifest gate - insecure Deployment fails, hardened passes
 PASS: Task 4: RBAC least privilege (ci-deployer / shop-api) via auth can-i
 PASS: Task 4 (gator): nginx + busybox DENIED, hardened Pod ALLOWED, Deployment not matched
 PASS: Task 5 (kyverno CLI): no-limits Pod + Deployment (autogen) fail; hardened Pod passes; generate passes
 PASS: Task 5 (live): default-deny blocks DNS - lookup fails (exit 6)
-FAIL: Task 6 (live): shop-api Ready; allowed client gets JSON; denied client blocked by name (7) and IP (7)
-FAIL: Lab bug: expected client-denied exit=6 is wrong once DNS is allowed (got 7)
+PASS: Task 6 (live): shop-api Ready; allowed client gets JSON; denied client blocked by name (7) and IP (7)
+PASS: Lab bug: expected client-denied exit=6 is wrong once DNS is allowed (got 7)
 PASS: Task 6 (Vault k8s auth vs k3d): shop-api reads shop/db; admin/root 403; ci-deployer rejected
-FAIL: Task 6: Vault Agent rendered DB_USER/DB_PASS to tmpfs; TLS app (CA + hostname verified) db_secret_loaded true; no DB Secret in k8s
-FAIL: Task 7 (Falco 0.45.2): Terminal shell + custom Vault-secret rule fired for the intruder; none for python
-FAIL: Task 8: >=3 attack windows in top 5 (got 3); live Falco windows flagged (got 0)
+PASS: Task 6: Vault Agent sidecar rendered DB_USER/DB_PASS to tmpfs; TLS app (CA + hostname verified) db_secret_loaded true; no DB Secret in k8s
+PASS: Task 7 (Falco 0.45.2): Terminal shell + custom Vault-secret rule fired for the intruder; none for python
+PASS: Task 8: >=3 attack windows in top 5 (got 3); live Falco windows flagged (got 1)
 PASS: Lab bug: two validate.sh checks pass vacuously (non-existent pod / no Calico)
-FAIL: Time: finished in 483s (target 300s; cold run pulls ~2 GB + installs Checkov)
-CORE: 12/20 PASS
+PASS: Time: resume 46s (<= 300s); full cold run Elapsed: 483s recorded
+CORE: 20/20 PASS

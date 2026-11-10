@@ -1,1 +1,1 @@
-shop-api ready: NO | probe remedy: none | pods: client-allowed:1/1:Running client-denied:1/1:Running shop-api-6b87554b8-ccsb6:0/1:ImagePullBackOff
+shop-api ready: yes | probe remedy: none | pods: client-allowed:1/1:Running client-denied:1/1:Running shop-api-6b87554b8-llfkb:1/1:Running

@@ -13,4 +13,4 @@ TOP ANOMALIES (training week)
 recall=1.00 precision=0.40
 
 LIVE FALCO WINDOWS
-19:20 shop/shop-api                           score=-0.248 flagged=False | n_shell=5 (z=29.5), n_events=5 (z=3.2), n_procs=1 (z=-0.0)
+19:20 shop/shop-api                           score=0.031 flagged=True | n_shell=5 (z=29.5), n_secret=5 (z=26.6), n_events=10 (z=8.5)

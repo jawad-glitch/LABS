@@ -1,0 +1,3 @@
+[36mINFO[0m[0009] Removing k3d-tools node...                   
+[36mINFO[0m[0009] Successfully imported image(s)               
+[36mINFO[0m[0009] Successfully imported 3 image(s) into 1 cluster(s) 

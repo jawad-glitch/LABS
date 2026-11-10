@@ -1,2 +1,2 @@
 ns,pod,window,n_events,n_rules,n_procs,max_prio,n_shell,n_secret,is_attack,night,score,flag
-shop,shop-api,2026-11-10 19:20:00+00:00,5,1,1,2,5,0,0,0,-0.24806119192755383,False
+shop,shop-api,2026-11-10 19:20:00+00:00,10,2,2,3,5,5,0,0,0.0309795400292302,True

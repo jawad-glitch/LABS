@@ -1,0 +1,32 @@
+{
+  "name": "devops/ubuntu2404",
+  "description": "Internal Ubuntu 24.04 base box (docker provider)",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "providers": [
+        {
+          "name": "docker",
+          "url": "file:///home/ubuntu/vagrant-lab/boxes/devops-ubuntu2404-docker-1.0.0.box",
+          "checksum_type": "sha256",
+          "checksum": "a0677512e3ad01d9dee4408a5cbfe23994105e5f7c680e3c5fa3eebf03e8e50d",
+          "architecture": "amd64",
+          "default_architecture": true
+        }
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "providers": [
+        {
+          "name": "docker",
+          "url": "file:///home/ubuntu/vagrant-lab/boxes/devops-ubuntu2404-docker-1.1.0.box",
+          "checksum_type": "sha256",
+          "checksum": "8a208d1df2fe01a3502535fd179e301bb672732d2a2b0aafa5bb4198160f19cc",
+          "architecture": "amd64",
+          "default_architecture": true
+        }
+      ]
+    }
+  ]
+}

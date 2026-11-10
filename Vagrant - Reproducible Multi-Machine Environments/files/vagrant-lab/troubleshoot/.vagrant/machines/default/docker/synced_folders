@@ -1,0 +1,1 @@
+{"docker":{"/srv/content":{"guestpath":"/srv/content","hostpath":"/home/ubuntu/vagrant-lab/troubleshoot/content","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/ubuntu/vagrant-lab/troubleshoot","disabled":false,"__vagrantfile":true}}}

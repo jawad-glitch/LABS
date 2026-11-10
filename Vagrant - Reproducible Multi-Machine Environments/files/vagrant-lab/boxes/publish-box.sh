@@ -9,10 +9,10 @@ IMAGE="devops-lab/vagrant-ubuntu:${VERSION}"
 BUILD="$BOXDIR/build-${VERSION}"
 BOXFILE="$BOXDIR/devops-ubuntu2404-docker-${VERSION}.box"
 
-docker build -q -t "$IMAGE" \
+docker build -t "$IMAGE" \
   --build-arg BOX_VERSION="$VERSION" \
   --build-arg EXTRA_PACKAGES="$EXTRA" \
-  "$LAB/image" >/dev/null
+  "$LAB/image" >/dev/null 2>&1
 
 rm -rf "$BUILD" && mkdir -p "$BUILD"
 cp "$LAB/image/vagrant_lab_key" "$BUILD/vagrant_private_key"
@@ -22,9 +22,9 @@ echo '{"provider": "docker"}' > "$BUILD/metadata.json"
 cat > "$BUILD/Vagrantfile" <<RUBY
 Vagrant.configure("2") do |config|
   config.ssh.private_key_path = File.expand_path("../vagrant_private_key", __FILE__)
-  config.ssh.insert_key = false
+  config.ssh.insert_key       = false
   config.vm.provider "docker" do |d|
-    d.image = "${IMAGE}"
+    d.image   = "${IMAGE}"
     d.has_ssh = true
   end
 end

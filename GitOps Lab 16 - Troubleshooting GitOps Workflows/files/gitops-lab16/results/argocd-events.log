@@ -1,0 +1,17 @@
+09:25:49 [webapp-dev] rev 03dbb96 dev-webapp drift/change: live 0 desired 1
+09:25:50 [webapp-dev] rev 03dbb96 dev-webapp pod created
+09:25:50 [webapp-dev] rev 03dbb96 Synced/Healthy {'dev-webapp': (1, 'Running')}
+09:25:53 [webapp-dev] rev 03dbb96 dev-webapp drift/change: live 5 desired 1
+09:25:54 [webapp-dev] rev 03dbb96 dev-webapp selfHeal: removed surplus pod a541431e09ec
+09:25:54 [webapp-dev] rev 03dbb96 dev-webapp selfHeal: removed surplus pod 338879e3d1e6
+09:25:55 [webapp-dev] rev 03dbb96 dev-webapp selfHeal: removed surplus pod 66055e289814
+09:25:55 [webapp-dev] rev 03dbb96 dev-webapp selfHeal: removed surplus pod ba3af7b745e8
+09:25:55 [webapp-dev] rev 03dbb96 Synced/Healthy {'dev-webapp': (1, 'Running')}
+09:25:56 [webapp-dev] rev 6ac90e0 ComparisonError: error: invalid Kustomization: yaml: line 9: did not find expected key - nothing applied, live state unchanged
+09:25:57 [webapp-dev] rev 71ac372 dev-invalid-app drift/change: live 0 desired 1
+09:25:57 [webapp-dev] rev 71ac372 dev-invalid-app Pending (0/1 nodes: Insufficient cpu/memory: requests cpu=8000m mem=10Gi vs node 2 CPU / 3848 Mi)
+09:25:57 [webapp-dev] rev 71ac372 Synced/Degraded {'dev-invalid-app': (0, 'Pending (0/1 nodes: Insufficient cpu/memory: requests cpu=8000m mem=10Gi vs node 2 CPU / 3848 Mi)'), 'dev-webapp': (1, 'Running')}
+09:25:58 [webapp-dev] rev 92baaf2 dev-invalid-app drift/change: live 0 desired 1
+09:25:58 [webapp-dev] rev 92baaf2 dev-invalid-app ErrImagePull nonexistent-image-l16:latest
+09:25:58 [webapp-dev] rev 92baaf2 Synced/Degraded {'dev-invalid-app': (0, 'ImagePullBackOff'), 'dev-webapp': (1, 'Running')}
+09:25:59 [webapp-dev] rev 1184e0f Synced/Healthy {'dev-webapp': (1, 'Running')}

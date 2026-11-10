@@ -1,0 +1,10 @@
+* 1184e0f Remove problematic configuration
+* 92baaf2 Same broken image, schedulable requests (shows ImagePullBackOff)
+* 71ac372 Add problematic configuration (correct resources: entry)
+* 6ac90e0 Add problematic configuration (lab: appended with cat >>)
+*   03dbb96 Resolve merge conflict: combine v1.1 and v1.2 features into v1.3
+|\  
+| * a487382 Update webapp to v1.2 with caching enabled and optimized resources
+* | 3818ce0 Update webapp to v1.1 with debug logging and increased resources
+|/  
+* d3f09be Initial GitOps repository setup with webapp configurations

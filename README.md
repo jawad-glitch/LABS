@@ -97,3 +97,4 @@
 | [GitOps Lab 13 - GitOps and Policy Enforcement](GitOps%20Lab%2013%20-%20GitOps%20and%20Policy%20Enforcement/PROOF.md) | CORE: 11/11 PASS | 2026-11-10 09:08 |
 | [GitOps Lab 14 - GitOps Rollback with Git History](GitOps%20Lab%2014%20-%20GitOps%20Rollback%20with%20Git%20History/PROOF.md) | CORE: 10/12 PASS | 2026-11-10 09:11 |
 | [GitOps Lab 15 - Observability in GitOps](GitOps%20Lab%2015%20-%20Observability%20in%20GitOps/PROOF.md) | CORE: 12/12 PASS | 2026-11-10 09:22 |
+| [GitOps Lab 16 - Troubleshooting GitOps Workflows](GitOps%20Lab%2016%20-%20Troubleshooting%20GitOps%20Workflows/PROOF.md) | CORE: 11/12 PASS | 2026-11-10 09:26 |

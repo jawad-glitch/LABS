@@ -1,0 +1,14 @@
+========== CORE CHECKS (GitOps Lab 16 - Troubleshooting GitOps Workflows, 2026-11-10 09:25:59 UTC) - CLUSTER/ARGO CD SIMULATED, GIT + PODS REAL ==========
+PASS: Task 1/2: tools (sha256); repo with base + dev/staging overlays on main; branches development/staging
+PASS: Lab default-branch check: default=master, lab 'git checkout main' rc=1 (fixed repo uses -b main)
+PASS: Task 3: merge development OK; merge staging CONFLICT with markers; stages :1/:2/:3 = v1.0 / v1.1 / v1.2
+PASS: Task 4.1: resolution commit (v1.3); builds valid; dev still nginx:1.20 x1 (patch overrides merge), staging nginx:1.21 x3
+PASS: Task 4.2/4.3: remote pushed BEFORE the Application; Application generated with reachable http repoURL
+PASS: Task 4.4 [real pod]: dev-webapp 1 pod nginx:1.20 with ENVIRONMENT=development + merged LOG_LEVEL/CACHE_ENABLED env
+PASS: Task 5.3: manual scale to 5 -> selfHeal back to 1
+PASS: Lab bug: 'cat >>' broken kustomization -> ComparisonError, nothing applied (dev-webapp untouched)
+PASS: Fixed placement: invalid-app Pending (requests > real node capacity); then ImagePullBackOff -> Degraded
+FAIL: Task 5.6: fix commit -> invalid-app pruned, Synced/Healthy, dev-webapp 1 running
+PASS: Task 7: health check OK on final state, ATTENTION on broken state; corrected playbook (statefulset logs)
+PASS: Time: finished in 28s (<= 300s)
+CORE: 11/12 PASS

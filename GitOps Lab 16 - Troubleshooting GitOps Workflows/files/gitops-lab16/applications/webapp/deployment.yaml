@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  namespace: default
+  labels: {version: "v1.3", team: "fullstack"}
+spec:
+  replicas: 3
+  selector:
+    matchLabels: {app: webapp}
+  template:
+    metadata:
+      labels: {app: webapp, version: "v1.3"}
+    spec:
+      containers:
+      - name: webapp
+        image: nginx:1.22
+        ports: [{containerPort: 80}]
+        env: [{name: LOG_LEVEL, value: "info"}, {name: CACHE_ENABLED, value: "true"}]
+        resources:
+          requests: {memory: "128Mi", cpu: "400m"}
+          limits: {memory: "256Mi", cpu: "800m"}

@@ -1,0 +1,2 @@
+dev: dev-webapp dev replicas 1 nginx:1.20 ['ENVIRONMENT', 'LOG_LEVEL', 'CACHE_ENABLED']
+staging: staging-webapp staging replicas 3 nginx:1.21 ['ENVIRONMENT', 'LOG_LEVEL', 'CACHE_ENABLED']

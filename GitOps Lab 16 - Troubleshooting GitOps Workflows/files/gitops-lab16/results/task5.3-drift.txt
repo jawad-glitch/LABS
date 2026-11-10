@@ -1,0 +1,2 @@
+after manual 'kubectl scale --replicas=5': 5 pods
+after selfHeal: 1 pod(s)

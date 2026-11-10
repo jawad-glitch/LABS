@@ -1,0 +1,4 @@
+=== GitOps Health Check ===
+Sync: Synced  Health: Healthy  Revision: 1184e0f
+  dev-webapp   1/1 nginx:1.20 Running
+RESULT: OK

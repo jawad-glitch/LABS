@@ -1,0 +1,1 @@
+{"revision": "6ac90e0", "deployments": {}, "sync": "Unknown", "health": "Unknown", "condition": "ComparisonError: error: invalid Kustomization: yaml: line 9: did not find expected key"}

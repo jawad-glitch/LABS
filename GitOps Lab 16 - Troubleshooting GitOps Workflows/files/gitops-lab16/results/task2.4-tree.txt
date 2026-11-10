@@ -1,0 +1,7 @@
+./applications/webapp/deployment.yaml
+./applications/webapp/kustomization.yaml
+./applications/webapp/service.yaml
+./environments/dev/deployment-patch.yaml
+./environments/dev/kustomization.yaml
+./environments/staging/deployment-patch.yaml
+./environments/staging/kustomization.yaml

@@ -1,0 +1,2 @@
+error: pathspec 'main' did not match any file(s) known to git
+VM default branch: master | lab 'git checkout main' rc=1

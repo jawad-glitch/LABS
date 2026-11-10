@@ -1,0 +1,3 @@
+Auto-merging applications/webapp/deployment.yaml
+CONFLICT (content): Merge conflict in applications/webapp/deployment.yaml
+Automatic merge failed; fix conflicts and then commit the result.

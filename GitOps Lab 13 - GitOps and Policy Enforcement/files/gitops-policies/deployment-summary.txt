@@ -1,0 +1,8 @@
+GitOps Policy Enforcement - Deployment Summary (generated from gator results)
+
+DENIED   compliant-deployment.yaml                      
+DENIED   corrected-labels-deployment.yaml               
+DENIED   compliant-service.yaml                         must-have-environment
+DENIED   missing-labels-deployment.yaml                 must-have-environment
+DENIED   missing-limits-deployment.yaml                 
+DENIED   compliant-deployment.yaml                      

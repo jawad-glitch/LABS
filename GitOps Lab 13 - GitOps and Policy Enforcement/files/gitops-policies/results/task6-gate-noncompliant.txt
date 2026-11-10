@@ -1,0 +1,6 @@
+FAIL applications/production/namespace.yaml
+     auditing objects: adding constraint "must-have-environment": invalid Constraint: unknown fields: [spec.parameters]
+FAIL manifests/non-compliant/missing-labels-deployment.yaml
+     auditing objects: adding constraint "must-have-environment": invalid Constraint: unknown fields: [spec.parameters]
+FAIL manifests/non-compliant/missing-limits-deployment.yaml
+     reading: reading from filenames: reading file "manifests/non-compliant/missing-limits-deployment.yaml": reading yaml source: error converting YAML to JSON: yaml: line 8: mapping values are not allowed in this context

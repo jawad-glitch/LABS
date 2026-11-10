@@ -1,0 +1,2 @@
+nginx:1.27-alpine (lab image) as uid 101 + read-only root: state=exited | emerg] 1#1: mkdir() "/var/cache/nginx/client_temp" failed (30: Read-only file system)
+nginx-unprivileged:1.27-alpine as uid 101 + read-only root + cap-drop ALL: state=running http=200

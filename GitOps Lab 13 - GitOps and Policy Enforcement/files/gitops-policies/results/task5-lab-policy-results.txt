@@ -1,0 +1,3 @@
+compliant-deployment.yaml                      DENIED   
+missing-labels-deployment.yaml                 DENIED   Missing required label: app;Missing required label: environment;must-have-environment
+missing-limits-deployment.yaml                 DENIED   

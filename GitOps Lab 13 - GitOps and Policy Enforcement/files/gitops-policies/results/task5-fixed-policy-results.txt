@@ -1,0 +1,6 @@
+compliant-deployment.yaml                      DENIED   
+corrected-labels-deployment.yaml               DENIED   
+compliant-service.yaml                         DENIED   must-have-environment
+missing-labels-deployment.yaml                 DENIED   must-have-environment
+missing-limits-deployment.yaml                 DENIED   
+compliant-deployment.yaml                      DENIED   

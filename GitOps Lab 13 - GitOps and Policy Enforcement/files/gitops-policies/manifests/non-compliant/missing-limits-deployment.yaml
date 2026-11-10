@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: non-compliant-limits
+  namespace: default
+  labels:
+    environment: development
+    app: bad-limits-app    version: v1.0.0
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: bad-limits-app}
+  template:
+    metadata:
+      labels: {app: bad-limits-app, environment: development}
+    spec:
+      containers:
+      - name: web
+        image: nginx:1.27-alpine
+        ports: [{containerPort: 80}]
+

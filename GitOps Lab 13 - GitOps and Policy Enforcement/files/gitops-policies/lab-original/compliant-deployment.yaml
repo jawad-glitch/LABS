@@ -5,17 +5,28 @@ metadata:
   namespace: default
   labels:
     environment: development
-    app: web-server    version: v1.0.0
+    app: web-server
+    version: v1.0.0
 spec:
   replicas: 1
   selector:
-    matchLabels: {app: web-server}
+    matchLabels:
+      app: web-server
   template:
     metadata:
-      labels: {app: web-server, environment: development}
+      labels:
+        app: web-server
+        environment: development
     spec:
       containers:
       - name: web
         image: nginx:1.27-alpine
-        ports: [{containerPort: 80}]
-        resources: {limits: {cpu: "200m", memory: "256Mi"}, requests: {cpu: "100m", memory: "128Mi"}}
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi

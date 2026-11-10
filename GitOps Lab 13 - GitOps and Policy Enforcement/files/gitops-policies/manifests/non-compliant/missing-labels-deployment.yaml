@@ -8,13 +8,23 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels: {app: bad-app}
+    matchLabels:
+      app: bad-app
   template:
     metadata:
-      labels: {app: bad-app, environment: none}
+      labels:
+        app: bad-app
+        environment: none
     spec:
       containers:
       - name: web
         image: nginx:1.27-alpine
-        ports: [{containerPort: 80}]
-        resources: {limits: {cpu: "200m", memory: "256Mi"}, requests: {cpu: "100m", memory: "128Mi"}}
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi

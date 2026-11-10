@@ -1,1 +1,1 @@
-Elapsed: 22s
+Elapsed: 17s

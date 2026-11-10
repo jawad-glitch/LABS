@@ -1,0 +1,13 @@
+========== CORE CHECKS (GitOps Lab 13 - GitOps and Policy Enforcement, 2026-11-10 09:08:01 UTC) - CLUSTER SIMULATED, GATEKEEPER ENGINE REAL (gator) ==========
+PASS: Tools: gator v3.23.1 (Gatekeeper engine) installed; templates/manifests schema-valid
+PASS: Task 5.4 (lab policies): missing-labels Deployment DENIED (Missing required label)
+PASS: Lab bug: lab limits policy reads spec.containers - non-compliant-limits Deployment is ALLOWED
+PASS: Fixed limits policy (pod-template paths): non-compliant-limits DENIED
+PASS: Lab bug: lab compliant-app violates the (working) security-context policy - would be DENIED on next sync
+PASS: Hardened compliant-app, corrected-labels-app and Service ALLOWED by all 3 fixed policies
+PASS: Runtime: lab nginx dies under read-only/non-root; hardened nginx-unprivileged serves HTTP 200
+PASS: Task 6: pre-merge gate passes compliant (rc 0) and blocks non-compliant (rc 1) before the cluster
+PASS: Lab bug: hand-written summary claims 'missing-limits-deployment' blocked; generated summary reflects real results
+PASS: Task 8: repo committed (policies, manifests, gate, README, generated summary)
+PASS: Time: finished in 17s (<= 300s)
+CORE: 11/11 PASS

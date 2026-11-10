@@ -5,17 +5,21 @@ metadata:
   namespace: default
   labels:
     environment: development
-    app: bad-limits-app    version: v1.0.0
+    app: bad-limits-app
+    version: v1.0.0
 spec:
   replicas: 1
   selector:
-    matchLabels: {app: bad-limits-app}
+    matchLabels:
+      app: bad-limits-app
   template:
     metadata:
-      labels: {app: bad-limits-app, environment: development}
+      labels:
+        app: bad-limits-app
+        environment: development
     spec:
       containers:
       - name: web
         image: nginx:1.27-alpine
-        ports: [{containerPort: 80}]
-
+        ports:
+        - containerPort: 80

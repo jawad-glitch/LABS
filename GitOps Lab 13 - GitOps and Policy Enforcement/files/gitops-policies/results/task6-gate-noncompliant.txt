@@ -1,6 +1,11 @@
-FAIL applications/production/namespace.yaml
-     auditing objects: adding constraint "must-have-environment": invalid Constraint: unknown fields: [spec.parameters]
+PASS applications/production/namespace.yaml
 FAIL manifests/non-compliant/missing-labels-deployment.yaml
-     auditing objects: adding constraint "must-have-environment": invalid Constraint: unknown fields: [spec.parameters]
+     apps/v1/Deployment default/non-compliant-labels: ["must-have-security-context"] Message: "Container web must have read-only root filesystem"
+     apps/v1/Deployment default/non-compliant-labels: ["must-have-security-context"] Message: "Container web must run as non-root user"
+     apps/v1/Deployment default/non-compliant-labels: ["must-have-environment"] Message: "Missing required label: app"
+     apps/v1/Deployment default/non-compliant-labels: ["must-have-environment"] Message: "Missing required label: environment"
 FAIL manifests/non-compliant/missing-limits-deployment.yaml
-     reading: reading from filenames: reading file "manifests/non-compliant/missing-limits-deployment.yaml": reading yaml source: error converting YAML to JSON: yaml: line 8: mapping values are not allowed in this context
+     apps/v1/Deployment default/non-compliant-limits: ["container-must-have-limits"] Message: "Container web must have CPU limits defined"
+     apps/v1/Deployment default/non-compliant-limits: ["container-must-have-limits"] Message: "Container web must have memory limits defined"
+     apps/v1/Deployment default/non-compliant-limits: ["must-have-security-context"] Message: "Container web must have read-only root filesystem"
+     apps/v1/Deployment default/non-compliant-limits: ["must-have-security-context"] Message: "Container web must run as non-root user"

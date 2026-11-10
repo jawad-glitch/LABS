@@ -1,6 +1,6 @@
-compliant-deployment.yaml                      DENIED   
-corrected-labels-deployment.yaml               DENIED   
-compliant-service.yaml                         DENIED   must-have-environment
-missing-labels-deployment.yaml                 DENIED   must-have-environment
-missing-limits-deployment.yaml                 DENIED   
-compliant-deployment.yaml                      DENIED   
+compliant-deployment.yaml                      ALLOWED  
+corrected-labels-deployment.yaml               ALLOWED  
+compliant-service.yaml                         ALLOWED  
+missing-labels-deployment.yaml                 DENIED   Missing required label: app;Missing required label: environment;must have read-only root filesystem;must run as non-root user;must-have-environment;must-have-security-context
+missing-limits-deployment.yaml                 DENIED   container-must-have-limits;must have CPU limits defined;must have memory limits defined;must have read-only root filesystem;must run as non-root user;must-have-security-context
+compliant-deployment.yaml                      DENIED   must have read-only root filesystem;must run as non-root user;must-have-security-context

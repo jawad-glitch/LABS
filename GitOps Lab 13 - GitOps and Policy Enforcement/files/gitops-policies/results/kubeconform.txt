@@ -1,5 +1,1 @@
-manifests/non-compliant/missing-limits-deployment.yaml - failed validation: error unmarshalling resource: error converting YAML to JSON: yaml: line 8: mapping values are not allowed in this context
-manifests/compliant/compliant-deployment.yaml - failed validation: error unmarshalling resource: error converting YAML to JSON: yaml: line 8: mapping values are not allowed in this context
-policies/templates/require-labels-template.yaml - ConstraintTemplate k8srequiredlabels is invalid: problem validating schema. Check JSON formatting: jsonschema validation failed with 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/templates.gatekeeper.sh/constrainttemplate_v1.json#' - at '/spec/crd/spec/validation': additional properties 'properties', 'type' not allowed
-manifests/compliant/corrected-labels-deployment.yaml - failed validation: error unmarshalling resource: error converting YAML to JSON: yaml: line 8: mapping values are not allowed in this context
-Summary: 9 resources found in 9 files - Valid: 5, Invalid: 1, Errors: 3, Skipped: 0
+Summary: 9 resources found in 9 files - Valid: 9, Invalid: 0, Errors: 0, Skipped: 0

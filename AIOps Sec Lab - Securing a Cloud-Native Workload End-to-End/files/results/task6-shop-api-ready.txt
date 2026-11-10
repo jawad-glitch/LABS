@@ -1,0 +1,1 @@
+shop-api ready: yes | probe remedy: none | pods: client-allowed:1/1:Running client-denied:1/1:Running shop-api-6b87554b8-nft2h:1/1:Terminating shop-api-79fb4b7978-rdn6n:1/1:Running

@@ -1,0 +1,7 @@
+2026-11-10T19:06:51Z	FATAL	Fatal error	run error: image scan error: scan error: unable to initialize a scan service: unable to initialize artifact: unable to initialize container image: unable to find the specified image "shop/api:1.0.0" in ["docker" "containerd" "podman" "remote"]: 4 errors occurred:
+	* docker error: unable to inspect the image (shop/api:1.0.0): permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+	* containerd error: failed to list images from containerd client: connection error: desc = "transport: Error while dialing: dial unix /run/containerd/containerd.sock: connect: permission denied"
+	* podman error: unable to initialize Podman client: no podman socket found: stat /run/user/1000/podman/podman.sock: no such file or directory
+	* remote error: GET https://index.docker.io/v2/shop/api/manifests/1.0.0: UNAUTHORIZED: authentication required; [map[Action:pull Class: Name:shop/api Type:repository]]
+
+

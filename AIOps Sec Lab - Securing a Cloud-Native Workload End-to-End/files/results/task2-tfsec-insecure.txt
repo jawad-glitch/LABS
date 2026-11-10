@@ -120,18 +120,18 @@ Result #6 HIGH Bucket does not encrypt data with a customer managed key.
 
 Results #7-8 HIGH IAM policy document uses wildcarded action 's3:*' (2 similar results)
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-  main.tf:24
+  main.tf:34
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-   21    data "aws_iam_policy_document" "shop_api" {
-   22      statement {
-   23        sid       = "AllS3"
-   24  [     actions   = ["s3:*"]
-   25        resources = ["*"]
-   26      }
-   27    }
+   31    data "aws_iam_policy_document" "shop_api" {
+   32      statement {
+   33        sid       = "AllS3"
+   34  [     actions   = ["s3:*"]
+   35        resources = ["*"]
+   36      }
+   37    }
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
   Individual Causes
-  - main.tf:21-27 (data.aws_iam_policy_document.shop_api) 2 instances
+  - main.tf:31-37 (data.aws_iam_policy_document.shop_api) 2 instances
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
           ID aws-iam-no-policy-wildcards
       Impact Overly permissive policies may grant access to sensitive resources
@@ -145,18 +145,18 @@ Results #7-8 HIGH IAM policy document uses wildcarded action 's3:*' (2 similar r
 
 Results #9-10 HIGH IAM policy document uses sensitive action 's3:*' on wildcarded resource '*' (2 similar results)
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-  main.tf:25
+  main.tf:35
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-   21    data "aws_iam_policy_document" "shop_api" {
-   22      statement {
-   23        sid       = "AllS3"
-   24        actions   = ["s3:*"]
-   25  [     resources = ["*"]
-   26      }
-   27    }
+   31    data "aws_iam_policy_document" "shop_api" {
+   32      statement {
+   33        sid       = "AllS3"
+   34        actions   = ["s3:*"]
+   35  [     resources = ["*"]
+   36      }
+   37    }
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
   Individual Causes
-  - main.tf:21-27 (data.aws_iam_policy_document.shop_api) 2 instances
+  - main.tf:31-37 (data.aws_iam_policy_document.shop_api) 2 instances
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
           ID aws-iam-no-policy-wildcards
       Impact Overly permissive policies may grant access to sensitive resources
@@ -170,11 +170,11 @@ Results #9-10 HIGH IAM policy document uses sensitive action 's3:*' on wildcarde
 
   timings
   ──────────────────────────────────────────
-  disk i/o             39.775µs
-  parsing              696.463µs
-  adaptation           4.987565ms
-  checks               24.09505ms
-  total                29.818853ms
+  disk i/o             36.969µs
+  parsing              1.6095ms
+  adaptation           257.41µs
+  checks               16.705977ms
+  total                18.609856ms
 
   counts
   ──────────────────────────────────────────

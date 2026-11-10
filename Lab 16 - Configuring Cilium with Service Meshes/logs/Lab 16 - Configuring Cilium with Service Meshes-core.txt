@@ -1,0 +1,13 @@
+========== CORE CHECKS (Lab 16 - Configuring Cilium with Service Meshes, 2026-11-10 07:22:50 UTC) - RUNTIME SIMULATED ==========
+PASS: Tools: helm v3, cilium CLI v0.20.2, istioctl 1.32.0, kubeconform installed (sha256 verified; no curl|sh)
+PASS: Lab bug: lab Cilium flags (kubeProxyReplacement=strict, tunnel=vxlan) rejected by current chart 1.20.4
+PASS: Task 2 fixed: Cilium 1.20.4 renders with KPR true, socket LB host-ns-only + cni.exclusive false (Istio mode), vxlan tunnel, Hubble; schema-valid
+PASS: Task 3: Istio 1.32.0 default profile rendered offline - istiod + istio-ingressgateway, schema-valid
+PASS: Lab bug: gateway pods are app=istio-ingressgateway (no app=istio-proxy); control plane is istiod:15012 (no istio-pilot)
+PASS: Lab bug: original CNP egress has no DNS and no istiod:15012 (mesh would break); fixed CNP allows gateway, DNS, istiod, backends:9080
+PASS: Task 5: official Bookinfo from Istio 1.32.0 release (images newer than lab 1.17.0), productpage/details/ratings/reviews present
+PASS: Tasks 5-9: Bookinfo, Gateway, VirtualServices, DestinationRules, PeerAuthentication STRICT, AuthorizationPolicy, CNP valid vs CRD schemas (strict)
+PASS: Task 10: istioctl analyze (offline) reports no errors on the mesh config
+PASS: Lab bug: cilium hubble observe is not a cilium CLI command (use hubble observe)
+PASS: Time: finished in 28s (<= 300s); runtime steps documented in SIMULATED.md
+CORE: 11/11 PASS

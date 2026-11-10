@@ -1,0 +1,8 @@
+
+✔ No validation issues found when analyzing:
+  - fixed/bookinfo-app.yaml
+  - fixed/bookinfo-gateway.yaml
+  - fixed/destination-rules.yaml
+  - fixed/reviews-virtualservice.yaml
+  - fixed/peer-authentication.yaml
+  - fixed/authorization-policy.yaml

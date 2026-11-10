@@ -1,0 +1,23 @@
+Hubble observability
+
+Usage:
+  cilium hubble [command]
+
+Available Commands:
+  disable      Disable Hubble observability using Helm
+  enable       Enable Hubble observability using Helm
+  port-forward Forward the relay port to the local machine
+  ui           Open the Hubble UI
+
+Flags:
+  -h, --help   help for hubble
+
+Global Flags:
+      --as string                  Username to impersonate for the operation. User could be a regular user or a service account in a namespace.
+      --as-group stringArray       Group to impersonate for the operation, this flag can be repeated to specify multiple groups.
+      --context string             Kubernetes configuration context
+      --helm-release-name string   Helm release name (default "cilium")
+      --kubeconfig string          Path to the kubeconfig file
+  -n, --namespace string           Namespace Cilium is running in. Can also be set via CILIUM_NAMESPACE env var (default "kube-system")
+
+Use "cilium hubble [command] --help" for more information about a command.

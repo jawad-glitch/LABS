@@ -1,0 +1,4 @@
+DEPLOY istio-ingressgateway labels: app=istio-ingressgateway,istio=ingressgateway images: docker.io/istio/proxyv2:1.32.0
+DEPLOY istiod labels: app=istiod,istio=pilot images: docker.io/istio/pilot:1.32.0
+SERVICE istio-ingressgateway ports: 15021,80,443
+SERVICE istiod ports: 15010,15012,443,15014

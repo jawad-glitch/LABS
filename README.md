@@ -79,3 +79,4 @@
 | [Vagrant - Reproducible Multi-Machine Environments](Vagrant%20-%20Reproducible%20Multi-Machine%20Environments/PROOF.md) | CORE: 5/7 PASS | 2026-11-10 06:32 |
 | [Ansible Configuration Management - Multi-Tier Platform](Ansible%20Configuration%20Management%20-%20Multi-Tier%20Platform/PROOF.md) | CORE: 11/12 PASS | 2026-11-10 06:56 |
 | [Ansible I - Automating a Two-Tier Web Platform](Ansible%20I%20-%20Automating%20a%20Two-Tier%20Web%20Platform/PROOF.md) | CORE: 8/14 PASS | 2026-11-10 07:15 |
+| [Lab 16 - Configuring Cilium with Service Meshes](Lab%2016%20-%20Configuring%20Cilium%20with%20Service%20Meshes/PROOF.md) | CORE: 11/11 PASS | 2026-11-10 07:23 |

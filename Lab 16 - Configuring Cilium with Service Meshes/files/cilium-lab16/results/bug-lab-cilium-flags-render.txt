@@ -1,0 +1,3 @@
+Error: execution error at (cilium/templates/validate.yaml:41:5): tunnel was deprecated in v1.14 and has been removed in v1.15. For details please refer to https://docs.cilium.io/en/v1.15/operations/upgrade/#helm-options
+
+Use --debug flag to render out invalid YAML

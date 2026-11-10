@@ -1,0 +1,32 @@
+apiVersion: "cilium.io/v2"
+kind: CiliumNetworkPolicy
+metadata:
+  name: "productpage-netpol"
+spec:
+  endpointSelector:
+    matchLabels:
+      app: productpage
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        "k8s:io.kubernetes.pod.namespace": istio-system
+        "k8s:app": istio-proxy
+  - fromEndpoints:
+    - matchLabels:
+        "k8s:io.kubernetes.pod.namespace": default
+  egress:
+  - toEndpoints:
+    - matchLabels:
+        app: details
+  - toEndpoints:
+    - matchLabels:
+        app: reviews
+  - toEndpoints:
+    - matchLabels:
+        app: ratings
+  - toServices:
+    - k8sService:
+        serviceName: kubernetes
+        namespace: default
+  - toFQDNs:
+    - matchName: "istio-pilot.istio-system.svc.cluster.local"

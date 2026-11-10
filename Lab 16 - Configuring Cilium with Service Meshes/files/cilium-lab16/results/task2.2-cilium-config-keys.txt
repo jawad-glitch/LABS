@@ -1,0 +1,8 @@
+kube-proxy-replacement true
+bpf-lb-sock-hostns-only true
+cni-exclusive false
+routing-mode tunnel
+tunnel-protocol vxlan
+enable-l7-proxy true
+enable-hubble true
+ipam kubernetes

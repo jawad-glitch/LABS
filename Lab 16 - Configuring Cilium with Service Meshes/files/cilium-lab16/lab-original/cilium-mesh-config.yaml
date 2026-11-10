@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cilium-config
+  namespace: kube-system
+data:
+  enable-envoy-config: "true"
+  kube-proxy-replacement: "strict"
+  enable-local-redirect-policy: "true"
+  enable-l7-proxy: "true"
+  enable-bandwidth-manager: "true"

@@ -1,0 +1,5 @@
+bookinfo app labels: ['details', 'productpage', 'ratings', 'reviews']
+lab egress allows DNS (kube-dns/53): False
+lab egress allows istiod:15012: False
+lab egress FQDN target: ['istio-pilot.istio-system.svc.cluster.local']
+lab ingress gateway selector: {'k8s:io.kubernetes.pod.namespace': 'istio-system', 'k8s:app': 'istio-proxy'}

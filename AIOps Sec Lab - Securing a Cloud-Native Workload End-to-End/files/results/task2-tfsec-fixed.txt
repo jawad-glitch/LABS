@@ -11,11 +11,11 @@ https://github.com/aquasecurity/tfsec/discussions/1994
 ======================================================
   timings
   ──────────────────────────────────────────
-  disk i/o             44.039µs
-  parsing              906.446µs
-  adaptation           257.896µs
-  checks               8.883594ms
-  total                10.091975ms
+  disk i/o             42.38µs
+  parsing              908.152µs
+  adaptation           248.068µs
+  checks               9.145746ms
+  total                10.344346ms
 
   counts
   ──────────────────────────────────────────

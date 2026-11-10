@@ -1,1 +1,1 @@
-default-deny (no DNS allow): client-allowed -> kubernetes.default.svc exit=6 (6 = name not resolved, 28 = DNS timed out)
+default-deny (no DNS allow yet): client-allowed -> kubernetes.default.svc exit=6 (6 = name not resolved, 28 = DNS timed out)

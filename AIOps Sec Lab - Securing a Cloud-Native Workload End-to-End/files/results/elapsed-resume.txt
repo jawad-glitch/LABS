@@ -1,1 +1,0 @@
-Resume elapsed: 89s (first full run: 481s)

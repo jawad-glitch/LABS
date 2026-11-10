@@ -1,6 +1,0 @@
-[WARN] 5.1.1 Ensure that the cluster-admin role is only used where required (Manual)
-[WARN] 5.1.2 Minimize access to secrets (Manual)
-[WARN] 5.1.3 Minimize wildcard use in Roles and ClusterRoles (Manual)
-[WARN] 5.1.4 Minimize access to create pods (Manual)
-[WARN] 5.1.6 Ensure that Service Account Tokens are only mounted where necessary (Manual)
-[WARN] 5.1.7 Avoid use of system:masters group (Manual)

@@ -1,3 +1,0 @@
-/home/ubuntu/aiops-lab/results/task2-tfsec-fixed.txt:tfsec is joining the Trivy family
-/home/ubuntu/aiops-lab/results/task2-tfsec-fixed.txt:attention will be directed at Trivy going forward.
-trivy config (tfsec successor) on fixed terraform: exit=1

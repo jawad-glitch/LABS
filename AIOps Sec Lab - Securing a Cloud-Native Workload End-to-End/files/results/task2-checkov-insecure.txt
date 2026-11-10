@@ -4,18 +4,18 @@ Passed checks: 9, Failed checks: 4, Skipped checks: 0
 
 Check: CKV_AWS_109: "Ensure IAM policies does not allow permissions management / resource exposure without constraints"
 	FAILED for resource: aws_iam_policy_document.shop_api
-	File: /main.tf:31-37
+	File: /main.tf:21-27
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint
 Check: CKV_AWS_108: "Ensure IAM policies does not allow data exfiltration"
 	FAILED for resource: aws_iam_policy_document.shop_api
-	File: /main.tf:31-37
+	File: /main.tf:21-27
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-data-exfiltration
 Check: CKV_AWS_356: "Ensure no IAM policies documents allow "*" as a statement's resource for restrictable actions"
 	FAILED for resource: aws_iam_policy_document.shop_api
-	File: /main.tf:31-37
+	File: /main.tf:21-27
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/bc-aws-356
 Check: CKV_AWS_111: "Ensure IAM policies does not allow write access without constraints"
 	FAILED for resource: aws_iam_policy_document.shop_api
-	File: /main.tf:31-37
+	File: /main.tf:21-27
 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-write-access-without-constraint
 

@@ -1,2 +1,2 @@
-NAME                     STATUS   ROLES                  AGE   VERSION        INTERNAL-IP   EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION    CONTAINER-RUNTIME
-k3d-aiops-sec-server-0   Ready    control-plane,master   15s   v1.30.4+k3s1   172.18.0.2    <none>        K3s v1.30.4+k3s1   6.14.0-1018-aws   containerd://1.7.20-k3s1
+NAME                     STATUS   ROLES                  AGE   VERSION
+k3d-aiops-sec-server-0   Ready    control-plane,master   32s   v1.30.4+k3s1

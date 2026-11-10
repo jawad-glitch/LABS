@@ -1,1 +1,1 @@
-trivy 0.76.2 supports --ignore-unfixed
+trivy v0.76.2 supports --ignore-unfixed

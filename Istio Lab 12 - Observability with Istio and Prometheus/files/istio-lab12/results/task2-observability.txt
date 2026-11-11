@@ -1,0 +1,2 @@
+Prometheus container active: 
+Telemetry resource validated: success

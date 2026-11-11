@@ -1,0 +1,6 @@
+========== CORE CHECKS (Istio Lab 12 - Observability with Istio and Prometheus, 2026-11-11 15:08:01 UTC) ==========
+PASS: Kubeconform validation passed for observability manifests
+FAIL: Prometheus container running and responsive on port 9090
+PASS: Bookinfo application mock deployed and traffic generated
+PASS: Time: finished in 18s (<= 300s)
+CORE: 3/4 PASS

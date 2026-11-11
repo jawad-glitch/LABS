@@ -118,3 +118,4 @@
 | [Lab 14 - Distributed Tracing with Istio and Jaeger](Lab%2014%20-%20Distributed%20Tracing%20with%20Istio%20and%20Jaeger/PROOF.md) | CORE: 12/12 PASS | 2026-11-11 15:23 |
 | [Lab 15 - Debugging Service Communication Issues](Lab%2015%20-%20Debugging%20Service%20Communication%20Issues/PROOF.md) | CORE: 4/8 PASS | 2026-11-11 15:27 |
 | [Lab 16 - Istio Installation with Helm](Lab%2016%20-%20Istio%20Installation%20with%20Helm/PROOF.md) | CORE: 8/11 PASS | 2026-11-11 15:37 |
+| [Lab 17 - Ambient Mode Installation in Istio](Lab%2017%20-%20Ambient%20Mode%20Installation%20in%20Istio/PROOF.md) | CORE: 3/9 PASS | 2026-11-11 15:40 |

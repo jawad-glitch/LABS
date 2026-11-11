@@ -1,0 +1,11 @@
+========== CORE CHECKS (Lab 17 - Ambient Mode Installation in Istio, 2026-11-11 15:40:26 UTC) ==========
+FAIL: Task 1: Kind cluster running with control-plane node ready
+FAIL: Task 2: Istio control plane and ztunnel pods running in istio-system
+FAIL: Task 3: Default namespace labeled for ambient mode
+PASS: Task 4: Bookinfo application deployed and accessible via Ingress Gateway
+FAIL: Task 4.2: Internal service communication via ztunnel verified
+PASS: Task 5: Monitoring add-ons (Prometheus, Kiali, Grafana) applied
+FAIL: Task 6: Traffic policies (DestinationRule and VirtualService) applied successfully
+FAIL: Architecture Report: Summary report generated successfully
+PASS: Time: Execution completed within 450 seconds
+CORE: 3/9 PASS

@@ -1,0 +1,5 @@
+LAB STRICT: sa/default GET=200 | sa/frontend GET=200 | sa/attacker GET=200 | sa/attacker DELETE=403 | sa/frontend DELETE=403
+LAB PERMISSIVE: plaintext (no identity) GET=200 | DELETE=403
+FIXED STRICT: sa/default GET=403 | sa/frontend GET=200 | sa/attacker GET=403 | sa/attacker DELETE=403 | sa/frontend DELETE=403
+FIXED PERMISSIVE: plaintext (no identity) GET=403 | DELETE=403
+denied body: RBAC: access denied

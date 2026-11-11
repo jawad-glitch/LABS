@@ -1,0 +1,2 @@
+PERMISSIVE: no-sidecar plaintext GET -> 200 exit=0
+PERMISSIVE: sidecar client GET -> 200

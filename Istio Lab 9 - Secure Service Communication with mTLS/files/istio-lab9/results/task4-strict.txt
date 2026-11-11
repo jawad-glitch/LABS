@@ -1,0 +1,5 @@
+STRICT: sidecar client (sa/default) GET -> 200
+STRICT: no-sidecar plaintext GET -> 000 exit=56
+server cert presented to a mesh client: URI:spiffe://cluster.local/ns/default/sa/backend | verify: Verify return code: 0 (ok)
+without a client cert: rejected
+inbound ssl stats: listener.0.0.0.0_15006.ssl.connection_error: 0 listener.0.0.0.0_15006.ssl.fail_verify_no_cert: 1 listener.0.0.0.0_15006.ssl.handshake: 3

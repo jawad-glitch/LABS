@@ -1,0 +1,2 @@
+docker.io/library/nginx:1.27-alpine
+docker.io/istio/proxyv2:1.32.0

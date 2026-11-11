@@ -1,0 +1,14 @@
+========== CORE CHECKS (Istio Lab 9 - Secure Service Communication with mTLS, 2026-11-11 14:56:20 UTC) - CLUSTER/ISTIOD SIMULATED, mTLS + RBAC + ENVOY REAL ==========
+PASS: Setup: istioctl 1.32.0 + proxyv2; fixed manifests (SAs, PeerAuthentication v1, AuthorizationPolicy v1) schema-valid
+PASS: Lab bug: unquoted heredoc expands $(hostname) on the workstation (ConfigMap gets 'ip-172-31-10-45')
+PASS: Lab bug: 'istioctl authn tls-check' not in istioctl 1.32.0; replacements (x describe, proxy-config secret, x authz check) available
+PASS: Workload certs: SPIFFE URI SANs, 1-day validity, chain verifies to the mesh CA
+PASS: Task 4 STRICT: sidecar (mTLS) GET 200; server cert spiffe .../sa/backend verified; no-sidecar plaintext rejected
+PASS: Task 4.3: inbound Envoy ssl stats count successful handshakes
+PASS: Task 5.3 PERMISSIVE: plaintext 200 and mTLS 200 on the same port
+PASS: Lab bug: lab AuthorizationPolicy (2 OR'ed rules) lets sa/attacker GET (200) and plaintext GET in PERMISSIVE (200)
+PASS: Fixed policy: sa/frontend GET 200; sa/default and sa/attacker 403; DELETE 403; plaintext 403
+PASS: Denied requests return Envoy RBAC 'access denied'
+PASS: Lab bug: /etc/ssl/certs in proxyv2 holds system CAs, no SPIFFE cert; live sidecar cert is in memory (served via admin/SDS)
+PASS: Time: finished in 28s (<= 300s)
+CORE: 12/12 PASS

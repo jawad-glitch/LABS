@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  index.html: |
+    <html><body><h1>Backend Service Response</h1>
+    <p>Hostname: ip-172-31-10-45</p></body></html>

@@ -1,0 +1,2 @@
+files=241 spiffe=0 openssl=yes
+proxyv2 /etc/ssl/certs: files=241 spiffe=0 openssl=yes | live sidecar serves cert: spiffe://cluster.local/ns/default/sa/backend expires 2026-11-12T14:56:06Z

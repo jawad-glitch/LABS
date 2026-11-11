@@ -1,0 +1,1 @@
+lab ConfigMap after unquoted heredoc: 'Hostname: ip-172-31-10-45' (this machine: ip-172-31-10-45)

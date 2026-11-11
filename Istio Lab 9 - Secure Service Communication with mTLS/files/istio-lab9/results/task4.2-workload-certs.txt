@@ -1,0 +1,2 @@
+backend: URI:spiffe://cluster.local/ns/default/sa/backend expires Nov 12 14:56:06 2026 GMT | backend.crt: OK
+frontend: URI:spiffe://cluster.local/ns/default/sa/frontend expires Nov 12 14:56:07 2026 GMT | frontend.crt: OK

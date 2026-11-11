@@ -1,0 +1,4 @@
+istioctl authn tls-check: NOT available
+istioctl x describe: available
+istioctl proxy-config secret: available
+istioctl x authz check: available

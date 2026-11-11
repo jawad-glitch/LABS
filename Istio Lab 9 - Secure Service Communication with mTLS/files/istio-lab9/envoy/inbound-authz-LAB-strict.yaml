@@ -1,0 +1,102 @@
+admin:
+  address:
+    socket_address:
+      address: 0.0.0.0
+      port_value: 15000
+static_resources:
+  listeners:
+  - name: virtualInbound
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 15006
+    listener_filters:
+    - name: envoy.filters.listener.tls_inspector
+      typed_config:
+        '@type': type.googleapis.com/envoy.extensions.filters.listener.tls_inspector.v3.TlsInspector
+    filter_chains:
+    - filter_chain_match:
+        transport_protocol: tls
+      transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          require_client_certificate: true
+          common_tls_context:
+            tls_certificates:
+            - certificate_chain:
+                filename: /pki/backend.crt
+              private_key:
+                filename: /pki/backend.key
+            validation_context:
+              trusted_ca:
+                filename: /pki/ca.crt
+            alpn_protocols:
+            - h2
+            - http/1.1
+      filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: inbound_0.0.0.0_80_mtls
+          forward_client_cert_details: SANITIZE_SET
+          set_current_client_cert_details:
+            uri: true
+          route_config:
+            name: inbound_0.0.0.0_80_mtls
+            virtual_hosts:
+            - name: all
+              domains:
+              - '*'
+              routes:
+              - match:
+                  prefix: /
+                route:
+                  cluster: inbound|80||
+          http_filters:
+          - name: envoy.filters.http.rbac
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.rbac.v3.RBAC
+              rules:
+                action: ALLOW
+                policies:
+                  ns[default]-policy[backend-policy]-rule[0]:
+                    permissions:
+                    - any: true
+                    principals:
+                    - or_ids:
+                        ids:
+                        - authenticated:
+                            principal_name:
+                              exact: spiffe://cluster.local/ns/default/sa/default
+                  ns[default]-policy[backend-policy]-rule[1]:
+                    permissions:
+                    - or_rules:
+                        rules:
+                        - header:
+                            name: :method
+                            string_match:
+                              exact: GET
+                        - header:
+                            name: :method
+                            string_match:
+                              exact: POST
+                    principals:
+                    - any: true
+          - name: envoy.filters.http.router
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+  clusters:
+  - name: inbound|80||
+    type: STATIC
+    connect_timeout: 2s
+    load_assignment:
+      cluster_name: inbound|80||
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 127.0.0.1
+                port_value: 80
+

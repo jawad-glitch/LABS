@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rbac-demo
+  labels:
+    istio-injection: enabled
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: frontend-sa
+  namespace: rbac-demo
+  labels:
+    role: frontend
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-sa
+  namespace: rbac-demo
+  labels:
+    role: admin
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: public-backend-policy
+  namespace: rbac-demo
+spec:
+  selector:
+    matchLabels:
+      app: backend
+      version: public
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/rbac-demo/sa/frontend-sa"]
+    to:
+    - operation:
+        methods: ["GET"]
+  - from:
+    - source:
+        principals: ["cluster.local/ns/rbac-demo/sa/admin-sa"]
+    to:
+    - operation:
+        methods: ["GET", "POST", "PUT", "DELETE"]
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: private-backend-policy
+  namespace: rbac-demo
+spec:
+  selector:
+    matchLabels:
+      app: backend
+      version: private
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/rbac-demo/sa/admin-sa"]
+    to:
+    - operation:
+        methods: ["GET", "POST", "PUT", "DELETE"]
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: default-deny
+  namespace: rbac-demo
+spec: {}

@@ -1,0 +1,2 @@
+frontend-sa: URI:spiffe://cluster.local/ns/rbac-demo/sa/frontend-sa expires Nov 12 15:04:58 2026 GMT | frontend-sa.crt: OK
+admin-sa: URI:spiffe://cluster.local/ns/rbac-demo/sa/admin-sa expires Nov 12 15:04:59 2026 GMT | admin-sa.crt: OK

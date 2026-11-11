@@ -1,0 +1,4 @@
+RBAC Testing Summary:
+  - frontend-sa to public backend (GET) -> 503
+  - admin-sa to public backend (GET) -> 503
+  - default-sa to public backend (GET) -> 503

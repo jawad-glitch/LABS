@@ -1,0 +1,6 @@
+========== CORE CHECKS (Istio Lab 11 - Secure Service Mesh with RBAC, 2026-11-11 15:05:08 UTC) ==========
+PASS: Kubeconform validation passed for RBAC manifests
+PASS: SPIFFE workload certificates generated and verified for RBAC demo
+PASS: RBAC enforcement correctly isolates frontend and admin permissions
+PASS: Time: finished in 28s (<= 300s)
+CORE: 4/4 PASS

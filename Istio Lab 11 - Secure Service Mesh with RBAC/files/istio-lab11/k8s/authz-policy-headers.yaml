@@ -1,0 +1,20 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: header-based-policy
+  namespace: rbac-demo
+spec:
+  selector:
+    matchLabels:
+      app: backend
+      version: public
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/rbac-demo/sa/frontend-sa"]
+    when:
+    - key: request.headers[user-role]
+      values: ["user", "admin"]
+    to:
+    - operation:
+        methods: ["GET"]

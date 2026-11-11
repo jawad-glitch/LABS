@@ -112,3 +112,4 @@
 | [Istio Lab 8 - Traffic Mirroring with Istio](Istio%20Lab%208%20-%20Traffic%20Mirroring%20with%20Istio/PROOF.md) | CORE: 12/12 PASS | 2026-11-11 14:52 |
 | [Istio Lab 9 - Secure Service Communication with mTLS](Istio%20Lab%209%20-%20Secure%20Service%20Communication%20with%20mTLS/PROOF.md) | CORE: 12/12 PASS | 2026-11-11 14:56 |
 | [Istio Lab 10 - Peer Authentication and Authorization](Istio%20Lab%2010%20-%20Peer%20Authentication%20and%20Authorization/PROOF.md) | CORE: 3/7 PASS | 2026-11-11 15:01 |
+| [Istio Lab 11 - Secure Service Mesh with RBAC](Istio%20Lab%2011%20-%20Secure%20Service%20Mesh%20with%20RBAC/PROOF.md) | CORE: 4/4 PASS | 2026-11-11 15:05 |

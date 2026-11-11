@@ -1,0 +1,29 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: backend-vs-gateway
+  namespace: ab-testing
+spec:
+  hosts:
+  - '*'
+  gateways:
+  - backend-gateway
+  http:
+  - match:
+    - headers:
+        user-type:
+          exact: beta
+    route:
+    - destination:
+        host: backend-service
+        subset: v2
+      weight: 100
+  - route:
+    - destination:
+        host: backend-service
+        subset: v1
+      weight: 70
+    - destination:
+        host: backend-service
+        subset: v2
+      weight: 30

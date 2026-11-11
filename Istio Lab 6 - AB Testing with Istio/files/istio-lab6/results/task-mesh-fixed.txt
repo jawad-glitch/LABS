@@ -1,0 +1,4 @@
+# VirtualService applied in mesh context: backend-vs-mesh
+fixed (separate mesh VS 70/30) in-mesh 200: 1.0=134 2.0=66 
+v1 share 0.670 expected 0.70 tol +-0.107 -> OK
+beta header in-mesh (fixed, 20): 2.0=20 

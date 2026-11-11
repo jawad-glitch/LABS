@@ -1,0 +1,12 @@
+
+✔ No validation issues found when analyzing:
+  - /tmp/tmp.JvxOY61p9R/ns.yaml
+  - /tmp/tmp.JvxOY61p9R/ingressgw.yaml
+  - /home/ubuntu/istio-lab6/k8s/backend-destination-rule.yaml
+  - /home/ubuntu/istio-lab6/k8s/backend-gateway.yaml
+  - /home/ubuntu/istio-lab6/k8s/backend-service.yaml
+  - /home/ubuntu/istio-lab6/k8s/backend-v1.yaml
+  - /home/ubuntu/istio-lab6/k8s/backend-v2.yaml
+  - /home/ubuntu/istio-lab6/k8s/vs-gateway-70-30.yaml
+  - /home/ubuntu/istio-lab6/k8s/vs-mesh-70-30.yaml
+rc=0

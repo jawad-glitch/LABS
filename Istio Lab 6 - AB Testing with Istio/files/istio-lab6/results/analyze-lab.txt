@@ -1,0 +1,14 @@
+
+✔ No validation issues found when analyzing:
+  - /tmp/tmp.JvxOY61p9R/ns.yaml
+  - /tmp/tmp.JvxOY61p9R/ingressgw.yaml
+  - /home/ubuntu/istio-lab6/lab-original/backend-destination-rule.yaml
+  - /home/ubuntu/istio-lab6/lab-original/backend-gateway.yaml
+  - /home/ubuntu/istio-lab6/lab-original/backend-service.yaml
+  - /home/ubuntu/istio-lab6/lab-original/backend-v1.yaml
+  - /home/ubuntu/istio-lab6/lab-original/backend-v2.yaml
+  - /home/ubuntu/istio-lab6/lab-original/backend-virtual-service-geo.yaml
+  - /home/ubuntu/istio-lab6/lab-original/backend-virtual-service-updated.yaml
+  - /home/ubuntu/istio-lab6/lab-original/backend-virtual-service.yaml
+  - /home/ubuntu/istio-lab6/lab-original/backend-virtual-service-updated.yaml
+rc=0

@@ -107,3 +107,4 @@
 | [Lab 4 - Traffic Management with Virtual Services](Lab%204%20-%20Traffic%20Management%20with%20Virtual%20Services/PROOF.md) | CORE: 5/11 PASS | 2026-11-10 10:19 |
 | [Lab 5 - Canary Deployments with Istio](Lab%205%20-%20Canary%20Deployments%20with%20Istio/PROOF.md) | CORE: 7/13 PASS | 2026-11-10 10:23 |
 | [AIOps Sec Lab - Securing a Cloud-Native Workload End-to-End](AIOps%20Sec%20Lab%20-%20Securing%20a%20Cloud-Native%20Workload%20End-to-End/PROOF.md) | CORE: 20/20 PASS | 2026-11-10 19:25 |
+| [Istio Lab 6 - AB Testing with Istio](Istio%20Lab%206%20-%20AB%20Testing%20with%20Istio/PROOF.md) | CORE: 12/12 PASS | 2026-11-11 14:39 |

@@ -1,0 +1,2 @@
+cluster.outbound|80|v1|backend-service.ab-testing.svc.cluster.local.upstream_rq_total: 7
+cluster.outbound|80|v2|backend-service.ab-testing.svc.cluster.local.upstream_rq_total: 3

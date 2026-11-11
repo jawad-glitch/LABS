@@ -1,0 +1,4 @@
+Total Requests: 10
+Version 1.0: 7 requests (70%)
+Version 2.0: 3 requests (30%)
+Errors: 0

@@ -1,0 +1,4 @@
+Total Requests: 2
+No successful responses - check GATEWAY_URL
+Errors: 2
+exit=0

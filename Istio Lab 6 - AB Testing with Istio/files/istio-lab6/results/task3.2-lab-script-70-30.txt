@@ -1,0 +1,8 @@
+Testing A/B traffic distribution with 50 requests...
+1111111111
+2122122211
+2111222121
+1121121212
+1111221212
+Version 1.0: 31 requests (62%)
+Version 2.0: 19 requests (38%)

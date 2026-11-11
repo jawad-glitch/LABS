@@ -1,0 +1,2 @@
+LAB (geo VS not applied): US-WEST x20: 1.0=15 2.0=5  | US-EAST x20: 1.0=12 2.0=8 
+APPLIED geo VS: US-WEST x20: 2.0=20  | US-EAST x20: 1.0=20 

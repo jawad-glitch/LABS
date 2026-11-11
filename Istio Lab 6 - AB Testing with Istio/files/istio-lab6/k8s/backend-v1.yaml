@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: backend-v1, namespace: ab-testing, labels: {app: backend, version: v1}}
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app: backend, version: v1}
+  template:
+    metadata:
+      labels: {app: backend, version: v1}
+    spec:
+      containers:
+      - name: backend
+        image: nginx:1.27-alpine
+        ports: [{containerPort: 80}]
+        volumeMounts: [{name: html-content, mountPath: /usr/share/nginx/html}]
+      volumes:
+      - name: html-content
+        configMap: {name: backend-v1-content}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata: {name: backend-v1-content, namespace: ab-testing}
+data:
+  index.html: |
+    <!DOCTYPE html><html><head><title>Backend Service V1</title></head><body><div class="container"><h1>Welcome to Backend Service</h1><p class="version">Version 1.0 - Original Implementation</p></div></body></html>

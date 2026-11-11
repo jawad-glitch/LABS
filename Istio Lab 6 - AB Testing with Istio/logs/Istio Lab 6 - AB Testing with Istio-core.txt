@@ -1,0 +1,14 @@
+========== CORE CHECKS (Istio Lab 6 - AB Testing with Istio, 2026-11-11 14:38:53 UTC) - CLUSTER/ISTIOD SIMULATED, PODS + ENVOY REAL ==========
+PASS: Setup: istioctl 1.32.0 + proxyv2; fixed manifests (v1 APIs) schema-valid; istioctl analyze clean
+PASS: Task 1: backend v1 x2 + v2 x2 running, each serving its own version page
+PASS: Task 3.2: lab test script ran (50 requests, both versions seen)
+PASS: Task 3.2: 70/30 split within 3 sigma over 200 requests (1.0=148 2.0=52 )
+PASS: Task 3.3: user-type: beta -> 20/20 Version 2.0
+PASS: Task 3.4/3.5: 50/50 and 90/10 splits within 3 sigma after re-applying the VS
+PASS: Lab bug: gateway-only VS (same name) drops the in-mesh split -> plain ~50/50 round robin (1.0=100 2.0=100 )
+PASS: Fixed: separate mesh VS restores 70/30 in-mesh (1.0=134 2.0=66 ) and beta header routing
+PASS: Lab bug: geo VS never applied - US-WEST/US-EAST follow 70/30; applied -> US-WEST 20/20 v2, US-EAST 20/20 v1
+PASS: Lab bug: monitor-ab-testing.sh divides by zero when every request fails; fixed version reports cleanly
+PASS: Task 4.2: gateway Envoy stats count requests per subset (v1 and v2 clusters)
+PASS: Time: finished in 77s (<= 300s)
+CORE: 12/12 PASS

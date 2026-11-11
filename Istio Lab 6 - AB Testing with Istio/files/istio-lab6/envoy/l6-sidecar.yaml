@@ -1,0 +1,94 @@
+# VirtualService applied in mesh context: backend-vs-mesh
+admin:
+  address:
+    socket_address:
+      address: 0.0.0.0
+      port_value: 15000
+static_resources:
+  listeners:
+  - name: 0.0.0.0_8080
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8080
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: mesh
+          route_config:
+            name: mesh
+            virtual_hosts:
+            - name: backend
+              domains:
+              - '*'
+              routes:
+              - match:
+                  prefix: /
+                  headers:
+                  - name: user-type
+                    string_match:
+                      exact: beta
+                route:
+                  weighted_clusters:
+                    clusters:
+                    - name: outbound|80|v2|backend-service.ab-testing.svc.cluster.local
+                      weight: 100
+              - match:
+                  prefix: /
+                route:
+                  weighted_clusters:
+                    clusters:
+                    - name: outbound|80|v1|backend-service.ab-testing.svc.cluster.local
+                      weight: 70
+                    - name: outbound|80|v2|backend-service.ab-testing.svc.cluster.local
+                      weight: 30
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+  clusters:
+  - name: outbound|80||backend-service.ab-testing.svc.cluster.local
+    type: STRICT_DNS
+    connect_timeout: 1s
+    lb_policy: ROUND_ROBIN
+    dns_lookup_family: V4_ONLY
+    load_assignment:
+      cluster_name: outbound|80||backend-service.ab-testing.svc.cluster.local
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: backend-service
+                port_value: 80
+  - name: outbound|80|v1|backend-service.ab-testing.svc.cluster.local
+    type: STRICT_DNS
+    connect_timeout: 1s
+    lb_policy: ROUND_ROBIN
+    dns_lookup_family: V4_ONLY
+    load_assignment:
+      cluster_name: outbound|80|v1|backend-service.ab-testing.svc.cluster.local
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: backend-v1
+                port_value: 80
+  - name: outbound|80|v2|backend-service.ab-testing.svc.cluster.local
+    type: STRICT_DNS
+    connect_timeout: 1s
+    lb_policy: ROUND_ROBIN
+    dns_lookup_family: V4_ONLY
+    load_assignment:
+      cluster_name: outbound|80|v2|backend-service.ab-testing.svc.cluster.local
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: backend-v2
+                port_value: 80
+

@@ -1,0 +1,5 @@
+Total Requests: 2
+/home/ubuntu/istio-lab6/scripts/monitor-ab-testing-lab.sh: line 14: V1_COUNT * 100 / (V1_COUNT + V2_COUNT) : division by 0 (error token is "(V1_COUNT + V2_COUNT) ")
+/home/ubuntu/istio-lab6/scripts/monitor-ab-testing-lab.sh: line 15: V2_COUNT * 100 / (V1_COUNT + V2_COUNT) : division by 0 (error token is "(V1_COUNT + V2_COUNT) ")
+Errors: 2
+exit=0

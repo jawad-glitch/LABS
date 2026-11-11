@@ -1,13 +1,13 @@
 # Istio Lab 13 - Visualizing Traffic Flows with Kiali - completion proof
-Completed (UTC): 2026-11-11 15:11:19 | EC2: i-043d459ce88fc5b6c | host: ip-172-31-10-4 | user: ubuntu
+Completed (UTC): 2026-11-11 15:12:17 | EC2: i-043d459ce88fc5b6c | host: ip-172-31-10-4 | user: ubuntu
 
 ## Core checks
 ```
-========== CORE CHECKS (Istio Lab 13 - Visualizing Traffic Flows with Kiali, 2026-11-11 15:11:12 UTC) ==========
+========== CORE CHECKS (Istio Lab 13 - Visualizing Traffic Flows with Kiali, 2026-11-11 15:12:11 UTC) ==========
 FAIL: Kubeconform validation passed for Kiali and gateway manifests
 FAIL: Kiali server container running and responsive on port 20001
 PASS: Bookinfo traffic simulation verified
-PASS: Time: finished in 32s (<= 300s)
+PASS: Time: finished in 15s (<= 300s)
 CORE: 2/4 PASS
 ```
 

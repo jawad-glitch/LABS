@@ -1,0 +1,4 @@
+service: active as blackbox_exporter
+netstat: present | ss: *:9115
+web: HTTP 200
+blackbox_exporter_build_info{branch="HEAD",goarch="amd64",goos="linux",goversion="go1.20.4",revision="0b0467473916fd9e8526e2635c2a0b1c56011dff",tags="netgo",version="0.24.0"} 1

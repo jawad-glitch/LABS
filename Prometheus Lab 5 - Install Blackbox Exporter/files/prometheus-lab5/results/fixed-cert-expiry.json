@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"instance":"https://prometheus.io","job":"blackbox_http"},"value":[1794430461.925,"4096918.0750000477"]}]}}

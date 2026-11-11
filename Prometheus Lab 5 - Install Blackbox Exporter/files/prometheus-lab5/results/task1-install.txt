@@ -1,0 +1,4 @@
+-rw-rw-r-- 1 ubuntu ubuntu 10956196 May 16  2023 /tmp/blackbox_exporter-0.24.0.linux-amd64.tar.gz
+checksum: blackbox_exporter-0.24.0.linux-amd64.tar.gz: OK
+blackbox_exporter, version 0.24.0 (branch: HEAD, revision: 0b0467473916fd9e8526e2635c2a0b1c56011dff)
+latest release today: v0.29.1 (lab: 'v0.24.0 latest stable')

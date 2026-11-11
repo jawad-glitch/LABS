@@ -1,0 +1,2 @@
+lab: Prometheus integration: PASS (only greps for the word 'blackbox')
+strict: probes failing right now: blackbox_http/http://example.com:8080 blackbox_tcp/google.com:80 blackbox_tcp/google.com:443

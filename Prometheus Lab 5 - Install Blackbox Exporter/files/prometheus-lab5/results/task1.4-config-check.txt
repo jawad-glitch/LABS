@@ -1,0 +1,5 @@
+ts=2026-11-11T20:53:10.557Z caller=main.go:78 level=info msg="Starting blackbox_exporter" version="(version=0.24.0, branch=HEAD, revision=0b0467473916fd9e8526e2635c2a0b1c56011dff)"
+ts=2026-11-11T20:53:10.557Z caller=main.go:79 level=info build_context="(go=go1.20.4, platform=linux/amd64, user=root@e5bbfcc8184e, date=20230516-11:07:25, tags=netgo)"
+ts=2026-11-11T20:53:10.558Z caller=config.go:131 level=warn msg="no_follow_redirects is deprecated and will be removed in the next release. It is replaced by follow_redirects." module=http_2xx
+ts=2026-11-11T20:53:10.559Z caller=main.go:87 level=info msg="Config file is ok exiting..."
+config.check exit=0 ts=2026-11-11T20:53:10.559Z caller=main.go:87 level=info msg="Config file is ok exiting..."

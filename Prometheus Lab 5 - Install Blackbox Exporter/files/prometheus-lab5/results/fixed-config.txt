@@ -1,0 +1,17 @@
+probe_success{job=blackbox_dns,instance=1.1.1.1:53} = 1
+probe_success{job=blackbox_dns,instance=8.8.8.8:53} = 1
+probe_success{job=blackbox_http,instance=http://example.com:8080} = 0
+probe_success{job=blackbox_http,instance=http://prometheus.io} = 1
+probe_success{job=blackbox_http,instance=https://google.com} = 1
+probe_success{job=blackbox_http,instance=https://prometheus.io} = 1
+probe_success{job=blackbox_icmp,instance=8.8.8.8} = 1
+probe_success{job=blackbox_icmp,instance=google.com} = 1
+probe_success{job=blackbox_icmp,instance=prometheus.io} = 1
+probe_success{job=blackbox_production_sites,instance=https://httpbin.org/delay/2} = 1
+probe_success{job=blackbox_production_sites,instance=https://httpbin.org/status/200} = 1
+probe_success{job=blackbox_production_sites,instance=https://jsonplaceholder.typicode.com/posts/1} = 1
+probe_success{job=blackbox_tcp,instance=8.8.8.8:53} = 1
+probe_success{job=blackbox_tcp,instance=google.com:443} = 0
+probe_success{job=blackbox_tcp,instance=google.com:80} = 0
+status codes: https://google.com=200 https://httpbin.org/status/200=200 https://prometheus.io=200 http://example.com:8080=0 https://httpbin.org/delay/2=200 http://prometheus.io=200 https://jsonplaceholder.typicode.com/posts/1=200
+prometheus.io cert expires in: 47 days

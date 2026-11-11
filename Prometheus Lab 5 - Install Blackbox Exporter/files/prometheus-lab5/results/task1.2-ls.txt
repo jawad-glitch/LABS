@@ -1,0 +1,7 @@
+total 20708
+drwxr-xr-x  2 ubuntu ubuntu     4096 May 16  2023 .
+drwxrwxrwt 19 root   root       4096 Nov 11 20:53 ..
+-rw-r--r--  1 ubuntu ubuntu    11357 May 16  2023 LICENSE
+-rw-r--r--  1 ubuntu ubuntu       94 May 16  2023 NOTICE
+-rw-r--r--  1 ubuntu ubuntu      956 May 16  2023 blackbox.yml
+-rwxr-xr-x  1 ubuntu ubuntu 21174366 May 16  2023 blackbox_exporter

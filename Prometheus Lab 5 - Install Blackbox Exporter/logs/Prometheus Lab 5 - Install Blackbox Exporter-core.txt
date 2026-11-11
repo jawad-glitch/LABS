@@ -1,0 +1,14 @@
+========== CORE CHECKS (Prometheus Lab 5 - Install Blackbox Exporter, 2026-11-11 20:54:22 UTC) - ALL REAL (live internet probes) ==========
+PASS: Task 1: blackbox_exporter 0.24.0 sha256-verified, --version 0.24.0, config.check OK
+PASS: Task 1.5/1.6: service enabled+active as blackbox_exporter, :9115 listening, build_info exposed
+PASS: Lab bug: http_2xx hard-codes 'Host: example.com' - lab module fails where the fixed module succeeds
+PASS: Lab bug: dns_udp can never pass (contradictory answer regexes) - 0; fixed dns_udp_fixed - 1
+FAIL: TCP probes: google.com:80, google.com:443, 8.8.8.8:53 all probe_success 1
+PASS: ICMP with CAP_NET_RAW (systemd AmbientCapabilities): 8.8.8.8 and google.com succeed
+PASS: Task 2.3: promtool SUCCESS on lab config; lab's 'SUCCESS: 5 rule files found' does not appear
+PASS: Lab confusion: all scrape targets 'up' while probes fail (example.com:8080 and Host-header probes = 0)
+PASS: Fixed config: blackbox_http prometheus.io (http+https) and google.com = 1; DNS 8.8.8.8 + 1.1.1.1 = 1
+PASS: Task 3.5 production sites probed (jsonplaceholder = 1 with the fixed module); TLS expiry metric available
+PASS: Lab verification script's 'Prometheus integration' check passes while probes fail (too weak)
+PASS: Time: finished in 83s (<= 300s)
+CORE: 11/12 PASS

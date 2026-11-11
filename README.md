@@ -126,3 +126,4 @@
 | [Prometheus Lab 2 - Prometheus Configuration](Prometheus%20Lab%202%20-%20Prometheus%20Configuration/PROOF.md) | CORE: 10/13 PASS | 2026-11-11 20:39 |
 | [Prometheus Lab 3 - Service Discovery in Prometheus](Prometheus%20Lab%203%20-%20Service%20Discovery%20in%20Prometheus/PROOF.md) | CORE: 10/12 PASS | 2026-11-11 20:46 |
 | [Prometheus Lab 4 - Install Node Exporter](Prometheus%20Lab%204%20-%20Install%20Node%20Exporter/PROOF.md) | CORE: 12/13 PASS | 2026-11-11 20:50 |
+| [Prometheus Lab 5 - Install Blackbox Exporter](Prometheus%20Lab%205%20-%20Install%20Blackbox%20Exporter/PROOF.md) | CORE: 11/12 PASS | 2026-11-11 20:54 |

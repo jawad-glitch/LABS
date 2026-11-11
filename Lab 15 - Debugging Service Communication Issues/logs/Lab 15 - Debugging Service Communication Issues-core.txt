@@ -1,0 +1,10 @@
+========== CORE CHECKS (Lab 15 - Debugging Service Communication Issues, 2026-11-11 15:27:42 UTC) ==========
+FAIL: Setup: Bookstore pods ready with 2/2 containers (Istio sidecars injected)
+FAIL: Task 2: Broken configuration captured (HTTP 503 / connection errors logged)
+PASS: Task 3: istioctl analyze diagnostics executed
+FAIL: Task 4: DR and VS fixed with valid subset version=v1
+FAIL: Task 5.1: Frontend to backend communication restored (5/5 HTTP 200)
+PASS: Task 5.2: Envoy outbound endpoint cluster populated with backend pod IP
+PASS: Task 6: Istio debugging architecture report successfully generated
+PASS: Execution Time: Finished cleanly within 300 seconds
+CORE: 4/8 PASS

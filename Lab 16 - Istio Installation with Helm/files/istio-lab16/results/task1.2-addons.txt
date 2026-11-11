@@ -1,0 +1,3 @@
+Command 'minikube' not found, did you mean:
+  command 'minitube' from deb minitube (3.9.3-2)
+Try: sudo apt install <deb name>

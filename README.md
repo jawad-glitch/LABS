@@ -117,4 +117,4 @@
 | [Istio Lab 13 - Visualizing Traffic Flows with Kiali](Istio%20Lab%2013%20-%20Visualizing%20Traffic%20Flows%20with%20Kiali/PROOF.md) | CORE: 2/4 PASS | 2026-11-11 15:12 |
 | [Lab 14 - Distributed Tracing with Istio and Jaeger](Lab%2014%20-%20Distributed%20Tracing%20with%20Istio%20and%20Jaeger/PROOF.md) | CORE: 12/12 PASS | 2026-11-11 15:23 |
 | [Lab 15 - Debugging Service Communication Issues](Lab%2015%20-%20Debugging%20Service%20Communication%20Issues/PROOF.md) | CORE: 4/8 PASS | 2026-11-11 15:27 |
-| [Lab 16 - Istio Installation with Helm](Lab%2016%20-%20Istio%20Installation%20with%20Helm/PROOF.md) | CORE: 2/10 PASS | 2026-11-11 15:31 |
+| [Lab 16 - Istio Installation with Helm](Lab%2016%20-%20Istio%20Installation%20with%20Helm/PROOF.md) | CORE: 2/11 PASS | 2026-11-11 15:32 |

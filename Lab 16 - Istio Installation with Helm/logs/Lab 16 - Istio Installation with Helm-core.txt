@@ -1,4 +1,5 @@
-========== CORE CHECKS (Lab 16 - Istio Installation with Helm, 2026-11-11 15:30:59 UTC) ==========
+========== CORE CHECKS (Lab 16 - Istio Installation with Helm, 2026-11-11 15:32:03 UTC) ==========
+FAIL: Task 1: Minikube running with nodes ready
 PASS: Task 2: Istio Helm repo added and accessible
 FAIL: Task 3: istio-base chart deployed via Helm
 FAIL: Task 4: istiod control plane deployed and Running
@@ -8,5 +9,5 @@ FAIL: Task 7: Gateway and Telemetry resources created
 FAIL: Task 8: Bookinfo application and routing rules deployed
 FAIL: Task 9: Service mesh request to productpage returns HTTP 200
 FAIL: Task 10: Istiod upgraded with Helm revision history >= 2
-PASS: Time: Execution completed within 360 seconds
-CORE: 2/10 PASS
+PASS: Time: Execution completed within 420 seconds
+CORE: 2/11 PASS

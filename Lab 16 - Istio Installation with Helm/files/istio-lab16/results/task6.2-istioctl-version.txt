@@ -1,1 +1,2 @@
-istioctl: command not found
+unable to retrieve Pods: Get "http://localhost:8080/api/v1/namespaces/istio-system/pods?fieldSelector=status.phase%3DRunning&labelSelector=app%3Distiod": dial tcp 127.0.0.1:8080: connect: connection refused
+1.20.0

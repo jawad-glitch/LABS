@@ -1,9 +1,10 @@
 # Lab 16 - Istio Installation with Helm - completion proof
-Completed (UTC): 2026-11-11 15:31:06 | EC2: i-02b922e9648548fae | host: ip-172-31-10-9 | user: ubuntu
+Completed (UTC): 2026-11-11 15:32:09 | EC2: i-02b922e9648548fae | host: ip-172-31-10-9 | user: ubuntu
 
 ## Core checks
 ```
-========== CORE CHECKS (Lab 16 - Istio Installation with Helm, 2026-11-11 15:30:59 UTC) ==========
+========== CORE CHECKS (Lab 16 - Istio Installation with Helm, 2026-11-11 15:32:03 UTC) ==========
+FAIL: Task 1: Minikube running with nodes ready
 PASS: Task 2: Istio Helm repo added and accessible
 FAIL: Task 3: istio-base chart deployed via Helm
 FAIL: Task 4: istiod control plane deployed and Running
@@ -13,8 +14,8 @@ FAIL: Task 7: Gateway and Telemetry resources created
 FAIL: Task 8: Bookinfo application and routing rules deployed
 FAIL: Task 9: Service mesh request to productpage returns HTTP 200
 FAIL: Task 10: Istiod upgraded with Helm revision history >= 2
-PASS: Time: Execution completed within 360 seconds
-CORE: 2/10 PASS
+PASS: Time: Execution completed within 420 seconds
+CORE: 2/11 PASS
 ```
 
 ## Docker snapshot
@@ -33,8 +34,10 @@ IMAGE   ID             DISK USAGE   CONTENT SIZE   EXTRA
 ./istio-lab16/istio-helm-architecture-report.txt
 ./istio-lab16/istiod-values.yaml
 ./istio-lab16/results/elapsed.txt
+./istio-lab16/results/minikube-start.log
 ./istio-lab16/results/task1.1-cluster-info.txt
 ./istio-lab16/results/task1.1-nodes.txt
+./istio-lab16/results/task1.2-addons.txt
 ./istio-lab16/results/task10.2-helm-upgrade.txt
 ./istio-lab16/results/task10.2-istiod-history.txt
 ./istio-lab16/results/task2.1-helm-version.txt

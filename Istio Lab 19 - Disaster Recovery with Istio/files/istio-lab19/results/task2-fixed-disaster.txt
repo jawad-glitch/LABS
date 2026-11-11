@@ -1,0 +1,2 @@
+FIXED v2 (server-side 500s), no circuit breaker, 100 requests: 200:Version:_2.0=30 500:500_Internal_Server_Error=70 
+FIXED v2 + fixed DR (consecutive5xxErrors 2): 30 requests: 200:Version:_2.0=8 500:500_Internal_Server_Error=22  | v2 ejections: 3

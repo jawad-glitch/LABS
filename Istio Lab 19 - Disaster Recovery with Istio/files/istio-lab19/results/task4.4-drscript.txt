@@ -1,0 +1,3 @@
+LAB script vs DEAD service (0%): current success rate: 0% ✅ Service is healthy.
+LAB script vs HEALTHY v1 (100%): current success rate: 100% Service health is below threshold. Initiating rollback...|rollback success rate: 100% kubectl calls: 1
+FIXED script vs real v2 disaster: current success rate: 40% (threshold 80%) post-rollback success rate: 100%|RECOVERY SUCCESSFUL (exit 0)

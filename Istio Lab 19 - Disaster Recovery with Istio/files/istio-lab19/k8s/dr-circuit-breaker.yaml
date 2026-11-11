@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1
+kind: DestinationRule
+metadata:
+  name: bookstore-dr
+  namespace: disaster-recovery
+spec:
+  host: bookstore-service
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+    trafficPolicy:
+      outlierDetection:
+        consecutive5xxErrors: 2
+        interval: 5s
+        baseEjectionTime: 30s
+        maxEjectionPercent: 100
+  trafficPolicy:
+    outlierDetection:
+      consecutive5xxErrors: 3
+      interval: 10s
+      baseEjectionTime: 30s
+      maxEjectionPercent: 50

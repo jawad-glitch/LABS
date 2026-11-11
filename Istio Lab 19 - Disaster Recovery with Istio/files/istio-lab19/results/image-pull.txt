@@ -1,0 +1,2 @@
+pulled nginx:1.27-alpine
+pulled istio/proxyv2:1.32.0

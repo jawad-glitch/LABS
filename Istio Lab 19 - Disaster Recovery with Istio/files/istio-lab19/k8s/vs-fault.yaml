@@ -1,0 +1,32 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: bookstore-vs
+  namespace: disaster-recovery
+spec:
+  hosts:
+  - '*'
+  gateways:
+  - bookstore-gateway
+  http:
+  - match:
+    - headers:
+        test-version:
+          exact: v2
+    fault:
+      abort:
+        percentage:
+          value: 50
+        httpStatus: 503
+    route:
+    - destination:
+        host: bookstore-service
+        subset: v2
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: bookstore-service
+        subset: v1
+      weight: 100

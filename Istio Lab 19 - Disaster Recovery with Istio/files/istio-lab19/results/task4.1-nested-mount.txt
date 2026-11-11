@@ -1,0 +1,1 @@
+lab patch (ConfigMap mounted inside read-only ConfigMap mount): docker rc=125 state='created failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error' mkdirat /var/lib/docker/rootfs/overlayfs/69c93e49b37a2a092ce00849b2c7f703b3d8d4c7aee6956d149ec317de156c83/usr/share/nginx/html/health

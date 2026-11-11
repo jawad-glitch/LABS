@@ -1,0 +1,22 @@
+# Fixed health endpoint: one projected volume holds index.html AND health/health.html (no mount nested inside a read-only ConfigMap mount)
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: bookstore-v1, namespace: disaster-recovery, labels: {app: bookstore, version: v1}}
+spec:
+  replicas: 3
+  selector: {matchLabels: {app: bookstore, version: v1}}
+  template:
+    metadata: {labels: {app: bookstore, version: v1}}
+    spec:
+      containers:
+      - name: bookstore
+        image: nginx:1.27-alpine
+        ports: [{containerPort: 80}]
+        readinessProbe: {httpGet: {path: /health/health.html, port: 80}, periodSeconds: 5}
+        volumeMounts: [{name: html, mountPath: /usr/share/nginx/html}]
+      volumes:
+      - name: html
+        projected:
+          sources:
+          - configMap: {name: bookstore-v1-config}
+          - configMap: {name: bookstore-health-config, items: [{key: health.html, path: health/health.html}]}

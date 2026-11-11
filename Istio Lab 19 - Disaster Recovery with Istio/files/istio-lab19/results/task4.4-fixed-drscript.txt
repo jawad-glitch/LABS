@@ -1,0 +1,4 @@
+current success rate: 40% (threshold 80%)
+BELOW THRESHOLD: rolling back -> /home/ubuntu/istio-lab19/envoy/apply-vs.sh /home/ubuntu/istio-lab19/k8s/vs-v1.yaml
+post-rollback success rate: 100%
+RECOVERY SUCCESSFUL

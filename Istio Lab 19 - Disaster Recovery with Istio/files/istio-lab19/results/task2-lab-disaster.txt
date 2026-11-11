@@ -1,0 +1,4 @@
+LAB v2, 30 requests: 200:Version:_2.0=30 
+curl -f success (lab health test): 10/10
+the '500' text is inside a <script> string: 1
+lab DR (consecutiveErrors) ejections on v2: 0

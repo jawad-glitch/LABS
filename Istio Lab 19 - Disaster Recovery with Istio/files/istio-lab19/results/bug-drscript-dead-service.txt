@@ -1,0 +1,7 @@
+=== Disaster Recovery Script ===
+1. Testing current service health...
+Testing current health...
+current success rate: 0%
+✅ Service is healthy.
+=== Recovery Process Complete ===
+kubectl calls: 0

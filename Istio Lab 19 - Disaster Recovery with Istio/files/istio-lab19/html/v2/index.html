@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Bookstore v2.0 - Problematic</title></head>
+<body>
+    <h1>Welcome to Bookstore v2.0</h1>
+    <p>Status: <span style="color: red;">Error - Database Connection Failed</span></p>
+    <p>Version: 2.0 (New Release with Issues)</p>
+    <p>Features: Advanced search, recommendations (Currently Unavailable)</p>
+    <script>
+    // Simulate intermittent failures
+    if (Math.random() > 0.3) {
+        document.body.innerHTML = '<h1>500 Internal Server Error</h1><p>Service temporarily unavailable</p>';
+    }
+    </script>
+</body>
+</html>

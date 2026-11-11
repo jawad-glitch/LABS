@@ -1,0 +1,2 @@
+fault rule, test-version: v2 x100: 200:Version:_2.0=18 500:500_Internal_Server_Error=36 503:=46 
+no header x20: 200:Version:_1.0=20 

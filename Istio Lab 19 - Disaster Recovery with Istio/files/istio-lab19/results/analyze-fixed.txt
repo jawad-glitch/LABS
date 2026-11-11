@@ -1,0 +1,6 @@
+
+✔ No validation issues found when analyzing:
+  - /tmp/tmp.F0N4qYI9Xq/ns.yaml
+  - /home/ubuntu/istio-lab19/k8s/gateway.yaml
+  - /home/ubuntu/istio-lab19/k8s/dr-circuit-breaker.yaml
+  - /home/ubuntu/istio-lab19/k8s/vs-v1.yaml

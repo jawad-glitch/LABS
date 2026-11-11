@@ -1,0 +1,2 @@
+v1 172.18.0.2 /productpage -> 200 | v2 172.18.0.3 -> 200
+v2 response headers with RESPONSE_HEADER set: 0 mirror-version header(s)

@@ -1,0 +1,2 @@
+Request sent at $(date)
+traffic-generator echo prints: Request sent at $(date)

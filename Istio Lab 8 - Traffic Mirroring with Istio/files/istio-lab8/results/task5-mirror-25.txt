@@ -1,0 +1,1 @@
+25% rule, 100 requests: v1=+100 v2=+26 shadow=+40 client_codes=200:100 

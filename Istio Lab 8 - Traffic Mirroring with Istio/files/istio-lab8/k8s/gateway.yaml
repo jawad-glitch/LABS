@@ -1,0 +1,49 @@
+apiVersion: networking.istio.io/v1
+kind: Gateway
+metadata:
+  name: productpage-gateway
+  namespace: traffic-mirror-demo
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - '*'
+---
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: productpage-gateway-vs
+  namespace: traffic-mirror-demo
+spec:
+  hosts:
+  - '*'
+  gateways:
+  - productpage-gateway
+  http:
+  - match:
+    - uri:
+        exact: /productpage
+    - uri:
+        prefix: /static
+    - uri:
+        exact: /login
+    - uri:
+        exact: /logout
+    - uri:
+        prefix: /api/v1/products
+    route:
+    - destination:
+        host: productpage
+        subset: v1
+        port:
+          number: 9080
+    mirror:
+      host: productpage
+      subset: v2
+    mirrorPercentage:
+      value: 100.0

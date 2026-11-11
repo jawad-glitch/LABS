@@ -1,0 +1,33 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: productpage-mirror
+  namespace: traffic-mirror-demo
+spec:
+  hosts:
+  - productpage
+  http:
+  - match:
+    - headers:
+        end-user:
+          exact: jason
+    route:
+    - destination:
+        host: productpage
+        subset: v1
+      weight: 100
+    mirror:
+      host: productpage
+      subset: v2
+    mirrorPercentage:
+      value: 100.0
+  - route:
+    - destination:
+        host: productpage
+        subset: v1
+      weight: 100
+    mirror:
+      host: productpage
+      subset: v2
+    mirrorPercentage:
+      value: 50.0

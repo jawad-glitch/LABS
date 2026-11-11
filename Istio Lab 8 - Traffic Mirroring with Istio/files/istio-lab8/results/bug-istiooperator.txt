@@ -1,0 +1,1 @@
+istioctl 1.32.0: 'operator' command NOT present (in-cluster IstioOperator controller removed) -> kubectl apply of IstioOperator is not reconciled

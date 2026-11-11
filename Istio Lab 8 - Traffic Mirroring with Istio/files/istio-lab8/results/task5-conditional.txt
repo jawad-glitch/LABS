@@ -1,0 +1,2 @@
+conditional, beta-tester x20: v1=+20 v2=+20 shadow=+0 client_codes=200:20 
+conditional, no header x20: v1=+20 v2=+0 shadow=+0 client_codes=200:20 

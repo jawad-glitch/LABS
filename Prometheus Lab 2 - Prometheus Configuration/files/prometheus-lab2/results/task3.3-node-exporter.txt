@@ -1,0 +1,4 @@
+node_exporter: active as user prometheus
+metrics lines: 1193 | build: version="go1.26.5"
+version="1.12.1"
+lab 'curl http://localhost:9100/metrics | head -20' stderr: curl: (23) Failure writing output to destination

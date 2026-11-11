@@ -1,0 +1,5 @@
+prometheus after restart: active | /-/healthy -> 'Prometheus Server is Healthy.' (lab text: 'Prometheus is Healthy')
+lab 'journalctl -u prometheus -f -n 50': exit=124 (124 = still following after 5s - the lab step never returns)
+journal errors since restart: 0
+lab 'netstat': present | ss: *:9100 *:9090
+config_last_reload_successful: null

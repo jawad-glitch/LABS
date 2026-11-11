@@ -1,0 +1,4 @@
+Checking /tmp/tmp.jal0ERQzjk/adv.yml
+  WARNING: file "/etc/prometheus/targets/*.yml" for file_sd in scrape job "file-discovery" does not exist
+ SUCCESS: /tmp/tmp.jal0ERQzjk/adv.yml is valid prometheus config file syntax
+

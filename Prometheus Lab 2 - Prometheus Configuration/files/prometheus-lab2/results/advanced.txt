@@ -1,0 +1,1 @@
+advanced snippets (lab): promtool exit=0  | password_file variant syntax exit=0

@@ -1,0 +1,3 @@
+Checking /home/ubuntu/prometheus-lab2/etc/prometheus-advanced-fixed.yml
+ SUCCESS: /home/ubuntu/prometheus-lab2/etc/prometheus-advanced-fixed.yml is valid prometheus config file syntax
+

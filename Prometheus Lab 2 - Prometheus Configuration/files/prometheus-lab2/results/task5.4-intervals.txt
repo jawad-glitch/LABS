@@ -1,0 +1,5 @@
+prometheus: samples in last 60s = 6 | up now = 1 | lastScrape = 20:39:42
+node-exporter: samples in last 60s = 4 | up now = 1 | lastScrape = 20:39:47
+custom-app-fast: samples in last 60s = 12 | up now = 1 | lastScrape = 20:39:44
+custom-app-slow: samples in last 60s = 1 | up now = 1 | lastScrape = 20:39:15
+lab 'up' query returns only values: [{"job":"node-exporter","v":"1"},{"job":"custom-app-fast","v":"1"},{"job":"prometheus","v":"1"},{"job":"custom-app-slow","v":"1"}]

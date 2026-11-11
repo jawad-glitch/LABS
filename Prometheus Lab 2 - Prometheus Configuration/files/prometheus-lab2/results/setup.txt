@@ -1,0 +1,1 @@
+prometheus v3.16.0: active | node_exporter v1.12.1 downloaded (lab pins v1.6.1)

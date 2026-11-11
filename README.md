@@ -123,3 +123,4 @@
 | [Istio Lab 19 - Disaster Recovery with Istio](Istio%20Lab%2019%20-%20Disaster%20Recovery%20with%20Istio/PROOF.md) | CORE: 8/13 PASS | 2026-11-11 20:28 |
 | [Istio Lab 20 - Istio in a Zero-Trust Architecture](Istio%20Lab%2020%20-%20Istio%20in%20a%20Zero-Trust%20Architecture/PROOF.md) | CORE: 11/12 PASS | 2026-11-11 20:32 |
 | [Prometheus Lab 1 - Introduction to Prometheus](Prometheus%20Lab%201%20-%20Introduction%20to%20Prometheus/PROOF.md) | CORE: 10/12 PASS | 2026-11-11 20:36 |
+| [Prometheus Lab 2 - Prometheus Configuration](Prometheus%20Lab%202%20-%20Prometheus%20Configuration/PROOF.md) | CORE: 10/13 PASS | 2026-11-11 20:39 |

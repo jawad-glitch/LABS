@@ -1,0 +1,4 @@
+custom-app-fast	http://localhost:8080/metrics	down	interval=5s timeout=3s	Get "http://localhost:8080/metrics": dial tcp 127.0.0.1:8080: connect: connection refused
+custom-app-slow	http://localhost:8081/health/metrics	unknown	interval=1m timeout=30s	
+node-exporter	http://localhost:9100/metrics	up	interval=15s timeout=10s	
+prometheus	http://localhost:9090/metrics	up	interval=10s timeout=10s	

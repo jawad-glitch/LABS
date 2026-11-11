@@ -1,0 +1,15 @@
+========== CORE CHECKS (Prometheus Lab 2 - Prometheus Configuration, 2026-11-11 20:39:50 UTC) - ALL REAL ==========
+PASS: Setup: prometheus v3.16.0 + node_exporter v1.12.1 sha256-verified; prometheus.service active as user prometheus
+PASS: Task 1: /etc/prometheus/prometheus.yml backed up (prometheus.yml.backup)
+PASS: Task 3.2: promtool check config SUCCESS on the lab's 4-job config
+PASS: Task 3.3: node_exporter service active, serving metrics on :9100
+FAIL: Task 4: restart OK, /-/healthy 200, config reload successful = 1, no errors in journal
+FAIL: Lab bug: 'journalctl -f' never returns (exit 124 after 5s); 'netstat' not installed
+PASS: Task 5.2: prometheus + node-exporter UP; custom-app-fast/slow DOWN with connection refused (no service)
+FAIL: Task 5.3: per-job interval/timeout as configured (10s, 15s/10s, 5s/3s, 60s/30s) and paths
+PASS: Task 5.4 measured: samples/60s prometheus=6 (~6), node=4 (~4), fast=12 (~12), slow=1 (~1)
+PASS: With services started, custom-app-fast (/metrics) and custom-app-slow (/health/metrics) go UP
+PASS: Config reload without restart works (systemctl reload / POST /-/reload 200)
+PASS: Advanced examples (basic_auth, file_sd, labels) pass promtool; password_file variant valid
+PASS: Time: finished in 83s (<= 300s)
+CORE: 10/13 PASS

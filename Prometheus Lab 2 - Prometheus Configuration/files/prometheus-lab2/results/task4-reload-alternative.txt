@@ -1,0 +1,1 @@
+systemctl reload (SIGHUP): reload timestamp null -> null | POST /-/reload -> HTTP 200

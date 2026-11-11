@@ -1,0 +1,5 @@
+frontend-sa  frontend:GET=200 backend:GET=200 database:GET=403 backend:DELETE=403 frontend:POST=403
+backend-sa   frontend:GET=200 backend:GET=403 database:GET=200 backend:DELETE=403 frontend:POST=403
+database-sa  frontend:GET=200 backend:GET=403 database:GET=403 backend:DELETE=403 frontend:POST=403
+default      frontend:GET=200 backend:GET=403 database:GET=403 backend:DELETE=403 frontend:POST=403
+denied body: RBAC: access denied

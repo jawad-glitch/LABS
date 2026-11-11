@@ -1,0 +1,177 @@
+admin:
+  address:
+    socket_address:
+      address: 0.0.0.0
+      port_value: 15000
+static_resources:
+  listeners:
+  - name: outbound_frontend
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8081
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: outbound_frontend
+          route_config:
+            name: outbound_frontend
+            virtual_hosts:
+            - name: all
+              domains:
+              - '*'
+              routes:
+              - match:
+                  prefix: /
+                route:
+                  cluster: outbound|80||frontend.zero-trust-demo.svc.cluster.local
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+  - name: outbound_backend
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8082
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: outbound_backend
+          route_config:
+            name: outbound_backend
+            virtual_hosts:
+            - name: all
+              domains:
+              - '*'
+              routes:
+              - match:
+                  prefix: /
+                route:
+                  cluster: outbound|80||backend.zero-trust-demo.svc.cluster.local
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+  - name: outbound_database
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8083
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: outbound_database
+          route_config:
+            name: outbound_database
+            virtual_hosts:
+            - name: all
+              domains:
+              - '*'
+              routes:
+              - match:
+                  prefix: /
+                route:
+                  cluster: outbound|80||database.zero-trust-demo.svc.cluster.local
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+  clusters:
+  - name: outbound|80||frontend.zero-trust-demo.svc.cluster.local
+    type: STATIC
+    connect_timeout: 2s
+    load_assignment:
+      cluster_name: outbound|80||frontend.zero-trust-demo.svc.cluster.local
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 172.18.0.2
+                port_value: 15006
+    transport_socket:
+      name: envoy.transport_sockets.tls
+      typed_config:
+        '@type': type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
+        sni: outbound_.80_._.frontend.zero-trust-demo.svc.cluster.local
+        common_tls_context:
+          tls_certificates:
+          - certificate_chain:
+              filename: /pki/backend-sa.crt
+            private_key:
+              filename: /pki/backend-sa.key
+          validation_context:
+            trusted_ca:
+              filename: /pki/ca.crt
+            match_typed_subject_alt_names:
+            - san_type: URI
+              matcher:
+                exact: spiffe://cluster.local/ns/zero-trust-demo/sa/frontend-sa
+  - name: outbound|80||backend.zero-trust-demo.svc.cluster.local
+    type: STATIC
+    connect_timeout: 2s
+    load_assignment:
+      cluster_name: outbound|80||backend.zero-trust-demo.svc.cluster.local
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 172.18.0.3
+                port_value: 15006
+    transport_socket:
+      name: envoy.transport_sockets.tls
+      typed_config:
+        '@type': type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
+        sni: outbound_.80_._.backend.zero-trust-demo.svc.cluster.local
+        common_tls_context:
+          tls_certificates:
+          - certificate_chain:
+              filename: /pki/backend-sa.crt
+            private_key:
+              filename: /pki/backend-sa.key
+          validation_context:
+            trusted_ca:
+              filename: /pki/ca.crt
+            match_typed_subject_alt_names:
+            - san_type: URI
+              matcher:
+                exact: spiffe://cluster.local/ns/zero-trust-demo/sa/backend-sa
+  - name: outbound|80||database.zero-trust-demo.svc.cluster.local
+    type: STATIC
+    connect_timeout: 2s
+    load_assignment:
+      cluster_name: outbound|80||database.zero-trust-demo.svc.cluster.local
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 172.18.0.4
+                port_value: 15006
+    transport_socket:
+      name: envoy.transport_sockets.tls
+      typed_config:
+        '@type': type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
+        sni: outbound_.80_._.database.zero-trust-demo.svc.cluster.local
+        common_tls_context:
+          tls_certificates:
+          - certificate_chain:
+              filename: /pki/backend-sa.crt
+            private_key:
+              filename: /pki/backend-sa.key
+          validation_context:
+            trusted_ca:
+              filename: /pki/ca.crt
+            match_typed_subject_alt_names:
+            - san_type: URI
+              matcher:
+                exact: spiffe://cluster.local/ns/zero-trust-demo/sa/database-sa
+

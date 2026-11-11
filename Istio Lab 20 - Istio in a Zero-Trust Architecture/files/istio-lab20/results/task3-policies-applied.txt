@@ -1,0 +1,3 @@
+[lab] # policies applied to app=backend: ['deny-all', 'frontend-to-backend']
+[lab] # policies applied to app=database: ['deny-all', 'backend-to-database']
+[lab] # policies applied to app=frontend: ['deny-all', 'allow-frontend-access']

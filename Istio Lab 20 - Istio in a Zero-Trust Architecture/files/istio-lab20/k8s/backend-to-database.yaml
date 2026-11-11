@@ -1,0 +1,21 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: backend-to-database
+  namespace: zero-trust-demo
+spec:
+  selector:
+    matchLabels:
+      app: database
+  rules:
+  - from:
+    - source:
+        principals:
+        - cluster.local/ns/zero-trust-demo/sa/backend-sa
+    to:
+    - operation:
+        methods:
+        - GET
+        - POST
+        paths:
+        - /*

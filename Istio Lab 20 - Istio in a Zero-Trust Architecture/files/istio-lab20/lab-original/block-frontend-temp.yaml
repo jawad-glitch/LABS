@@ -1,0 +1,10 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: block-frontend-temp
+  namespace: zero-trust-demo
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  rules: []

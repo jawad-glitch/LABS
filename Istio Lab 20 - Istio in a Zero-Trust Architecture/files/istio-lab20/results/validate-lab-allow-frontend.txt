@@ -1,0 +1,5 @@
+Error: 1 error occurred:
+	* AuthorizationPolicy/zero-trust-demo/allow-frontend-access: invalid policy allow-frontend-access.zero-trust-demo: `from.source` must not be empty, found at rule 0
+
+
+rc=1

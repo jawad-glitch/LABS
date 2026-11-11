@@ -1,0 +1,3 @@
+nginx:1.21: curl -> /usr/bin/curl
+httpd:2.4: curl -> NOT-FOUND
+lab 'kubectl exec $BACKEND_POD -c backend -- curl ...' on httpd:2.4 -> executable file not found in $PATH

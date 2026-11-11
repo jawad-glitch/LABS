@@ -1,0 +1,3 @@
+LAB block-frontend-temp: frontend-sa -> backend = 200 (lab expects blocked) | database-sa -> frontend = 200 | backend-sa -> frontend = 200
+FIXED DENY on backend: frontend-sa -> backend = 403 | database-sa -> frontend = 200 | backend-sa -> database = 200
+temporary policy removed: frontend-sa -> backend = 200

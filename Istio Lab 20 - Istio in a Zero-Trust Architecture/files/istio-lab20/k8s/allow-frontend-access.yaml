@@ -1,0 +1,14 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-frontend-access
+  namespace: zero-trust-demo
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  rules:
+  - to:
+    - operation:
+        methods:
+        - GET

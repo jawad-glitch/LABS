@@ -1,0 +1,3 @@
+ACCESS GET / 200 via_upstream peer=spiffe://cluster.local/ns/zero-trust-demo/sa/frontend-sa
+ACCESS GET / 200 via_upstream peer=spiffe://cluster.local/ns/zero-trust-demo/sa/frontend-sa
+ACCESS GET / 403 rbac_access_denied_matched_policy[none] peer=spiffe://cluster.local/ns/zero-trust-demo/sa/database-sa

@@ -1,0 +1,124 @@
+# policies applied to app=backend: ['deny-all', 'frontend-to-backend', 'block-frontend-outbound-temp']
+admin:
+  address:
+    socket_address:
+      address: 0.0.0.0
+      port_value: 15000
+static_resources:
+  listeners:
+  - name: virtualInbound
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 15006
+    filter_chains:
+    - transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          require_client_certificate: true
+          common_tls_context:
+            tls_certificates:
+            - certificate_chain:
+                filename: /pki/backend-sa.crt
+              private_key:
+                filename: /pki/backend-sa.key
+            validation_context:
+              trusted_ca:
+                filename: /pki/ca.crt
+      filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: inbound_backend
+          route_config:
+            name: inbound_backend
+            virtual_hosts:
+            - name: all
+              domains:
+              - '*'
+              routes:
+              - match:
+                  prefix: /
+                route:
+                  cluster: inbound|80||
+          http_filters:
+          - name: envoy.filters.http.rbac
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.rbac.v3.RBAC
+              rules:
+                action: DENY
+                policies:
+                  ns[zero-trust-demo]-policy[block-frontend-outbound-temp]-rule[0]:
+                    permissions:
+                    - any: true
+                    principals:
+                    - or_ids:
+                        ids:
+                        - or_ids:
+                            ids:
+                            - authenticated:
+                                principal_name:
+                                  exact: spiffe://cluster.local/ns/zero-trust-demo/sa/frontend-sa
+          - name: envoy.filters.http.rbac
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.rbac.v3.RBAC
+              rules:
+                action: ALLOW
+                policies:
+                  ns[zero-trust-demo]-policy[frontend-to-backend]-rule[0]:
+                    permissions:
+                    - or_rules:
+                        rules:
+                        - and_rules:
+                            rules:
+                            - or_rules:
+                                rules:
+                                - header:
+                                    name: :method
+                                    string_match:
+                                      exact: GET
+                                - header:
+                                    name: :method
+                                    string_match:
+                                      exact: POST
+                            - or_rules:
+                                rules:
+                                - url_path:
+                                    path:
+                                      prefix: /
+                    principals:
+                    - or_ids:
+                        ids:
+                        - or_ids:
+                            ids:
+                            - authenticated:
+                                principal_name:
+                                  exact: spiffe://cluster.local/ns/zero-trust-demo/sa/frontend-sa
+          - name: envoy.filters.http.router
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+          access_log:
+          - name: envoy.access_loggers.stdout
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.access_loggers.stream.v3.StdoutAccessLog
+              log_format:
+                text_format_source:
+                  inline_string: 'ACCESS %REQ(:METHOD)% %REQ(:PATH)% %RESPONSE_CODE%
+                    %RESPONSE_CODE_DETAILS% peer=%DOWNSTREAM_PEER_URI_SAN%
+
+                    '
+  clusters:
+  - name: inbound|80||
+    type: STATIC
+    connect_timeout: 2s
+    load_assignment:
+      cluster_name: inbound|80||
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 127.0.0.1
+                port_value: 80
+

@@ -121,3 +121,4 @@
 | [Lab 17 - Ambient Mode Installation in Istio](Lab%2017%20-%20Ambient%20Mode%20Installation%20in%20Istio/PROOF.md) | CORE: 3/9 PASS | 2026-11-11 15:40 |
 | [Istio Lab 18 - Multi-Cluster Istio Setup](Istio%20Lab%2018%20-%20Multi-Cluster%20Istio%20Setup/PROOF.md) | CORE: 11/13 PASS | 2026-11-11 20:23 |
 | [Istio Lab 19 - Disaster Recovery with Istio](Istio%20Lab%2019%20-%20Disaster%20Recovery%20with%20Istio/PROOF.md) | CORE: 8/13 PASS | 2026-11-11 20:28 |
+| [Istio Lab 20 - Istio in a Zero-Trust Architecture](Istio%20Lab%2020%20-%20Istio%20in%20a%20Zero-Trust%20Architecture/PROOF.md) | CORE: 11/12 PASS | 2026-11-11 20:32 |

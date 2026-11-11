@@ -1,0 +1,3 @@
+pulled httpd:2.4
+pulled nginx:1.21
+pulled istio/proxyv2:1.32.0

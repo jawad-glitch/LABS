@@ -1,0 +1,3 @@
+frontend-sa -> backend: 200
+no-sidecar plaintext -> backend: 000 exit=52
+server identity presented by backend: URI:spiffe://cluster.local/ns/zero-trust-demo/sa/backend-sa

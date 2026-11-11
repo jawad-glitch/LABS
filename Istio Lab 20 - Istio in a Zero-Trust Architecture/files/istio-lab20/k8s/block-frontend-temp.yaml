@@ -1,0 +1,15 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: block-frontend-outbound-temp
+  namespace: zero-trust-demo
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  action: DENY
+  rules:
+  - from:
+    - source:
+        principals:
+        - cluster.local/ns/zero-trust-demo/sa/frontend-sa

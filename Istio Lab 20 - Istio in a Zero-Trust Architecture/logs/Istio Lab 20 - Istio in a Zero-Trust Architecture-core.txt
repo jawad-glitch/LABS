@@ -1,0 +1,14 @@
+========== CORE CHECKS (Istio Lab 20 - Istio in a Zero-Trust Architecture, 2026-11-11 20:32:36 UTC) - CLUSTER/ISTIOD SIMULATED, mTLS + RBAC + ENVOY REAL ==========
+PASS: Setup: lab images + proxyv2 1.32.0; fixed manifests (mesh PeerAuthentication, SAs, v1 policies) schema-valid
+PASS: Lab bug: httpd:2.4 (backend) has no curl - lab's backend->database exec test cannot run; nginx:1.21 has curl
+PASS: istioctl 1.32.0: lab commands checked (authn tls-check absent); replacements x authz check + proxy-config secret present
+PASS: Task 2.4 STRICT: mesh client 200, backend presents spiffe .../sa/backend-sa, plaintext client rejected
+PASS: Task 3.2 default deny: 'default' SA (before the SA patch) denied everywhere except frontend GET
+PASS: Task 3.3: frontend-sa -> backend GET 200, DELETE 403; frontend-sa -> database 403
+PASS: Task 3.3: backend-sa -> database 200; database-sa -> backend 403
+PASS: Task 3.3: frontend open to any authenticated caller for GET only (POST 403)
+PASS: Denials are Envoy RBAC 403 'RBAC: access denied' and logged with the caller's SPIFFE identity
+FAIL: Lab bug: block-frontend-temp does NOT block frontend->backend (200) - it blocks callers OF frontend (403)
+PASS: Fixed temp block (DENY on backend): frontend-sa -> backend 403, others unaffected; removal restores 200
+PASS: Time: finished in 55s (<= 300s)
+CORE: 11/12 PASS

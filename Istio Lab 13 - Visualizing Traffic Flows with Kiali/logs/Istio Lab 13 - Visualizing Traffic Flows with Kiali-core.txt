@@ -1,0 +1,6 @@
+========== CORE CHECKS (Istio Lab 13 - Visualizing Traffic Flows with Kiali, 2026-11-11 15:11:12 UTC) ==========
+FAIL: Kubeconform validation passed for Kiali and gateway manifests
+FAIL: Kiali server container running and responsive on port 20001
+PASS: Bookinfo traffic simulation verified
+PASS: Time: finished in 32s (<= 300s)
+CORE: 2/4 PASS

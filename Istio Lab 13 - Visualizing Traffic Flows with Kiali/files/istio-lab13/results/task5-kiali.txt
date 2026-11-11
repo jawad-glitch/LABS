@@ -1,0 +1,2 @@
+Kiali mock container active: 
+Kiali API status endpoint responding successfully

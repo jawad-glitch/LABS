@@ -1,0 +1,4 @@
+docker.io/library/nginx:1.27-alpine
+quay.io/kiali/kiali:v1.73.0
+docker.io/prom/prometheus:v2.40.0
+docker.io/istio/proxyv2:1.32.0

@@ -1,0 +1,2 @@
+/home/ubuntu/istio-lab13/k8s/kiali-all.yaml - Kiali kiali failed validation: could not find schema for Kiali
+Summary: 3 resources found in 1 file - Valid: 2, Invalid: 0, Errors: 1, Skipped: 0

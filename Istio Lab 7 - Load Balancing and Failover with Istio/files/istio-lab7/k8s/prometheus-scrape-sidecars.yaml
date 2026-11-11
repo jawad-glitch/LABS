@@ -1,0 +1,7 @@
+# Fixed scrape job: Envoy sidecars expose Istio metrics on :15090/stats/prometheus (pod annotation prometheus.io/port=15020 merges them).
+scrape_configs:
+- job_name: envoy-stats
+  metrics_path: /stats/prometheus
+  kubernetes_sd_configs: [{role: pod, namespaces: {names: [lab7-loadbalancing]}}]
+  relabel_configs:
+  - {source_labels: [__meta_kubernetes_pod_container_port_name], action: keep, regex: '.*-envoy-prom'}

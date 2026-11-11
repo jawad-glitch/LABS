@@ -1,0 +1,2 @@
+docker.io/prom/prometheus:latest
+docker.io/istio/proxyv2:1.32.0

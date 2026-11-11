@@ -1,0 +1,2 @@
+lab hostname test: 9/9 'Request failed'
+ROUND_ROBIN 90 requests per endpoint: 172.18.0.2:9080=33 172.18.0.3:9080=32 172.18.0.4:9080=34

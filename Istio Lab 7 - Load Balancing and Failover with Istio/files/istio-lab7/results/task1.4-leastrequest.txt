@@ -1,0 +1,1 @@
+LEAST_REQUEST 90 concurrent requests per endpoint: 172.18.0.2:9080=30 172.18.0.3:9080=30 172.18.0.4:9080=30 | lb_policy: LEAST_REQUEST | circuit breaker: max_connections: 10 max_pending_requests: 10

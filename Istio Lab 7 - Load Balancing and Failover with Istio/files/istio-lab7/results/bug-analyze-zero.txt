@@ -1,0 +1,4 @@
+Total requests: 0
+/home/ubuntu/istio-lab7/scripts/analyze-results-lab.sh: line 5: (counts[i] * 100) / total : division by 0 (error token is "total ")
+/home/ubuntu/istio-lab7/scripts/analyze-results-lab.sh: line 7: (max_count - min_count) * 100 / average : division by 0 (error token is "average ")
+exit=1

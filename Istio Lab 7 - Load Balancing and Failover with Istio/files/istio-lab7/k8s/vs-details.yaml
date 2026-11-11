@@ -1,0 +1,9 @@
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata: {name: details, namespace: lab7-loadbalancing}
+spec:
+  hosts: [details]
+  http:
+  - route:
+    - destination: {host: details, subset: v1}
+    retries: {attempts: 3, perTryTimeout: 2s, retryOn: "connect-failure,refused-stream,unavailable,cancelled,5xx"}

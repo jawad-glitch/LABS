@@ -1,0 +1,14 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: details-peer-auth
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: details
+  mtls:
+    mode: STRICT
+  portLevelMtls:
+    9080:
+      mode: STRICT

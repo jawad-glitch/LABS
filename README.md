@@ -111,3 +111,4 @@
 | [Istio Lab 7 - Load Balancing and Failover with Istio](Istio%20Lab%207%20-%20Load%20Balancing%20and%20Failover%20with%20Istio/PROOF.md) | CORE: 11/14 PASS | 2026-11-11 14:45 |
 | [Istio Lab 8 - Traffic Mirroring with Istio](Istio%20Lab%208%20-%20Traffic%20Mirroring%20with%20Istio/PROOF.md) | CORE: 12/12 PASS | 2026-11-11 14:52 |
 | [Istio Lab 9 - Secure Service Communication with mTLS](Istio%20Lab%209%20-%20Secure%20Service%20Communication%20with%20mTLS/PROOF.md) | CORE: 12/12 PASS | 2026-11-11 14:56 |
+| [Istio Lab 10 - Peer Authentication and Authorization](Istio%20Lab%2010%20-%20Peer%20Authentication%20and%20Authorization/PROOF.md) | CORE: 3/7 PASS | 2026-11-11 15:01 |

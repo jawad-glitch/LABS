@@ -1,0 +1,3 @@
+STRICT mTLS: productpage client GET -> 404
+STRICT mTLS: attacker client GET -> 404
+TLS handshake certificate validation: Verify return code: 0 (ok)

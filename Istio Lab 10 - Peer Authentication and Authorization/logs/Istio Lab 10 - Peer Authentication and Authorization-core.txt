@@ -1,0 +1,9 @@
+========== CORE CHECKS (Istio Lab 10 - Peer Authentication and Authorization, 2026-11-11 15:01:29 UTC) ==========
+PASS: Kubeconform validation passed for lab manifests
+PASS: Workload SPIFFE certificates generated and verified
+FAIL: Strict mTLS enforces authentication (productpage succeeds, attacker blocked)
+FAIL: Deny-all authorization policy blocks requests
+FAIL: Selective allow policy permits productpage GET but blocks unauthorized sources and methods
+FAIL: Conditional authorization policy validates user-agent headers
+PASS: Time: finished in 38s (<= 300s)
+CORE: 3/7 PASS

@@ -1,0 +1,1 @@
+Namespace policy test (default ns allowed) -> 503

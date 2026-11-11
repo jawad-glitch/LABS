@@ -1,0 +1,4 @@
+Allow-Details policy active:
+  - productpage GET (/details/0) -> 404
+  - reviews client GET -> 403
+  - productpage POST (/details/0) -> 403

@@ -1,0 +1,3 @@
+Conditional Access test:
+  - curl user-agent GET -> 404
+  - browser user-agent GET -> 404

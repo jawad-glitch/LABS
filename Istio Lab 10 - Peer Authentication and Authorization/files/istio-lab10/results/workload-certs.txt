@@ -1,0 +1,3 @@
+bookinfo-productpage: URI:spiffe://cluster.local/ns/default/sa/bookinfo-productpage expires Nov 12 15:01:05 2026 GMT | bookinfo-productpage.crt: OK
+bookinfo-details: URI:spiffe://cluster.local/ns/default/sa/bookinfo-details expires Nov 12 15:01:06 2026 GMT | bookinfo-details.crt: OK
+bookinfo-reviews: URI:spiffe://cluster.local/ns/default/sa/bookinfo-reviews expires Nov 12 15:01:07 2026 GMT | bookinfo-reviews.crt: OK

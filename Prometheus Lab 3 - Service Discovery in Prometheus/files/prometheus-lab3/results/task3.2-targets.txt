@@ -1,0 +1,7 @@
+kubernetes-apiservers	up	172.18.0.2:6443
+kubernetes-nodes	up	prom-lab-control-plane
+kubernetes-pods	up	10.244.0.6:8080
+kubernetes-service-endpoints	up	10.244.0.2:9153
+kubernetes-service-endpoints	up	10.244.0.3:9153
+kubernetes-service-endpoints	up	10.244.0.6:8080
+prometheus	up	localhost:9090

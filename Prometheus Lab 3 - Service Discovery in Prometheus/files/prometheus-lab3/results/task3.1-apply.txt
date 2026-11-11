@@ -1,0 +1,5 @@
+serviceaccount/kube-state-metrics created
+clusterrole.rbac.authorization.k8s.io/kube-state-metrics created
+clusterrolebinding.rbac.authorization.k8s.io/kube-state-metrics created
+deployment.apps/kube-state-metrics created
+service/kube-state-metrics created

@@ -1,0 +1,3 @@
+after fix - targets: kubernetes-apiservers=up kubernetes-nodes=up kubernetes-service-endpoints=up kubernetes-service-endpoints=up kubernetes-service-endpoints=up prometheus=up
+after fix - ready-replicas series: [{"deployment":"kube-state-metrics","ready":"1","job":"kubernetes-service-endpoints"},{"deployment":"prometheus","ready":"1","job":"kubernetes-service-endpoints"}]
+after fix - KSM 'forbidden' lines in the last 20s: 0

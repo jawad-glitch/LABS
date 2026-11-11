@@ -1,0 +1,14 @@
+========== CORE CHECKS (Prometheus Lab 3 - Service Discovery in Prometheus, 2026-11-11 20:46:32 UTC) - ALL REAL (kind v0.22.0) ==========
+PASS: Task 1: docker present; kind v0.22.0 + kubectl sha256-verified; lab's 'jammy' repo line recorded vs this OS
+PASS: Task 1.3: kind cluster 'prom-lab' created, node Ready
+PASS: Task 2: Prometheus pod Running 1/1 with serviceAccountName=prometheus; NodePort 30090 answers 200
+PASS: Task 3.1: kube-state-metrics Running 1/1, headless Service (ClusterIP None)
+PASS: Task 3.2: reload 200; all lab jobs UP (prometheus, apiservers, nodes, service-endpoints): kubernetes-apiservers,kubernetes-nodes,kubernetes-pods,kubernetes-service-endpoints,prometheus
+FAIL: Task 3.3: ready replicas = 1 for prometheus and kube-state-metrics
+PASS: Lab bug: KSM discovered twice (pod + service annotations) -> kubernetes-pods job extra and duplicate series per deployment
+PASS: Lab bug: kube_pod_status_phase{phase=Running} returns 0/1 values; '== 1' needed to list Running pods only
+PASS: Lab bug: lab's KSM ClusterRole is incomplete - KSM logs 'forbidden' (60 lines)
+FAIL: Task 2.4: lab template returns None/{}; completed script reproduces Prometheus's final labels exactly
+PASS: Fixed: KSM scraped once (no kubernetes-pods target, 2 series), RBAC complete (0 forbidden in last 20s)
+PASS: Time: finished in 234s (<= 300s)
+CORE: 10/12 PASS

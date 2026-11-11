@@ -1,0 +1,4 @@
+lab template build_pod_relabel_config() -> None
+lab template validate_target_labels(real labels) -> {}
+completed script vs Prometheus final labels: DIFFERENT
+keep filter on a pod without the annotation -> {}

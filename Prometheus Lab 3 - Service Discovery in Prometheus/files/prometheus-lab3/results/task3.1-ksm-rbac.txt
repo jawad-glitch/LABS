@@ -1,0 +1,1 @@
+KSM 'forbidden' log lines (lab RBAC): 60 | resources: CertificateSigningRequest,Ingress,Lease,MutatingWebhookConfiguration,NetworkPolicy,ValidatingWebhookConfiguration,certificatesigningrequests,ingresses,leases,mutatingwebhookconfigurations,networkpolicies,validatingwebhookconfigurations

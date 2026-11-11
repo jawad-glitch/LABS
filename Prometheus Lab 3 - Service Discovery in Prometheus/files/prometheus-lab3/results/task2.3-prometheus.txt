@@ -1,0 +1,5 @@
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/prometheus-7f97f8895d-d2c9v   1/1     Running   0          10s
+
+NAME                 TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/prometheus   NodePort   10.96.188.128   <none>        9090:30090/TCP   10s

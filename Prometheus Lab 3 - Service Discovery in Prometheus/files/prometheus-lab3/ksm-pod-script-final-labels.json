@@ -1,0 +1,8 @@
+{
+  "app_kubernetes_io_name": "kube-state-metrics",
+  "instance": "10.244.0.6:8080",
+  "job": "kubernetes-pods",
+  "kubernetes_namespace": "monitoring",
+  "kubernetes_pod_name": "kube-state-metrics-6d94b6cd94-fbzdx",
+  "pod_template_hash": "6d94b6cd94"
+}

@@ -1,0 +1,3 @@
+docker: client 29.6.0 / server 29.6.0
+OS codename: noble | lab docker.list hard-codes: jammy -> MISMATCH (packages for 22.04 on this release)
+lab 'newgrp docker' starts a new interactive shell: pasted lines after it run in a different shell (or wait for exit)

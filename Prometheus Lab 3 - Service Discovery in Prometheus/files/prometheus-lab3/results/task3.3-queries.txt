@@ -1,0 +1,4 @@
+lab query 1 (ready replicas): [{"deployment":"kube-state-metrics","ready":"0","job":"kubernetes-pods"},{"deployment":"prometheus","ready":"1","job":"kubernetes-pods"},{"deployment":"kube-state-metrics","ready":"0","job":"kubernetes-service-endpoints"},{"deployment":"prometheus","ready":"1","job":"kubernetes-service-endpoints"}]
+  -> 4 series for 2 deployments, jobs: kubernetes-pods,kubernetes-service-endpoints
+lab query 2 (Running phase): kube-state-metrics-6d94b6cd94-fbzdx=1 prometheus-7f97f8895d-d2c9v=1 kube-state-metrics-6d94b6cd94-fbzdx=1 prometheus-7f97f8895d-d2c9v=1
+with '== 1': kube-state-metrics-6d94b6cd94-fbzdx prometheus-7f97f8895d-d2c9v

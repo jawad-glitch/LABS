@@ -1,0 +1,9 @@
+CPU | 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) | series=1 | localhost:9100=96.41
+MEMORY | (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 | series=1 | localhost:9100=35.33
+DISK | 100 - ((node_filesystem_avail_bytes{mountpoint="/",fstype!="rootfs"} / node_filesystem_size_bytes{mountpoint="/",fstype!="rootfs"}) * 100) | series=1 | /dev/root=29.35
+NET_LAB | rate(node_network_receive_bytes_total{device="eth0"}[5m]) | series=0 | 
+NET_FIXED | rate(node_network_receive_bytes_total{device!~"lo|veth.*|docker.*|br-.*"}[5m]) | series=1 | ens5=80.08
+LOAD1 | node_load1 | series=1 | localhost:9100=1.75
+DISK_READS | rate(node_disk_reads_completed_total[5m]) | series=2 | nvme0n1=0 nvme1n1=0
+NET_ERRS | rate(node_network_receive_errs_total[5m]) | series=3 | docker0=0 ens5=0 lo=0
+node_ metric names: 256

@@ -1,0 +1,6 @@
+ufw: Status: inactive
+listening: *:9100
+BEFORE fix - via private IP 172.31.10.27:9100 -> HTTP 200 (exposed to anything the security group allows)
+shell of node_exporter user: /bin/false
+AFTER fix - listening: 127.0.0.1:9100 | via private IP -> HTTP 000 | via localhost -> HTTP 200
+Prometheus target after fix: up

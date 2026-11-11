@@ -1,0 +1,15 @@
+========== CORE CHECKS (Prometheus Lab 4 - Install Node Exporter, 2026-11-11 20:50:03 UTC) - ALL REAL ==========
+PASS: Task 1: node_exporter 1.6.1 sha256-verified, installed, --version 1.6.1
+PASS: Task 2: node_exporter.service enabled + active, running as user node_exporter
+PASS: Task 3: :9100 serves node_cpu_seconds_total, node_memory_MemTotal_bytes, node_filesystem_size_bytes
+PASS: Task 4: backup made; promtool SUCCESS; lab's 'SUCCESS: 2 rule files found' does not appear (no rule_files)
+PASS: Task 5.2: prometheus and node_exporter targets UP (node_exporter every 10s)
+PASS: Task 5.3: CPU, memory, disk queries return data
+PASS: Lab bug: network query on device="eth0" is empty on this VM ( docker0 ens5 lo); fixed device filter returns data
+PASS: Task 6: node_load1, disk read rate, network error rate queries return data
+PASS: Lab bug: '--collector.cpu --collector.meminfo --collector.diskstats' keeps all defaults; disable-defaults gives exactly 3
+PASS: Lab bug: ufw 'allow from 127.0.0.1' secures nothing - :9100 answered on the private IP (200) before the fix
+PASS: Fixed: bound to 127.0.0.1 - private IP refused, localhost 200, Prometheus target still up
+FAIL: Lab troubleshooting: 'journalctl -f' never returns (124); netstat missing
+PASS: Time: finished in 69s (<= 300s)
+CORE: 12/13 PASS

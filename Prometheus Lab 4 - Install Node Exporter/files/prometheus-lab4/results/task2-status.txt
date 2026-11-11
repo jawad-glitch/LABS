@@ -1,0 +1,5 @@
+● node_exporter.service - Node Exporter
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2026-11-11 20:49:05 UTC; 822ms ago
+   Main PID: 4292 (node_exporter)
+runs as: node_exporter

@@ -1,0 +1,4 @@
+journalctl -f: exit=124 (124 = never returns)
+netstat: present
+'ps aux | grep node_exporter' lines: 2 (incl. grep itself) | pgrep -a: 5049 /usr/local/bin/node_exporter --web.listen-address=127.0.0.1:9100
+top -b -n1 -p: PID=5049 RES=19252 %CPU=0.0

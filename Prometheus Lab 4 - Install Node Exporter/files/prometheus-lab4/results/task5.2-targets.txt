@@ -1,0 +1,2 @@
+node_exporter	up	http://localhost:9100/metrics	interval=10s
+prometheus	up	http://localhost:9090/metrics	interval=15s

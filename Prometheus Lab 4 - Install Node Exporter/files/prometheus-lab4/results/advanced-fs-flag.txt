@@ -1,0 +1,1 @@
+lab flag --collector.filesystem.ignored-fs-types on 1.6.1: DEPRECATED and will be removed in 2.0.0, use --collector.filesystem.fs-types-exclude Listening on" address=[::]:9103 [rc=124; 124 = it kept running]

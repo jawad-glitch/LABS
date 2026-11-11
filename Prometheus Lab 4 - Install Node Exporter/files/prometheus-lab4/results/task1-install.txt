@@ -1,0 +1,8 @@
+checksum: node_exporter-1.6.1.linux-amd64.tar.gz: OK | lab: '1.6.1 is the current stable release'; latest today: v1.12.1
+useradd: rc=0  (re-run safe: user exists -> rc 9)
+node_exporter, version 1.6.1 (branch: HEAD, revision: 4a1b77600c1873a8233f3ffb55afcedbb63b8d84)
+  build user:       root@586879db11e5
+  build date:       20230717-12:10:52
+  go version:       go1.20.6
+  platform:         linux/amd64
+  tags:             netgo osusergo static_build

@@ -1,0 +1,3 @@
+default service (:9100): 45 collectors
+lab flags --collector.cpu --collector.meminfo --collector.diskstats (:9101): 45 collectors
+--collector.disable-defaults + the same three (:9102): 3 collectors: cpu,diskstats,meminfo

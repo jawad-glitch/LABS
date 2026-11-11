@@ -1,0 +1,9 @@
+apiVersion: networking.istio.io/v1
+kind: DestinationRule
+metadata: {name: httpbin, namespace: default}
+spec:
+  host: httpbin.default.svc.cluster.local
+  trafficPolicy: {loadBalancer: {simple: ROUND_ROBIN}}
+  subsets:
+  - {name: cluster1, labels: {topology.istio.io/cluster: cluster1}}
+  - {name: cluster2, labels: {topology.istio.io/cluster: cluster2}}

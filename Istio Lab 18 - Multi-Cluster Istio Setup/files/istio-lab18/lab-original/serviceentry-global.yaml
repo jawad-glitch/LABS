@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata: {name: httpbin-cluster1}
+spec:
+  hosts: [httpbin.default.global]
+  location: MESH_EXTERNAL
+  ports: [{number: 8000, name: http, protocol: HTTP}]
+  resolution: DNS
+  addresses: [240.0.0.1]
+  endpoints: [{address: httpbin.default.svc.cluster.local, network: network1, ports: {http: 8000}}]

@@ -1,0 +1,2 @@
+[2026-11-11 20:22:46.141][1][warning][main] [external/envoy+/source/server/server.cc:1059] There is no configured limit to the number of allowed active downstream connections. Configure a limit in `envoy.resource_monitors.global_downstream_max_connections` resource monitor.
+ACCESS /hostname 200 peer=spiffe://cluster.local/ns/default/sa/sleep

@@ -1,0 +1,15 @@
+========== CORE CHECKS (Istio Lab 18 - Multi-Cluster Istio Setup, 2026-11-11 20:23:00 UTC) - CLUSTERS/ISTIOD SIMULATED, NETWORKS + mTLS + GATEWAY + ENVOY REAL ==========
+PASS: Task 1: VM resources recorded vs lab's 8 GiB / 4-core requirement; istioctl 1.32.0 + images ready
+PASS: Lab bug: '.bashrc' gets a literal $PWD - istioctl path depends on the login directory
+PASS: Lab bug: '--set values.gateways.istio-eastwestgateway.enabled=true' renders no east-west gateway
+PASS: Fixed: IstioOperator ingressGateways[istio-eastwestgateway] renders the Deployment; create-remote-secret available
+PASS: Fixed manifests (network labels, AUTO_PASSTHROUGH Gateway, same-name httpbin, topology subsets) schema-valid
+PASS: PKI: shared root + per-cluster intermediates verify; lab's separate roots do not cross-verify
+PASS: Lab bug: cluster2 cannot resolve/reach cluster1's Service or pods (.global ServiceEntry endpoint unusable)
+PASS: Lab bug (no shared cacerts): cross-cluster mTLS fails with separate roots (HTTP 503)
+PASS: Lab bug (tls.mode ISTIO_MUTUAL): gateway presents its own identity -> client rejects (HTTP 503)
+FAIL: Fixed (shared root + AUTO_PASSTHROUGH): cluster2 -> cluster1 HTTP 200 answered by httpbin-cluster1
+PASS: End-to-end mTLS: cluster1 sidecar sees cluster2 client identity spiffe://.../sa/sleep; gateway only passed TLS through
+FAIL: Task 7.2: one Service name load-balances across both clusters ()
+PASS: Time: finished in 62s (<= 300s)
+CORE: 11/13 PASS

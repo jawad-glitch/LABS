@@ -1,0 +1,3 @@
+httpbin(c1) chain -> shared root:  OK
+sleep(c2) chain -> shared root:  OK
+lab: httpbin(c1, rootA) as seen by cluster2 trust (rootB): error lab-httpbin-c1.crt: verification failed

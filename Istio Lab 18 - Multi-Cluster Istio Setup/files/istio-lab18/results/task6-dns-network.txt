@@ -1,0 +1,4 @@
+from cluster2 network: httpbin.default.svc.cluster.local -> Address: 172.19.0.2 (only cluster2's own httpbin 172.19.0.2)
+from cluster2 network: cluster1 pod IP 172.18.0.2 reachable? wget: download timed out
+NO - different network
+from cluster2 network: httpbin.default.global -> NXDOMAIN

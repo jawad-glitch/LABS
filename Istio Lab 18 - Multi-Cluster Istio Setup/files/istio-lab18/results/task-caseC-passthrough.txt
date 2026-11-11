@@ -1,0 +1,2 @@
+cluster2 sleep -> cluster1 via AUTO_PASSTHROUGH gateway: HTTP 200  | client ssl: cluster.httpbin-cluster1.ssl.handshake: 1
+cluster1 httpbin sidecar sees client identity: peer=spiffe://cluster.local/ns/default/sa/sleep | gateway TLS-terminated anything?  sni_passthrough bytes: tcp.sni_passthrough.downstream_cx_total: 1

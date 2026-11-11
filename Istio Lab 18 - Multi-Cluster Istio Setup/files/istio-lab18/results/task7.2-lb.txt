@@ -1,0 +1,1 @@
+Task 7.2 load balancing over httpbin.default.svc.cluster.local (local + remote via gateway), 40 requests: 

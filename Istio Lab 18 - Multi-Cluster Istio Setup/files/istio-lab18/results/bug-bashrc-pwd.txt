@@ -1,0 +1,1 @@
+lab .bashrc line stores: export PATH=$PWD/istio-1.19.0/bin:$PATH -> at next login $PWD=$HOME expands to: /home/ubuntu/istio-1.19.0/bin

@@ -1,0 +1,3 @@
+LAB  --set values.gateways.istio-eastwestgateway.enabled=true: rc=1, istio-eastwestgateway objects rendered: 0 Error: could not unmarshal: error unmarshaling JSON: while decoding JSON: unknown field "istio-eastwestgateway" in istio.operator.v1alpha1.G
+FIXED IstioOperator ingressGateways[istio-eastwestgateway]: rc=0, Deployment rendered: 1
+istioctl create-remote-secret: available

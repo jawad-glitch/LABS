@@ -1,0 +1,1 @@
+VM: 3848 MiB RAM, 2 CPUs, 20G free | lab requires >= 8 GiB RAM, >= 4 cores (two kind clusters + workers + 2x Istio)

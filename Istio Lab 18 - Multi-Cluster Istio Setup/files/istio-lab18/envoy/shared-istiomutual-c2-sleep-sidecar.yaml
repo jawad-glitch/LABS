@@ -1,0 +1,113 @@
+admin:
+  address:
+    socket_address:
+      address: 0.0.0.0
+      port_value: 15000
+static_resources:
+  listeners:
+  - name: outbound_8000
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8000
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: outbound_mixed
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+          route_config:
+            name: outbound_mixed
+            virtual_hosts:
+            - name: all
+              domains:
+              - '*'
+              routes:
+              - match:
+                  prefix: /
+                route:
+                  cluster: httpbin-all
+                  timeout: 5s
+  - name: outbound_remote
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8001
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          '@type': type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: outbound_remote
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              '@type': type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+          route_config:
+            name: outbound_remote
+            virtual_hosts:
+            - name: all
+              domains:
+              - '*'
+              routes:
+              - match:
+                  prefix: /
+                route:
+                  cluster: httpbin-cluster1
+                  timeout: 5s
+  clusters:
+  - name: httpbin-all
+    type: STATIC
+    connect_timeout: 2s
+    lb_policy: ROUND_ROBIN
+    load_assignment:
+      cluster_name: httpbin-all
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 172.19.0.2
+                port_value: 15006
+        - endpoint:
+            address:
+              socket_address:
+                address: 172.20.0.2
+                port_value: 15443
+    transport_socket: &id001
+      name: envoy.transport_sockets.tls
+      typed_config:
+        '@type': type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
+        sni: outbound_.8000_._.httpbin.default.svc.cluster.local
+        common_tls_context:
+          tls_certificates:
+          - certificate_chain:
+              filename: /pki/sleep-c2.crt
+            private_key:
+              filename: /pki/sleep-c2.key
+          validation_context:
+            trusted_ca:
+              filename: /pki/root-ca.crt
+            match_typed_subject_alt_names:
+            - san_type: URI
+              matcher:
+                exact: spiffe://cluster.local/ns/default/sa/httpbin
+  - name: httpbin-cluster1
+    type: STATIC
+    connect_timeout: 2s
+    lb_policy: ROUND_ROBIN
+    load_assignment:
+      cluster_name: httpbin-cluster1
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 172.20.0.2
+                port_value: 15443
+    transport_socket: *id001
+

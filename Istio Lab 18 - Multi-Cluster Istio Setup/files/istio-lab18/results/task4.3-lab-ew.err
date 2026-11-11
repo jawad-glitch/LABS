@@ -1,0 +1,1 @@
+Error: could not unmarshal: error unmarshaling JSON: while decoding JSON: unknown field "istio-eastwestgateway" in istio.operator.v1alpha1.GatewaysConfig

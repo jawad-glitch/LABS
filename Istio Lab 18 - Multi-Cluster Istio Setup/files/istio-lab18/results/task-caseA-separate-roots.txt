@@ -1,0 +1,1 @@
+cluster2 sleep -> httpbin (cluster1 via gateway), separate roots: HTTP 503  | client ssl: cluster.httpbin-cluster1.ssl.fail_verify_error: 1

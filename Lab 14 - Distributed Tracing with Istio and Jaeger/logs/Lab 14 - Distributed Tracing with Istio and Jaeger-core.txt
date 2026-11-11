@@ -1,0 +1,10 @@
+========== CORE CHECKS (Lab 14 - Distributed Tracing with Istio and Jaeger, 2026-11-11 15:17:20 UTC) ==========
+FAIL: Setup: Jaeger pod is Running and healthy in namespace jaeger
+FAIL: Setup: Jaeger Service exposes ports 16686 (UI) and 9411 (Zipkin)
+FAIL: Task 2: Istio control plane configured with Zipkin tracing at 100%
+FAIL: Task 3: Bookinfo application running with injected sidecars (2/2 containers)
+FAIL: Task 4: Ingress Gateway and VirtualService mapped productpage route
+FAIL: Task 5: Jaeger registered productpage.bookinfo as a monitored service
+FAIL: Task 6: Distributed traces captured and queryable via Jaeger API
+PASS: Time: Lab execution finished in <= 480s
+CORE: 1/8 PASS

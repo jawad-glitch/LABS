@@ -1,3 +1,6 @@
-lab DR (consecutiveErrors ignored) + Istio default retries: errors= slow(>0.9s)=0/30 | ejections_active= retries=0
-fixed DR (consecutive5xxErrors 3, interval 5s) + VS retries: errors= slow(>0.9s)=0/30 | ejections_active=0 retries=0
-recovered: 200 (pod restarted - Deployment would recreate it)
+CRASH  Istio defaults (no outlierDetection): errors=0 slow(>0.9s)=0/30 | ejections_total=0 retries=0
+CRASH  lab DR (consecutiveErrors 3 -> gateway failures): errors=0 slow(>0.9s)=0/30 | ejections_total=0 retries=0
+CRASH  fixed DR (consecutive5xxErrors 3) + VS retries: errors=0 slow(>0.9s)=0/30 | ejections_total=0 retries=0
+HTTP500 lab DR (consecutiveErrors 3 -> gateway failures): errors=9 slow(>0.9s)=0/30 | ejections_total=0 retries=0
+HTTP500 fixed DR (consecutive5xxErrors 3) + VS retries: errors=0 slow(>0.9s)=0/30 | ejections_total=1 retries=3
+recovered: details-v1-1 /health -> 200 (a Deployment would recreate a crashed pod)

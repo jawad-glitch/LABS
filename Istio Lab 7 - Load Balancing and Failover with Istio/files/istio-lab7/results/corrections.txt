@@ -1,0 +1,7 @@
+1. "consecutiveErrors fails the v1 schema (removed)" - WRONG. Schema accepted it (exit 0). The field is deprecated; Istio maps it to Envoy
+   consecutive_gateway_failure (502/503/504 only, enforcing_consecutive_5xx=0). Corrected finding: the lab DR ejects crashed pods
+   (connect failures -> 503) but never ejects a pod that answers HTTP 500 - tested below.
+2. "prom/prometheus:latest rejects --web.console.*" - WRONG for Prometheus 3.16 (flags accepted, process kept running; exit 124 = our timeout).
+   Remaining Prometheus issues: scrape job keeps a Service named istio-proxy (does not exist), istio-policy (Mixer) removed, no RBAC.
+3. "ROUND_ROBIN gives exactly 30/30/30" - too strict: 9 lab-test requests shared the sidecar (99 total) and Envoy round-robins per worker
+   thread; 33/32/34 is correct round robin. Check now: every endpoint within +-3 of the mean.

@@ -1,2 +1,2 @@
-LAB gateway VS, 100 requests: v1=+51 v2=+49 shadow=+20 client_codes=200:100 
-FIXED gateway VS, 100 requests: v1=+100 v2=+100 shadow=+43 client_codes=200:100 
+LAB gateway VS, 100 requests: v1=+49 v2=+51 shadow=+0 client_codes=200:100 
+FIXED gateway VS, 100 requests: v1=+100 v2=+100 shadow=+100 client_codes=200:100 

@@ -1,1 +1,1 @@
-50% rule, 100 requests: v1=+100 v2=+58 shadow=+0 client_codes=200:100 
+50% rule, 100 requests: v1=+100 v2=+49 shadow=+49 client_codes=200:100 

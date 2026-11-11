@@ -1,2 +1,2 @@
-end-user: jason (100%), 20 requests: v1=+20 v2=+20 shadow=+64 client_codes=200:20 
-shadow sample: ACCESS GET /productpage 200 authority=productpage-shadow:9080 rid=c921459d-effe-49c8-9582-032bbe45e490 | same request id in v1 log: 1
+end-user: jason (100%), 20 requests: v1=+20 v2=+20 shadow=+20 client_codes=200:20 
+shadow sample: ACCESS GET /productpage 200 authority=productpage-shadow:9080 rid=c342729d-3e00-4425-a86b-34e4af4ba6f9 | same request id in v1 log: 1

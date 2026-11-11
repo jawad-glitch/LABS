@@ -1,3 +1,3 @@
 lab count on no match -> '0|0'
 -bash: [: too many arguments
-lab pattern 'grep -c ... || echo 0' on no match returns: 0|0 | test: 
+lab pattern 'grep -c ... || echo 0' on no match returns: 0|0 | test: too many arguments

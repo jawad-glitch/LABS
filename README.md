@@ -109,4 +109,4 @@
 | [AIOps Sec Lab - Securing a Cloud-Native Workload End-to-End](AIOps%20Sec%20Lab%20-%20Securing%20a%20Cloud-Native%20Workload%20End-to-End/PROOF.md) | CORE: 20/20 PASS | 2026-11-10 19:25 |
 | [Istio Lab 6 - AB Testing with Istio](Istio%20Lab%206%20-%20AB%20Testing%20with%20Istio/PROOF.md) | CORE: 12/12 PASS | 2026-11-11 14:39 |
 | [Istio Lab 7 - Load Balancing and Failover with Istio](Istio%20Lab%207%20-%20Load%20Balancing%20and%20Failover%20with%20Istio/PROOF.md) | CORE: 11/14 PASS | 2026-11-11 14:45 |
-| [Istio Lab 8 - Traffic Mirroring with Istio](Istio%20Lab%208%20-%20Traffic%20Mirroring%20with%20Istio/PROOF.md) | CORE: 5/12 PASS | 2026-11-11 14:50 |
+| [Istio Lab 8 - Traffic Mirroring with Istio](Istio%20Lab%208%20-%20Traffic%20Mirroring%20with%20Istio/PROOF.md) | CORE: 12/12 PASS | 2026-11-11 14:52 |

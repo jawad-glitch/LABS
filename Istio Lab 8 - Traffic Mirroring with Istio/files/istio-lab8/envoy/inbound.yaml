@@ -16,7 +16,7 @@ static_resources:
               log_format: {text_format_source: {inline_string: "ACCESS %REQ(:METHOD)% %REQ(:PATH)% %RESPONSE_CODE% authority=%REQ(:AUTHORITY)% rid=%REQ(X-REQUEST-ID)%\n"}}
           route_config:
             name: inbound|9080||
-            virtual_hosts: [{name: inbound, domains: ["*"], routes: [{match: {prefix: "/"}, route: {cluster: "inbound|9080||"}}]}]
+            virtual_hosts: [{name: inbound, domains: ["*"], routes: [{match: {prefix: "/"}, route: {cluster: "inbound|9080||"}}], virtual_clusters: [{name: shadow, headers: [{name: ":authority", string_match: {contains: "-shadow"}}]}]}]
           http_filters: [{name: envoy.filters.http.router, typed_config: {"@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router}}]
   clusters:
   - name: "inbound|9080||"

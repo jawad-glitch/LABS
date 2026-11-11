@@ -1,6 +1,2 @@
-E1111 15:31:57.386377    4923 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:31:57.387128    4923 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:31:57.388584    4923 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:31:57.388975    4923 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:31:57.390605    4923 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+NAME                   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)                    AGE
+istio-ingressgateway   ClusterIP   10.96.94.254   <none>        15021/TCP,80/TCP,443/TCP   5s

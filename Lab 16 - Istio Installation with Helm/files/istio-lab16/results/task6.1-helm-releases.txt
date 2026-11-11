@@ -1,1 +1,4 @@
-Error: kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp 127.0.0.1:8080: connect: connection refused
+NAME                	NAMESPACE   	REVISION	UPDATED                                	STATUS  	CHART         	APP VERSION
+istio-base          	istio-system	1       	2026-11-11 15:34:36.9129345 +0000 UTC  	deployed	base-1.30.8   	1.30.8     
+istio-ingressgateway	istio-system	1       	2026-11-11 15:34:55.91716943 +0000 UTC 	deployed	gateway-1.30.8	1.30.8     
+istiod              	istio-system	1       	2026-11-11 15:34:44.044387358 +0000 UTC	deployed	istiod-1.30.8 	1.30.8     

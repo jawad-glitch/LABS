@@ -1,1 +1,14 @@
-Error: kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp 127.0.0.1:8080: connect: connection refused
+Release "istio-base" does not exist. Installing it now.
+NAME: istio-base
+LAST DEPLOYED: Wed Nov 11 15:34:36 2026
+NAMESPACE: istio-system
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+Istio base successfully installed!
+
+To learn more about the release, try:
+  $ helm status istio-base -n istio-system
+  $ helm get all istio-base -n istio-system

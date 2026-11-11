@@ -1,1 +1,18 @@
-Error: kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp 127.0.0.1:8080: connect: connection refused
+Release "istio-ingressgateway" does not exist. Installing it now.
+NAME: istio-ingressgateway
+LAST DEPLOYED: Wed Nov 11 15:34:55 2026
+NAMESPACE: istio-system
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+"istio-ingressgateway" successfully installed!
+
+To learn more about the release, try:
+  $ helm status istio-ingressgateway -n istio-system
+  $ helm get all istio-ingressgateway -n istio-system
+
+Next steps:
+  * Deploy an HTTP Gateway: https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-control/
+  * Deploy an HTTPS Gateway: https://istio.io/latest/docs/tasks/traffic-management/ingress/secure-ingress/

@@ -1,13 +1,13 @@
-========== CORE CHECKS (Lab 16 - Istio Installation with Helm, 2026-11-11 15:32:03 UTC) ==========
-FAIL: Task 1: Minikube running with nodes ready
+========== CORE CHECKS (Lab 16 - Istio Installation with Helm, 2026-11-11 15:37:29 UTC) ==========
+PASS: Task 1: Kubernetes running with nodes ready
 PASS: Task 2: Istio Helm repo added and accessible
 FAIL: Task 3: istio-base chart deployed via Helm
-FAIL: Task 4: istiod control plane deployed and Running
-FAIL: Task 5: istio-ingressgateway deployed via Helm
-FAIL: Task 6: Sidecar proxy successfully injected (2 containers in test pod)
-FAIL: Task 7: Gateway and Telemetry resources created
-FAIL: Task 8: Bookinfo application and routing rules deployed
+PASS: Task 4: istiod control plane deployed and Running
+PASS: Task 5: istio-ingressgateway deployed via Helm
+PASS: Task 6: Sidecar proxy successfully injected (2 containers in test pod)
+PASS: Task 7: Gateway and Telemetry resources created
+PASS: Task 8: Bookinfo application and routing rules deployed
 FAIL: Task 9: Service mesh request to productpage returns HTTP 200
 FAIL: Task 10: Istiod upgraded with Helm revision history >= 2
 PASS: Time: Execution completed within 420 seconds
-CORE: 2/11 PASS
+CORE: 8/11 PASS

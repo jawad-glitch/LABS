@@ -1,1 +1,27 @@
-Error: kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp 127.0.0.1:8080: connect: connection refused
+Release "istiod" does not exist. Installing it now.
+NAME: istiod
+LAST DEPLOYED: Wed Nov 11 15:34:44 2026
+NAMESPACE: istio-system
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+"istiod" successfully installed!
+
+To learn more about the release, try:
+  $ helm status istiod -n istio-system
+  $ helm get all istiod -n istio-system
+
+Next steps:
+  * Deploy a Gateway: https://istio.io/latest/docs/setup/additional-setup/gateway/
+  * Try out our tasks to get started on common configurations:
+    * https://istio.io/latest/docs/tasks/traffic-management
+    * https://istio.io/latest/docs/tasks/security/
+    * https://istio.io/latest/docs/tasks/policy-enforcement/
+  * Review the list of actively supported releases, CVE publications and our hardening guide:
+    * https://istio.io/latest/docs/releases/supported-releases/
+    * https://istio.io/latest/news/security/
+    * https://istio.io/latest/docs/ops/best-practices/security/
+
+For further documentation see https://istio.io website

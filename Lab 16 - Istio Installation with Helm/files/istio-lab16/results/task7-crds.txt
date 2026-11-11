@@ -1,7 +1,5 @@
-E1111 15:32:01.044475    5028 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:01.044998    5028 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:01.046426    5028 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:01.046690    5028 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:01.048090    5028 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:01.048359    5028 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+NAME                                          AGE
+gateway.networking.istio.io/default-gateway   0s
+
+NAME                                           AGE
+telemetry.telemetry.istio.io/default-metrics   0s

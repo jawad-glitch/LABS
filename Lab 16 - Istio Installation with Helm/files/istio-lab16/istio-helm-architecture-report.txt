@@ -1,22 +1,21 @@
 === Istio Helm Deployment Architecture Report ===
-Generated: Wed Nov 11 15:32:02 UTC 2026
+Generated: Wed Nov 11 15:37:27 UTC 2026
 
 === Helm Releases in istio-system ===
-Error: kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp 127.0.0.1:8080: connect: connection refused
+NAME                	NAMESPACE   	REVISION	UPDATED                                	STATUS  	CHART         	APP VERSION
+istio-base          	istio-system	1       	2026-11-11 15:34:36.9129345 +0000 UTC  	deployed	base-1.30.8   	1.30.8     
+istio-ingressgateway	istio-system	1       	2026-11-11 15:34:55.91716943 +0000 UTC 	deployed	gateway-1.30.8	1.30.8     
+istiod              	istio-system	2       	2026-11-11 15:37:13.663537944 +0000 UTC	deployed	istiod-1.30.8 	1.30.8     
 
 === Istio System Pods ===
-E1111 15:32:03.190303    5125 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:03.190956    5125 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:03.192369    5125 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:03.192646    5125 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:03.194195    5125 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+NAME                                    READY   STATUS        RESTARTS   AGE     IP            NODE                       NOMINATED NODE   READINESS GATES
+istio-ingressgateway-84df8b89c4-6f9lk   1/1     Running       0          2m33s   10.244.0.6    istio-helm-control-plane   <none>           <none>
+istiod-6b5dfdf6-4lnvr                   0/1     Terminating   0          2m44s   <none>        istio-helm-control-plane   <none>           <none>
+istiod-b56584994-zghnt                  1/1     Running       0          10s     10.244.0.15   istio-helm-control-plane   <none>           <none>
 
 === Istio VirtualServices & Gateways ===
-E1111 15:32:03.309151    5130 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:03.309678    5130 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:03.311089    5130 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:03.311355    5130 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:03.312945    5130 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:03.313415    5130 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+NAMESPACE      NAME                                          AGE
+istio-system   gateway.networking.istio.io/default-gateway   2m18s
+
+NAMESPACE   NAME                                          GATEWAYS                           HOSTS   AGE
+bookinfo    virtualservice.networking.istio.io/bookinfo   ["istio-system/default-gateway"]   ["*"]   2m16s

@@ -1,1 +1,2 @@
-Internal productpage test HTTP status: 000
+Internal productpage test HTTP status: pod "test-curl" deleted from bookinfo namespace
+000

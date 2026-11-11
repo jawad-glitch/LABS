@@ -1,1 +1,9 @@
-Error: unable to retrieve Pods: Get "http://localhost:8080/api/v1/namespaces/istio-system/pods?fieldSelector=status.phase%3DRunning&labelSelector=app%3Distiod": dial tcp 127.0.0.1:8080: connect: connection refused
+NAME                                                   CLUSTER        CDS        LDS        EDS        RDS        ECDS         ISTIOD                    VERSION
+details-v1-698d88b-b2dbd.bookinfo                      Kubernetes     SYNCED     SYNCED     SYNCED     SYNCED     NOT SENT     istiod-6b5dfdf6-4lnvr     1.30.8
+istio-ingressgateway-84df8b89c4-6f9lk.istio-system     Kubernetes     SYNCED     SYNCED     SYNCED     SYNCED     NOT SENT     istiod-6b5dfdf6-4lnvr     1.30.8
+nginx-7fcd5b7c79-75crd.test-injection                  Kubernetes     SYNCED     SYNCED     SYNCED     SYNCED     NOT SENT     istiod-6b5dfdf6-4lnvr     1.30.8
+productpage-v1-675fc69cf-67mtm.bookinfo                Kubernetes     SYNCED     SYNCED     SYNCED     SYNCED     NOT SENT     istiod-6b5dfdf6-4lnvr     1.30.8
+ratings-v1-6484c4d9bb-kznk6.bookinfo                   Kubernetes     SYNCED     SYNCED     SYNCED     SYNCED     NOT SENT     istiod-6b5dfdf6-4lnvr     1.30.8
+reviews-v1-5b5d6494f4-snj8g.bookinfo                   Kubernetes     SYNCED     SYNCED     SYNCED     SYNCED     NOT SENT     istiod-6b5dfdf6-4lnvr     1.30.8
+reviews-v2-5b667bcbf8-lmn7j.bookinfo                   Kubernetes     SYNCED     STALE      STALE      STALE      NOT SENT     istiod-6b5dfdf6-4lnvr     1.30.8
+reviews-v3-5b9bd44f4-n9ckb.bookinfo                    Kubernetes     SYNCED     SYNCED     SYNCED     SYNCED     NOT SENT     istiod-6b5dfdf6-4lnvr     1.30.8

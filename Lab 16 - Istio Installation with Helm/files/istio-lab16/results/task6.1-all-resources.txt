@@ -1,6 +1,18 @@
-E1111 15:31:57.620568    4936 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:31:57.621413    4936 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:31:57.623201    4936 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:31:57.623755    4936 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:31:57.625144    4936 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+NAME                                        READY   STATUS    RESTARTS   AGE
+pod/istio-ingressgateway-84df8b89c4-6f9lk   1/1     Running   0          5s
+pod/istiod-6b5dfdf6-4lnvr                   1/1     Running   0          16s
+
+NAME                           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                                 AGE
+service/istio-ingressgateway   ClusterIP   10.96.94.254    <none>        15021/TCP,80/TCP,443/TCP                5s
+service/istiod                 ClusterIP   10.96.142.237   <none>        15010/TCP,15012/TCP,443/TCP,15014/TCP   16s
+
+NAME                                   READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/istio-ingressgateway   1/1     1            1           6s
+deployment.apps/istiod                 1/1     1            1           17s
+
+NAME                                              DESIRED   CURRENT   READY   AGE
+replicaset.apps/istio-ingressgateway-84df8b89c4   1         1         1       6s
+replicaset.apps/istiod-6b5dfdf6                   1         1         1       17s
+
+NAME                                         REFERENCE           TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/istiod   Deployment/istiod   <unknown>/80%   1         5         1          17s

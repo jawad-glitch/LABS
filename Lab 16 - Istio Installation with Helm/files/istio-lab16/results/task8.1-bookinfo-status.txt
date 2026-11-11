@@ -1,7 +1,13 @@
-E1111 15:32:02.063158    5074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:02.063680    5074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:02.065086    5074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:02.065353    5074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:02.066824    5074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-E1111 15:32:02.067083    5074 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp 127.0.0.1:8080: connect: connection refused"
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+NAME                                 READY   STATUS    RESTARTS   AGE
+pod/details-v1-698d88b-b2dbd         2/2     Running   0          56s
+pod/productpage-v1-675fc69cf-67mtm   2/2     Running   0          55s
+pod/ratings-v1-6484c4d9bb-kznk6      2/2     Running   0          56s
+pod/reviews-v1-5b5d6494f4-snj8g      2/2     Running   0          55s
+pod/reviews-v2-5b667bcbf8-lmn7j      1/2     Running   0          55s
+pod/reviews-v3-5b9bd44f4-n9ckb       2/2     Running   0          55s
+
+NAME                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+service/details       ClusterIP   10.96.176.84   <none>        9080/TCP   56s
+service/productpage   ClusterIP   10.96.60.205   <none>        9080/TCP   55s
+service/ratings       ClusterIP   10.96.157.19   <none>        9080/TCP   56s
+service/reviews       ClusterIP   10.96.142.94   <none>        9080/TCP   56s

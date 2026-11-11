@@ -1,0 +1,180 @@
+{
+    "status": "success",
+    "data": {
+        "headStats": {
+            "numSeries": 399,
+            "numLabelPairs": 338,
+            "chunkCount": 399,
+            "minTime": 1794429349986,
+            "maxTime": 1794429349986
+        },
+        "seriesCountByMetricName": [
+            {
+                "name": "prometheus_http_request_duration_seconds_bucket",
+                "value": 20
+            },
+            {
+                "name": "prometheus_sd_kubernetes_events_total",
+                "value": 18
+            },
+            {
+                "name": "prometheus_http_response_size_bytes_bucket",
+                "value": 18
+            },
+            {
+                "name": "prometheus_tsdb_compaction_duration_seconds_bucket",
+                "value": 15
+            },
+            {
+                "name": "prometheus_tsdb_compaction_chunk_size_bytes_bucket",
+                "value": 13
+            },
+            {
+                "name": "prometheus_tsdb_compaction_chunk_samples_bucket",
+                "value": 13
+            },
+            {
+                "name": "prometheus_tsdb_tombstone_cleanup_seconds_bucket",
+                "value": 12
+            },
+            {
+                "name": "prometheus_engine_query_duration_seconds",
+                "value": 12
+            },
+            {
+                "name": "net_conntrack_dialer_conn_failed_total",
+                "value": 12
+            },
+            {
+                "name": "prometheus_tsdb_compaction_chunk_range_seconds_bucket",
+                "value": 11
+            }
+        ],
+        "labelValueCountByLabelName": [
+            {
+                "name": "__name__",
+                "value": 215
+            },
+            {
+                "name": "le",
+                "value": 70
+            },
+            {
+                "name": "quantile",
+                "value": 9
+            },
+            {
+                "name": "role",
+                "value": 6
+            },
+            {
+                "name": "slice",
+                "value": 4
+            },
+            {
+                "name": "reason",
+                "value": 4
+            },
+            {
+                "name": "event",
+                "value": 3
+            },
+            {
+                "name": "dialer_name",
+                "value": 3
+            },
+            {
+                "name": "code",
+                "value": 3
+            },
+            {
+                "name": "name",
+                "value": 2
+            }
+        ],
+        "memoryInBytesByLabelName": [
+            {
+                "name": "__name__",
+                "value": 16242
+            },
+            {
+                "name": "instance",
+                "value": 5586
+            },
+            {
+                "name": "job",
+                "value": 3990
+            },
+            {
+                "name": "handler",
+                "value": 504
+            },
+            {
+                "name": "le",
+                "value": 424
+            },
+            {
+                "name": "slice",
+                "value": 215
+            },
+            {
+                "name": "dialer_name",
+                "value": 203
+            },
+            {
+                "name": "quantile",
+                "value": 149
+            },
+            {
+                "name": "scrape_job",
+                "value": 130
+            },
+            {
+                "name": "role",
+                "value": 129
+            }
+        ],
+        "seriesCountByLabelValuePair": [
+            {
+                "name": "instance=localhost:9090",
+                "value": 399
+            },
+            {
+                "name": "job=prometheus",
+                "value": 399
+            },
+            {
+                "name": "handler=/-/ready",
+                "value": 24
+            },
+            {
+                "name": "handler=/api/v1/query",
+                "value": 24
+            },
+            {
+                "name": "__name__=prometheus_http_request_duration_seconds_bucket",
+                "value": 20
+            },
+            {
+                "name": "__name__=prometheus_http_response_size_bytes_bucket",
+                "value": 18
+            },
+            {
+                "name": "__name__=prometheus_sd_kubernetes_events_total",
+                "value": 18
+            },
+            {
+                "name": "__name__=prometheus_tsdb_compaction_duration_seconds_bucket",
+                "value": 15
+            },
+            {
+                "name": "__name__=prometheus_tsdb_compaction_chunk_samples_bucket",
+                "value": 13
+            },
+            {
+                "name": "quantile=0.5",
+                "value": 13
+            }
+        ]
+    }
+}

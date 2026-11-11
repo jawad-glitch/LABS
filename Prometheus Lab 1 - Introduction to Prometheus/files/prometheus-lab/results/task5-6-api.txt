@@ -1,0 +1,6 @@
+metric names: 215 | lab 'head -20' sees 0 line(s) of JSON | first 5: go_gc_duration_seconds, go_gc_duration_seconds_count, go_gc_duration_seconds_sum, go_goroutines, go_info
+build_info: {"version":"2.45.0","goversion":"go1.20.5","branch":"HEAD"}
+targets: [{"job":"prometheus","url":"http://localhost:9090/metrics","health":"up"}]
+up: [{"job":"prometheus","value":"1"}]
+up range: resultType=matrix samples=1
+config_last_reload_successful: 1 labels: {"__name__":"prometheus_config_last_reload_successful","instance":"localhost:9090","job":"prometheus"}

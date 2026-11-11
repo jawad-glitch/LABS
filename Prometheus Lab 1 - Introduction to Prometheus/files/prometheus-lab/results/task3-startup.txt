@@ -1,0 +1,2 @@
+ts=2026-11-11T20:35:43.714Z caller=web.go:562 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+ts=2026-11-11T20:35:43.749Z caller=main.go:1004 level=info msg="Server is ready to receive web requests."

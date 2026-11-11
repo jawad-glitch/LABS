@@ -1,0 +1,14 @@
+========== CORE CHECKS (Prometheus Lab 1 - Introduction to Prometheus, 2026-11-11 20:35:53 UTC) - ALL REAL ==========
+PASS: Download: prometheus-2.45.0 tarball present and sha256 verified against release sha256sums.txt
+PASS: Extract: prometheus, promtool, prometheus.yml, consoles/, console_libraries/ present
+PASS: Start: server ready, 'Start listening for connections' 0.0.0.0:9090 logged
+PASS: Port 9090 listening (ss) by prometheus
+FAIL: Lab bug: 'netstat' not installed on this Ubuntu - Subtask 4.3 fails
+FAIL: Lab bug: 'curl -I /' returns 302 -> /graph (lab expects 200 OK); following it gives 200
+PASS: API returns valid JSON: metric names > 50, build_info version 2.45.0
+PASS: Prometheus monitors itself: 1 active target (job prometheus) health up, up = 1
+PASS: Task 6: range query returns a matrix with samples; config_last_reload_successful = 1
+PASS: promtool: config valid; lab's expected 'SUCCESS: 1 rule files found' does NOT appear (rule_files commented out)
+PASS: Task 7.2/7.3: runtimeinfo and TSDB status endpoints return status success
+PASS: Time: finished in 16s (<= 300s)
+CORE: 10/12 PASS

@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"prometheus_build_info","branch":"HEAD","goarch":"amd64","goos":"linux","goversion":"go1.20.5","instance":"localhost:9090","job":"prometheus","revision":"8ef767e396bf8445f009f945b0162fd71827f445","tags":"netgo,builtinassets,stringlabels","version":"2.45.0"},"value":[1794429350.838,"1"]}]}}

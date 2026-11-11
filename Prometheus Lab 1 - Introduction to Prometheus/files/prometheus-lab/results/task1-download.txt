@@ -1,0 +1,3 @@
+-rw-rw-r-- 1 ubuntu ubuntu 91189594 Jun 23  2023 prometheus-2.45.0.linux-amd64.tar.gz
+checksum: prometheus-2.45.0.linux-amd64.tar.gz: OK
+lab says v2.45.0 is 'the current stable release'; latest release today: v3.16.0

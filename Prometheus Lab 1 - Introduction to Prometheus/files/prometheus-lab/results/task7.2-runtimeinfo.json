@@ -1,0 +1,16 @@
+{
+    "status": "success",
+    "data": {
+        "startTime": "2026-11-11T20:35:43.712681735Z",
+        "CWD": "/home/ubuntu/prometheus-lab/prometheus-2.45.0.linux-amd64",
+        "reloadConfigSuccess": true,
+        "lastConfigTime": "2026-11-11T20:35:43Z",
+        "corruptionCount": 0,
+        "goroutineCount": 28,
+        "GOMAXPROCS": 2,
+        "GOMEMLIMIT": 9223372036854775807,
+        "GOGC": "",
+        "GODEBUG": "",
+        "storageRetention": "15d"
+    }
+}

@@ -1,0 +1,10 @@
+total 227328
+drwxr-xr-x 4 ubuntu ubuntu      4096 Jun 23  2023 .
+drwxrwxr-x 4 ubuntu ubuntu      4096 Nov 11 20:35 ..
+-rw-r--r-- 1 ubuntu ubuntu     11357 Jun 23  2023 LICENSE
+-rw-r--r-- 1 ubuntu ubuntu      3773 Jun 23  2023 NOTICE
+drwxr-xr-x 2 ubuntu ubuntu      4096 Jun 23  2023 console_libraries
+drwxr-xr-x 2 ubuntu ubuntu      4096 Jun 23  2023 consoles
+-rwxr-xr-x 1 ubuntu ubuntu 119846310 Jun 23  2023 prometheus
+-rw-r--r-- 1 ubuntu ubuntu       934 Jun 23  2023 prometheus.yml
+-rwxr-xr-x 1 ubuntu ubuntu 112896008 Jun 23  2023 promtool

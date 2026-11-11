@@ -1,0 +1,6 @@
+process (pgrep -a): 3595 ./prometheus --config.file=prometheus.yml --storage.tsdb.path=./data --web.console.templates=consoles --web.console
+lab 'ps aux | grep prometheus' lines: 3 (includes the grep itself: 1)
+lab 'netstat': present
+ss -tlnp: *:9090 users:(("prometheus",pid=3595,fd=7))
+lab 'curl -I http://localhost:9090': HTTP/1.1 405 Method Not Allowed -> 
+curl -IL (follow redirect): HTTP/1.1 405 Method Not Allowed | /-/ready: 200

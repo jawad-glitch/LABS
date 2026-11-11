@@ -1,0 +1,1 @@
+runtime: {"startTime":"2026-11-11T20:35:43.712681735Z","storageRetention":"15d","goroutineCount":28,"reloadConfigSuccess":true} | tsdb head series: 399

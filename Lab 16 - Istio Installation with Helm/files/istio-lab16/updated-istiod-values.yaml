@@ -1,0 +1,15 @@
+pilot:
+  traceSampling: 10.0
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+telemetry:
+  v2:
+    enabled: true
+global:
+  hub: docker.io/istio
+  imagePullPolicy: IfNotPresent

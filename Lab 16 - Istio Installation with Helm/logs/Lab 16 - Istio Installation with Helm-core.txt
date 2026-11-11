@@ -1,0 +1,12 @@
+========== CORE CHECKS (Lab 16 - Istio Installation with Helm, 2026-11-11 15:30:59 UTC) ==========
+PASS: Task 2: Istio Helm repo added and accessible
+FAIL: Task 3: istio-base chart deployed via Helm
+FAIL: Task 4: istiod control plane deployed and Running
+FAIL: Task 5: istio-ingressgateway deployed via Helm
+FAIL: Task 6: Sidecar proxy successfully injected (2 containers in test pod)
+FAIL: Task 7: Gateway and Telemetry resources created
+FAIL: Task 8: Bookinfo application and routing rules deployed
+FAIL: Task 9: Service mesh request to productpage returns HTTP 200
+FAIL: Task 10: Istiod upgraded with Helm revision history >= 2
+PASS: Time: Execution completed within 360 seconds
+CORE: 2/10 PASS

@@ -1,0 +1,24 @@
+pilot:
+  traceSampling: 1.0
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+meshConfig:
+  defaultConfig:
+    proxyStatsMatcher:
+      inclusionRegexps:
+      - ".*outlier_detection.*"
+      - ".*circuit_breakers.*"
+      - ".*upstream_rq_retry.*"
+telemetry:
+  v2:
+    enabled: true
+global:
+  hub: docker.io/istio
+  imagePullPolicy: IfNotPresent
+  defaultPodDisruptionBudget:
+    enabled: true

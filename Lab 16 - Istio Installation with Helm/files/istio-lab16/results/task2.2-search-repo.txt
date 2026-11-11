@@ -1,0 +1,8 @@
+NAME               	CHART VERSION	APP VERSION	DESCRIPTION                                       
+istio/istiod       	1.30.8       	1.30.8     	Helm chart for istio control plane                
+istio/istiod-remote	1.23.6       	1.23.6     	Helm chart for a remote cluster using an extern...
+istio/ambient      	1.30.8       	1.30.8     	Helm umbrella chart for ambient                   
+istio/base         	1.30.8       	1.30.8     	Helm chart for deploying Istio cluster resource...
+istio/cni          	1.30.8       	1.30.8     	Helm chart for istio-cni components               
+istio/gateway      	1.30.8       	1.30.8     	Helm chart for deploying Istio gateways           
+istio/ztunnel      	1.30.8       	1.30.8     	Helm chart for istio ztunnel components           

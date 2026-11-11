@@ -1,0 +1,2 @@
+rendered mesh extensionProviders: [{'name': 'jaeger-zipkin', 'zipkin': {'port': 9411, 'service': 'jaeger-service.jaeger.svc.cluster.local'}}]
+enableTracing: True

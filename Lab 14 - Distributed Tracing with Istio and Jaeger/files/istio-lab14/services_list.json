@@ -1,0 +1,14 @@
+{
+  "data": [
+    "details.bookinfo",
+    "reviews.bookinfo",
+    "istio-ingressgateway.istio-system",
+    "ratings.bookinfo",
+    "jaeger-all-in-one",
+    "productpage.bookinfo"
+  ],
+  "total": 6,
+  "limit": 0,
+  "offset": 0,
+  "errors": null
+}

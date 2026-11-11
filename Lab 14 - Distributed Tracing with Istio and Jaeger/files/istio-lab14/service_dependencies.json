@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "parent": "productpage.bookinfo",
+      "child": "reviews.bookinfo",
+      "callCount": 282
+    },
+    {
+      "parent": "istio-ingressgateway.istio-system",
+      "child": "productpage.bookinfo",
+      "callCount": 164
+    },
+    {
+      "parent": "productpage.bookinfo",
+      "child": "details.bookinfo",
+      "callCount": 156
+    },
+    {
+      "parent": "reviews.bookinfo",
+      "child": "ratings.bookinfo",
+      "callCount": 23
+    }
+  ],
+  "total": 0,
+  "limit": 0,
+  "offset": 0,
+  "errors": null
+}

@@ -1,0 +1,2 @@
+GET /productpage via gateway: 200 | details shown: 1 | reviews shown: 1 | ratings stars: 10
+containers: istio-ingressgateway jaeger pod-details-v1 pod-productpage-v1 pod-ratings-v1 pod-reviews-v1 pod-reviews-v2 pod-reviews-v3 svc-details svc-productpage svc-ratings svc-reviews

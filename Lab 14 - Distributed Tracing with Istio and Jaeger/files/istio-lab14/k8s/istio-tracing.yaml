@@ -1,0 +1,11 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata: {name: control-plane}
+spec:
+  meshConfig:
+    enableTracing: true
+    extensionProviders:
+    - name: jaeger-zipkin
+      zipkin:
+        service: jaeger-service.jaeger.svc.cluster.local
+        port: 9411

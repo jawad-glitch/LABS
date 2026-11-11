@@ -1,0 +1,10 @@
+SERVICES ['details.bookinfo', 'istio-ingressgateway.istio-system', 'jaeger-all-in-one', 'productpage.bookinfo', 'ratings.bookinfo', 'reviews.bookinfo']
+TRACES productpage.bookinfo 50
+MAX_SERVICES_IN_ONE_TRACE 5 trace f9de17f22af5b048
+SERVICES_IN_THAT_TRACE ['details.bookinfo', 'istio-ingressgateway.istio-system', 'productpage.bookinfo', 'ratings.bookinfo', 'reviews.bookinfo'] spans 5
+DEPENDENCIES ['istio-ingressgateway.istio-system->productpage.bookinfo(164)', 'productpage.bookinfo->details.bookinfo(156)', 'productpage.bookinfo->reviews.bookinfo(282)', 'reviews.bookinfo->ratings.bookinfo(23)']
+LAB_AVG_spans0_ms 87.9
+ROOT_AVG_ms 289.9
+SPANS0_NOT_ROOT 45 of 50
+GATEWAY_404_TRACES 1 services ['istio-ingressgateway.istio-system']
+Average root-span duration: 48ms

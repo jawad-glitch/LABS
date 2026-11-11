@@ -1,0 +1,8 @@
+pulled jaegertracing/all-in-one:1.50
+pulled docker.io/istio/examples-bookinfo-details-v1:1.17.0
+pulled docker.io/istio/examples-bookinfo-ratings-v1:1.17.0
+pulled docker.io/istio/examples-bookinfo-productpage-v1:1.17.0
+pulled istio/proxyv2:1.32.0
+pulled docker.io/istio/examples-bookinfo-reviews-v1:1.17.0
+pulled docker.io/istio/examples-bookinfo-reviews-v3:1.17.0
+pulled docker.io/istio/examples-bookinfo-reviews-v2:1.17.0

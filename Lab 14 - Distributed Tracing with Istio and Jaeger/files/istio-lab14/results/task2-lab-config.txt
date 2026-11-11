@@ -1,0 +1,2 @@
+lab IstioOperator via istioctl 1.32.0: rc=0 | 
+Subtask 2.1 kubectl apply IstioOperator: no in-cluster operator in 1.32.0 -> nothing reconciles it

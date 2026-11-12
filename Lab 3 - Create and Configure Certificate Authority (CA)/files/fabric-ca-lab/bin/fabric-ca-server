@@ -29,9 +29,6 @@ JSON
     echo "2026/11/12 09:30:00 [INFO] The CA key and certificate were generated for CA ca-org1"
     ;;
   start)
-    echo "2026/11/12 09:30:01 [INFO] Configuration file location: $PWD/fabric-ca-server-config.yaml"
-    echo "2026/11/12 09:30:01 [INFO] Starting server in home directory: $PWD"
-    echo "2026/11/12 09:30:01 [INFO] Listening on http://0.0.0.0:7054"
     exec python3 -c '
 import http.server, socketserver
 class H(http.server.BaseHTTPRequestHandler):

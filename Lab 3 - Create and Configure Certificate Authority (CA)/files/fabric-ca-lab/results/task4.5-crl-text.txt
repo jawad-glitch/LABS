@@ -1,4 +1,18 @@
-Could not open file or uri for loading CRL from msp/crls/crl.pem
-4037552D037D0000:error:16000069:STORE routines:ossl_store_get0_loader_int:unregistered scheme:../crypto/store/store_register.c:237:scheme=file
-4037552D037D0000:error:80000002:system library:file_open:No such file or directory:../providers/implementations/storemgmt/file_store.c:267:calling stat(msp/crls/crl.pem)
-Unable to load CRL
+Certificate Revocation List (CRL):
+        Version 2 (0x1)
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: C = US, ST = North Carolina, L = Research Triangle Park, O = org1, OU = Fabric, CN = ca-org1
+        Last Update: Nov 12 09:27:35 2026 GMT
+        Next Update: Dec 12 09:27:35 2026 GMT
+        CRL extensions:
+            X509v3 CRL Number: 
+                1
+Revoked Certificates:
+    Serial Number: 74933FD2669A9A62DBE21863D1F311377F9CE3C9
+        Revocation Date: Nov 12 09:27:35 2026 GMT
+    Signature Algorithm: ecdsa-with-SHA256
+    Signature Value:
+        30:45:02:20:7c:33:97:fd:d1:a8:e6:5b:e8:63:7f:00:ac:90:
+        35:ce:a6:5b:7c:f5:00:c4:ca:8b:84:a0:29:56:dd:6e:9e:24:
+        02:21:00:b2:b5:fe:30:39:71:02:0e:ea:8f:c1:64:fc:df:aa:
+        f2:66:4b:8a:0d:5a:6a:b6:ad:a8:8b:a0:78:fc:ab:a0:f5

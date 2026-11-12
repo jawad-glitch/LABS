@@ -1,7 +1,5 @@
 === Hyperledger Fabric CA Lab Summary ===
-
-Lab Completion Date: Thu Nov 12 09:26:30 UTC 2026
-
+Lab Completion Date: Thu Nov 12 09:27:36 UTC 2026
 Components Successfully Configured:
 1. ✓ Fabric CA Server installed and configured
 2. ✓ Bootstrap admin enrolled
@@ -10,17 +8,3 @@ Components Successfully Configured:
 5. ✓ Certificate validation performed
 6. ✓ MSP structures created
 7. ✓ Certificate revocation demonstrated
-
-Generated Identities:
-- admin (bootstrap administrator)
-- peer1 (peer node identity)
-- orderer1 (orderer node identity)
-- user1 (client user - revoked)
-- admin2 (additional administrator)
-- user2 (client with custom attributes)
-
-Certificate Locations:
-- CA Root Certificate: ~/fabric-ca-lab/ca-server/ca-cert.pem
-- User Certificates: ~/fabric-ca-lab/certificates/*/msp/signcerts/cert.pem
-- Private Keys: ~/fabric-ca-lab/certificates/*/msp/keystore/*_sk
-- TLS Certificates: ~/fabric-ca-lab/certificates/tls/*/msp/

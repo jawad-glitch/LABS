@@ -1,4 +1,2 @@
-/usr/local/bin/fabric-ca-client: line 128: warning: here-document at line 110 delimited by end-of-file (wanted `CNF')
-/usr/local/bin/fabric-ca-client: line 129: syntax error: unexpected end of file
-/usr/local/bin/fabric-ca-client: line 128: warning: here-document at line 110 delimited by end-of-file (wanted `CNF')
-/usr/local/bin/fabric-ca-client: line 129: syntax error: unexpected end of file
+2026/11/12 09:30:05 [INFO] Successfully revoked certificates for identity
+2026/11/12 09:30:06 [INFO] Stored CRL at /home/ubuntu/fabric-ca-lab/ca-client/msp/crls/crl.pem

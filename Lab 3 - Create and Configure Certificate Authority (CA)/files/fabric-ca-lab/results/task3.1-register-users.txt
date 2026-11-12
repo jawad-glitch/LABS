@@ -1,0 +1,4 @@
+Password: peer1pw
+Password: orderer1pw
+Password: user1pw
+Password: admin2pw

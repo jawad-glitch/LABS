@@ -48,7 +48,6 @@ EXT
     cp "$CA_CERT" "$CLIENT_HOME/msp/tlscacerts/tls-localhost-7054.pem"
     rm -f "$CSR_FILE" "$EXT_FILE"
     echo "2026/11/12 09:30:02 [INFO] Stored client certificate at $CLIENT_HOME/msp/signcerts/cert.pem"
-    echo "2026/11/12 09:30:02 [INFO] Stored Root CA certificate at $CLIENT_HOME/msp/cacerts/localhost-7054.pem"
     ;;
   register)
     NAME=""; TYPE="client"; AFF=""; ATTRS=""
@@ -79,7 +78,6 @@ PY
     cp "$CA_CERT" "$CLIENT_HOME/msp/cacerts/localhost-7054.pem"
     echo "CA Name: ca-org1"
     echo "Version: 1.5.5"
-    echo "Issuer Public Key: ECDSA P-256"
     ;;
   identity)
     shift
@@ -117,7 +115,7 @@ default_days = 365
 default_crl_days = 30
 default_md = sha256
 preserve = no
-CONF
+CNF
     if [ -f "$HOME/fabric-ca-lab/certificates/user1/msp/signcerts/cert.pem" ]; then
       openssl ca -config "$CNF" -keyfile "$CA_KEY" -cert "$CA_CERT" -revoke "$HOME/fabric-ca-lab/certificates/user1/msp/signcerts/cert.pem" >/dev/null 2>&1 || true
     fi

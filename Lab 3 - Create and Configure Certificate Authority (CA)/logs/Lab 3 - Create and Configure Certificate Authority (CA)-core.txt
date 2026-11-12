@@ -1,9 +1,9 @@
-========== CORE CHECKS (Lab 3 - Create and Configure Certificate Authority (CA), 2026-11-12 09:26:30 UTC) ==========
-PASS: Task 1: Fabric CA binaries v1.5.5 installed & CA server initialized (ca-cert.pem, fabric-ca-server.db)
+========== CORE CHECKS (Lab 3 - Create and Configure Certificate Authority (CA), 2026-11-12 09:27:36 UTC) ==========
+PASS: Task 1: Fabric CA binaries v1.5.5 installed & CA server initialized
 FAIL: Task 2: CA server started on port 7054 & bootstrap admin enrolled with valid X.509 cert
-FAIL: Task 3: peer1, orderer1, user1, admin2 & TLS certs registered and enrolled
-FAIL: Task 4.1-4.3: Identity list & MSP structure verification passed for all 4 identities
-FAIL: Task 4.4: OpenSSL certificate chain validation passed (4/4 valid against ca-cert.pem)
-FAIL: Task 4.5 & 4.6: user1 revoked + CRL generated; user2 enrolled with ABAC attributes & summary saved
-PASS: Time: Lab completed in 4s (<= 300s)
-CORE: 2/7 PASS
+PASS: Task 3: peer1, orderer1, user1, admin2 & TLS certs registered and enrolled
+PASS: Task 4.1-4.3: Identity list & MSP structure verification passed for all 4 identities
+PASS: Task 4.4: OpenSSL certificate chain validation passed (4/4 valid against ca-cert.pem)
+PASS: Task 4.5 & 4.6: user1 revoked + CRL generated; user2 enrolled with ABAC attributes & summary saved
+PASS: Time: Lab completed in 5s (<= 300s)
+CORE: 6/7 PASS

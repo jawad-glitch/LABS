@@ -1,0 +1,9 @@
+CA Name: ca-org1
+Version: 1.5.5
+Name: admin, Type: client, Affiliation: , Max Enrollments: -1, Attributes: hf.Registrar.Roles=*,hf.Registrar.DelegateRoles=*,hf.Revoker=true,hf.IntermediateCA=true,hf.GenCRL=true,hf.Registrar.Attributes=*,hf.AffiliationMgr=true
+Name: peer1, Type: peer, Affiliation: org1.department1, Max Enrollments: -1, Attributes: 
+Name: orderer1, Type: orderer, Affiliation: org1.department1, Max Enrollments: -1, Attributes: 
+Name: user1, Type: client, Affiliation: org1.department1, Max Enrollments: -1, Attributes: 
+Name: admin2, Type: admin, Affiliation: org1.department2, Max Enrollments: -1, Attributes: hf.Registrar.Roles=client,hf.Registrar.Attributes=*,hf.Revoker=true,hf.GenCRL=true
+Name: user1, Type: client, Affiliation: org1.department1, Max Enrollments: -1, Attributes: 
+Name: peer1, Type: peer, Affiliation: org1.department1, Max Enrollments: -1, Attributes: 

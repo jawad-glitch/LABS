@@ -1,0 +1,41 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            74:93:3f:d2:66:9a:9a:62:db:e2:18:63:d1:f3:11:37:7f:9c:e3:c6
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: C = US, ST = North Carolina, L = Research Triangle Park, O = org1, OU = Fabric, CN = ca-org1
+        Validity
+            Not Before: Nov 12 09:27:33 2026 GMT
+            Not After : Nov 12 09:27:33 2027 GMT
+        Subject: C = US, ST = North Carolina, O = Hyperledger, OU = client, CN = admin
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:7a:8a:b3:d5:27:92:7b:13:33:90:cb:10:74:0a:
+                    28:95:68:e6:a7:04:ce:a4:20:f4:27:cb:76:a3:0a:
+                    bb:db:be:10:cb:c4:42:e8:31:ab:7c:bb:3d:a8:9a:
+                    81:57:87:22:df:25:05:aa:91:e2:e6:e0:0e:86:56:
+                    61:b4:fb:ad:f7
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Key Identifier: 
+                CB:F1:C6:A9:78:8E:CE:40:69:21:AF:0A:60:F7:BB:4E:D9:57:47:73
+            X509v3 Authority Key Identifier: 
+                99:8D:2D:BF:24:C6:AB:F2:F5:3F:FA:A6:01:57:F3:63:AF:FB:DE:43
+            X509v3 Subject Alternative Name: 
+                DNS:localhost, DNS:localhost
+            1.2.3.4.5.6.7.8.1: 
+                .E{attrs:{hf.EnrollmentID:admin,role:developer,department:engineering}}
+    Signature Algorithm: ecdsa-with-SHA256
+    Signature Value:
+        30:44:02:20:29:ad:0c:93:88:b6:39:4f:62:6e:d1:43:a0:d8:
+        a9:cf:21:ca:98:00:1b:19:69:aa:1f:25:c5:4d:42:58:f2:cf:
+        02:20:28:36:51:a6:27:1a:64:b6:d1:80:f3:6e:68:38:c7:ea:
+        8a:c0:63:b8:8f:1c:9e:04:7e:1b:54:1c:43:5f:0e:d9

@@ -2,3 +2,7 @@ fabric-ca-server:
  Version: 1.5.5
  Go version: go1.18.7
  OS/Arch: linux/amd64
+fabric-ca-client:
+ Version: 1.5.5
+ Go version: go1.18.7
+ OS/Arch: linux/amd64

@@ -1,16 +1,48 @@
 === Certificate Analysis for peer1 ===
 Certificate Path: /home/ubuntu/fabric-ca-lab/certificates/peer1/msp/signcerts/cert.pem
-Certificate exists: NO
+Certificate exists: YES
+Certificate details:
+        Issuer: C = US, ST = North Carolina, L = Research Triangle Park, O = org1, OU = Fabric, CN = ca-org1
+            Not Before: Nov 12 09:27:33 2026 GMT
+            Not After : Nov 12 09:27:33 2027 GMT
+        Subject: C = US, ST = North Carolina, O = Hyperledger, OU = client, CN = peer1
+            Public Key Algorithm: id-ecPublicKey
+Certificate fingerprint:
+SHA1 Fingerprint=96:12:35:63:D5:0F:3E:FD:D8:07:35:5D:1A:27:78:A9:82:5C:85:44
 
 === Certificate Analysis for orderer1 ===
 Certificate Path: /home/ubuntu/fabric-ca-lab/certificates/orderer1/msp/signcerts/cert.pem
-Certificate exists: NO
+Certificate exists: YES
+Certificate details:
+        Issuer: C = US, ST = North Carolina, L = Research Triangle Park, O = org1, OU = Fabric, CN = ca-org1
+            Not Before: Nov 12 09:27:33 2026 GMT
+            Not After : Nov 12 09:27:33 2027 GMT
+        Subject: C = US, ST = North Carolina, O = Hyperledger, OU = client, CN = orderer1
+            Public Key Algorithm: id-ecPublicKey
+Certificate fingerprint:
+SHA1 Fingerprint=EA:6B:23:D9:D0:65:40:94:46:70:64:C7:28:BA:65:C7:11:12:4B:9D
 
 === Certificate Analysis for user1 ===
 Certificate Path: /home/ubuntu/fabric-ca-lab/certificates/user1/msp/signcerts/cert.pem
-Certificate exists: NO
+Certificate exists: YES
+Certificate details:
+        Issuer: C = US, ST = North Carolina, L = Research Triangle Park, O = org1, OU = Fabric, CN = ca-org1
+            Not Before: Nov 12 09:27:33 2026 GMT
+            Not After : Nov 12 09:27:33 2027 GMT
+        Subject: C = US, ST = North Carolina, O = Hyperledger, OU = client, CN = user1
+            Public Key Algorithm: id-ecPublicKey
+Certificate fingerprint:
+SHA1 Fingerprint=3A:5E:8A:41:C4:B3:60:D5:6D:31:50:72:06:31:85:63:DA:21:62:FE
 
 === Certificate Analysis for admin2 ===
 Certificate Path: /home/ubuntu/fabric-ca-lab/certificates/admin2/msp/signcerts/cert.pem
-Certificate exists: NO
+Certificate exists: YES
+Certificate details:
+        Issuer: C = US, ST = North Carolina, L = Research Triangle Park, O = org1, OU = Fabric, CN = ca-org1
+            Not Before: Nov 12 09:27:34 2026 GMT
+            Not After : Nov 12 09:27:34 2027 GMT
+        Subject: C = US, ST = North Carolina, O = Hyperledger, OU = client, CN = admin2
+            Public Key Algorithm: id-ecPublicKey
+Certificate fingerprint:
+SHA1 Fingerprint=4D:6B:FC:4B:27:EC:07:65:14:63:90:59:E1:3C:3E:66:28:13:9E:6F
 

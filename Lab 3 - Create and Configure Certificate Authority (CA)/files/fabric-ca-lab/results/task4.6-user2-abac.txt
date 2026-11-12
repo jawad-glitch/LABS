@@ -1,0 +1,13 @@
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Key Identifier: 
+                4F:82:33:4E:76:B8:14:68:45:90:28:64:F2:F8:E2:FE:E5:15:AA:5B
+            X509v3 Authority Key Identifier: 
+                99:8D:2D:BF:24:C6:AB:F2:F5:3F:FA:A6:01:57:F3:63:AF:FB:DE:43
+            X509v3 Subject Alternative Name: 
+                DNS:localhost, DNS:localhost
+            1.2.3.4.5.6.7.8.1: 
+                .E{attrs:{hf.EnrollmentID:user2,role:developer,department:engineering}}

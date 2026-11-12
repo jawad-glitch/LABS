@@ -1,3 +1,38 @@
 [
-  {"name":"admin","type":"client","affiliation":"","attrs":"hf.Registrar.Roles=*,hf.Registrar.DelegateRoles=*,hf.Revoker=true,hf.IntermediateCA=true,hf.GenCRL=true,hf.Registrar.Attributes=*,hf.AffiliationMgr=true"}
+  {
+    "name": "admin",
+    "type": "client",
+    "affiliation": "",
+    "attrs": "hf.Registrar.Roles=*,hf.Registrar.DelegateRoles=*,hf.Revoker=true,hf.IntermediateCA=true,hf.GenCRL=true,hf.Registrar.Attributes=*,hf.AffiliationMgr=true"
+  },
+  {
+    "name": "peer1",
+    "type": "peer",
+    "affiliation": "org1.department1",
+    "attrs": ""
+  },
+  {
+    "name": "orderer1",
+    "type": "orderer",
+    "affiliation": "org1.department1",
+    "attrs": ""
+  },
+  {
+    "name": "user1",
+    "type": "client",
+    "affiliation": "org1.department1",
+    "attrs": ""
+  },
+  {
+    "name": "admin2",
+    "type": "admin",
+    "affiliation": "org1.department2",
+    "attrs": "hf.Registrar.Roles=client,hf.Registrar.Attributes=*,hf.Revoker=true,hf.GenCRL=true"
+  },
+  {
+    "name": "user2",
+    "type": "client",
+    "affiliation": "org1.department1",
+    "attrs": "role=developer,department=engineering:ecert"
+  }
 ]

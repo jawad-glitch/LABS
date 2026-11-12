@@ -1,16 +1,48 @@
 === MSP Structure Verification for peer1 ===
 MSP Path: /home/ubuntu/fabric-ca-lab/certificates/peer1/msp
-MSP directory exists: NO
+MSP directory exists: YES
+Required components check:
+✓ signcerts directory exists
+✓ keystore directory exists
+✓ cacerts directory exists
+File counts:
+  Signing certificates: 1
+  Private keys: 1
+  CA certificates: 1
 
 === MSP Structure Verification for orderer1 ===
 MSP Path: /home/ubuntu/fabric-ca-lab/certificates/orderer1/msp
-MSP directory exists: NO
+MSP directory exists: YES
+Required components check:
+✓ signcerts directory exists
+✓ keystore directory exists
+✓ cacerts directory exists
+File counts:
+  Signing certificates: 1
+  Private keys: 1
+  CA certificates: 1
 
 === MSP Structure Verification for user1 ===
 MSP Path: /home/ubuntu/fabric-ca-lab/certificates/user1/msp
-MSP directory exists: NO
+MSP directory exists: YES
+Required components check:
+✓ signcerts directory exists
+✓ keystore directory exists
+✓ cacerts directory exists
+File counts:
+  Signing certificates: 1
+  Private keys: 1
+  CA certificates: 1
 
 === MSP Structure Verification for admin2 ===
 MSP Path: /home/ubuntu/fabric-ca-lab/certificates/admin2/msp
-MSP directory exists: NO
+MSP directory exists: YES
+Required components check:
+✓ signcerts directory exists
+✓ keystore directory exists
+✓ cacerts directory exists
+File counts:
+  Signing certificates: 1
+  Private keys: 1
+  CA certificates: 1
 

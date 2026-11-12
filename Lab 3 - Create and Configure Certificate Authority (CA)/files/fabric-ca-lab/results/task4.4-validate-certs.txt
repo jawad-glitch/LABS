@@ -1,12 +1,28 @@
 === Certificate Chain Validation for peer1 ===
-Required certificate files not found
+✓ Certificate chain is valid
+notBefore=Nov 12 09:27:33 2026 GMT
+notAfter=Nov 12 09:27:33 2027 GMT
+subject=C = US, ST = North Carolina, O = Hyperledger, OU = client, CN = peer1
+issuer=C = US, ST = North Carolina, L = Research Triangle Park, O = org1, OU = Fabric, CN = ca-org1
 
 === Certificate Chain Validation for orderer1 ===
-Required certificate files not found
+✓ Certificate chain is valid
+notBefore=Nov 12 09:27:33 2026 GMT
+notAfter=Nov 12 09:27:33 2027 GMT
+subject=C = US, ST = North Carolina, O = Hyperledger, OU = client, CN = orderer1
+issuer=C = US, ST = North Carolina, L = Research Triangle Park, O = org1, OU = Fabric, CN = ca-org1
 
 === Certificate Chain Validation for user1 ===
-Required certificate files not found
+✓ Certificate chain is valid
+notBefore=Nov 12 09:27:33 2026 GMT
+notAfter=Nov 12 09:27:33 2027 GMT
+subject=C = US, ST = North Carolina, O = Hyperledger, OU = client, CN = user1
+issuer=C = US, ST = North Carolina, L = Research Triangle Park, O = org1, OU = Fabric, CN = ca-org1
 
 === Certificate Chain Validation for admin2 ===
-Required certificate files not found
+✓ Certificate chain is valid
+notBefore=Nov 12 09:27:34 2026 GMT
+notAfter=Nov 12 09:27:34 2027 GMT
+subject=C = US, ST = North Carolina, O = Hyperledger, OU = client, CN = admin2
+issuer=C = US, ST = North Carolina, L = Research Triangle Park, O = org1, OU = Fabric, CN = ca-org1
 

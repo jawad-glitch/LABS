@@ -1,0 +1,4 @@
+pre-checks on corrupted archive: 0 passed (tar + metadata look fine)
+restore exit=1 | 
+after rollback: service active, up samples from before the original loss: 0 (was 0)
+failed data dir kept for analysis: /opt/prometheus-data_failed_1794472659 | journal: 

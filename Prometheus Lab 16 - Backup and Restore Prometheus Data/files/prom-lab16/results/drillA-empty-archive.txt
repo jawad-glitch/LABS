@@ -1,0 +1,4 @@
+skip_head=true archive: /opt/prometheus-backups/prom_snap_20261112T083724Z.tar.gz with 0 blocks
+lab contract (liveness only): exit=0, log says: status=success | up samples before this restore: 0
+fixed script on the same archive: exit=1 -> archive contains 0 TSDB blocks - restoring it would leave Prometheus empty
+good archive restored again: exit=0 | up samples from before the original loss: 0

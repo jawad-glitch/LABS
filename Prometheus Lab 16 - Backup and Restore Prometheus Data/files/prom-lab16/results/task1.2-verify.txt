@@ -1,0 +1,4 @@
+config API: success
+admin snapshot POST: 200 -> this created snapshot 20261112T083639Z-4f6e06edd2323593 on disk (cleaned up)
+WAL segments: 1
+promtool: exit=0 ' SUCCESS: /etc/prometheus/prometheus.yml is valid prometheus config file syntax' | lab expects 'SUCCESS: 1 rule files found, 0 rules loaded' -> present: 0

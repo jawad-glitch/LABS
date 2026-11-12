@@ -1,0 +1,6 @@
+cron: active
+0 */6 * * * /usr/local/bin/prom-backup.sh 7 >> /var/log/prom-backup-cron.log 2>&1
+0 3 * * * /usr/local/bin/prom-backup-verify.sh
+verify (real backups): exit=0 | verify (empty dir): exit=1
+2026-11-12T08:36:44Z OK: recent backup /opt/prometheus-backups/prom_snap_20261112T083640Z.tar.gz passes integrity check
+2026-11-12T08:36:44Z ALERT: no recent backup found

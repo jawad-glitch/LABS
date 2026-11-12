@@ -1,0 +1,3 @@
+2026-11-12T08:36:44Z OK: recent backup /opt/prometheus-backups/prom_snap_20261112T083640Z.tar.gz passes integrity check
+2026-11-12T08:36:44Z ALERT: no recent backup found
+2026-11-12T08:37:42Z OK: recent backup /opt/prometheus-backups/prom_snap_20261112T083715Z.tar.gz passes integrity check

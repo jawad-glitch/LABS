@@ -1,0 +1,1 @@
+Baseline metric name count: 227 | backup exit=0 -> /opt/prometheus-backups/prom_snap_20261112T083715Z.tar.gz ({"block_count":1,"prometheus_version":"2.51.2"})

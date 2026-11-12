@@ -137,3 +137,4 @@
 | [Prometheus Lab 13 - Advanced Alerting Rules](Prometheus%20Lab%2013%20-%20Advanced%20Alerting%20Rules/PROOF.md) | CORE: 12/12 PASS | 2026-11-12 08:23 |
 | [Prometheus Lab 14 - Prometheus Storage and Performance Tuning](Prometheus%20Lab%2014%20-%20Prometheus%20Storage%20and%20Performance%20Tuning/PROOF.md) | CORE: 11/12 PASS | 2026-11-12 08:29 |
 | [Prometheus Lab 15 - Troubleshooting Prometheus Scraping Issues](Prometheus%20Lab%2015%20-%20Troubleshooting%20Prometheus%20Scraping%20Issues/PROOF.md) | CORE: 9/12 PASS | 2026-11-12 08:33 |
+| [Prometheus Lab 16 - Backup and Restore Prometheus Data](Prometheus%20Lab%2016%20-%20Backup%20and%20Restore%20Prometheus%20Data/PROOF.md) | CORE: 9/12 PASS | 2026-11-12 08:37 |

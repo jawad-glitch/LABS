@@ -1,0 +1,6 @@
+data dir after loss: 0 entries
+restore exit=1 | service: active | config API: success
+Baseline: 227  |  Recovered: 0  |  baseline names missing after restore: 227
+up values (last 5 min, step 15): 0 | up samples from BEFORE the loss: 0
+rollback point created by stop_and_preserve (the drill emptied the dir first): 0 entries
+ROLLBACK_TRIGGERED lines: 1

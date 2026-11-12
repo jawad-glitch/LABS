@@ -1,0 +1,8 @@
+first manual backup: exit=0 -> 319 /opt/prometheus-backups/prom_snap_20261112T083640Z.tar.gz
+20261112T083640Z-3853658f6bcd15b3/
+backup_metadata.json
+ts=2026-11-12T08:36:40Z level=info component=prom-backup stage=main msg="backup start (retention_days=7)"
+ts=2026-11-12T08:36:40Z level=info component=prom-backup stage=create_snapshot msg="created 20261112T083640Z-3853658f6bcd15b3"
+ts=2026-11-12T08:36:40Z level=info component=prom-backup stage=archive_snapshot msg="archived 20261112T083640Z-3853658f6bcd15b3 -> /opt/prometheus-backups/prom_snap_20261112T083640Z.tar.gz (4.0K, 0 blocks)"
+ts=2026-11-12T08:36:40Z level=info component=prom-backup stage=rotate_backups msg="deleted 0 archive(s) older than 7 days"
+ts=2026-11-12T08:36:40Z level=info component=prom-backup stage=main msg="backup end status=success"

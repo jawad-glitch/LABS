@@ -1,0 +1,1 @@
+generator PID 7868 running: activity_genera | first log line: 2026-11-12T10:05:46Z iteration=1 invoke=1 query=1

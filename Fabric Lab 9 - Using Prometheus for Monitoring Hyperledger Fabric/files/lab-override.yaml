@@ -1,0 +1,16 @@
+services:
+  peer0.org1.example.com:
+    environment:
+      CORE_METRICS_PROVIDER: prometheus
+      CORE_OPERATIONS_LISTENADDRESS: 0.0.0.0:9443
+    ports: ["9443:9443"]
+  peer0.org2.example.com:
+    environment:
+      CORE_METRICS_PROVIDER: prometheus
+      CORE_OPERATIONS_LISTENADDRESS: 0.0.0.0:9444
+    ports: ["9444:9444"]
+  orderer.example.com:
+    environment:
+      ORDERER_METRICS_PROVIDER: prometheus
+      ORDERER_OPERATIONS_LISTENADDRESS: 0.0.0.0:9445
+    ports: ["9445:9445"]

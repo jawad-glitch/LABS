@@ -1,0 +1,1 @@
+metric names the peers really expose: endorser_successful_proposals | endorser_proposal_validation_failures_total | gossip_comm_messages_sent

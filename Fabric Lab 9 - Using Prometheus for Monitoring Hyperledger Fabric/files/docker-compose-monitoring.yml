@@ -1,0 +1,27 @@
+networks:
+  monitoring:
+    name: monitoring
+volumes:
+  grafana-data: {}
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    command: ['--config.file=/etc/prometheus/prometheus.yml', '--storage.tsdb.path=/prometheus', '--storage.tsdb.retention.time=72h', '--web.enable-lifecycle']
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./monitoring/prometheus/fabric-alerts.yml:/etc/prometheus/fabric-alerts.yml:ro
+    extra_hosts: ["host.docker.internal:host-gateway"]
+    ports: ["9090:9090"]
+    networks: [monitoring]
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    environment: [GF_SECURITY_ADMIN_PASSWORD=fabricadmin]
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports: ["3000:3000"]
+    depends_on: [prometheus]
+    networks: [monitoring]

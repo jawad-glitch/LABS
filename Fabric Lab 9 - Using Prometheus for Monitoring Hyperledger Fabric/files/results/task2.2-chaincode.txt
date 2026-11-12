@@ -1,0 +1,1 @@
+package basic_1.0:aff50f009729504b8f9da6bce6a286e97fc3e6de763fc1f56648f0061e6b968e | commit exit=1 | InitLedger exit=1 | GetAllAssets:  assets

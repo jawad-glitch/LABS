@@ -1,0 +1,7 @@
+grafana running
+peer0.org1.example.com running
+peer0.org2.example.com running
+prometheus running
+[{"job":"fabric-orderer","health":"down"},{"job":"fabric-peer-org1","health":"up"},{"job":"fabric-peer-org2","health":"up"}]
+[{"alert":"FabricPeerDown","state":"inactive","health":"ok"},{"alert":"HighEndorsementFailureRate","state":"inactive","health":"ok"}]
+retention flag: 3d

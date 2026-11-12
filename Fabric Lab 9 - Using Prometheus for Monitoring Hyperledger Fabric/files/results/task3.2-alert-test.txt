@@ -1,0 +1,2 @@
+after stopping peer0.org2: [{"alert":"FabricPeerDown","job":"fabric-peer-org2","state":"pending"}] | target: down Get "http://host.docker.internal:9444/metrics": dial tcp 172.17.0.1:9444: connect: co
+HighEndorsementFailureRate (lab expr) evaluates to: 0 series - it can never fire | fixed expr: 0 series

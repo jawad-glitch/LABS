@@ -1,0 +1,15 @@
+datasource: {"name":"Prometheus","type":"prometheus","url":"http://prometheus:9090","isDefault":true}
+datasource health: OK
+dashboards: [{"title":"Fabric Network (fixed metric names)","folder":"Fabric"},{"title":"Fabric Network (lab)","folder":"Fabric"}]
+--- Fabric Network (lab) (refresh 10s, from now-30m, panels 5)
+  Block Height                     ledger_block_height                                     frames=0
+  Transaction Count                ledger_transaction_count                                frames=2
+  Endorsement Rate (5m)            rate(endorser_successful_proposals_total[5m])           frames=0
+  Endorsement Failure Rate (5m)    rate(endorser_proposal_validation_failures_total[5m])   frames=0
+  Gossip Messages Sent (5m)        rate(gossip_comm_messages_sent_total[5m])               frames=0
+--- Fabric Network (fixed metric names) (refresh 10s, from now-30m, panels 5)
+  Block Height                     ledger_block_height                                     frames=0
+  Transaction Count                ledger_transaction_count                                frames=2
+  Endorsement Rate (5m)            rate(endorser_successful_proposals[5m])                 frames=2
+  Endorsement Failure Rate (5m)    rate(endorser_proposal_validation_failures_total[5m])   frames=0
+  Gossip Messages Sent (5m)        rate(gossip_comm_messages_sent[5m])                     frames=2

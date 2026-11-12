@@ -1,0 +1,9 @@
+endorser_proposal_validation_failures_total: 0 series
+endorser_successful_proposals: 2 series
+endorser_successful_proposals_total: 0 series
+gossip_comm_messages_sent: 2 series
+gossip_comm_messages_sent_total: 0 series
+ledger_block_height: 0 series
+ledger_transaction_count: 2 series
+block height (mychannel, org1): null | endorsements/s: 0
+activity log: 41 iterations, failures: 41

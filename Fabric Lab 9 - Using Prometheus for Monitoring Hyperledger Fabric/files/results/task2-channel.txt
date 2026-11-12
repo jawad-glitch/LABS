@@ -1,0 +1,2 @@
+Org1: mychannel
+Org2: mychannel

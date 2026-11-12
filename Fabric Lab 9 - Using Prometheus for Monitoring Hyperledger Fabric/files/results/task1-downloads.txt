@@ -1,0 +1,6 @@
+go 1.21.9 sha256 OK
+fabric 2.5.4 + ca 1.5.7 binaries + samples OK
+pulled grafana/grafana:latest
+pulled hyperledger/fabric-orderer:2.5.4
+pulled hyperledger/fabric-peer:2.5.4
+pulled prom/prometheus:latest

@@ -1,0 +1,19 @@
+groups:
+  - name: fabric-alerts
+    rules:
+      - alert: FabricPeerDown
+        expr: up{job=~"fabric-peer.*"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Fabric peer {{ $labels.instance }} is down"
+          description: "Prometheus cannot scrape {{ $labels.job }} ({{ $labels.instance }}) for more than 1 minute."
+      - alert: HighEndorsementFailureRate
+        expr: sum by (instance) (rate(endorser_proposal_validation_failures_total[5m])) > 0.05
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High endorsement failure rate on {{ $labels.instance }}"
+          description: "Endorsement validation failures at {{ $value | printf \"%.3f\" }}/s over 5 minutes."

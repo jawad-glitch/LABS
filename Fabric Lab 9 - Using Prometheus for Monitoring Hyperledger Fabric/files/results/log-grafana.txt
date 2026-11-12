@@ -1,0 +1,200 @@
+logger=grafana-apiserver t=2026-11-12T10:06:14.137864546Z level=info msg="Adding GroupVersion playlist.grafana.app v1 to ResourceManager"
+logger=grafana-apiserver t=2026-11-12T10:06:14.138890168Z level=info msg="Adding GroupVersion playlist.grafana.app v0alpha1 to ResourceManager"
+t=2026-11-12T10:06:14.139233292Z level=info caller=logger.go:218 time=2026-11-12T10:06:14.139218512Z msg="Installed APIs for app" app=playlist
+logger=grafana-apiserver t=2026-11-12T10:06:14.142749734Z level=info msg="Adding GroupVersion plugins.grafana.app v0alpha1 to ResourceManager"
+t=2026-11-12T10:06:14.143129138Z level=info caller=logger.go:218 time=2026-11-12T10:06:14.143115138Z msg="Installed APIs for app" app=plugins
+logger=grafana-apiserver t=2026-11-12T10:06:14.145467456Z level=info msg="Adding GroupVersion example.grafana.app v1alpha1 to ResourceManager"
+logger=grafana-apiserver t=2026-11-12T10:06:14.146375557Z level=info msg="Adding GroupVersion example.grafana.app v0alpha1 to ResourceManager"
+t=2026-11-12T10:06:14.146953093Z level=info caller=logger.go:218 time=2026-11-12T10:06:14.146937553Z msg="Installed APIs for app" app=example
+logger=grafana-apiserver t=2026-11-12T10:06:14.147252837Z level=info msg="Skipping API quotas.grafana.app/v0alpha1 because it has no resources."
+t=2026-11-12T10:06:14.147720093Z level=info caller=logger.go:218 time=2026-11-12T10:06:14.147708742Z msg="Installed APIs for app" app=quotas
+logger=storage.unified.migrations t=2026-11-12T10:06:14.14834008Z level=info msg="Resolved storage mode from migration log" resource=shorturls.shorturl.grafana.app mode=unified
+logger=grafana-apiserver t=2026-11-12T10:06:14.150237882Z level=info msg="Adding GroupVersion shorturl.grafana.app v1beta1 to ResourceManager"
+t=2026-11-12T10:06:14.150636177Z level=info caller=logger.go:218 time=2026-11-12T10:06:14.150620587Z msg="Installed APIs for app" app=shorturl
+logger=grafana-apiserver t=2026-11-12T10:06:14.163993056Z level=info msg="Adding GroupVersion rules.alerting.grafana.app v1beta1 to ResourceManager"
+logger=grafana-apiserver t=2026-11-12T10:06:14.177926891Z level=info msg="Adding GroupVersion rules.alerting.grafana.app v0alpha1 to ResourceManager"
+t=2026-11-12T10:06:14.179133115Z level=info caller=logger.go:218 time=2026-11-12T10:06:14.179112215Z msg="Installed APIs for app" app=alerting
+logger=grafana-apiserver t=2026-11-12T10:06:14.207987608Z level=info msg="Adding GroupVersion notifications.alerting.grafana.app v1beta1 to ResourceManager"
+logger=grafana-apiserver t=2026-11-12T10:06:14.229020717Z level=info msg="Adding GroupVersion notifications.alerting.grafana.app v0alpha1 to ResourceManager"
+t=2026-11-12T10:06:14.229736016Z level=info caller=logger.go:218 time=2026-11-12T10:06:14.229719996Z msg="Installed APIs for app" app=alerting-notifications
+logger=grafana-apiserver t=2026-11-12T10:06:14.241413424Z level=info msg="Adding GroupVersion advisor.grafana.app v0alpha1 to ResourceManager"
+t=2026-11-12T10:06:14.242567858Z level=info caller=logger.go:218 time=2026-11-12T10:06:14.242547568Z msg="Installed APIs for app" app=advisor
+logger=grafana-apiserver t=2026-11-12T10:06:14.250250529Z level=info msg="Adding GroupVersion historian.alerting.grafana.app v0alpha1 to ResourceManager"
+t=2026-11-12T10:06:14.251353822Z level=info caller=logger.go:218 time=2026-11-12T10:06:14.251334482Z msg="Installed APIs for app" app=alerting-historian
+t=2026-11-12T10:06:16.094698207Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.094680257Z msg="App initialized" app=example
+t=2026-11-12T10:06:16.09741906Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.09740644Z msg="App initialized" app=advisor
+t=2026-11-12T10:06:16.106164083Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.106142173Z msg="App initialized" app=playlist
+t=2026-11-12T10:06:16.115758677Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.115742827Z msg="App initialized" app=alerting-historian
+t=2026-11-12T10:06:16.116169582Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.116151242Z msg="App initialized" app=quotas
+t=2026-11-12T10:06:16.116700628Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.116690338Z msg="App initialized" app=alerting-notifications
+t=2026-11-12T10:06:16.119909497Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.119883906Z msg="App initialized" app=shorturl
+t=2026-11-12T10:06:16.128084334Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.128066003Z msg="App initialized" app=alerting
+t=2026-11-12T10:06:16.131024348Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.131008028Z msg="App initialized" app=plugins
+t=2026-11-12T10:06:16.140055196Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.140028535Z msg="start concurrent job driver" logger=concurrent-job-driver num_drivers=3 job_timeout=20m0s lease_renewal_interval=20s
+t=2026-11-12T10:06:16.142350093Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.142322053Z msg="starting job cleanup controller" logger=job-cleanup-controller cleanup_interval=3m0s expiry=1m0s
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.146949597Z level=info msg=starting module=router
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.151796645Z level=info msg=starting module=plugins.store
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.173235849Z level=info msg=starting module=plugin.backgroundinstaller
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:16.176615049Z level=info msg="Plugins installed" plugins=[]
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:16.176771211Z level=info msg="Installing plugins" plugins="[{ID:elasticsearch Version: URL:} {ID:prometheus Version: URL:} {ID:stackdriver Version: URL:} {ID:mysql Version: URL:} {ID:jaeger Version: URL:} {ID:grafana-postgresql-datasource Version: URL:} {ID:mssql Version: URL:} {ID:grafana-metricsdrilldown-app Version: URL:} {ID:zipkin Version: URL:} {ID:loki Version: URL:} {ID:grafana-pyroscope-app Version: URL:} {ID:influxdb Version: URL:} {ID:grafana-exploretraces-app Version: URL:} {ID:grafana-lokiexplore-app Version: URL:} {ID:cloudwatch Version: URL:} {ID:opentsdb Version: URL:} {ID:tempo Version: URL:} {ID:grafana-advisor-app Version: URL:} {ID:grafana-pyroscope-datasource Version: URL:}]"
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.182165915Z level=info msg=starting module=provisioning
+logger=provisioning.datasources t=2026-11-12T10:06:16.195251191Z level=info msg="inserting datasource from configuration" name=Prometheus uid=prometheus
+t=2026-11-12T10:06:16.276210841Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.27612047Z msg="Starting ConnectionController" logger=provisioning-connection-controller
+t=2026-11-12T10:06:16.276263492Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.276249732Z msg="Starting workers" logger=provisioning-connection-controller count=1
+t=2026-11-12T10:06:16.277258664Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.277245014Z msg="Started workers" logger=provisioning-connection-controller
+logger=provisioning.plugins t=2026-11-12T10:06:16.361762937Z level=error msg="Failed to read plugin provisioning files from directory" path=/etc/grafana/provisioning/plugins error="open /etc/grafana/provisioning/plugins: no such file or directory"
+logger=provisioning.alerting t=2026-11-12T10:06:16.362431195Z level=error msg="can't read alerting provisioning files from directory" path=/etc/grafana/provisioning/alerting error="open /etc/grafana/provisioning/alerting: no such file or directory"
+logger=provisioning.alerting t=2026-11-12T10:06:16.362674067Z level=info msg="starting to provision alerting"
+logger=provisioning.alerting t=2026-11-12T10:06:16.36290648Z level=info msg="finished to provision alerting"
+t=2026-11-12T10:06:16.369378707Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.369348467Z msg="Starting RepositoryController" logger=provisioning-repository-controller
+t=2026-11-12T10:06:16.369947524Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.369932234Z msg="Starting workers" logger=provisioning-repository-controller count=1
+t=2026-11-12T10:06:16.37044507Z level=info caller=logger.go:218 time=2026-11-12T10:06:16.37043537Z msg="Started workers" logger=provisioning-repository-controller
+logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards reason=search t=2026-11-12T10:06:16.433493778Z level=info msg="Building index using memory"
+logger=resource-search namespace=default group=dashboard.grafana.app resource=dashboards t=2026-11-12T10:06:16.443048551Z level=info msg="Listed documents for index" documents=map[dashboard.grafana.app/dashboards:0]
+logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards reason=search t=2026-11-12T10:06:16.451712424Z level=info msg="Finished building index" elapsed=12.390517ms listRV=1794477970351991
+logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards reason=search t=2026-11-12T10:06:16.452329581Z level=info msg="Storing index in cache" key="{Namespace:default Group:dashboard.grafana.app Resource:dashboards}" expiration=2026-11-12T10:16:16.452324711Z
+logger=sqlstore.transactions t=2026-11-12T10:06:16.46232519Z level=info msg="Database locked, sleeping then retrying" error="database is locked (5) (SQLITE_BUSY)" retry=0 sleep=4.181062ms
+logger=provisioning.dashboard t=2026-11-12T10:06:16.523423205Z level=info msg="starting to provision dashboards"
+logger=bleve-backend namespace=default group=folder.grafana.app resource=folders reason=search t=2026-11-12T10:06:16.542254138Z level=info msg="Building index using memory"
+logger=resource-search namespace=default group=folder.grafana.app resource=folders t=2026-11-12T10:06:16.548040697Z level=info msg="Listed documents for index" documents=map[folder.grafana.app/folders:0]
+logger=bleve-backend namespace=default group=folder.grafana.app resource=folders reason=search t=2026-11-12T10:06:16.568635262Z level=info msg="Finished building index" elapsed=21.673087ms listRV=1794477970347002
+logger=bleve-backend namespace=default group=folder.grafana.app resource=folders reason=search t=2026-11-12T10:06:16.569028666Z level=info msg="Storing index in cache" key="{Namespace:default Group:folder.grafana.app Resource:folders}" expiration=2026-11-12T10:16:16.569025606Z
+logger=provisioning.dashboard t=2026-11-12T10:06:16.789423432Z level=info msg="finished to provision dashboards"
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.799593822Z level=info msg=starting module=*rendering.RenderingService
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.799690754Z level=info msg=starting module=*appregistry.Service
+logger=app-registry t=2026-11-12T10:06:16.799735194Z level=info msg="app registry initialized"
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.799760294Z level=info msg=starting module=*service.DashboardServiceImpl
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.799785035Z level=info msg=starting module=*migrations.SecretMigrationProviderImpl
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.802630788Z level=info msg=starting module=*service.DashboardUpdater
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.810832596Z level=info msg=starting module=*garbagecollectionworker.Worker
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.810899387Z level=info msg=starting module=*statscollector.Service
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.810923387Z level=info msg=starting module=*store.standardStorageService
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.810962357Z level=info msg=starting module=*authimpl.UserAuthTokenService
+logger=grafanaStorageLogger t=2026-11-12T10:06:16.810942207Z level=info msg="Storage starting"
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.810992588Z level=info msg=starting module=*ngalert.AlertNG
+logger=ngalert t=2026-11-12T10:06:16.811043388Z level=info msg="Primary node, alert rule evaluation enabled"
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.811978749Z level=info msg=starting module=*metric.Service
+logger=ngalert.state.manager t=2026-11-12T10:06:16.811074079Z level=info msg="Warming state cache for startup"
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.812478025Z level=info msg=starting module=*dualwrite.ZanzanaReconciler
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.813482757Z level=info msg=starting module=*manager.SecretsService
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.815117157Z level=info msg=starting module=*authz.EmbeddedZanzanaService
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.815164957Z level=info msg=starting module=*remotecache.RemoteCache
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.815208378Z level=info msg=starting module=*dynamic.KeyRetriever
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.819010553Z level=info msg=starting module=*metricsservice.InternalMetricsService
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.819210295Z level=info msg=starting module=*cleanup.CleanUpService
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.819231025Z level=info msg=starting module=*live.GrafanaLive
+logger=ngalert.state.manager t=2026-11-12T10:06:16.851135444Z level=info msg="State cache has been initialized" rules=0 states=0 duration=40.059145ms
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821353331Z level=info msg=starting module=*angulardetectorsprovider.Dynamic
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821367681Z level=info msg=starting module=*notifications.NotificationService
+logger=ngalert.scheduler t=2026-11-12T10:06:16.855159732Z level=info msg="Starting scheduler" tickInterval=10s maxAttempts=3
+logger=ngalert.scheduler t=2026-11-12T10:06:16.856162634Z level=info msg=starting component=ticker first_tick=2026-11-12T10:06:20Z
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821538703Z level=info msg=starting module=*ssosettingsimpl.Service
+logger=sqlstore.transactions t=2026-11-12T10:06:16.856454237Z level=info msg="Database locked, sleeping then retrying" error="database is locked (5) (SQLITE_BUSY)" retry=0 sleep=38.68874ms
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821558173Z level=info msg=starting module=*api.HTTPServer
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821378111Z level=info msg=starting module=*loginattemptimpl.Service
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821385961Z level=info msg=starting module=*service.UsageStats
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821525143Z level=info msg=starting module=*manager.ServiceAccountsService
+logger=sqlstore.transactions t=2026-11-12T10:06:16.859906988Z level=info msg="Database locked, sleeping then retrying" error="database is locked (5) (SQLITE_BUSY)" retry=0 sleep=3.976309ms
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.810904347Z level=info msg=starting module=*pluginexternal.Service
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821550053Z level=info msg=starting module=*updatemanager.GrafanaService
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821578363Z level=info msg=starting module=*supportbundlesimpl.Service
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821732405Z level=info msg=starting module=*pushhttp.Gateway
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821744395Z level=info msg=starting module=*anonimpl.AnonDeviceService
+logger=ngalert.multiorg.alertmanager t=2026-11-12T10:06:16.830749922Z level=info msg="Starting MultiOrg Alertmanager"
+logger=ngalert.rulesync t=2026-11-12T10:06:16.830904014Z level=info msg="Starting external ruler syncer" check_interval=10s
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:16.835956404Z level=info msg="Installing plugin" pluginId=elasticsearch version=
+logger=http.server t=2026-11-12T10:06:16.868391249Z level=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.821566033Z level=info msg=starting module=*updatemanager.PluginsService
+logger=sqlstore.transactions t=2026-11-12T10:06:16.871543246Z level=info msg="Database locked, sleeping then retrying" error="database is locked (5) (SQLITE_BUSY)" retry=1 sleep=110.807677ms
+logger=backgroundsvcs.managerAdapter t=2026-11-12T10:06:16.877460796Z level=info msg="All modules healthy"
+logger=plugin.installer t=2026-11-12T10:06:16.910038483Z level=info msg="Updating plugin" pluginId=elasticsearch from=12.9.5 to=12.9.6
+logger=grafana.update.checker t=2026-11-12T10:06:16.915781691Z level=info msg="Update check succeeded" duration=55.60248ms
+logger=plugins.update.checker t=2026-11-12T10:06:16.9257677Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-11-12T10:06:16.926009493Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-11-12T10:06:16.926111284Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-11-12T10:06:16.926247595Z level=info msg="Update check succeeded" duration=56.116646ms
+logger=plugins.update.checker t=2026-11-12T10:06:16.926274816Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugin.angulardetectorsprovider.dynamic t=2026-11-12T10:06:17.01680558Z level=info msg="Patterns update finished" duration=164.225489ms
+logger=search-manifest-watcher t=2026-11-12T10:06:17.862074971Z level=warn msg="manifest watcher: source listed zero manifests" source=discovery
+logger=search-manifest-watcher t=2026-11-12T10:06:17.862108651Z level=warn msg="manifest watcher poll cycle: zero manifests, keeping previous set"
+logger=installer.fs t=2026-11-12T10:06:18.063799995Z level=info msg="Downloaded and extracted elasticsearch v12.9.6 zip successfully to /var/lib/grafana/plugins/.elasticsearch.staging"
+logger=plugin.elasticsearch t=2026-11-12T10:06:18.070599855Z level=info msg="plugin process exited" plugin=/usr/share/grafana/data/plugins-bundled/elasticsearch/gpx_grafana_elasticsearch_datasource_linux_amd64 id=25
+logger=plugin.installer t=2026-11-12T10:06:18.070862808Z level=info msg="Installed plugin update" pluginId=elasticsearch path=/var/lib/grafana/plugins/elasticsearch
+logger=plugins.registration t=2026-11-12T10:06:18.28252176Z level=info msg="Plugin registered" pluginId=elasticsearch pluginVersion=12.9.6
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:18.282624471Z level=info msg="Plugin successfully installed" pluginId=elasticsearch version= duration=1.420856871s
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:18.330351118Z level=info msg="Installing plugin" pluginId=prometheus version=
+logger=plugin.installer t=2026-11-12T10:06:18.391271241Z level=info msg="Updating plugin" pluginId=prometheus from=13.2.5 to=13.2.6
+logger=installer.fs t=2026-11-12T10:06:19.81703786Z level=info msg="Downloaded and extracted prometheus v13.2.6 zip successfully to /var/lib/grafana/plugins/.prometheus.staging"
+logger=plugin.prometheus t=2026-11-12T10:06:19.830233687Z level=info msg="plugin process exited" plugin=/usr/share/grafana/data/plugins-bundled/prometheus/gpx_grafana-prometheus-datasource_linux_amd64 id=85
+logger=plugin.installer t=2026-11-12T10:06:19.830707443Z level=info msg="Installed plugin update" pluginId=prometheus path=/var/lib/grafana/plugins/prometheus
+logger=plugins.registration t=2026-11-12T10:06:20.082888325Z level=info msg="Plugin registered" pluginId=prometheus pluginVersion=13.2.6
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:20.08413419Z level=info msg="Plugin successfully installed" pluginId=prometheus version= duration=1.753526689s
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:20.134451527Z level=info msg="Installing plugin" pluginId=stackdriver version=
+logger=plugin.installer t=2026-11-12T10:06:20.193815692Z level=info msg="Updating plugin" pluginId=stackdriver from=12.6.4 to=12.6.7
+logger=installer.fs t=2026-11-12T10:06:21.154272109Z level=info msg="Downloaded and extracted stackdriver v12.6.7 zip successfully to /var/lib/grafana/plugins/.stackdriver.staging"
+logger=plugin.stackdriver t=2026-11-12T10:06:21.159062396Z level=info msg="plugin process exited" plugin=/usr/share/grafana/data/plugins-bundled/stackdriver/gpx_grafana_cloudmonitoring_datasource_linux_amd64 id=92
+logger=plugin.installer t=2026-11-12T10:06:21.15935745Z level=info msg="Installed plugin update" pluginId=stackdriver path=/var/lib/grafana/plugins/stackdriver
+logger=plugins.registration t=2026-11-12T10:06:21.283521543Z level=info msg="Plugin registered" pluginId=stackdriver pluginVersion=12.6.7
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:21.283595354Z level=info msg="Plugin successfully installed" pluginId=stackdriver version= duration=1.149045666s
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:21.459879236Z level=info msg="Installing plugin" pluginId=grafana-metricsdrilldown-app version=
+logger=plugin.installer t=2026-11-12T10:06:21.598083146Z level=info msg="Installing plugin" pluginId=grafana-metricsdrilldown-app version=
+logger=installer.fs t=2026-11-12T10:06:21.808819797Z level=info msg="Downloaded and extracted grafana-metricsdrilldown-app v3.1.0 zip successfully to /var/lib/grafana/plugins/grafana-metricsdrilldown-app"
+logger=plugins.registration t=2026-11-12T10:06:21.870858683Z level=info msg="Plugin registered" pluginId=grafana-metricsdrilldown-app pluginVersion=3.1.0
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:21.871160977Z level=info msg="Plugin successfully installed" pluginId=grafana-metricsdrilldown-app version= duration=411.249181ms
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:22.11916835Z level=info msg="Installing plugin" pluginId=grafana-pyroscope-app version=
+logger=plugin.installer t=2026-11-12T10:06:22.26247278Z level=info msg="Installing plugin" pluginId=grafana-pyroscope-app version=
+logger=installer.fs t=2026-11-12T10:06:22.475843472Z level=info msg="Downloaded and extracted grafana-pyroscope-app v3.1.0 zip successfully to /var/lib/grafana/plugins/grafana-pyroscope-app"
+logger=plugins.registration t=2026-11-12T10:06:22.571903182Z level=info msg="Plugin registered" pluginId=grafana-pyroscope-app pluginVersion=3.1.0
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:22.571973333Z level=info msg="Plugin successfully installed" pluginId=grafana-pyroscope-app version= duration=452.748123ms
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:22.617493833Z level=info msg="Installing plugin" pluginId=grafana-exploretraces-app version=
+logger=plugin.installer t=2026-11-12T10:06:22.754077274Z level=info msg="Installing plugin" pluginId=grafana-exploretraces-app version=
+logger=installer.fs t=2026-11-12T10:06:22.968698301Z level=info msg="Downloaded and extracted grafana-exploretraces-app v3.2.0 zip successfully to /var/lib/grafana/plugins/grafana-exploretraces-app"
+logger=plugins.registration t=2026-11-12T10:06:23.032952804Z level=info msg="Plugin registered" pluginId=grafana-exploretraces-app pluginVersion=3.2.0
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:23.033259007Z level=info msg="Plugin successfully installed" pluginId=grafana-exploretraces-app version= duration=415.508101ms
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:23.0334662Z level=info msg="Installing plugin" pluginId=grafana-lokiexplore-app version=
+logger=plugin.installer t=2026-11-12T10:06:23.181258804Z level=info msg="Installing plugin" pluginId=grafana-lokiexplore-app version=
+logger=installer.fs t=2026-11-12T10:06:23.573476358Z level=info msg="Downloaded and extracted grafana-lokiexplore-app v3.1.0 zip successfully to /var/lib/grafana/plugins/grafana-lokiexplore-app"
+logger=plugins.registration t=2026-11-12T10:06:23.642055722Z level=info msg="Plugin registered" pluginId=grafana-lokiexplore-app pluginVersion=3.1.0
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:23.642114083Z level=info msg="Plugin successfully installed" pluginId=grafana-lokiexplore-app version= duration=608.564741ms
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:23.811786736Z level=info msg="Installing plugin" pluginId=grafana-advisor-app version=
+logger=plugin.installer t=2026-11-12T10:06:23.934531633Z level=info msg="Installing plugin" pluginId=grafana-advisor-app version=
+logger=installer.fs t=2026-11-12T10:06:23.96885327Z level=info msg="Downloaded and extracted grafana-advisor-app v1.1.3 zip successfully to /var/lib/grafana/plugins/grafana-advisor-app"
+logger=plugins.registration t=2026-11-12T10:06:24.014043166Z level=info msg="Plugin registered" pluginId=grafana-advisor-app pluginVersion=1.1.3
+logger=plugin.backgroundinstaller t=2026-11-12T10:06:24.01435473Z level=info msg="Plugin successfully installed" pluginId=grafana-advisor-app version= duration=202.506944ms
+t=2026-11-12T10:06:26.869681984Z level=info caller=logger.go:218 time=2026-11-12T10:06:26.869661214Z msg="validation succeeded" group=rules.alerting.grafana.app version=v0alpha1 kind=Config action=validate
+logger=search-manifest-watcher t=2026-11-12T10:06:31.225448717Z level=warn msg="manifest watcher: source listed zero manifests" source=discovery
+logger=search-manifest-watcher t=2026-11-12T10:06:31.225487678Z level=warn msg="manifest watcher poll cycle: zero manifests, keeping previous set"
+logger=search-manifest-watcher t=2026-11-12T10:07:10.937815781Z level=warn msg="manifest watcher: source listed zero manifests" source=discovery
+logger=search-manifest-watcher t=2026-11-12T10:07:10.937855772Z level=warn msg="manifest watcher poll cycle: zero manifests, keeping previous set"
+logger=bleve-backend namespace=default group=provisioning.grafana.app resource=repositories reason=getStats t=2026-11-12T10:07:36.836530543Z level=info msg="Building index using memory"
+logger=resource-search namespace=default group=provisioning.grafana.app resource=repositories t=2026-11-12T10:07:36.837557745Z level=info msg="Listed documents for index" documents=map[provisioning.grafana.app/repositories:0]
+logger=bleve-backend namespace=default group=provisioning.grafana.app resource=repositories reason=getStats t=2026-11-12T10:07:36.839413787Z level=info msg="Finished building index" elapsed=2.743443ms listRV=1
+logger=bleve-backend namespace=default group=provisioning.grafana.app resource=repositories reason=getStats t=2026-11-12T10:07:36.839455098Z level=info msg="Storing index in cache" key="{Namespace:default Group:provisioning.grafana.app Resource:repositories}" expiration=2026-11-12T10:17:36.839452688Z
+logger=bleve-backend namespace=default group=playlist.grafana.app resource=playlists reason=getStats t=2026-11-12T10:07:36.841096237Z level=info msg="Building index using memory"
+logger=resource-search namespace=default group=playlist.grafana.app resource=playlists t=2026-11-12T10:07:36.842008248Z level=info msg="Listed documents for index" documents=map[playlist.grafana.app/playlists:0]
+logger=bleve-backend namespace=default group=playlist.grafana.app resource=playlists reason=getStats t=2026-11-12T10:07:36.843562856Z level=info msg="Finished building index" elapsed=2.353488ms listRV=1
+logger=bleve-backend namespace=default group=playlist.grafana.app resource=playlists reason=getStats t=2026-11-12T10:07:36.843610847Z level=info msg="Storing index in cache" key="{Namespace:default Group:playlist.grafana.app Resource:playlists}" expiration=2026-11-12T10:17:36.843608307Z
+logger=infra.usagestats t=2026-11-12T10:07:36.857742535Z level=info msg="Usage stats are ready to report"
+logger=plugin.prometheus t=2026-11-12T10:07:59.0318576Z level=info msg="Plugin Request Completed" pluginVersion=13.2.6 status=ok statusSource=plugin dsUid=prometheus duration=7.681952ms endpoint=checkHealth uname=admin dsName=Prometheus pluginId=prometheus
+logger=query_data t=2026-11-12T10:07:59.157269861Z level=info msg=queryData handler=handleQuerySingleDatasource fromAlert=false queryCount=1
+logger=plugin.prometheus t=2026-11-12T10:07:59.160435878Z level=info msg="Plugin Request Completed" pluginId=prometheus pluginVersion=13.2.6 dsName=Prometheus status=ok statusSource=plugin uname=admin dsUid=prometheus duration=1.833492ms endpoint=queryData
+logger=query_data t=2026-11-12T10:07:59.212662889Z level=info msg=queryData handler=handleQuerySingleDatasource fromAlert=false queryCount=1
+logger=plugin.prometheus t=2026-11-12T10:07:59.218281756Z level=info msg="Plugin Request Completed" statusSource=plugin duration=4.522454ms pluginVersion=13.2.6 uname=admin dsName=Prometheus dsUid=prometheus endpoint=queryData pluginId=prometheus status=ok
+logger=query_data t=2026-11-12T10:07:59.277556651Z level=info msg=queryData handler=handleQuerySingleDatasource fromAlert=false queryCount=1
+logger=plugin.prometheus t=2026-11-12T10:07:59.280754089Z level=info msg="Plugin Request Completed" endpoint=queryData pluginId=prometheus pluginVersion=13.2.6 status=ok dsName=Prometheus dsUid=prometheus duration=2.037084ms statusSource=plugin uname=admin
+logger=query_data t=2026-11-12T10:07:59.32886102Z level=info msg=queryData handler=handleQuerySingleDatasource fromAlert=false queryCount=1
+logger=plugin.prometheus t=2026-11-12T10:07:59.332526204Z level=info msg="Plugin Request Completed" pluginId=prometheus statusSource=plugin endpoint=queryData pluginVersion=13.2.6 status=ok uname=admin dsName=Prometheus dsUid=prometheus duration=2.473669ms
+logger=query_data t=2026-11-12T10:07:59.381421675Z level=info msg=queryData handler=handleQuerySingleDatasource fromAlert=false queryCount=1
+logger=plugin.prometheus t=2026-11-12T10:07:59.385114419Z level=info msg="Plugin Request Completed" dsUid=prometheus pluginVersion=13.2.6 statusSource=plugin dsName=Prometheus duration=2.52277ms endpoint=queryData pluginId=prometheus status=ok uname=admin
+logger=query_data t=2026-11-12T10:07:59.493207974Z level=info msg=queryData handler=handleQuerySingleDatasource fromAlert=false queryCount=1
+logger=plugin.prometheus t=2026-11-12T10:07:59.496380632Z level=info msg="Plugin Request Completed" pluginVersion=13.2.6 uname=admin dsUid=prometheus pluginId=prometheus status=ok statusSource=plugin dsName=Prometheus duration=1.988223ms endpoint=queryData
+logger=query_data t=2026-11-12T10:07:59.546767831Z level=info msg=queryData handler=handleQuerySingleDatasource fromAlert=false queryCount=1
+logger=plugin.prometheus t=2026-11-12T10:07:59.552336437Z level=info msg="Plugin Request Completed" dsUid=prometheus duration=2.732433ms endpoint=queryData pluginId=prometheus pluginVersion=13.2.6 status=ok uname=admin dsName=Prometheus statusSource=plugin
+logger=query_data t=2026-11-12T10:07:59.605012303Z level=info msg=queryData handler=handleQuerySingleDatasource fromAlert=false queryCount=1
+logger=plugin.prometheus t=2026-11-12T10:07:59.609654708Z level=info msg="Plugin Request Completed" dsUid=prometheus endpoint=queryData pluginVersion=13.2.6 status=ok statusSource=plugin dsName=Prometheus duration=3.43945ms pluginId=prometheus uname=admin
+logger=query_data t=2026-11-12T10:07:59.66032508Z level=info msg=queryData handler=handleQuerySingleDatasource fromAlert=false queryCount=1
+logger=plugin.prometheus t=2026-11-12T10:07:59.663068043Z level=info msg="Plugin Request Completed" statusSource=plugin dsName=Prometheus endpoint=queryData uname=admin dsUid=prometheus duration=1.907872ms pluginId=prometheus pluginVersion=13.2.6 status=ok
+logger=query_data t=2026-11-12T10:07:59.711344667Z level=info msg=queryData handler=handleQuerySingleDatasource fromAlert=false queryCount=1
+logger=plugin.prometheus t=2026-11-12T10:07:59.71498742Z level=info msg="Plugin Request Completed" dsName=Prometheus duration=2.54521ms pluginId=prometheus pluginVersion=13.2.6 status=ok dsUid=prometheus endpoint=queryData statusSource=plugin uname=admin
+logger=search-manifest-watcher t=2026-11-12T10:08:04.98646346Z level=warn msg="manifest watcher: source listed zero manifests" source=discovery
+logger=search-manifest-watcher t=2026-11-12T10:08:04.986505491Z level=warn msg="manifest watcher poll cycle: zero manifests, keeping previous set"

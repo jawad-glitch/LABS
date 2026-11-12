@@ -1,0 +1,4 @@
+docker 29.6.0
+go version go1.21.9 linux/amd64
+ Version: v2.5.4
+bridge DNS baseline confirmed

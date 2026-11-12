@@ -1,0 +1,4 @@
+OS codename: noble | lab docker.list hard-codes: jammy
+lab 'newgrp docker' opens a new shell
+lab install-fabric.sh comes from the unpinned 'main' branch
+lab 'wget -fsSL': wget: invalid option -- 'f' [exit 0]

@@ -1,0 +1,2 @@
+Alertmanager cluster status: ready
+webhook receiver: HTTP 200

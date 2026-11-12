@@ -1,0 +1,16 @@
+Checking /home/ubuntu/alerting-lab/prometheus/prometheus.yml
+  SUCCESS: 2 rule files found
+ SUCCESS: /home/ubuntu/alerting-lab/prometheus/prometheus.yml is valid prometheus config file syntax
+
+Checking /home/ubuntu/alerting-lab/prometheus/rules/application_alerts.yml
+  SUCCESS: 6 rules found
+
+Checking /home/ubuntu/alerting-lab/prometheus/rules/recording.yml
+  SUCCESS: 3 rules found
+
+Checking /home/ubuntu/alerting-lab/prometheus/rules/recording.yml
+  SUCCESS: 3 rules found
+
+Checking /home/ubuntu/alerting-lab/prometheus/rules/application_alerts.yml
+  SUCCESS: 6 rules found
+

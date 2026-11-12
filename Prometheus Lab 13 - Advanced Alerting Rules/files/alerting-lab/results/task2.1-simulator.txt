@@ -1,0 +1,4 @@
+# HELP http_requests_total Total HTTP requests by status class.
+# HELP http_request_duration_seconds HTTP request duration.
+# HELP application_errors_total Application errors by subtype.
+other path: HTTP 404

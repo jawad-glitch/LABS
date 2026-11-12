@@ -1,0 +1,35 @@
+route:
+  receiver: default-webhook            # the root route needs a receiver - the lab names only child receivers
+  group_by: ['alertname', 'service', 'severity']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 12h
+  routes:
+    - matchers: ['severity="critical"']
+      receiver: critical-webhook
+      group_wait: 10s
+      repeat_interval: 5m
+    - matchers: ['team="database"']
+      receiver: database-webhook
+      group_by: ['alertname', 'instance']
+    - matchers: ['team="backend"']
+      receiver: backend-webhook
+      group_by: ['alertname', 'service', 'instance']
+
+inhibit_rules:
+  - source_matchers: ['severity="critical"']
+    target_matchers: ['severity="warning"']
+    equal: ['alertname', 'instance']
+  - source_matchers: ['alertname="CriticalHTTPErrorRate"']
+    target_matchers: ['alertname="HighHTTPErrorRate"']
+    equal: ['instance']
+
+receivers:
+  - name: default-webhook
+    webhook_configs: [{url: 'http://localhost:8081/default-webhook', send_resolved: true}]
+  - name: critical-webhook
+    webhook_configs: [{url: 'http://localhost:8081/critical-webhook', send_resolved: true}]
+  - name: database-webhook
+    webhook_configs: [{url: 'http://localhost:8081/database-webhook', send_resolved: true}]
+  - name: backend-webhook
+    webhook_configs: [{url: 'http://localhost:8081/backend-webhook', send_resolved: true}]

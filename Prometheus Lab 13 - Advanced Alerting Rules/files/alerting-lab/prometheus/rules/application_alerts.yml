@@ -1,0 +1,45 @@
+groups:
+  - name: application_alerts
+    rules:
+      - alert: HighHTTPErrorRate
+        expr: job:http_error_rate:rate5m > 0.10
+        for: 2m
+        labels: {severity: warning, service: sample-app, team: backend}
+        annotations:
+          summary: "HTTP error rate above 10% on {{ $labels.job }}"
+          description: "5xx ratio for job {{ $labels.job }} is {{ $value | humanizePercentage }} (instance '{{ $labels.instance }}')."
+      - alert: CriticalHTTPErrorRate
+        expr: job:http_error_rate:rate5m > 0.25
+        for: 1m
+        labels: {severity: critical, service: sample-app, team: backend}
+        annotations:
+          summary: "HTTP error rate above 25% on {{ $labels.job }}"
+          description: "5xx ratio for job {{ $labels.job }} is {{ $value | humanizePercentage }} (instance '{{ $labels.instance }}')."
+      - alert: HighResponseLatency
+        expr: instance:avg_response_seconds:rate5m > 1.0
+        for: 3m
+        labels: {severity: warning, service: sample-app, team: backend}
+        annotations:
+          summary: "Average latency above 1s on {{ $labels.instance }}"
+          description: "Average response time on {{ $labels.instance }} is {{ $value | printf \"%.3f\" }}s."
+      - alert: ApplicationErrorSpike
+        expr: sum by (instance, type) (increase(application_errors_total[5m])) > 10
+        for: 1m
+        labels: {severity: warning, service: sample-app, team: backend}
+        annotations:
+          summary: "{{ $labels.type }} errors spiking on {{ $labels.instance }}"
+          description: "{{ $value | printf \"%.0f\" }} {{ $labels.type }} errors in the last 5 minutes on {{ $labels.instance }}."
+      - alert: ServiceRequestRateLow
+        expr: job:http_request_rate:rate5m < 1
+        for: 3m
+        labels: {severity: critical, service: sample-app, team: backend}
+        annotations:
+          summary: "Request rate below 1 req/s on {{ $labels.job }}"
+          description: "Throughput for {{ $labels.job }} dropped to {{ $value | printf \"%.2f\" }} req/s."
+      - alert: DatabaseErrorCorrelation
+        expr: (sum by (instance) (rate(application_errors_total{type="database"}[5m])) > 0.1) and (sum by (instance) (rate(http_requests_total{status="5xx"}[5m])) > 1)
+        for: 2m
+        labels: {severity: warning, service: sample-app, team: database}
+        annotations:
+          summary: "Database errors correlate with 5xx responses on {{ $labels.instance }}"
+          description: "Database error rate {{ $value | printf \"%.2f\" }}/s together with elevated 5xx on {{ $labels.instance }}."

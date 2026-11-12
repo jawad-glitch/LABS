@@ -1,0 +1,7 @@
+lab 'wget -fsSL': wget: invalid option -- 'f' [exit=2]
+prometheus 2.51.2 sha256 OK
+alertmanager 0.27.0 sha256 OK
+prometheus, version 2.51.2 (branch: HEAD, revision: b4c0ab52c3e9b940ab803581ddae9b3d9a452337)
+alertmanager, version 0.27.0 (branch: HEAD, revision: 0aa3c2aad14cff039931923ab16b26b7481783b5)
+amtool, version 0.27.0 (branch: HEAD, revision: 0aa3c2aad14cff039931923ab16b26b7481783b5)
+Python 3.12.3

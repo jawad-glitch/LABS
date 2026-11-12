@@ -1,0 +1,9 @@
+groups:
+  - name: recording_rules
+    rules:
+      - record: job:http_error_rate:rate5m
+        expr: sum by (job) (rate(http_requests_total{status="5xx"}[5m])) / sum by (job) (rate(http_requests_total[5m]))
+      - record: job:http_request_rate:rate5m
+        expr: sum by (job) (rate(http_requests_total[5m]))
+      - record: instance:avg_response_seconds:rate5m
+        expr: sum by (job, instance) (rate(http_request_duration_seconds_sum[5m])) / sum by (job, instance) (rate(http_request_duration_seconds_count[5m]))

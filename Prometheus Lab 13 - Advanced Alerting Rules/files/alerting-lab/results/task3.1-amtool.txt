@@ -1,0 +1,8 @@
+Checking '/home/ubuntu/alerting-lab/alertmanager/alertmanager.yml'  SUCCESS
+Found:
+ - global config
+ - route
+ - 2 inhibit rules
+ - 4 receivers
+ - 0 templates
+

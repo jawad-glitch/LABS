@@ -1,0 +1,5 @@
+/critical-webhook  CriticalHTTPErrorRate(firing)
+/backend-webhook   ApplicationErrorSpike(firing)
+/database-webhook  DatabaseErrorCorrelation(firing)
+/default-webhook   -
+non-JSON summary lines interleaved in the same webhook.log (lab redirects stdout into it): 5

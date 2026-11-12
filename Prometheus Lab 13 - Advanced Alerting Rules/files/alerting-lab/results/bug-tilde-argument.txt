@@ -1,0 +1,2 @@
+--config.file=~/alerting-lab/prometheus/prometheus.yml
+lab argument reaches the program as: --config.file=~/alerting-lab/prometheus/prometheus.yml | prometheus exit=2 open ~/alerting-lab/prometheus/prometheus.yml: no such file or directory

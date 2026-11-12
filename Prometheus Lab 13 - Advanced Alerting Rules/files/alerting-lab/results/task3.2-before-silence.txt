@@ -1,0 +1,1 @@
+error ratio now: 0.7299651567944251 | prometheus alerts: [{"n":"HighHTTPErrorRate","s":"pending"},{"n":"CriticalHTTPErrorRate","s":"firing"},{"n":"ApplicationErrorSpike","s":"firing"},{"n":"ApplicationErrorSpike","s":"firing"},{"n":"ApplicationErrorSpike","s":"firing"},{"n":"DatabaseErrorCorrelation","s":"pending"}]

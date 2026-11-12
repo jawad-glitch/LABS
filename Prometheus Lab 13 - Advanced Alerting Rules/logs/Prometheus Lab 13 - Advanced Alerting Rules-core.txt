@@ -1,0 +1,14 @@
+========== CORE CHECKS (Prometheus Lab 13 - Advanced Alerting Rules, 2026-11-12 08:23:35 UTC) - ALL REAL ==========
+PASS: Step 1.1: lab 'wget -fsSL' invalid; curl + sha256 for Prometheus 2.51.2 and Alertmanager 0.27.0; versions print
+PASS: Step 2.1: simulator serves # HELP lines for requests, duration histogram, app errors; 404 elsewhere
+PASS: Step 2.2: promtool SUCCESS (config + both rule files); API lists 3 RECORDING + 6 ALERTING
+PASS: All 9 rules health ok
+PASS: Lab bug: '--config.file=~/...' is not tilde-expanded - Prometheus gets the literal ~ path and fails
+PASS: Step 3.1: amtool SUCCESS (routing tree + 2 inhibit rules); cluster status ready; webhook receiver answers 200
+PASS: Step 3.2: >= 2 alerts firing in Prometheus, including CriticalHTTPErrorRate and HighHTTPErrorRate
+PASS: Silence: create returns an ID, list shows it active; HighHTTPErrorRate silencedBy=[that ID]
+PASS: Delete: no active silences; HighHTTPErrorRate silencedBy=[] but inhibitedBy non-empty (CriticalHTTPErrorRate firing); bad subcommand exits 1
+PASS: Webhooks: critical-webhook received CriticalHTTPErrorRate; backend-webhook received an alert; HighHTTPErrorRate never delivered
+PASS: Webhooks: database-webhook received DatabaseErrorCorrelation (team=database route)
+PASS: Time: finished in 183s (<= 300s)
+CORE: 12/12 PASS

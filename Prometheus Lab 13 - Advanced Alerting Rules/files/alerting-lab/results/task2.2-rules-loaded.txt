@@ -1,0 +1,9 @@
+ALERTING HighHTTPErrorRate
+ALERTING CriticalHTTPErrorRate
+ALERTING HighResponseLatency
+ALERTING ApplicationErrorSpike
+ALERTING ServiceRequestRateLow
+ALERTING DatabaseErrorCorrelation
+RECORDING job:http_error_rate:rate5m
+RECORDING job:http_request_rate:rate5m
+RECORDING instance:avg_response_seconds:rate5m

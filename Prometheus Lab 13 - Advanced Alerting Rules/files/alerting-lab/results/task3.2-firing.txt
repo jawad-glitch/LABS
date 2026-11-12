@@ -1,0 +1,7 @@
+Firing alerts: 6
+ - HighHTTPErrorRate | warning
+ - CriticalHTTPErrorRate | critical
+ - ApplicationErrorSpike | warning
+ - ApplicationErrorSpike | warning
+ - ApplicationErrorSpike | warning
+ - DatabaseErrorCorrelation | warning

@@ -1,0 +1,6 @@
+ApplicationErrorSpike: state=active silencedBy=[] inhibitedBy=[] labels_instance=localhost:8080
+ApplicationErrorSpike: state=active silencedBy=[] inhibitedBy=[] labels_instance=localhost:8080
+HighHTTPErrorRate: state=suppressed silencedBy=['700e0de2-ff28-4433-87e2-d066082cac8c'] inhibitedBy=['eb9d4ff4d678e906'] labels_instance=-
+DatabaseErrorCorrelation: state=active silencedBy=[] inhibitedBy=[] labels_instance=localhost:8080
+CriticalHTTPErrorRate: state=active silencedBy=[] inhibitedBy=[] labels_instance=-
+ApplicationErrorSpike: state=active silencedBy=[] inhibitedBy=[] labels_instance=localhost:8080

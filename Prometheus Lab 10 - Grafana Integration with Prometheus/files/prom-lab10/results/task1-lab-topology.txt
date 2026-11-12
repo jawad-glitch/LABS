@@ -1,0 +1,4 @@
+prometheus 3.16.0 | node-exporter: 16 node_cpu series via host port
+target node-exporter http://localhost:9100/metrics -> down Get "http://localhost:9100/metrics": dial tcp [::1]:9100: connect: connection refused
+target prometheus http://localhost:9090/metrics -> up 
+network devices seen by bridge-networked node-exporter: eth0,lo

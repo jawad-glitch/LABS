@@ -1,0 +1,1 @@
+Overall CPU panel: before load 71.5% -> during load 100.0% (irate[5m] uses the last two scrapes)

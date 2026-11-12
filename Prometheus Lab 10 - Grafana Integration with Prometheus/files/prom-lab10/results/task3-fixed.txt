@@ -1,0 +1,5 @@
+target node-exporter http://host.docker.internal:9100/metrics -> up
+target prometheus http://localhost:9090/metrics -> up
+Save & Test with http://prometheus:9090: OK: Successfully queried the Prometheus API.
+network devices seen by host-networked node-exporter: br-ae4214f98443,docker0,ens5,lo,veth2df51d7,vethc028b9b,vethcbea8d9
+Explore 'up' through Grafana: node-exporter=1 prometheus=1

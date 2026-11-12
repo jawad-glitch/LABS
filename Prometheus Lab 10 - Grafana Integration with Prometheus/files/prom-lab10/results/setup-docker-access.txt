@@ -1,0 +1,1 @@
+lab's plain 'docker ps' as ubuntu: fails (permission denied) - this block uses sudo docker

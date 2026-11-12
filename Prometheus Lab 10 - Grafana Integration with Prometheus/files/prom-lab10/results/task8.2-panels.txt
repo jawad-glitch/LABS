@@ -1,0 +1,6 @@
+Overall CPU Usage          frames=1   points=0    last==0
+Memory Usage Percentage    frames=1   points=1    last={instance="host.docker.internal:9100", job="node-exporter"}=43.67
+Disk Usage                 frames=1   points=1    last={device="/dev/root", fstype="ext4", instance="host.docker.internal:9100", job="node-exporter", mountpoint="/"}=36.1
+CPU Usage by Core          frames=1   points=0    last==0
+Memory Usage               frames=2   points=2    last=Used Memory (GB)=1.64 Total Memory (GB)=3.76
+Network Traffic            frames=2   points=0    last==0 =0

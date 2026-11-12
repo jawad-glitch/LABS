@@ -1,0 +1,3 @@
+pulled grafana/grafana:latest
+pulled prom/node-exporter:latest
+pulled prom/prometheus:latest

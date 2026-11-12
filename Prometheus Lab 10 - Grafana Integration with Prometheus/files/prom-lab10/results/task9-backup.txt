@@ -1,0 +1,3 @@
+lab 9.1 file (paste placeholder): valid JSON? NO
+lab backup-dashboard.sh: says 'Dashboard backed up to /tmp/grafana-backups' but saved: {"message":"Dashboard not found"}
+fixed backup: exit=0 Dashboard 'System Monitoring Dashboard' (system-monitoring) backed up to /tmp/grafana-backups/dashboard-system-monitoring-20261112-080624.json (6 panels)

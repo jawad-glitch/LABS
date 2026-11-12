@@ -1,0 +1,9 @@
+========== CORE CHECKS (Prometheus Lab 10 - Grafana Integration with Prometheus, 2026-11-12 08:06:25 UTC) - ALL REAL (Grafana 13.3.1) ==========
+PASS: Setup: prometheus, node-exporter, grafana images pulled; ports free
+PASS: Lab bug: mounting /tmp/prometheus.yml before it exists makes Docker create a directory; Prometheus does not run
+PASS: Lab bug: inside the Prometheus container localhost:9100 is the container itself -> node-exporter target DOWN
+PASS: Task 2: Grafana healthy (database ok), /login 200, admin/admin123 authenticates
+PASS: Lab bug: data source http://localhost:9090 fails Save & Test from the Grafana container
+PASS: Fixed: shared network + host-networked node-exporter - both targets up, data source http://prometheus:9090 OK
+PASS: Bridge node-exporter saw only container interfaces; host-networked one sees the VM interfaces
+PASS: Tasks 4-7: dashboard saved with 6 panels, tags monitoring/system/prometheus, refresh 5s, last 15 minutes

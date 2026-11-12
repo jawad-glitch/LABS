@@ -1,0 +1,2 @@
+save: {"status":"success","uid":"system-monitoring","url":"/d/system-monitoring/system-monitoring-dashboard","version":1}
+stored: title='System Monitoring Dashboard' panels=6 tags=["monitoring","system","prometheus"] refresh=5s time={"from":"now-15m","to":"now"}

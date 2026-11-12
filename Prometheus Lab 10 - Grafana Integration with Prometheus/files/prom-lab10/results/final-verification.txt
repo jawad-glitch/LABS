@@ -1,0 +1,7 @@
+NAMES           STATUS              PORTS
+prometheus      Up About a minute   0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+node-exporter   Up About a minute   
+grafana         Up About a minute   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+prometheus /-/healthy: Prometheus Server is Healthy.
+node_cpu lines: 24
+grafana: {"database":"ok","version":"13.3.1","commit":"da3aa3ff574e7dbbf808c66b6daa744defed0441"}

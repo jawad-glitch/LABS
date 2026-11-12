@@ -1,1 +1,1 @@
-single-org WITHOUT --waitForEvent: exit=1 -> 
+single-org WITHOUT --waitForEvent: exit=0 -> Chaincode invoke successful. result: status:200 

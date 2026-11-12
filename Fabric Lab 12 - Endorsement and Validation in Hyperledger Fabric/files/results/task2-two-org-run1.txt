@@ -1,5 +1,5 @@
-invoke:  | txid= | commit status=
-peer0.org1 log lines with txID=: 12
-ReadAsset two-org-179448004335610: 
-FAIL: two-org transaction did not commit as expected
-two-org run 1 exit=1
+invoke: Status: 200 | txid=b3fbce2482c0e76fe1abbdecf54f69705ad4867ee1ec54472e7793c8d055c55f | commit status=VALID
+peer0.org1 log lines with txID=b3fbce24: 1
+ReadAsset two-org-179448023236436: {"AppraisedValue":450,"Color":"blue","ID":"two-org-179448023236436","Owner":"Alice","Size":7}
+PASS: two-org endorsed transaction committed and all fields match
+two-org run 1 exit=0

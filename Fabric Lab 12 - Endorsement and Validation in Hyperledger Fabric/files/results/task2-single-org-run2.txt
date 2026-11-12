@@ -1,2 +1,2 @@
-UNEXPECTED: single-org transaction was not rejected (status=none, cli exit 1)
-single-org run 2 exit=2
+ENDORSEMENT_POLICY_FAILURE: txid=6e31b8403a9f760a9b8dd0eca6258f6f77e4b1d48e27252d19d75bb03cff15c2 was rejected at validation (cli exit 1); asset written: false
+single-org run 2 exit=1

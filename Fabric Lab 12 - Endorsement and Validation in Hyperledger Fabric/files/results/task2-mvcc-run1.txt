@@ -1,2 +1,4 @@
-FAIL: could not create mvcc-179448004509533
-mvcc run 1 exit=1
+tx A 64dc5657de88aded -> MVCC_READ_CONFLICT | tx B c6cde2b1892e3b29 -> VALID
+peer0.org1 validation log: Block [13] Transaction index [1] TxId [64dc5657de88adeda99bd9fb09f349277683a4ef688c2606e7287057ad80853f] marked as invalid by state validator. Reason code [MVCC
+PASS: exactly one of the two concurrent transfers was marked invalid (MVCC_READ_CONFLICT) and recorded in the block; owner now OwnerB
+mvcc run 1 exit=0

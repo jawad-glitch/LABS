@@ -1,5 +1,14 @@
-========== CORE CHECKS (Fabric Lab 12 - Endorsement and Validation in Hyperledger Fabric, 2026-11-12 10:42:17 UTC) - network.sh/ccenv SIMULATED, NETWORK + POLICIES + VALIDATION REAL ==========
+========== CORE CHECKS (Fabric Lab 12 - Endorsement and Validation in Hyperledger Fabric, 2026-11-12 10:44:24 UTC) - network.sh/ccenv SIMULATED, NETWORK + POLICIES + VALIDATION REAL ==========
 PASS: Req 1: bootstrap.sh (bit.ly) binaries; docker, compose, go, peer 2.5, configtxlator, jq answer with exit 0
 PASS: Req 2: orderer + 2 peers + 2 CAs + chaincode container (dev-peer0..basic) Up; both peers on mychannel; user1 from Org1 CA
 PASS: Req 2: basic committed (seq 1), InitLedger OK, GetAllAssets | jq . valid JSON array
 PASS: Task 2: upgraded to seq 2; querycommitted decodes to AND('Org1MSP.member','Org2MSP.member')
+PASS: two-org.sh: exit 0 on both runs (idempotent), Status: 200, txid from CLI found in peer log, ReadAsset fields match
+PASS: single-org.sh: exit 1 on both runs with a line containing ENDORSEMENT_POLICY_FAILURE; asset not written
+PASS: Lab gap: the same single-org invoke without --waitForEvent exits 0 (status 200) although the tx is invalidated
+PASS: mvcc.sh: exit 0 on both runs; exactly one of the two concurrent transfers MVCC_READ_CONFLICT, confirmed in the peer validation log
+PASS: instrument.sh without configtxlator/jq on PATH prints MISSING DEPENDENCY and exits 1
+FAIL: instrument.sh: exit 0; >= 5 lines in the exact format; >= 1 STATUS=INVALID (codes 10 and 11 seen); valid + invalid = total
+PASS: Every block in the report exists as blocks/block_<n>.pb (kept); metadata[2] is a base64 string, not an integer
+PASS: Time: finished in 32s (<= 300s)
+CORE: 11/12 PASS

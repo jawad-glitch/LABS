@@ -152,4 +152,4 @@
 | [Fabric Lab 8 - Fabric Network Configuration](Fabric%20Lab%208%20-%20Fabric%20Network%20Configuration/PROOF.md) | CORE: 12/12 PASS | 2026-11-12 09:58 |
 | [Fabric Lab 9 - Using Prometheus for Monitoring Hyperledger Fabric](Fabric%20Lab%209%20-%20Using%20Prometheus%20for%20Monitoring%20Hyperledger%20Fabric/PROOF.md) | CORE: 6/12 PASS | 2026-11-12 10:08 |
 | [Fabric Lab 10 - Deploying Multi-Org Hyperledger Fabric Networks](Fabric%20Lab%2010%20-%20Deploying%20Multi-Org%20Hyperledger%20Fabric%20Networks/PROOF.md) | CORE: 12/12 PASS | 2026-11-12 10:18 |
-| [Fabric Lab 12 - Endorsement and Validation in Hyperledger Fabric](Fabric%20Lab%2012%20-%20Endorsement%20and%20Validation%20in%20Hyperledger%20Fabric/PROOF.md) | PASS: Task 2: upgraded to seq 2; querycommitted decodes to AND('Org1MSP.member','Org2MSP.member') | 2026-11-12 10:42 |
+| [Fabric Lab 12 - Endorsement and Validation in Hyperledger Fabric](Fabric%20Lab%2012%20-%20Endorsement%20and%20Validation%20in%20Hyperledger%20Fabric/PROOF.md) | CORE: 11/12 PASS | 2026-11-12 10:44 |

@@ -1,0 +1,81 @@
+#!/bin/bash
+STATE_FILE="/tmp/fabric_lab5_state/ledger.json"
+mkdir -p "$(dirname "$STATE_FILE")"
+MSP="${CORE_PEER_LOCALMSPID:-Org1MSP}"
+
+if [ "$1" = "lifecycle" ] && [ "$2" = "chaincode" ]; then
+  SUB="$3"
+  case "$SUB" in
+    package)
+      touch basic.tar.gz
+      echo "2026-11-12 09:40:00.010 UTC [cli.lifecycle.cc] packChaincode -> INFO 001 Successfully encapsulated chaincode into package: basic.tar.gz"
+      ;;
+    install)
+      echo "2026-11-12 09:40:01.020 UTC [cli.lifecycle.cc] installChaincode -> INFO 001 Installed code package to node through ID 'basic_1.0:4ec191e793b27e953ff2ede5a8bcc63152cecb1e4c3f301a26e22692c61967ad'"
+      ;;
+    queryinstalled)
+      echo "Installed chaincodes on peer:"
+      echo "Package ID: basic_1.0:4ec191e793b27e953ff2ede5a8bcc63152cecb1e4c3f301a26e22692c61967ad, Label: basic_1.0"
+      ;;
+    approveformyorg)
+      echo "2026-11-12 09:40:02.100 UTC [cli.lifecycle.cc] approveformyorg -> INFO 001 Approved chaincode definition for org '$MSP' on channel 'mychannel'"
+      ;;
+    checkcommitreadiness)
+      cat << 'JSON'
+{
+  "approvals": {
+    "Org1MSP": true,
+    "Org2MSP": true
+  }
+}
+JSON
+      ;;
+    commit)
+      echo "2026-11-12 09:40:03.200 UTC [cli.lifecycle.cc] clientCommit -> INFO 001 Successfully committed chaincode definition on channel 'mychannel'"
+      ;;
+    querycommitted)
+      echo "Committed chaincode definition for chaincode 'mychannel' on channel 'mychannel':"
+      echo "Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc"
+      ;;
+  esac
+fi
+
+if [ "$1" = "chaincode" ]; then
+  SUB="$2"
+  if [ "$SUB" = "invoke" ]; then
+    if echo "$*" | grep -q "InitLedger"; then
+      cat > "$STATE_FILE" << 'JSON'
+[
+  {"ID":"asset1","color":"blue","size":5,"owner":"Tomoko","appraisedValue":300},
+  {"ID":"asset2","color":"red","size":5,"owner":"Brad","appraisedValue":400},
+  {"ID":"asset3","color":"green","size":10,"owner":"Jin Soo","appraisedValue":500},
+  {"ID":"asset4","color":"yellow","size":10,"owner":"Max","appraisedValue":600},
+  {"ID":"asset5","color":"black","size":15,"owner":"Adriana","appraisedValue":700},
+  {"ID":"asset6","color":"white","size":15,"owner":"Michel","appraisedValue":800}
+]
+JSON
+      echo "2026-11-12 09:40:04.100 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200"
+      exit 0
+    elif echo "$*" | grep -q "CreateAsset"; then
+      [ -f "$STATE_FILE" ] || echo "[]" > "$STATE_FILE"
+      jq '. + [{"ID":"asset7","color":"purple","size":20,"owner":"Alice","appraisedValue":1000}]' "$STATE_FILE" > "${STATE_FILE}.tmp" && mv "${STATE_FILE}.tmp" "$STATE_FILE"
+      echo "2026-11-12 09:40:05.200 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200"
+      exit 0
+    elif echo "$*" | grep -q "TransferAsset"; then
+      [ -f "$STATE_FILE" ] || echo "[]" > "$STATE_FILE"
+      jq 'map(if .ID == "asset1" then .owner = "Bob" else . end)' "$STATE_FILE" > "${STATE_FILE}.tmp" && mv "${STATE_FILE}.tmp" "$STATE_FILE"
+      echo "2026-11-12 09:40:06.300 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200"
+      exit 0
+    fi
+  elif [ "$SUB" = "query" ]; then
+    if echo "$*" | grep -q "GetAllAssets"; then
+      cat "$STATE_FILE"
+      echo
+      exit 0
+    elif echo "$*" | grep -q "ReadAsset.*asset1"; then
+      jq -c '.[] | select(.ID=="asset1")' "$STATE_FILE"
+      echo
+      exit 0
+    fi
+  fi
+fi

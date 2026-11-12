@@ -1,0 +1,1 @@
+2026-11-12 09:40:00.010 UTC [cli.lifecycle.cc] packChaincode -> INFO 001 Successfully encapsulated chaincode into package: basic.tar.gz

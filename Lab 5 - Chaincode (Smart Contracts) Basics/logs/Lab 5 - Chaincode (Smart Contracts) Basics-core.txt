@@ -1,0 +1,9 @@
+========== CORE CHECKS (Lab 5 - Chaincode (Smart Contracts) Basics, 2026-11-12 09:33:22 UTC) ==========
+PASS: Task 2: Go chaincode implemented in asset-transfer-basic-go/chaincode.go with go.mod
+FAIL: Task 3: Chaincode packaged as basic.tar.gz
+PASS: Task 4: Chaincode installed on Org1 and Org2 peers
+PASS: Task 5: Chaincode approved by Org1MSP and Org2MSP; checkcommitreadiness true
+PASS: Task 6: Chaincode committed to mychannel and verified
+PASS: Task 7: Ledger initialized, GetAllAssets (6 items), CreateAsset (asset7), TransferAsset (asset1 -> Bob) verified
+PASS: Time: Lab completed in 17s (<= 300s)
+CORE: 6/7 PASS

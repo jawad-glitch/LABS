@@ -1,0 +1,14 @@
+Docker version 29.6.0, build fb59821
+Docker Compose version v5.1.4
+Command 'go' not found, but can be installed with:
+sudo snap install go         # version 1.25.5, or
+sudo apt  install golang-go  # version 2:1.21~2
+sudo apt  install gccgo-go   # version 2:1.21~2
+See 'snap info go' for additional versions.
+Command 'peer' not found, did you mean:
+  command 'peet' from deb pipexec (2.6.1-3)
+  command 'pear' from deb php-pear (1:1.10.13+submodules+notgz+2022032202-2build1)
+  command 'peek' from deb peek (1.5.1+git20230114-1)
+  command 'seer' from deb seer (1.1.4-7build2)
+  command 'pee' from deb moreutils (0.67-1)
+Try: sudo apt install <deb name>

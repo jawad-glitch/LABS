@@ -1,0 +1,42 @@
+Starting test network with CA and channel mychannel...
+Unable to find image 'hyperledger/fabric-orderer:2.5' locally
+2.5: Pulling from hyperledger/fabric-orderer
+2cf0da7b7477: Pulling fs layer
+40d16f30db40: Pulling fs layer
+c0d6b7c57cb7: Pulling fs layer
+aae5e9d566fc: Pulling fs layer
+a6c1f8fbb2b3: Pulling fs layer
+2b5c69504420: Pulling fs layer
+2cf0da7b7477: Download complete
+2b5c69504420: Download complete
+c1e5309ed495: Download complete
+c0d6b7c57cb7: Download complete
+a6c1f8fbb2b3: Download complete
+40d16f30db40: Download complete
+aae5e9d566fc: Download complete
+c0d6b7c57cb7: Pull complete
+40d16f30db40: Pull complete
+2b5c69504420: Pull complete
+a6c1f8fbb2b3: Pull complete
+aae5e9d566fc: Pull complete
+2cf0da7b7477: Pull complete
+Digest: sha256:e322c57331d37e0a35ffae3cb3d3265a0e852211c0f801f2514cc15b964ffc93
+Status: Downloaded newer image for hyperledger/fabric-orderer:2.5
+Unable to find image 'hyperledger/fabric-peer:2.5' locally
+2.5: Pulling from hyperledger/fabric-peer
+59367f9b8068: Pulling fs layer
+8c7f4265beba: Pulling fs layer
+5a72ed5ae7ed: Pulling fs layer
+28dc061284de: Pulling fs layer
+d0e7aadf3081: Download complete
+5a72ed5ae7ed: Download complete
+28dc061284de: Download complete
+59367f9b8068: Download complete
+8c7f4265beba: Download complete
+5a72ed5ae7ed: Pull complete
+28dc061284de: Pull complete
+8c7f4265beba: Pull complete
+59367f9b8068: Pull complete
+Digest: sha256:09ee75042de9983bfde31ca88a5bf033386351f10a990e4c48264ee50172dee0
+Status: Downloaded newer image for hyperledger/fabric-peer:2.5
+Channel 'mychannel' created and joined.

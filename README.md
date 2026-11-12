@@ -144,3 +144,4 @@
 | [Lab 20 - Disaster Recovery with Prometheus](Lab%2020%20-%20Disaster%20Recovery%20with%20Prometheus/PROOF.md) | CORE: 5/5 PASS | 2026-11-12 09:17 |
 | [Lab 1 - Introduction to Blockchain and Hyperledger Fabric](Lab%201%20-%20Introduction%20to%20Blockchain%20and%20Hyperledger%20Fabric/PROOF.md) | CORE: 7/7 PASS | 2026-11-12 09:21 |
 | [Lab 2 - Set Up Hyperledger Fabric Network](Lab%202%20-%20Set%20Up%20Hyperledger%20Fabric%20Network/PROOF.md) | CORE: 5/7 PASS | 2026-11-12 09:23 |
+| [Lab 3 - Create and Configure Certificate Authority (CA)](Lab%203%20-%20Create%20and%20Configure%20Certificate%20Authority%20%28CA%29/PROOF.md) | CORE: 2/7 PASS | 2026-11-12 09:26 |

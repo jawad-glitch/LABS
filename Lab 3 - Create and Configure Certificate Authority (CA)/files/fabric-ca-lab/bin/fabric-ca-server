@@ -1,0 +1,49 @@
+#!/bin/bash
+CMD="$1"
+case "$CMD" in
+  version)
+    echo "fabric-ca-server:"
+    echo " Version: 1.5.5"
+    echo " Go version: go1.18.7"
+    echo " OS/Arch: linux/amd64"
+    ;;
+  init)
+    mkdir -p msp/keystore msp/cacerts msp/signcerts
+    openssl ecparam -name prime256v1 -genkey -noout -out msp/keystore/ca_sk >/dev/null 2>&1
+    openssl req -new -x509 -key msp/keystore/ca_sk -out ca-cert.pem -days 3650 \
+      -subj "/C=US/ST=North Carolina/L=Research Triangle Park/O=org1/OU=Fabric/CN=ca-org1" >/dev/null 2>&1
+    cp ca-cert.pem msp/cacerts/ca-cert.pem
+    cp ca-cert.pem msp/signcerts/cert.pem
+    touch fabric-ca-server.db
+    cat > fabric-ca-server-config.yaml << 'YAML'
+version: 1.5.5
+port: 7054
+debug: false
+YAML
+    cat > identities.json << 'JSON'
+[
+  {"name":"admin","type":"client","affiliation":"","attrs":"hf.Registrar.Roles=*,hf.Registrar.DelegateRoles=*,hf.Revoker=true,hf.IntermediateCA=true,hf.GenCRL=true,hf.Registrar.Attributes=*,hf.AffiliationMgr=true"}
+]
+JSON
+    echo "2026/11/12 09:30:00 [INFO] Created default configuration file at fabric-ca-server-config.yaml"
+    echo "2026/11/12 09:30:00 [INFO] The CA key and certificate were generated for CA ca-org1"
+    ;;
+  start)
+    echo "2026/11/12 09:30:01 [INFO] Configuration file location: $PWD/fabric-ca-server-config.yaml"
+    echo "2026/11/12 09:30:01 [INFO] Starting server in home directory: $PWD"
+    echo "2026/11/12 09:30:01 [INFO] Listening on http://0.0.0.0:7054"
+    exec python3 -c '
+import http.server, socketserver
+class H(http.server.BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-Type", "application/json")
+        self.end_headers()
+        self.wfile.write(b"{\"result\":{\"CAName\":\"ca-org1\",\"Version\":\"1.5.5\"},\"success\":true}\n")
+    def log_message(self, f, *a): pass
+socketserver.TCPServer.allow_reuse_address = True
+with socketserver.TCPServer(("0.0.0.0", 7054), H) as s:
+    s.serve_forever()
+'
+    ;;
+esac

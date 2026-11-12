@@ -1,0 +1,2 @@
+2026/11/12 09:30:00 [INFO] Created default configuration file at fabric-ca-server-config.yaml
+2026/11/12 09:30:00 [INFO] The CA key and certificate were generated for CA ca-org1

@@ -1,0 +1,16 @@
+=== Certificate Analysis for peer1 ===
+Certificate Path: /home/ubuntu/fabric-ca-lab/certificates/peer1/msp/signcerts/cert.pem
+Certificate exists: NO
+
+=== Certificate Analysis for orderer1 ===
+Certificate Path: /home/ubuntu/fabric-ca-lab/certificates/orderer1/msp/signcerts/cert.pem
+Certificate exists: NO
+
+=== Certificate Analysis for user1 ===
+Certificate Path: /home/ubuntu/fabric-ca-lab/certificates/user1/msp/signcerts/cert.pem
+Certificate exists: NO
+
+=== Certificate Analysis for admin2 ===
+Certificate Path: /home/ubuntu/fabric-ca-lab/certificates/admin2/msp/signcerts/cert.pem
+Certificate exists: NO
+

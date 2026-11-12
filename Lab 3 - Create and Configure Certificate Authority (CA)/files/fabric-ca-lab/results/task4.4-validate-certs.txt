@@ -1,0 +1,12 @@
+=== Certificate Chain Validation for peer1 ===
+Required certificate files not found
+
+=== Certificate Chain Validation for orderer1 ===
+Required certificate files not found
+
+=== Certificate Chain Validation for user1 ===
+Required certificate files not found
+
+=== Certificate Chain Validation for admin2 ===
+Required certificate files not found
+

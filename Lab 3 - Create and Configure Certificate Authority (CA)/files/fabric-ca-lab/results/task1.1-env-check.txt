@@ -1,0 +1,8 @@
+Linux ip-172-31-10-72 6.14.0-1018-aws #18~24.04.1-Ubuntu SMP Mon Nov 24 19:46:27 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 24.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.3 LTS (Noble Numbat)"
+Docker version 29.6.0, build fb59821
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        29G  7.6G   21G  27% /

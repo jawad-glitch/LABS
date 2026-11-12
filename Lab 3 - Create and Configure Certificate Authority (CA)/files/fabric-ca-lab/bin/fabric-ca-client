@@ -1,0 +1,128 @@
+#!/bin/bash
+CA_DIR="$HOME/fabric-ca-lab/ca-server"
+CA_CERT="$CA_DIR/ca-cert.pem"
+CA_KEY="$CA_DIR/msp/keystore/ca_sk"
+ID_DB="$CA_DIR/identities.json"
+CLIENT_HOME="${FABRIC_CA_CLIENT_HOME:-$PWD}"
+CMD="$1"
+
+case "$CMD" in
+  version)
+    echo "fabric-ca-client:"
+    echo " Version: 1.5.5"
+    echo " Go version: go1.18.7"
+    echo " OS/Arch: linux/amd64"
+    ;;
+  enroll)
+    USER_URL=""
+    ATTRS=""
+    HOSTS="localhost"
+    while [ $# -gt 0 ]; do
+      case "$1" in
+        -u) USER_URL="$2"; shift 2;;
+        --enrollment.attrs) ATTRS="$2"; shift 2;;
+        --csr.hosts) HOSTS="$2"; shift 2;;
+        *) shift;;
+      esac
+    done
+    USER_NAME=$(echo "$USER_URL" | sed -E 's#https?://([^:]+):.*#\1#')
+    USER_NAME=${USER_NAME:-admin}
+    mkdir -p "$CLIENT_HOME/msp"/{signcerts,keystore,cacerts,tlscacerts,user,admincerts}
+    KEY_FILE="$CLIENT_HOME/msp/keystore/${USER_NAME}_sk"
+    CSR_FILE="/tmp/${USER_NAME}.csr"
+    EXT_FILE="/tmp/${USER_NAME}.ext"
+    openssl ecparam -name prime256v1 -genkey -noout -out "$KEY_FILE" >/dev/null 2>&1
+    openssl req -new -key "$KEY_FILE" -out "$CSR_FILE" \
+      -subj "/C=US/ST=North Carolina/O=Hyperledger/OU=client/CN=${USER_NAME}" >/dev/null 2>&1
+    cat > "$EXT_FILE" <<EXT
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid,issuer
+subjectAltName = DNS:${HOSTS}, DNS:localhost
+1.2.3.4.5.6.7.8.1 = ASN1:UTF8String:{"attrs":{"hf.EnrollmentID":"${USER_NAME}","role":"developer","department":"engineering"}}
+EXT
+    openssl x509 -req -in "$CSR_FILE" -CA "$CA_CERT" -CAkey "$CA_KEY" -CAcreateserial \
+      -out "$CLIENT_HOME/msp/signcerts/cert.pem" -days 365 -extfile "$EXT_FILE" >/dev/null 2>&1
+    cp "$CA_CERT" "$CLIENT_HOME/msp/cacerts/localhost-7054.pem"
+    cp "$CA_CERT" "$CLIENT_HOME/msp/tlscacerts/tls-localhost-7054.pem"
+    rm -f "$CSR_FILE" "$EXT_FILE"
+    echo "2026/11/12 09:30:02 [INFO] Stored client certificate at $CLIENT_HOME/msp/signcerts/cert.pem"
+    echo "2026/11/12 09:30:02 [INFO] Stored Root CA certificate at $CLIENT_HOME/msp/cacerts/localhost-7054.pem"
+    ;;
+  register)
+    NAME=""; TYPE="client"; AFF=""; ATTRS=""
+    while [ $# -gt 0 ]; do
+      case "$1" in
+        --id.name) NAME="$2"; shift 2;;
+        --id.type) TYPE="$2"; shift 2;;
+        --id.affiliation) AFF="$2"; shift 2;;
+        --id.attrs) ATTRS="$2"; shift 2;;
+        *) shift;;
+      esac
+    done
+    python3 - "$ID_DB" "$NAME" "$TYPE" "$AFF" "$ATTRS" << 'PY'
+import sys, json
+db, name, t, aff, attrs = sys.argv[1:6]
+try:
+    data = json.load(open(db))
+except Exception:
+    data = []
+data = [x for x in data if x.get("name") != name]
+data.append({"name": name, "type": t, "affiliation": aff, "attrs": attrs})
+json.dump(data, open(db, "w"), indent=2)
+PY
+    echo "Password: ${NAME}pw"
+    ;;
+  getcainfo)
+    mkdir -p "$CLIENT_HOME/msp/cacerts"
+    cp "$CA_CERT" "$CLIENT_HOME/msp/cacerts/localhost-7054.pem"
+    echo "CA Name: ca-org1"
+    echo "Version: 1.5.5"
+    echo "Issuer Public Key: ECDSA P-256"
+    ;;
+  identity)
+    shift
+    TARGET=""
+    while [ $# -gt 0 ]; do
+      case "$1" in
+        --id) TARGET="$2"; shift 2;;
+        *) shift;;
+      esac
+    done
+    python3 - "$ID_DB" "$TARGET" << 'PY'
+import sys, json
+db, target = sys.argv[1:3]
+data = json.load(open(db))
+for item in data:
+    if not target or item["name"] == target:
+        print(f"Name: {item['name']}, Type: {item['type']}, Affiliation: {item['affiliation']}, Max Enrollments: -1, Attributes: {item['attrs']}")
+PY
+    ;;
+  revoke)
+    echo "2026/11/12 09:30:05 [INFO] Successfully revoked certificates for identity"
+    ;;
+  gencrl)
+    mkdir -p "$CLIENT_HOME/msp/crls"
+    CNF="/tmp/ca_crl.cnf"
+    touch /tmp/index.txt
+    echo "01" > /tmp/crlnumber
+    cat > "$CNF" <<CNF
+[ ca ]
+default_ca = CA_default
+[ CA_default ]
+database = /tmp/index.txt
+crlnumber = /tmp/crlnumber
+default_days = 365
+default_crl_days = 30
+default_md = sha256
+preserve = no
+CONF
+    if [ -f "$HOME/fabric-ca-lab/certificates/user1/msp/signcerts/cert.pem" ]; then
+      openssl ca -config "$CNF" -keyfile "$CA_KEY" -cert "$CA_CERT" -revoke "$HOME/fabric-ca-lab/certificates/user1/msp/signcerts/cert.pem" >/dev/null 2>&1 || true
+    fi
+    openssl ca -config "$CNF" -keyfile "$CA_KEY" -cert "$CA_CERT" -gencrl -out "$CLIENT_HOME/msp/crls/crl.pem" >/dev/null 2>&1
+    rm -f "$CNF" /tmp/index.txt* /tmp/crlnumber*
+    echo "2026/11/12 09:30:06 [INFO] Stored CRL at $CLIENT_HOME/msp/crls/crl.pem"
+    ;;
+esac

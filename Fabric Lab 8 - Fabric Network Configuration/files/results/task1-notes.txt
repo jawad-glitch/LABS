@@ -1,0 +1,3 @@
+OS: noble | lab docker.list uses $(lsb_release -cs) -> correct here
+lab 'newgrp docker' starts a new shell (pasted lines after it run elsewhere)
+lab install-fabric.sh is fetched from the 'main' branch (unpinned); binaries are downloaded directly at the lab's versions below

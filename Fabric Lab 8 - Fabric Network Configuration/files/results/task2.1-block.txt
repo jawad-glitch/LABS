@@ -1,0 +1,3 @@
+configtxgen exit=0 | block: 20K | inspect exit=0
+{"BatchTimeout":{"timeout":"2s"},"BatchSize":{"absolute_max_bytes":103809024,"max_message_count":10,"preferred_max_bytes":524288},"ConsensusType":"etcdraft"}
+lab's grep '"BatchTimeout": "2s"': 0 | '"MaxMessageCount": 10': 0 | real keys '"timeout": "2s"': 1, '"max_message_count": 10': 1

@@ -1,0 +1,6 @@
+  Docker version 29.6.0, build fb59821
+  Docker Compose version v5.1.4
+  go version go1.21.11 linux/amd64
+  Version: v2.5.9
+  Version: v2.5.9
+  Version: v1.5.7

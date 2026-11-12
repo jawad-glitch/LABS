@@ -1,0 +1,3 @@
+core.yaml  peer.gossip.aliveTimeInterval=5s aliveExpirationTimeout=25s maxBlockCountToStore=50
+core.yaml  chaincode.executetimeout=120s ledger.state.stateDatabase=goleveldb totalQueryLimit=50000 metrics.provider=disabled
+orderer.yaml General.TLS.Enabled=False Cluster.ListenPort=7055 ChannelParticipation=True Admin=0.0.0.0:7053 Metrics.Provider=disabled

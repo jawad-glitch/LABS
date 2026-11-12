@@ -1,0 +1,1 @@
+golang package: 17K | install on peer0.org1 (no docker socket in the lab compose) exit=1 -> build chaincode: docker build failed: docker build is disabled

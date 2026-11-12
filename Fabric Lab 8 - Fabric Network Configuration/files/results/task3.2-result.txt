@@ -1,0 +1,4 @@
+InitLedger exit=0 Chaincode invoke successful. result: status:200 
+ReadAsset asset1 from Org2: exit=0 -> {"AppraisedValue":300,"Color":"blue","ID":"asset1","Owner":"Tomoko","Size":5}
+contains "ID":"asset1": yes | lab's "assetId" key present: false
+Org2 getinfo: {"height":5} | GetAllAssets count: 6

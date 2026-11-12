@@ -1,0 +1,7 @@
+NAMES                    STATUS
+peer0.org2.example.com   Up 5 seconds
+peer0.org1.example.com   Up 5 seconds
+orderer.example.com      Up 5 seconds
+all Up after 3s
+core.yaml inside peer0.org1:  maxBlockCountToStore: 50| aliveTimeInterval: 5s| aliveExpirationTimeout: 25s| executetimeout: 120s| stateDatabase: goleveldb| totalQueryLimit: 50000
+peer0.org1 log: gossip lines=5 | config/yaml-parse error lines=0

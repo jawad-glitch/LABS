@@ -1,0 +1,7 @@
+[34m2026-11-12 09:57:08.895 UTC 0001 INFO[0m [common.tools.configtxgen] [34;1mmain[0m -> Loading configuration
+[34m2026-11-12 09:57:08.910 UTC 0002 INFO[0m [common.tools.configtxgen.localconfig] [34;1mcompleteInitialization[0m -> orderer type: etcdraft
+[34m2026-11-12 09:57:08.911 UTC 0003 INFO[0m [common.tools.configtxgen.localconfig] [34;1mcompleteInitialization[0m -> Orderer.EtcdRaft.Options unset, setting to tick_interval:"500ms" election_tick:10 heartbeat_tick:1 max_inflight_blocks:5 snapshot_interval_size:16777216 
+[34m2026-11-12 09:57:08.911 UTC 0004 INFO[0m [common.tools.configtxgen.localconfig] [34;1mLoad[0m -> Loaded configuration: /home/ubuntu/fabric-lab8/custom-config/configtx.yaml
+[34m2026-11-12 09:57:08.914 UTC 0005 INFO[0m [common.tools.configtxgen] [34;1mdoOutputBlock[0m -> Generating genesis block
+[34m2026-11-12 09:57:08.914 UTC 0006 INFO[0m [common.tools.configtxgen] [34;1mdoOutputBlock[0m -> Creating application channel genesis block
+[34m2026-11-12 09:57:08.915 UTC 0007 INFO[0m [common.tools.configtxgen] [34;1mdoOutputBlock[0m -> Writing genesis block

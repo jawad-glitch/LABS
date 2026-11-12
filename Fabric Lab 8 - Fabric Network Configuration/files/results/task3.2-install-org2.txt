@@ -1,0 +1,2 @@
+[34m2026-11-12 09:58:22.653 UTC 0001 INFO[0m [cli.lifecycle.chaincode] [34;1msubmitInstallProposal[0m -> Installed remotely: response:<status:200 payload:"\nJbasic_1.0:e8ccac6d3bc50c75706d2277f9cda2c6ed472625a75728e1ed6f01affad159e7\022\tbasic_1.0" > 
+[34m2026-11-12 09:58:22.653 UTC 0002 INFO[0m [cli.lifecycle.chaincode] [34;1msubmitInstallProposal[0m -> Chaincode code package identifier: basic_1.0:e8ccac6d3bc50c75706d2277f9cda2c6ed472625a75728e1ed6f01affad159e7

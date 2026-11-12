@@ -1,0 +1,14 @@
+========== CORE CHECKS (Fabric Lab 8 - Fabric Network Configuration, 2026-11-12 09:58:35 UTC) - ALL REAL ==========
+PASS: Task 1: docker, compose v2, go 1.21.11 (sha256), peer + orderer 2.5.x, fabric-ca-client 1.5.x
+PASS: Req 2.1: custom core.yaml + orderer.yaml carry every table value (gossip 5s/25s/50, exec 120s, goleveldb, 50000, metrics disabled)
+PASS: Req 2.1: configtxgen exit 0, labchannel.block > 0 bytes; BatchTimeout 2s, MaxMessageCount 10, AbsoluteMaxBytes 99 MB, etcdraft
+PASS: Lab bug: inspectBlock JSON uses proto field names - the lab's '"BatchTimeout": "2s"' / '"MaxMessageCount": 10' strings never appear
+PASS: Lab bug: Raft orderer with TLS fully disabled (no cluster TLS) cannot join labchannel
+PASS: Req 2.2: orderer + 2 peers Up within 60s on fabric_lab; custom core.yaml mounted (values visible in the container)
+PASS: Req 2.2: peer0.org1 log has gossip lines and 0 configuration-parse errors
+PASS: Req 3.1: orderer joined (active, etcdraft consenter); both peers list labchannel
+PASS: Golang install without a Docker socket in the peer fails (why the contract runs as a service)
+PASS: Req 3.2: installed on both peers, approved by both orgs, committed with AND(Org1,Org2); Org2 sees approvals true/true
+PASS: Req 3.2: InitLedger committed; Org2 ReadAsset asset1 exits 0 with "ID":"asset1" (no 'assetId' key); Org2 height > 1
+PASS: Time: finished in 102s (<= 300s)
+CORE: 12/12 PASS

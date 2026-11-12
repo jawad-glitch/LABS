@@ -1,0 +1,4 @@
+osnadmin join exit=0 | orderer channel: {"name":"labchannel","status":"active","consensusRelation":"consenter","height":1}
+peer join org1 exit=0 org2 exit=0
+Org1 peer channel list: labchannel
+Org2 peer channel list: labchannel

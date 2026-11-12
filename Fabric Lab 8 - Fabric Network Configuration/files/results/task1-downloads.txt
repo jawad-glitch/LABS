@@ -1,0 +1,4 @@
+go 1.21.11 sha256 OK
+fabric 2.5.9 + ca 1.5.7 binaries + chaincode-go OK
+pulled hyperledger/fabric-orderer:2.5.9
+pulled hyperledger/fabric-peer:2.5.9

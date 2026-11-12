@@ -1,0 +1,2 @@
+[34m2026-11-12 09:58:29.665 UTC 0001 INFO[0m [chaincodeCmd] [34;1mClientWait[0m -> txid [c00221445f02370672a71fde235394fa99813703b0539025b8a064007670b576] committed with status (VALID) at localhost:7051
+[34m2026-11-12 09:58:29.666 UTC 0002 INFO[0m [chaincodeCmd] [34;1mClientWait[0m -> txid [c00221445f02370672a71fde235394fa99813703b0539025b8a064007670b576] committed with status (VALID) at localhost:9051

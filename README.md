@@ -149,3 +149,4 @@
 | [Lab 5 - Chaincode (Smart Contracts) Basics](Lab%205%20-%20Chaincode%20%28Smart%20Contracts%29%20Basics/PROOF.md) | CORE: 6/7 PASS | 2026-11-12 09:33 |
 | [Lab 6 - Chaincode Endorsement Policies](Lab%206%20-%20Chaincode%20Endorsement%20Policies/PROOF.md) | CORE: 7/7 PASS | 2026-11-12 09:36 |
 | [Lab 7 - Chaincode Deployment and Testing](Lab%207%20-%20Chaincode%20Deployment%20and%20Testing/PROOF.md) | CORE: 6/6 PASS | 2026-11-12 09:43 |
+| [Fabric Lab 8 - Fabric Network Configuration](Fabric%20Lab%208%20-%20Fabric%20Network%20Configuration/PROOF.md) | CORE: 12/12 PASS | 2026-11-12 09:58 |

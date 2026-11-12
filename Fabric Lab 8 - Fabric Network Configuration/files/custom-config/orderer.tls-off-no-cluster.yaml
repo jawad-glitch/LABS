@@ -1,0 +1,114 @@
+Admin:
+  ListenAddress: 0.0.0.0:7053
+  TLS:
+    Certificate: null
+    ClientAuthRequired: true
+    ClientRootCAs: []
+    Enabled: false
+    PrivateKey: null
+ChannelParticipation:
+  Enabled: true
+  MaxRequestBodySize: 1 MB
+Consensus:
+  SnapDir: /var/hyperledger/production/orderer/etcdraft/snapshot
+  WALDir: /var/hyperledger/production/orderer/etcdraft/wal
+Debug:
+  BroadcastTraceDir: null
+  DeliverTraceDir: null
+FileLedger:
+  Location: /var/hyperledger/production/orderer
+General:
+  Authentication:
+    TimeWindow: 15m
+  BCCSP:
+    Default: SW
+    PKCS11:
+      FileKeyStore:
+        KeyStore: null
+      Hash: null
+      Label: null
+      Library: null
+      Pin: null
+      Security: null
+    SW:
+      FileKeyStore:
+        KeyStore: null
+      Hash: SHA2
+      Security: 256
+  BootstrapFile: null
+  BootstrapMethod: none
+  Cluster:
+    ClientCertificate: null
+    ClientPrivateKey: null
+    ListenAddress: null
+    ListenPort: null
+    SendBufferSize: 100
+    ServerCertificate: null
+    ServerPrivateKey: null
+  Keepalive:
+    ServerInterval: 7200s
+    ServerMinInterval: 60s
+    ServerTimeout: 20s
+  ListenAddress: 0.0.0.0
+  ListenPort: 7050
+  LocalMSPDir: /var/hyperledger/orderer/msp
+  LocalMSPID: OrdererMSP
+  MaxRecvMsgSize: 104857600
+  MaxSendMsgSize: 104857600
+  Profile:
+    Address: 0.0.0.0:6060
+    Enabled: false
+  TLS:
+    Certificate: tls/server.crt
+    ClientAuthRequired: false
+    ClientRootCAs: null
+    Enabled: false
+    PrivateKey: tls/server.key
+    RootCAs:
+    - tls/ca.crt
+Kafka:
+  Retry:
+    Consumer:
+      RetryBackoff: 2s
+    LongInterval: 5m
+    LongTotal: 12h
+    Metadata:
+      RetryBackoff: 250ms
+      RetryMax: 3
+    NetworkTimeouts:
+      DialTimeout: 10s
+      ReadTimeout: 10s
+      WriteTimeout: 10s
+    Producer:
+      RetryBackoff: 100ms
+      RetryMax: 3
+    ShortInterval: 5s
+    ShortTotal: 10m
+  SASLPlain:
+    Enabled: false
+    Password: null
+    User: null
+  TLS:
+    Certificate: null
+    Enabled: false
+    PrivateKey: null
+    RootCAs: null
+  Topic:
+    ReplicationFactor: 3
+  Verbose: false
+  Version: null
+Metrics:
+  Provider: disabled
+  Statsd:
+    Address: 127.0.0.1:8125
+    Network: udp
+    Prefix: null
+    WriteInterval: 30s
+Operations:
+  ListenAddress: 127.0.0.1:8443
+  TLS:
+    Certificate: null
+    ClientAuthRequired: false
+    ClientRootCAs: []
+    Enabled: false
+    PrivateKey: null

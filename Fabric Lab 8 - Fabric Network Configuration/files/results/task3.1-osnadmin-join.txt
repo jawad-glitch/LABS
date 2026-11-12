@@ -1,0 +1,9 @@
+Status: 201
+{
+	"name": "labchannel",
+	"url": "/participation/v1/channels/labchannel",
+	"consensusRelation": "consenter",
+	"status": "active",
+	"height": 1
+}
+

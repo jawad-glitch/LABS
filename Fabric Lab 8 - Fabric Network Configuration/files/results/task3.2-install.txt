@@ -1,0 +1,1 @@
+install org1 exit=0 org2 exit=0 | package id: basic_1.0:e8ccac6d3bc50c75706d2277f9cda2c6ed472625a75728e1ed6f01affad159e7 | chaincode service listening: 1

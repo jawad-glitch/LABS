@@ -1,0 +1,3 @@
+ORG1 approve exit=0
+ORG2 approve exit=0
+readiness: {"Org1MSP":true,"Org2MSP":true} | commit exit=0 | committed (queried from Org2): {"sequence":1,"version":"1.0","approvals":{"Org1MSP":true,"Org2MSP":true}}

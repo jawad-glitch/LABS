@@ -1,0 +1,1 @@
+started 4 busy loops (PIDs: 6646 6647 6648 6649); idle CPU before load: 96.4%

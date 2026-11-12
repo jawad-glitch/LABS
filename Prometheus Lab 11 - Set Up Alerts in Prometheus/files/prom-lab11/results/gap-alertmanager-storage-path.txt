@@ -1,0 +1,1 @@
+alertmanager without --storage.path, cwd /: exit=1 mkdir data/: permission denied

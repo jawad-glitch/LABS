@@ -1,0 +1,1 @@
+[{"alertname":"SmokeTestFixed","state":"active"},{"alertname":"CriticalCPUUsage","state":"active"},{"alertname":"HighCPUUsage","state":"active"}]

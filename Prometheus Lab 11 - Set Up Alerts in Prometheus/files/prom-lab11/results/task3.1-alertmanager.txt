@@ -1,0 +1,2 @@
+lab settings: 'alertmanager --config.check' -> unknown long flag '--config.check' [exit=1] | amtool check-config exit=0 | smoke alert delivered: 0 | error: TLS\
+fixed (smtp_require_tls: false): amtool exit=0 | active=active | smoke alert delivered: 4

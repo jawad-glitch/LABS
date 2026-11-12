@@ -1,0 +1,101 @@
+Nov 12 08:09:47 ip-172-31-10-79 systemd[1]: Started prometheus.service - Prometheus.
+Nov 12 08:09:47 ip-172-31-10-79 systemd[1]: Started alertmanager.service - Alertmanager.
+Nov 12 08:09:47 ip-172-31-10-79 alertmanager[4606]: time=2026-11-12T08:09:47.368Z level=INFO source=app.go:191 msg="Starting Alertmanager" version="(version=0.35.0, branch=HEAD, revision=8cf67a8e75004bad6c3c6bacc829945cf8a3ee65)"
+Nov 12 08:09:47 ip-172-31-10-79 alertmanager[4606]: time=2026-11-12T08:09:47.368Z level=INFO source=app.go:193 msg="Build context" build_context="(go=go1.27.3, platform=linux/amd64, user=root@a39990983e5e, date=20261109-16:47:15, tags=netgo)"
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.455Z level=INFO source=main.go:1793 msg="updated GOGC" old=100 new=75
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.456Z level=INFO source=main.go:830 msg="Leaving GOMAXPROCS=2: CPU quota undefined" component=automaxprocs
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.456Z level=INFO source=memlimit.go:177 msg="GOMEMLIMIT is updated" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=3632335257 previous=9223372036854775807
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.459Z level=INFO source=main.go:939 msg="Starting Prometheus Server" mode=server version="(version=3.16.0, branch=HEAD, revision=e2e28adeee2c5883d000fc82aca6008cfbf7e96d)"
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.459Z level=INFO source=main.go:944 msg="operational information" build_context="(go=go1.27.3, platform=linux/amd64, user=root@880187fc0808, date=20261105-15:13:16, tags=netgo,builtinassets)" host_details="(Linux 6.14.0-1018-aws #18~24.04.1-Ubuntu SMP Mon Nov 24 19:46:27 UTC 2025 x86_64 ip-172-31-10-79 (none))" fd_limits="(soft=524287, hard=524288)" vm_limits="(soft=unlimited, hard=unlimited)"
+Nov 12 08:09:47 ip-172-31-10-79 alertmanager[4606]: time=2026-11-12T08:09:47.610Z level=INFO source=tls_config.go:395 msg="Listening on" address=[::]:9093
+Nov 12 08:09:47 ip-172-31-10-79 alertmanager[4606]: time=2026-11-12T08:09:47.611Z level=INFO source=tls_config.go:398 msg="TLS is disabled." http2=false address=[::]:9093
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.804Z level=INFO source=web.go:731 msg="Start listening for connections" component=web address=0.0.0.0:9090
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.807Z level=INFO source=main.go:1521 msg="Starting TSDB ..."
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.821Z level=INFO source=tls_config.go:395 msg="Listening on" component=web address=[::]:9090
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.821Z level=INFO source=tls_config.go:398 msg="TLS is disabled." component=web http2=false address=[::]:9090
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.826Z level=INFO source=head.go:762 msg="Replaying on-disk memory mappable chunks if any" component=tsdb
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.826Z level=INFO source=head.go:847 msg="On-disk memory mappable chunks replay completed" component=tsdb duration=1.96µs
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.826Z level=INFO source=head.go:855 msg="Replaying WAL, this may take a while" component=tsdb
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.827Z level=INFO source=head.go:950 msg="WAL segment loaded" component=tsdb segment=0 maxSegment=0 duration=640.01µs
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.828Z level=INFO source=head.go:987 msg="WAL replay completed" component=tsdb checkpoint_replay_duration=45.852µs wal_replay_duration=1.345773ms wbl_replay_duration=280ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=1.96µs total_replay_duration=1.451567ms
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.832Z level=INFO source=main.go:1542 msg="filesystem information" fs_type=EXT4_SUPER_MAGIC
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.832Z level=INFO source=main.go:1545 msg="TSDB started"
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.832Z level=INFO source=main.go:1744 msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.833Z level=INFO source=main.go:1148 msg="TSDB retention updated" duration=15d size=0B percentage=0
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.839Z level=INFO source=main.go:1786 msg="Completed loading of configuration file" db_storage=48.132µs remote_storage=2.28µs web_handler=870ns query_engine=1.26µs scrape=5.486556ms scrape_sd=149.205µs notify=2.46µs notify_sd=890ns rules=2.02µs tracing=86.213µs filename=/etc/prometheus/prometheus.yml totalDuration=6.420005ms
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.839Z level=INFO source=main.go:1506 msg="Server is ready to receive web requests."
+Nov 12 08:09:47 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:09:47.839Z level=INFO source=manager.go:235 msg="Starting rule manager..." component="rule manager"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.858Z level=WARN source=main.go:1301 msg="Received an OS signal, exiting gracefully..." signal=terminated
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1326 msg="Stopping scrape discovery manager..."
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1340 msg="Stopping notify discovery manager..."
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1355 msg="Stopping rule manager manager..."
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=manager.go:249 msg="Stopping rule manager..." component="rule manager"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=manager.go:265 msg="Rule manager stopped" component="rule manager"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1379 msg="Stopping scrape manager..."
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1371 msg="Scrape manager stopped"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1322 msg="Scrape discovery manager stopped"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1336 msg="Notify discovery manager stopped"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1351 msg="Rule manager stopped"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1394 msg="Stopping tracing manager..."
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1480 msg="Stopping reloaders..."
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1569 msg="Stopping storage..."
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1472 msg="Reloaders stopped"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.859Z level=INFO source=main.go:1390 msg="Tracing manager stopped"
+Nov 12 08:10:05 ip-172-31-10-79 systemd[1]: Stopping prometheus.service - Prometheus...
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.866Z level=INFO source=main.go:1648 msg="Stopping web handler..."
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.866Z level=INFO source=main.go:1565 msg="TSDB stopped"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.866Z level=INFO source=main.go:1671 msg="Stopping notifier manager..."
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.866Z level=INFO source=manager.go:326 msg="Stopping notification manager..." component=notifier
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.866Z level=INFO source=main.go:1667 msg="Notifier manager stopped"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.868Z level=INFO source=main.go:1644 msg="Web handler stopped"
+Nov 12 08:10:05 ip-172-31-10-79 prometheus[4605]: time=2026-11-12T08:10:05.868Z level=INFO source=main.go:1682 msg="See you next time!"
+Nov 12 08:10:05 ip-172-31-10-79 systemd[1]: prometheus.service: Deactivated successfully.
+Nov 12 08:10:05 ip-172-31-10-79 systemd[1]: Stopped prometheus.service - Prometheus.
+Nov 12 08:10:05 ip-172-31-10-79 systemd[1]: Started prometheus.service - Prometheus.
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.002Z level=INFO source=main.go:1793 msg="updated GOGC" old=100 new=75
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.003Z level=INFO source=main.go:830 msg="Leaving GOMAXPROCS=2: CPU quota undefined" component=automaxprocs
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.004Z level=INFO source=memlimit.go:177 msg="GOMEMLIMIT is updated" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=3632335257 previous=9223372036854775807
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.004Z level=INFO source=main.go:939 msg="Starting Prometheus Server" mode=server version="(version=3.16.0, branch=HEAD, revision=e2e28adeee2c5883d000fc82aca6008cfbf7e96d)"
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.004Z level=INFO source=main.go:944 msg="operational information" build_context="(go=go1.27.3, platform=linux/amd64, user=root@880187fc0808, date=20261105-15:13:16, tags=netgo,builtinassets)" host_details="(Linux 6.14.0-1018-aws #18~24.04.1-Ubuntu SMP Mon Nov 24 19:46:27 UTC 2025 x86_64 ip-172-31-10-79 (none))" fd_limits="(soft=524287, hard=524288)" vm_limits="(soft=unlimited, hard=unlimited)"
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.315Z level=INFO source=web.go:731 msg="Start listening for connections" component=web address=0.0.0.0:9090
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.316Z level=INFO source=main.go:1521 msg="Starting TSDB ..."
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.320Z level=INFO source=tls_config.go:395 msg="Listening on" component=web address=[::]:9090
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.321Z level=INFO source=tls_config.go:398 msg="TLS is disabled." component=web http2=false address=[::]:9090
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.326Z level=INFO source=head.go:762 msg="Replaying on-disk memory mappable chunks if any" component=tsdb
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.326Z level=INFO source=head.go:847 msg="On-disk memory mappable chunks replay completed" component=tsdb duration=2.34µs
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.326Z level=INFO source=head.go:855 msg="Replaying WAL, this may take a while" component=tsdb
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.355Z level=INFO source=head.go:950 msg="WAL segment loaded" component=tsdb segment=0 maxSegment=1 duration=26.048809ms
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.356Z level=INFO source=head.go:950 msg="WAL segment loaded" component=tsdb segment=1 maxSegment=1 duration=340.411µs
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.356Z level=INFO source=head.go:987 msg="WAL replay completed" component=tsdb checkpoint_replay_duration=2.734147ms wal_replay_duration=26.847444ms wbl_replay_duration=270ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=2.34µs total_replay_duration=29.629763ms
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.360Z level=INFO source=main.go:1542 msg="filesystem information" fs_type=EXT4_SUPER_MAGIC
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.360Z level=INFO source=main.go:1545 msg="TSDB started"
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.360Z level=INFO source=main.go:1744 msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.361Z level=INFO source=main.go:1148 msg="TSDB retention updated" duration=15d size=0B percentage=0
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.363Z level=INFO source=main.go:1786 msg="Completed loading of configuration file" db_storage=148.095µs remote_storage=3.2µs web_handler=840ns query_engine=1.351µs scrape=2.151268ms scrape_sd=124.534µs notify=2.02µs notify_sd=1.27µs rules=2.31µs tracing=8.61µs filename=/etc/prometheus/prometheus.yml totalDuration=3.197802ms
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.364Z level=INFO source=main.go:1506 msg="Server is ready to receive web requests."
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.364Z level=INFO source=manager.go:235 msg="Starting rule manager..." component="rule manager"
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.477Z level=INFO source=main.go:1744 msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:10:06 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:06.480Z level=INFO source=main.go:1786 msg="Completed loading of configuration file" db_storage=34.771µs remote_storage=2.84µs web_handler=460ns query_engine=1.16µs scrape=2.20621ms scrape_sd=38.421µs notify=2.03µs notify_sd=1.26µs rules=2.9µs tracing=30.131µs filename=/etc/prometheus/prometheus.yml totalDuration=3.237733ms
+Nov 12 08:10:21 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:21.820Z level=INFO source=main.go:1744 msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:10:21 ip-172-31-10-79 prometheus[5929]: time=2026-11-12T08:10:21.825Z level=INFO source=main.go:1786 msg="Completed loading of configuration file" db_storage=2.62µs remote_storage=2.36µs web_handler=570ns query_engine=1.58µs scrape=1.792987ms scrape_sd=28.891µs notify=160.605µs notify_sd=30.541µs rules=2.298773ms tracing=8.94µs filename=/etc/prometheus/prometheus.yml totalDuration=5.02534ms
+Nov 12 08:10:28 ip-172-31-10-79 systemd[1]: Stopping alertmanager.service - Alertmanager...
+Nov 12 08:10:28 ip-172-31-10-79 alertmanager[4606]: time=2026-11-12T08:10:28.026Z level=INFO source=lifecycle.go:312 msg="Shutting down gracefully"
+Nov 12 08:10:28 ip-172-31-10-79 alertmanager[4606]: time=2026-11-12T08:10:28.030Z level=INFO source=main.go:237 msg="Received shutdown signal, exiting gracefully..."
+Nov 12 08:10:28 ip-172-31-10-79 systemd[1]: alertmanager.service: Deactivated successfully.
+Nov 12 08:10:28 ip-172-31-10-79 systemd[1]: Stopped alertmanager.service - Alertmanager.
+Nov 12 08:10:28 ip-172-31-10-79 systemd[1]: Started alertmanager.service - Alertmanager.
+Nov 12 08:10:28 ip-172-31-10-79 alertmanager[6682]: time=2026-11-12T08:10:28.099Z level=INFO source=app.go:191 msg="Starting Alertmanager" version="(version=0.35.0, branch=HEAD, revision=8cf67a8e75004bad6c3c6bacc829945cf8a3ee65)"
+Nov 12 08:10:28 ip-172-31-10-79 alertmanager[6682]: time=2026-11-12T08:10:28.100Z level=INFO source=app.go:193 msg="Build context" build_context="(go=go1.27.3, platform=linux/amd64, user=root@a39990983e5e, date=20261109-16:47:15, tags=netgo)"
+Nov 12 08:10:28 ip-172-31-10-79 alertmanager[6682]: time=2026-11-12T08:10:28.197Z level=INFO source=tls_config.go:395 msg="Listening on" address=[::]:9093
+Nov 12 08:10:28 ip-172-31-10-79 alertmanager[6682]: time=2026-11-12T08:10:28.197Z level=INFO source=tls_config.go:398 msg="TLS is disabled." http2=false address=[::]:9093
+Nov 12 08:10:51 ip-172-31-10-79 alertmanager[6682]: time=2026-11-12T08:10:51.296Z level=WARN source=retry_stage.go:174 msg="Notify attempt failed, will retry later" component=dispatcher receiver=local-mail integration=email[0] aggrGroup="{}:{alertname=\"SmokeTestLabTLS\"}" attempts=1 reason=other err="send STARTTLS command: tls: failed to verify certificate: x509: certificate is valid for ip-172-31-15-58.ec2.internal, not localhost"
+Nov 12 08:11:01 ip-172-31-10-79 alertmanager[6682]: time=2026-11-12T08:11:01.023Z level=INFO source=lifecycle.go:312 msg="Shutting down gracefully"
+Nov 12 08:11:01 ip-172-31-10-79 systemd[1]: Stopping alertmanager.service - Alertmanager...
+Nov 12 08:11:01 ip-172-31-10-79 alertmanager[6682]: time=2026-11-12T08:11:01.027Z level=INFO source=main.go:237 msg="Received shutdown signal, exiting gracefully..."
+Nov 12 08:11:01 ip-172-31-10-79 systemd[1]: alertmanager.service: Deactivated successfully.
+Nov 12 08:11:01 ip-172-31-10-79 systemd[1]: Stopped alertmanager.service - Alertmanager.
+Nov 12 08:11:01 ip-172-31-10-79 systemd[1]: Started alertmanager.service - Alertmanager.
+Nov 12 08:11:01 ip-172-31-10-79 alertmanager[6847]: time=2026-11-12T08:11:01.142Z level=INFO source=app.go:191 msg="Starting Alertmanager" version="(version=0.35.0, branch=HEAD, revision=8cf67a8e75004bad6c3c6bacc829945cf8a3ee65)"
+Nov 12 08:11:01 ip-172-31-10-79 alertmanager[6847]: time=2026-11-12T08:11:01.142Z level=INFO source=app.go:193 msg="Build context" build_context="(go=go1.27.3, platform=linux/amd64, user=root@a39990983e5e, date=20261109-16:47:15, tags=netgo)"
+Nov 12 08:11:01 ip-172-31-10-79 alertmanager[6847]: time=2026-11-12T08:11:01.215Z level=INFO source=tls_config.go:395 msg="Listening on" address=[::]:9093
+Nov 12 08:11:01 ip-172-31-10-79 alertmanager[6847]: time=2026-11-12T08:11:01.216Z level=INFO source=tls_config.go:398 msg="TLS is disabled." http2=false address=[::]:9093

@@ -1,0 +1,4 @@
+HighCPUUsage ok
+CriticalCPUUsage ok
+HighMemoryUsage ok
+CriticalMemoryUsage ok

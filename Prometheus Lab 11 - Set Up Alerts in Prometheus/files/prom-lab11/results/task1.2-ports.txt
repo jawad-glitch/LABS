@@ -1,0 +1,8 @@
+postfix: active | inet_interfaces=loopback-only | mydestination=ip-172-31-10-79, $myhostname, ip-172-31-10-79.ec2.internal, localhost.ec2.internal, localhost | relayhost='' | smtpd_tls_security_level=may
+lab ss check:
+  127.0.0.1:25 users:(("master",pid=5620,fd=13))
+  *:9100 users:(("node_exporter",pid=4609,fd=4))
+  *:9093 users:(("alertmanager",pid=4606,fd=4))
+  *:9090 users:(("prometheus",pid=5929,fd=7))
+  [::1]:25 users:(("master",pid=5620,fd=14))
+node_cpu_seconds_total lines: 18

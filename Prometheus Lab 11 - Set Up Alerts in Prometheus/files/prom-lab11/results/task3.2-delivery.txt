@@ -1,0 +1,3 @@
+firing: yes | alertmanager has: [{"alertname":"SmokeTestFixed","state":"active"},{"alertname":"CriticalCPUUsage","state":"active"},{"alertname":"HighCPUUsage","state":"active"}]
+mail subjects: [FIRING] SmokeTestFixed (info)|[FIRING] CriticalCPUUsage (critical)|[FIRING] HighCPUUsage (warning)
+load loops left: 0

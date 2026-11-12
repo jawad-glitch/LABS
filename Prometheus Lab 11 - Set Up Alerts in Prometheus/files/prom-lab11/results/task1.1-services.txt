@@ -1,0 +1,5 @@
+active active active
+prometheus runs as prometheus (shell /usr/sbin/nologin)
+alertmanager runs as alertmanager (shell /usr/sbin/nologin)
+node_exporter runs as node_exporter (shell /usr/sbin/nologin)
+buildinfo: {"version":"3.16.0"}

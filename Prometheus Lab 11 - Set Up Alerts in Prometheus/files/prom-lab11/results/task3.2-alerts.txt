@@ -1,0 +1,2 @@
+HighCPUUsage firing
+CriticalCPUUsage firing

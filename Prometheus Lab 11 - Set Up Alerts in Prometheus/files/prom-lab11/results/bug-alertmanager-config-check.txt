@@ -1,0 +1,2 @@
+alertmanager: error: unknown long flag '--config.check', try --help
+exit=1

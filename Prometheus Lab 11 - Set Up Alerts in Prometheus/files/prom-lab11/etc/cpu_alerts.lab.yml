@@ -1,0 +1,19 @@
+groups:
+  - name: cpu_alerts
+    rules:
+      - alert: HighCPUUsage
+        expr: 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[1m])) * 100) > 80
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU usage above 80% for 2 minutes"
+          description: "Average CPU usage is {{ $value | printf \"%.1f\" }}% on {{ $labels.instance }}."
+      - alert: CriticalCPUUsage
+        expr: 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[1m])) * 100) > 95
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "CPU usage above 95% for 1 minute"
+          description: "Average CPU usage is {{ $value | printf \"%.1f\" }}%."

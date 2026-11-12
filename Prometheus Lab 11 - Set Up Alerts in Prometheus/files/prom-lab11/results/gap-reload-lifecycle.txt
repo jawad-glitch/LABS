@@ -1,0 +1,1 @@
+POST /-/reload: without --web.enable-lifecycle HTTP 403 (Lifecycle API is not enabled.) | with it HTTP 200

@@ -1,0 +1,1 @@
+CPU usage under full shell-loop load: 100.0% (idle 96.4%) -> HighCPUUsage threshold used: 80% (adapted: no)

@@ -1,0 +1,19 @@
+groups:
+  - name: memory_alerts
+    rules:
+      - alert: HighMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 80
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Memory usage above 80% (less than 20% available) for 2 minutes"
+          description: "Memory usage is {{ $value | printf \"%.1f\" }}% on {{ $labels.instance }}."
+      - alert: CriticalMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 95
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Memory usage above 95% (less than 5% available) for 1 minute"
+          description: "Memory usage is {{ $value | printf \"%.1f\" }}%."

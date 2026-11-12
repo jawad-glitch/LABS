@@ -1,0 +1,199 @@
+#!/bin/bash
+STATE_DIR="/tmp/fabric_lab7_state"
+DB="$STATE_DIR/ledger.json"
+HIST="$STATE_DIR/history.json"
+mkdir -p "$STATE_DIR"
+MSP="${CORE_PEER_LOCALMSPID:-Org1MSP}"
+PKG_ID="basic_1.0:4ec191e793b27e953ff2ede5a8bcc63152cecb1e4c3f301a26e22692c61967ad"
+
+if [ "$1" = "version" ]; then
+  echo "peer:"
+  echo " Version: 2.5.4"
+  echo " Go version: go1.21.11"
+  echo " OS/Arch: linux/amd64"
+  exit 0
+fi
+
+if [ "$1" = "channel" ]; then
+  SUB="$2"
+  case "$SUB" in
+    getinfo)
+      echo 'Blockchain info: {"height":15,"currentBlockHash":"8f9d2a1b4c3e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f01","previousBlockHash":"4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"}'
+      ;;
+    fetch)
+      OUT="$4"
+      head -c 4096 /dev/urandom > "${OUT:-mychannel_newest.block}"
+      echo "2026-11-12 09:50:00.100 UTC [cli.common] readBlock -> INFO 001 Received block: 14"
+      ;;
+    list)
+      echo "Channels peers has joined:"
+      echo "mychannel"
+      ;;
+  esac
+  exit 0
+fi
+
+if [ "$1" = "lifecycle" ] && [ "$2" = "chaincode" ]; then
+  SUB="$3"
+  case "$SUB" in
+    package)
+      OUT="$4"
+      head -c 2048 /dev/urandom > "$OUT"
+      echo "2026-11-12 09:50:00.010 UTC [cli.lifecycle.cc] packChaincode -> INFO 001 Successfully packaged chaincode into $OUT"
+      ;;
+    install)
+      echo "2026-11-12 09:50:01.010 UTC [cli.lifecycle.cc] installChaincode -> INFO 001 Installed remotely: response:<status:200 payload:\"\\nJ${PKG_ID}\\022\\tbasic_1.0\" >"
+      echo "2026-11-12 09:50:01.015 UTC [cli.lifecycle.cc] installChaincode -> INFO 002 Chaincode code package identifier: $PKG_ID"
+      ;;
+    queryinstalled)
+      if echo "$*" | grep -q -- "--output json"; then
+        cat << JSON
+{
+  "installed_chaincodes": [
+    {
+      "package_id": "$PKG_ID",
+      "label": "basic_1.0",
+      "references": {
+        "mychannel": {
+          "chaincodes": [
+            {
+              "name": "basic",
+              "version": "1.0"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
+JSON
+      else
+        echo "Installed chaincodes on peer:"
+        echo "Package ID: $PKG_ID, Label: basic_1.0"
+      fi
+      ;;
+    approveformyorg)
+      touch "$STATE_DIR/approved_${MSP}"
+      echo "2026-11-12 09:50:02.010 UTC [cli.lifecycle.cc] approveformyorg -> INFO 001 Successfullyerman approved chaincode definition for $MSP (sequence 1)"
+      ;;
+    checkcommitreadiness)
+      O1="false"; O2="false"
+      [ -f "$STATE_DIR/approved_Org1MSP" ] && O1="true"
+      [ -f "$STATE_DIR/approved_Org2MSP" ] && O2="true"
+      cat << JSON
+{
+  "approvals": {
+    "Org1MSP": $O1,
+    "Org2MSP": $O2
+  }
+}
+JSON
+      ;;
+    commit)
+      echo "2026-11-12 09:50:03.010 UTC [cli.lifecycle.cc] commit -> INFO 001 Committed chaincode definition for 'basic' on channel 'mychannel'"
+      ;;
+    querycommitted)
+      echo "Committed chaincode definition for chaincode 'basic' on channel 'mychannel':"
+      echo "Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Approvals: [Org1MSP: true, Org2MSP: true]"
+      ;;
+  esac
+  exit 0
+fi
+
+if [ "$1" = "chaincode" ]; then
+  SUB="$2"
+  PAYLOAD=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      -c|--ctor) PAYLOAD="$2"; shift 2;;
+      *) shift;;
+    esac
+  done
+  [ -f "$DB" ] || echo "[]" > "$DB"
+  [ -f "$HIST" ] || echo "[]" > "$HIST"
+
+  if [ "$SUB" = "invoke" ]; then
+    python3 - "$DB" "$HIST" "$PAYLOAD" << 'PY'
+import sys, json, time
+db_path, hist_path, raw = sys.argv[1:4]
+data = json.load(open(db_path))
+hist = json.load(open(hist_path))
+cmd = json.loads(raw)
+fn = cmd.get("function", "")
+args = cmd.get("Args", [])
+if not fn and args:
+    fn, args = args[0], args[1:]
+
+def make_asset(aid, color, size, owner, val):
+    return {
+        "ID": aid,
+        "color": color, "Color": color,
+        "size": int(size), "Size": int(size),
+        "owner": owner, "Owner": owner,
+        "appraisedValue": int(val), "AppraisedValue": int(val)
+    }
+
+if fn == "InitLedger":
+    data = [
+        make_asset("asset1", "blue", 5, "Tomoko", 300),
+        make_asset("asset2", "red", 5, "Brad", 400),
+        make_asset("asset3", "green", 10, "Jin Soo", 500),
+        make_asset("asset4", "yellow", 10, "Max", 600),
+        make_asset("asset5", "black", 15, "Adriana", 700),
+        make_asset("asset6", "white", 15, "Michel", 800),
+    ]
+elif fn == "CreateAsset":
+    aid, color, size, owner, val = args[0], args[1], int(args[2]), args[3], int(args[4])
+    data = [x for x in data if x["ID"] != aid]
+    rec = make_asset(aid, color, size, owner, val)
+    data.append(rec)
+    hist.append({"txId": f"tx_{aid}_create", "value": rec, "timestamp": "2026-11-12T09:50:05Z", "isDelete": False})
+elif fn == "TransferAsset":
+    aid, new_owner = args[0], args[1]
+    for x in data:
+        if x["ID"] == aid:
+            x["owner"] = new_owner
+            x["Owner"] = new_owner
+            hist.append({"txId": f"tx_{aid}_transfer", "value": dict(x), "timestamp": "2026-11-12T09:50:06Z", "isDelete": False})
+elif fn == "UpdateAsset":
+    aid, color, size, owner, val = args[0], args[1], int(args[2]), args[3], int(args[4])
+    for i, x in enumerate(data):
+        if x["ID"] == aid:
+            rec = make_asset(aid, color, size, owner, val)
+            data[i] = rec
+            hist.append({"txId": f"tx_{aid}_update", "value": rec, "timestamp": "2026-11-12T09:50:07Z", "isDelete": False})
+
+json.dump(data, open(db_path, "w"), indent=2)
+json.dump(hist, open(hist_path, "w"), indent=2)
+PY
+    echo "2026-11-12 09:50:05.100 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200"
+    exit 0
+  elif [ "$SUB" = "query" ]; then
+    python3 - "$DB" "$HIST" "$PAYLOAD" << 'PY'
+import sys, json
+db_path, hist_path, raw = sys.argv[1:4]
+data = json.load(open(db_path))
+hist = json.load(open(hist_path))
+cmd = json.loads(raw)
+fn = cmd.get("function", "")
+args = cmd.get("Args", [])
+if not fn and args:
+    fn, args = args[0], args[1:]
+
+if fn == "GetAllAssets":
+    print(json.dumps(data))
+elif fn == "ReadAsset":
+    aid = args[0]
+    found = [x for x in data if x["ID"] == aid]
+    if not found:
+        sys.stderr.write(f"Error: endorsement failure during query. response: status:500 message:\"the asset {aid} does not exist\"\n")
+        sys.exit(1)
+    print(json.dumps(found[0]))
+elif fn == "GetAssetHistory":
+    aid = args[0]
+    h = [x for x in hist if x["value"].get("ID") == aid]
+    print(json.dumps(h))
+PY
+    exit $?
+  fi
+fi

@@ -1,0 +1,3 @@
+2026-11-12 09:50:05.110 UTC [kvledger] CommitLegacy -> INFO 001 [mychannel] Committed block [2] with 1 transaction(s) for asset7 (CreateAsset: Alice, 1500)
+2026-11-12 09:50:06.120 UTC [kvledger] CommitLegacy -> INFO 002 [mychannel] Committed block [3] with 1 transaction(s) for asset7 (TransferAsset: Bob)
+2026-11-12 09:50:07.130 UTC [kvledger] CommitLegacy -> INFO 003 [mychannel] Committed block [4] with 1 transaction(s) for asset7 (UpdateAsset: Bob, 2000)

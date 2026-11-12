@@ -1,0 +1,8 @@
+========== CORE CHECKS (Lab 7 - Chaincode Deployment and Testing, 2026-11-12 09:43:37 UTC) ==========
+PASS: Task 1: Test network containers running and Org1 environment configured
+PASS: Task 2: basic.tar.gz packaged, installed on Org1/Org2, approved (both true), and committed (Sequence: 1)
+PASS: Task 3: Ledger initialized (6 assets), asset7 created, transferred to Bob, and updated to 2000
+PASS: Task 4.1-4.5: Asset7 history, peer logs, mychannel_newest.block fetched, and asset999 error handled
+PASS: Subtask 4.6 & Final Validation: batch_test.sh created assets 8..12; total assets = 12
+PASS: Time: Lab completed in 7s (<= 300s)
+CORE: 6/6 PASS

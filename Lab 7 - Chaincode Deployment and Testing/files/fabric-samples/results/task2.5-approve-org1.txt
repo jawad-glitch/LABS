@@ -1,0 +1,1 @@
+2026-11-12 09:50:02.010 UTC [cli.lifecycle.cc] approveformyorg -> INFO 001 Successfullyerman approved chaincode definition for Org1MSP (sequence 1)

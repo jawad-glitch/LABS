@@ -1,0 +1,24 @@
+total 12
+drwxrwxr-x 2 ubuntu ubuntu 4096 Nov 12 09:43 .
+drwxrwxr-x 3 ubuntu ubuntu 4096 Nov 12 09:43 ..
+-rw-rw-r-- 1 ubuntu ubuntu  474 Nov 12 09:43 assetTransfer.go
+/*
+SPDX-License-Identifier: Apache-2.0
+*/
+
+package main
+
+import (
+"log"
+"github.com/hyperledger/fabric-contract-api-go/contractapi"
+)
+
+type SmartContract struct {
+contractapi.Contract
+}
+
+func main() {
+assetChaincode, err := contractapi.NewChaincode(&SmartContract{})
+if err != nil {
+log.Panicf("Error creating asset-transfer-basic chaincode: %v", err)
+}

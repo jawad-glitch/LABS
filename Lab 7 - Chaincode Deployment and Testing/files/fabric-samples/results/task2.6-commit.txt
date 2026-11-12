@@ -1,0 +1,1 @@
+2026-11-12 09:50:03.010 UTC [cli.lifecycle.cc] commit -> INFO 001 Committed chaincode definition for 'basic' on channel 'mychannel'

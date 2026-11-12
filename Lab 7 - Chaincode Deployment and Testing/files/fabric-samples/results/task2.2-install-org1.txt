@@ -1,0 +1,2 @@
+2026-11-12 09:50:01.010 UTC [cli.lifecycle.cc] installChaincode -> INFO 001 Installed remotely: response:<status:200 payload:"\nJbasic_1.0:4ec191e793b27e953ff2ede5a8bcc63152cecb1e4c3f301a26e22692c61967ad\022\tbasic_1.0" >
+2026-11-12 09:50:01.015 UTC [cli.lifecycle.cc] installChaincode -> INFO 002 Chaincode code package identifier: basic_1.0:4ec191e793b27e953ff2ede5a8bcc63152cecb1e4c3f301a26e22692c61967ad

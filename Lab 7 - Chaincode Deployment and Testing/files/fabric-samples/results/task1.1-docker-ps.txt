@@ -1,0 +1,6 @@
+NAMES                    STATUS                  PORTS
+peer0.org2.example.com   Up Less than a second   
+peer0.org1.example.com   Up Less than a second   
+orderer.example.com      Up 1 second             
+ca_org2                  Up 1 second             
+ca_org1                  Up 2 seconds            

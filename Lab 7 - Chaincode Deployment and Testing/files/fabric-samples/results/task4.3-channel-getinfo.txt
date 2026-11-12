@@ -1,0 +1,1 @@
+Blockchain info: {"height":15,"currentBlockHash":"8f9d2a1b4c3e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f01","previousBlockHash":"4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"}

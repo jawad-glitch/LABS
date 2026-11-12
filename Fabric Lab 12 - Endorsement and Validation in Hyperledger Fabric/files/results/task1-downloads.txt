@@ -1,0 +1,8 @@
+bit.ly/2ysbOFE resolves to: https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh
+bootstrap.sh binaries OK
+go 1.21.11 sha256 OK
+samples chaincode-go OK
+pulled alpine:3.19
+pulled hyperledger/fabric-ca:1.5.7
+pulled hyperledger/fabric-orderer:2.5.4
+pulled hyperledger/fabric-peer:2.5.4

@@ -1,0 +1,78 @@
+2026/11/12 10:37:57 [INFO] Created default configuration file at /etc/hyperledger/fabric-ca-server/fabric-ca-server-config.yaml
+2026/11/12 10:37:57 [INFO] Starting server in home directory: /etc/hyperledger/fabric-ca-server
+2026/11/12 10:37:57 [INFO] Server Version: v1.5.7
+2026/11/12 10:37:57 [INFO] Server Levels: &{Identity:2 Affiliation:1 Certificate:1 Credential:1 RAInfo:1 Nonce:1}
+2026/11/12 10:37:57 [INFO] The CA key and certificate files already exist
+2026/11/12 10:37:57 [INFO] Key file location: /ca/priv_sk
+2026/11/12 10:37:57 [INFO] Certificate file location: /ca/ca.org1.example.com-cert.pem
+2026/11/12 10:37:57 [INFO] Initialized sqlite3 database at /etc/hyperledger/fabric-ca-server/fabric-ca-server.db
+2026/11/12 10:37:57 [INFO] The issuer key was successfully stored. The public key is at: /etc/hyperledger/fabric-ca-server/IssuerPublicKey, secret key is at: /etc/hyperledger/fabric-ca-server/msp/keystore/IssuerSecretKey
+2026/11/12 10:37:57 [INFO] Idemix issuer revocation public and secret keys were generated for CA 'ca-org1'
+2026/11/12 10:37:57 [INFO] The revocation key was successfully stored. The public key is at: /etc/hyperledger/fabric-ca-server/IssuerRevocationPublicKey, private key is at: /etc/hyperledger/fabric-ca-server/msp/keystore/IssuerRevocationPrivateKey
+2026/11/12 10:37:57 [INFO] Home directory for default CA: /etc/hyperledger/fabric-ca-server
+2026/11/12 10:37:57 [INFO] Operation Server Listening on 127.0.0.1:9443
+2026/11/12 10:37:57 [INFO] Listening on http://0.0.0.0:7054
+2026/11/12 10:37:59 [INFO] 172.18.0.1:52080 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:00 [INFO] 172.18.0.1:52084 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:02 [INFO] 172.18.0.1:52094 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:03 [INFO] 172.18.0.1:52110 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:05 [INFO] 172.18.0.1:39464 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:06 [INFO] 172.18.0.1:39480 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:08 [INFO] 172.18.0.1:39494 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:10 [INFO] 172.18.0.1:39504 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:12 [INFO] 172.18.0.1:39516 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:13 [INFO] 172.18.0.1:39528 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:14 [INFO] 172.18.0.1:35008 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:16 [INFO] 172.18.0.1:35014 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:17 [INFO] 172.18.0.1:35030 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:19 [INFO] 172.18.0.1:35034 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:20 [INFO] 172.18.0.1:35048 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:22 [INFO] 172.18.0.1:35054 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:23 [INFO] 172.18.0.1:35068 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:24 [INFO] 172.18.0.1:49794 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:26 [INFO] 172.18.0.1:49798 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:27 [INFO] 172.18.0.1:49814 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:29 [INFO] 172.18.0.1:49824 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:31 [INFO] 172.18.0.1:49838 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:33 [INFO] 172.18.0.1:49850 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:34 [INFO] 172.18.0.1:41546 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:36 [INFO] 172.18.0.1:41552 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:37 [INFO] 172.18.0.1:41568 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:39 [INFO] 172.18.0.1:41580 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:40 [INFO] 172.18.0.1:41584 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:41 [INFO] 172.18.0.1:41596 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:43 [INFO] 172.18.0.1:41602 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:45 [INFO] 172.18.0.1:53588 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:46 [INFO] 172.18.0.1:53600 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:48 [INFO] 172.18.0.1:53614 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:49 [INFO] 172.18.0.1:53616 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:51 [INFO] 172.18.0.1:53624 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:52 [INFO] 172.18.0.1:53628 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:54 [INFO] 172.18.0.1:53630 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:56 [INFO] 172.18.0.1:45650 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:57 [INFO] 172.18.0.1:45652 GET /cainfo 200 0 "OK"
+2026/11/12 10:38:59 [INFO] 172.18.0.1:45660 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:01 [INFO] 172.18.0.1:45674 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:03 [INFO] 172.18.0.1:45678 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:05 [INFO] 172.18.0.1:36444 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:07 [INFO] 172.18.0.1:36456 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:08 [INFO] 172.18.0.1:36472 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:10 [INFO] 172.18.0.1:36486 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:12 [INFO] 172.18.0.1:36490 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:13 [INFO] 172.18.0.1:36498 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:15 [INFO] 172.18.0.1:55638 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:17 [INFO] 172.18.0.1:55640 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:19 [INFO] 172.18.0.1:55642 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:22 [INFO] 172.18.0.1:55654 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:24 [INFO] 172.18.0.1:40374 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:26 [INFO] 172.18.0.1:40386 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:27 [INFO] 172.18.0.1:40398 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:30 [INFO] 172.18.0.1:40400 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:32 [INFO] 172.18.0.1:40406 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:33 [INFO] 172.18.0.1:40414 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:36 [INFO] 172.18.0.1:39518 GET /cainfo 200 0 "OK"
+2026/11/12 10:39:41 [INFO] signed certificate with serial number 5931987007382365686272829092203112308432439347
+2026/11/12 10:39:41 [INFO] 172.18.0.1:39526 POST /enroll 201 0 "OK"
+2026/11/12 10:39:42 [INFO] 172.18.0.1:39532 POST /register 201 0 "OK"
+2026/11/12 10:39:42 [INFO] signed certificate with serial number 190980534912765497241104555137693362290112866211
+2026/11/12 10:39:42 [INFO] 172.18.0.1:39536 POST /enroll 201 0 "OK"

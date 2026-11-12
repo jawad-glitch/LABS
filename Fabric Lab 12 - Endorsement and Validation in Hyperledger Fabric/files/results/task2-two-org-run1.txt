@@ -1,0 +1,5 @@
+invoke:  | txid= | commit status=
+peer0.org1 log lines with txID=: 12
+ReadAsset two-org-179448004335610: 
+FAIL: two-org transaction did not commit as expected
+two-org run 1 exit=1

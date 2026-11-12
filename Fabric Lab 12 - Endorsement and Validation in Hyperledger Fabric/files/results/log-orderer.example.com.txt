@@ -1,0 +1,232 @@
+[34m2026-11-12 10:37:56.914 UTC 0001 INFO[0m [localconfig] [34;1mcompleteInitialization[0m -> Kafka.Version unset, setting to 0.10.2.0
+[34m2026-11-12 10:37:56.915 UTC 0002 INFO[0m [orderer.common.server] [34;1mprettyPrintStruct[0m -> Orderer config values:
+	General.ListenAddress = "0.0.0.0"
+	General.ListenPort = 7050
+	General.TLS.Enabled = true
+	General.TLS.PrivateKey = "/var/hyperledger/orderer/tls/server.key"
+	General.TLS.Certificate = "/var/hyperledger/orderer/tls/server.crt"
+	General.TLS.RootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	General.TLS.ClientAuthRequired = false
+	General.TLS.ClientRootCAs = []
+	General.TLS.TLSHandshakeTimeShift = 0s
+	General.Cluster.ListenAddress = ""
+	General.Cluster.ListenPort = 0
+	General.Cluster.ServerCertificate = ""
+	General.Cluster.ServerPrivateKey = ""
+	General.Cluster.ClientCertificate = "/var/hyperledger/orderer/tls/server.crt"
+	General.Cluster.ClientPrivateKey = "/var/hyperledger/orderer/tls/server.key"
+	General.Cluster.RootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	General.Cluster.DialTimeout = 5s
+	General.Cluster.RPCTimeout = 7s
+	General.Cluster.ReplicationBufferSize = 20971520
+	General.Cluster.ReplicationPullTimeout = 5s
+	General.Cluster.ReplicationRetryTimeout = 5s
+	General.Cluster.ReplicationBackgroundRefreshInterval = 5m0s
+	General.Cluster.ReplicationMaxRetries = 12
+	General.Cluster.SendBufferSize = 100
+	General.Cluster.CertExpirationWarningThreshold = 168h0m0s
+	General.Cluster.TLSHandshakeTimeShift = 0s
+	General.Keepalive.ServerMinInterval = 1m0s
+	General.Keepalive.ServerInterval = 2h0m0s
+	General.Keepalive.ServerTimeout = 20s
+	General.ConnectionTimeout = 0s
+	General.GenesisMethod = ""
+	General.GenesisFile = ""
+	General.BootstrapMethod = "none"
+	General.BootstrapFile = "/var/hyperledger/fabric/config/genesisblock"
+	General.Profile.Enabled = false
+	General.Profile.Address = "0.0.0.0:6060"
+	General.LocalMSPDir = "/var/hyperledger/orderer/msp"
+	General.LocalMSPID = "OrdererMSP"
+	General.BCCSP.Default = "SW"
+	General.BCCSP.SW.Security = 256
+	General.BCCSP.SW.Hash = "SHA2"
+	General.BCCSP.SW.FileKeystore.KeyStorePath = ""
+	General.Authentication.TimeWindow = 15m0s
+	General.Authentication.NoExpirationChecks = false
+	General.MaxRecvMsgSize = 104857600
+	General.MaxSendMsgSize = 104857600
+	FileLedger.Location = "/var/hyperledger/production/orderer"
+	FileLedger.Prefix = ""
+	Kafka.Retry.ShortInterval = 5s
+	Kafka.Retry.ShortTotal = 10m0s
+	Kafka.Retry.LongInterval = 5m0s
+	Kafka.Retry.LongTotal = 12h0m0s
+	Kafka.Retry.NetworkTimeouts.DialTimeout = 10s
+	Kafka.Retry.NetworkTimeouts.ReadTimeout = 10s
+	Kafka.Retry.NetworkTimeouts.WriteTimeout = 10s
+	Kafka.Retry.Metadata.RetryMax = 3
+	Kafka.Retry.Metadata.RetryBackoff = 250ms
+	Kafka.Retry.Producer.RetryMax = 3
+	Kafka.Retry.Producer.RetryBackoff = 100ms
+	Kafka.Retry.Consumer.RetryBackoff = 2s
+	Kafka.Verbose = false
+	Kafka.Version = 0.10.2.0
+	Kafka.TLS.Enabled = false
+	Kafka.TLS.PrivateKey = ""
+	Kafka.TLS.Certificate = ""
+	Kafka.TLS.RootCAs = []
+	Kafka.TLS.ClientAuthRequired = false
+	Kafka.TLS.ClientRootCAs = []
+	Kafka.TLS.TLSHandshakeTimeShift = 0s
+	Kafka.SASLPlain.Enabled = false
+	Kafka.SASLPlain.User = ""
+	Kafka.SASLPlain.Password = ""
+	Kafka.Topic.ReplicationFactor = 3
+	Debug.BroadcastTraceDir = ""
+	Debug.DeliverTraceDir = ""
+	Consensus = map[SnapDir:/var/hyperledger/production/orderer/etcdraft/snapshot WALDir:/var/hyperledger/production/orderer/etcdraft/wal]
+	Operations.ListenAddress = "127.0.0.1:8443"
+	Operations.TLS.Enabled = false
+	Operations.TLS.PrivateKey = ""
+	Operations.TLS.Certificate = ""
+	Operations.TLS.RootCAs = []
+	Operations.TLS.ClientAuthRequired = false
+	Operations.TLS.ClientRootCAs = []
+	Operations.TLS.TLSHandshakeTimeShift = 0s
+	Metrics.Provider = "disabled"
+	Metrics.Statsd.Network = "udp"
+	Metrics.Statsd.Address = "127.0.0.1:8125"
+	Metrics.Statsd.WriteInterval = 30s
+	Metrics.Statsd.Prefix = ""
+	ChannelParticipation.Enabled = true
+	ChannelParticipation.MaxRequestBodySize = 1048576
+	Admin.ListenAddress = "0.0.0.0:7053"
+	Admin.TLS.Enabled = true
+	Admin.TLS.PrivateKey = "/var/hyperledger/orderer/tls/server.key"
+	Admin.TLS.Certificate = "/var/hyperledger/orderer/tls/server.crt"
+	Admin.TLS.RootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	Admin.TLS.ClientAuthRequired = true
+	Admin.TLS.ClientRootCAs = [/var/hyperledger/orderer/tls/ca.crt]
+	Admin.TLS.TLSHandshakeTimeShift = 0s
+[34m2026-11-12 10:37:56.926 UTC 0003 INFO[0m [orderer.common.server] [34;1minitializeServerConfig[0m -> Starting orderer with TLS enabled
+[34m2026-11-12 10:37:56.956 UTC 0004 INFO[0m [blkstorage] [34;1mNewProvider[0m -> Creating new file ledger directory at /var/hyperledger/production/orderer/chains
+[34m2026-11-12 10:37:56.967 UTC 0005 INFO[0m [orderer.commmon.multichannel] [34;1mInitJoinBlockFileRepo[0m -> Channel Participation API enabled, registrar initializing with file repo /var/hyperledger/production/orderer/pendingops
+[34m2026-11-12 10:37:56.978 UTC 0006 INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting without a system channel
+[34m2026-11-12 10:37:56.978 UTC 0007 INFO[0m [orderer.common.server] [34;1mMain[0m -> Setting up cluster
+[34m2026-11-12 10:37:56.978 UTC 0008 INFO[0m [orderer.common.server] [34;1mreuseListener[0m -> Cluster listener is not configured, defaulting to use the general listener on port 7050
+[34m2026-11-12 10:37:56.978 UTC 0009 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2036-11-09 10:33:00 +0000 UTC
+[34m2026-11-12 10:37:56.979 UTC 000a INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2036-11-09 10:33:00 +0000 UTC
+[34m2026-11-12 10:37:56.979 UTC 000b INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The client TLS certificate will expire on 2036-11-09 10:33:00 +0000 UTC
+[34m2026-11-12 10:37:56.979 UTC 000c INFO[0m [orderer.commmon.multichannel] [34;1mInitJoinBlockFileRepo[0m -> Channel Participation API enabled, registrar initializing with file repo /var/hyperledger/production/orderer/pendingops
+[34m2026-11-12 10:37:56.994 UTC 000d INFO[0m [orderer.commmon.multichannel] [34;1mstartChannels[0m -> Registrar initializing without a system channel, number of application channels: 0, with 0 consensus.Chain(s) and 0 follower.Chain(s)
+[34m2026-11-12 10:37:56.996 UTC 000e INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting orderer:
+ Version: v2.5.4
+ Commit SHA: e1e8e2e
+ Go version: go1.20.6
+ OS/Arch: linux/amd64
+[34m2026-11-12 10:37:56.996 UTC 000f INFO[0m [orderer.common.server] [34;1mMain[0m -> Beginning to serve requests
+2026/11/12 10:37:59 http: TLS handshake error from 172.18.0.1:46330: tls: client didn't provide a certificate
+2026/11/12 10:38:00 http: TLS handshake error from 172.18.0.1:46344: tls: client didn't provide a certificate
+2026/11/12 10:38:02 http: TLS handshake error from 172.18.0.1:46352: tls: client didn't provide a certificate
+2026/11/12 10:38:03 http: TLS handshake error from 172.18.0.1:46368: tls: client didn't provide a certificate
+2026/11/12 10:38:05 http: TLS handshake error from 172.18.0.1:60302: tls: client didn't provide a certificate
+2026/11/12 10:38:06 http: TLS handshake error from 172.18.0.1:60308: tls: client didn't provide a certificate
+2026/11/12 10:38:08 http: TLS handshake error from 172.18.0.1:60312: tls: client didn't provide a certificate
+2026/11/12 10:38:10 http: TLS handshake error from 172.18.0.1:60328: tls: client didn't provide a certificate
+2026/11/12 10:38:12 http: TLS handshake error from 172.18.0.1:60340: tls: client didn't provide a certificate
+2026/11/12 10:38:13 http: TLS handshake error from 172.18.0.1:60356: tls: client didn't provide a certificate
+2026/11/12 10:38:15 http: TLS handshake error from 172.18.0.1:42860: tls: client didn't provide a certificate
+2026/11/12 10:38:16 http: TLS handshake error from 172.18.0.1:42872: tls: client didn't provide a certificate
+2026/11/12 10:38:17 http: TLS handshake error from 172.18.0.1:42878: tls: client didn't provide a certificate
+2026/11/12 10:38:19 http: TLS handshake error from 172.18.0.1:42880: tls: client didn't provide a certificate
+2026/11/12 10:38:20 http: TLS handshake error from 172.18.0.1:42896: tls: client didn't provide a certificate
+2026/11/12 10:38:22 http: TLS handshake error from 172.18.0.1:42906: tls: client didn't provide a certificate
+2026/11/12 10:38:23 http: TLS handshake error from 172.18.0.1:42920: tls: client didn't provide a certificate
+2026/11/12 10:38:24 http: TLS handshake error from 172.18.0.1:51896: tls: client didn't provide a certificate
+2026/11/12 10:38:26 http: TLS handshake error from 172.18.0.1:51904: tls: client didn't provide a certificate
+2026/11/12 10:38:28 http: TLS handshake error from 172.18.0.1:51920: tls: client didn't provide a certificate
+2026/11/12 10:38:29 http: TLS handshake error from 172.18.0.1:51928: tls: client didn't provide a certificate
+2026/11/12 10:38:31 http: TLS handshake error from 172.18.0.1:51936: tls: client didn't provide a certificate
+2026/11/12 10:38:33 http: TLS handshake error from 172.18.0.1:51940: tls: client didn't provide a certificate
+2026/11/12 10:38:34 http: TLS handshake error from 172.18.0.1:33344: tls: client didn't provide a certificate
+2026/11/12 10:38:36 http: TLS handshake error from 172.18.0.1:33352: tls: client didn't provide a certificate
+2026/11/12 10:38:37 http: TLS handshake error from 172.18.0.1:33362: tls: client didn't provide a certificate
+2026/11/12 10:38:39 http: TLS handshake error from 172.18.0.1:33364: tls: client didn't provide a certificate
+2026/11/12 10:38:40 http: TLS handshake error from 172.18.0.1:33372: tls: client didn't provide a certificate
+2026/11/12 10:38:41 http: TLS handshake error from 172.18.0.1:33386: tls: client didn't provide a certificate
+2026/11/12 10:38:43 http: TLS handshake error from 172.18.0.1:33396: tls: client didn't provide a certificate
+2026/11/12 10:38:45 http: TLS handshake error from 172.18.0.1:36766: tls: client didn't provide a certificate
+2026/11/12 10:38:46 http: TLS handshake error from 172.18.0.1:36778: tls: client didn't provide a certificate
+2026/11/12 10:38:48 http: TLS handshake error from 172.18.0.1:36780: tls: client didn't provide a certificate
+2026/11/12 10:38:49 http: TLS handshake error from 172.18.0.1:36790: tls: client didn't provide a certificate
+2026/11/12 10:38:51 http: TLS handshake error from 172.18.0.1:36798: tls: client didn't provide a certificate
+2026/11/12 10:38:53 http: TLS handshake error from 172.18.0.1:36800: tls: client didn't provide a certificate
+2026/11/12 10:38:54 http: TLS handshake error from 172.18.0.1:36814: tls: client didn't provide a certificate
+2026/11/12 10:38:56 http: TLS handshake error from 172.18.0.1:34712: tls: client didn't provide a certificate
+2026/11/12 10:38:57 http: TLS handshake error from 172.18.0.1:34722: tls: client didn't provide a certificate
+2026/11/12 10:38:59 http: TLS handshake error from 172.18.0.1:34728: tls: client didn't provide a certificate
+2026/11/12 10:39:01 http: TLS handshake error from 172.18.0.1:34742: tls: client didn't provide a certificate
+2026/11/12 10:39:03 http: TLS handshake error from 172.18.0.1:34744: tls: client didn't provide a certificate
+2026/11/12 10:39:05 http: TLS handshake error from 172.18.0.1:51906: tls: client didn't provide a certificate
+2026/11/12 10:39:07 http: TLS handshake error from 172.18.0.1:51910: tls: client didn't provide a certificate
+2026/11/12 10:39:08 http: TLS handshake error from 172.18.0.1:51912: tls: client didn't provide a certificate
+2026/11/12 10:39:10 http: TLS handshake error from 172.18.0.1:51924: tls: client didn't provide a certificate
+2026/11/12 10:39:12 http: TLS handshake error from 172.18.0.1:51930: tls: client didn't provide a certificate
+2026/11/12 10:39:14 http: TLS handshake error from 172.18.0.1:51938: tls: client didn't provide a certificate
+2026/11/12 10:39:15 http: TLS handshake error from 172.18.0.1:39148: tls: client didn't provide a certificate
+2026/11/12 10:39:17 http: TLS handshake error from 172.18.0.1:39160: tls: client didn't provide a certificate
+2026/11/12 10:39:20 http: TLS handshake error from 172.18.0.1:39174: tls: client didn't provide a certificate
+2026/11/12 10:39:22 http: TLS handshake error from 172.18.0.1:39180: tls: client didn't provide a certificate
+2026/11/12 10:39:24 http: TLS handshake error from 172.18.0.1:36774: tls: client didn't provide a certificate
+2026/11/12 10:39:26 http: TLS handshake error from 172.18.0.1:36776: tls: client didn't provide a certificate
+2026/11/12 10:39:27 http: TLS handshake error from 172.18.0.1:36784: tls: client didn't provide a certificate
+2026/11/12 10:39:30 http: TLS handshake error from 172.18.0.1:36798: tls: client didn't provide a certificate
+2026/11/12 10:39:32 http: TLS handshake error from 172.18.0.1:36804: tls: client didn't provide a certificate
+2026/11/12 10:39:34 http: TLS handshake error from 172.18.0.1:36810: tls: client didn't provide a certificate
+2026/11/12 10:39:36 http: TLS handshake error from 172.18.0.1:40438: tls: client didn't provide a certificate
+[34m2026-11-12 10:39:37.352 UTC 0010 INFO[0m [blkstorage] [34;1mnewBlockfileMgr[0m -> Getting block information from block storage
+[34m2026-11-12 10:39:37.371 UTC 0011 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> EvictionSuspicion not set, defaulting to 10m0s
+[34m2026-11-12 10:39:37.371 UTC 0012 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> Without system channel: after eviction Registrar.SwitchToFollower will be called
+[34m2026-11-12 10:39:37.372 UTC 0013 INFO[0m [orderer.consensus.etcdraft] [34;1mcreateOrReadWAL[0m -> No WAL data found, creating new WAL at path '/var/hyperledger/production/orderer/etcdraft/wal/mychannel' channel=mychannel node=1
+[34m2026-11-12 10:39:37.377 UTC 0014 INFO[0m [orderer.commmon.multichannel] [34;1mcreateAsMember[0m -> Joining channel: {mychannel  consenter active 1}
+[34m2026-11-12 10:39:37.379 UTC 0015 INFO[0m [orderer.consensus.etcdraft] [34;1mStart[0m -> Starting Raft node channel=mychannel node=1
+[34m2026-11-12 10:39:37.379 UTC 0016 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Entering, channel: mychannel, nodes: []
+[34m2026-11-12 10:39:37.380 UTC 0017 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Exiting
+[34m2026-11-12 10:39:37.380 UTC 0018 INFO[0m [orderer.consensus.etcdraft] [34;1mstart[0m -> Starting raft node as part of a new channel channel=mychannel node=1
+[34m2026-11-12 10:39:37.380 UTC 0019 INFO[0m [orderer.consensus.etcdraft] [34;1mswitchToConfig[0m -> 1 switched to configuration voters=() channel=mychannel node=1
+[34m2026-11-12 10:39:37.380 UTC 001a INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 1 became follower at term 0 channel=mychannel node=1
+[34m2026-11-12 10:39:37.381 UTC 001b INFO[0m [orderer.consensus.etcdraft] [34;1mnewRaft[0m -> newRaft 1 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0] channel=mychannel node=1
+[34m2026-11-12 10:39:37.381 UTC 001c INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 1 became follower at term 1 channel=mychannel node=1
+[34m2026-11-12 10:39:37.381 UTC 001d INFO[0m [orderer.consensus.etcdraft] [34;1mswitchToConfig[0m -> 1 switched to configuration voters=(1) channel=mychannel node=1
+[34m2026-11-12 10:39:37.382 UTC 001e INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> This node is picked to start campaign channel=mychannel node=1
+[34m2026-11-12 10:39:37.383 UTC 001f INFO[0m [orderer.consensus.etcdraft] [34;1mswitchToConfig[0m -> 1 switched to configuration voters=(1) channel=mychannel node=1
+[34m2026-11-12 10:39:37.383 UTC 0020 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 1, current nodes in channel: [1] channel=mychannel node=1
+[34m2026-11-12 10:39:38.382 UTC 0021 INFO[0m [orderer.consensus.etcdraft] [34;1mhup[0m -> 1 is starting a new election at term 1 channel=mychannel node=1
+[34m2026-11-12 10:39:38.383 UTC 0022 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=mychannel node=1
+[34m2026-11-12 10:39:38.383 UTC 0023 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=mychannel node=1
+[34m2026-11-12 10:39:38.383 UTC 0024 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeCandidate[0m -> 1 became candidate at term 2 channel=mychannel node=1
+[34m2026-11-12 10:39:38.383 UTC 0025 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgVoteResp from 1 at term 2 channel=mychannel node=1
+[34m2026-11-12 10:39:38.383 UTC 0026 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeLeader[0m -> 1 became leader at term 2 channel=mychannel node=1
+[34m2026-11-12 10:39:38.383 UTC 0027 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> raft.node: 1 elected leader 1 at term 2 channel=mychannel node=1
+[34m2026-11-12 10:39:38.384 UTC 0028 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Leader 1 is present, quit campaign channel=mychannel node=1
+[34m2026-11-12 10:39:38.384 UTC 0029 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Raft leader changed: 0 -> 1 channel=mychannel node=1
+[34m2026-11-12 10:39:38.384 UTC 002a INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Start accepting requests as Raft leader at block [0] channel=mychannel node=1
+[34m2026-11-12 10:40:29.197 UTC 002b INFO[0m [orderer.consensus.etcdraft] [34;1mpropose[0m -> Created block [1], there are 0 blocks in flight channel=mychannel node=1
+[34m2026-11-12 10:40:29.198 UTC 002c INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [1] (Raft index: 3) to ledger channel=mychannel node=1
+[33m2026-11-12 10:40:29.238 UTC 002d WARN[0m [orderer.common.broadcast] [33;1mHandle[0m -> Error reading from 172.18.0.1:39094: rpc error: code = Canceled desc = context canceled
+[34m2026-11-12 10:40:29.239 UTC 002e INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=172.18.0.1:39094 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=2.06519762s
+[34m2026-11-12 10:40:31.411 UTC 002f INFO[0m [orderer.consensus.etcdraft] [34;1mpropose[0m -> Created block [2], there are 0 blocks in flight channel=mychannel node=1
+[34m2026-11-12 10:40:31.413 UTC 0030 INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [2] (Raft index: 4) to ledger channel=mychannel node=1
+[33m2026-11-12 10:40:31.447 UTC 0031 WARN[0m [orderer.common.broadcast] [33;1mHandle[0m -> Error reading from 172.18.0.1:39100: rpc error: code = Canceled desc = context canceled
+[34m2026-11-12 10:40:31.447 UTC 0032 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=172.18.0.1:39100 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=2.061506329s
+[34m2026-11-12 10:40:33.641 UTC 0033 INFO[0m [orderer.consensus.etcdraft] [34;1mpropose[0m -> Created block [3], there are 0 blocks in flight channel=mychannel node=1
+[34m2026-11-12 10:40:33.643 UTC 0034 INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [3] (Raft index: 5) to ledger channel=mychannel node=1
+[33m2026-11-12 10:40:33.686 UTC 0035 WARN[0m [orderer.common.broadcast] [33;1mHandle[0m -> Error reading from 172.18.0.1:39104: rpc error: code = Canceled desc = context canceled
+[34m2026-11-12 10:40:33.686 UTC 0036 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=172.18.0.1:39104 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=2.066560395s
+[34m2026-11-12 10:40:35.871 UTC 0037 INFO[0m [orderer.consensus.etcdraft] [34;1mpropose[0m -> Created block [4], there are 0 blocks in flight channel=mychannel node=1
+[34m2026-11-12 10:40:35.874 UTC 0038 INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [4] (Raft index: 6) to ledger channel=mychannel node=1
+[33m2026-11-12 10:40:35.905 UTC 0039 WARN[0m [orderer.common.broadcast] [33;1mHandle[0m -> Error reading from 172.18.0.1:39112: rpc error: code = Canceled desc = context canceled
+[34m2026-11-12 10:40:35.905 UTC 003a INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=172.18.0.1:39112 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=2.055810022s
+[34m2026-11-12 10:40:38.415 UTC 003b INFO[0m [orderer.consensus.etcdraft] [34;1mpropose[0m -> Created block [5], there are 0 blocks in flight channel=mychannel node=1
+[34m2026-11-12 10:40:38.418 UTC 003c INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [5] (Raft index: 7) to ledger channel=mychannel node=1
+[33m2026-11-12 10:40:38.451 UTC 003d WARN[0m [orderer.common.broadcast] [33;1mHandle[0m -> Error reading from 172.18.0.1:40980: rpc error: code = Canceled desc = context canceled
+[34m2026-11-12 10:40:38.451 UTC 003e INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=172.18.0.1:40980 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=2.048387216s
+[34m2026-11-12 10:40:40.612 UTC 003f INFO[0m [orderer.consensus.etcdraft] [34;1mpropose[0m -> Created block [6], there are 0 blocks in flight channel=mychannel node=1
+[34m2026-11-12 10:40:40.614 UTC 0040 INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [6] (Raft index: 8) to ledger channel=mychannel node=1
+[33m2026-11-12 10:40:40.643 UTC 0041 WARN[0m [orderer.common.broadcast] [33;1mHandle[0m -> Error reading from 172.18.0.1:40988: rpc error: code = Canceled desc = context canceled
+[34m2026-11-12 10:40:40.643 UTC 0042 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=172.18.0.1:40988 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=2.039046359s
+[34m2026-11-12 10:40:42.821 UTC 0043 INFO[0m [orderer.consensus.etcdraft] [34;1mpropose[0m -> Created block [7], there are 0 blocks in flight channel=mychannel node=1
+[34m2026-11-12 10:40:42.823 UTC 0044 INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [7] (Raft index: 9) to ledger channel=mychannel node=1
+[33m2026-11-12 10:40:42.860 UTC 0045 WARN[0m [orderer.common.broadcast] [33;1mHandle[0m -> Error reading from 172.18.0.1:41000: rpc error: code = Canceled desc = context canceled
+[34m2026-11-12 10:40:42.860 UTC 0046 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=172.18.0.1:41000 error="rpc error: code = Canceled desc = context canceled" grpc.code=Canceled grpc.call_duration=2.06015562s

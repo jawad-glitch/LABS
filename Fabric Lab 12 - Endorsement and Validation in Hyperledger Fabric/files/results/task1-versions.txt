@@ -1,0 +1,7 @@
+docker: Client: 29.6.0  Server: 29.6.0 (via sudo; ubuntu in docker group: no)
+docker compose version exit=0 Docker Compose version v5.1.4
+go version             exit=0 go version go1.21.11 linux/amd64
+peer version           exit=0  Version: v2.5.4
+configtxlator version  exit=0  Version: v2.5.4
+jq --version           exit=0 jq-1.7
+bootstrap.sh deprecation notice: 0 line(s)

@@ -1,0 +1,5 @@
+approve seq2 Org1 exit=0
+approve seq2 Org2 exit=0
+commit seq2 exit=0
+text: Version: 1.0, Sequence: 2, Endorsement Plugin: escc, Validation Plugin: vscc, Approvals: [Org1MSP: true, Org2M
+decoded: sequence=2 policy=AND('Org1MSP.member','Org2MSP.member')

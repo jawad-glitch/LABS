@@ -1,0 +1,7 @@
+commit seq1 exit=0 | InitLedger exit=0 | GetAllAssets | jq . exit=0, 6 assets
+ca_org1	Up 2 minutes
+ca_org2	Up 2 minutes
+dev-peer0-basic-ccaas	Up 9 seconds
+orderer.example.com	Up 2 minutes
+peer0.org1.example.com	Up 2 minutes
+peer0.org2.example.com	Up 2 minutes

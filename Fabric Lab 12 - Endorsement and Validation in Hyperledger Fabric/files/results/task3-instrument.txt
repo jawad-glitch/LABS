@@ -1,0 +1,4 @@
+height before: 
+height after: 
+SUMMARY: blocks ..-1 | total transactions=0 | valid=0 | invalid=0
+unexpected audit result

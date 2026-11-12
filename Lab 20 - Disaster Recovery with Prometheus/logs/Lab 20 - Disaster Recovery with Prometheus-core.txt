@@ -1,7 +1,7 @@
-========== CORE CHECKS (Lab 20 - Disaster Recovery with Prometheus, 2026-11-12 09:01:47 UTC) ==========
+========== CORE CHECKS (Lab 20 - Disaster Recovery with Prometheus, 2026-11-12 09:11:04 UTC) ==========
 FAIL: Kind cluster & MinIO operational
 FAIL: Prometheus & Thanos Sidecar running
-FAIL: Thanos Query & Store Gateway healthy
+PASS: Thanos Query & Store Gateway healthy
 FAIL: Prometheus successfully recovered after disaster deletion
 FAIL: Thanos Query successfully serving metrics post-recovery
-CORE: 0/5 PASS
+CORE: 1/5 PASS

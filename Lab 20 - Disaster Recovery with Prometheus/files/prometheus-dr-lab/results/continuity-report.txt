@@ -1,0 +1,4 @@
+=== Data Continuity Verification ===
+Disaster timestamp: 1794474998
+Current active series via Thanos Query: 2
+=== Verification Complete ===

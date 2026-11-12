@@ -1,0 +1,35 @@
+ts=2026-11-12T08:16:48.662Z caller=main.go:181 level=info msg="Starting Alertmanager" version="(version=0.27.0, branch=HEAD, revision=0aa3c2aad14cff039931923ab16b26b7481783b5)"
+ts=2026-11-12T08:16:48.662Z caller=main.go:182 level=info build_context="(go=go1.21.7, platform=linux/amd64, user=root@22cd11f671e9, date=20240228-11:51:20, tags=netgo)"
+ts=2026-11-12T08:16:48.662Z caller=cluster.go:174 level=debug component=cluster msg="resolved peers to following addresses" peers=
+ts=2026-11-12T08:16:48.663Z caller=cluster.go:186 level=info component=cluster msg="setting advertise address explicitly" addr=172.18.0.2 port=9094
+ts=2026-11-12T08:16:48.667Z caller=delegate.go:236 level=debug component=cluster received=NotifyJoin node=01M77D9D0QR1MCSR73VGX8T03R addr=172.18.0.2:9094
+ts=2026-11-12T08:16:48.668Z caller=nflog.go:275 level=debug component=nflog msg="notification log snapshot file doesn't exist" err="open /alertmanager/nflog: no such file or directory"
+ts=2026-11-12T08:16:48.668Z caller=silence.go:355 level=debug component=silences msg="silences snapshot file doesn't exist" err="open /alertmanager/silences: no such file or directory"
+ts=2026-11-12T08:16:48.668Z caller=cluster.go:268 level=debug component=cluster msg="joined cluster" peers=0
+ts=2026-11-12T08:16:48.671Z caller=cluster.go:683 level=info component=cluster msg="Waiting for gossip to settle..." interval=2s
+ts=2026-11-12T08:16:48.752Z caller=main.go:348 level=debug externalURL=http://localhost:30093
+ts=2026-11-12T08:16:48.752Z caller=coordinator.go:113 level=info component=configuration msg="Loading configuration file" file=/etc/alertmanager/alertmanager.yml
+ts=2026-11-12T08:16:48.753Z caller=parse.go:154 level=debug msg="Parsing with UTF-8 matchers parser, with fallback to classic matchers parser" input="severity=\"critical\"" origin=config
+ts=2026-11-12T08:16:48.753Z caller=parse.go:154 level=debug msg="Parsing with UTF-8 matchers parser, with fallback to classic matchers parser" input="severity=\"warning\"" origin=config
+ts=2026-11-12T08:16:48.753Z caller=coordinator.go:126 level=info component=configuration msg="Completed loading of configuration file" file=/etc/alertmanager/alertmanager.yml
+ts=2026-11-12T08:16:48.756Z caller=main.go:495 level=debug routePrefix=/
+ts=2026-11-12T08:16:48.758Z caller=tls_config.go:313 level=info msg="Listening on" address=[::]:9093
+ts=2026-11-12T08:16:48.758Z caller=tls_config.go:316 level=info msg="TLS is disabled." http2=false address=[::]:9093
+ts=2026-11-12T08:16:50.427Z caller=dispatch.go:164 level=debug component=dispatcher msg="Received alert" alert=SyntheticAlwaysFiring[021e7b1][active]
+ts=2026-11-12T08:16:50.671Z caller=cluster.go:708 level=info component=cluster msg="gossip not settled" polls=0 before=0 now=1 elapsed=2.00006934s
+ts=2026-11-12T08:16:51.722Z caller=dispatch.go:164 level=debug component=dispatcher msg="Received alert" alert=SyntheticInhibitionTest[bfcdc6d][active]
+ts=2026-11-12T08:16:51.722Z caller=dispatch.go:164 level=debug component=dispatcher msg="Received alert" alert=SyntheticInhibitionTest[8a9fb56][active]
+ts=2026-11-12T08:16:52.672Z caller=cluster.go:705 level=debug component=cluster msg="gossip looks settled" elapsed=4.000601082s
+ts=2026-11-12T08:16:54.673Z caller=cluster.go:705 level=debug component=cluster msg="gossip looks settled" elapsed=6.001319119s
+ts=2026-11-12T08:16:56.674Z caller=cluster.go:705 level=debug component=cluster msg="gossip looks settled" elapsed=8.00231124s
+ts=2026-11-12T08:16:58.675Z caller=cluster.go:700 level=info component=cluster msg="gossip settled; proceeding" elapsed=10.003404873s
+ts=2026-11-12T08:17:05.427Z caller=dispatch.go:516 level=debug component=dispatcher aggrGroup="{}/{severity=\"warning\"}:{alertname=\"SyntheticAlwaysFiring\"}" msg=flushing alerts=[SyntheticAlwaysFiring[021e7b1][active]]
+ts=2026-11-12T08:17:05.432Z caller=notify.go:860 level=debug component=dispatcher receiver=warning-notify integration=slack[0] aggrGroup="{}/{severity=\"warning\"}:{alertname=\"SyntheticAlwaysFiring\"}" alerts=[SyntheticAlwaysFiring[021e7b1][active]] msg="Notify success" attempts=1 duration=4.022393ms
+ts=2026-11-12T08:17:06.723Z caller=dispatch.go:516 level=debug component=dispatcher aggrGroup="{}/{severity=\"warning\"}:{alertname=\"SyntheticInhibitionTest\"}" msg=flushing alerts=[SyntheticInhibitionTest[bfcdc6d][active]]
+ts=2026-11-12T08:17:06.723Z caller=notify.go:551 level=debug component=dispatcher msg="Notifications will not be sent for muted alerts" alerts=[SyntheticInhibitionTest[bfcdc6d][active]]
+ts=2026-11-12T08:17:06.723Z caller=dispatch.go:516 level=debug component=dispatcher aggrGroup="{}/{severity=\"critical\"}:{alertname=\"SyntheticInhibitionTest\"}" msg=flushing alerts=[SyntheticInhibitionTest[8a9fb56][active]]
+ts=2026-11-12T08:17:06.727Z caller=notify.go:860 level=debug component=dispatcher receiver=critical-pager integration=slack[0] aggrGroup="{}/{severity=\"critical\"}:{alertname=\"SyntheticInhibitionTest\"}" alerts=[SyntheticInhibitionTest[8a9fb56][active]] msg="Notify success" attempts=1 duration=3.433255ms
+ts=2026-11-12T08:17:06.875Z caller=notify.go:848 level=warn component=dispatcher receiver=critical-pager integration=email[0] aggrGroup="{}/{severity=\"critical\"}:{alertname=\"SyntheticInhibitionTest\"}" msg="Notify attempt failed, will retry later" attempts=1 err="*email.loginAuth auth: 535 5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-91f195ca800sm6476786d6.18 - gsmtp"
+ts=2026-11-12T08:17:07.280Z caller=notify.go:848 level=warn component=dispatcher receiver=critical-pager integration=email[0] aggrGroup="{}/{severity=\"critical\"}:{alertname=\"SyntheticInhibitionTest\"}" msg="Notify attempt failed, will retry later" attempts=2 err="*email.loginAuth auth: 535 5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d75a77b69052e-5550bd33340sm69370101cf.21 - gsmtp"
+ts=2026-11-12T08:17:07.850Z caller=notify.go:848 level=warn component=dispatcher receiver=critical-pager integration=email[0] aggrGroup="{}/{severity=\"critical\"}:{alertname=\"SyntheticInhibitionTest\"}" msg="Notify attempt failed, will retry later" attempts=3 err="*email.loginAuth auth: 535 5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d75a77b69052e-5550af5f09fsm69250821cf.6 - gsmtp"
+ts=2026-11-12T08:17:09.246Z caller=notify.go:848 level=warn component=dispatcher receiver=critical-pager integration=email[0] aggrGroup="{}/{severity=\"critical\"}:{alertname=\"SyntheticInhibitionTest\"}" msg="Notify attempt failed, will retry later" attempts=4 err="*email.loginAuth auth: 535 5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d75a77b69052e-5550af612dfsm69193961cf.8 - gsmtp"

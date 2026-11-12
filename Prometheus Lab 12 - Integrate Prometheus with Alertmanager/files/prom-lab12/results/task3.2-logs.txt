@@ -1,0 +1,3 @@
+log lines 'Sending notification': 0
+log lines 'Notify success' (debug): 2 -> integrations: integration=slack[0]
+email (critical-pager) to smtp.gmail.com:587 with placeholder credentials: Auth auth: 535 5.7.8 Username and Password not accepted. For mor

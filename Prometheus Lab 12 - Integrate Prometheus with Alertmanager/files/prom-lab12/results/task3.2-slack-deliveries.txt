@@ -1,0 +1,2 @@
+slack delivery: channel=#alerts-warning color=warning title=[WARNING] SyntheticAlwaysFiring
+slack delivery: channel=#alerts-critical color=danger title=[CRITICAL] SyntheticInhibitionTest

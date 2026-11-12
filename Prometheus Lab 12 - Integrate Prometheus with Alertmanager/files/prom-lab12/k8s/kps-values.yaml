@@ -1,0 +1,16 @@
+# Fixed values for the lab's design: own Alertmanager Deployment (Task 2), rules selected regardless of the 'release' label
+alertmanager:
+  enabled: false
+grafana:
+  enabled: false
+prometheus:
+  service:
+    type: NodePort
+    nodePort: 30090
+  prometheusSpec:
+    ruleSelectorNilUsesHelmValues: false
+    ruleNamespaceSelector: {}
+    alertingEndpoints:
+      - namespace: monitoring
+        name: alertmanager
+        port: web

@@ -1,0 +1,3 @@
+OS codename: noble | lab's Docker repo line hard-codes: jammy
+lab 'newgrp docker' starts a new shell - pasted lines after it run elsewhere
+docker present: 29.6.0

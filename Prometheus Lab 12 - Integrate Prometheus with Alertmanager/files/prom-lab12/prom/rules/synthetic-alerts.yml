@@ -1,0 +1,13 @@
+groups:
+- name: synthetic-alerts
+  rules:
+  - alert: SyntheticAlwaysFiring
+    expr: vector(1) > 0
+    for: 0m
+    labels:
+      severity: warning
+    annotations:
+      summary: Synthetic pipeline test
+      description: Synthetic pipeline test on {{ $labels.instance }} (value {{ $value
+        | printf "%.1f" }})
+

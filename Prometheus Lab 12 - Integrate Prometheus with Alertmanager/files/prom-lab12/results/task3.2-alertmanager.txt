@@ -1,0 +1,4 @@
+AM alert SyntheticAlwaysFiring [warning] state=active inhibitedBy=0 receivers=warning-notify
+AM alert SyntheticInhibitionTest [critical] state=active inhibitedBy=0 receivers=critical-pager
+AM alert SyntheticInhibitionTest [warning] state=suppressed inhibitedBy=1 receivers=warning-notify
+lab field '"inhibited": true' present in the API? false | ?inhibited=false hides suppressed: 1 SyntheticInhibitionTest alert(s) left

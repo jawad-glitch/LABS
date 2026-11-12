@@ -1,0 +1,3 @@
+lab $ENV interpolation: amtool: error: failed to validate 1 file(s) Checking '/cfg/alertmanager.yml'  FAILED: unsupported scheme "" for URL
+lab email subject/body:  amtool: error: failed to validate 1 file(s) Checking '/cfg/alertmanager.yml'  FAILED: yaml: unmarshal errors:
+fixed (*_file secrets):   Checking '/cfg/alertmanager.yml'  SUCCESS  - 1 inhibit rules  - 2 receivers

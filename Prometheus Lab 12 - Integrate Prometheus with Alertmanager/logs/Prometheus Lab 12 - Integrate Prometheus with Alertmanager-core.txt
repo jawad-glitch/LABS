@@ -1,0 +1,15 @@
+========== CORE CHECKS (Prometheus Lab 12 - Integrate Prometheus with Alertmanager, 2026-11-12 08:17:10 UTC) - CLUSTER/OPERATOR SIMULATED, CHART RENDER + ALERTMANAGER + PROMETHEUS REAL ==========
+PASS: Task 1: helm (sha256) + kubeconform; images pulled; kind config maps 30090/30093
+PASS: Lab claim wrong: kube-prometheus-stack installs Alertmanager by default (Alertmanager CR rendered)
+PASS: Lab bug: chart Prometheus only selects rules labelled release=kps - the lab's rule labels are never loaded
+PASS: Fixed values: ruleSelector {} (all rules), alerting -> monitoring/alertmanager:web, chart Alertmanager disabled
+PASS: Lab bug: $SLACK_WEBHOOK_URL / $SMTP_PASSWORD are not interpolated - amtool rejects the config
+PASS: Lab bug: email_configs has no subject/body fields - amtool rejects them
+PASS: Task 2: fixed config (routes, inhibit_rules, *_file secrets) SUCCESS; all manifests schema-valid; /-/healthy OK on :30093
+FAIL: Task 3.1: 7 rules loaded health ok; Prometheus lists the Alertmanager; SyntheticAlwaysFiring firing
+PASS: Task 3.2: /api/v2/alerts has SyntheticAlwaysFiring active (warning-notify)
+PASS: Inhibition: warning SyntheticInhibitionTest suppressed (inhibitedBy set), critical one active; no 'inhibited' field in v2
+PASS: Routing: Slack payloads for warning (color warning) and critical (color danger); the suppressed warning was never sent
+PASS: Logs: no 'Sending notification' line exists; 'Notify success' at debug; explicit email delivery error with placeholder creds
+PASS: Time: finished in 56s (<= 300s)
+CORE: 12/13 PASS

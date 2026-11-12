@@ -1,0 +1,9 @@
+Checking /rules/infrastructure-alerts.yml
+  SUCCESS: 4 rules found
+
+Checking /rules/synthetic-alerts.yml
+  SUCCESS: 1 rules found
+
+Checking /rules/inhibition-test-alerts.yml
+  SUCCESS: 2 rules found
+

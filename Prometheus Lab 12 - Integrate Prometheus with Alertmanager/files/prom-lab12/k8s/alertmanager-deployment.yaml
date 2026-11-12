@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alertmanager
+  namespace: monitoring
+  labels:
+    app: alertmanager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alertmanager
+  template:
+    metadata:
+      labels:
+        app: alertmanager
+    spec:
+      containers:
+      - name: alertmanager
+        image: prom/alertmanager:v0.27.0
+        args:
+        - --config.file=/etc/alertmanager/alertmanager.yml
+        - --storage.path=/alertmanager
+        - --web.external-url=http://localhost:30093
+        - --log.level=debug
+        ports:
+        - name: web
+          containerPort: 9093
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/alertmanager/alertmanager.yml
+          subPath: alertmanager.yml
+        - name: secrets-volume
+          mountPath: /etc/alertmanager/secrets
+          readOnly: true
+        - name: storage-volume
+          mountPath: /alertmanager
+        resources:
+          requests:
+            memory: 128Mi
+            cpu: 100m
+          limits:
+            memory: 256Mi
+            cpu: 200m
+      volumes:
+      - name: config-volume
+        configMap:
+          name: alertmanager-config
+      - name: secrets-volume
+        secret:
+          secretName: alertmanager-credentials
+      - name: storage-volume
+        emptyDir: {}

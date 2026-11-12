@@ -1,0 +1,2 @@
+alertmanager /-/healthy: OK | version 0.27.0
+prometheus ready: Prometheus Server is Ready. | slack mock: 200

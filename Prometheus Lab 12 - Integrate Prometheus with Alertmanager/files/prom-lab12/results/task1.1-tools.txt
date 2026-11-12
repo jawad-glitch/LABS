@@ -1,0 +1,5 @@
+helm v4.3.1 sha256 OK
+kubeconform v0.8.0 sha256 OK
+pulled prom/alertmanager:v0.27.0
+pulled prom/node-exporter:latest
+pulled prom/prometheus:latest

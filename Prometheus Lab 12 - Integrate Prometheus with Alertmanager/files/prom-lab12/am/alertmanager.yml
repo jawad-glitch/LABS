@@ -1,0 +1,51 @@
+global:
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'alerts.lab@gmail.com'
+  smtp_auth_username: 'alerts.lab@gmail.com'
+  smtp_auth_password_file: /etc/alertmanager/secrets/smtp-password     # Secret mounted as a file (no $ENV interpolation in Alertmanager)
+  smtp_require_tls: true
+
+route:
+  receiver: warning-notify
+  group_by: ['alertname', 'namespace']
+  group_wait: 15s
+  group_interval: 1m
+  repeat_interval: 4h
+  routes:
+    - matchers: ['severity="critical"']
+      receiver: critical-pager
+      repeat_interval: 10m
+    - matchers: ['severity="warning"']
+      receiver: warning-notify
+      repeat_interval: 1h
+
+receivers:
+  - name: critical-pager
+    email_configs:
+      - to: 'oncall.lab@example.com'
+        send_resolved: true
+        headers:
+          Subject: '[CRITICAL] {{ .CommonLabels.alertname }}'
+        html: '{{ range .Alerts }}<p>{{ .Annotations.summary }}<br>{{ .Annotations.description }}</p>{{ end }}'
+    slack_configs:
+      - api_url_file: /etc/alertmanager/secrets/slack-webhook-url
+        channel: '#alerts-critical'
+        title: '[CRITICAL] {{ .CommonLabels.alertname }}'
+        text: '{{ range .Alerts }}{{ .Annotations.description }} {{ end }}'
+        color: 'danger'
+        send_resolved: true
+  - name: warning-notify
+    slack_configs:
+      - api_url_file: /etc/alertmanager/secrets/slack-webhook-url
+        channel: '#alerts-warning'
+        title: '[WARNING] {{ .CommonLabels.alertname }}'
+        text: '{{ range .Alerts }}{{ .Annotations.description }} {{ end }}'
+        color: 'warning'
+        send_resolved: true
+
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'instance']

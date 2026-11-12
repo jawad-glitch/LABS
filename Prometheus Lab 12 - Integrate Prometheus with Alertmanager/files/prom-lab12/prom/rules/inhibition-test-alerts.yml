@@ -1,0 +1,22 @@
+groups:
+- name: inhibition-test-alerts
+  rules:
+  - alert: SyntheticInhibitionTest
+    expr: vector(1) > 0
+    for: 0m
+    labels:
+      severity: warning
+    annotations:
+      summary: Inhibition test (warning - should be suppressed)
+      description: Inhibition test (warning - should be suppressed) on {{ $labels.instance
+        }} (value {{ $value | printf "%.1f" }})
+  - alert: SyntheticInhibitionTest
+    expr: vector(1) > 0
+    for: 0m
+    labels:
+      severity: critical
+    annotations:
+      summary: Inhibition test (critical - suppresses the warning)
+      description: Inhibition test (critical - suppresses the warning) on {{ $labels.instance
+        }} (value {{ $value | printf "%.1f" }})
+

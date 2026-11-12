@@ -1,0 +1,7 @@
+DEFAULT: resources=126 Alertmanager CRs=1 Grafana deployments=1
+  DEFAULT Prometheus ruleSelector={"matchLabels": {"release": "kps"}}
+  DEFAULT Prometheus alerting={"alertmanagers": [{"namespace": "monitoring", "name": "kps-kube-prometheus-stack-alertmanager", "port": "http-web", "pathPrefix": "/", "apiVersion": "v2"}]}
+FIXED VALUES: resources=79 Alertmanager CRs=0 Grafana deployments=0
+  FIXED VALUES Prometheus ruleSelector={}
+  FIXED VALUES Prometheus alerting={"alertmanagers": [{"name": "alertmanager", "namespace": "monitoring", "port": "web"}]}
+chart: kube-prometheus-stack 93.2.2

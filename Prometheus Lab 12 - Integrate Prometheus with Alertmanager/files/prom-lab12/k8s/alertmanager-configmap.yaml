@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alertmanager-config
+  namespace: monitoring
+data:
+  alertmanager.yml: "global:\n  smtp_smarthost: 'smtp.gmail.com:587'\n  smtp_from:\
+    \ 'alerts.lab@gmail.com'\n  smtp_auth_username: 'alerts.lab@gmail.com'\n  smtp_auth_password_file:\
+    \ /etc/alertmanager/secrets/smtp-password     # Secret mounted as a file (no $ENV\
+    \ interpolation in Alertmanager)\n  smtp_require_tls: true\n\nroute:\n  receiver:\
+    \ warning-notify\n  group_by: ['alertname', 'namespace']\n  group_wait: 15s\n\
+    \  group_interval: 1m\n  repeat_interval: 4h\n  routes:\n    - matchers: ['severity=\"\
+    critical\"']\n      receiver: critical-pager\n      repeat_interval: 10m\n   \
+    \ - matchers: ['severity=\"warning\"']\n      receiver: warning-notify\n     \
+    \ repeat_interval: 1h\n\nreceivers:\n  - name: critical-pager\n    email_configs:\n\
+    \      - to: 'oncall.lab@example.com'\n        send_resolved: true\n        headers:\n\
+    \          Subject: '[CRITICAL] {{ .CommonLabels.alertname }}'\n        html:\
+    \ '{{ range .Alerts }}<p>{{ .Annotations.summary }}<br>{{ .Annotations.description\
+    \ }}</p>{{ end }}'\n    slack_configs:\n      - api_url_file: /etc/alertmanager/secrets/slack-webhook-url\n\
+    \        channel: '#alerts-critical'\n        title: '[CRITICAL] {{ .CommonLabels.alertname\
+    \ }}'\n        text: '{{ range .Alerts }}{{ .Annotations.description }} {{ end\
+    \ }}'\n        color: 'danger'\n        send_resolved: true\n  - name: warning-notify\n\
+    \    slack_configs:\n      - api_url_file: /etc/alertmanager/secrets/slack-webhook-url\n\
+    \        channel: '#alerts-warning'\n        title: '[WARNING] {{ .CommonLabels.alertname\
+    \ }}'\n        text: '{{ range .Alerts }}{{ .Annotations.description }} {{ end\
+    \ }}'\n        color: 'warning'\n        send_resolved: true\n\ninhibit_rules:\n\
+    \  - source_match:\n      severity: 'critical'\n    target_match:\n      severity:\
+    \ 'warning'\n    equal: ['alertname', 'instance']\n"

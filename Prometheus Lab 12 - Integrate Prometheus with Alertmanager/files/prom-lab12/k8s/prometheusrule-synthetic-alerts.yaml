@@ -1,0 +1,22 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: synthetic-alerts
+  namespace: monitoring
+  labels:
+    prometheus: kube-prometheus
+    role: alert-rules
+    release: kps
+spec:
+  groups:
+  - name: synthetic-alerts
+    rules:
+    - alert: SyntheticAlwaysFiring
+      expr: vector(1) > 0
+      for: 0m
+      labels:
+        severity: warning
+      annotations:
+        summary: Synthetic pipeline test
+        description: Synthetic pipeline test on {{ $labels.instance }} (value {{ $value
+          | printf "%.1f" }})

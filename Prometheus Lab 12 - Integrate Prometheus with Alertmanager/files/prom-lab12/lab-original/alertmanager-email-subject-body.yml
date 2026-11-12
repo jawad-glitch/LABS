@@ -1,0 +1,10 @@
+route:
+  receiver: critical-pager
+receivers:
+  - name: critical-pager
+    email_configs:
+      - to: 'oncall@example.com'
+        smarthost: 'smtp.gmail.com:587'
+        from: 'alerts.lab@gmail.com'
+        subject: '{{ .CommonLabels.alertname }}'
+        body: '{{ .CommonAnnotations.description }}'

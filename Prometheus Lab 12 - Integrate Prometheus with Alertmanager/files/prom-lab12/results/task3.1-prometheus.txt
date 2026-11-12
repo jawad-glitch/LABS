@@ -1,0 +1,9 @@
+rule NodeCPUHigh [warning] health=unknown state=unknown
+rule NodeMemoryHigh [critical] health=unknown state=unknown
+rule NodeDiskHigh [critical] health=unknown state=unknown
+rule TargetDown [critical] health=unknown state=unknown
+rule SyntheticInhibitionTest [warning] health=ok state=firing
+rule SyntheticInhibitionTest [critical] health=ok state=firing
+rule SyntheticAlwaysFiring [warning] health=ok state=firing
+Prometheus -> Alertmanager: http://alertmanager.monitoring.svc.cluster.local:9093/api/v2/alerts
+targets: 

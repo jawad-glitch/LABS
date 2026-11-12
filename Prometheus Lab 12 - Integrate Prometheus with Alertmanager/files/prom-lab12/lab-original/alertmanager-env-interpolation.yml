@@ -1,0 +1,21 @@
+global:
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'alerts.lab@gmail.com'
+  smtp_auth_username: 'alerts.lab@gmail.com'
+  smtp_auth_password: '$SMTP_PASSWORD'
+  smtp_require_tls: true
+route:
+  receiver: warning-notify
+  group_by: ['alertname', 'namespace']
+  routes:
+    - matchers: ['severity="critical"']
+      receiver: critical-pager
+receivers:
+  - name: critical-pager
+    slack_configs:
+      - api_url: '$SLACK_WEBHOOK_URL'
+        channel: '#alerts'
+  - name: warning-notify
+    slack_configs:
+      - api_url: '$SLACK_WEBHOOK_URL'
+        channel: '#alerts'

@@ -133,3 +133,4 @@
 | [Prometheus Lab 9 - Visualization with Prometheus Expression Browser](Prometheus%20Lab%209%20-%20Visualization%20with%20Prometheus%20Expression%20Browser/PROOF.md) | CORE: 12/13 PASS | 2026-11-12 07:59 |
 | [Prometheus Lab 10 - Grafana Integration with Prometheus](Prometheus%20Lab%2010%20-%20Grafana%20Integration%20with%20Prometheus/PROOF.md) | PASS: Tasks 4-7: dashboard saved with 6 panels, tags monitoring/system/prometheus, refresh 5s, last 15 minutes | 2026-11-12 08:06 |
 | [Prometheus Lab 11 - Set Up Alerts in Prometheus](Prometheus%20Lab%2011%20-%20Set%20Up%20Alerts%20in%20Prometheus/PROOF.md) | CORE: 11/11 PASS | 2026-11-12 08:12 |
+| [Prometheus Lab 12 - Integrate Prometheus with Alertmanager](Prometheus%20Lab%2012%20-%20Integrate%20Prometheus%20with%20Alertmanager/PROOF.md) | CORE: 12/13 PASS | 2026-11-12 08:17 |

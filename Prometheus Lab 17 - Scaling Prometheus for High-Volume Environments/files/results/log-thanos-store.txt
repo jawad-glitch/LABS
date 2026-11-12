@@ -1,0 +1,14 @@
+ts=2026-11-12T08:42:09.733508106Z caller=factory.go:53 level=info msg="loading bucket configuration"
+ts=2026-11-12T08:42:09.735772697Z caller=inmemory.go:179 level=info msg="created in-memory index cache" maxItemSizeBytes=131072000 maxSizeBytes=262144000 maxItems=maxInt
+ts=2026-11-12T08:42:09.74182924Z caller=options.go:26 level=info protocol=gRPC msg="disabled TLS, key and cert must be set to enable"
+ts=2026-11-12T08:42:09.750713042Z caller=store.go:537 level=info msg="starting store node"
+ts=2026-11-12T08:42:09.751164679Z caller=store.go:418 level=info msg="initializing bucket store"
+ts=2026-11-12T08:42:09.75196115Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+ts=2026-11-12T08:42:09.752449556Z caller=http.go:73 level=info service=http/server component=store msg="listening for requests and metrics" address=0.0.0.0:10902
+ts=2026-11-12T08:42:09.753511781Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=2.241911ms duration_ms=2 cached=0 returned=0 partial=0
+ts=2026-11-12T08:42:09.755416587Z caller=tls_config.go:232 level=info service=http/server component=store msg="Listening on" address=[::]:10902
+ts=2026-11-12T08:42:09.756089327Z caller=tls_config.go:235 level=info service=http/server component=store msg="TLS is disabled." http2=false address=[::]:10902
+ts=2026-11-12T08:42:09.755882634Z caller=store.go:435 level=info msg="bucket store ready" init_duration=4.630964ms
+ts=2026-11-12T08:42:09.756651244Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+ts=2026-11-12T08:42:09.758180475Z caller=grpc.go:131 level=info service=gRPC/server component=store msg="listening for serving gRPC" address=0.0.0.0:10901
+ts=2026-11-12T08:42:09.757434655Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=378.735µs duration_ms=0 cached=0 returned=0 partial=0

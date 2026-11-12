@@ -1,0 +1,3 @@
+pulled prom/node-exporter:v1.6.0
+pulled thanosio/thanos:v0.32.0
+pulled prom/prometheus:v2.45.0

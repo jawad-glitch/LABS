@@ -1,0 +1,50 @@
+services:
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    container_name: prometheus
+    ports: ["9090:9090"]
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./data/prometheus:/prometheus
+    command: ['--config.file=/etc/prometheus/prometheus.yml', '--storage.tsdb.path=/prometheus', '--web.console.libraries=/etc/prometheus/console_libraries',
+              '--web.console.templates=/etc/prometheus/consoles', '--storage.tsdb.retention.time=2h', '--storage.tsdb.max-block-duration=2h',
+              '--storage.tsdb.min-block-duration=2h', '--web.enable-lifecycle', '--web.enable-admin-api']
+    networks: [thanos-net]
+  thanos-sidecar:
+    image: thanosio/thanos:v0.32.0
+    container_name: thanos-sidecar
+    ports: ["10901:10901", "10902:10902"]
+    volumes: [./data/prometheus:/prometheus, ./config/bucket.yml:/bucket.yml:ro, ./data/thanos-store:/data/thanos-store]
+    command: [sidecar, '--tsdb.path=/prometheus', '--prometheus.url=http://prometheus:9090', '--grpc-address=0.0.0.0:10901', '--http-address=0.0.0.0:10902', '--objstore.config-file=/bucket.yml']
+    depends_on: [prometheus]
+    networks: [thanos-net]
+  thanos-store:
+    image: thanosio/thanos:v0.32.0
+    container_name: thanos-store
+    ports: ["10903:10901", "10904:10902"]
+    volumes: [./config/bucket.yml:/bucket.yml:ro, ./data/thanos-store:/data/thanos-store]
+    command: [store, '--grpc-address=0.0.0.0:10901', '--http-address=0.0.0.0:10902', '--data-dir=/tmp/thanos-store', '--objstore.config-file=/bucket.yml']
+    networks: [thanos-net]
+  thanos-query:
+    image: thanosio/thanos:v0.32.0
+    container_name: thanos-query
+    ports: ["19090:9090"]
+    command: [query, '--http-address=0.0.0.0:9090', '--grpc-address=0.0.0.0:10901', '--endpoint=thanos-sidecar:10901', '--endpoint=thanos-store:10901', '--query.replica-label=replica']
+    depends_on: [thanos-sidecar, thanos-store]
+    networks: [thanos-net]
+  thanos-compactor:
+    image: thanosio/thanos:v0.32.0
+    container_name: thanos-compactor
+    volumes: [./config/bucket.yml:/bucket.yml:ro, ./data/thanos-store:/data/thanos-store]
+    command: [compact, '--data-dir=/tmp/thanos-compactor', '--objstore.config-file=/bucket.yml', '--wait']
+    networks: [thanos-net]
+  node-exporter:
+    image: prom/node-exporter:v1.6.0
+    container_name: node-exporter
+    ports: ["9100:9100"]
+    command: ['--path.procfs=/host/proc', '--path.rootfs=/rootfs', '--path.sysfs=/host/sys', '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)']
+    volumes: [/proc:/host/proc:ro, /sys:/host/sys:ro, /:/rootfs:ro]
+    networks: [thanos-net]
+networks:
+  thanos-net:
+    driver: bridge

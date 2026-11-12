@@ -1,0 +1,14 @@
+========== CORE CHECKS (Prometheus Lab 17 - Scaling Prometheus for High-Volume Environments, 2026-11-12 08:43:16 UTC) - ALL REAL ==========
+PASS: Setup: lab images pulled (prometheus v2.45.0, thanos v0.32.0, node-exporter v1.6.0); docker compose available
+PASS: Lab bug: compose up before config/prometheus.yml exists -> Docker creates a directory; Prometheus cannot start
+PASS: Lab bug: node-exporter appended after the top-level networks: block - docker compose config rejects the file
+PASS: Lab bug: ./data/prometheus (755, your user) is not writable by the image user nobody - Prometheus fails
+PASS: Fixed stack: 6 containers running; all 5 scrape targets up; external labels cluster/replica set
+PASS: Lab bug: raw [5m] in the test-queries URL fails; fixed range query returns series; Thanos sees the same metric names
+PASS: Lab bug: performance-test.sh raw URLs - at most 1/5 succeed; fixed 5/5
+PASS: Thanos Query federates both stores (sidecar + store gateway); 15-minute range via Thanos returns series
+PASS: Within the lab's time frame: sidecar uploaded 0 blocks and the store gateway has 0 loaded (2h blocks)
+PASS: Lab bug: --query.replica-label dedups away 'replica' (null in the lab script); dedup=false brings it back
+FAIL: Health: Prometheus, sidecar, store and query /-/healthy answer
+PASS: Time: finished in 108s (<= 300s)
+CORE: 11/12 PASS

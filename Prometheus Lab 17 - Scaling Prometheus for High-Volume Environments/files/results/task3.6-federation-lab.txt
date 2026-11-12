@@ -1,0 +1,39 @@
+=== Query Federation Testing ===
+1. Available Store Endpoints:
+jq: error (at <stdin>:1): Cannot index array with string "name"
+2. Query with Store Information:
+{
+  "store": "thanos-query:9090",
+  "value": "1"
+}
+{
+  "store": "thanos-query:9090",
+  "value": "1"
+}
+3. External Labels Verification:
+{
+  "job": "prometheus",
+  "cluster": "thanos-lab",
+  "replica": null
+}
+{
+  "job": "node-exporter",
+  "cluster": "thanos-lab",
+  "replica": null
+}
+{
+  "job": "thanos-query",
+  "cluster": "thanos-lab",
+  "replica": null
+}
+{
+  "job": "thanos-sidecar",
+  "cluster": "thanos-lab",
+  "replica": null
+}
+{
+  "job": "thanos-store",
+  "cluster": "thanos-lab",
+  "replica": null
+}
+4. Cross-Store Metrics Query:

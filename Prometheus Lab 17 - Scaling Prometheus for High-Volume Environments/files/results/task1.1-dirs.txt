@@ -1,0 +1,1 @@
+lab 'tree ~/thanos-lab': command not found | dirs: thanos-lab thanos-lab/config thanos-lab/data thanos-lab/data/prometheus thanos-lab/data/thanos-store thanos-lab/prometheus thanos-lab/results thanos-lab/thanos

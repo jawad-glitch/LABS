@@ -1,0 +1,8 @@
+compose up (Task 1.4) exit=1: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime 
+config/prometheus.yml is now: directory owned by root
+warnings: version` is obsolete
+  prometheus created
+  thanos-compactor running
+  thanos-query created
+  thanos-sidecar created
+  thanos-store running

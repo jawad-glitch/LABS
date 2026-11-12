@@ -1,0 +1,1 @@
+lab's 'docker-compose: command not found' | using: docker compose v5.1.4

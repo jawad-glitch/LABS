@@ -1,0 +1,34 @@
+ts=2026-11-12T08:42:09.818508156Z caller=factory.go:53 level=info msg="loading bucket configuration"
+ts=2026-11-12T08:42:09.840129943Z caller=compact.go:643 level=info msg="starting compact node"
+ts=2026-11-12T08:42:09.84063586Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+ts=2026-11-12T08:42:09.841498702Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+ts=2026-11-12T08:42:09.84277612Z caller=http.go:73 level=info service=http/server component=compact msg="listening for requests and metrics" address=0.0.0.0:10902
+ts=2026-11-12T08:42:09.843475949Z caller=tls_config.go:232 level=info service=http/server component=compact msg="Listening on" address=[::]:10902
+ts=2026-11-12T08:42:09.842368244Z caller=compact.go:1414 level=info msg="start sync of metas"
+ts=2026-11-12T08:42:09.842548047Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=1.44701ms duration_ms=1 cached=0 returned=0 partial=0
+ts=2026-11-12T08:42:09.842712829Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=764.271µs duration_ms=0 cached=0 returned=0 partial=0
+ts=2026-11-12T08:42:09.84426285Z caller=tls_config.go:235 level=info service=http/server component=compact msg="TLS is disabled." http2=false address=[::]:10902
+ts=2026-11-12T08:42:09.845203863Z caller=clean.go:34 level=info msg="started cleaning of aborted partial uploads"
+ts=2026-11-12T08:42:09.845460057Z caller=clean.go:61 level=info msg="cleaning of aborted partial uploads done"
+ts=2026-11-12T08:42:09.845660519Z caller=blocks_cleaner.go:44 level=info msg="started cleaning of blocks marked for deletion"
+ts=2026-11-12T08:42:09.845933263Z caller=blocks_cleaner.go:58 level=info msg="cleaning of blocks marked for deletion done"
+ts=2026-11-12T08:42:09.846864666Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=409.586µs duration_ms=0 cached=0 returned=0 partial=0
+ts=2026-11-12T08:42:09.847456734Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=1.332988ms duration_ms=1 cached=0 returned=0 partial=0
+ts=2026-11-12T08:42:09.84858027Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=878.873µs duration_ms=0 cached=0 returned=0 partial=0
+ts=2026-11-12T08:42:09.849011766Z caller=compact.go:1419 level=info msg="start of GC"
+ts=2026-11-12T08:42:09.849388131Z caller=compact.go:1442 level=info msg="start of compactions"
+ts=2026-11-12T08:42:09.849579893Z caller=compact.go:1478 level=info msg="compaction iterations done"
+ts=2026-11-12T08:42:09.849980369Z caller=compact.go:434 level=info msg="start first pass of downsampling"
+ts=2026-11-12T08:42:09.851024053Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=797.871µs duration_ms=0 cached=0 returned=0 partial=0
+ts=2026-11-12T08:42:09.85224959Z caller=compact.go:448 level=info msg="start second pass of downsampling"
+ts=2026-11-12T08:42:09.853012831Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=552.427µs duration_ms=0 cached=0 returned=0 partial=0
+ts=2026-11-12T08:42:09.853590279Z caller=compact.go:455 level=info msg="downsampling iterations done"
+ts=2026-11-12T08:42:09.854107316Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=374.715µs duration_ms=0 cached=0 returned=0 partial=0
+ts=2026-11-12T08:42:09.854343219Z caller=retention.go:32 level=info msg="start optional retention"
+ts=2026-11-12T08:42:09.854490201Z caller=retention.go:47 level=info msg="optional retention apply done"
+ts=2026-11-12T08:42:09.85517045Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=557.557µs duration_ms=0 cached=0 returned=0 partial=0
+ts=2026-11-12T08:42:09.855332543Z caller=clean.go:34 level=info msg="started cleaning of aborted partial uploads"
+ts=2026-11-12T08:42:09.855437734Z caller=clean.go:61 level=info msg="cleaning of aborted partial uploads done"
+ts=2026-11-12T08:42:09.855540125Z caller=blocks_cleaner.go:44 level=info msg="started cleaning of blocks marked for deletion"
+ts=2026-11-12T08:42:09.855641017Z caller=blocks_cleaner.go:58 level=info msg="cleaning of blocks marked for deletion done"
+ts=2026-11-12T08:43:09.847109111Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=375.455µs duration_ms=0 cached=0 returned=0 partial=0

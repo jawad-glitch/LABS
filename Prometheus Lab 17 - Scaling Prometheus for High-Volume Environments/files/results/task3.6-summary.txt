@@ -1,0 +1,5 @@
+stores: [{"type":"sidecar","n":1},{"type":"store","n":1}]
+lab test 3 replica values:       5 "replica": null
+lab test 4 (spaces in URL): 0 result lines
+dedup on (default): [{"cluster":"thanos-lab"}]
+dedup=false:        [{"cluster":"thanos-lab","replica":"r1"}]

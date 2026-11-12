@@ -138,3 +138,4 @@
 | [Prometheus Lab 14 - Prometheus Storage and Performance Tuning](Prometheus%20Lab%2014%20-%20Prometheus%20Storage%20and%20Performance%20Tuning/PROOF.md) | CORE: 11/12 PASS | 2026-11-12 08:29 |
 | [Prometheus Lab 15 - Troubleshooting Prometheus Scraping Issues](Prometheus%20Lab%2015%20-%20Troubleshooting%20Prometheus%20Scraping%20Issues/PROOF.md) | CORE: 9/12 PASS | 2026-11-12 08:33 |
 | [Prometheus Lab 16 - Backup and Restore Prometheus Data](Prometheus%20Lab%2016%20-%20Backup%20and%20Restore%20Prometheus%20Data/PROOF.md) | CORE: 9/12 PASS | 2026-11-12 08:37 |
+| [Prometheus Lab 17 - Scaling Prometheus for High-Volume Environments](Prometheus%20Lab%2017%20-%20Scaling%20Prometheus%20for%20High-Volume%20Environments/PROOF.md) | CORE: 11/12 PASS | 2026-11-12 08:43 |

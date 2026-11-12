@@ -1,0 +1,54 @@
+ts=2026-11-12T08:42:09.421Z caller=node_exporter.go:180 level=info msg="Starting node_exporter" version="(version=1.6.0, branch=HEAD, revision=ff7f9d69b645cb691dd3e84dc3afc88f5c006962)"
+ts=2026-11-12T08:42:09.422Z caller=node_exporter.go:181 level=info msg="Build context" build_context="(go=go1.20.4, platform=linux/amd64, user=root@f9c3ed0cfbd3, date=20230527-12:03:54, tags=netgo osusergo static_build)"
+ts=2026-11-12T08:42:09.423Z caller=diskstats_common.go:111 level=info collector=diskstats msg="Parsed flag --collector.diskstats.device-exclude" flag=^(ram|loop|fd|(h|s|v|xv)d[a-z]|nvme\d+n\d+p)\d+$
+ts=2026-11-12T08:42:09.423Z caller=diskstats_linux.go:265 level=error collector=diskstats msg="Failed to open directory, disabling udev device properties" path=/run/udev/data
+ts=2026-11-12T08:42:09.423Z caller=filesystem_common.go:111 level=info collector=filesystem msg="Parsed flag --collector.filesystem.mount-points-exclude" flag=^/(sys|proc|dev|host|etc)($|/)
+ts=2026-11-12T08:42:09.423Z caller=filesystem_common.go:113 level=info collector=filesystem msg="Parsed flag --collector.filesystem.fs-types-exclude" flag=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
+ts=2026-11-12T08:42:09.426Z caller=node_exporter.go:110 level=info msg="Enabled collectors"
+ts=2026-11-12T08:42:09.426Z caller=node_exporter.go:117 level=info collector=arp
+ts=2026-11-12T08:42:09.426Z caller=node_exporter.go:117 level=info collector=bcache
+ts=2026-11-12T08:42:09.426Z caller=node_exporter.go:117 level=info collector=bonding
+ts=2026-11-12T08:42:09.426Z caller=node_exporter.go:117 level=info collector=btrfs
+ts=2026-11-12T08:42:09.426Z caller=node_exporter.go:117 level=info collector=conntrack
+ts=2026-11-12T08:42:09.427Z caller=node_exporter.go:117 level=info collector=cpu
+ts=2026-11-12T08:42:09.427Z caller=node_exporter.go:117 level=info collector=cpufreq
+ts=2026-11-12T08:42:09.427Z caller=node_exporter.go:117 level=info collector=diskstats
+ts=2026-11-12T08:42:09.428Z caller=node_exporter.go:117 level=info collector=dmi
+ts=2026-11-12T08:42:09.428Z caller=node_exporter.go:117 level=info collector=edac
+ts=2026-11-12T08:42:09.428Z caller=node_exporter.go:117 level=info collector=entropy
+ts=2026-11-12T08:42:09.428Z caller=node_exporter.go:117 level=info collector=fibrechannel
+ts=2026-11-12T08:42:09.429Z caller=node_exporter.go:117 level=info collector=filefd
+ts=2026-11-12T08:42:09.429Z caller=node_exporter.go:117 level=info collector=filesystem
+ts=2026-11-12T08:42:09.429Z caller=node_exporter.go:117 level=info collector=hwmon
+ts=2026-11-12T08:42:09.429Z caller=node_exporter.go:117 level=info collector=infiniband
+ts=2026-11-12T08:42:09.430Z caller=node_exporter.go:117 level=info collector=ipvs
+ts=2026-11-12T08:42:09.430Z caller=node_exporter.go:117 level=info collector=loadavg
+ts=2026-11-12T08:42:09.430Z caller=node_exporter.go:117 level=info collector=mdadm
+ts=2026-11-12T08:42:09.430Z caller=node_exporter.go:117 level=info collector=meminfo
+ts=2026-11-12T08:42:09.430Z caller=node_exporter.go:117 level=info collector=netclass
+ts=2026-11-12T08:42:09.430Z caller=node_exporter.go:117 level=info collector=netdev
+ts=2026-11-12T08:42:09.430Z caller=node_exporter.go:117 level=info collector=netstat
+ts=2026-11-12T08:42:09.430Z caller=node_exporter.go:117 level=info collector=nfs
+ts=2026-11-12T08:42:09.430Z caller=node_exporter.go:117 level=info collector=nfsd
+ts=2026-11-12T08:42:09.431Z caller=node_exporter.go:117 level=info collector=nvme
+ts=2026-11-12T08:42:09.431Z caller=node_exporter.go:117 level=info collector=os
+ts=2026-11-12T08:42:09.431Z caller=node_exporter.go:117 level=info collector=powersupplyclass
+ts=2026-11-12T08:42:09.431Z caller=node_exporter.go:117 level=info collector=pressure
+ts=2026-11-12T08:42:09.431Z caller=node_exporter.go:117 level=info collector=rapl
+ts=2026-11-12T08:42:09.431Z caller=node_exporter.go:117 level=info collector=schedstat
+ts=2026-11-12T08:42:09.431Z caller=node_exporter.go:117 level=info collector=selinux
+ts=2026-11-12T08:42:09.431Z caller=node_exporter.go:117 level=info collector=sockstat
+ts=2026-11-12T08:42:09.431Z caller=node_exporter.go:117 level=info collector=softnet
+ts=2026-11-12T08:42:09.431Z caller=node_exporter.go:117 level=info collector=stat
+ts=2026-11-12T08:42:09.432Z caller=node_exporter.go:117 level=info collector=tapestats
+ts=2026-11-12T08:42:09.432Z caller=node_exporter.go:117 level=info collector=textfile
+ts=2026-11-12T08:42:09.432Z caller=node_exporter.go:117 level=info collector=thermal_zone
+ts=2026-11-12T08:42:09.432Z caller=node_exporter.go:117 level=info collector=time
+ts=2026-11-12T08:42:09.432Z caller=node_exporter.go:117 level=info collector=timex
+ts=2026-11-12T08:42:09.432Z caller=node_exporter.go:117 level=info collector=udp_queues
+ts=2026-11-12T08:42:09.432Z caller=node_exporter.go:117 level=info collector=uname
+ts=2026-11-12T08:42:09.432Z caller=node_exporter.go:117 level=info collector=vmstat
+ts=2026-11-12T08:42:09.432Z caller=node_exporter.go:117 level=info collector=xfs
+ts=2026-11-12T08:42:09.433Z caller=node_exporter.go:117 level=info collector=zfs
+ts=2026-11-12T08:42:09.433Z caller=tls_config.go:274 level=info msg="Listening on" address=[::]:9100
+ts=2026-11-12T08:42:09.434Z caller=tls_config.go:277 level=info msg="TLS is disabled." http2=false address=[::]:9100

@@ -1,0 +1,4 @@
+store /api/v1/status/flags: HTTP 200 | /api/v1/blocks: HTTP 200 blocks=0
+store gateway blocks loaded: 0 | sidecar uploads: 0 | files in bucket dir: 0
+Prometheus head: minTime=1794472935369 -> first 2h block is cut ~2 h after start, so nothing to upload yet
+sidecar upload log lines: 0

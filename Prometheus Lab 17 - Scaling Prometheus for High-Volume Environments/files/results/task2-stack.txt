@@ -1,0 +1,14 @@
+compose up exit=0
+  node-exporter running Up About a minute
+  prometheus running Up About a minute
+  thanos-compactor running Up About a minute
+  thanos-query running Up About a minute
+  thanos-sidecar running Up About a minute
+  thanos-store running Up About a minute
+  target node-exporter -> up
+  target prometheus -> up
+  target thanos-query -> up
+  target thanos-sidecar -> up
+  target thanos-store -> up
+external labels:  external_labels:  cluster: thanos-lab  replica: r1
+thanos-query log about --store: 

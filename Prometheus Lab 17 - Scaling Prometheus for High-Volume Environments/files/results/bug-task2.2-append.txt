@@ -1,0 +1,1 @@
+docker compose config on the appended file: exit=1 networks.node-exporter additional properties 'container_name', 'image', 'networks', 'ports', 'volumes', 'command

@@ -1,0 +1,39 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'thanos-lab'
+    replica: 'r1'
+
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+scrape_configs:
+  # Scrape Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+    scrape_interval: 5s
+
+  # Scrape Thanos components
+  - job_name: 'thanos-sidecar'
+    static_configs:
+      - targets: ['thanos-sidecar:10902']
+    scrape_interval: 5s
+
+  - job_name: 'thanos-store'
+    static_configs:
+      - targets: ['thanos-store:10902']
+    scrape_interval: 5s
+
+  - job_name: 'thanos-query'
+    static_configs:
+      - targets: ['thanos-query:9090']
+    scrape_interval: 5s
+
+  # Simulate high-volume metrics with node_exporter
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+    scrape_interval: 5s

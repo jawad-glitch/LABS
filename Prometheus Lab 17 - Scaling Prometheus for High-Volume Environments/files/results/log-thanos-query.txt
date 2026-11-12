@@ -1,0 +1,10 @@
+ts=2026-11-12T08:42:10.907717529Z caller=options.go:26 level=info protocol=gRPC msg="disabled TLS, key and cert must be set to enable"
+ts=2026-11-12T08:42:10.909165779Z caller=query.go:842 level=info msg="starting query node"
+ts=2026-11-12T08:42:10.911356379Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+ts=2026-11-12T08:42:10.911624053Z caller=http.go:73 level=info service=http/server component=query msg="listening for requests and metrics" address=0.0.0.0:9090
+ts=2026-11-12T08:42:10.912228941Z caller=tls_config.go:232 level=info service=http/server component=query msg="Listening on" address=[::]:9090
+ts=2026-11-12T08:42:10.913174954Z caller=tls_config.go:235 level=info service=http/server component=query msg="TLS is disabled." http2=false address=[::]:9090
+ts=2026-11-12T08:42:10.9135793Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+ts=2026-11-12T08:42:10.913838874Z caller=grpc.go:131 level=info service=gRPC/server component=query msg="listening for serving gRPC" address=0.0.0.0:10901
+ts=2026-11-12T08:42:10.921891965Z caller=endpointset.go:425 level=info component=endpointset msg="adding new store with [storeEndpoints]" address=thanos-store:10901 extLset=
+ts=2026-11-12T08:42:10.922431782Z caller=endpointset.go:425 level=info component=endpointset msg="adding new sidecar with [storeEndpoints rulesAPI exemplarsAPI targetsAPI MetricMetadataAPI]" address=thanos-sidecar:10901 extLset="{cluster=\"thanos-lab\", replica=\"r1\"}"

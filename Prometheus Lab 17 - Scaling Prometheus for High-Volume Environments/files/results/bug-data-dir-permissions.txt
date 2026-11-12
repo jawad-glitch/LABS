@@ -1,0 +1,2 @@
+data/prometheus: 775 owned by ubuntu | prometheus image user: nobody
+prometheus container: exited restarts=0 exit=2 | log: permission denied

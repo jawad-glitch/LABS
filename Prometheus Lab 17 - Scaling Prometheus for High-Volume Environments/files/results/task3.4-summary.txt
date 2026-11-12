@@ -1,0 +1,7 @@
+lab: 0/5 queries succeeded
+fixed (--data-urlencode): 5/5 succeeded
+  Prometheus Direct - CPU aggregation .022805860s 8
+  Thanos Query - CPU aggregation .028754093s 8
+  Prometheus Direct - Memory ratio .019644795s 1
+  Thanos Query - Memory ratio .025102682s 1
+  Thanos Query - Service availability by job .027623487s 5

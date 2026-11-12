@@ -1,0 +1,29 @@
+=== Performance Testing ===
+1. Complex Aggregation Queries
+Testing: Prometheus Direct - CPU aggregation
+  Duration: .022805860s
+  Results: 8 metrics
+  Status: success
+
+Testing: Thanos Query - CPU aggregation
+  Duration: .028754093s
+  Results: 8 metrics
+  Status: success
+
+2. Multi-dimensional Queries
+Testing: Prometheus Direct - Memory ratio
+  Duration: .019644795s
+  Results: 1 metrics
+  Status: success
+
+Testing: Thanos Query - Memory ratio
+  Duration: .025102682s
+  Results: 1 metrics
+  Status: success
+
+3. Cross-job Queries
+Testing: Thanos Query - Service availability by job
+  Duration: .027623487s
+  Results: 5 metrics
+  Status: success
+

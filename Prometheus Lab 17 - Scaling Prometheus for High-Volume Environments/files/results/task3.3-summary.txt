@@ -1,0 +1,4 @@
+lab test 3 (raw [5m] in URL) printed: '=== Testing Thanos Query Interface ===' (curl exit 3)
+fixed test 3 (Prometheus): 16 series
+Prometheus metric names: 687 | via Thanos Query: 687
+Thanos 15-minute range of up: 5 series

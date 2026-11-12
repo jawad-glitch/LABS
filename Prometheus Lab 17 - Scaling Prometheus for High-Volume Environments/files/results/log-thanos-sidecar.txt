@@ -1,0 +1,13 @@
+ts=2026-11-12T08:42:10.489988139Z caller=options.go:26 level=info protocol=gRPC msg="disabled TLS, key and cert must be set to enable"
+ts=2026-11-12T08:42:10.491200466Z caller=factory.go:53 level=info msg="loading bucket configuration"
+ts=2026-11-12T08:42:10.492054568Z caller=sidecar.go:385 level=info msg="starting sidecar"
+ts=2026-11-12T08:42:10.493348045Z caller=reloader.go:199 level=info component=reloader msg="nothing to be watched"
+ts=2026-11-12T08:42:10.4936922Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+ts=2026-11-12T08:42:10.494165137Z caller=grpc.go:131 level=info service=gRPC/server component=sidecar msg="listening for serving gRPC" address=0.0.0.0:10901
+ts=2026-11-12T08:42:10.494718214Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+ts=2026-11-12T08:42:10.496041722Z caller=http.go:73 level=info service=http/server component=sidecar msg="listening for requests and metrics" address=0.0.0.0:10902
+ts=2026-11-12T08:42:10.496306296Z caller=tls_config.go:232 level=info service=http/server component=sidecar msg="Listening on" address=[::]:10902
+ts=2026-11-12T08:42:10.496832533Z caller=tls_config.go:235 level=info service=http/server component=sidecar msg="TLS is disabled." http2=false address=[::]:10902
+ts=2026-11-12T08:42:10.503998502Z caller=sidecar.go:184 level=info msg="successfully loaded prometheus version"
+ts=2026-11-12T08:42:10.511368363Z caller=sidecar.go:206 level=info msg="successfully loaded prometheus external labels" external_labels="{cluster=\"thanos-lab\", replica=\"r1\"}"
+ts=2026-11-12T08:42:12.495560548Z caller=shipper.go:256 level=warn msg="reading meta file failed, will override it" err="failed to read /prometheus/thanos.shipper.json: open /prometheus/thanos.shipper.json: no such file or directory"

@@ -1,0 +1,10 @@
+  node-exporter running
+  prometheus running
+  thanos-compactor running
+  thanos-query running
+  thanos-sidecar running
+  thanos-store running
+Prometheus: Prometheus Server is Healthy.
+Thanos Sidecar: OK
+Thanos Store: OK
+Thanos Query: OK

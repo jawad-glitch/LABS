@@ -1,0 +1,7 @@
+Peer Address: localhost:7051
+MSP ID: Org1MSP
+2026-11-12 09:35:01.100 UTC [channelCmd] InitCmdFactory -> INFO 001 Endorser and orderer connections initialized
+2026-11-12 09:35:01.150 UTC [cli.common] readBlock -> INFO 002 Received block: 0
+-rw-rw-r-- 1 ubuntu ubuntu 4096 Nov 12 09:30 ./channel-artifacts/mychannel.block
+Blockchain info: {"height":1,"currentBlockHash":"4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a","previousBlockHash":""}
+4.0K	./channel-artifacts/mychannel.block

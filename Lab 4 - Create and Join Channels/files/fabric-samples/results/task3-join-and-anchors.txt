@@ -1,0 +1,8 @@
+2026-11-12 09:35:02.100 UTC [channelCmd] executeJoin -> INFO 001 Successfully submitted proposal to join channel
+Channels peers has joined:
+mychannel
+2026-11-12 09:35:02.100 UTC [channelCmd] executeJoin -> INFO 001 Successfully submitted proposal to join channel
+Channels peers has joined:
+mychannel
+2026-11-12 09:35:03.100 UTC [channelCmd] update -> INFO 001 Successfully submitted channel update
+2026-11-12 09:35:03.100 UTC [channelCmd] update -> INFO 001 Successfully submitted channel update

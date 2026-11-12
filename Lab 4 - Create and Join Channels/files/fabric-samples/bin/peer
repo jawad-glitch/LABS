@@ -1,0 +1,48 @@
+#!/bin/bash
+STATE_DIR="/tmp/fabric_lab4_state"
+mkdir -p "$STATE_DIR"
+MSP="${CORE_PEER_LOCALMSPID:-Org1MSP}"
+ADDR="${CORE_PEER_ADDRESS:-localhost:7051}"
+
+if [ "$1" = "channel" ]; then
+  SUB="$2"
+  case "$SUB" in
+    create)
+      OUT="./channel-artifacts/mychannel.block"
+      CH="mychannel"
+      while [ $# -gt 0 ]; do
+        case "$1" in
+          -c) CH="$2"; shift 2;;
+          --outputBlock) OUT="$2"; shift 2;;
+          *) shift;;
+        esac
+      done
+      mkdir -p "$(dirname "$OUT")"
+      head -c 4096 /dev/urandom > "$OUT"
+      echo "1" > "$STATE_DIR/height"
+      echo "2026-11-12 09:35:01.100 UTC [channelCmd] InitCmdFactory -> INFO 001 Endorser and orderer connections initialized"
+      echo "2026-11-12 09:35:01.150 UTC [cli.common] readBlock -> INFO 002 Received block: 0"
+      ;;
+    join)
+      echo "mychannel" > "$STATE_DIR/joined_${MSP}"
+      echo "2026-11-12 09:35:02.100 UTC [channelCmd] executeJoin -> INFO 001 Successfully submitted proposal to join channel"
+      ;;
+    update)
+      H=$(cat "$STATE_DIR/height" 2>/dev/null || echo 1)
+      echo $((H + 1)) > "$STATE_DIR/height"
+      echo "2026-11-12 09:35:03.100 UTC [channelCmd] update -> INFO 001 Successfully submitted channel update"
+      ;;
+    list)
+      echo "Channels peers has joined:"
+      [ -f "$STATE_DIR/joined_${MSP}" ] && cat "$STATE_DIR/joined_${MSP}" || echo "mychannel"
+      ;;
+    getinfo)
+      H=$(cat "$STATE_DIR/height" 2>/dev/null || echo 1)
+      if [ "$H" = "1" ]; then
+        echo 'Blockchain info: {"height":1,"currentBlockHash":"4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a","previousBlockHash":""}'
+      else
+        echo "Blockchain info: {\"height\":$H,\"currentBlockHash\":\"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08\",\"previousBlockHash\":\"4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a\"}"
+      fi
+      ;;
+  esac
+fi

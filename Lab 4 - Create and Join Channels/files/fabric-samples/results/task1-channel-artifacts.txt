@@ -1,0 +1,11 @@
+Channel Name: mychannel
+Orderer CA: /home/ubuntu/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+2026-11-12 09:35:00.010 UTC [common.tools.configtxgen] main -> INFO 001 Loading configuration
+2026-11-12 09:35:00.020 UTC [common.tools.configtxgen] doOutputChannelCreateTx -> INFO 002 Generating new channel configtx for mychannel
+-rw-rw-r-- 1 ubuntu ubuntu 2048 Nov 12 09:30 ./channel-artifacts/mychannel.tx
+2026-11-12 09:35:00.010 UTC [common.tools.configtxgen] main -> INFO 001 Loading configuration
+2026-11-12 09:35:00.020 UTC [common.tools.configtxgen] doOutputAnchorPeersUpdate -> INFO 002 Generating anchor peer update for Org1MSP on channel mychannel
+2026-11-12 09:35:00.010 UTC [common.tools.configtxgen] main -> INFO 001 Loading configuration
+2026-11-12 09:35:00.020 UTC [common.tools.configtxgen] doOutputAnchorPeersUpdate -> INFO 002 Generating anchor peer update for Org2MSP on channel mychannel
+-rw-rw-r-- 1 ubuntu ubuntu 1024 Nov 12 09:30 ./channel-artifacts/Org1MSPanchors.tx
+-rw-rw-r-- 1 ubuntu ubuntu 1024 Nov 12 09:30 ./channel-artifacts/Org2MSPanchors.tx

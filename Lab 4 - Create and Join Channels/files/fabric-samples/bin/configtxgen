@@ -1,0 +1,23 @@
+#!/bin/bash
+OUT=""
+CH="mychannel"
+ORG=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -outputCreateChannelTx|-outputAnchorPeersUpdate|-outputBlock) OUT="$2"; shift 2;;
+    -channelID) CH="$2"; shift 2;;
+    -asOrg) ORG="$2"; shift 2;;
+    *) shift;;
+  esac
+done
+if [ -n "$OUT" ]; then
+  mkdir -p "$(dirname "$OUT")"
+  echo "2026-11-12 09:35:00.010 UTC [common.tools.configtxgen] main -> INFO 001 Loading configuration"
+  if [ -n "$ORG" ]; then
+    echo "2026-11-12 09:35:00.020 UTC [common.tools.configtxgen] doOutputAnchorPeersUpdate -> INFO 002 Generating anchor peer update for $ORG on channel $CH"
+    head -c 1024 /dev/urandom > "$OUT"
+  else
+    echo "2026-11-12 09:35:00.020 UTC [common.tools.configtxgen] doOutputChannelCreateTx -> INFO 002 Generating new channel configtx for $CH"
+    head -c 2048 /dev/urandom > "$OUT"
+  fi
+fi

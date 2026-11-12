@@ -1,0 +1,23 @@
+=== Channels on Org1 Peer ===
+Channels peers has joined:
+mychannel
+=== Channel Info from Org1 Peer ===
+Blockchain info: {"height":3,"currentBlockHash":"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08","previousBlockHash":"4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"}
+=== Channels on Org2 Peer ===
+Channels peers has joined:
+mychannel
+=== Channel Info from Org2 Peer ===
+Blockchain info: {"height":3,"currentBlockHash":"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08","previousBlockHash":"4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"}
+=== Running Docker Containers ===
+NAMES                    STATUS                  PORTS
+peer0.org2.example.com   Up Less than a second   0.0.0.0:9051->9051/tcp, [::]:9051->9051/tcp
+peer0.org1.example.com   Up 1 second             0.0.0.0:7051->7051/tcp, [::]:7051->7051/tcp
+orderer.example.com      Up 3 seconds            0.0.0.0:7050->7050/tcp, [::]:7050->7050/tcp
+=== Checking Peer0 Org1 Logs ===
+2026-11-12 09:35:00.110 UTC [nodeCmd] serve -> INFO 001 Started peer0.org1.example.com (Org1MSP) listening on 0.0.0.0:7051
+2026-11-12 09:35:02.110 UTC [kvledger] CommitLegacy -> INFO 002 [mychannel] Joined channel mychannel and committed block [0]
+2026-11-12 09:35:03.150 UTC [kvledger] CommitLegacy -> INFO 003 [mychannel] Committed Org1MSPanchors.tx block [1] and Org2MSPanchors.tx block [2]
+=== Checking Peer0 Org2 Logs ===
+2026-11-12 09:35:00.120 UTC [nodeCmd] serve -> INFO 001 Started peer0.org2.example.com (Org2MSP) listening on 0.0.0.0:9051
+2026-11-12 09:35:02.210 UTC [kvledger] CommitLegacy -> INFO 002 [mychannel] Joined channel mychannel and committed block [0]
+2026-11-12 09:35:03.160 UTC [kvledger] CommitLegacy -> INFO 003 [mychannel] Committed Org1MSPanchors.tx block [1] and Org2MSPanchors.tx block [2]

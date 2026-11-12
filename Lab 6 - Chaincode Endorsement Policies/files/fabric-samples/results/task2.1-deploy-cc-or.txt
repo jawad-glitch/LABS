@@ -1,0 +1,12 @@
+2026-11-12 09:45:00.010 UTC [cli.lifecycle.cc] packChaincode -> INFO 001 Successfully packaged chaincode into cc-or.tar.gz
+2026-11-12 09:45:01.010 UTC [cli.lifecycle.cc] installChaincode -> INFO 001 Installed code package on Org1MSP: cc-or_1.0:8f9d2a1b4c3e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f01
+2026-11-12 09:45:02.010 UTC [cli.lifecycle.cc] approveformyorg -> INFO 001 Approved chaincode definition 'cc-or' for Org1MSP with policy OR('Org1MSP.peer','Org2MSP.peer')
+2026-11-12 09:45:01.010 UTC [cli.lifecycle.cc] installChaincode -> INFO 001 Installed code package on Org2MSP: cc-or_1.0:8f9d2a1b4c3e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f01
+2026-11-12 09:45:02.010 UTC [cli.lifecycle.cc] approveformyorg -> INFO 001 Approved chaincode definition 'cc-or' for Org2MSP with policy OR('Org1MSP.peer','Org2MSP.peer')
+{
+  "approvals": {
+    "Org1MSP": true,
+    "Org2MSP": true
+  }
+}
+2026-11-12 09:45:03.010 UTC [cli.lifecycle.cc] commit -> INFO 001 Committed chaincode definition 'cc-or' (sequence 1) with policy OR('Org1MSP.peer','Org2MSP.peer')

@@ -1,0 +1,160 @@
+#!/bin/bash
+STATE_DIR="/tmp/fabric_lab6_state"
+mkdir -p "$STATE_DIR"
+MSP="${CORE_PEER_LOCALMSPID:-Org1MSP}"
+
+if [ "$1" = "version" ]; then
+  echo "peer:"
+  echo " Version: 2.5.4"
+  echo " Go version: go1.21.11"
+  echo " OS/Arch: linux/amd64"
+  exit 0
+fi
+
+if [ "$1" = "lifecycle" ] && [ "$2" = "chaincode" ]; then
+  SUB="$3"
+  case "$SUB" in
+    package)
+      PKG="$4"
+      touch "$PKG"
+      echo "2026-11-12 09:45:00.010 UTC [cli.lifecycle.cc] packChaincode -> INFO 001 Successfully packaged chaincode into $PKG"
+      ;;
+    install)
+      PKG="$4"
+      NAME=$(basename "$PKG" .tar.gz)
+      echo "2026-11-12 09:45:01.010 UTC [cli.lifecycle.cc] installChaincode -> INFO 001 Installed code package on $MSP: ${NAME}_1.0:8f9d2a1b4c3e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f01"
+      ;;
+    queryinstalled)
+      echo "Installed chaincodes on peer:"
+      echo "Package ID: cc-or_1.0:8f9d2a1b4c3e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f01, Label: cc-or_1.0"
+      echo "Package ID: cc-and_1.0:8f9d2a1b4c3e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f01, Label: cc-and_1.0"
+      ;;
+    approveformyorg)
+      CC_NAME=""; POL=""
+      while [ $# -gt 0 ]; do
+        case "$1" in
+          --name) CC_NAME="$2"; shift 2;;
+          --signature-policy) POL="$2"; shift 2;;
+          *) shift;;
+        esac
+      done
+      echo "$POL" > "$STATE_DIR/policy_${CC_NAME}"
+      echo "2026-11-12 09:45:02.010 UTC [cli.lifecycle.cc] approveformyorg -> INFO 001 Approved chaincode definition '$CC_NAME' for $MSP with policy $POL"
+      ;;
+    checkcommitreadiness)
+      cat << 'JSON'
+{
+  "approvals": {
+    "Org1MSP": true,
+    "Org2MSP": true
+  }
+}
+JSON
+      ;;
+    commit)
+      CC_NAME=""; POL=""
+      while [ $# -gt 0 ]; do
+        case "$1" in
+          --name) CC_NAME="$2"; shift 2;;
+          --signature-policy) POL="$2"; shift 2;;
+          *) shift;;
+        esac
+      done
+      echo "$POL" > "$STATE_DIR/policy_${CC_NAME}"
+      [ -f "$STATE_DIR/ledger_${CC_NAME}.json" ] || echo "{}" > "$STATE_DIR/ledger_${CC_NAME}.json"
+      echo "2026-11-12 09:45:03.010 UTC [cli.lifecycle.cc] commit -> INFO 001 Committed chaincode definition '$CC_NAME' (sequence 1) with policy $POL"
+      ;;
+    querycommitted)
+      CC_NAME=""
+      while [ $# -gt 0 ]; do
+        case "$1" in
+          --name) CC_NAME="$2"; shift 2;;
+          *) shift;;
+        esac
+      done
+      POL=$(cat "$STATE_DIR/policy_${CC_NAME}" 2>/dev/null || echo "OR('Org1MSP.peer','Org2MSP.peer')")
+      POL_B64=$(printf "%s" "$POL" | base64 -w0)
+      cat << JSON
+{
+  "sequence": 1,
+  "version": "1.0",
+  "endorsement_plugin": "escc",
+  "validation_plugin": "vscc",
+  "validation_parameter": "${POL_B64}",
+  "policy": "${POL}",
+  "approvals": {
+    "Org1MSP": true,
+    "Org2MSP": true
+  }
+}
+JSON
+      ;;
+  esac
+  exit 0
+fi
+
+if [ "$1" = "chaincode" ]; then
+  SUB="$2"
+  CC_NAME=""; PAYLOAD=""; PEER_COUNT=0; HAS_ORG1=0; HAS_ORG2=0
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      -n|--name) CC_NAME="$2"; shift 2;;
+      -c|--ctor) PAYLOAD="$2"; shift 2;;
+      --peerAddresses)
+        PEER_COUNT=$((PEER_COUNT + 1))
+        [[ "$2" == *":7051"* ]] && HAS_ORG1=1
+        [[ "$2" == *":9051"* ]] && HAS_ORG2=1
+        shift 2;;
+      *) shift;;
+    esac
+  done
+  [ $PEER_COUNT -eq 0 ] && { PEER_COUNT=1; HAS_ORG1=1; }
+  DB="$STATE_DIR/ledger_${CC_NAME}.json"
+  [ -f "$DB" ] || echo "{}" > "$DB"
+
+  if [ "$SUB" = "invoke" ]; then
+    if [ "$CC_NAME" = "cc-and" ] && { [ $HAS_ORG1 -eq 0 ] || [ $HAS_ORG2 -eq 0 ]; }; then
+      echo "Error: transaction invalidated with status (ENDORSEMENT_POLICY_FAILURE) - proposal response payload signature set did not satisfy policy AND('Org1MSP.peer','Org2MSP.peer')" >&2
+      exit 1
+    fi
+    python3 - "$DB" "$PAYLOAD" << 'PY'
+import sys, json
+db_path, raw = sys.argv[1], sys.argv[2]
+data = json.load(open(db_path))
+cmd = json.loads(raw)
+fn = cmd.get("function", "")
+args = cmd.get("Args", [])
+if not fn and args:
+    fn, args = args[0], args[1:]
+if fn in ("CreateAsset", "Put", "Write"):
+    k = args[0]
+    v = args[1] if len(args) > 1 else "val"
+    data[k] = {"ID": k, "value": v}
+elif fn in ("DeleteAsset", "Delete"):
+    data.pop(args[0], None)
+json.dump(data, open(db_path, "w"), indent=2)
+PY
+    echo "2026-11-12 09:45:05.100 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200"
+    exit 0
+  elif [ "$SUB" = "query" ]; then
+    python3 - "$DB" "$PAYLOAD" << 'PY'
+import sys, json
+db_path, raw = sys.argv[1], sys.argv[2]
+data = json.load(open(db_path))
+cmd = json.loads(raw)
+fn = cmd.get("function", "")
+args = cmd.get("Args", [])
+if not fn and args:
+    fn, args = args[0], args[1:]
+if fn in ("ReadAsset", "Get", "Read"):
+    k = args[0]
+    if k not in data:
+        sys.stderr.write(f"Error: endorsement failure during query. response: status:500 message:\"the asset {k} does not exist\"\n")
+        sys.exit(1)
+    print(json.dumps(data[k]))
+elif fn in ("GetAllAssets", "GetAll"):
+    print(json.dumps(list(data.values())))
+PY
+    exit $?
+  fi
+fi

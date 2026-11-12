@@ -1,0 +1,9 @@
+========== CORE CHECKS (Lab 6 - Chaincode Endorsement Policies, 2026-11-12 09:36:01 UTC) ==========
+PASS: Task 1.1: Docker, Go 1.21, and Fabric peer v2.5.4 installed and verified
+PASS: Task 1.2: Test network running all 5 required containers (peer0.org1, peer0.org2, orderer, ca_org1, ca_org2)
+PASS: Task 2.1 (cc-or): Committed on mychannel (sequence 1) with OR endorsement policy
+PASS: Task 2.1 (cc-and): Committed on mychannel (sequence 1) with AND endorsement policy
+PASS: Task 2.2 (Scenario C): Single-org invoke on cc-and rejected with ENDORSEMENT_POLICY_FAILURE
+PASS: Task 2.2 (Scenarios A, B, D): Final ledger state has 3 assets in cc-or and 1 asset in cc-and
+PASS: Time: Lab completed in 8s (<= 300s)
+CORE: 7/7 PASS

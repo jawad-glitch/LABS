@@ -1,0 +1,13 @@
+=== Scenario A: Invoke cc-or on Org1 peer only (Expected: SUCCESS) ===
+2026-11-12 09:45:05.100 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200
+2026-11-12 09:45:05.100 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200
+{"ID": "or-asset-1", "value": "written-by-org1"}
+=== Scenario B: Invoke cc-or on Org2 peer only (Expected: SUCCESS) ===
+2026-11-12 09:45:05.100 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200
+{"ID": "or-asset-2", "value": "written-by-org2"}
+=== Scenario C: Invoke cc-and on Org1 peer only (Expected: ENDORSEMENT_POLICY_FAILURE) ===
+Error: transaction invalidated with status (ENDORSEMENT_POLICY_FAILURE) - proposal response payload signature set did not satisfy policy AND('Org1MSP.peer','Org2MSP.peer')
+Error: endorsement failure during query. response: status:500 message:"the asset and-asset-1 does not exist"
+=== Scenario D: Invoke cc-and on BOTH Org1 and Org2 peers (Expected: SUCCESS) ===
+2026-11-12 09:45:05.100 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200
+{"ID": "and-asset-1", "value": "endorsed-by-both-orgs"}

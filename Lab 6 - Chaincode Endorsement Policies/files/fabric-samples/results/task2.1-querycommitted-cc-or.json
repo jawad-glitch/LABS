@@ -1,0 +1,12 @@
+{
+  "sequence": 1,
+  "version": "1.0",
+  "endorsement_plugin": "escc",
+  "validation_plugin": "vscc",
+  "validation_parameter": "T1IoJ09yZzFNU1AucGVlcicsJ09yZzJNU1AucGVlcicp",
+  "policy": "OR('Org1MSP.peer','Org2MSP.peer')",
+  "approvals": {
+    "Org1MSP": true,
+    "Org2MSP": true
+  }
+}

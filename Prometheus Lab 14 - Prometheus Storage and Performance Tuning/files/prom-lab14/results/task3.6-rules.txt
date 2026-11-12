@@ -1,0 +1,7 @@
+rule PrometheusHighMemoryUsage health=ok
+rule PrometheusHighCPUUsage health=ok
+rule PrometheusSlowQueries health=ok
+rule PrometheusHighIngestionRate health=ok
+metric type of prometheus_engine_query_duration_seconds: summary
+PrometheusSlowQueries expression (histogram_quantile over _bucket): 0 series
+summary form {slice="inner_eval",quantile="0.9"}: NaN s

@@ -1,0 +1,20 @@
+=== Comprehensive Prometheus Setup Verification ===
+1. Service Status:
+✓ prometheus is running
+✓ node_exporter is running
+✓ thanos-sidecar is running
+✓ thanos-store is running
+✓ thanos-querier is running
+2. Endpoint Accessibility:
+✓ Prometheus accessible
+✓ Node Exporter accessible
+✓ Thanos Sidecar accessible
+✓ Thanos Store accessible
+✓ Thanos Querier accessible
+3. Data Ingestion:
+Active targets: 5/5
+4. Storage Status:
+Active series: 3621
+5. Thanos Integration:
+Connected stores: 2
+=== Verification Complete ===

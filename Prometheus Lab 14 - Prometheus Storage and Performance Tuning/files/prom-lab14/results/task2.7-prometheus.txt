@@ -1,0 +1,1 @@
+promtool exit=0 | prometheus: active | flags: min-block=2h max-block=1d1h

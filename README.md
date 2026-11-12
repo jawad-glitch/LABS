@@ -135,3 +135,4 @@
 | [Prometheus Lab 11 - Set Up Alerts in Prometheus](Prometheus%20Lab%2011%20-%20Set%20Up%20Alerts%20in%20Prometheus/PROOF.md) | CORE: 11/11 PASS | 2026-11-12 08:12 |
 | [Prometheus Lab 12 - Integrate Prometheus with Alertmanager](Prometheus%20Lab%2012%20-%20Integrate%20Prometheus%20with%20Alertmanager/PROOF.md) | CORE: 12/13 PASS | 2026-11-12 08:17 |
 | [Prometheus Lab 13 - Advanced Alerting Rules](Prometheus%20Lab%2013%20-%20Advanced%20Alerting%20Rules/PROOF.md) | CORE: 12/12 PASS | 2026-11-12 08:23 |
+| [Prometheus Lab 14 - Prometheus Storage and Performance Tuning](Prometheus%20Lab%2014%20-%20Prometheus%20Storage%20and%20Performance%20Tuning/PROOF.md) | CORE: 11/12 PASS | 2026-11-12 08:29 |

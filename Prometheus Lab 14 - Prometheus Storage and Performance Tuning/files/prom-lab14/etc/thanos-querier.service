@@ -1,0 +1,17 @@
+[Unit]
+Description=Thanos Querier
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prometheus
+Group=prometheus
+Type=simple
+ExecStart=/usr/local/bin/thanos query \
+    --http-address 0.0.0.0:10905 \
+    --grpc-address 0.0.0.0:10906 \
+    --store localhost:10901 \
+    --store localhost:10903
+
+[Install]
+WantedBy=multi-user.target

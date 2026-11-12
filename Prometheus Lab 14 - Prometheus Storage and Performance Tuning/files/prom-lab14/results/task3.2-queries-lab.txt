@@ -1,0 +1,72 @@
+=== Comprehensive Prometheus Performance Queries ===
+Query: Prometheus Memory Usage
+PromQL: process_resident_memory_bytes{job="prometheus"}
+Error parsing response
+---
+Query: Prometheus CPU Usage Rate
+PromQL: rate(process_cpu_seconds_total{job="prometheus"}[5m])
+Error parsing response
+---
+Query: Go Memory Allocation
+PromQL: go_memstats_alloc_bytes{job="prometheus"}
+Error parsing response
+---
+Query: Active Time Series
+PromQL: prometheus_tsdb_head_series
+Value: 1141 {'__name__': 'prometheus_tsdb_head_series', 'instance': 'localhost:9090', 'job': 'prometheus'}
+---
+Query: Head Chunks
+PromQL: prometheus_tsdb_head_chunks
+Value: 1141 {'__name__': 'prometheus_tsdb_head_chunks', 'instance': 'localhost:9090', 'job': 'prometheus'}
+---
+Query: Sample Ingestion Rate
+PromQL: rate(prometheus_tsdb_head_samples_appended_total[5m])
+Error parsing response
+---
+Query: Compaction Chunk Size
+PromQL: prometheus_tsdb_compaction_chunk_size_bytes
+No data available
+---
+Query: Max Concurrent Queries
+PromQL: prometheus_engine_queries_concurrent_max
+Value: -1 {'__name__': 'prometheus_engine_queries_concurrent_max', 'instance': 'localhost:10905', 'job': 'thanos-querier'}
+Value: 20 {'__name__': 'prometheus_engine_queries_concurrent_max', 'instance': 'localhost:9090', 'job': 'prometheus'}
+---
+Query: Query Rate
+PromQL: rate(prometheus_engine_queries_total[5m])
+Error parsing response
+---
+Query: 95th Percentile Query Duration
+PromQL: histogram_quantile(0.95, rate(prometheus_engine_query_duration_seconds_bucket[5m]))
+Error parsing response
+---
+Query: WAL Fsync Duration
+PromQL: prometheus_tsdb_wal_fsync_duration_seconds
+Value: NaN {'__name__': 'prometheus_tsdb_wal_fsync_duration_seconds', 'instance': 'localhost:9090', 'job': 'prometheus', 'quantile': '0.5'}
+Value: NaN {'__name__': 'prometheus_tsdb_wal_fsync_duration_seconds', 'instance': 'localhost:9090', 'job': 'prometheus', 'quantile': '0.9'}
+Value: NaN {'__name__': 'prometheus_tsdb_wal_fsync_duration_seconds', 'instance': 'localhost:9090', 'job': 'prometheus', 'quantile': '0.99'}
+---
+Query: WAL Truncations
+PromQL: prometheus_tsdb_wal_truncations_total
+Value: 0 {'__name__': 'prometheus_tsdb_wal_truncations_total', 'instance': 'localhost:9090', 'job': 'prometheus'}
+---
+Query: Last Config Reload
+PromQL: prometheus_config_last_reload_success_timestamp_seconds
+Value: 1794472064.2070646 {'__name__': 'prometheus_config_last_reload_success_timestamp_seconds', 'instance': 'localhost:9090', 'job': 'prometheus'}
+---
+Query: Discovered Targets
+PromQL: prometheus_sd_discovered_targets
+Value: 1 {'__name__': 'prometheus_sd_discovered_targets', 'config': 'node-exporter', 'instance': 'localhost:9090', 'job': 'prometheus', 'name': 'scrape'}
+Value: 1 {'__name__': 'prometheus_sd_discovered_targets', 'config': 'prometheus', 'instance': 'localhost:9090', 'job': 'prometheus', 'name': 'scrape'}
+Value: 1 {'__name__': 'prometheus_sd_discovered_targets', 'config': 'thanos-querier', 'instance': 'localhost:9090', 'job': 'prometheus', 'name': 'scrape'}
+Value: 1 {'__name__': 'prometheus_sd_discovered_targets', 'config': 'thanos-sidecar', 'instance': 'localhost:9090', 'job': 'prometheus', 'name': 'scrape'}
+Value: 1 {'__name__': 'prometheus_sd_discovered_targets', 'config': 'thanos-store', 'instance': 'localhost:9090', 'job': 'prometheus', 'name': 'scrape'}
+---
+Query: HTTP Request Rate
+PromQL: rate(prometheus_http_requests_total[5m])
+Error parsing response
+---
+Query: Notification Queue Length
+PromQL: prometheus_notifications_queue_length
+Value: 0 {'__name__': 'prometheus_notifications_queue_length', 'instance': 'localhost:9090', 'job': 'prometheus'}
+---

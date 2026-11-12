@@ -1,0 +1,14 @@
+========== CORE CHECKS (Prometheus Lab 14 - Prometheus Storage and Performance Tuning, 2026-11-12 08:29:09 UTC) - ALL REAL ==========
+PASS: Install: Prometheus 2.47.0, node_exporter 1.6.1, Thanos 0.32.4 sha256-verified
+PASS: Lab bug: Task 1.2 'storage.tsdb' retention/block keys are flags, not config - promtool rejects, Prometheus fails to start
+PASS: Task 2.7 config valid; Prometheus active with the lab's storage flags (retention 30d/10GB, wal-compression)
+PASS: Lab bug: sidecar with an upload bucket refuses Prometheus max-block-duration=25h (compaction must be off)
+PASS: Fixed (min = max = 2h): sidecar, store, querier active; querier sees sidecar + store; 'up' via Thanos carries external labels
+PASS: Task 3.6: 4 performance rules loaded, health ok
+FAIL: Lab bug: query_duration is a summary - PrometheusSlowQueries/_bucket query returns 0 series; summary form returns a value
+PASS: Lab bug: raw URLs - curl globbing breaks {..} and [..] queries; most lab monitor/query lines fail
+PASS: Lab bug: the lab load script's range queries never reach Prometheus; the fixed load's do (+60)
+PASS: Fixed monitor reports memory, CPU, head series, ingestion rate
+PASS: Verification script: 5 services running, 5 endpoints accessible, all targets up
+PASS: Time: finished in 121s (<= 300s)
+CORE: 11/12 PASS

@@ -1,0 +1,40 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'prometheus-lab'
+    replica: 'prometheus-01'
+
+# Storage and retention configuration
+storage:
+  tsdb:
+    # Retention time for data (default: 15d)
+    retention.time: 30d
+    # Maximum size of data to retain (optional)
+    retention.size: 10GB
+    # Minimum block duration
+    min-block-duration: 2h
+    # Maximum block duration  
+    max-block-duration: 25h
+    # WAL compression
+    wal-compression: true
+
+rule_files:
+  - "rules/*.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+    scrape_interval: 5s
+    
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['localhost:9100']
+    scrape_interval: 10s
+
+  - job_name: 'prometheus-metrics'
+    static_configs:
+      - targets: ['localhost:9090']
+    metrics_path: /metrics
+    scrape_interval: 15s

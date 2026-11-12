@@ -1,0 +1,2 @@
+query_range requests that reached Prometheus: lab load script (180 attempted) +0 | fixed load (60) +60
+during load: CPU: 0.84%|Query inner_eval p90: 0.005538482 s|Query rate: n/a queries/s

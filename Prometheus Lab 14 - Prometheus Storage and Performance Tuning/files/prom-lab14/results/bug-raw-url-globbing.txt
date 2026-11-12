@@ -1,0 +1,1 @@
+curl on the lab's raw URL for {job="prometheus"}: invalid parameter "query": 1:33: parse error: unexpected "=" | for [5m]: curl exit 3

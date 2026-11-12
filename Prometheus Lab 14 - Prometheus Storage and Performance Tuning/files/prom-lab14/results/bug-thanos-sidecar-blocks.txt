@@ -1,0 +1,2 @@
+thanos-sidecar with Prometheus max-block-duration=25h: failed | Min time is 2h. Compaction needs to be disabled (storage.tsdb.min-block-dura
+thanos-store: active | thanos-querier: active | querier warning: 

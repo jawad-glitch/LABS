@@ -1,0 +1,6 @@
+prometheus 2.47.0 sha256 OK
+node_exporter 1.6.1 sha256 OK
+thanos 0.32.4 sha256 OK
+prometheus, version 2.47.0 (branch: HEAD, revision: efa34a5840661c29c2e362efa76bc3a70dccb335)
+node_exporter, version 1.6.1 (branch: HEAD, revision: 4a1b77600c1873a8233f3ffb55afcedbb63b8d84)
+thanos, version 0.32.4 (branch: HEAD, revision: fcd5683e3049924ae26a680e166ae6f27a344896)

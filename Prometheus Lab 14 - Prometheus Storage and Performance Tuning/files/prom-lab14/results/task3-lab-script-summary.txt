@@ -1,0 +1,2 @@
+lab monitor: 4/7 'not available'
+lab performance_queries: 8/16 failed or empty (7 parse errors)

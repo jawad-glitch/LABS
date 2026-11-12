@@ -1,0 +1,4 @@
+sidecar: active | store: active | querier: active
+querier stores: [{"type":"sidecar","count":1,"names":["localhost:10901"]},{"type":"store","count":1,"names":["localhost:10903"]}]
+query 'up' through Thanos: [{"job":"prometheus","cluster":"prometheus-lab","replica":"prometheus-01","v":"1"}]
+store gateway blocks loaded: 0 | uploaded by sidecar: 0

@@ -1,0 +1,3 @@
+Checking /etc/prometheus/rules/performance.yml
+  SUCCESS: 4 rules found
+

@@ -1,0 +1,187 @@
+Nov 12 08:27:22 ip-172-31-10-253 systemd[1]: Started prometheus.service - Prometheus.
+Nov 12 08:27:22 ip-172-31-10-253 prometheus[4380]: ts=2026-11-12T08:27:22.212Z caller=main.go:487 level=error msg="Error loading config (--config.file=/etc/prometheus/prometheus.yml)" file=/etc/prometheus/prometheus.yml err="parsing YAML file /etc/prometheus/prometheus.yml: yaml: unmarshal errors:\n  line 12: field retention.time not found in type config.plain\n  line 14: field retention.size not found in type config.plain\n  line 16: field min-block-duration not found in type config.plain\n  line 18: field max-block-duration not found in type config.plain\n  line 20: field wal-compression not found in type config.plain"
+Nov 12 08:27:22 ip-172-31-10-253 systemd[1]: prometheus.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+Nov 12 08:27:22 ip-172-31-10-253 systemd[1]: prometheus.service: Failed with result 'exit-code'.
+Nov 12 08:27:26 ip-172-31-10-253 systemd[1]: Started prometheus.service - Prometheus.
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.752Z caller=main.go:583 level=info msg="Starting Prometheus Server" mode=server version="(version=2.47.0, branch=HEAD, revision=efa34a5840661c29c2e362efa76bc3a70dccb335)"
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.752Z caller=main.go:588 level=info build_context="(go=go1.21.0, platform=linux/amd64, user=root@409eb5e6b30c, date=20230906-10:20:07, tags=netgo,builtinassets,stringlabels)"
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.752Z caller=main.go:589 level=info host_details="(Linux 6.14.0-1018-aws #18~24.04.1-Ubuntu SMP Mon Nov 24 19:46:27 UTC 2025 x86_64 ip-172-31-10-253 (none))"
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.752Z caller=main.go:590 level=info fd_limits="(soft=524288, hard=524288)"
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.752Z caller=main.go:591 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.756Z caller=web.go:566 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.757Z caller=main.go:1024 level=info msg="Starting TSDB ..."
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.762Z caller=tls_config.go:274 level=info component=web msg="Listening on" address=[::]:9090
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.762Z caller=tls_config.go:277 level=info component=web msg="TLS is disabled." http2=false address=[::]:9090
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.777Z caller=head.go:600 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.777Z caller=head.go:681 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=2.98µs
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.777Z caller=head.go:689 level=info component=tsdb msg="Replaying WAL, this may take a while"
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.778Z caller=head.go:760 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=0
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.778Z caller=head.go:797 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=55.471µs wal_replay_duration=283.895µs wbl_replay_duration=180ns total_replay_duration=401.217µs
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.788Z caller=main.go:1045 level=info fs_type=EXT4_SUPER_MAGIC
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.788Z caller=main.go:1048 level=info msg="TSDB started"
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.788Z caller=main.go:1229 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.794Z caller=main.go:1266 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=6.001472ms db_storage=1.16µs remote_storage=1.88µs web_handler=710ns query_engine=1.491µs scrape=4.81937ms scrape_sd=150.983µs notify=1.43µs notify_sd=3.01µs rules=56.291µs tracing=7.03µs
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.794Z caller=main.go:1009 level=info msg="Server is ready to receive web requests."
+Nov 12 08:27:26 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:26.794Z caller=manager.go:1009 level=info component="rule manager" msg="Starting rule manager..."
+Nov 12 08:27:29 ip-172-31-10-253 systemd[1]: Started thanos-sidecar.service - Thanos Sidecar.
+Nov 12 08:27:29 ip-172-31-10-253 systemd[1]: Started thanos-store.service - Thanos Store Gateway.
+Nov 12 08:27:29 ip-172-31-10-253 systemd[1]: Started thanos-querier.service - Thanos Querier.
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.230306699Z caller=factory.go:53 level=info msg="loading bucket configuration"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.231287777Z caller=inmemory.go:179 level=info msg="created in-memory index cache" maxItemSizeBytes=131072000 maxSizeBytes=262144000 maxItems=maxInt
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.233321664Z caller=options.go:26 level=info protocol=gRPC msg="disabled TLS, key and cert must be set to enable"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.243126956Z caller=store.go:520 level=info msg="starting store node"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.2471012Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.247156281Z caller=http.go:73 level=info service=http/server component=store msg="listening for requests and metrics" address=0.0.0.0:10904
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.247432336Z caller=store.go:418 level=info msg="initializing bucket store"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.247984226Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=497.519µs duration_ms=0 cached=0 returned=0 partial=0
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.248087648Z caller=store.go:435 level=info msg="bucket store ready" init_duration=623.102µs
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.248281051Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.248432504Z caller=fetcher.go:487 level=info component=block.BaseFetcher msg="successfully synchronized block metadata" duration=323.146µs duration_ms=0 cached=0 returned=0 partial=0
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.280920946Z caller=tls_config.go:274 level=info service=http/server component=store msg="Listening on" address=[::]:10904
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.281002647Z caller=tls_config.go:277 level=info service=http/server component=store msg="TLS is disabled." http2=false address=[::]:10904
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4768]: ts=2026-11-12T08:27:30.281097979Z caller=grpc.go:131 level=info service=gRPC/server component=store msg="listening for serving gRPC" address=0.0.0.0:10903
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:30.296904122Z caller=options.go:26 level=info protocol=gRPC msg="disabled TLS, key and cert must be set to enable"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:30.298197076Z caller=query.go:842 level=info msg="starting query node"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:30.299580811Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:30.299626502Z caller=http.go:73 level=info service=http/server component=query msg="listening for requests and metrics" address=0.0.0.0:10905
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:30.299927348Z caller=tls_config.go:274 level=info service=http/server component=query msg="Listening on" address=[::]:10905
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:30.299972299Z caller=tls_config.go:277 level=info service=http/server component=query msg="TLS is disabled." http2=false address=[::]:10905
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:30.300202363Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:30.300257314Z caller=grpc.go:131 level=info service=gRPC/server component=query msg="listening for serving gRPC" address=0.0.0.0:10906
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.308939255Z caller=options.go:26 level=info protocol=gRPC msg="disabled TLS, key and cert must be set to enable"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.310573475Z caller=factory.go:53 level=info msg="loading bucket configuration"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.31139918Z caller=sidecar.go:370 level=info msg="starting sidecar"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.311761807Z caller=reloader.go:199 level=info component=reloader msg="nothing to be watched"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.311976831Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.312160644Z caller=http.go:73 level=info service=http/server component=sidecar msg="listening for requests and metrics" address=0.0.0.0:10902
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.312593242Z caller=tls_config.go:274 level=info service=http/server component=sidecar msg="Listening on" address=[::]:10902
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.313924697Z caller=tls_config.go:277 level=info service=http/server component=sidecar msg="TLS is disabled." http2=false address=[::]:10902
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.31299084Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.314456027Z caller=grpc.go:131 level=info service=gRPC/server component=sidecar msg="listening for serving gRPC" address=0.0.0.0:10901
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.317448342Z caller=intrumentation.go:67 level=warn msg="changing probe status" status=not-ready reason="validate Prometheus flags: found that TSDB Max time is 1d1h and Min time is 2h. Compaction needs to be disabled (storage.tsdb.min-block-duration = storage.tsdb.max-block-duration)"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.317500053Z caller=http.go:91 level=info service=http/server component=sidecar msg="internal server is shutting down" err="validate Prometheus flags: found that TSDB Max time is 1d1h and Min time is 2h. Compaction needs to be disabled (storage.tsdb.min-block-duration = storage.tsdb.max-block-duration)"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.317601055Z caller=http.go:110 level=info service=http/server component=sidecar msg="internal server is shutdown gracefully" err="validate Prometheus flags: found that TSDB Max time is 1d1h and Min time is 2h. Compaction needs to be disabled (storage.tsdb.min-block-duration = storage.tsdb.max-block-duration)"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.317625896Z caller=intrumentation.go:81 level=info msg="changing probe status" status=not-healthy reason="validate Prometheus flags: found that TSDB Max time is 1d1h and Min time is 2h. Compaction needs to be disabled (storage.tsdb.min-block-duration = storage.tsdb.max-block-duration)"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.317685607Z caller=grpc.go:138 level=info service=gRPC/server component=sidecar msg="internal server is shutting down" err="validate Prometheus flags: found that TSDB Max time is 1d1h and Min time is 2h. Compaction needs to be disabled (storage.tsdb.min-block-duration = storage.tsdb.max-block-duration)"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.317708137Z caller=grpc.go:151 level=info service=gRPC/server component=sidecar msg="gracefully stopping internal server"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.317793979Z caller=grpc.go:164 level=info service=gRPC/server component=sidecar msg="internal server is shutdown gracefully" err="validate Prometheus flags: found that TSDB Max time is 1d1h and Min time is 2h. Compaction needs to be disabled (storage.tsdb.min-block-duration = storage.tsdb.max-block-duration)"
+Nov 12 08:27:30 ip-172-31-10-253 thanos[4767]: ts=2026-11-12T08:27:30.317917051Z caller=main.go:161 level=error err="found that TSDB Max time is 1d1h and Min time is 2h. Compaction needs to be disabled (storage.tsdb.min-block-duration = storage.tsdb.max-block-duration)\nmain.validatePrometheus\n\t/app/cmd/thanos/sidecar.go:398\nmain.runSidecar.func3\n\t/app/cmd/thanos/sidecar.go:167\ngithub.com/oklog/run.(*Group).Run.func1\n\t/go/pkg/mod/github.com/oklog/run@v1.1.0/group.go:38\nruntime.goexit\n\t/usr/local/go/src/runtime/asm_amd64.s:1598\nvalidate Prometheus flags\nmain.runSidecar.func3\n\t/app/cmd/thanos/sidecar.go:168\ngithub.com/oklog/run.(*Group).Run.func1\n\t/go/pkg/mod/github.com/oklog/run@v1.1.0/group.go:38\nruntime.goexit\n\t/usr/local/go/src/runtime/asm_amd64.s:1598\nsidecar command failed\nmain.main\n\t/app/cmd/thanos/main.go:161\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:250\nruntime.goexit\n\t/usr/local/go/src/runtime/asm_amd64.s:1598"
+Nov 12 08:27:30 ip-172-31-10-253 systemd[1]: thanos-sidecar.service: Main process exited, code=exited, status=1/FAILURE
+Nov 12 08:27:30 ip-172-31-10-253 systemd[1]: thanos-sidecar.service: Failed with result 'exit-code'.
+Nov 12 08:27:35 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:35.301040351Z caller=endpointset.go:392 level=warn component=endpointset msg="new endpoint creation failed" err="dialing connection: context deadline exceeded: connection error: desc = \"transport: Error while dialing dial tcp 127.0.0.1:10901: connect: connection refused\"" address=localhost:10901
+Nov 12 08:27:35 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:35.301109842Z caller=endpointset.go:425 level=info component=endpointset msg="adding new store with [storeEndpoints]" address=localhost:10903 extLset=
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.521Z caller=main.go:859 level=warn msg="Received SIGTERM, exiting gracefully..."
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.521Z caller=main.go:883 level=info msg="Stopping scrape discovery manager..."
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.521Z caller=main.go:897 level=info msg="Stopping notify discovery manager..."
+Nov 12 08:27:39 ip-172-31-10-253 systemd[1]: Stopping prometheus.service - Prometheus...
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.521Z caller=main.go:879 level=info msg="Scrape discovery manager stopped"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.522Z caller=main.go:893 level=info msg="Notify discovery manager stopped"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.521Z caller=manager.go:1023 level=info component="rule manager" msg="Stopping rule manager..."
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.522Z caller=manager.go:1033 level=info component="rule manager" msg="Rule manager stopped"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.522Z caller=main.go:934 level=info msg="Stopping scrape manager..."
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.525Z caller=main.go:926 level=info msg="Scrape manager stopped"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.532Z caller=notifier.go:603 level=info component=notifier msg="Stopping notification manager..."
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.532Z caller=main.go:1155 level=info msg="Notifier manager stopped"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4427]: ts=2026-11-12T08:27:39.533Z caller=main.go:1167 level=info msg="See you next time!"
+Nov 12 08:27:39 ip-172-31-10-253 systemd[1]: prometheus.service: Deactivated successfully.
+Nov 12 08:27:39 ip-172-31-10-253 systemd[1]: Stopped prometheus.service - Prometheus.
+Nov 12 08:27:39 ip-172-31-10-253 systemd[1]: Started prometheus.service - Prometheus.
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.660Z caller=main.go:583 level=info msg="Starting Prometheus Server" mode=server version="(version=2.47.0, branch=HEAD, revision=efa34a5840661c29c2e362efa76bc3a70dccb335)"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.661Z caller=main.go:588 level=info build_context="(go=go1.21.0, platform=linux/amd64, user=root@409eb5e6b30c, date=20230906-10:20:07, tags=netgo,builtinassets,stringlabels)"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.661Z caller=main.go:589 level=info host_details="(Linux 6.14.0-1018-aws #18~24.04.1-Ubuntu SMP Mon Nov 24 19:46:27 UTC 2025 x86_64 ip-172-31-10-253 (none))"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.662Z caller=main.go:590 level=info fd_limits="(soft=524288, hard=524288)"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.662Z caller=main.go:591 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.668Z caller=web.go:566 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.669Z caller=main.go:1024 level=info msg="Starting TSDB ..."
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.679Z caller=tls_config.go:274 level=info component=web msg="Listening on" address=[::]:9090
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.679Z caller=tls_config.go:277 level=info component=web msg="TLS is disabled." http2=false address=[::]:9090
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.686Z caller=head.go:600 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.686Z caller=head.go:681 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=2.99µs
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.686Z caller=head.go:689 level=info component=tsdb msg="Replaying WAL, this may take a while"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.690Z caller=head.go:760 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=1
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.691Z caller=head.go:760 level=info component=tsdb msg="WAL segment loaded" segment=1 maxSegment=1
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.691Z caller=head.go:797 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=58.131µs wal_replay_duration=4.250979ms wbl_replay_duration=23.51µs total_replay_duration=4.375361ms
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.694Z caller=main.go:1045 level=info fs_type=EXT4_SUPER_MAGIC
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.694Z caller=main.go:1048 level=info msg="TSDB started"
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.694Z caller=main.go:1229 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.697Z caller=main.go:1266 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=2.396864ms db_storage=1.24µs remote_storage=1.75µs web_handler=810ns query_engine=1.04µs scrape=1.777953ms scrape_sd=95.472µs notify=1.08µs notify_sd=2.53µs rules=47.381µs tracing=6.73µs
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.697Z caller=main.go:1009 level=info msg="Server is ready to receive web requests."
+Nov 12 08:27:39 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:39.697Z caller=manager.go:1009 level=info component="rule manager" msg="Starting rule manager..."
+Nov 12 08:27:40 ip-172-31-10-253 systemd[1]: Started thanos-sidecar.service - Thanos Sidecar.
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.248325968Z caller=options.go:26 level=info protocol=gRPC msg="disabled TLS, key and cert must be set to enable"
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.249344407Z caller=factory.go:53 level=info msg="loading bucket configuration"
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.249930878Z caller=sidecar.go:370 level=info msg="starting sidecar"
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.250111011Z caller=reloader.go:199 level=info component=reloader msg="nothing to be watched"
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.250195422Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.250220953Z caller=http.go:73 level=info service=http/server component=sidecar msg="listening for requests and metrics" address=0.0.0.0:10902
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.250473378Z caller=tls_config.go:274 level=info service=http/server component=sidecar msg="Listening on" address=[::]:10902
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.250537869Z caller=tls_config.go:277 level=info service=http/server component=sidecar msg="TLS is disabled." http2=false address=[::]:10902
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.251389815Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.251468296Z caller=grpc.go:131 level=info service=gRPC/server component=sidecar msg="listening for serving gRPC" address=0.0.0.0:10901
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.255369418Z caller=sidecar.go:182 level=info msg="successfully loaded prometheus version"
+Nov 12 08:27:40 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:40.257742152Z caller=sidecar.go:204 level=info msg="successfully loaded prometheus external labels" external_labels="{cluster=\"prometheus-lab\", replica=\"prometheus-01\"}"
+Nov 12 08:27:40 ip-172-31-10-253 thanos[4769]: ts=2026-11-12T08:27:40.297413507Z caller=endpointset.go:425 level=info component=endpointset msg="adding new sidecar with [storeEndpoints rulesAPI exemplarsAPI targetsAPI MetricMetadataAPI]" address=localhost:10901 extLset="{cluster=\"prometheus-lab\", replica=\"prometheus-01\"}"
+Nov 12 08:27:42 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:42.252328319Z caller=shipper.go:256 level=warn msg="reading meta file failed, will override it" err="failed to read /var/lib/prometheus/thanos.shipper.json: open /var/lib/prometheus/thanos.shipper.json: no such file or directory"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.051Z caller=main.go:859 level=warn msg="Received SIGTERM, exiting gracefully..."
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.052Z caller=main.go:883 level=info msg="Stopping scrape discovery manager..."
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.052Z caller=main.go:897 level=info msg="Stopping notify discovery manager..."
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.052Z caller=manager.go:1023 level=info component="rule manager" msg="Stopping rule manager..."
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.052Z caller=manager.go:1033 level=info component="rule manager" msg="Rule manager stopped"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.052Z caller=main.go:934 level=info msg="Stopping scrape manager..."
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.052Z caller=main.go:879 level=info msg="Scrape discovery manager stopped"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.052Z caller=main.go:893 level=info msg="Notify discovery manager stopped"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.052Z caller=main.go:926 level=info msg="Scrape manager stopped"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.053Z caller=notifier.go:603 level=info component=notifier msg="Stopping notification manager..."
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.053Z caller=main.go:1155 level=info msg="Notifier manager stopped"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[4991]: ts=2026-11-12T08:27:44.053Z caller=main.go:1167 level=info msg="See you next time!"
+Nov 12 08:27:44 ip-172-31-10-253 systemd[1]: Stopping prometheus.service - Prometheus...
+Nov 12 08:27:44 ip-172-31-10-253 systemd[1]: prometheus.service: Deactivated successfully.
+Nov 12 08:27:44 ip-172-31-10-253 systemd[1]: Stopped prometheus.service - Prometheus.
+Nov 12 08:27:44 ip-172-31-10-253 systemd[1]: Started prometheus.service - Prometheus.
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.169Z caller=main.go:583 level=info msg="Starting Prometheus Server" mode=server version="(version=2.47.0, branch=HEAD, revision=efa34a5840661c29c2e362efa76bc3a70dccb335)"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.169Z caller=main.go:588 level=info build_context="(go=go1.21.0, platform=linux/amd64, user=root@409eb5e6b30c, date=20230906-10:20:07, tags=netgo,builtinassets,stringlabels)"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.169Z caller=main.go:589 level=info host_details="(Linux 6.14.0-1018-aws #18~24.04.1-Ubuntu SMP Mon Nov 24 19:46:27 UTC 2025 x86_64 ip-172-31-10-253 (none))"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.170Z caller=main.go:590 level=info fd_limits="(soft=524288, hard=524288)"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.170Z caller=main.go:591 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.173Z caller=web.go:566 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.174Z caller=main.go:1024 level=info msg="Starting TSDB ..."
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.183Z caller=tls_config.go:274 level=info component=web msg="Listening on" address=[::]:9090
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.183Z caller=tls_config.go:277 level=info component=web msg="TLS is disabled." http2=false address=[::]:9090
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.192Z caller=head.go:600 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.192Z caller=head.go:681 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=3.14µs
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.192Z caller=head.go:689 level=info component=tsdb msg="Replaying WAL, this may take a while"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.196Z caller=head.go:760 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=2
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.196Z caller=head.go:760 level=info component=tsdb msg="WAL segment loaded" segment=1 maxSegment=2
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.196Z caller=head.go:760 level=info component=tsdb msg="WAL segment loaded" segment=2 maxSegment=2
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.196Z caller=head.go:797 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=59.671µs wal_replay_duration=4.477383ms wbl_replay_duration=150ns total_replay_duration=4.578105ms
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.200Z caller=main.go:1045 level=info fs_type=EXT4_SUPER_MAGIC
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.200Z caller=main.go:1048 level=info msg="TSDB started"
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.200Z caller=main.go:1229 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.206Z caller=main.go:1266 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=6.081423ms db_storage=1.49µs remote_storage=2.73µs web_handler=750ns query_engine=980ns scrape=2.950825ms scrape_sd=166.783µs notify=1.28µs notify_sd=4.02µs rules=2.446305ms tracing=7.641µs
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.207Z caller=main.go:1009 level=info msg="Server is ready to receive web requests."
+Nov 12 08:27:44 ip-172-31-10-253 prometheus[5070]: ts=2026-11-12T08:27:44.207Z caller=manager.go:1009 level=info component="rule manager" msg="Starting rule manager..."
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:44.657198734Z caller=main.go:172 level=info msg="caught signal. Exiting." signal=terminated
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:44.657408188Z caller=intrumentation.go:67 level=warn msg="changing probe status" status=not-ready reason=null
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:44.657440199Z caller=http.go:91 level=info service=http/server component=sidecar msg="internal server is shutting down" err=null
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:44.657556401Z caller=http.go:110 level=info service=http/server component=sidecar msg="internal server is shutdown gracefully" err=null
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:44.657586041Z caller=intrumentation.go:81 level=info msg="changing probe status" status=not-healthy reason=null
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:44.657648622Z caller=grpc.go:138 level=info service=gRPC/server component=sidecar msg="internal server is shutting down" err=null
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:44.657672173Z caller=grpc.go:151 level=info service=gRPC/server component=sidecar msg="gracefully stopping internal server"
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:44.658130401Z caller=grpc.go:164 level=info service=gRPC/server component=sidecar msg="internal server is shutdown gracefully" err=null
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5008]: ts=2026-11-12T08:27:44.658180012Z caller=main.go:164 level=info msg=exiting
+Nov 12 08:27:44 ip-172-31-10-253 systemd[1]: Stopping thanos-sidecar.service - Thanos Sidecar...
+Nov 12 08:27:44 ip-172-31-10-253 systemd[1]: thanos-sidecar.service: Deactivated successfully.
+Nov 12 08:27:44 ip-172-31-10-253 systemd[1]: Stopped thanos-sidecar.service - Thanos Sidecar.
+Nov 12 08:27:44 ip-172-31-10-253 systemd[1]: Started thanos-sidecar.service - Thanos Sidecar.
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.782508785Z caller=options.go:26 level=info protocol=gRPC msg="disabled TLS, key and cert must be set to enable"
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.784216146Z caller=factory.go:53 level=info msg="loading bucket configuration"
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.78549336Z caller=sidecar.go:370 level=info msg="starting sidecar"
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.786104391Z caller=intrumentation.go:75 level=info msg="changing probe status" status=healthy
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.786144922Z caller=http.go:73 level=info service=http/server component=sidecar msg="listening for requests and metrics" address=0.0.0.0:10902
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.786529539Z caller=intrumentation.go:56 level=info msg="changing probe status" status=ready
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.78766124Z caller=tls_config.go:274 level=info service=http/server component=sidecar msg="Listening on" address=[::]:10902
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.789109967Z caller=tls_config.go:277 level=info service=http/server component=sidecar msg="TLS is disabled." http2=false address=[::]:10902
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.789458353Z caller=grpc.go:131 level=info service=gRPC/server component=sidecar msg="listening for serving gRPC" address=0.0.0.0:10901
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.789635407Z caller=reloader.go:199 level=info component=reloader msg="nothing to be watched"
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.803364151Z caller=sidecar.go:182 level=info msg="successfully loaded prometheus version"
+Nov 12 08:27:44 ip-172-31-10-253 thanos[5087]: ts=2026-11-12T08:27:44.807321584Z caller=sidecar.go:204 level=info msg="successfully loaded prometheus external labels" external_labels="{cluster=\"prometheus-lab\", replica=\"prometheus-01\"}"

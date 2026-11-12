@@ -1,0 +1,3 @@
+promtool on the Task 1.2 config: exit=1 field retention.time not found in type config.plain
+prometheus after start: failed | journal: err="parsing YAML file /etc/prometheus/prometheus.yml: yaml: unmarshal errors:\n  line 12: fiel
+node_exporter: active

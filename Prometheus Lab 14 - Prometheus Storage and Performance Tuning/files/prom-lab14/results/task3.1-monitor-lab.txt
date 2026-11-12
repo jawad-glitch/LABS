@@ -1,0 +1,16 @@
+=== Prometheus Performance Monitoring ===
+Timestamp: Thu Nov 12 08:27:56 UTC 2026
+1. Memory Usage:
+Memory data not available
+2. CPU Usage:
+CPU data not available
+3. Storage Metrics:
+Symbol Table: 0.00 MB
+Head Series: 1141
+4. WAL Metrics:
+WAL Fsync Duration: nans
+5. Query Performance:
+Query duration data not available
+6. Ingestion Rate:
+Ingestion rate data not available
+=== End Performance Report ===

@@ -1,0 +1,24 @@
+=== Prometheus Storage Analysis ===
+1. Disk Usage:
+260K	/var/lib/prometheus/
+total 40
+drwxr-xr-x  4 prometheus prometheus  4096 Nov 12 08:28 .
+drwxr-xr-x 80 root       root        4096 Nov 12 08:27 ..
+drwxr-xr-x  2 prometheus prometheus  4096 Nov 12 08:27 chunks_head
+-rw-r--r--  1 prometheus prometheus     0 Nov 12 08:27 lock
+-rw-r--r--  1 prometheus prometheus 20001 Nov 12 08:29 queries.active
+-rw-r--r--  1 prometheus prometheus    37 Nov 12 08:28 thanos.shipper.json
+drwxr-xr-x  2 prometheus prometheus  4096 Nov 12 08:27 wal
+2. TSDB Blocks:
+/var/lib/prometheus/chunks_head
+3. WAL Files:
+total 232K
+drwxr-xr-x 2 prometheus prometheus 4.0K Nov 12 08:27 .
+drwxr-xr-x 4 prometheus prometheus 4.0K Nov 12 08:28 ..
+-rw-r--r-- 1 prometheus prometheus  32K Nov 12 08:27 00000000
+-rw-r--r-- 1 prometheus prometheus    0 Nov 12 08:27 00000001
+-rw-r--r-- 1 prometheus prometheus 192K Nov 12 08:29 00000002
+4. Storage Metrics:
+Retention cleanups: 0
+Oldest data timestamp: 1794472054
+TSDB status: {"series":3621,"chunks":3621,"minTime":1794472054600} | wal-compression flag: true | retention: 30d or 10GiB

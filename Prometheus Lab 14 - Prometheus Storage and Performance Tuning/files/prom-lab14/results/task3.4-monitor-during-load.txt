@@ -1,0 +1,9 @@
+=== Prometheus Performance Monitoring (fixed) - 2026-11-12 08:28:48 ===
+Memory: 85.91 MB
+CPU: 0.84%
+Symbol Table: 0.000 MB
+Head Series: 3621
+WAL Fsync p90: NaN s
+Query inner_eval p90: 0.005538482 s
+Query rate: n/a queries/s
+Samples/sec: 348.05

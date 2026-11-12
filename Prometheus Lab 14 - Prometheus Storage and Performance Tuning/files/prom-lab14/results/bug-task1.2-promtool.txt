@@ -1,0 +1,8 @@
+Checking /etc/prometheus/prometheus.yml
+  FAILED: parsing YAML file /etc/prometheus/prometheus.yml: yaml: unmarshal errors:
+  line 12: field retention.time not found in type config.plain
+  line 14: field retention.size not found in type config.plain
+  line 16: field min-block-duration not found in type config.plain
+  line 18: field max-block-duration not found in type config.plain
+  line 20: field wal-compression not found in type config.plain
+

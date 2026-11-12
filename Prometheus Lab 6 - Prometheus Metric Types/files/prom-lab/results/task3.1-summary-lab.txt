@@ -1,0 +1,13 @@
+0   Overall request rate (req/s)
+0   Request rate broken down by HTTP status code
+0   Error count increase over last 5 minutes by error type
+0   Current active sessions per service
+0   Total items across all queues right now
+0   Memory used in MiB
+0   Median (p50) request latency per endpoint
+0   p99 request latency per endpoint
+0   Mean request latency per endpoint (sum/count)
+0   p95 database query latency per query type
+0   Median RPC call duration (client-computed)
+0   p99 RPC call duration (client-computed)
+0   Mean RPC call duration computed from sum/count

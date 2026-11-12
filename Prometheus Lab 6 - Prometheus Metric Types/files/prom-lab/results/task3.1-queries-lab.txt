@@ -1,0 +1,39 @@
+=== Overall request rate (req/s) ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== Request rate broken down by HTTP status code ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== Error count increase over last 5 minutes by error type ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== Current active sessions per service ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== Total items across all queues right now ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== Memory used in MiB ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== Median (p50) request latency per endpoint ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== p99 request latency per endpoint ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== Mean request latency per endpoint (sum/count) ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== p95 database query latency per query type ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== Median RPC call duration (client-computed) ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== p99 RPC call duration (client-computed) ===
+  [EMPTY - wait longer for data to accumulate]
+
+=== Mean RPC call duration computed from sum/count ===
+  [EMPTY - wait longer for data to accumulate]
+

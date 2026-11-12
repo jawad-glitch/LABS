@@ -1,0 +1,3 @@
+HISTOGRAM GET /api/orders, 2 instances (1x + 4x): true p99=1.1030s (in bucket le=2.5) | histogram_quantile(sum by(le)) = NaNs (bucket le=0.005)
+SUMMARY payments/Charge, 2 instances: true p99=0.5558s | per-instance client p99:  | avg() = NaNs (+nan%) | max() = NaNs
+-> histogram buckets add up across instances (correct up to bucket resolution); summary quantiles cannot be combined (avg/max are not the combined p99)

@@ -1,0 +1,9 @@
+lab 'wget -fsSL': wget: invalid option -- 'f' [exit=2]
+curl + sha256: prometheus.tar.gz: OK
+prometheus, version 2.52.0 (branch: HEAD, revision: 879d80922a227c37df502e7315fad8ceb10a986d)
+/home/ubuntu/prom-lab
+/home/ubuntu/prom-lab/apps
+/home/ubuntu/prom-lab/config
+/home/ubuntu/prom-lab/data
+/home/ubuntu/prom-lab/logs
+/home/ubuntu/prom-lab/results

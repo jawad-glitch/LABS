@@ -1,0 +1,4 @@
+compiled counter_app.py
+compiled gauge_app.py
+compiled histogram_app.py
+compiled summary_app.py

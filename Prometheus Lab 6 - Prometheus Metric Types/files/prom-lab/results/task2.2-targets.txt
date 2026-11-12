@@ -1,0 +1,5 @@
+counter-app -> unknown
+gauge-app -> unknown
+histogram-app -> unknown
+prometheus -> unknown
+summary-app -> unknown

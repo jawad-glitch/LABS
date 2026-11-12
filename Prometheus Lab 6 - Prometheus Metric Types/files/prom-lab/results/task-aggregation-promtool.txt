@@ -1,0 +1,3 @@
+Checking /home/ubuntu/prom-lab/config/prometheus.yml
+ SUCCESS: /home/ubuntu/prom-lab/config/prometheus.yml is valid prometheus config file syntax
+

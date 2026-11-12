@@ -153,3 +153,4 @@
 | [Fabric Lab 9 - Using Prometheus for Monitoring Hyperledger Fabric](Fabric%20Lab%209%20-%20Using%20Prometheus%20for%20Monitoring%20Hyperledger%20Fabric/PROOF.md) | CORE: 6/12 PASS | 2026-11-12 10:08 |
 | [Fabric Lab 10 - Deploying Multi-Org Hyperledger Fabric Networks](Fabric%20Lab%2010%20-%20Deploying%20Multi-Org%20Hyperledger%20Fabric%20Networks/PROOF.md) | CORE: 12/12 PASS | 2026-11-12 10:18 |
 | [Fabric Lab 12 - Endorsement and Validation in Hyperledger Fabric](Fabric%20Lab%2012%20-%20Endorsement%20and%20Validation%20in%20Hyperledger%20Fabric/PROOF.md) | CORE: 11/12 PASS | 2026-11-12 10:44 |
+| [Lab 14 - Using Fabric CLI for Queries and Transactions](Lab%2014%20-%20Using%20Fabric%20CLI%20for%20Queries%20and%20Transactions/PROOF.md) | /home/ubuntu/fabric-lab14/scripts/validate_transaction.sh | 2026-11-12 11:17 |

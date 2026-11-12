@@ -1,0 +1,32 @@
+Lab: Lab 14 - Using Fabric CLI for Queries and Transactions
+Result: PASSED
+Completed UTC: 2026-11-12 11:16:52
+Host: ip-172-31-10-191
+Environment: Local Fabric CLI simulation
+
+Ledger snapshot:
+Assets: 10
+Transactions: 11
+Block height: 12
+
+Generated files:
+/home/ubuntu/fabric-lab14/logs/fabric.log
+/home/ubuntu/fabric-lab14/ledger.json
+/home/ubuntu/fabric-lab14/blocks/block-2.json
+/home/ubuntu/fabric-lab14/blocks/block-11.json
+/home/ubuntu/fabric-lab14/blocks/block-6.json
+/home/ubuntu/fabric-lab14/blocks/block-8.json
+/home/ubuntu/fabric-lab14/blocks/block-1.json
+/home/ubuntu/fabric-lab14/blocks/block-3.json
+/home/ubuntu/fabric-lab14/blocks/block-0.json
+/home/ubuntu/fabric-lab14/blocks/block-5.json
+/home/ubuntu/fabric-lab14/blocks/block-4.json
+/home/ubuntu/fabric-lab14/blocks/block-7.json
+/home/ubuntu/fabric-lab14/__pycache__/fabric_cli_lab.cpython-312.pyc
+/home/ubuntu/fabric-lab14/fabric_cli_lab.py
+/home/ubuntu/fabric-lab14/scripts/monitor_transactions.sh
+/home/ubuntu/fabric-lab14/scripts/batch_transactions.sh
+/home/ubuntu/fabric-lab14/scripts/comprehensive_queries.sh
+/home/ubuntu/fabric-lab14/scripts/performance_monitor.sh
+/home/ubuntu/fabric-lab14/scripts/analyze_logs.sh
+/home/ubuntu/fabric-lab14/scripts/validate_transaction.sh

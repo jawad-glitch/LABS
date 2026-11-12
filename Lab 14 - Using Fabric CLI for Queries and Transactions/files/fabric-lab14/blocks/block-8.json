@@ -1,0 +1,12 @@
+{
+  "number": 8,
+  "channel": "mychannel",
+  "transactions": [
+    {
+      "txid": "5c38587d9eac444f940a66138f3faeda091b613b83a8d460a49f6945a12d5429",
+      "action": "TransferAsset",
+      "asset": "asset7",
+      "block": 8
+    }
+  ]
+}

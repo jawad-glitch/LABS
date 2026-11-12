@@ -1,0 +1,12 @@
+{
+  "number": 7,
+  "channel": "mychannel",
+  "transactions": [
+    {
+      "txid": "27e03ce811d9571c8afaa47957d752048ac0e16cf1f5cff60bb8d2f774d3d5a2",
+      "action": "CreateAsset",
+      "asset": "asset7",
+      "block": 7
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "number": 3,
+  "channel": "mychannel",
+  "transactions": [
+    {
+      "txid": "5dd05547c4bd5011fb80c2181e622f596ae0c8a4c2da1f623df5ae219d86f1c5",
+      "action": "InitLedger",
+      "asset": "asset3",
+      "block": 3
+    }
+  ]
+}

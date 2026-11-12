@@ -1,0 +1,12 @@
+{
+  "number": 11,
+  "channel": "mychannel",
+  "transactions": [
+    {
+      "txid": "e4c4aaa2430e1e432cd5a98cc6ccef429894a569b242c56bf76be565c401e85c",
+      "action": "CreateAsset",
+      "asset": "batch_asset_3",
+      "block": 11
+    }
+  ]
+}

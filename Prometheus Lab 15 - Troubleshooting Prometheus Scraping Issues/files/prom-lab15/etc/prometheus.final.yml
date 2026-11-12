@@ -1,0 +1,97 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "rules/scraping_alerts.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+  
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['localhost:9100']
+  
+  # Fixed: Use relabeling to correct port issues
+  - job_name: 'corrected-targets'
+    static_configs:
+      - targets: ['localhost:8080']
+        labels:
+          service: 'web-app'
+          environment: 'production'
+    relabel_configs:
+      # Replace port 8080 with 9100 (node_exporter port)
+      - source_labels: [__address__]
+        regex: '(.+):8080'
+        target_label: __address__
+        replacement: '${1}:9100'
+      # Add a custom label to identify this was relabeled
+      - target_label: relabeled
+        replacement: 'true'
+  
+  # Fixed: Increase timeout for slow targets
+  - job_name: 'slow-targets'
+    static_configs:
+      - targets: ['localhost:9100']
+        labels:
+          type: 'slow-endpoint'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    relabel_configs:
+      # Add environment label
+      - target_label: environment
+        replacement: 'testing'
+  
+  # Fixed: Correct metrics path using relabeling
+  - job_name: 'custom-path'
+    static_configs:
+      - targets: ['localhost:9100']
+    relabel_configs:
+      # Keep original target but change path
+      - target_label: __metrics_path__
+        replacement: '/metrics'
+      # Add custom labels
+      - target_label: scrape_method
+        replacement: 'relabeled'
+  
+  # Fixed: Filter out non-existent hosts
+  - job_name: 'filtered-targets'
+    static_configs:
+      - targets: ['localhost:9100', 'nonexistent.local:9100']
+    relabel_configs:
+      # Drop targets that match non-existent hosts
+      - source_labels: [__address__]
+        regex: 'nonexistent\..*'
+        action: drop
+
+  # Advanced relabeling example
+  - job_name: 'advanced-relabeling'
+    static_configs:
+      - targets: ['localhost:9100']
+        labels:
+          datacenter: 'dc1'
+          rack: 'r1'
+          server_type: 'web'
+    relabel_configs:
+      # Create instance label from address
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: '${1}'
+      
+      # Create a combined label
+      - source_labels: [datacenter, rack]
+        separator: '-'
+        target_label: location
+        replacement: '${1}'
+      
+      # Conditional labeling based on server type
+      - source_labels: [server_type]
+        regex: 'web'
+        target_label: monitoring_team
+        replacement: 'web-ops'
+      
+      # Add timestamp label (useful for debugging)
+      - target_label: config_reload_time
+        replacement: '2024-01-15T10:00:00Z'

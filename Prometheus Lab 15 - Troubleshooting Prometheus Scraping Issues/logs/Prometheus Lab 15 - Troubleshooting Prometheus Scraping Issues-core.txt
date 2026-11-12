@@ -1,0 +1,14 @@
+========== CORE CHECKS (Prometheus Lab 15 - Troubleshooting Prometheus Scraping Issues, 2026-11-12 08:33:23 UTC) - ALL REAL ==========
+PASS: Tasks 1-2: Prometheus 2.47.0 + node_exporter 1.6.1 sha256-verified, systemd services active
+PASS: Task 3.2: prometheus + node-exporter UP, broken-target DOWN (connection refused)
+PASS: Lab bug: 'systemctl reload' without ExecReload fails and the new jobs never load; with ExecReload they do
+FAIL: Task 4: broken-port refused, wrong-path 404, non-existent-host DNS failure
+FAIL: Lab bug: 'timeout-issue' is really a 404 (path /slow-metrics), not a timeout; a real timeout = context deadline exceeded
+PASS: Lab bug: scrape failures are not in the logs at info level (0 lines mention the broken jobs); journalctl -f never returns
+PASS: Lab bug: prometheus_target_scrape_duration_seconds / _scrapes_total / _last_scrape_timestamp_seconds do not exist (0 series)
+PASS: Task 5: corrected config valid; all 7 targets UP; relabeled 8080->9100; location=dc1-r1; nonexistent host dropped
+PASS: Task 7: 3 rules loaded health ok; ScrapeDurationHigh (lab metric) evaluates 0 series - cannot fire; fixed name has series
+FAIL: Lab validate_fixes.sh: config valid, service running, targets 7/7 up
+PASS: Task 8: runbook written; every query in the fixed query file returns success
+PASS: Time: finished in 75s (<= 300s)
+CORE: 9/12 PASS

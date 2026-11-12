@@ -1,0 +1,29 @@
+groups:
+  - name: scraping_alerts
+    rules:
+      - alert: TargetDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Target {{ $labels.instance }} is down"
+          description: "{{ $labels.job }} target {{ $labels.instance }} has been down for more than 1 minute."
+      
+      - alert: ScrapeDurationHigh
+        expr: prometheus_target_scrape_duration_seconds > 5
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Scrape duration is high for {{ $labels.instance }}"
+          description: "Scraping {{ $labels.instance }} is taking {{ $value }} seconds."
+      
+      - alert: ScrapeErrors
+        expr: rate(prometheus_target_scrapes_sample_duplicate_timestamp_total[5m]) > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Scrape errors detected for {{ $labels.instance }}"
+          description: "Target {{ $labels.instance }} has scraping errors."

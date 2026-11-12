@@ -1,0 +1,34 @@
+Nov 12 08:32:21 ip-172-31-10-139 systemd[1]: Started prometheus.service - Prometheus.
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.131Z caller=main.go:539 level=info msg="No time or size retention was set so using the default time retention" duration=15d
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.131Z caller=main.go:583 level=info msg="Starting Prometheus Server" mode=server version="(version=2.47.0, branch=HEAD, revision=efa34a5840661c29c2e362efa76bc3a70dccb335)"
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.131Z caller=main.go:588 level=info build_context="(go=go1.21.0, platform=linux/amd64, user=root@409eb5e6b30c, date=20230906-10:20:07, tags=netgo,builtinassets,stringlabels)"
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.131Z caller=main.go:589 level=info host_details="(Linux 6.14.0-1018-aws #18~24.04.1-Ubuntu SMP Mon Nov 24 19:46:27 UTC 2025 x86_64 ip-172-31-10-139 (none))"
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.131Z caller=main.go:590 level=info fd_limits="(soft=524288, hard=524288)"
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.131Z caller=main.go:591 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.141Z caller=web.go:566 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.142Z caller=main.go:1024 level=info msg="Starting TSDB ..."
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.148Z caller=tls_config.go:274 level=info component=web msg="Listening on" address=[::]:9090
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.148Z caller=tls_config.go:277 level=info component=web msg="TLS is disabled." http2=false address=[::]:9090
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.150Z caller=head.go:600 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.150Z caller=head.go:681 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=2.68µs
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.150Z caller=head.go:689 level=info component=tsdb msg="Replaying WAL, this may take a while"
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.150Z caller=head.go:760 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=0
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.151Z caller=head.go:797 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=50.61µs wal_replay_duration=297.105µs wbl_replay_duration=170ns total_replay_duration=389.306µs
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.162Z caller=main.go:1045 level=info fs_type=EXT4_SUPER_MAGIC
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.162Z caller=main.go:1048 level=info msg="TSDB started"
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.162Z caller=main.go:1229 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.168Z caller=main.go:1266 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=6.077462ms db_storage=2.17µs remote_storage=1.91µs web_handler=580ns query_engine=1.32µs scrape=4.977273ms scrape_sd=90.711µs notify=1.14µs notify_sd=2.68µs rules=1.7µs tracing=7.84µs
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.170Z caller=main.go:1009 level=info msg="Server is ready to receive web requests."
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.170Z caller=manager.go:1009 level=info component="rule manager" msg="Starting rule manager..."
+Nov 12 08:32:43 ip-172-31-10-139 systemd[1]: Reloading prometheus.service - Prometheus...
+Nov 12 08:32:43 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:43.930Z caller=main.go:1229 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:32:43 ip-172-31-10-139 systemd[1]: Reloaded prometheus.service - Prometheus.
+Nov 12 08:32:43 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:43.933Z caller=main.go:1266 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=3.181155ms db_storage=1.78µs remote_storage=1.84µs web_handler=650ns query_engine=1.46µs scrape=2.219378ms scrape_sd=164.823µs notify=1.16µs notify_sd=1.75µs rules=1.51µs tracing=5.13µs
+Nov 12 08:33:05 ip-172-31-10-139 systemd[1]: Reloading prometheus.service - Prometheus...
+Nov 12 08:33:05 ip-172-31-10-139 systemd[1]: Reloaded prometheus.service - Prometheus.
+Nov 12 08:33:05 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:33:05.454Z caller=main.go:1229 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:33:05 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:33:05.466Z caller=main.go:1266 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=12.052133ms db_storage=2.19µs remote_storage=2.92µs web_handler=781ns query_engine=1.16µs scrape=6.855325ms scrape_sd=312.415µs notify=1.33µs notify_sd=85.001µs rules=1.63µs tracing=7.781µs
+Nov 12 08:33:16 ip-172-31-10-139 systemd[1]: Reloading prometheus.service - Prometheus...
+Nov 12 08:33:16 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:33:16.316Z caller=main.go:1229 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:33:16 ip-172-31-10-139 systemd[1]: Reloaded prometheus.service - Prometheus.
+Nov 12 08:33:16 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:33:16.322Z caller=main.go:1266 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=6.302296ms db_storage=1.69µs remote_storage=2.44µs web_handler=581ns query_engine=1.16µs scrape=2.016353ms scrape_sd=194.684µs notify=1.42µs notify_sd=2.12µs rules=1.956283ms tracing=8.4µs

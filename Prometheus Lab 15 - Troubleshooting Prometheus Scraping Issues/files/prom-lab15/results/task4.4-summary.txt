@@ -1,0 +1,1 @@
+troubleshoot script: API check '✓ Prometheus API is accessible' | step 5 scrape-duration result entries: 0 | promtool: 2 SUCCESS

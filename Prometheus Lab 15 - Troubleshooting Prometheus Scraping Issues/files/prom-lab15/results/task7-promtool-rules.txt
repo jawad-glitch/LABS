@@ -1,0 +1,3 @@
+Checking /etc/prometheus/rules/scraping_alerts.yml
+  SUCCESS: 3 rules found
+

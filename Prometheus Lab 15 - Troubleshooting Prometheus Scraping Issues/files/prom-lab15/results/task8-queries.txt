@@ -1,0 +1,8 @@
+success results=13 | up
+success results=1 | count(up == 0)
+success results=13 | avg by (job) (scrape_duration_seconds)
+success results=5 | topk(5, scrape_duration_seconds)
+success results=7 | count by (job) (up == 1)
+success results=6 | count by (job) (up == 0)
+success results=1 | rate(prometheus_target_scrapes_exceeded_sample_limit_total[5m])
+success results=1 | prometheus_config_last_reload_successful

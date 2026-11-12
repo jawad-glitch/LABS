@@ -1,0 +1,8 @@
+up
+count(up == 0)
+avg by (job) (scrape_duration_seconds)
+topk(5, scrape_duration_seconds)
+count by (job) (up == 1)
+count by (job) (up == 0)
+rate(prometheus_target_scrapes_exceeded_sample_limit_total[5m])
+prometheus_config_last_reload_successful

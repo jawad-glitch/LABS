@@ -1,0 +1,5 @@
+rule TargetDown health=ok state=pending
+rule ScrapeDurationHigh health=ok state=inactive
+rule ScrapeErrors health=ok state=inactive
+ScrapeDurationHigh lab expression returns: 0 series (it can never fire) | with scrape_duration_seconds: 13 series
+the fixed expression catches a real slow scrape: scrape_duration_seconds > 2 ->  (none expected after the fix)

@@ -1,0 +1,4 @@
+prometheus: active | node_exporter: active | /metrics lines: 879
+  broken-target http://localhost:8080/metrics -> down Get "http://localhost:8080/metrics": dial tcp 127.0.0.1:8080: connect: connection refused
+  node-exporter http://localhost:9100/metrics -> up 
+  prometheus http://localhost:9090/metrics -> up 

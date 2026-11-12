@@ -1,0 +1,2 @@
+lab 'sudo systemctl reload prometheus': exit=3 Failed to reload prometheus.service: Job type reload is not applicable for unit prometheus.service.  | jobs Prometheus is running now: broken-target,node-exporter,prometheus
+with ExecReload added: reload exit=0 | jobs now: broken-port,node-exporter,non-existent-host,prometheus,real-timeout-demo,timeout-issue,wrong-path

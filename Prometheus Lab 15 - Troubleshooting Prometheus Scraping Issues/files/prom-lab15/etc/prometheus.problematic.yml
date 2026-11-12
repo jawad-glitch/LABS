@@ -1,0 +1,45 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+  
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['localhost:9100']
+  
+  # Issue 1: Wrong port
+  - job_name: 'broken-port'
+    static_configs:
+      - targets: ['localhost:8080']
+    scrape_interval: 5s
+    scrape_timeout: 3s
+  
+  # Issue 2: Timeout too short
+  - job_name: 'timeout-issue'
+    static_configs:
+      - targets: ['localhost:9100']
+    scrape_interval: 5s
+    scrape_timeout: 1s
+    metrics_path: '/slow-metrics'
+  
+  # Issue 3: Wrong metrics path
+  - job_name: 'wrong-path'
+    static_configs:
+      - targets: ['localhost:9100']
+    metrics_path: '/wrong-metrics'
+  
+  # Issue 4: Non-existent host
+  - job_name: 'non-existent-host'
+    static_configs:
+      - targets: ['nonexistent.local:9100']
+
+  # (added by this block) what a REAL scrape timeout looks like: endpoint answers after 2.5 s, timeout 1 s
+  - job_name: 'real-timeout-demo'
+    static_configs:
+      - targets: ['localhost:8099']
+    scrape_interval: 5s
+    scrape_timeout: 1s

@@ -1,0 +1,13 @@
+--- names used by the lab
+prometheus_target_scrape_duration_seconds                      series=0   type=(not a metric)
+prometheus_target_scrapes_total                                series=0   type=(not a metric)
+prometheus_target_last_scrape_timestamp_seconds                series=0   type=(not a metric)
+prometheus_target_scrapes_sample_limit_exceeded_total          series=0   type=(not a metric)
+prometheus_target_scrapes_exceeded_sample_limit_total          series=1   type=counter
+prometheus_target_scrapes_sample_duplicate_timestamp_total     series=1   type=counter
+--- the per-target metrics that do exist
+up                                                             series=8   type=(not a metric)
+scrape_duration_seconds                                        series=8   type=(not a metric)
+scrape_samples_scraped                                         series=8   type=(not a metric)
+scrape_series_added                                            series=8   type=(not a metric)
+slowest targets (fixed query topk(3, scrape_duration_seconds)): real-timeout-demo=1.001s node-exporter=0.027s prometheus=0.012s

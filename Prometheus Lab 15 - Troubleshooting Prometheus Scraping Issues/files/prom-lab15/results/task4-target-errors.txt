@@ -1,0 +1,7 @@
+broken-port	http://localhost:8080/metrics	down	Get "http://localhost:8080/metrics": dial tcp 127.0.0.1:8080: connect: connection refused
+node-exporter	http://localhost:9100/metrics	up	
+non-existent-host	http://nonexistent.local:9100/metrics	down	Get "http://nonexistent.local:9100/metrics": dial tcp: lookup nonexistent.local on 127.0.0.53:53: server misbehaving
+prometheus	http://localhost:9090/metrics	up	
+real-timeout-demo	http://localhost:8099/metrics	down	Get "http://localhost:8099/metrics": context deadline exceeded
+timeout-issue	http://localhost:9100/slow-metrics	down	expected a valid start token, got "<" ("INVALID") while parsing: "<"
+wrong-path	http://localhost:9100/wrong-metrics	down	expected a valid start token, got "<" ("INVALID") while parsing: "<"

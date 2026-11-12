@@ -1,0 +1,143 @@
+=== Prometheus Troubleshooting Script ===
+
+1. Checking Prometheus service status:
+● prometheus.service - Prometheus
+     Loaded: loaded (/etc/systemd/system/prometheus.service; enabled; preset: enabled)
+     Active: active (running) since Thu 2026-11-12 08:32:21 UTC; 43s ago
+    Process: 4682 ExecReload=/bin/kill -HUP $MAINPID (code=exited, status=0/SUCCESS)
+   Main PID: 4297 (prometheus)
+      Tasks: 8 (limit: 4387)
+     Memory: 24.1M (peak: 25.2M)
+        CPU: 314ms
+     CGroup: /system.slice/prometheus.service
+             └─4297 /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.path /var/lib/prometheus/ --web.console.templates=/etc/prometheus/consoles --web.console.libraries=/etc/prometheus/console_libraries --web.listen-address=0.0.0.0:9090 --web.enable-lifecycle --log.level=info
+
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.162Z caller=main.go:1045 level=info fs_type=EXT4_SUPER_MAGIC
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.162Z caller=main.go:1048 level=info msg="TSDB started"
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.162Z caller=main.go:1229 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.168Z caller=main.go:1266 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=6.077462ms db_storage=2.17µs remote_storage=1.91µs web_handler=580ns query_engine=1.32µs scrape=4.977273ms scrape_sd=90.711µs notify=1.14µs notify_sd=2.68µs rules=1.7µs tracing=7.84µs
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.170Z caller=main.go:1009 level=info msg="Server is ready to receive web requests."
+Nov 12 08:32:21 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:21.170Z caller=manager.go:1009 level=info component="rule manager" msg="Starting rule manager..."
+Nov 12 08:32:43 ip-172-31-10-139 systemd[1]: Reloading prometheus.service - Prometheus...
+Nov 12 08:32:43 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:43.930Z caller=main.go:1229 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Nov 12 08:32:43 ip-172-31-10-139 systemd[1]: Reloaded prometheus.service - Prometheus.
+Nov 12 08:32:43 ip-172-31-10-139 prometheus[4297]: ts=2026-11-12T08:32:43.933Z caller=main.go:1266 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=3.181155ms db_storage=1.78µs remote_storage=1.84µs web_handler=650ns query_engine=1.46µs scrape=2.219378ms scrape_sd=164.823µs notify=1.16µs notify_sd=1.75µs rules=1.51µs tracing=5.13µs
+
+2. Checking recent Prometheus logs for errors:
+
+3. Testing Prometheus API connectivity:
+✓ Prometheus API is accessible
+
+4. Checking target status:
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "localhost:8080",
+                    "job": "broken-port"
+                },
+                "value": [
+                    1794472384.936,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "localhost:8080",
+                    "job": "broken-target"
+                },
+                "value": [
+                    1794472384.936,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "localhost:8099",
+                    "job": "real-timeout-demo"
+                },
+                "value": [
+                    1794472384.936,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "localhost:9090",
+                    "job": "prometheus"
+                },
+                "value": [
+                    1794472384.936,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "localhost:9100",
+                    "job": "node-exporter"
+                },
+                "value": [
+                    1794472384.936,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "localhost:9100",
+                    "job": "timeout-issue"
+                },
+                "value": [
+                    1794472384.936,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "localhost:9100",
+                    "job": "wrong-path"
+                },
+                "value": [
+                    1794472384.936,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "nonexistent.local:9100",
+                    "job": "non-existent-host"
+                },
+                "value": [
+                    1794472384.936,
+                    "0"
+                ]
+            }
+        ]
+    }
+}
+
+5. Checking scrape duration:
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": []
+    }
+}
+
+6. Checking configuration file syntax:
+Checking /etc/prometheus/prometheus.yml
+ SUCCESS: /etc/prometheus/prometheus.yml is valid prometheus config file syntax
+
+
+=== Troubleshooting Complete ===

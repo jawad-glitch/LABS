@@ -1,0 +1,4 @@
+prometheus 2.47.0 sha256 OK
+node_exporter 1.6.1 sha256 OK
+useradd: created (re-run: 'already exists')
+binary owners as the lab sets them: root -> left root-owned here (a service user should not be able to replace its own binary)

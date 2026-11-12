@@ -1,0 +1,28 @@
+=== Prometheus Scraping Validation ===
+1. Configuration syntax check:
+Checking /etc/prometheus/prometheus.yml
+  SUCCESS: 1 rule files found
+ SUCCESS: /etc/prometheus/prometheus.yml is valid prometheus config file syntax
+
+Checking /etc/prometheus/rules/scraping_alerts.yml
+  SUCCESS: 3 rules found
+
+✓ Configuration is valid
+2. Service status:
+✓ Prometheus service is running
+3. Target status summary:
+Targets UP: 7/13
+
+DOWN targets:
+  - broken-port (localhost:8080)
+  - broken-target (localhost:8080)
+  - real-timeout-demo (localhost:8099)
+  - timeout-issue (localhost:9100)
+  - wrong-path (localhost:9100)
+  - non-existent-host (nonexistent.local:9100)
+4. Relabeling validation:
+! No relabeled targets found
+5. Recent scraping errors:
+✓ No recent scraping errors
+=== Validation Complete ===
+4. relabel check uses a raw '{relabeled="true"}' in the URL - curl turns {..} into a glob: error invalid parameter "query": 1:12: parse error: unexpected "="

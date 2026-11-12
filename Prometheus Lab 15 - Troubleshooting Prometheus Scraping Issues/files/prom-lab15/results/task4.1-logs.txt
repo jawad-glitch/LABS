@@ -1,0 +1,4 @@
+journalctl lines matching error|failed|timeout since start: 0
+lines mentioning any broken job/target: 0
+log level: info (scrape failures are not logged at info - read /api/v1/targets)
+lab 'journalctl -u prometheus -f': exit=124 (124 = never returns)

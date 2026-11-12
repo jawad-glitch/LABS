@@ -1,0 +1,13 @@
+advanced-relabeling (localhost:9100): UP
+broken-port (localhost:8080): DOWN
+broken-target (localhost:8080): DOWN
+corrected-targets (localhost:9100): UP
+custom-path (localhost:9100): UP
+filtered-targets (localhost:9100): UP
+node-exporter (localhost:9100): UP
+non-existent-host (nonexistent.local:9100): DOWN
+prometheus (localhost:9090): UP
+real-timeout-demo (localhost:8099): DOWN
+slow-targets (localhost:9100): UP
+timeout-issue (localhost:9100): DOWN
+wrong-path (localhost:9100): DOWN

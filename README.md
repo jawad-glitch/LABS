@@ -140,3 +140,4 @@
 | [Prometheus Lab 16 - Backup and Restore Prometheus Data](Prometheus%20Lab%2016%20-%20Backup%20and%20Restore%20Prometheus%20Data/PROOF.md) | CORE: 9/12 PASS | 2026-11-12 08:37 |
 | [Prometheus Lab 17 - Scaling Prometheus for High-Volume Environments](Prometheus%20Lab%2017%20-%20Scaling%20Prometheus%20for%20High-Volume%20Environments/PROOF.md) | CORE: 11/12 PASS | 2026-11-12 08:43 |
 | [Lab 18 - Multi-Cluster Prometheus Setup](Lab%2018%20-%20Multi-Cluster%20Prometheus%20Setup/PROOF.md) | CORE: 8/8 PASS | 2026-11-12 08:50 |
+| [Lab 19 - Integrating Prometheus with Istio Service Mesh](Lab%2019%20-%20Integrating%20Prometheus%20with%20Istio%20Service%20Mesh/PROOF.md) | CORE: 3/4 PASS | 2026-11-12 08:57 |

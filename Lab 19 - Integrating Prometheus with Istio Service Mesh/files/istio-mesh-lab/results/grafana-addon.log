@@ -1,0 +1,6 @@
+serviceaccount/grafana created
+configmap/grafana created
+service/grafana created
+deployment.apps/grafana created
+configmap/istio-grafana-dashboards created
+configmap/istio-services-grafana-dashboards created

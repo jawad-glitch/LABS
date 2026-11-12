@@ -1,0 +1,6 @@
+serviceaccount/prometheus created
+configmap/prometheus created
+clusterrole.rbac.authorization.k8s.io/prometheus created
+clusterrolebinding.rbac.authorization.k8s.io/prometheus created
+service/prometheus created
+deployment.apps/prometheus created

@@ -1,0 +1,7 @@
+========== CORE CHECKS (Lab 19 - Integrating Prometheus with Istio Service Mesh, 2026-11-12 08:57:00 UTC) ==========
+PASS: Kubernetes cluster & Helm ready
+PASS: Istio Control Plane Running in istio-system
+FAIL: Mesh Namespace istio-injection enabled with 2/2 ready pods
+-bash: length $R/query-requests.json)" -gt 0 ]: No such file or directory
+PASS: mesh_queries.txt generated successfully
+CORE: 3/4 PASS

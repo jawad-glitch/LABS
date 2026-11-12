@@ -1,0 +1,24 @@
+
+Downloading istio-1.32.0 from https://github.com/istio/istio/releases/download/1.32.0/istio-1.32.0-linux-amd64.tar.gz ...
+
+Istio 1.32.0 download complete!
+
+The Istio release archive has been downloaded to the istio-1.32.0 directory.
+
+To configure the istioctl client tool for your workstation,
+add the /home/ubuntu/istio-mesh-lab/istio-1.32.0/bin directory to your environment path variable with:
+	 export PATH="$PATH:/home/ubuntu/istio-mesh-lab/istio-1.32.0/bin"
+
+Begin the Istio pre-installation check by running:
+	 istioctl x precheck 
+
+Try Istio in ambient mode
+	https://istio.io/latest/docs/ambient/getting-started/
+Try Istio in sidecar mode
+	https://istio.io/latest/docs/setup/getting-started/
+Install guides for ambient mode
+	https://istio.io/latest/docs/ambient/install/
+Install guides for sidecar mode
+	https://istio.io/latest/docs/setup/install/
+
+Need more information? Visit https://istio.io/latest/docs/ 

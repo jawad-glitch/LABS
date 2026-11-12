@@ -1,0 +1,20 @@
+[first] system-channel genesis block (TradeOrdererGenesis): exit=0 size=19899
+[first] crypto + tradechannel.block ok
+[first] containers Up: cli orderer0.orderer.example.com peer0.org1.example.com peer0.org2.example.com peer1.org1.example.com peer1.org2.example.com
+[first] orderer: {"name":"tradechannel","status":"active","consensusRelation":"consenter"}
+[first] peer localhost:7051 channels: tradechannel
+[first] peer localhost:8051 channels: tradechannel
+[first] peer localhost:9051 channels: tradechannel
+[first] peer localhost:10051 channels: tradechannel
+[first] anchor peer update Org1: ok
+[first] anchor peer update Org2: ok
+[first] anchor peers in channel config: [{"org":"Org1MSP","anchors":[{"host":"peer0.org1.example.com","port":7051}]},{"org":"Org2MSP","anchors":[{"host":"peer0.org2.example.com","port":9051}]}]
+[first] install on localhost:7051: exit=0
+[first] install on localhost:8051: exit=0
+[first] install on localhost:9051: exit=0
+[first] install on localhost:10051: exit=0
+[first] approved by Org1 admin
+[first] approved by Org2 admin
+[first] committed tradecc 1.0 seq 1 with AND('Org1MSP.peer','Org2MSP.peer')
+[first] smoke: Org2 reads smoke-first = written-by-org1
+[first] DEPLOY_OK

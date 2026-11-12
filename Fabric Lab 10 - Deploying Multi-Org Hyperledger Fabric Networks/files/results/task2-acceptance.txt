@@ -1,0 +1,12 @@
+cli	Up About a minute
+orderer0.orderer.example.com	Up About a minute
+peer0.org1.example.com	Up About a minute
+peer0.org2.example.com	Up About a minute
+peer1.org1.example.com	Up About a minute
+peer1.org2.example.com	Up About a minute
+orderer log: listening=3 FATAL/ERRO lines=0
+peer0.org1 log: gossip lines=50 bootstrap/membership lines=2 FATAL=0
+peer0.org2 log: gossip lines=37 bootstrap/membership lines=2 FATAL=0
+querycommitted (inside cli): Committed chaincode definition for chaincode 'tradecc' on channel 'tradechannel': Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Approvals: [Org1MSP: true, Org2MSP: true]
+Org1 CreateAsset asset1 (both endorsers): exit=0
+Org2 ReadAsset asset1 on peer0.org2: value-written-by-org1 (exit=0)

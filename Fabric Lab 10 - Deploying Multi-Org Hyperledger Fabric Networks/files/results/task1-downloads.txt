@@ -1,0 +1,6 @@
+go 1.21.11 sha256 OK
+install-fabric.sh binary OK
+pulled hello-world:latest
+pulled hyperledger/fabric-orderer:2.5.4
+pulled hyperledger/fabric-peer:2.5.4
+pulled hyperledger/fabric-tools:2.5.4

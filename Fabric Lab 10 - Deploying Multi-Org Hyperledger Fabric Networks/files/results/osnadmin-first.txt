@@ -1,0 +1,9 @@
+Status: 201
+{
+	"name": "tradechannel",
+	"url": "/participation/v1/channels/tradechannel",
+	"consensusRelation": "consenter",
+	"status": "active",
+	"height": 1
+}
+

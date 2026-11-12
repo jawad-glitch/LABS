@@ -1,0 +1,4 @@
+single endorser, lab style (no --waitForEvent): exit=0 -> Chaincode invoke successful. result: status:200 
+single endorser, --waitForEvent: exit=1 -> committed with status (ENDORSEMENT_POLICY_FAILURE)
+ledger: asset-single-a -> does not exist | asset-single-b -> does not exist
+both endorsers: exit=0 -> asset2 = both-endorsers

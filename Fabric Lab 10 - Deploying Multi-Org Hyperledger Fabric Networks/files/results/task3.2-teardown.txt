@@ -1,0 +1,6 @@
+ Volume tradenet_peer1.org2.example.com Removed 
+ Network fabric_trade Removed 
+containers left: 0
+volumes left: 0
+artefacts left: 0
+docker ps -a lab containers: 0 | tradenet volumes: 0

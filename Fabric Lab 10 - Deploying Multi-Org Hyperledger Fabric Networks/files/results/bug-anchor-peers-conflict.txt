@@ -1,0 +1,1 @@
+block from a profile with AnchorPeers already contains: [{"org":"Org1MSP","anchors":[{"host":"peer0.org1.example.com","port":7051}]},{"org":"Org2MSP","anchors":[{"host":"peer0.org2.example.com","port":9051}]}] | anchor update compute_update: exit=1 no differences detected between original and updated config

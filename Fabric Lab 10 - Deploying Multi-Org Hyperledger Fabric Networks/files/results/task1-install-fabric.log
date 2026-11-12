@@ -1,0 +1,19 @@
+
+Pull Hyperledger Fabric binaries
+
+===> Downloading version 2.5.4 platform specific fabric binaries
+===> Downloading:  https://github.com/hyperledger/fabric/releases/download/v2.5.4/hyperledger-fabric-linux-amd64-2.5.4.tar.gz
+===> Will unpack to: /home/ubuntu/fabric-lab
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 10 99.3M   10 10.3M    0     0  3083k      0  0:00:33  0:00:03  0:00:30 3083k 20 99.3M   20 20.1M    0     0  3631k      0  0:00:28  0:00:05  0:00:23 4474k 30 99.3M   30 30.0M    0     0  3408k      0  0:00:29  0:00:09  0:00:20 3610k 40 99.3M   40 39.8M    0     0  3641k      0  0:00:27  0:00:11  0:00:16 3889k 49 99.3M   49 49.6M    0     0  4077k      0  0:00:24  0:00:12  0:00:12 4458k 59 99.3M   59 59.4M    0     0  4351k      0  0:00:23  0:00:13  0:00:10 4767k 69 99.3M   69 69.2M    0     0  4627k      0  0:00:21  0:00:15  0:00:06 5217k 79 99.3M   79 79.0M    0     0  4577k      0  0:00:22  0:00:17  0:00:05 5794k 89 99.3M   89 88.8M    0     0  4876k      0  0:00:20  0:00:18  0:00:02 6730k 99 99.3M   99 98.6M    0     0  4999k      0  0:00:20  0:00:20 --:--:-- 6482k100 99.3M  100 99.3M    0     0  4826k      0  0:00:21  0:00:21 --:--:-- 5762k100 99.3M  100 99.3M    0     0  4826k      0  0:00:21  0:00:21 --:--:-- 5354k
+==> Done.
+===> Downloading version 1.5.7 platform specific fabric-ca-client binary
+===> Downloading:  https://github.com/hyperledger/fabric-ca/releases/download/v1.5.7/hyperledger-fabric-ca-linux-amd64-1.5.7.tar.gz
+===> Will unpack to: /home/ubuntu/fabric-lab
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 31 34.0M   31 10.6M    0     0  7743k      0  0:00:04  0:00:01  0:00:03 7743k 60 34.0M   60 20.4M    0     0  11.7M      0  0:00:02  0:00:01  0:00:01 29.0M100 34.0M  100 34.0M    0     0  13.3M      0  0:00:02  0:00:02 --:--:-- 20.5M
+==> Done.

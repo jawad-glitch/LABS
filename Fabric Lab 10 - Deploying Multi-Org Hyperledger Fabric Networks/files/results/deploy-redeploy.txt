@@ -1,0 +1,21 @@
+[redeploy] system-channel genesis block (TradeOrdererGenesis): exit=0 size=19899
+[redeploy] crypto + tradechannel.block ok
+[redeploy] containers Up: cli orderer0.orderer.example.com peer0.org1.example.com peer0.org2.example.com peer1.org1.example.com peer1.org2.example.com
+[redeploy] orderer: {"name":"tradechannel","status":"active","consensusRelation":"consenter"}
+[redeploy] peer localhost:7051 channels: tradechannel
+[redeploy] peer localhost:8051 channels: tradechannel
+[redeploy] peer localhost:9051 channels: tradechannel
+[redeploy] peer localhost:10051 channels: tradechannel
+[redeploy] anchor peer update Org1: ok
+[redeploy] anchor peer update Org2: ok
+[redeploy] anchor peers in channel config: [{"org":"Org1MSP","anchors":[{"host":"peer0.org1.example.com","port":7051}]},{"org":"Org2MSP","anchors":[{"host":"peer0.org2.example.com","port":9051}]}]
+[redeploy] install on localhost:7051: exit=0
+[redeploy] install on localhost:8051: exit=0
+[redeploy] install on localhost:9051: exit=0
+[redeploy] install on localhost:10051: exit=0
+[redeploy] approved by Org1 admin
+[redeploy] approved by Org2 admin
+[redeploy] committed tradecc 1.0 seq 1 with AND('Org1MSP.peer','Org2MSP.peer')
+[redeploy] smoke: Org2 reads smoke-redeploy = written-by-org1
+[redeploy] DEPLOY_OK
+redeploy exit=0 in 79s (first deploy 79s)

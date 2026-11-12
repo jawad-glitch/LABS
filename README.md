@@ -151,3 +151,4 @@
 | [Lab 7 - Chaincode Deployment and Testing](Lab%207%20-%20Chaincode%20Deployment%20and%20Testing/PROOF.md) | CORE: 6/6 PASS | 2026-11-12 09:43 |
 | [Fabric Lab 8 - Fabric Network Configuration](Fabric%20Lab%208%20-%20Fabric%20Network%20Configuration/PROOF.md) | CORE: 12/12 PASS | 2026-11-12 09:58 |
 | [Fabric Lab 9 - Using Prometheus for Monitoring Hyperledger Fabric](Fabric%20Lab%209%20-%20Using%20Prometheus%20for%20Monitoring%20Hyperledger%20Fabric/PROOF.md) | CORE: 6/12 PASS | 2026-11-12 10:08 |
+| [Fabric Lab 10 - Deploying Multi-Org Hyperledger Fabric Networks](Fabric%20Lab%2010%20-%20Deploying%20Multi-Org%20Hyperledger%20Fabric%20Networks/PROOF.md) | CORE: 12/12 PASS | 2026-11-12 10:18 |

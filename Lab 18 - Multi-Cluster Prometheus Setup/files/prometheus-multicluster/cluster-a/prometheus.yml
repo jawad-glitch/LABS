@@ -4,29 +4,33 @@ global:
   external_labels:
     cluster: 'cluster-a'
     region: 'us-east'
+
 scrape_configs:
-- job_name: 'prometheus-cluster-a'
-  static_configs:
-  - targets: ['localhost:9090']
-- job_name: 'node-exporter-cluster-a'
-  static_configs:
-  - targets: ['localhost:9101']
-    labels:
-      cluster: 'cluster-a'
-- job_name: 'federate-cluster-b'
-  scrape_interval: 5s
-  honor_labels: true
-  metrics_path: '/federate'
-  params:
-    'match[]':
-    - '{job=~"prometheus-cluster-b|node-exporter-cluster-b|application-cluster-b"}'
-    - '{__name__=~"up|prometheus_.*|node_.*|http_.*"}'
-  static_configs:
-  - targets: ['localhost:9091']
-    labels:
-      federated_from: 'cluster-b'
-- job_name: 'application-cluster-a'
-  static_configs:
-  - targets: ['localhost:8081']
-    labels:
-      cluster: 'cluster-a'
+  - job_name: 'prometheus-cluster-a'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'node-exporter-cluster-a'
+    static_configs:
+      - targets: ['localhost:9101']
+        labels:
+          cluster: 'cluster-a'
+
+  - job_name: 'federate-cluster-b'
+    scrape_interval: 5s
+    honor_labels: true
+    metrics_path: '/federate'
+    params:
+      'match[]':
+        - '{job=~"prometheus-cluster-b|node-exporter-cluster-b|application-cluster-b"}'
+        - '{__name__=~"up|prometheus_.*|node_.*|http_.*"}'
+    static_configs:
+      - targets: ['localhost:9091']
+        labels:
+          federated_from: 'cluster-b'
+
+  - job_name: 'application-cluster-a'
+    static_configs:
+      - targets: ['localhost:8081']
+        labels:
+          cluster: 'cluster-a'

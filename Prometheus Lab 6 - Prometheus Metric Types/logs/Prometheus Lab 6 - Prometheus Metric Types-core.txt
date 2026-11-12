@@ -1,14 +1,14 @@
-========== CORE CHECKS (Prometheus Lab 6 - Prometheus Metric Types, 2026-11-12 07:26:14 UTC) - ALL REAL ==========
-FAIL: Task 1.1: venv with prometheus-client, psutil, flask importable
+========== CORE CHECKS (Prometheus Lab 6 - Prometheus Metric Types, 2026-11-12 07:30:23 UTC) - ALL REAL ==========
+PASS: Task 1.1: venv with prometheus-client, psutil, flask importable
 PASS: Lab bug: 'wget -fsSL' is invalid (curl flags) and downloads nothing; curl + sha256 OK; prometheus 2.52.0 runs
-FAIL: Task 2.1: each service exposes its type (counter/gauge/histogram/summary), >= 2 # TYPE lines, PID files written
+PASS: Task 2.1: each service exposes its type (counter/gauge/histogram/summary), >= 2 # TYPE lines, PID files written
 FAIL: Task 2.2: all 5 targets up
 FAIL: Task 3.1: counter queries (rate, by status_code, increase of errors) non-empty
-FAIL: Task 3.1: gauge queries (active_sessions, sum(queue_depth), memory MiB) non-empty
-FAIL: Task 3.1: histogram queries (p50, p99, mean, db p95) non-empty
-FAIL: Lab bug: Python client Summary has no quantiles -> both quantile queries EMPTY (sum/count mean works)
+PASS: Task 3.1: gauge queries (active_sessions, sum(queue_depth), memory MiB) non-empty
+PASS: Task 3.1: histogram queries (p50, p99, mean, db p95) non-empty
+PASS: Lab bug: Python client Summary has no quantiles -> both quantile queries EMPTY (sum/count mean works)
 FAIL: Fixed summary (client-side sliding-window quantiles): quantile 0.5 and 0.99 queries non-empty
-FAIL: Objective 3: aggregated histogram p99 lands in the true p99 bucket; avg() of summary p99s misses the true p99 by > 15%
+PASS: Objective 3: aggregated histogram p99 lands in the true p99 bucket; avg() of summary p99s misses the true p99 by > 15%
 PASS: Task 3.2: histogram_vs_summary.md filled, 0 placeholder comments
-PASS: Time: finished in 234s (<= 300s)
-CORE: 3/12 PASS
+PASS: Time: finished in 194s (<= 300s)
+CORE: 9/12 PASS

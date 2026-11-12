@@ -1,1 +1,7 @@
-python client Summary exposes:  | quantile series: 0
+rpc_call_duration_seconds_count{method="Reserve",service="inventory"} 73.0
+rpc_call_duration_seconds_sum{method="Reserve",service="inventory"} 4.4670109241946925
+rpc_call_duration_seconds_count{method="Refund",service="payments"} 80.0
+rpc_call_duration_seconds_sum{method="Refund",service="payments"} 4.5561346293368254
+rpc_call_duration_seconds_count{method="Charge",service="payments"} 72.0
+rpc_call_duration_seconds_sum{method="Charge",service="payments"} 4.487097451997965
+python client Summary exposes: rpc_call_duration_seconds_count,rpc_call_duration_seconds_sum | quantile series: 0

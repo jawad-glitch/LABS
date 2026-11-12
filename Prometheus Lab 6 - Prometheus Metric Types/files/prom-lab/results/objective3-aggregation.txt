@@ -1,3 +1,3 @@
-HISTOGRAM GET /api/orders, 2 instances (1x + 4x): true p99=1.1030s (in bucket le=2.5) | histogram_quantile(sum by(le)) = NaNs (bucket le=0.005)
-SUMMARY payments/Charge, 2 instances: true p99=0.5558s | per-instance client p99:  | avg() = NaNs (+nan%) | max() = NaNs
+HISTOGRAM GET /api/orders, 2 instances (1x + 4x): true p99=1.1030s (in bucket le=2.5) | histogram_quantile(sum by(le)) = 1.4090384615384748s (bucket le=2.5)
+SUMMARY payments/Charge, 2 instances: true p99=0.5558s | per-instance client p99: localhost:8004=0.169 localhost:8014=0.629 | avg() = 0.3994403208685188s (-28%) | max() = 0.629435236346432s
 -> histogram buckets add up across instances (correct up to bucket resolution); summary quantiles cannot be combined (avg/max are not the combined p99)

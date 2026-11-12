@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/home/ubuntu/prom-lab/apps/summary_app.py", line 6, in <module>
-    from prometheus_client import Summary, start_http_server, REGISTRY
-ModuleNotFoundError: No module named 'prometheus_client'

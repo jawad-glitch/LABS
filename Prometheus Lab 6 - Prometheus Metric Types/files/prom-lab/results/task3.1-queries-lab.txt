@@ -1,32 +1,44 @@
 === Overall request rate (req/s) ===
-  [EMPTY - wait longer for data to accumulate]
+  {} -> 9.350999999999997
 
 === Request rate broken down by HTTP status code ===
-  [EMPTY - wait longer for data to accumulate]
+  {'status_code': '404'} -> 0.334455
+  {'status_code': '200'} -> 8.6400875
+  {'status_code': '500'} -> 0.23321750000000002
+  {'status_code': '503'} -> 0.1672275
 
 === Error count increase over last 5 minutes by error type ===
-  [EMPTY - wait longer for data to accumulate]
+  {'error_type': 'connection_reset'} -> 24.586100000000002
+  {'error_type': 'validation'} -> 13.4106
+  {'error_type': 'timeout'} -> 11.1755
 
 === Current active sessions per service ===
-  [EMPTY - wait longer for data to accumulate]
+  {'__name__': 'active_sessions', 'instance': 'localhost:8002', 'job': 'gauge-app', 'service': 'web'} -> 129
+  {'__name__': 'active_sessions', 'instance': 'localhost:8002', 'job': 'gauge-app', 'service': 'mobile'} -> 40
+  {'__name__': 'active_sessions', 'instance': 'localhost:8002', 'job': 'gauge-app', 'service': 'admin'} -> 24
 
 === Total items across all queues right now ===
-  [EMPTY - wait longer for data to accumulate]
+  {} -> 48
 
 === Memory used in MiB ===
-  [EMPTY - wait longer for data to accumulate]
+  {'instance': 'localhost:8002', 'job': 'gauge-app'} -> 1409.33984375
 
 === Median (p50) request latency per endpoint ===
-  [EMPTY - wait longer for data to accumulate]
+  {'endpoint': '/api/users'} -> 0.08472222222222223
+  {'endpoint': '/api/orders'} -> 0.08372093023255814
 
 === p99 request latency per endpoint ===
-  [EMPTY - wait longer for data to accumulate]
+  {'endpoint': '/api/orders'} -> 0.3758333333333318
+  {'endpoint': '/api/users'} -> 0.45049999999999923
 
 === Mean request latency per endpoint (sum/count) ===
-  [EMPTY - wait longer for data to accumulate]
+  {'endpoint': '/api/orders'} -> 0.09531959399667393
+  {'endpoint': '/api/users'} -> 0.09713246045180958
 
 === p95 database query latency per query type ===
-  [EMPTY - wait longer for data to accumulate]
+  {'query_type': 'update'} -> 0.07500000000000001
+  {'query_type': 'select'} -> 0.03423999999999996
+  {'query_type': 'insert'} -> 0.04818181818181818
 
 === Median RPC call duration (client-computed) ===
   [EMPTY - wait longer for data to accumulate]
@@ -35,5 +47,7 @@
   [EMPTY - wait longer for data to accumulate]
 
 === Mean RPC call duration computed from sum/count ===
-  [EMPTY - wait longer for data to accumulate]
+  {'instance': 'localhost:8004', 'job': 'summary-app', 'method': 'Reserve', 'service': 'inventory'} -> 0.05578574439978373
+  {'instance': 'localhost:8004', 'job': 'summary-app', 'method': 'Refund', 'service': 'payments'} -> 0.05482244229097654
+  {'instance': 'localhost:8004', 'job': 'summary-app', 'method': 'Charge', 'service': 'payments'} -> 0.05538726690810593
 

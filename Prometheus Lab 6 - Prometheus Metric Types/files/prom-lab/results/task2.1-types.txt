@@ -1,5 +1,20 @@
 --- port 8001 ---
+# TYPE http_requests_total counter
+# TYPE http_requests_created gauge
+# TYPE application_errors_total counter
+# TYPE application_errors_created gauge
 --- port 8002 ---
+# TYPE active_sessions gauge
+# TYPE queue_depth gauge
+# TYPE system_memory_used_bytes gauge
 --- port 8003 ---
+# TYPE http_request_duration_seconds histogram
+# TYPE http_request_duration_seconds_created gauge
+# TYPE db_query_duration_seconds histogram
+# TYPE db_query_duration_seconds_created gauge
 --- port 8004 ---
-pid files: 
+# TYPE rpc_call_duration_seconds summary
+# TYPE rpc_call_duration_seconds_created gauge
+# TYPE cache_operation_duration_seconds summary
+# TYPE cache_operation_duration_seconds_created gauge
+pid files: counter_app.pid gauge_app.pid histogram_app.pid summary_app.pid

@@ -1,9 +1,9 @@
 # Lab 20 - Disaster Recovery with Prometheus - completion proof
-Completed (UTC): 2026-11-12 08:59:54 | EC2: i-0c7dd26d873d53570 | host: ip-172-31-10-140 | user: ubuntu
+Completed (UTC): 2026-11-12 09:00:49 | EC2: i-0c7dd26d873d53570 | host: ip-172-31-10-140 | user: ubuntu
 
 ## Core checks
 ```
-========== CORE CHECKS (Lab 20 - Disaster Recovery with Prometheus, 2026-11-12 08:59:47 UTC) ==========
+========== CORE CHECKS (Lab 20 - Disaster Recovery with Prometheus, 2026-11-12 09:00:42 UTC) ==========
 FAIL: Kind cluster & MinIO operational
 FAIL: Prometheus & Thanos Sidecar running
 FAIL: Thanos Query & Store Gateway healthy

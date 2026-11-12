@@ -1,6 +1,6 @@
 Command 'kind' not found, did you mean:
   command 'kfind' from snap kfind (25.08.0)
-  command 'king' from deb king (2.24+dfsg2-2)
   command 'find' from deb findutils (4.9.0-5)
+  command 'king' from deb king (2.24+dfsg2-2)
   command 'kfind' from deb kfind (4:23.08.4-0ubuntu1)
 See 'snap info <snapname>' for additional versions.

@@ -1,0 +1,16 @@
+=== Prometheus Metrics Verification ===
+1. Checking Prometheus targets status:
+  Job: node-exporter, Health: up, Endpoint: http://localhost:9100/metrics
+  Job: prometheus, Health: up, Endpoint: http://localhost:9090/metrics
+
+2. Checking available metrics count:
+  Total metrics available: 593
+
+3. Testing key system metrics:
+  CPU metrics: OK
+  Memory metrics: OK
+  Disk metrics: OK
+
+4. Data freshness check:
+  Last scrape: 0.1 seconds ago
+real last-scrape age from /api/v1/targets: node-exporter=11.3s prometheus=0.6s 

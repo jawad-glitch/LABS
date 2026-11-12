@@ -1,0 +1,4 @@
+4.1 high res (1 min, 5 s step): points=10 min=56.63 max=100 last=100
+4.2 low res (10 min, 60 s step): points=1 min=93.52 max=93.52 last=93.52  (only ~2 min of data exist)
+4.5 current CPU % by mode: idle=0.31 iowait=0 irq=0 nice=44.42 softirq=0.02 steal=0 system=46.46 user=8.74
+4.6 disk reads/s: nvme0n1=0.13 nvme1n1=0

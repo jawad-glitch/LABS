@@ -1,0 +1,7 @@
+lab 'curl -s http://localhost:9090 | grep -i prometheus' lines: 0 (status 302 -> http://localhost:9090/query)
+with -L (follow to /graph): 5 matching lines
+metric names: 593
+metadata node_cpu_seconds_total: {"type":"counter","help":"Seconds the CPUs spent in each mode."}
+node_cpu_seconds_total: 16 series
+node_memory_MemTotal_bytes: 1 series
+node_filesystem_size_bytes: 7 series

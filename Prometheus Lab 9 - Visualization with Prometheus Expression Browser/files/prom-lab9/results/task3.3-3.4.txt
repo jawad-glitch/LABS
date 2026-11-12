@@ -1,0 +1,4 @@
+lab bytearray(100 MiB): RSS 110 MiB | MemAvailable change 94 MiB
+fixed (pages written): RSS 109 MiB | MemAvailable change 196 MiB
+3.3 memory % series: points=5 min=34.93 max=42.29 last=42.29
+3.4 used GiB: 1.31 1.32 1.33 1.33 1.59

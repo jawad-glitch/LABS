@@ -1,0 +1,5 @@
+node_exporter --web.listen-address=:9100
+prometheus --config.file=/tmp/prometheus.yml
+netstat: present | ss: *:9100 *:9090
+config API: success | node metrics lines: 1200
+console dirs in the lab's start flags: absent (flags accepted, unused)

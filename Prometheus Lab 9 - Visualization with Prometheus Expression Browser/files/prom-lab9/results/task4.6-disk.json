@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"matrix","result":[{"metric":{"device":"nvme0n1","instance":"localhost:9100","job":"node-exporter"},"values":[[1794470304,"0.13411"],[1794470334,"0.1333333333333333"]]},{"metric":{"device":"nvme1n1","instance":"localhost:9100","job":"node-exporter"},"values":[[1794470304,"0"],[1794470334,"0"]]}]}}

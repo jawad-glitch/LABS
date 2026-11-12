@@ -1,0 +1,2 @@
+3.1 rate(node_cpu_seconds_total[1m]): status=success series=16
+3.2 CPU utilisation %: before load 81.40 | during load series points=3 min=81.76 max=85.23 last=85.23 | yes processes: 4

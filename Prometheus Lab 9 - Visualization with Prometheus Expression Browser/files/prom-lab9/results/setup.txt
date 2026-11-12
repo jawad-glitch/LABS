@@ -1,0 +1,1 @@
+ports free; jq ready; python3 requests already present -> import OK

@@ -1,0 +1,31 @@
+=== CPU Usage Analysis - Different Time Windows ===
+
+CPU Usage % (5-minute window) Analysis:
+  Data points: 4
+  Average: 86.87
+  Minimum: 78.87
+  Maximum: 99.69
+  Range: 20.82
+
+CPU Usage % (15-minute window) Analysis:
+  Data points: 2
+  Average: 92.49
+  Minimum: 91.84
+  Maximum: 93.15
+  Range: 1.31
+
+=== Memory Usage Analysis - Different Time Windows ===
+
+Memory Usage % (5-minute window) Analysis:
+  Data points: 5
+  Average: 36.58
+  Minimum: 34.93
+  Maximum: 42.29
+  Range: 7.36
+
+Memory Usage % (15-minute window) Analysis:
+  Data points: 3
+  Average: 37.52
+  Minimum: 34.93
+  Maximum: 42.29
+  Range: 7.36

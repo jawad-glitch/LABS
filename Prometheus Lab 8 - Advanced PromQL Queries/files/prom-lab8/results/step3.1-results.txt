@@ -1,0 +1,6 @@
+Query 1: status=success results=1 | value=97.05
+Query 2: status=success results=5 | node_memory_Cached_bytes=2443292672 node_memory_Slab_bytes=248639488 node_memory_Buffers_bytes=62492672 node_memory_PageTables_bytes=22069248 node_memory_SwapCached_bytes=0
+Query 3: status=success results=4 | /boot/efi=5.85 /boot=34.19 /=31.22 /run/user/1000/gvfs=null
+Query 4: status=success results=2 | docker0=0 ens5=507593.78
+Query 5: status=success results=1 | /=-18562138119.94
+observed: CPU utilisation 97.05% | predicted free bytes on / in 2h: -18562138120 (-17.29 GiB)

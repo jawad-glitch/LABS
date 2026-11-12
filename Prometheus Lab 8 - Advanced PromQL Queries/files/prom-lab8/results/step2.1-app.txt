@@ -1,0 +1,7 @@
+http_request_duration_seconds_bucket{endpoint="/api/products",le="0.005"} 2.0
+http_request_duration_seconds_bucket{endpoint="/api/products",le="0.01"} 30.0
+http_request_duration_seconds_bucket{endpoint="/api/products",le="0.025"} 104.0
+http_request_duration_seconds_bucket{endpoint="/api/products",le="0.05"} 150.0
+http_request_duration_seconds_bucket{endpoint="/api/products",le="0.1"} 155.0
+http_request_duration_seconds_bucket{endpoint="/api/products",le="0.25"} 157.0
+observations: 216 | endpoints: endpoint="/api/checkout",endpoint="/api/products"

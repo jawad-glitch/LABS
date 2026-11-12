@@ -1,0 +1,5 @@
+node_cpu_seconds_total               used in Step 3.1
+node_filesystem_avail_bytes          used in Step 3.1
+node_filesystem_size_bytes           used in Step 3.1
+node_memory_MemAvailable_bytes       NOT in any Step 3.1 query (violates the lab's constraint)
+node_memory_MemTotal_bytes           NOT in any Step 3.1 query (violates the lab's constraint)

@@ -1,0 +1,2 @@
+promtool exit=0 | lab 'pgrep -f prometheus --config' matched 1 process(es)
+[{"instance":"localhost:8001","value":"1"}]

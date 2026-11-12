@@ -1,0 +1,2 @@
+lab start: Prometheus exited - permission denied | /var/lib/prometheus owner: root:root, running as: ubuntu
+after 'sudo chown -R ubuntu /var/lib/prometheus': restarted

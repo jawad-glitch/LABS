@@ -1,0 +1,4 @@
+HighCPUUtilization > 75 | observed CPU 97.05%
+HighMemoryPressure > 85 | observed memory 36.69%
+DiskUsageHigh > 80 | observed max disk 34.19%
+DiskWillFillSoon < 0 | observed predicted free -17.29 GiB

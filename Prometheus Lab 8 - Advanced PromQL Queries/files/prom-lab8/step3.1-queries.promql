@@ -1,0 +1,5 @@
+100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+topk(5, {__name__=~"node_memory_(Buffers|Cached|Slab|PageTables|SwapCached)_bytes"})
+100 - ((node_filesystem_avail_bytes{fstype!~"tmpfs|devtmpfs|squashfs"} / node_filesystem_size_bytes{fstype!~"tmpfs|devtmpfs|squashfs"}) * 100)
+sum(rate(node_network_receive_bytes_total{device!="lo"}[5m]) + rate(node_network_transmit_bytes_total{device!="lo"}[5m])) by (device)
+predict_linear(node_filesystem_avail_bytes{mountpoint="/"}[1h], 7200)

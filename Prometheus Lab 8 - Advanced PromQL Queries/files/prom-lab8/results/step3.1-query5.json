@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"device":"/dev/root","fstype":"ext4","instance":"localhost:9100","job":"node","mountpoint":"/"},"value":[1794470041.372,"-18562138119.937122"]}]}}

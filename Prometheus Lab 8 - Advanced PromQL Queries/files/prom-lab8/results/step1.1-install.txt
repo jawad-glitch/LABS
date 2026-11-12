@@ -1,0 +1,6 @@
+prometheus 2.52.0 sha256 OK
+node_exporter 1.8.1 sha256 OK
+prometheus, version 2.52.0 (branch: HEAD, revision: 879d80922a227c37df502e7315fad8ceb10a986d)
+node_exporter, version 1.8.1 (branch: HEAD, revision: 400c3979931613db930ea035f39ce7b377cdbb5b)
+/etc/prometheus/console_libraries
+/etc/prometheus/consoles

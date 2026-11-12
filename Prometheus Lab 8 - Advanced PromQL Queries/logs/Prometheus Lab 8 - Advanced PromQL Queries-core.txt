@@ -1,0 +1,14 @@
+========== CORE CHECKS (Prometheus Lab 8 - Advanced PromQL Queries, 2026-11-12 07:54:19 UTC) - ALL REAL ==========
+PASS: Step 1.1: Prometheus 2.52.0 + node_exporter 1.8.1 sha256-verified, consoles copied, promtool SUCCESS
+PASS: Lab bug: root-owned /var/lib/prometheus stops Prometheus started as ubuntu; fixed with chown
+PASS: Step 1.2: node_memory_MemTotal_bytes served; up = 1 for prometheus and node
+PASS: Lab bug: 'pip3 install' (and --user) hit externally-managed-environment on 24.04; venv has prometheus-client
+PASS: Step 2.1: >= 200 requests observed on 2 endpoints with the exact bucket set
+PASS: Step 2.2: append + promtool OK, SIGHUP to exactly 1 process, up{job=app} = 1
+FAIL: Queries A/B return 2 series each, C returns 1; p99 (C) > p50 (A) by >= 1 bucket boundary
+PASS: Step 3.1: all five queries success + non-empty; Q1 one value in 0-100; Q2 <= 5 series from >= 4 metric names
+FAIL: Step 3.1: Q3 percentages within 0-100; Q4 has no lo device; Q5 one predicted value for /
+PASS: Step 3.2: promtool check rules SUCCESS; config with rule_files valid; API lists all 4 rules (health ok) in system_health
+PASS: Lab bug: HighMemoryPressure uses MemTotal/MemAvailable, which are in none of the five Step 3.1 queries
+PASS: Time: finished in 171s (<= 300s)
+CORE: 10/12 PASS

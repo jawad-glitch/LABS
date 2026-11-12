@@ -1,0 +1,3 @@
+A p50 per endpoint: 
+B p95 per endpoint: 
+C p99 all endpoints: 

@@ -129,3 +129,4 @@
 | [Prometheus Lab 5 - Install Blackbox Exporter](Prometheus%20Lab%205%20-%20Install%20Blackbox%20Exporter/PROOF.md) | CORE: 11/12 PASS | 2026-11-11 20:54 |
 | [Prometheus Lab 6 - Prometheus Metric Types](Prometheus%20Lab%206%20-%20Prometheus%20Metric%20Types/PROOF.md) | CORE: 9/12 PASS | 2026-11-12 07:30 |
 | [Prometheus Lab 7 - Write Basic PromQL Queries](Prometheus%20Lab%207%20-%20Write%20Basic%20PromQL%20Queries/PROOF.md) | CORE: 12/12 PASS | 2026-11-12 07:47 |
+| [Prometheus Lab 8 - Advanced PromQL Queries](Prometheus%20Lab%208%20-%20Advanced%20PromQL%20Queries/PROOF.md) | CORE: 10/12 PASS | 2026-11-12 07:54 |

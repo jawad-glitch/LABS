@@ -1,0 +1,4 @@
+HighCPUUtilization	health=ok	state=pending
+HighMemoryPressure	health=ok	state=inactive
+DiskUsageHigh	health=ok	state=inactive
+DiskWillFillSoon	health=ok	state=pending

@@ -1,0 +1,2 @@
+node_memory_MemTotal_bytes 4.035919872e+09
+[{"job":"node","value":"1"},{"job":"prometheus","value":"1"}]

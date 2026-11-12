@@ -1,0 +1,2 @@
+prometheus 2.52.0 sha256 OK
+node_exporter 1.8.1 sha256 OK

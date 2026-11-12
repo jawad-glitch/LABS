@@ -1,0 +1,1 @@
+lab 'pip3 install': externally-managed-environment [exit=1] | '--user': externally-managed-environment [exit=1] | venv prometheus-client 0.26.0

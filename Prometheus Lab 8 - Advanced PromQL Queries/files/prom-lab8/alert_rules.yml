@@ -1,0 +1,40 @@
+groups:
+  - name: system_health
+    interval: 1m
+    rules:
+
+      - alert: HighCPUUtilization
+        expr: 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 75
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU utilization exceeds 75%"
+          description: "Averaged across all cores, CPU utilization has been above 75% for 5 minutes. Current value: {{ $value | printf \"%.1f\" }}%."
+
+      - alert: HighMemoryPressure
+        expr: ((node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes) * 100 > 85
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Memory utilization exceeds 85%"
+          description: "Less than 15% of total memory is available. Current utilization: {{ $value | printf \"%.1f\" }}%."
+
+      - alert: DiskUsageHigh
+        expr: 100 - ((node_filesystem_avail_bytes{fstype!~"tmpfs|devtmpfs|squashfs"} / node_filesystem_size_bytes{fstype!~"tmpfs|devtmpfs|squashfs"}) * 100) > 80
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Disk usage above 80% on {{ $labels.mountpoint }}"
+          description: "Filesystem {{ $labels.device }} mounted at {{ $labels.mountpoint }} is {{ $value | printf \"%.1f\" }}% full."
+
+      - alert: DiskWillFillSoon
+        expr: predict_linear(node_filesystem_avail_bytes{mountpoint="/"}[1h], 7200) < 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Root filesystem predicted to exhaust space within 2 hours"
+          description: "Linear extrapolation of the past 1 hour of data predicts the root filesystem will have no free space in under 2 hours."

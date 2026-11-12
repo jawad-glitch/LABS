@@ -1,0 +1,20 @@
+=== Simple Blockchain Demonstration ===
+
+Genesis Block:
+Previous Hash: 0000000000000000000000000000000000000000000000000000000000000000
+Data: Genesis Block - Network Initialization
+Current Hash: 48e100459c3ccd5bfe65f15193e3d3822266de9925c5aebec94bebe75a372238
+
+Block 1:
+Previous Hash: 48e100459c3ccd5bfe65f15193e3d3822266de9925c5aebec94bebe75a372238
+Data: Alice sends 10 coins to Bob
+Current Hash: fb6ef4606681ef6c21b81496cf4ae77f50110b2305bd1b336d8c55ff9354f3bd
+
+Block 2:
+Previous Hash: fb6ef4606681ef6c21b81496cf4ae77f50110b2305bd1b336d8c55ff9354f3bd
+Data: Bob sends 5 coins to Charlie
+Current Hash: bb35071c1a269422dee8d54f60b05ef50667e03a04d0b7f2475e08b63a33326c
+
+=== Chain Integrity Verification ===
+Each block contains the hash of the previous block
+This creates an immutable chain of records

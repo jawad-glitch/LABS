@@ -1,0 +1,48 @@
+=== Hyperledger Fabric vs Ethereum Comparison Demo ===
+
+1. NETWORK PARTICIPATION:
+Fabric: Permissioned - Requires invitation and certificates
+Ethereum: Permissionless - Anyone can join with wallet
+
+2. TRANSACTION PRIVACY:
+Fabric: Private channels, confidential transactions
+Ethereum: All transactions publicly visible on blockchain
+
+3. CONSENSUS DEMONSTRATION:
+Fabric Raft Consensus Simulation:
+- Leader election among orderer nodes
+- Log replication for consistency
+- Fast finality (< 1 second)
+
+Ethereum PoW Simulation:
+- Miners compete to solve cryptographic puzzle
+- Winner adds block and receives reward
+- Average 12-15 second block time
+
+4. SMART CONTRACT EXECUTION:
+Fabric: Execute-Order-Validate model
+Step 1: Execute chaincode on endorsing peers
+Step 2: Order transactions into blocks
+Step 3: Validate and commit to all peers
+
+Ethereum: Order-Execute model
+Step 1: Order transactions in mempool
+Step 2: Execute in sequence on EVM
+Step 3: Update global state
+
+5. PERFORMANCE METRICS:
+Fabric: 3,500+ TPS, sub-second finality
+Ethereum: 15 TPS, 12-15 second finality
+
+=== Use Case Recommendations ===
+Choose Fabric for:
+- Enterprise blockchain solutions
+- Private business networks
+- Regulatory compliance requirements
+- High-performance applications
+
+Choose Ethereum for:
+- Public decentralized applications
+- Cryptocurrency and DeFi projects
+- Global, permissionless access
+- Established ecosystem and tools

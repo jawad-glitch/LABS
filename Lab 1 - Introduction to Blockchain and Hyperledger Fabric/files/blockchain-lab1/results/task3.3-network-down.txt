@@ -1,0 +1,7 @@
+Stopping network
+Stopping peer0.org1.example.com ... done
+Stopping peer0.org2.example.com ... done
+Stopping orderer.example.com    ... done
+Stopping ca_org1                ... done
+Stopping ca_org2                ... done
+Removing network fabric_test

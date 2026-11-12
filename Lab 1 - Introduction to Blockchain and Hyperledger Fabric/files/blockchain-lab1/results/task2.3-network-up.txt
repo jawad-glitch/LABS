@@ -1,0 +1,13 @@
+Using docker and docker-compose
+Starting nodes with CLI timeout of '5' tries and CLI delay of '3' seconds and using database 'leveldb'
+LOCAL_VERSION=2.4.7
+DOCKER_IMAGE_VERSION=2.4.7
+Creating network "fabric_test" with the default driver
+Creating volume "compose_orderer.example.com" with default driver
+Creating volume "compose_peer0.org1.example.com" with default driver
+Creating volume "compose_peer0.org2.example.com" with default driver
+Creating ca_org1 ... done
+Creating ca_org2 ... done
+Creating orderer.example.com    ... done
+Creating peer0.org1.example.com ... done
+Creating peer0.org2.example.com ... done

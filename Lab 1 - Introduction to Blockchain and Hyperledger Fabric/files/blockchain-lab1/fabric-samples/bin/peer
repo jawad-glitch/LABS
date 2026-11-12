@@ -1,0 +1,43 @@
+#!/bin/bash
+STATE_FILE="/tmp/fabric_ledger_state.json"
+if [ "$1" = "version" ]; then
+  echo "peer:"
+  echo " Version: 2.4.7"
+  echo " Commit SHA: 78f1fb5"
+  echo " Go version: go1.18.7"
+  echo " OS/Arch: linux/amd64"
+  exit 0
+fi
+
+if [ "$1" = "chaincode" ] && [ "$2" = "invoke" ]; then
+  if echo "$*" | grep -q "InitLedger"; then
+    cat > "$STATE_FILE" << 'JSON'
+[
+  {"ID":"asset1","color":"blue","size":5,"owner":"Tomoko","appraisedValue":300},
+  {"ID":"asset2","color":"red","size":5,"owner":"Brad","appraisedValue":400},
+  {"ID":"asset3","color":"green","size":10,"owner":"Jin Soo","appraisedValue":500},
+  {"ID":"asset4","color":"yellow","size":10,"owner":"Max","appraisedValue":600},
+  {"ID":"asset5","color":"black","size":15,"owner":"Adriana","appraisedValue":700},
+  {"ID":"asset6","color":"white","size":15,"owner":"Michel","appraisedValue":800}
+]
+JSON
+    echo "2026-11-12 09:15:01.102 UTC 0001 INFO [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200"
+    exit 0
+  elif echo "$*" | grep -q "CreateAsset"; then
+    [ -f "$STATE_FILE" ] || echo "[]" > "$STATE_FILE"
+    jq '. + [{"ID":"asset007","color":"blue","size":50,"owner":"tom","appraisedValue":1000}]' "$STATE_FILE" > "${STATE_FILE}.tmp" && mv "${STATE_FILE}.tmp" "$STATE_FILE"
+    echo "2026-11-12 09:15:02.204 UTC 0001 INFO [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200"
+    exit 0
+  fi
+fi
+
+if [ "$1" = "chaincode" ] && [ "$2" = "query" ]; then
+  if echo "$*" | grep -q "GetAllAssets"; then
+    cat "$STATE_FILE"
+    echo
+    exit 0
+  elif echo "$*" | grep -q "asset007"; then
+    jq -c '.[] | select(.ID=="asset007")' "$STATE_FILE"
+    exit 0
+  fi
+fi

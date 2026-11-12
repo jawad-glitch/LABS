@@ -1,0 +1,3 @@
+c990002fb9db6dd8f00071ba397521316a55891887ac56acddb6bc5990376c8a  /home/ubuntu/blockchain-lab1/examples/block1.txt
+73676c8116f27680d7ccb0a998024a11a1fc54201fa7dc68230879585fd5710b  /home/ubuntu/blockchain-lab1/examples/block2.txt
+df806ac3b512bebec0451ab3cc47f91a2d113bf2d6a73c1213fa9ca7591ef87d  /home/ubuntu/blockchain-lab1/examples/block3.txt

@@ -1,16 +1,18 @@
 # Lab 18 - Multi-Cluster Prometheus Setup - completion proof
-Completed (UTC): 2026-11-12 08:48:04 | EC2: i-0e1034226eb5f85f9 | host: ip-172-31-10-253 | user: ubuntu
+Completed (UTC): 2026-11-12 08:50:14 | EC2: i-0e1034226eb5f85f9 | host: ip-172-31-10-253 | user: ubuntu
 
 ## Core checks
 ```
-========== CORE CHECKS (Lab 18 - Multi-Cluster Prometheus Setup, 2026-11-12 08:47:58 UTC) ==========
+========== CORE CHECKS (Lab 18 - Multi-Cluster Prometheus Setup, 2026-11-12 08:50:09 UTC) ==========
 PASS: Prometheus Binary installed
+PASS: Cluster B Prom Config Valid
+PASS: Cluster A Prom Config Valid
 PASS: Cluster B Prometheus Healthy on port 9091
 PASS: Cluster A Primary Prometheus Healthy on port 9090
 PASS: Cluster B Federation Endpoint Active
-FAIL: Cluster A Query Federation Results
-FAIL: Cluster A Cross-Cluster App Metrics
-CORE: 4/6 PASS
+PASS: Cluster A Query Federation Results
+PASS: Cluster A Cross-Cluster App Metrics
+CORE: 8/8 PASS
 ```
 
 ## Docker snapshot
@@ -43,6 +45,8 @@ IMAGE   ID             DISK USAGE   CONTENT SIZE   EXTRA
 ./prometheus-multicluster/results/health-b.txt
 ./prometheus-multicluster/results/prometheus-a.log
 ./prometheus-multicluster/results/prometheus-b.log
+./prometheus-multicluster/results/promtool-a.txt
+./prometheus-multicluster/results/promtool-b.txt
 ./prometheus-multicluster/results/query-requests.txt
 ./prometheus-multicluster/results/query-up.txt
 ```

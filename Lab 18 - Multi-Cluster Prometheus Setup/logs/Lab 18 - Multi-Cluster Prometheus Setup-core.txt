@@ -1,8 +1,10 @@
-========== CORE CHECKS (Lab 18 - Multi-Cluster Prometheus Setup, 2026-11-12 08:47:58 UTC) ==========
+========== CORE CHECKS (Lab 18 - Multi-Cluster Prometheus Setup, 2026-11-12 08:50:09 UTC) ==========
 PASS: Prometheus Binary installed
+PASS: Cluster B Prom Config Valid
+PASS: Cluster A Prom Config Valid
 PASS: Cluster B Prometheus Healthy on port 9091
 PASS: Cluster A Primary Prometheus Healthy on port 9090
 PASS: Cluster B Federation Endpoint Active
-FAIL: Cluster A Query Federation Results
-FAIL: Cluster A Cross-Cluster App Metrics
-CORE: 4/6 PASS
+PASS: Cluster A Query Federation Results
+PASS: Cluster A Cross-Cluster App Metrics
+CORE: 8/8 PASS

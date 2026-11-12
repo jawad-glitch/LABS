@@ -1,0 +1,3 @@
+Checking cluster-b/prometheus.yml
+ SUCCESS: cluster-b/prometheus.yml is valid prometheus config file syntax
+

@@ -1,0 +1,2 @@
+/home/ubuntu/promql-lab/test_promql_lab.sh: line 28: syntax error near unexpected token `)'
+/home/ubuntu/promql-lab/test_promql_lab.sh: line 28: `                print(f\"Metric: {item.get('metric', {})}\"")'

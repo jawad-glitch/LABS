@@ -1,0 +1,1 @@
+lab 'prometheus --dry-run': exit=1 unknown long flag '--dry-run' | promtool check config: exit=0 1 SUCCESS line(s)

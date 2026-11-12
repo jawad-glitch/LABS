@@ -1,0 +1,310 @@
+=== Q1: Basic CPU rate over 5 minutes ===
+Query: rate(node_cpu_seconds_total[5m])
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'idle'}
+Value: 0.10802337777777746
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'iowait'}
+Value: 0
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'irq'}
+Value: 0
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'nice'}
+Value: 0
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'softirq'}
+Value: 0
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'steal'}
+Value: 0.0015804444444444457
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'system'}
+Value: 0.002923822222222202
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'user'}
+Value: 0.0029238222222221456
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'idle'}
+Value: 0.10960382222222226
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'iowait'}
+Value: 0
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'irq'}
+Value: 0
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'nice'}
+Value: 0
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'softirq'}
+Value: 0
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'steal'}
+Value: 0.001343377777777777
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'system'}
+Value: 0.005136444444444433
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'user'}
+Value: 0.004346222222222199
+
+----------------------------------------
+
+=== Q2: Average CPU usage percentage ===
+Query: avg(rate(node_cpu_seconds_total{mode!="idle"}[5m])) * 100
+
+Metric: {}
+Value: 0.13069833333333242
+
+----------------------------------------
+
+=== Q3: CPU usage by mode ===
+Query: avg by (mode) (rate(node_cpu_seconds_total[5m])) * 100
+
+Metric: {'mode': 'idle'}
+Value: 10.935521999999986
+
+Metric: {'mode': 'iowait'}
+Value: 0
+
+Metric: {'mode': 'irq'}
+Value: 0
+
+Metric: {'mode': 'nice'}
+Value: 0
+
+Metric: {'mode': 'softirq'}
+Value: 0
+
+Metric: {'mode': 'steal'}
+Value: 0.14691877777777781
+
+Metric: {'mode': 'system'}
+Value: 0.40501933333333173
+
+Metric: {'mode': 'user'}
+Value: 0.3653115555555506
+
+----------------------------------------
+
+=== Q4: User mode CPU usage ===
+Query: avg(rate(node_cpu_seconds_total{mode="user"}[5m])) * 100
+
+Metric: {}
+Value: 0.3661702222222173
+
+----------------------------------------
+
+=== Q5: System mode CPU usage ===
+Query: avg(rate(node_cpu_seconds_total{mode="system"}[5m])) * 100
+
+Metric: {}
+Value: 0.40691199999999833
+
+----------------------------------------
+
+=== Q6: Total memory in bytes ===
+Query: node_memory_MemTotal_bytes
+
+Metric: {'__name__': 'node_memory_MemTotal_bytes', 'instance': 'localhost:9100', 'job': 'node-exporter'}
+Value: 4035919872
+
+----------------------------------------
+
+=== Q7: Total memory in GB ===
+Query: node_memory_MemTotal_bytes / 1024 / 1024 / 1024
+
+Metric: {'instance': 'localhost:9100', 'job': 'node-exporter'}
+Value: 3.7587432861328125
+
+----------------------------------------
+
+=== Q8: Available memory in bytes ===
+Query: node_memory_MemAvailable_bytes
+
+Metric: {'__name__': 'node_memory_MemAvailable_bytes', 'instance': 'localhost:9100', 'job': 'node-exporter'}
+Value: 2652966912
+
+----------------------------------------
+
+=== Q9: Used memory in bytes ===
+Query: node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes
+
+Metric: {'instance': 'localhost:9100', 'job': 'node-exporter'}
+Value: 1382952960
+
+----------------------------------------
+
+=== Q10: Memory usage percentage ===
+Query: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100
+
+Metric: {'instance': 'localhost:9100', 'job': 'node-exporter'}
+Value: 34.266115380399704
+
+----------------------------------------
+
+=== Q11: Free memory in bytes ===
+Query: node_memory_MemFree_bytes
+
+Metric: {'__name__': 'node_memory_MemFree_bytes', 'instance': 'localhost:9100', 'job': 'node-exporter'}
+Value: 119074816
+
+----------------------------------------
+
+=== Q12: Buffer memory in bytes ===
+Query: node_memory_Buffers_bytes
+
+Metric: {'__name__': 'node_memory_Buffers_bytes', 'instance': 'localhost:9100', 'job': 'node-exporter'}
+Value: 25493504
+
+----------------------------------------
+
+=== Q13: Cache memory in bytes ===
+Query: node_memory_Cached_bytes
+
+Metric: {'__name__': 'node_memory_Cached_bytes', 'instance': 'localhost:9100', 'job': 'node-exporter'}
+Value: 2704637952
+
+----------------------------------------
+
+=== Q14: Total CPU seconds across all cores and modes ===
+Query: sum(node_cpu_seconds_total)
+
+Metric: {}
+Value: 1739.5
+
+----------------------------------------
+
+=== Q15: Sum of various memory metrics ===
+Query: sum(node_memory_MemTotal_bytes + node_memory_MemFree_bytes + node_memory_Buffers_bytes)
+
+Metric: {}
+Value: 4180488192
+
+----------------------------------------
+
+=== Q16: CPU rate grouped by mode ===
+Query: sum by (mode) (rate(node_cpu_seconds_total[5m]))
+
+Metric: {'mode': 'idle'}
+Value: 0.22513031999999972
+
+Metric: {'mode': 'iowait'}
+Value: 0
+
+Metric: {'mode': 'irq'}
+Value: 0
+
+Metric: {'mode': 'nice'}
+Value: 0
+
+Metric: {'mode': 'softirq'}
+Value: 0
+
+Metric: {'mode': 'steal'}
+Value: 0.0030246266666666675
+
+Metric: {'mode': 'system'}
+Value: 0.008338159999999968
+
+Metric: {'mode': 'user'}
+Value: 0.007520693333333231
+
+----------------------------------------
+
+=== Q17: CPU rate grouped by CPU core ===
+Query: sum by (cpu) (rate(node_cpu_seconds_total[5m]))
+
+Metric: {'cpu': '0'}
+Value: 0.11968511999999958
+
+Metric: {'cpu': '1'}
+Value: 0.12484608000000001
+
+----------------------------------------
+
+=== Q18: Average CPU usage per core ===
+Query: avg by (cpu) (rate(node_cpu_seconds_total{mode!="idle"}[5m])) * 100
+
+Metric: {'cpu': '0'}
+Value: 0.11023365079364936
+
+Metric: {'cpu': '1'}
+Value: 0.160659682539682
+
+----------------------------------------
+
+=== Q19: Total non-idle CPU usage ===
+Query: sum(rate(node_cpu_seconds_total{mode!="idle"}[5m])) * 100
+
+Metric: {}
+Value: 1.9002573333333197
+
+----------------------------------------
+
+=== Q6.1a: CPU user mode - 1 minute rate ===
+Query: rate(node_cpu_seconds_total{mode="user"}[1m])
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'user'}
+Value: 0.015248522222221823
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'user'}
+Value: 0.022666722222222102
+
+----------------------------------------
+
+=== Q6.1b: CPU user mode - 5 minute rate ===
+Query: rate(node_cpu_seconds_total{mode="user"}[5m])
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'user'}
+Value: 0.0030560355555554752
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'user'}
+Value: 0.004542755555555532
+
+----------------------------------------
+
+=== Q6.1c: CPU user mode - 10 minute rate ===
+Query: rate(node_cpu_seconds_total{mode="user"}[10m])
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'user'}
+Value: 0.0015311422222221824
+
+Metric: {'cpu': '1', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'user'}
+Value: 0.0022760222222222106
+
+----------------------------------------
+
+=== Q6.2a: Actually used memory ===
+Query: node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Buffers_bytes - node_memory_Cached_bytes
+
+Metric: {'instance': 'localhost:9100', 'job': 'node-exporter'}
+Value: 1186713600
+
+----------------------------------------
+
+=== Q6.2b: CPU usage (100 - idle) ===
+Query: 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+
+Metric: {}
+Value: 88.55407000000001
+
+----------------------------------------
+
+=== Q6.3a: CPU 0 user mode usage ===
+Query: rate(node_cpu_seconds_total{cpu="0",mode="user"}[5m]) * 100
+
+Metric: {'cpu': '0', 'instance': 'localhost:9100', 'job': 'node-exporter', 'mode': 'user'}
+Value: 0.3082346666666586
+
+----------------------------------------
+
+=== Q6.3b: User + System CPU usage ===
+Query: sum(rate(node_cpu_seconds_total{mode=~"user|system"}[5m])) * 100
+
+Metric: {}
+Value: 2.7055440000000015
+
+----------------------------------------
+

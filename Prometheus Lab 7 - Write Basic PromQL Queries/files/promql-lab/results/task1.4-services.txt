@@ -1,0 +1,4 @@
+success
+548
+node-exporter -> up
+prometheus -> up

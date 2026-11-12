@@ -1,0 +1,26 @@
+Q1    rc=0 series=16  Basic CPU rate over 5 minutes
+Q2    rc=0 series=1   Average CPU usage percentage
+Q3    rc=0 series=8   CPU usage by mode
+Q4    rc=0 series=1   User mode CPU usage
+Q5    rc=0 series=1   System mode CPU usage
+Q6    rc=0 series=1   Total memory in bytes
+Q7    rc=0 series=1   Total memory in GB
+Q8    rc=0 series=1   Available memory in bytes
+Q9    rc=0 series=1   Used memory in bytes
+Q10   rc=0 series=1   Memory usage percentage
+Q11   rc=0 series=1   Free memory in bytes
+Q12   rc=0 series=1   Buffer memory in bytes
+Q13   rc=0 series=1   Cache memory in bytes
+Q14   rc=0 series=1   Total CPU seconds across all cores and modes
+Q15   rc=0 series=1   Sum of various memory metrics
+Q16   rc=0 series=8   CPU rate grouped by mode
+Q17   rc=0 series=2   CPU rate grouped by CPU core
+Q18   rc=0 series=2   Average CPU usage per core
+Q19   rc=0 series=1   Total non-idle CPU usage
+Q6.1a rc=0 series=2   CPU user mode - 1 minute rate
+Q6.1b rc=0 series=2   CPU user mode - 5 minute rate
+Q6.1c rc=0 series=2   CPU user mode - 10 minute rate
+Q6.2a rc=0 series=1   Actually used memory
+Q6.2b rc=0 series=1   CPU usage (100 - idle)
+Q6.3a rc=0 series=1   CPU 0 user mode usage
+Q6.3b rc=0 series=1   User + System CPU usage

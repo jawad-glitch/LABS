@@ -1,0 +1,15 @@
+# HELP node_cpu_seconds_total Seconds the CPUs spent in each mode.
+# TYPE node_cpu_seconds_total counter
+node_cpu_seconds_total{cpu="0",mode="idle"} 624.75
+node_cpu_seconds_total{cpu="0",mode="iowait"} 7.45
+node_cpu_seconds_total{cpu="0",mode="irq"} 0
+# HELP node_memory_Active_anon_bytes Memory information field Active_anon_bytes.
+# TYPE node_memory_Active_anon_bytes gauge
+node_memory_Active_anon_bytes 1.17055488e+08
+# HELP node_memory_Active_bytes Memory information field Active_bytes.
+# TYPE node_memory_Active_bytes gauge
+node_memory_Active_bytes 4.65379328e+08
+# HELP node_memory_Active_file_bytes Memory information field Active_file_bytes.
+# TYPE node_memory_Active_file_bytes gauge
+node_memory_Active_file_bytes 3.4832384e+08
+# HELP node_memory_AnonHugePages_bytes Memory information field AnonHugePages_bytes.

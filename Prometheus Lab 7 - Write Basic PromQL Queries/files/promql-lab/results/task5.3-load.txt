@@ -1,0 +1,4 @@
+stress-ng: lab 'stress-ng' before install: present -> now stress-ng, version 0.17.06 (gcc 13.2.0, x86_64 Linux 6.14.0-1018-aws)
+CPU usage before load: [1m]=1.1% [5m]=0.2%
+after 10 s of load (lab's check): [5m]=0.3%
+after 32 s of load: [1m]=10.1% [5m]=1.9%  -> short windows react, 5m windows lag

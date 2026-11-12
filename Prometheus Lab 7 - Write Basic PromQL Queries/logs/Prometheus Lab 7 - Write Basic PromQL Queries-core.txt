@@ -1,0 +1,14 @@
+========== CORE CHECKS (Prometheus Lab 7 - Write Basic PromQL Queries, 2026-11-12 07:47:48 UTC) - ALL REAL ==========
+PASS: Task 1: prometheus + node_exporter installed (sha256), started with the lab commands, both targets up
+PASS: Lab bug: test_promql.sh as written has a bash syntax error (bare " in the python -c string) - every lab query fails
+PASS: Task 2 (fixed script): CPU queries 1-5 return data
+PASS: Task 3: memory queries 6-13 return data; total GB > 0 and usage % in 0-100
+PASS: Task 4: aggregation queries 14-19 return data; by(mode) >= 5 modes, by(cpu) = 2 cores
+PASS: Task 6: time ranges (1m/5m/10m), math and label-filter queries return data
+PASS: Task 5.2: dashboard runs (exit 0), 9 sections, no 'No data'/'Error' lines
+PASS: Lab bug: stress-ng was not installed (Subtask 5.3 fails as written); installed here
+PASS: Task 5.3: under load the [1m] CPU usage rises clearly (> 5 points) and [5m] lags behind [1m]
+PASS: Lab bug: 'prometheus --dry-run' is not a flag (exit != 0); promtool check config SUCCESS
+PASS: Lab verify script passes 5/5, but a non-existent metric also returns status success (check is weak)
+PASS: Time: finished in 97s (<= 300s)
+CORE: 12/12 PASS

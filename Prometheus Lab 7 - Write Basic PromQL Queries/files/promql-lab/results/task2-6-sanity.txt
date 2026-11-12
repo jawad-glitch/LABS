@@ -1,0 +1,1 @@
+sanity: total GB=3.758 | mem %=34.31 | modes=8 | cores=2 (nproc 2) | Q14 is a sum of raw counters, Q15 adds unrelated memory figures (both meaningless)

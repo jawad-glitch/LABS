@@ -1,0 +1,1 @@
+lab verify: 5/5 passed | a query for a metric that does not exist returns: {"status":"success","results":0} -> the lab's grep would also pass

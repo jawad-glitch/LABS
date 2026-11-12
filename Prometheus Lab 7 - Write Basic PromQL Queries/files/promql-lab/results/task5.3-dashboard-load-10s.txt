@@ -1,0 +1,61 @@
+🖥️  SYSTEM MONITORING DASHBOARD
+==================================
+
+🔥 CPU MONITORING
+-----------------
+📊 Overall CPU Usage
+Query: avg(rate(node_cpu_seconds_total{mode!="idle"}[5m])) * 100
+  Value: 0.28%
+
+📊 CPU Usage by Mode
+Query: avg by (mode) (rate(node_cpu_seconds_total[5m])) * 100
+  mode=idle: 14.29%
+  mode=iowait: 0.03%
+  mode=irq: 0.00%
+  mode=nice: 0.00%
+  mode=softirq: 0.01%
+  mode=steal: 0.16%
+  mode=system: 0.90%
+  mode=user: 0.87%
+
+📊 CPU Usage per Core
+Query: avg by (cpu) (rate(node_cpu_seconds_total{mode!="idle"}[5m])) * 100
+  cpu=0: 0.23%
+  cpu=1: 0.33%
+
+💾 MEMORY MONITORING
+--------------------
+📊 Total Memory
+Query: node_memory_MemTotal_bytes / 1024 / 1024 / 1024
+  instance=localhost:9100, job=node-exporter: 3.76 GB
+
+📊 Available Memory
+Query: node_memory_MemAvailable_bytes / 1024 / 1024 / 1024
+  instance=localhost:9100, job=node-exporter: 2.47 GB
+
+📊 Used Memory
+Query: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / 1024 / 1024 / 1024
+  instance=localhost:9100, job=node-exporter: 1.29 GB
+
+📊 Memory Usage
+Query: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100
+  instance=localhost:9100, job=node-exporter: 34.32%
+
+📈 AGGREGATION EXAMPLES
+-----------------------
+📊 Total CPU Usage (All Cores)
+Query: sum(rate(node_cpu_seconds_total{mode!="idle"}[5m])) * 100
+  Value: 3.99%
+
+📊 CPU Time by Mode (Aggregated)
+Query: sum by (mode) (rate(node_cpu_seconds_total[5m])) * 100
+  mode=idle: 29.10%
+  mode=iowait: 0.07%
+  mode=irq: 0.00%
+  mode=nice: 0.01%
+  mode=softirq: 0.01%
+  mode=steal: 0.32%
+  mode=system: 1.84%
+  mode=user: 1.76%
+
+Dashboard complete! 🎉

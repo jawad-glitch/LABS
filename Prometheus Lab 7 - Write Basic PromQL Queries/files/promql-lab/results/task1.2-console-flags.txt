@@ -1,0 +1,1 @@
+console dirs from the lab flags exist? no (flags accepted, directories absent)

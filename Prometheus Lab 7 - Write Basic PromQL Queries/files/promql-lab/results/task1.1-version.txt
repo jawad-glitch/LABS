@@ -1,0 +1,3 @@
+prometheus v3.16.0 sha256 OK
+node_exporter v1.12.1 sha256 OK
+prometheus, version 3.16.0 (branch: HEAD, revision: e2e28adeee2c5883d000fc82aca6008cfbf7e96d)

@@ -1,0 +1,2 @@
+2026-11-12 09:20:00.120 UTC [nodeCmd] serve -> Started peer0.org2.example.com with ID=[peer0.org2.example.com], network=[fabric_test], address=[0.0.0.0:9051]
+2026-11-12 09:20:01.220 UTC [kvledger] CommitLegacy -> [mychannel] Committed block [0] with 1 transaction(s)

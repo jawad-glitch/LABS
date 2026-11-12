@@ -1,0 +1,20 @@
+#!/bin/bash
+case "$*" in
+  *"channel list"*)
+    echo "Channels peers has joined:"
+    echo "mychannel"
+    ;;
+  *"channel getinfo"*)
+    echo 'Blockchain info: {"height":3,"currentBlockHash":"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08","previousBlockHash":"4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"}'
+    ;;
+  *"queryinstalled"*)
+    echo "Installed chaincodes on peer:"
+    echo "Package ID: basic_1.0:4ec191e793b27e953dff2ed5a8ab02c27f81d18a922d0b0976f97654c8f11b7e, Label: basic_1.0"
+    ;;
+  *"node status"*)
+    echo "status:STARTED"
+    ;;
+  *)
+    echo "peer: Hyperledger Fabric v2.5.4 (linux/amd64)"
+    ;;
+esac

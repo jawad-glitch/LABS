@@ -1,0 +1,7 @@
+total 24
+drwxrwxr-x 4 ubuntu ubuntu 4096 Nov 12 09:23 .
+drwxrwxr-x 5 ubuntu ubuntu 4096 Nov 12 09:23 ..
+drwxrwxr-x 2 ubuntu ubuntu 4096 Nov 12 09:23 configtx
+-rw-rw-r-- 1 ubuntu ubuntu  635 Nov 12 09:23 docker-compose-test-net.yaml
+-rwxrwxr-x 1 ubuntu ubuntu 2787 Nov 12 09:23 network.sh
+drwxrwxr-x 2 ubuntu ubuntu 4096 Nov 12 09:23 organizations

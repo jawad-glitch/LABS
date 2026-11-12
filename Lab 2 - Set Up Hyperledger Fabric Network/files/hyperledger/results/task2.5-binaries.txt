@@ -1,0 +1,12 @@
+total 44
+drwxrwxr-x 2 ubuntu ubuntu 4096 Nov 12 09:23 .
+drwxrwxr-x 5 ubuntu ubuntu 4096 Nov 12 09:23 ..
+-rwxrwxr-x 1 ubuntu ubuntu  674 Nov 12 09:23 configtxgen
+-rwxrwxr-x 1 ubuntu ubuntu  676 Nov 12 09:23 configtxlator
+-rwxrwxr-x 1 ubuntu ubuntu  672 Nov 12 09:23 cryptogen
+-rwxrwxr-x 1 ubuntu ubuntu  671 Nov 12 09:23 discover
+-rwxrwxr-x 1 ubuntu ubuntu  679 Nov 12 09:23 fabric-ca-client
+-rwxrwxr-x 1 ubuntu ubuntu  679 Nov 12 09:23 fabric-ca-server
+-rwxrwxr-x 1 ubuntu ubuntu  670 Nov 12 09:23 orderer
+-rwxrwxr-x 1 ubuntu ubuntu  671 Nov 12 09:23 osnadmin
+-rwxrwxr-x 1 ubuntu ubuntu  667 Nov 12 09:23 peer

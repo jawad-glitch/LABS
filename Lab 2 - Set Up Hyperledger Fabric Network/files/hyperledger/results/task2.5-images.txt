@@ -1,0 +1,6 @@
+hyperledger/fabric-ca:latest        c2985d5c03a2       4.85MB         1.13MB        
+hyperledger/fabric-orderer:2.5      c2985d5c03a2       4.85MB         1.13MB        
+hyperledger/fabric-orderer:latest   c2985d5c03a2       4.85MB         1.13MB        
+hyperledger/fabric-peer:2.5         c2985d5c03a2       4.85MB         1.13MB        
+hyperledger/fabric-peer:latest      c2985d5c03a2       4.85MB         1.13MB        
+hyperledger/fabric-tools:latest     c2985d5c03a2       4.85MB         1.13MB        

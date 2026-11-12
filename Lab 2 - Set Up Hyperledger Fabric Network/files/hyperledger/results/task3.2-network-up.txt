@@ -1,0 +1,4 @@
+Generating certificates using cryptogen
+Creating orderer.example.com    ... done
+Creating peer0.org1.example.com ... done
+Creating peer0.org2.example.com ... done

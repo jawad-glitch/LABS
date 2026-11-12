@@ -1,0 +1,9 @@
+========== CORE CHECKS (Lab 2 - Set Up Hyperledger Fabric Network, 2026-11-12 09:23:41 UTC) ==========
+PASS: Task 1: Docker & Docker Compose installed and verified
+PASS: Task 2: fabric-samples binaries (peer, orderer, configtxgen, cryptogen) & images ready
+PASS: Task 3: Test network started and channel mychannel created/joined
+PASS: Task 4.1-4.3: orderer, peer0.org1, peer0.org2 running in docker ps with active logs
+FAIL: Task 4.4-4.7: peer channel list shows mychannel; fabric_test network & stats inspected
+FAIL: Additional Verification: channel getinfo, queryinstalled, and peer node status STARTED
+PASS: Time: Lab completed in 12s (<= 300s)
+CORE: 5/7 PASS

@@ -1,0 +1,30 @@
+version: '3.7'
+networks:
+  test:
+    name: fabric_test
+services:
+  orderer.example.com:
+    container_name: orderer.example.com
+    image: hyperledger/fabric-orderer:latest
+    ports:
+      - 7050:7050
+      - 7053:7053
+      - 9443:9443
+    networks:
+      - test
+  peer0.org1.example.com:
+    container_name: peer0.org1.example.com
+    image: hyperledger/fabric-peer:latest
+    ports:
+      - 7051:7051
+      - 9444:9444
+    networks:
+      - test
+  peer0.org2.example.com:
+    container_name: peer0.org2.example.com
+    image: hyperledger/fabric-peer:latest
+    ports:
+      - 9051:9051
+      - 9445:9445
+    networks:
+      - test

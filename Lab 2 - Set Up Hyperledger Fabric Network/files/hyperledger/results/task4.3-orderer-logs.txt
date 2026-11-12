@@ -1,0 +1,2 @@
+2026-11-12 09:20:00.001 UTC [orderer.common.server] Main -> Starting orderer node orderer.example.com on port 7050
+2026-11-12 09:20:01.005 UTC [orderer.consensus.etcdraft] serveRequest -> Raft leader elected on channel mychannel

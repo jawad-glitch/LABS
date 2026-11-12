@@ -1,0 +1,4 @@
+CONTAINER ID   NAME                     CPU %     MEM USAGE / LIMIT   MEM %     NET I/O         BLOCK I/O   PIDS
+3958e1291a34   peer0.org2.example.com   0.00%     292KiB / 3.759GiB   0.01%     4.25kB / 126B   0B / 0B     1
+08d7ae743c65   peer0.org1.example.com   0.00%     296KiB / 3.759GiB   0.01%     4.84kB / 126B   0B / 0B     1
+a6d67f570d10   orderer.example.com      0.00%     296KiB / 3.759GiB   0.01%     5.51kB / 126B   0B / 0B     1

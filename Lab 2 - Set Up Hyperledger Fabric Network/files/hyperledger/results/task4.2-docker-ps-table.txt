@@ -1,0 +1,4 @@
+NAMES                    STATUS         PORTS
+peer0.org2.example.com   Up 1 second    0.0.0.0:9051->9051/tcp, [::]:9051->9051/tcp, 0.0.0.0:9445->9445/tcp, [::]:9445->9445/tcp
+peer0.org1.example.com   Up 2 seconds   0.0.0.0:7051->7051/tcp, [::]:7051->7051/tcp, 0.0.0.0:9444->9444/tcp, [::]:9444->9444/tcp
+orderer.example.com      Up 3 seconds   0.0.0.0:7050->7050/tcp, [::]:7050->7050/tcp, 0.0.0.0:7053->7053/tcp, [::]:7053->7053/tcp, 0.0.0.0:9443->9443/tcp, [::]:9443->9443/tcp

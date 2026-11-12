@@ -1,0 +1,63 @@
+[
+    {
+        "Name": "fabric_test",
+        "Id": "b5df3fbecfeebef4ff92786b39e5a8e5740e7497647f1fffd05da3c85104a51c",
+        "Created": "2026-11-12T09:23:35.070064864Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.18.0.0/16",
+                    "Gateway": "172.18.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {},
+        "Containers": {
+            "08d7ae743c65bf67cbbf2098579e83e6dcf1231c0b2b074dda9b3079cfa0fd29": {
+                "Name": "peer0.org1.example.com",
+                "EndpointID": "d90405e10d8acb269e11995434f00866d19d57be8cb3354f07e6304cadeec549",
+                "MacAddress": "be:69:5b:fd:6d:94",
+                "IPv4Address": "172.18.0.3/16",
+                "IPv6Address": ""
+            },
+            "3958e1291a3472d50434dcf9aa6e0d7709f04382f89cd5154971af54b12b1f0d": {
+                "Name": "peer0.org2.example.com",
+                "EndpointID": "9c066f628be8001be3567df179f58e1dfc9e9def762f3f6b3b011f932db790f8",
+                "MacAddress": "22:38:8a:9f:f3:3f",
+                "IPv4Address": "172.18.0.4/16",
+                "IPv6Address": ""
+            },
+            "a6d67f570d1048ac930c52bd75d7b0c0e3cd16cdd2abc6ab1a27b2449bd8e692": {
+                "Name": "orderer.example.com",
+                "EndpointID": "5efc97d265414ea935317c01d804c41a6884a70611a5c6adbbfd97b1bc34ebc5",
+                "MacAddress": "16:9d:58:b5:31:f3",
+                "IPv4Address": "172.18.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.18.0.0/16": {
+                        "IPsInUse": 6,
+                        "DynamicIPsAvailable": 65530
+                    }
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FDC3 Context Receiver</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="../desktop-agent/agent.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="panel">
+    <h1>FDC3 Context Receiver</h1>
+    <p id="listener-status" class="status" role="status">Connecting to Desktop Agent…</p>
+    <div class="controls">
+      <button id="stop">Stop Listening</button>
+      <button id="clear" class="secondary">Clear History</button>
+    </div>
+    <p id="count">Received contexts: 0</p>
+    <section id="history" aria-live="polite" aria-label="Context history"></section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+> fdc3-context-sharing-lab4@1.0.0 test
+> node --test test/*.test.js
+
+TAP version 13
+# Subtest: agent exposes the required FDC3 methods and window.fdc3
+ok 1 - agent exposes the required FDC3 methods and window.fdc3
+  ---
+  duration_ms: 2.616941
+  ...
+# Subtest: agent validates context type and supports unsubscribe
+ok 2 - agent validates context type and supports unsubscribe
+  ---
+  duration_ms: 0.476798
+  ...
+# Subtest: agent supports typed and wildcard listeners
+ok 3 - agent supports typed and wildcard listeners
+  ---
+  duration_ms: 0.313075
+  ...
+# Subtest: sender builds fdc3.instrument with ticker, ISIN, MIC and RIC
+ok 4 - sender builds fdc3.instrument with ticker, ISIN, MIC and RIC
+  ---
+  duration_ms: 0.326775
+  ...
+# Subtest: receiver registers wildcard listener and supports stop and clear
+ok 5 - receiver registers wildcard listener and supports stop and clear
+  ---
+  duration_ms: 0.380206
+  ...
+# Subtest: relay supports cross-origin CORS and message polling
+ok 6 - relay supports cross-origin CORS and message polling
+  ---
+  duration_ms: 0.323195
+  ...
+# Subtest: all app HTML pages load the shared agent by relative path
+ok 7 - all app HTML pages load the shared agent by relative path
+  ---
+  duration_ms: 0.441957
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 119.36111

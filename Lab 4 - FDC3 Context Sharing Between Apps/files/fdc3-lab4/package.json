@@ -1,0 +1,14 @@
+{
+  "name": "fdc3-context-sharing-lab4",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "relay": "node relay.js",
+    "sender": "serve . -l 3001 --no-clipboard",
+    "receiver": "serve . -l 3002 --no-clipboard"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

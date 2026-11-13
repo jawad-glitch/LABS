@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FDC3 Context Sender</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="../desktop-agent/agent.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="panel">
+    <h1>FDC3 Context Sender</h1>
+    <p>Construct and broadcast an <code>fdc3.instrument</code> context.</p>
+    <form id="instrument-form">
+      <label>Ticker symbol<input id="ticker" value="AAPL" required></label>
+      <label>Instrument name<input id="name" value="Apple Inc." required></label>
+      <label>Exchange MIC code<input id="mic" value="XNAS" maxlength="4" required></label>
+      <label>ISIN<input id="isin" value="US0378331005" maxlength="12" required></label>
+      <label>RIC (optional)<input id="ric" value="AAPL.O"></label>
+      <h2>Context preview</h2>
+      <pre id="preview" aria-live="polite"></pre>
+      <button type="submit">Broadcast context</button>
+    </form>
+    <p id="status" class="status" role="status">Ready.</p>
+  </main>
+</body>
+</html>

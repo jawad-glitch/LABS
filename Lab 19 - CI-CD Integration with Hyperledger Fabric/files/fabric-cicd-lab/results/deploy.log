@@ -1,0 +1,8 @@
+Local Fabric network simulation started.
+Inventory chaincode deployed (local simulation).
+InitLedger equivalent completed.
+[PASS] Two peers are Up
+[PASS] Orderer is Up
+[PASS] Two certificate authorities are Up
+[PASS] Chaincode query returns non-empty JSON
+[PASS] Committed sequence matches deployment sequence 1

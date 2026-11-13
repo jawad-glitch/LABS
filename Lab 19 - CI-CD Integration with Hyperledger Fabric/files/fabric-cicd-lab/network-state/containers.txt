@@ -1,0 +1,5 @@
+peer0 Up
+peer1 Up
+orderer Up
+ca_org1 Up
+ca_org2 Up

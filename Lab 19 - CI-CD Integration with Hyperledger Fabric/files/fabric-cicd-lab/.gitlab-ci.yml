@@ -1,0 +1,53 @@
+stages:
+  - build
+  - test
+  - package
+  - deploy
+
+build:
+  stage: build
+  image: node:18
+  script:
+    - npm install --prefix chaincode --ignore-scripts --no-audit --no-fund
+  artifacts:
+    paths:
+      - chaincode/
+
+test:
+  stage: test
+  image: node:18
+  dependencies:
+    - build
+  script:
+    - npm --prefix chaincode test
+  artifacts:
+    when: always
+    reports:
+      junit: chaincode/test-results.xml
+    paths:
+      - chaincode/test-results.xml
+
+package:
+  stage: package
+  image: node:18
+  dependencies:
+    - build
+    - test
+  script:
+    - mkdir -p packages
+    - tar -czf packages/inventory_1.0.tar.gz chaincode/index.js chaincode/package.json
+  artifacts:
+    paths:
+      - packages/
+
+deploy:
+  stage: deploy
+  image: node:18
+  dependencies:
+    - package
+  only:
+    - main
+  script:
+    - bash scripts/network.sh up
+    - bash scripts/deploy.sh
+    - bash health-check.sh

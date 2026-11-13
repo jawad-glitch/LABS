@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="inventory" tests="4" failures="0">
+<testcase classname="InventoryContract" name="Create product"></testcase>
+<testcase classname="InventoryContract" name="Read product"></testcase>
+<testcase classname="InventoryContract" name="Update quantity"></testcase>
+<testcase classname="InventoryContract" name="Delete product"></testcase>
+</testsuite>

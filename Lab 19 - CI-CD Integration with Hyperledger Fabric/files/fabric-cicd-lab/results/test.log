@@ -1,0 +1,9 @@
+
+> fabric-inventory-chaincode@1.0.0 test
+> node test/test.js
+
+PASS: Create product
+PASS: Read product
+PASS: Update quantity
+PASS: Delete product
+Tests: 4 passed, 0 failed

@@ -1,0 +1,13 @@
+Timestamp: 2026-11-13T11:36:26+00:00
+Failed stage: test
+Last command output:
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /home/ubuntu/fabric-cicd-lab/chaincode/package.json
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, open '/home/ubuntu/fabric-cicd-lab/chaincode/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2026-11-13T11_36_26_753Z-debug-0.log

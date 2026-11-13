@@ -160,3 +160,4 @@
 | [Lab 3 - FDC3 API Overview](Lab%203%20-%20FDC3%20API%20Overview/PROOF.md) | no core-check file | 2026-11-13 12:20 |
 | [Lab 4 - FDC3 Context Sharing Between Apps](Lab%204%20-%20FDC3%20Context%20Sharing%20Between%20Apps/PROOF.md) | no core-check file | 2026-11-13 12:32 |
 | [FDC3 Channels and Scoped Data Sharing Lab](FDC3%20Channels%20and%20Scoped%20Data%20Sharing%20Lab/PROOF.md) | no core-check file | 2026-11-13 12:43 |
+| [Lab 7 - FDC3 App Directory Integration](Lab%207%20-%20FDC3%20App%20Directory%20Integration/PROOF.md) | no core-check file | 2026-11-13 13:00 |

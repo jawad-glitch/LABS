@@ -1,0 +1,14 @@
+{
+  "appId": "trading-app-v1",
+  "name": "Trading Application",
+  "type": "web",
+  "version": "1.0.0",
+  "description": "Trading workstation for instruments, portfolios and quotes",
+  "categories": ["trading", "markets"],
+  "intents": [
+    {"name": "StartTrade", "displayName": "Start Trade", "contexts": ["fdc3.instrument", "fdc3.portfolio"]},
+    {"name": "ViewChart", "displayName": "View Chart", "contexts": ["fdc3.instrument"]},
+    {"name": "ViewQuote", "displayName": "View Quote", "contexts": ["fdc3.instrument", "fdc3.portfolio"]}
+  ],
+  "interop": {"fdc3Version": "2.0"}
+}

@@ -1,0 +1,4 @@
+FDC3 Lab 7 validation
+Restart persistence: PASS (3 records)
+Malformed JSON: PASS (HTTP 400)
+Combined intent/context search: tested

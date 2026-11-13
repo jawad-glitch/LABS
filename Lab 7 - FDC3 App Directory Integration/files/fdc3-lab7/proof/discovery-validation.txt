@@ -1,0 +1,8 @@
+PASS: listAll returns exactly 3 applications
+PASS: findByIntent ViewQuote returns the two expected applications
+PASS: findByIntent is case-insensitive
+PASS: findByContext fdc3.portfolio returns the two expected applications
+PASS: findByCategory trading includes trading-app-v1
+PASS: getCapabilities returns three portfolio-manager intents
+
+6/6 assertions passed.

@@ -1,0 +1,113 @@
+{
+  "applications": [
+    {
+      "appId": "market-data-viewer-v1",
+      "name": "Market Data Viewer",
+      "type": "web",
+      "version": "1.0.0",
+      "description": "Market quotes and news viewer",
+      "categories": [
+        "markets",
+        "research"
+      ],
+      "intents": [
+        {
+          "name": "ViewQuote",
+          "displayName": "View Quote",
+          "contexts": [
+            "fdc3.instrument"
+          ]
+        },
+        {
+          "name": "ViewNews",
+          "displayName": "View News",
+          "contexts": [
+            "fdc3.instrumentList",
+            "fdc3.instrument"
+          ]
+        }
+      ],
+      "interop": {
+        "fdc3Version": "2.0"
+      }
+    },
+    {
+      "appId": "portfolio-manager-v2",
+      "name": "Portfolio Manager",
+      "type": "web",
+      "version": "2.0.0",
+      "description": "Portfolio analysis and position management",
+      "categories": [
+        "portfolio",
+        "trading"
+      ],
+      "intents": [
+        {
+          "name": "ViewPortfolio",
+          "displayName": "View Portfolio",
+          "contexts": [
+            "fdc3.portfolio"
+          ]
+        },
+        {
+          "name": "ViewAnalysis",
+          "displayName": "View Analysis",
+          "contexts": [
+            "fdc3.portfolio",
+            "fdc3.position"
+          ]
+        },
+        {
+          "name": "ViewPosition",
+          "displayName": "View Position",
+          "contexts": [
+            "fdc3.position",
+            "fdc3.instrument"
+          ]
+        }
+      ],
+      "interop": {
+        "fdc3Version": "2.0"
+      }
+    },
+    {
+      "appId": "trading-app-v1",
+      "name": "Trading Application",
+      "type": "web",
+      "version": "1.0.0",
+      "description": "Trading workstation for instruments, portfolios and quotes",
+      "categories": [
+        "trading",
+        "markets"
+      ],
+      "intents": [
+        {
+          "name": "StartTrade",
+          "displayName": "Start Trade",
+          "contexts": [
+            "fdc3.instrument",
+            "fdc3.portfolio"
+          ]
+        },
+        {
+          "name": "ViewChart",
+          "displayName": "View Chart",
+          "contexts": [
+            "fdc3.instrument"
+          ]
+        },
+        {
+          "name": "ViewQuote",
+          "displayName": "View Quote",
+          "contexts": [
+            "fdc3.instrument",
+            "fdc3.portfolio"
+          ]
+        }
+      ],
+      "interop": {
+        "fdc3Version": "2.0"
+      }
+    }
+  ]
+}

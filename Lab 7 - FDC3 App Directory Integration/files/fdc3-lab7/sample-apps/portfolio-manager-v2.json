@@ -1,0 +1,14 @@
+{
+  "appId": "portfolio-manager-v2",
+  "name": "Portfolio Manager",
+  "type": "web",
+  "version": "2.0.0",
+  "description": "Portfolio analysis and position management",
+  "categories": ["portfolio", "trading"],
+  "intents": [
+    {"name": "ViewPortfolio", "displayName": "View Portfolio", "contexts": ["fdc3.portfolio"]},
+    {"name": "ViewAnalysis", "displayName": "View Analysis", "contexts": ["fdc3.portfolio", "fdc3.position"]},
+    {"name": "ViewPosition", "displayName": "View Position", "contexts": ["fdc3.position", "fdc3.instrument"]}
+  ],
+  "interop": {"fdc3Version": "2.0"}
+}

@@ -1,0 +1,13 @@
+{
+  "appId": "market-data-viewer-v1",
+  "name": "Market Data Viewer",
+  "type": "web",
+  "version": "1.0.0",
+  "description": "Market quotes and news viewer",
+  "categories": ["markets", "research"],
+  "intents": [
+    {"name": "ViewQuote", "displayName": "View Quote", "contexts": ["fdc3.instrument"]},
+    {"name": "ViewNews", "displayName": "View News", "contexts": ["fdc3.instrumentList", "fdc3.instrument"]}
+  ],
+  "interop": {"fdc3Version": "2.0"}
+}

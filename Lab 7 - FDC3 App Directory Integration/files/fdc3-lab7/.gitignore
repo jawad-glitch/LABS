@@ -1,0 +1,7 @@
+node_modules/
+app-directory/node_modules/
+app-directory/server.log
+app-directory/server.pid
+app-directory/apps.json.tmp
+*.log
+*.pid

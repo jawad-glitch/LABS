@@ -177,3 +177,4 @@
 | [Lab 1 - Introduction to Open Source in Financial Services](Lab%201%20-%20Introduction%20to%20Open%20Source%20in%20Financial%20Services/PROOF.md) | no core-check file | 2026-11-13 14:55 |
 | [Lab 2 - Introduction to FINOS and Its Ecosystem](Lab%202%20-%20Introduction%20to%20FINOS%20and%20Its%20Ecosystem/PROOF.md) | no core-check file | 2026-11-13 15:08 |
 | [Lab 5 - Contributing to Open Source Projects](Lab%205%20-%20Contributing%20to%20Open%20Source%20Projects/PROOF.md) | no core-check file | 2026-11-13 15:22 |
+| [Lab 6 - Secure Software Development Basics](Lab%206%20-%20Secure%20Software%20Development%20Basics/PROOF.md) | no core-check file | 2026-11-13 15:29 |

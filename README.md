@@ -179,3 +179,4 @@
 | [Lab 5 - Contributing to Open Source Projects](Lab%205%20-%20Contributing%20to%20Open%20Source%20Projects/PROOF.md) | no core-check file | 2026-11-13 15:22 |
 | [Lab 6 - Secure Software Development Basics](Lab%206%20-%20Secure%20Software%20Development%20Basics/PROOF.md) | no core-check file | 2026-11-13 15:29 |
 | [Lab 9 - Project Governance - Open Governance Models](Lab%209%20-%20Project%20Governance%20-%20Open%20Governance%20Models/PROOF.md) | no core-check file | 2026-11-13 20:28 |
+| [Lab 10 - Developing with Compliance in Mind](Lab%2010%20-%20Developing%20with%20Compliance%20in%20Mind/PROOF.md) | no core-check file | 2026-11-13 20:34 |

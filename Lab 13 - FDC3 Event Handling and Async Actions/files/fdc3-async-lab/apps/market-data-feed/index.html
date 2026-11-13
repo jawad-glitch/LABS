@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FDC3 Market Feed</title><link rel="stylesheet" href="../../shared/css/styles.css"></head>
+<body><main><h1>FDC3 Market Data Feed</h1><div class="panel">
+<label>Tick interval (ms; minimum 100)</label><input id="interval" type="number" min="100" value="200">
+<button id="start">Start Feed</button><button id="stop" class="secondary">Stop Feed</button>
+<p id="status">Stopped</p><p>Total emitted ticks: <strong id="ticks">0</strong></p>
+<h3>Backpressure warnings</h3><div id="warnings" class="log">No warnings.</div>
+</div><div id="prices" class="cards"></div></main>
+<script src="../../shared/js/fdc3-desktop-agent.js"></script><script src="market-data-feed.js"></script><script src="feed-ui.js"></script></body></html>

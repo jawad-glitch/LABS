@@ -1,0 +1,7 @@
+*{box-sizing:border-box}body{font:15px Arial,sans-serif;margin:0;padding:24px;background:#f3f6fa;color:#182230}
+main{max-width:950px;margin:auto}h1{margin-top:0}.panel,.card{background:white;border:1px solid #dce3eb;border-radius:12px;padding:18px;margin:14px 0}
+label{display:block;margin:12px 0 5px}input,select,textarea,button{font:inherit;padding:9px;border:1px solid #bac6d4;border-radius:7px}
+input,select,textarea{width:100%;max-width:520px}textarea{min-height:90px}button{cursor:pointer;background:#1d5fa7;color:white;border:0;margin:6px 5px 6px 0}
+button.secondary{background:#566579}.status{color:#526276}.log{white-space:pre-wrap;overflow-wrap:anywhere;background:#101c2a;color:#e4edf7;padding:12px;border-radius:8px;min-height:100px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.price{font-size:25px;font-weight:bold}.positive{color:#168447}.negative{color:#c0392b}
+small{color:#617184}

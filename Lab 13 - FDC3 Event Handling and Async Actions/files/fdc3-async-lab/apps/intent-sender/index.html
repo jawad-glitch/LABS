@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FDC3 Intent Sender</title><link rel="stylesheet" href="../../shared/css/styles.css"></head>
+<body><main><h1>FDC3 Intent Sender</h1><div class="panel">
+<div>Agent: <strong id="agentStatus">Starting...</strong> | Pending intents: <strong id="pending">0</strong></div>
+<label>Intent</label><select id="intent"><option>ViewChart</option><option>ViewInstrument</option><option>ViewNews</option><option>StartCall</option></select>
+<label>Ticker</label><input id="ticker" value="AAPL">
+<label>Target app ID (optional)</label><input id="target" placeholder="intent-receiver">
+<label>Context JSON (optional; blank uses the ticker above)</label><textarea id="context"></textarea>
+<button id="send">Send Intent</button><button id="batch">Send Batch (3 concurrent)</button>
+</div><div class="panel"><h3>Intent results</h3><div id="log" class="log">Ready.</div></div></main>
+<script src="../../shared/js/fdc3-desktop-agent.js"></script><script src="intent-sender.js"></script></body></html>

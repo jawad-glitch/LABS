@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FDC3 Intent Receiver</title><link rel="stylesheet" href="../../shared/css/styles.css"></head>
+<body><main><h1>FDC3 Intent Receiver</h1><div class="panel">
+<div>Agent: <strong id="agentStatus">Starting...</strong></div>
+<label>Intent processing delay: <span id="delayValue">500</span> ms</label><input id="delay" type="range" min="0" max="2000" step="100" value="500">
+<div id="listenerControls"></div><h3>Received intents and feed events</h3><div id="log" class="log">Waiting for events.</div>
+<button id="subscribeFeed">Subscribe to Feed</button><button id="unsubscribeFeed" class="secondary">Unsubscribe from Feed</button>
+</div><h2>Live market data</h2><div id="prices" class="cards"></div></main>
+<script src="../../shared/js/fdc3-desktop-agent.js"></script><script src="intent-receiver.js"></script></body></html>

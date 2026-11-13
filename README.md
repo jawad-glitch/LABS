@@ -173,3 +173,4 @@
 | [Lab 17 - FDC3 API with External Systems REST API](Lab%2017%20-%20FDC3%20API%20with%20External%20Systems%20REST%20API/PROOF.md) | no core-check file | 2026-11-13 14:21 |
 | [Lab 18 - Testing FDC3 Integration in Real-Time](Lab%2018%20-%20Testing%20FDC3%20Integration%20in%20Real-Time/PROOF.md) | no core-check file | 2026-11-13 14:32 |
 | [Lab 19 - Building a Custom FDC3 Desktop Agent](Lab%2019%20-%20Building%20a%20Custom%20FDC3%20Desktop%20Agent/PROOF.md) | no core-check file | 2026-11-13 14:40 |
+| [Lab 20 - Advanced FDC3 Use Cases](Lab%2020%20-%20Advanced%20FDC3%20Use%20Cases/PROOF.md) | no core-check file | 2026-11-13 14:48 |

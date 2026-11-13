@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 Trading Terminal</title>
+<style>
+body{font-family:Arial,sans-serif;margin:2rem;color:#222}
+label{display:block;margin:.8rem 0}
+input,select{width:210px;padding:.4rem}
+button{padding:.55rem 1rem;margin:.5rem .4rem .5rem 0;cursor:pointer}
+#fdc3-status{padding:.7rem;background:#f1f1f1;margin:1rem 0}
+#fdc3-log{margin-top:1rem;background:#f5f5f5;padding:1rem;min-height:100px}
+#chart-panel{margin-top:1rem;padding:1rem;border:1px solid #aaa;display:none}
+</style>
+</head>
+<body>
+<h2>Trading Terminal</h2>
+<div id="fdc3-status">Connecting to Desktop Agent...</div>
+
+<form id="order-form">
+<label>Instrument <input id="ticker" required placeholder="e.g. AAPL"></label>
+<label>Side <select id="side"><option>BUY</option><option>SELL</option></select></label>
+<label>Quantity <input id="quantity" type="number" min="1" step="1" required></label>
+<label>Price <input id="price" type="number" min="0.01" step="0.01" required></label>
+<button type="submit">Place Order</button>
+</form>
+
+<button id="raise-chart" type="button">Raise ViewChart</button>
+<div id="chart-panel">
+<strong>Chart view for: </strong><span id="chart-ticker"></span>
+<p>Simulated chart — instrument received through the ViewChart intent.</p>
+</div>
+<h3>FDC3 Event Log</h3>
+<div id="fdc3-log">Waiting for events...</div>
+
+<script>
+const host = location.hostname || 'localhost';
+const statusEl = document.getElementById('fdc3-status');
+const logEl = document.getElementById('fdc3-log');
+const tickerEl = document.getElementById('ticker');
+let fdc3 = null;
+
+function log(message) {
+  const line = document.createElement('div');
+  line.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+  logEl.prepend(line);
+}
+
+(async () => {
+  try {
+    await new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = `http://${host}:9090/js/fdc3-client.js`;
+      script.onload = resolve;
+      script.onerror = () => reject(new Error('Could not load FDC3 browser client'));
+      document.head.appendChild(script);
+    });
+    fdc3 = new FDC3Client(`ws://${host}:9090`);
+    await fdc3.connect();
+
+    fdc3.addContextListener('fdc3.instrument', context => {
+      const ticker = context?.id?.ticker || '';
+      tickerEl.value = ticker;
+      log(`fdc3.instrument received: ${ticker}`);
+    });
+
+    fdc3.addIntentListener('ViewChart', context => {
+      const ticker = context?.id?.ticker || tickerEl.value || 'Unknown';
+      document.getElementById('chart-ticker').textContent = ticker;
+      document.getElementById('chart-panel').style.display = 'block';
+      log(`ViewChart intent received for: ${ticker}`);
+    });
+
+    fdc3.joinChannel('blue');
+    await new Promise(resolve => setTimeout(resolve, 150));
+    statusEl.textContent = 'Connected — channel: ' + (fdc3.currentChannel || 'blue');
+    log('Connected to FDC3 Desktop Agent');
+  } catch (error) {
+    statusEl.textContent = 'Connection error: ' + error.message;
+    log('Connection error: ' + error.message);
+  }
+})();
+
+document.getElementById('raise-chart').addEventListener('click', () => {
+  if (!fdc3) return log('Agent is not connected');
+  const ticker = tickerEl.value.trim().toUpperCase();
+  if (!ticker) return log('Select an instrument or enter a ticker first');
+
+  fdc3.raiseIntent('ViewChart', {
+    type: 'fdc3.instrument',
+    name: ticker,
+    id: { ticker }
+  });
+  log('Raised ViewChart intent for: ' + ticker);
+});
+
+document.getElementById('order-form').addEventListener('submit', async event => {
+  event.preventDefault();
+  const order = {
+    ticker: tickerEl.value.trim(),
+    side: document.getElementById('side').value,
+    quantity: Number(document.getElementById('quantity').value),
+    price: Number(document.getElementById('price').value)
+  };
+
+  try {
+    const response = await fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(order)
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || 'Order rejected');
+    log(`Order ${result.orderId} — ${result.status}`);
+  } catch (error) {
+    log('Order error: ' + error.message);
+  }
+});
+</script>
+<script id="agent-client"></script>
+<script>
+document.getElementById('agent-client').src =
+  `http://${location.hostname || 'localhost'}:9090/js/fdc3-client.js`;
+</script>
+</body>
+</html>

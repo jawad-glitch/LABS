@@ -1,0 +1,5 @@
+node_modules/
+desktop-agent/server.log
+desktop-agent/server.pid
+*.log
+.env

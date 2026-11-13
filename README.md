@@ -162,3 +162,4 @@
 | [FDC3 Channels and Scoped Data Sharing Lab](FDC3%20Channels%20and%20Scoped%20Data%20Sharing%20Lab/PROOF.md) | no core-check file | 2026-11-13 12:43 |
 | [Lab 7 - FDC3 App Directory Integration](Lab%207%20-%20FDC3%20App%20Directory%20Integration/PROOF.md) | no core-check file | 2026-11-13 13:00 |
 | [Lab 8 - FDC3 Security and Permissions](Lab%208%20-%20FDC3%20Security%20and%20Permissions/PROOF.md) | no core-check file | 2026-11-13 13:07 |
+| [Lab 9 - FDC3 Private Channels and Confidential Context Sharing](Lab%209%20-%20FDC3%20Private%20Channels%20and%20Confidential%20Context%20Sharing/PROOF.md) | no core-check file | 2026-11-13 13:15 |

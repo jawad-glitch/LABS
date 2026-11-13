@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FDC3 Trading App</title>
+  <style>
+    body{font:15px Arial;max-width:850px;margin:30px auto;padding:0 16px;background:#f5f7fa}
+    section{background:white;padding:16px;margin:12px 0;border-radius:8px}
+    input,button{padding:9px;margin:5px}button{cursor:pointer}
+    #log{height:220px;overflow:auto;background:#111;color:#b8f7c5;padding:12px;white-space:pre-wrap}
+  </style>
+</head>
+<body data-app-id="trading-app">
+  <h1>Trading Application</h1>
+  <section>
+    <button id="create">Create private channel</button>
+    <p>Channel ID: <code id="channel">Not created</code></p>
+    <button id="add">Add Analytics App participant</button>
+  </section>
+  <section>
+    <h3>Broadcast trade</h3>
+    <form id="trade">
+      <input id="symbol" value="AAPL" placeholder="Symbol" required>
+      <input id="price" type="number" step="0.01" value="192.50" placeholder="Price" required>
+      <input id="quantity" type="number" value="100" placeholder="Quantity" required>
+      <select id="side"><option>BUY</option><option>SELL</option></select>
+      <button>Send trade</button>
+    </form>
+    <button id="strategy">Broadcast confidential strategy</button>
+  </section>
+  <section><h3>Private channel activity</h3><div id="log"></div></section>
+  <script src="/shared/fdc3-shim.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

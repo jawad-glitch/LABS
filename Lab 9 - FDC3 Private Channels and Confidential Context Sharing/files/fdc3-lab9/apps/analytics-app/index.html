@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FDC3 Analytics App</title>
+  <style>
+    body{font:15px Arial;max-width:900px;margin:30px auto;padding:0 16px;background:#f5f7fa}
+    section{background:white;padding:16px;margin:12px 0;border-radius:8px}
+    input,button{padding:9px;margin:5px}button{cursor:pointer}
+    table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:8px;text-align:left}
+    .restricted{background:#8b0000;color:white;padding:4px 8px;border-radius:4px;font-weight:bold}
+    #strategies{white-space:pre-wrap}
+  </style>
+</head>
+<body data-app-id="analytics-app">
+  <h1>Analytics Application</h1>
+  <section>
+    <input id="channelId" placeholder="Paste private channel ID">
+    <button id="join">Join private channel</button>
+    <button id="disconnect">Disconnect</button>
+    <p id="status">Not connected</p>
+  </section>
+  <section>
+    <h3>Received trades</h3>
+    <table><thead><tr><th>Symbol</th><th>Price</th><th>Quantity</th><th>Timestamp</th></tr></thead>
+      <tbody id="trades"></tbody></table>
+  </section>
+  <section>
+    <h3>Confidential strategies</h3><div id="strategies"></div>
+  </section>
+  <section>
+    <button id="result">Broadcast analytics result</button>
+  </section>
+  <script src="/shared/fdc3-shim.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

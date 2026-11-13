@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 Portfolio Application</title>
+<style>
+body{font:15px Arial;margin:25px;background:#101827;color:#e7edf5}h1{color:#76c7ff}
+section{background:#1c293b;padding:16px;margin:15px 0;border-radius:9px}
+button,select{padding:9px;margin:5px;border-radius:5px}table{width:100%;border-collapse:collapse}
+td,th{padding:10px;text-align:left;border-bottom:1px solid #43516a}
+tr.highlight{background:#28523f}.good{color:#8de0a3}
+</style>
+</head>
+<body>
+<h1>Portfolio Application</h1><p id="status">Connecting...</p>
+<section><h2>System Channel</h2><select id="channel"><option>red</option><option>orange</option><option>yellow</option><option selected>green</option><option>blue</option><option>purple</option></select><button id="join">Join Channel</button><span id="joined"></span></section>
+<section><h2>Portfolio Positions</h2><table><thead><tr><th>Symbol</th><th>Name</th><th>Quantity</th><th>Average Cost</th><th>Current Price</th><th>Unrealized P/L</th></tr></thead><tbody id="positions"></tbody></table></section>
+<section><h2>Instrument Detail / Intent Delivery</h2><pre id="detail">Waiting for ViewInstrument intent...</pre></section>
+<section><h2>Received Contexts</h2><pre id="context">Waiting for instrument context...</pre></section>
+<script>
+const api=location.origin;let positions=[];
+async function request(url,body){const r=await fetch(api+url,body?{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}:{});const j=await r.json();if(!r.ok)throw Error(j.error||r.statusText);return j;}
+function render(highlight){document.getElementById("positions").innerHTML=positions.map(p=>`<tr class="${p.symbol===highlight?"highlight":""}"><td>${p.symbol}</td><td>${p.name}</td><td>${p.quantity}</td><td>${p.averageCost.toFixed(2)}</td><td>${p.currentPrice.toFixed(2)}</td><td>${p.unrealizedPnL.toFixed(2)}</td></tr>`).join("");}
+async function load(){const snapshot=await request("/api/portfolio");positions=snapshot.positions;render();}
+document.getElementById("join").onclick=async()=>{try{const id=document.getElementById("channel").value;await request("/api/join",{channelId:id});document.getElementById("joined").textContent=" Joined "+id;}catch(e){alert(e.message)}};
+const events=new EventSource(api+"/events");
+events.onmessage=async e=>{
+ const m=JSON.parse(e.data);
+ if(m.type==="agentStatus"){document.getElementById("status").textContent=m.connected?"Desktop Agent connected":"Desktop Agent disconnected";return;}
+ if(m.type==="context"&&m.context?.type==="fdc3.instrument"){
+  const symbol=m.context.id?.ticker||m.context.name;
+  document.getElementById("context").textContent=JSON.stringify(m,null,2);
+  await load();render(symbol);
+ }
+ if(m.type==="intent"&&m.intent==="ViewInstrument"){
+  document.getElementById("detail").textContent=JSON.stringify(m,null,2);
+ }
+};
+load();
+</script>
+</body></html>

@@ -171,3 +171,4 @@
 | [Lab 15 - Multi-App Workflow Coordination with FDC3](Lab%2015%20-%20Multi-App%20Workflow%20Coordination%20with%20FDC3/PROOF.md) | no core-check file | 2026-11-13 14:03 |
 | [Lab 16 - Monitoring and Logging FDC3 Interactions](Lab%2016%20-%20Monitoring%20and%20Logging%20FDC3%20Interactions/PROOF.md) | no core-check file | 2026-11-13 14:13 |
 | [Lab 17 - FDC3 API with External Systems REST API](Lab%2017%20-%20FDC3%20API%20with%20External%20Systems%20REST%20API/PROOF.md) | no core-check file | 2026-11-13 14:21 |
+| [Lab 18 - Testing FDC3 Integration in Real-Time](Lab%2018%20-%20Testing%20FDC3%20Integration%20in%20Real-Time/PROOF.md) | no core-check file | 2026-11-13 14:32 |

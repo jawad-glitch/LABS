@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 Real-Time Monitor</title>
+<style>
+body{font:15px Arial;margin:25px;background:#101827;color:#e7edf5}h1{color:#76c7ff}
+section{background:#1c293b;padding:16px;margin:15px 0;border-radius:9px}
+table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:9px;border-bottom:1px solid #43516a}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}.event{padding:9px;border-bottom:1px solid #43516a}
+small{color:#9fb0c5}.status{color:#8de0a3}
+</style>
+</head>
+<body>
+<h1>FDC3 Real-Time Desktop Agent Monitor</h1>
+<p id="status">Connecting to Desktop Agent...</p>
+<section><h2>Connected Applications</h2><table><thead><tr><th>Application</th><th>Joined Channels</th><th>Intent Handlers</th></tr></thead><tbody id="apps"></tbody></table></section>
+<section><h2>System Channels</h2><table><thead><tr><th>Channel</th><th>Current Context</th><th>Members</th></tr></thead><tbody id="channels"></tbody></table></section>
+<section><h2>Live Activity Feed</h2><div id="feed"></div></section>
+<script>
+const base=location.origin, wsURL=`${location.protocol==="https:"?"wss":"ws"}://${location.hostname}:8080`;
+const status=document.getElementById("status"),feed=document.getElementById("feed");
+const ws=new WebSocket(wsURL);
+ws.onopen=()=>{ws.send(JSON.stringify({type:"register",appName:"MonitorApp",intentHandlers:[]}));status.textContent="Monitor connected";status.className="status";};
+ws.onclose=()=>status.textContent="WebSocket disconnected";
+ws.onerror=()=>status.textContent="WebSocket connection error";
+ws.onmessage=e=>{try{const m=JSON.parse(e.data);if(m.type==="context"||m.type==="intent"){const d=document.createElement("div");d.className="event";d.textContent=JSON.stringify({type:m.type,source:m.source,channelId:m.channelId,intent:m.intent,contextType:m.context?.type,timestamp:m.timestamp});feed.prepend(d);while(feed.children.length>50)feed.lastChild.remove();}}catch(err){console.error(err)}};
+async function refresh(){
+ try{
+  const [a,c]=await Promise.all([fetch(base+"/api/apps").then(r=>r.json()),fetch(base+"/api/channels").then(r=>r.json())]);
+  document.getElementById("apps").innerHTML=a.map(x=>`<tr><td>${x.appName}</td><td>${x.joinedChannels.join(", ")||"none"}</td><td>${x.intentHandlers.join(", ")||"none"}</td></tr>`).join("");
+  document.getElementById("channels").innerHTML=c.map(x=>`<tr><td>${x.id}</td><td>${x.context?JSON.stringify(x.context):"empty"}</td><td>${x.members}</td></tr>`).join("");
+ }catch(e){status.textContent="REST polling error: "+e.message}
+}
+refresh();setInterval(refresh,5000);
+</script>
+</body></html>

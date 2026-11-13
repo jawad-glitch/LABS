@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 Trading Application</title>
+<style>
+body{font:15px Arial;margin:25px;background:#101827;color:#e7edf5}h1{color:#76c7ff}
+section{background:#1c293b;padding:16px;margin:15px 0;border-radius:9px}
+button,select,input{padding:9px;margin:5px;border-radius:5px;border:1px solid #52647c}
+button{cursor:pointer}table{width:100%;border-collapse:collapse}td,th{padding:9px;text-align:left;border-bottom:1px solid #43516a}
+.good{color:#8de0a3}.bad{color:#ff9e9e}
+</style>
+</head>
+<body>
+<h1>Trading Application</h1><p id="status">Connecting...</p>
+<section><h2>Channel</h2><select id="channel"><option>red</option><option>orange</option><option>yellow</option><option selected>green</option><option>blue</option><option>purple</option></select><button id="join">Join Channel</button><span id="joined"></span></section>
+<section><h2>Live Instruments</h2><table><thead><tr><th>Symbol</th><th>Name</th><th>Price</th><th>Change</th><th>Actions</th></tr></thead><tbody id="stocks"></tbody></table></section>
+<section><h2>Simulated Order</h2><select id="symbol"></select><input id="quantity" type="number" min="1" value="10"><select id="side"><option>buy</option><option>sell</option></select><button id="order">Place Order</button><pre id="orderResult"></pre></section>
+<script>
+const api=location.origin;
+let stocks=[];
+async function request(url,body){const r=await fetch(api+url,body?{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}:{});const j=await r.json();if(!r.ok)throw Error(j.error||r.statusText);return j;}
+function contextFor(symbol){const s=stocks.find(x=>x.symbol===symbol);return {type:"fdc3.instrument",name:s?.name||symbol,id:{ticker:symbol}};}
+function render(){document.getElementById("stocks").innerHTML=stocks.map(s=>`<tr><td>${s.symbol}</td><td>${s.name}</td><td>${s.price.toFixed(2)}</td><td>${s.changePercent.toFixed(2)}%</td><td><button data-b="${s.symbol}">Broadcast</button><button data-i="${s.symbol}">ViewInstrument</button></td></tr>`).join("");document.getElementById("symbol").innerHTML=stocks.map(s=>`<option>${s.symbol}</option>`).join("");}
+async function load(){stocks=await request("/api/stocks");render();}
+document.getElementById("stocks").addEventListener("click",async e=>{try{if(e.target.dataset.b){await request("/api/broadcast",{channelId:document.getElementById("channel").value,context:contextFor(e.target.dataset.b)});document.getElementById("status").textContent="Broadcast sent";}if(e.target.dataset.i){await request("/api/intent",{intent:"ViewInstrument",context:contextFor(e.target.dataset.i)});document.getElementById("status").textContent="ViewInstrument intent raised";}}catch(err){alert(err.message)}});
+document.getElementById("join").onclick=async()=>{try{await request("/api/join",{channelId:document.getElementById("channel").value});document.getElementById("joined").textContent=" Joined "+document.getElementById("channel").value;}catch(e){alert(e.message)}};
+document.getElementById("order").onclick=async()=>{try{const result=await request("/api/order",{symbol:document.getElementById("symbol").value,quantity:Number(document.getElementById("quantity").value),side:document.getElementById("side").value});document.getElementById("orderResult").textContent=JSON.stringify(result,null,2);}catch(e){alert(e.message)}};
+const events=new EventSource(api+"/events");events.onmessage=e=>{const m=JSON.parse(e.data);if(m.type==="agentStatus")document.getElementById("status").textContent=m.connected?"Desktop Agent connected":"Desktop Agent disconnected";};
+load();setInterval(load,2000);
+</script>
+</body></html>

@@ -1,0 +1,16 @@
+
+> fdc3-lab3-api-overview@1.0.0 test
+> jest --runInBand
+
+PASS test/desktop-agent.test.js
+  ✓ default broadcast delivers context (18 ms)
+  ✓ typed listener filters other context types (2 ms)
+  ✓ intent resolution exposes source, version and result (4 ms)
+  ✓ named channels are isolated from the default channel and each other (2 ms)
+  ✓ unsubscribe stops future context notifications (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        0.884 s
+Ran all test suites.

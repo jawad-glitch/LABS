@@ -1,0 +1,17 @@
+{
+  "name": "fdc3-lab3-api-overview",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local teaching simulation of selected FDC3 API behaviors",
+  "scripts": {
+    "test": "jest --runInBand",
+    "start": "serve -l 8080 ."
+  },
+  "dependencies": {
+    "@finos/fdc3": "^2.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "serve": "^14.2.4"
+  }
+}

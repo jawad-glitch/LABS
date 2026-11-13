@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FDC3 Portfolio Management</title>
+  <link rel="stylesheet" href="/app.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body data-app="portfolio">
+  <main>
+    <h1>Portfolio Management</h1>
+    <p>Select a portfolio to publish its FDC3 context to the shared workflow.</p>
+    <div class="status">
+      <span>Channel: <strong id="channel">client-workflow</strong></span>
+      <span>Connection: <strong id="connection" class="disconnected">Disconnected</strong></span>
+      <span>Last received type: <strong id="last-type">None</strong></span>
+    </div>
+    <section class="panel">
+      <h2>Portfolios</h2>
+      <table><thead><tr><th>Portfolio</th><th>Client ID</th><th>Value</th><th>Holdings</th></tr></thead>
+      <tbody id="records"></tbody></table>
+    </section>
+    <section class="panel"><h2>Received Context</h2><pre id="received">No context received yet.</pre></section>
+    <p><small>Click a portfolio row to broadcast its context.</small></p>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

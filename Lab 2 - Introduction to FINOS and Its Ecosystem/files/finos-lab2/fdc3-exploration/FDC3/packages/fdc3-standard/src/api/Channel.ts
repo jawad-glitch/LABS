@@ -1,0 +1,143 @@
+/**
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright FINOS FDC3 contributors - see NOTICE file
+ */
+
+import { Context } from '@finos/fdc3-context';
+import { ContextHandler, ContextWithMetadata } from './Types.js';
+import { DisplayMetadata } from './DisplayMetadata.js';
+import { Listener } from './Listener.js';
+import { ChannelEventTypes, EventHandler } from './Events.js';
+import type { AppProvidableContextMetadata } from './ContextMetadata.js';
+
+/**
+ * Represents a context channel that applications can use to send and receive
+ * context data.
+ *
+ * Please note that There are differences in behavior when you interact with a
+ * User channel via the `DesktopAgent` interface and the `Channel` interface.
+ * Specifically, when 'joining' a User channel or adding a context listener
+ * when already joined to a channel via the `DesktopAgent` interface, existing
+ * context (matching the type of the context listener) on the channel is
+ * received by the context listener immediately. Whereas, when a context
+ * listener is added via the Channel interface, context is not received
+ * automatically, but may be retrieved manually via the `getCurrentContext()`
+ * function.
+ */
+export interface Channel {
+  /**
+   * Constant that uniquely identifies this channel.
+   */
+  readonly id: string;
+
+  /**
+   * Uniquely defines each channel type.
+   * Can be "user", "app" or "private".
+   */
+  readonly type: 'user' | 'app' | 'private';
+
+  /**
+   * Channels may be visualized and selectable by users. DisplayMetadata may be used to provide hints on how to see them.
+   * For App channels, displayMetadata would typically not be present.
+   */
+  readonly displayMetadata?: DisplayMetadata;
+
+  /**
+   * Broadcasts a context on the channel. This function can be used without first joining the channel, allowing applications to broadcast on both App Channels and User Channels that they aren't a member of.
+   *
+   * If the broadcast is denied by the channel or the channel is not available, the promise will be rejected with an `Error` with a `message` string from the `ChannelError` enumeration.
+   *
+   * Channel implementations should ensure that context messages broadcast by an application on a channel should not be delivered back to that same application if they are joined to the channel.
+   *
+   * If you are working with complex context types composed of other simpler types (as recommended by the FDC3 Context Data specification) then you should broadcast each individual type (starting with the simpler types, followed by the complex type) that you want other apps to be able to respond to. Doing so allows applications to filter the context types they receive by adding listeners for specific context types.
+   *
+   * An optional `metadata` parameter may be provided to include additional metadata such as `traceId` or `signature` with the broadcast context.
+   *
+   * If an application attempts to broadcast an invalid context argument the Promise returned by this function should reject with the `ChannelError.MalformedContext` error.
+   */
+  broadcast(context: Context, metadata?: AppProvidableContextMetadata): Promise<void>;
+
+  /**
+   * When a `contextType`_` is provided, the most recent context matching the type will be returned, or `null` if no matching context is found.
+   *
+   * If no `contextType` is provided, the most recent context that was broadcast on the channel - regardless of type - will be returned.  If no context has been set on the channel, it will return `null`.
+   *
+   * It is up to the specific Desktop Agent implementation whether and how recent contexts are stored. For example, an implementation could store context history for a channel in a single array and search through the array for the last context matching a provided type, or context could be maintained as a dictionary keyed by context types. An implementation could also choose not to support context history, in which case this method will return `null` for any context type not matching the type of the most recent context.
+   *
+   * If getting the current context fails, the promise will be rejected with an `Error` with a `message` string from the `ChannelError` enumeration.
+   */
+  getCurrentContext(contextType?: string): Promise<Context | null>;
+
+  /**
+   * Returns the most recent context that was broadcast on the channel, along
+   * with its associated metadata, or `null` if no matching context is found.
+   *
+   * When a `contextType` is provided, the most recent context matching the type
+   * will be returned. If no `contextType` is provided, the most recent context
+   * that was broadcast on the channel - regardless of type - will be returned.
+   *
+   * This function is similar to `getCurrentContext()` but additionally returns
+   * the `ContextMetadata` that was associated with the context when it was
+   * broadcast, allowing applications to access information such as the source
+   * app, timestamp, traceId, signature and any custom metadata.
+   *
+   * If getting the current context fails, the promise will be rejected with an
+   * `Error` with a `message` string from the `ChannelError` enumeration.
+   */
+  getCurrentContextWithMetadata(contextType?: string): Promise<ContextWithMetadata | null>;
+
+  /**
+   * Adds a listener for incoming contexts of the specified _context type_ whenever a broadcast happens on this channel.
+   *
+   * If, when this function is called, the channel already contains context that would be passed to the listener it is NOT called or passed this context automatically (this behavior differs from that of the [`fdc3.addContextListener`](DesktopAgent#addcontextlistener) function). Apps wishing to access to the current context of the channel should instead call the `getCurrentContext(contextType)` function.
+   *
+   * Metadata about each context message received, including the app that originated the message and a timestamp, MUST be provided by the Desktop Agent implementation. Apps broadcasting context MAY provide additional metadata (such as a `traceId`, `signature` or custom metadata), which the Desktop Agent MUST pass on to the handler.
+   *
+   * Adding multiple context listeners on the same or overlapping types (i.e. named type and null type) MUST be allowed, and MUST trigger all context handlers when a relevant context type is broadcast on the current channel.
+   *
+   */
+  addContextListener(contextType: string | null, handler: ContextHandler): Promise<Listener>;
+
+  /**
+   * Adds a listener for incoming contexts using an array of context types.
+   *
+   * Pass multiple context types to listen for several types with one listener.
+   * The array MUST contain at least one item and every item MUST be a string. Otherwise, the returned Promise MUST reject with `ChannelError.InvalidArguments`.
+   *
+   * See the single `contextType` overload above for full behavior details.
+   *
+   */
+  addContextListener(contextTypes: string[], handler: ContextHandler): Promise<Listener>;
+
+  /**
+   * Clears context from the channel, and triggers the event listener on the `contextCleared` event to notify existing listeners that the context was cleared. The Desktop Agent MUST NOT deliver the resulting `contextCleared` event back to the app instance that called `clearContext`. Listeners added to the channel and calls to [`getCurrentContext`](#getcurrentcontext) will not receive any existing context until new context is broadcast to the channel.
+   *
+   * If a `contextType` is provided, only contexts of that type will be cleared.
+   *
+   * If no `contextType` is provided, all contexts will be cleared.
+   */
+  clearContext(contextType?: string): Promise<void>;
+
+  /**
+   * Register a handler for events from the Channel. Whenever the handler function
+   * is called it will be passed an event object with details related to the event.
+   *
+   * ```js
+   * // any event type
+   * const listener = await myChannel.addEventListener(null, event => {
+   *   console.log(`Received event ${event.type}\n\tDetails: ${event.details}`);
+   * });
+   *
+   * // listener for a specific event type
+   * const contextClearedListener = await myChannel.addEventListener(
+   *    "contextCleared",
+   *    event => { ... }
+   * );
+   * ```
+   *
+   * @param {ChannelEventTypes | null} type If non-null, only events of the specified type will be received by the handler.
+   * @param {EventHandler} handler A function that events received will be passed to.
+   *
+   */
+  addEventListener(type: ChannelEventTypes | null, handler: EventHandler): Promise<Listener>;
+}

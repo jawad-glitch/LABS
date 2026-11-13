@@ -1,0 +1,434 @@
+import { Context, DesktopAgent, FDC3_VERSION, versionIsAtLeast } from '@finos/fdc3';
+
+import { APIDocumentation } from '../support/apiDocuments';
+import { ContextType, Intent } from '../support/intent-support';
+import { MockAppTracker } from '../fdc3-conformance-utils';
+
+import { assert, expect } from 'chai';
+import { handleFail } from '../../utils';
+
+const getAgent2_2 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(GetInfoFDC3Version) getInfo returns an FDC3 version at least the conformance test version', async () => {
+    const info = await fdc3.getInfo();
+    assert.isTrue(
+      versionIsAtLeast(info, FDC3_VERSION),
+      `${documentation} Expected getInfo().fdc3Version ${info.fdc3Version} to be at least ${FDC3_VERSION}`
+    );
+    const userChannels = await fdc3.getUserChannels();
+    assert.isTrue(userChannels.length > 0, documentation);
+  });
+};
+
+const basicCL1 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicCL1) Method is callable', async () => {
+    const contextType = 'fdc3.contact';
+    try {
+      const listener = await fdc3.addContextListener(contextType, (info: Context) => {
+        console.log(`Context listener of type ${contextType} triggered with result ${info}`);
+      });
+      assert.isTrue(listener && typeof listener === 'object', documentation);
+      expect(
+        typeof listener.unsubscribe,
+        'the listener did not contain an unsubscribe function' + documentation
+      ).to.be.equals('function');
+      if (listener !== undefined) {
+        listener.unsubscribe();
+      }
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicCL2 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicCL2) Returns listener object', async () => {
+    try {
+      const listener = await fdc3.addContextListener(null, () => {});
+      assert.isTrue(listener && typeof listener === 'object', documentation);
+      expect(typeof listener.unsubscribe, documentation).to.be.equals('function');
+      if (listener !== undefined) {
+        listener.unsubscribe();
+      }
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicCL3 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicCL3) Array context listener returns listener object', async () => {
+    const contextTypes = ['fdc3.instrument', 'fdc3.contact'];
+    try {
+      const listener = await fdc3.addContextListener(contextTypes, (info: Context) => {
+        console.log(`Array context listener triggered with result ${info}`);
+      });
+      assert.isTrue(listener && typeof listener === 'object', documentation);
+      expect(
+        typeof listener.unsubscribe,
+        'the listener did not contain an unsubscribe function' + documentation
+      ).to.be.equals('function');
+      if (listener !== undefined) {
+        listener.unsubscribe();
+      }
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicCL4 = (fdc3: DesktopAgent, _documentation: string) => {
+  it('(BasicCL4) Empty array context listener should throw error', async () => {
+    try {
+      // Empty array should throw an error
+      await fdc3.addContextListener([] as unknown as string[], () => {});
+      assert.fail('Expected addContextListener with empty array to throw an error');
+    } catch (ex) {
+      // Expected to throw - test passes
+      expect(ex).to.be.instanceOf(Error);
+    }
+  });
+};
+
+const basicIL1 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicIL1) Method is callable', async () => {
+    const intentName = 'ConformanceListener';
+    try {
+      const listener = await fdc3.addIntentListener(intentName, (info: Context) => {
+        console.log(`Intent listener for intent ${intentName} triggered with result ${info}`);
+      });
+      expect(listener).to.have.property('unsubscribe').that.is.a('function');
+      if (listener !== undefined) {
+        listener.unsubscribe();
+      }
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicAEL1 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicAEL1) addEventListener is callable and returns a Listener', async () => {
+    expect(fdc3.addEventListener, documentation).to.be.a('function');
+
+    try {
+      const listener = await fdc3.addEventListener('userChannelChanged', () => {});
+      expect(listener, documentation).to.be.an('object');
+      expect(listener, documentation).to.have.property('unsubscribe').that.is.a('function');
+      await listener.unsubscribe();
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicAEL2 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicAEL2) addEventListener returns a Listener for an unfiltered listener', async () => {
+    try {
+      const listener = await fdc3.addEventListener(null, () => {});
+      expect(listener, documentation).to.be.an('object');
+      expect(listener, documentation).to.have.property('unsubscribe').that.is.a('function');
+      await listener.unsubscribe();
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicGI1 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicGI1) Returns ImplementationMetadata object', async () => {
+    try {
+      const info = await fdc3.getInfo();
+      expect(info, documentation).to.have.property('fdc3Version');
+      expect(info, documentation).to.have.property('provider');
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicGI2 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicGI2) Returns a valid optionalFeatures object on ImplementationMetadata', async () => {
+    try {
+      const info = await fdc3.getInfo();
+      expect(info, documentation).to.have.property('optionalFeatures');
+      expect(info.optionalFeatures, documentation).to.be.an('object');
+
+      const requiredKeys = ['UserChannelMembershipAPIs', 'DesktopAgentBridging'];
+
+      for (const key of requiredKeys) {
+        expect(info.optionalFeatures, documentation).to.have.property(key);
+        expect(
+          info.optionalFeatures[key as keyof typeof info.optionalFeatures],
+          documentation + ' optionalFeatures.' + key + ' must be a boolean'
+        ).to.be.a('boolean');
+      }
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicAC1 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicAC1) Returns Channel object', async () => {
+    try {
+      const channel = await fdc3.getOrCreateChannel('FDC3Conformance');
+      expect(channel, documentation).to.have.property('id');
+      expect(channel, documentation).to.have.property('type');
+      expect(channel, documentation).to.have.property('broadcast');
+      expect(channel, documentation).to.have.property('getCurrentContext');
+      expect(channel, documentation).to.have.property('addContextListener');
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicUC1 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicUC1) Channel object is valid', async () => {
+    try {
+      const channels = await fdc3.getUserChannels();
+      expect(channels.length, documentation).to.be.greaterThan(0);
+      expect(typeof channels).to.be.equals('object', documentation);
+      for (let i = 0; i < channels.length; i++) {
+        expect(channels[0]).to.have.property('type');
+        expect(channels[0]).to.have.property('id');
+      }
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicJC1 = (fdc3: DesktopAgent, documentation: string) => {
+  it('(BasicJC1) User channel membership APIs are callable when advertised by getInfo', async function (this: Mocha.Context) {
+    const info = await fdc3.getInfo();
+    if (!info.optionalFeatures.UserChannelMembershipAPIs) {
+      this.skip();
+    }
+
+    expect(typeof fdc3.joinUserChannel, documentation).to.be.equals('function');
+    expect(typeof fdc3.getCurrentChannel, documentation).to.be.equals('function');
+    expect(typeof fdc3.leaveCurrentChannel, documentation).to.be.equals('function');
+
+    let joinedUserChannel = false;
+
+    try {
+      const channels = await fdc3.getUserChannels();
+      expect(channels, documentation).to.be.an('array');
+      if (channels.length === 0) {
+        assert.fail('No user channels available');
+      }
+
+      await fdc3.joinUserChannel(channels[0].id);
+      joinedUserChannel = true;
+      const currentChannel = await fdc3.getCurrentChannel();
+      if (typeof currentChannel !== 'object') {
+        assert.fail('getCurrentChannel did not retrieve a channel object');
+      }
+      expect(currentChannel?.id).to.eql(channels[0].id);
+      await fdc3.leaveCurrentChannel();
+      joinedUserChannel = false;
+      const currentChannelAfterLeave = await fdc3.getCurrentChannel();
+      assert.isNull(currentChannelAfterLeave);
+    } catch (ex) {
+      handleFail(documentation, ex);
+    } finally {
+      if (joinedUserChannel) {
+        await fdc3.leaveCurrentChannel();
+      }
+    }
+  });
+};
+
+const basicRI1 = (
+  fdc3: DesktopAgent,
+  documentation: string,
+  intent: string,
+  contextType: string,
+  mockAppTracker: MockAppTracker
+) => {
+  const basicRI1 =
+    '(BasicRI1) application should be able to raise an intent by passing Intent name and gets a promise in return';
+  it(basicRI1, async () => {
+    try {
+      await fdc3.raiseIntent(intent, { type: contextType });
+      mockAppTracker.markOpened(basicRI1);
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicRI2 = (fdc3: DesktopAgent, documentation: string, contextType: string, mockAppTracker: MockAppTracker) => {
+  const basicRI2 =
+    '(BasicRI2) application should be able to raise an intent for some item by passing context and gets a promise in return';
+  it(basicRI2, async () => {
+    const context = {
+      type: contextType,
+    };
+
+    try {
+      await fdc3.raiseIntentForContext(context);
+      mockAppTracker.markOpened(basicRI2);
+    } catch (ex) {
+      handleFail(documentation, ex);
+    }
+  });
+};
+
+const basicDM1 = (
+  fdc3: DesktopAgent,
+  documentation: string,
+  intent: string,
+  contextType: string,
+  mockAppTracker: MockAppTracker
+) => {
+  const basicDM1 = '(BasicDM1) DesktopAgent methods should remain callable when destructured';
+  it(basicDM1, async () => {
+    const unsubscribeFunctions: Array<() => Promise<void>> = [];
+    let joinedUserChannel = false;
+
+    try {
+      const {
+        addContextListener,
+        addEventListener,
+        addIntentListener,
+        broadcast,
+        findIntent,
+        findIntentsByContext,
+        getCurrentChannel,
+        getInfo,
+        getOrCreateChannel,
+        getUserChannels,
+        joinUserChannel,
+        leaveCurrentChannel,
+        raiseIntent,
+      } = fdc3;
+
+      const info = await getInfo();
+      expect(info, documentation).to.have.property('fdc3Version');
+
+      const contextListener = await addContextListener(contextType, () => {});
+      expect(contextListener, documentation).to.have.property('unsubscribe').that.is.a('function');
+      const { unsubscribe: unsubscribeContextListener } = contextListener;
+      unsubscribeFunctions.push(unsubscribeContextListener);
+
+      const intentListener = await addIntentListener('ConformanceListener', () => {});
+      expect(intentListener, documentation).to.have.property('unsubscribe').that.is.a('function');
+      const { unsubscribe: unsubscribeIntentListener } = intentListener;
+      unsubscribeFunctions.push(unsubscribeIntentListener);
+
+      const eventListener = await addEventListener(null, () => {});
+      expect(eventListener, documentation).to.have.property('unsubscribe').that.is.a('function');
+      const { unsubscribe: unsubscribeEventListener } = eventListener;
+      unsubscribeFunctions.push(unsubscribeEventListener);
+
+      const channel = await getOrCreateChannel('FDC3Conformance');
+      expect(channel, documentation).to.have.property('id');
+      const {
+        addContextListener: addChannelContextListener,
+        addEventListener: addChannelEventListener,
+        broadcast: broadcastToChannel,
+      } = channel;
+      const channelContextListener = await addChannelContextListener(contextType, () => {});
+      const { unsubscribe: unsubscribeChannelContextListener } = channelContextListener;
+      unsubscribeFunctions.push(unsubscribeChannelContextListener);
+      const channelEventListener = await addChannelEventListener(null, () => {});
+      const { unsubscribe: unsubscribeChannelEventListener } = channelEventListener;
+      unsubscribeFunctions.push(unsubscribeChannelEventListener);
+      await broadcastToChannel({ type: contextType });
+
+      const userChannels = await getUserChannels();
+      expect(userChannels, documentation).to.be.an('array');
+
+      if (info.optionalFeatures.UserChannelMembershipAPIs) {
+        expect(userChannels, documentation).to.not.be.empty;
+        await joinUserChannel(userChannels[0].id);
+        joinedUserChannel = true;
+        const currentChannel = await getCurrentChannel();
+        expect(currentChannel?.id, documentation).to.eql(userChannels[0].id);
+        const {
+          addContextListener: addCurrentChannelContextListener,
+          addEventListener: addCurrentChannelEventListener,
+          broadcast: broadcastToCurrentChannel,
+        } = currentChannel!;
+        const currentChannelContextListener = await addCurrentChannelContextListener(contextType, () => {});
+        const { unsubscribe: unsubscribeCurrentChannelContextListener } = currentChannelContextListener;
+        unsubscribeFunctions.push(unsubscribeCurrentChannelContextListener);
+        const currentChannelEventListener = await addCurrentChannelEventListener(null, () => {});
+        const { unsubscribe: unsubscribeCurrentChannelEventListener } = currentChannelEventListener;
+        unsubscribeFunctions.push(unsubscribeCurrentChannelEventListener);
+        await broadcastToCurrentChannel({ type: contextType });
+        await broadcast({ type: contextType });
+        await leaveCurrentChannel();
+        joinedUserChannel = false;
+        assert.isNull(await getCurrentChannel(), documentation);
+      }
+
+      await findIntent(intent, { type: contextType });
+      await findIntentsByContext({ type: contextType });
+      await raiseIntent(intent, { type: contextType });
+      mockAppTracker.markOpened(basicDM1);
+    } catch (ex) {
+      handleFail(documentation, ex);
+    } finally {
+      if (joinedUserChannel) {
+        await fdc3.leaveCurrentChannel();
+      }
+      await Promise.all(unsubscribeFunctions.map(unsubscribe => unsubscribe()));
+    }
+  });
+};
+
+declare let fdc3: DesktopAgent;
+
+const documentation_CL = '\r\nDocumentation: ' + APIDocumentation.addContextListener + '\r\nCause';
+const documentation_IL = '\r\nDocumentation: ' + APIDocumentation.addIntentListener + '\r\nCause';
+const documentation_AEL = '\r\nDocumentation: ' + APIDocumentation.addEventListener + '\r\nCause';
+const documentation_GI = '\r\nDocumentation: ' + APIDocumentation.getInfo + '\r\nCause';
+const documentation_AC = '\r\nDocumentation: ' + APIDocumentation.getOrCreateChannel + '\r\nCause';
+const documentation_UC = '\r\nDocumentation: ' + APIDocumentation.getUserChannels + '\r\nCause';
+const documentation_JC = '\r\nDocumentation: ' + APIDocumentation.getCurrentChannel + '\r\nCause';
+const documentation_RI = '\r\nDocumentation: ' + APIDocumentation.raiseIntentForContext + '\r\nCause';
+const documentation_GA = '\r\nDocumentation: ' + APIDocumentation.getAgent + '\r\nCause';
+const documentation_DM = '\r\nDocumentation: ' + APIDocumentation.desktopAgent + '\r\nCause';
+
+export const fdc3BasicGetAgent = async () => describe('fdc3.basicGetAgent', () => getAgent2_2(fdc3, documentation_GA));
+export const fdc3BasicCL1 = async () => describe('fdc3.basicCL1', () => basicCL1(fdc3, documentation_CL));
+export const fdc3BasicCL2 = async () => describe('fdc3.basicCL2', () => basicCL2(fdc3, documentation_CL));
+export const fdc3BasicCL3 = async () => describe('fdc3.basicCL3', () => basicCL3(fdc3, documentation_CL));
+export const fdc3BasicCL4 = async () => describe('fdc3.basicCL4', () => basicCL4(fdc3, documentation_CL));
+export const fdc3BasicIL1 = async () => describe('fdc3.basicIL1', () => basicIL1(fdc3, documentation_IL));
+export const fdc3BasicAEL1 = async () => describe('fdc3.basicAEL1', () => basicAEL1(fdc3, documentation_AEL));
+export const fdc3BasicAEL2 = async () => describe('fdc3.basicAEL2', () => basicAEL2(fdc3, documentation_AEL));
+export const fdc3BasicGI1 = async () => describe('fdc3.basicGI1', () => basicGI1(fdc3, documentation_GI));
+export const fdc3BasicGI2 = async () => describe('fdc3.basicGI2', () => basicGI2(fdc3, documentation_GI));
+export const fdc3BasicAC1 = async () => describe('fdc3.basicAC1', () => basicAC1(fdc3, documentation_AC));
+export const fdc3BasicUC1 = async () => describe('fdc3.basicUC1', () => basicUC1(fdc3, documentation_UC));
+export const fdc3BasicJC1 = async () => describe('fdc3.basicJC1', () => basicJC1(fdc3, documentation_JC));
+export const fdc3BasicDM1 = async () =>
+  describe('fdc3.basicDM1', () => {
+    const mockAppTracker = new MockAppTracker();
+    afterEach(async function afterEach() {
+      await mockAppTracker.closeIfOpened(this.currentTest?.title ?? 'Unknown test');
+    });
+    basicDM1(fdc3, documentation_DM, Intent.aTestingIntent, ContextType.testContextX, mockAppTracker);
+  });
+
+export const fdc3BasicRI1 = async () =>
+  describe('fdc3.basicRI1', () => {
+    const mockAppTracker = new MockAppTracker();
+    afterEach(async function afterEach() {
+      await mockAppTracker.closeIfOpened(this.currentTest?.title ?? 'Unknown test');
+    });
+    basicRI1(fdc3, documentation_RI, Intent.aTestingIntent, ContextType.testContextX, mockAppTracker);
+  });
+
+export const fdc3BasicRI2 = async () =>
+  describe('fdc3.basicRI2', () => {
+    const mockAppTracker = new MockAppTracker();
+    afterEach(async function afterEach() {
+      await mockAppTracker.closeIfOpened(this.currentTest?.title ?? 'Unknown test');
+    });
+    basicRI2(fdc3, documentation_RI, ContextType.testContextZ, mockAppTracker);
+  });

@@ -1,0 +1,456 @@
+import { Given, Then, When } from 'quickpickle';
+import { DataTable } from '@cucumber/cucumber';
+import { Context } from '@finos/fdc3-context';
+import { handleResolve, matchData } from '@finos/cucumber-testing-steps';
+import { CustomWorld } from '../world/index.js';
+import { CHANNEL_STATE } from '../support/agentDoubles.js';
+import { ApiEvent, ContextMetadata } from '@finos/fdc3-standard';
+import {
+  BroadcastEvent,
+  ChannelChangedEvent,
+  ContextClearedEvent,
+  GetCurrentContextRequest,
+  GetCurrentContextResponse,
+  PrivateChannelOnAddContextListenerEvent,
+  PrivateChannelOnDisconnectEvent,
+  PrivateChannelOnUnsubscribeEvent,
+} from '@finos/fdc3-schema/dist/generated/api/BrowserTypes.js';
+import { createResponseMeta } from '../support/responses/support.js';
+
+const contextMap: Record<string, Context> = {
+  'fdc3.instrument': {
+    type: 'fdc3.instrument',
+    name: 'Apple',
+    id: {
+      ticker: 'AAPL',
+    },
+  },
+  'fdc3.contact': {
+    type: 'fdc3.contact',
+    name: 'John Doe',
+    id: {
+      email: 'john.doe@example.com',
+    },
+  },
+  'fdc3.country': {
+    type: 'fdc3.country',
+    name: 'Sweden',
+    id: {
+      COUNTRY_ISOALPHA2: 'SE',
+      COUNTRY_ISOALPHA3: 'SWE',
+    },
+  },
+  'fdc3.unsupported': {
+    type: 'fdc3.unsupported',
+    bogus: true,
+  },
+  'fdc3.cancel-me': {
+    type: 'fdc3.cancel-me',
+  },
+};
+
+Given('{string} is a {string} context', (world: CustomWorld, field: string, type: string) => {
+  world.props[field] = contextMap[type];
+});
+
+Given('{string} is an array of context types {string}', (world: CustomWorld, field: string, types: string) => {
+  world.props[field] = types.split(',').map(t => t.trim());
+});
+
+Given(
+  '{string} is an array of context types with null {string}',
+  (world: CustomWorld, field: string, types: string) => {
+    world.props[field] = types.split(',').map(t => {
+      const trimmed = t.trim();
+      return trimmed === '{null}' ? null : trimmed;
+    });
+  }
+);
+
+Given('{string} is an empty array', (world: CustomWorld, field: string) => {
+  world.props[field] = [];
+});
+
+Given('{string} is an app-provided metadata object', (world: CustomWorld, field: string) => {
+  world.props[field] = {
+    traceId: 'app-trace-id',
+    signature: { protected: 'app-protected', signature: 'app-signature' },
+    custom: { region: 'EMEA' },
+  };
+});
+
+Given('the next getCurrentContext response has payload {string}', (world: CustomWorld, shape: string) => {
+  const context = contextMap['fdc3.instrument'];
+  const metadata: ContextMetadata = {
+    source: { appId: 'test-app', instanceId: 'test-instance' },
+    timestamp: new Date(),
+    traceId: 'test-trace-id',
+  };
+  const payloads: Record<string, object> = {
+    'null-without-metadata': { context: null },
+    'null-with-metadata': { context: null, metadata },
+    'context-with-null-metadata': { context, metadata: null },
+    'context-without-metadata': { context },
+    'missing-context': { metadata },
+  };
+  const payload = payloads[shape];
+  if (!payload) {
+    throw new Error(`Unknown getCurrentContext response shape: ${shape}`);
+  }
+
+  world.messaging!.automaticResponses.unshift({
+    filter: type => type === 'getCurrentContextRequest',
+    action: (input, messaging) => {
+      const request = input as GetCurrentContextRequest;
+      const response = {
+        meta: createResponseMeta(request.meta),
+        payload,
+        type: 'getCurrentContextResponse',
+      } as GetCurrentContextResponse;
+      setTimeout(() => messaging.receive(response), 0);
+      return Promise.resolve();
+    },
+  });
+});
+
+Given(
+  '{string} is a BroadcastEvent message on channel {string} with context {string}',
+  (world: CustomWorld, field: string, channel: string, context: string) => {
+    const message = {
+      meta: {
+        ...world.messaging!.createEventMeta(),
+      },
+      payload: {
+        channelId: handleResolve(channel, world),
+        context: contextMap[context],
+        metadata: {
+          timestamp: new Date(),
+          source: world.messaging!.getAppIdentifier(),
+          traceId: world.messaging!.createUUID(),
+          signature: '',
+        },
+      },
+      type: 'broadcastEvent',
+    } as BroadcastEvent;
+
+    world.props[field] = message;
+  }
+);
+
+Given(
+  '{string} is a BroadcastEvent message on channel {string} with context {string} and metadata',
+  (world: CustomWorld, field: string, channel: string, context: string) => {
+    const message = {
+      meta: {
+        ...world.messaging!.createEventMeta(),
+      },
+      payload: {
+        channelId: handleResolve(channel, world),
+        context: contextMap[context],
+        metadata: {
+          timestamp: new Date(),
+          source: world.messaging!.getAppIdentifier(),
+          traceId: world.messaging!.createUUID(),
+          signature: {
+            protected: 'test-sig (protected part)',
+            signature: 'test-sig (signature part)',
+          },
+          custom: { region: 'EMEA' },
+        },
+      },
+      type: 'broadcastEvent',
+    } as BroadcastEvent;
+
+    world.props[field] = message;
+  }
+);
+
+Given(
+  '{string} is a {string} message on channel {string}',
+  (world: CustomWorld, field: string, type: string, channel: string) => {
+    const message = {
+      meta: world.messaging!.createEventMeta(),
+      payload: {
+        privateChannelId: handleResolve(channel, world),
+      },
+      type,
+    } as PrivateChannelOnDisconnectEvent;
+
+    world.props[field] = message;
+  }
+);
+
+Given(
+  '{string} is a {string} message on channel {string} with listenerType as {string}',
+  (world: CustomWorld, field: string, type: string, channel: string, listenerType: string) => {
+    const message = {
+      meta: world.messaging!.createMeta(),
+      payload: {
+        channelId: handleResolve(channel, world),
+        listenerType,
+      },
+      type,
+    };
+
+    world.props[field] = message;
+  }
+);
+
+Given(
+  '{string} is a channelChangedEvent message on channel {string}',
+  (world: CustomWorld, field: string, channel: string) => {
+    const message: ChannelChangedEvent = {
+      meta: {
+        eventUuid: world.messaging!.createUUID(),
+        timestamp: new Date(),
+      },
+      payload: {
+        newChannelId: handleResolve(channel, world),
+      },
+      type: 'channelChangedEvent',
+    };
+
+    world.props[field] = message;
+  }
+);
+
+Given(
+  '{string} is a channelChangedEvent message with currentChannelId {string}',
+  (world: CustomWorld, field: string, channelId: string) => {
+    const message: ChannelChangedEvent = {
+      meta: {
+        eventUuid: world.messaging!.createUUID(),
+        timestamp: new Date(),
+      },
+      payload: {
+        currentChannelId: handleResolve(channelId, world),
+      },
+      type: 'channelChangedEvent',
+    };
+
+    world.props[field] = message;
+  }
+);
+
+Given(
+  '{string} is a channelChangedEvent message with currentChannelId {string} and newChannelId {string}',
+  (world: CustomWorld, field: string, currentChannelId: string, newChannelId: string) => {
+    const message: ChannelChangedEvent = {
+      meta: {
+        eventUuid: world.messaging!.createUUID(),
+        timestamp: new Date(),
+      },
+      payload: {
+        currentChannelId: handleResolve(currentChannelId, world),
+        newChannelId: handleResolve(newChannelId, world),
+      },
+      type: 'channelChangedEvent',
+    };
+
+    world.props[field] = message;
+  }
+);
+
+Given(
+  '{string} is a ContextClearedEvent message on channel {string} with contextType as {string}',
+  (world: CustomWorld, field: string, channel: string, contextType: string) => {
+    const message: ContextClearedEvent = {
+      meta: world.messaging!.createEventMeta(),
+      payload: {
+        channelId: handleResolve(channel, world),
+        contextType: handleResolve(contextType, world),
+      },
+      type: 'contextClearedEvent',
+    };
+
+    world.props[field] = message;
+  }
+);
+
+Given(
+  '{string} is a PrivateChannelOnUnsubscribeEvent message on channel {string} with contextType as {string}',
+  (world: CustomWorld, field: string, channel: string, contextType: string) => {
+    const message = {
+      meta: world.messaging!.createEventMeta(),
+      payload: {
+        privateChannelId: handleResolve(channel, world),
+        contextType,
+      },
+      type: 'privateChannelOnUnsubscribeEvent',
+    } as PrivateChannelOnUnsubscribeEvent;
+
+    world.props[field] = message;
+  }
+);
+
+Given(
+  '{string} is a PrivateChannelOnAddContextListenerEvent message on channel {string} with contextType as {string}',
+  (world: CustomWorld, field: string, channel: string, contextType: string) => {
+    const message = {
+      meta: world.messaging!.createEventMeta(),
+      payload: {
+        privateChannelId: handleResolve(channel, world),
+        contextType,
+      },
+      type: 'privateChannelOnAddContextListenerEvent',
+    } as PrivateChannelOnAddContextListenerEvent;
+
+    world.props[field] = message;
+  }
+);
+
+Given(
+  '{string} is a PrivateChannelOnDisconnectEvent message on channel {string}',
+  (world: CustomWorld, field: string, channel: string) => {
+    const message = {
+      meta: world.messaging!.createEventMeta(),
+      payload: {
+        privateChannelId: handleResolve(channel, world),
+      },
+      type: 'privateChannelOnDisconnectEvent',
+    } as PrivateChannelOnDisconnectEvent;
+
+    world.props[field] = message;
+  }
+);
+
+Given('{string} pipes types to {string}', (world: CustomWorld, typeHandlerName: string, field: string) => {
+  world.props[field] = [];
+  world.props[typeHandlerName] = (s?: string) => {
+    world.props[field].push(s);
+  };
+});
+
+Given('{string} pipes events to {string}', (world: CustomWorld, typeHandlerName: string, field: string) => {
+  world.props[field] = [];
+  world.props[typeHandlerName] = (s?: ApiEvent) => {
+    world.props[field].push(s?.details);
+  };
+});
+
+Given('{string} pipes context to {string}', (world: CustomWorld, contextHandlerName: string, field: string) => {
+  world.props[field] = [];
+  world.props[contextHandlerName] = (context: Context) => {
+    world.props[field].push(context);
+  };
+});
+
+Given(
+  '{string} pipes context and metadata to {string} and {string}',
+  (world: CustomWorld, contextHandlerName: string, contextField: string, metadataField: string) => {
+    world.props[contextField] = [];
+    world.props[metadataField] = [];
+    world.props[contextHandlerName] = (context: Context, metadata?: ContextMetadata) => {
+      world.props[contextField].push(context);
+      world.props[metadataField].push(metadata);
+    };
+  }
+);
+
+When('messaging receives {string}', (world: CustomWorld, field: string) => {
+  const message = handleResolve(field, world);
+  console.log(`Sending: `, message);
+  world.messaging!.receive(message, console.log);
+});
+
+Then('messaging will have posts', (world: CustomWorld, dt: DataTable) => {
+  // just take the last few posts and match those
+  const matching = dt.rows().length;
+  let toUse = world.messaging!.allPosts!;
+  if (toUse.length > matching) {
+    toUse = toUse.slice(toUse.length - matching, toUse.length);
+  }
+  matchData(world, toUse, dt);
+});
+
+Given('channel {string} has context {string}', (world: CustomWorld, channel: string, context: string) => {
+  const ctxObject = handleResolve(context, world);
+  const state = world.props[CHANNEL_STATE] ?? {};
+  world.props[CHANNEL_STATE] = state;
+
+  const cs = state[channel] ?? [];
+  cs.push(ctxObject);
+  state[channel] = cs;
+});
+
+Given('User Channels one, two and three', (world: CustomWorld) => {
+  world.props[CHANNEL_STATE] = {
+    one: [],
+    two: [],
+    three: [],
+  };
+});
+
+When(
+  'I destructure methods {string}, {string} from {string}',
+  (world: CustomWorld, method1: string, method2: string, objectField: string) => {
+    const object = handleResolve(objectField, world);
+    world.props[`destructured_${method1}`] = object[method1];
+    world.props[`destructured_${method2}`] = object[method2];
+  }
+);
+
+When('I destructure method {string} from {string}', (world: CustomWorld, methodName: string, objectField: string) => {
+  const object = handleResolve(objectField, world);
+  const destructuredMethod = object[methodName];
+  world.props[`destructured_${methodName}`] = destructuredMethod;
+});
+
+When('I call destructured {string}', async (world: CustomWorld, methodName: string) => {
+  const destructuredMethod = world.props[`destructured_${methodName}`];
+  try {
+    const result = await destructuredMethod();
+    world.props['result'] = result;
+  } catch (error) {
+    world.props['error'] = error;
+    world.props['result'] = null;
+  }
+});
+
+When(
+  'I call destructured {string} using argument {string}',
+  async (world: CustomWorld, methodName: string, param: string) => {
+    const destructuredMethod = world.props[`destructured_${methodName}`];
+    const resolvedParam = handleResolve(param, world);
+    try {
+      const result = await destructuredMethod(resolvedParam);
+      world.props['result'] = result;
+    } catch (error) {
+      world.props['error'] = error;
+      world.props['result'] = null;
+    }
+  }
+);
+
+When(
+  'I call destructured {string} using arguments {string} and {string}',
+  async (world: CustomWorld, methodName: string, param1: string, param2: string) => {
+    const destructuredMethod = world.props[`destructured_${methodName}`];
+    const resolvedParam1 = handleResolve(param1, world);
+    const resolvedParam2 = handleResolve(param2, world);
+    try {
+      const result = await destructuredMethod(resolvedParam1, resolvedParam2);
+      world.props['result'] = result;
+    } catch (error) {
+      world.props['error'] = error;
+      world.props['result'] = null;
+    }
+  }
+);
+
+When(
+  'I call destructured {string} using arguments {string}, {string}, and {string}',
+  async (world: CustomWorld, methodName: string, param1: string, param2: string, param3: string) => {
+    const destructuredMethod = world.props[`destructured_${methodName}`];
+    const resolvedParam1 = handleResolve(param1, world);
+    const resolvedParam2 = handleResolve(param2, world);
+    const resolvedParam3 = handleResolve(param3, world);
+    try {
+      const result = await destructuredMethod(resolvedParam1, resolvedParam2, resolvedParam3);
+      world.props['result'] = result;
+    } catch (error) {
+      world.props['error'] = error;
+      world.props['result'] = null;
+    }
+  }
+);

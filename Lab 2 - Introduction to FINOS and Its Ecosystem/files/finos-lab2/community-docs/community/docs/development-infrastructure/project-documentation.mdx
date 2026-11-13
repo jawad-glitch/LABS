@@ -1,0 +1,229 @@
+---
+id: project-documentation
+title: Project Documentation
+description: "Publish FINOS project documentation: Docusaurus, Netlify, and patterns for clear docs sites that follow foundation branding and best practices."
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+FINOS project documentation is typically authored with Docusaurus and deployed with Netlify. This combination keeps docs easy to write in markdown, easy to review in pull requests, and easy to publish with preview environments.
+
+## Advantages of a Centralized Documentation Strategy
+
+1. Ease of use - Markdown syntax, simple local development, and easy configuration.
+2. Easy to collaborate - Files are stored in a `docs/` folder in the GitHub repository, allowing anyone to submit a Pull Request.
+3. Automated - Changes to `main` trigger a website deployment.
+4. Branded - Enforces FINOS graphic guidelines across all websites.
+
+## Getting Started with Project Documentation
+
+In order to add a website to an existing project, see the <a href={useBaseUrl('/docs/development-infrastructure/project-documentation#docusaurus')}>Docusaurus</a> section below. If instead you are starting a new project, see the [FINOS project blueprint documentation](https://community.finos.org/docs/collaboration-infrastructure/#finos-project-blueprint).
+
+## Examples of Docusaurus Project Documentation Websites
+
+- [FDC3](https://fdc3.finos.org)
+- [Open Source Readiness](https://osr.finos.org)
+- [VUU](https://vuu.finos.org)
+
+## Docusaurus
+
+Docusaurus is a static website generator written in React, available open source under the Apache 2.0 license. It is technologically similar to Jekyll, which integrates tightly with GitHub Pages but lacks modern development support and local development tools.
+
+Given the significant adoption of Docusaurus within FINOS projects, it has become our go-to solution for building project documentation websites. If you're just getting started, use the [FINOS software project blueprint](https://github.com/finos/software-project-blueprint) repository template and follow the [blueprint documentation](https://community.finos.org/docs/collaboration-infrastructure/#finos-project-blueprint) to get started which includes a built-in Docusaurus website.
+
+The full Docusaurus documentation can be found on the [Docusaurus website](https://docusaurus.io/).
+
+### Website dependency updates
+
+Website dependencies are excluded from OSV scans by default. If not, vulnerabilities negatively impact the health of the project as shown in [LFX Insights](https://insights.linuxfoundation.org) and [OSSF Scorecard](https://scorecard.dev/) even though the website is never actually shipped to the users.
+
+Note that [Docusaurus](https://github.com/facebook/docusaurus) patches often get published weeks or months after the vulnerable dependencies are detected. This means that automated dependency management tools like Dependabot are unable to quickly fix them and improve the project health score.
+
+If your repository already includes a Docusaurus website, copy [`osv-scanner.toml`](https://github.com/finos/software-project-blueprint/blob/main/website/osv-scanner.toml) into the `website` directory.
+
+Although not recommended, if you prefer to include website vulnerabilities in third-party scans, delete the [`osv-scanner.toml`](https://github.com/finos/software-project-blueprint/blob/main/website/osv-scanner.toml) file in the website root directory.
+
+### Get Started in 5 Minutes
+
+:::info
+The following steps refer to Docusaurus 3.x and how it is used in conjunction with the [FINOS software project blueprint](https://github.com/finos/software-project-blueprint).
+:::
+
+Ensure NodeJS and NPM are installed:
+```
+npm -v
+node -v
+```
+
+Create your repository from the template and start the website locally:
+1. Click **Use this template** on https://github.com/finos/software-project-blueprint
+2. Clone your new repository and run:
+```
+cd <your-repo>/website
+npm install
+npm start
+```
+
+### Directory Structure
+
+Your project file structure should look something like this:
+```
+/project_root
+  docs/
+    doc-1.md
+    doc-2.md
+    doc-3.md
+  website/
+    .docusaurus/
+    node_modules/
+    src/
+    static/
+      css/
+      img/
+    docusaurus.config.js
+    osv-scanner.toml
+    package.json
+    sidebars.js
+  netlify.toml  
+```
+
+See the Docusaurus 3 [project structure](https://docusaurus.io/docs/installation#project-structure). 
+
+### Adding and Editing Content
+
+Website pages are represented by Markdown files in the `docs/` folder (in Docusaurus 3, Markdown React files are also supported). The page `id` maps to the URL slug of the page; the title renders out as an `<h1>` on the page.
+
+```
+---
+id: example-doc
+title: Example Doc Page
+---
+
+Add/Edit content here!
+```
+
+See the [Docusaurus docs](https://docusaurus.io/docs/docs-introduction) documentation page for more information.
+
+### Navigation bar
+
+Add links to docs, custom pages, or external links by editing the `themeConfig` object in the `website/docusaurus.config.js` file:
+```
+themeConfig: {
+  navbar: {
+    title: `FINOS ${projectName}`,
+    logo: {
+      alt: 'FINOS Logo',
+      src: 'img/favicon/favicon-finos.ico',
+    },
+    items: [
+      /* you can add docs */
+      {to: 'docs/home', label: 'Docs', position: 'right'},
+      {to: 'docs/roadmap', label: 'Roadmap', position: 'right'},
+      {to: 'docs/team', label: 'Team', position: 'right'},
+      {
+        /* you can add external links */
+        href: 'https://github.com/finos/',
+        label: 'GitHub',
+        position: 'right',
+      }
+    ],
+  },
+}
+```
+
+For more information, see the [Docusaurus Navbar Items](https://docusaurus.io/docs/api/themes/configuration#navbar-items) documentation.
+
+
+### Sidebar
+
+The sidebar that is used to navigate the doc files in `docs/` folder is managed in the `website/sidebars.js` file. The sidebar links to each doc file via the `id` property set in the .md or .mdx file. 
+
+```
+module.exports = {
+  mainSidebar: {
+    'Main Menu': ["example-doc", "team", "roadmap"]
+  },
+}
+```
+
+For more details on how to configure the sidebar see the [Docusaurus Sidebar](https://docusaurus.io/docs/sidebar/) documentation.
+
+### AI-readable documentation
+
+A production build can also write two text files for language models. `/llms.txt` lists every documentation page. `/llms-full.txt` contains the page text in one file. These files are documentation. They are not an MCP server.
+
+Install [`docusaurus-plugin-llms`](https://www.npmjs.com/package/docusaurus-plugin-llms) as a dev dependency with the package manager the website already uses. This repository uses Yarn (`yarn add --dev docusaurus-plugin-llms` from `website/`). The plugin declares the MIT license, which is a [Category A](/docs/governance/Software-Projects/license-categories) license. Register it in `website/docusaurus.config.js`. When the docs live outside the website folder, point `docsDir` at that directory and set `routeBasePath` to the URL prefix Docusaurus serves:
+
+```js
+plugins: [
+  [
+    'docusaurus-plugin-llms',
+    {
+      docsDir: [{ path: '../docs', routeBasePath: 'docs' }],
+      excludeImports: true,
+    },
+  ],
+],
+```
+
+`excludeImports` removes MDX `import` lines from the generated text. `yarn build` or `npm run build` writes both files into the build output, and the links in `/llms.txt` use the site `url` from the Docusaurus config.
+
+MDX that uses `useBaseUrl` for a link or image loses that URL in `/llms-full.txt`. The visible words remain. Write links that need to survive in Markdown. Links inside `/llms-full.txt` are copied from the source, so a directory-relative link such as `(whitesource)` does not resolve from `/llms-full.txt`. Root-relative links such as `(/docs/governance)` do resolve when the file is hosted on the documentation site.
+
+### Docusaurus Alternatives
+
+The [Accessibility Theme Builder](https://a11y-theme-builder.finos.org/) project website utilizes [MKDocs](https://www.mkdocs.org/) (specifically [Material for MKDocs](https://squidfunk.github.io/mkdocs-material/getting-started/)).
+
+Before Docusaurus, the FINOS Community also experimented with a few other solutions, which are worth mentioning for historical reasons:
+
+1. [GitHub Wiki](https://help.github.com/en/github/building-a-strong-community/about-wikis) provides a great integration with code, as it's hosted as a git endpoint; however, Pull Requests are not available, therefore the collaboration mechanism can only be extended to the project team, which is a big limitation. Also, installing a local development environment [is not trivial](https://gist.github.com/suewonjp/7493de784f4a88c63d1810031609ee35) Its biggest advantage is the possibility to preview the changes via the GitHub web UI.
+2. [Jekyll](https://jekyllrb.com/), the page generator engine used by GitHub Pages, which also supports templating; the downside of Jekyll is that the installation of a local development environment (Ruby) is hard.
+3. [GoHugo](https://gohugo.io/), a generic static page generator written in Go, with a strong community and eco-system.
+
+## Website Deployment 
+
+### Netlify 
+
+Netlify is the preferred tool by FINOS when it comes to hosting websites, as it offers hosting and serverless backend services for web applications and static websites, along with seamless integration with GitHub and automatic preview capabilities that make it easier to review changes before they go live.
+
+### Custom Domain Setup
+
+In order to deploy your website and get a custom subdomain configured, such as `fdc3.finos.org`, please email help@finos.org.
+
+### Netlify Configurations
+
+In order to manage when/how Netlify creates previews a `netlify.toml` file can be placed in the root of the repository.
+
+For example the following configuration will trigger a preview only when it detects changes in the docs and website folders:
+```
+[build]
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF . ../{docs,website}/"
+```
+See [this netlify.toml](https://github.com/finos/FDC3/blob/main/netlify.toml).
+
+## Context7
+
+[Context7](https://context7.com) brings a FINOS project's up-to-date docs into AI coding agents.
+
+Add the public repository once at [context7.com/add-library](https://context7.com/add-library). Choose GitHub, paste the repository URL, and submit. Anyone can add it. Context7 indexes the repository and assigns an ID such as `/finos/project`. The folder settings on that form are optional when the repository contains a `context7.json`.
+
+Commit that file at the repository root. Context7 reads it on a later refresh and reviews the title, description, and rules before using them. For a repository laid out like the [FINOS software project blueprint](https://github.com/finos/software-project-blueprint), index `docs/` and skip the Docusaurus app and discontinued material. Root-level Markdown, including `README.md`, is still indexed. Use `rules` for short facts an agent should follow, such as where contributions are described.
+
+Example `context7.json`:
+
+```json
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Project Name",
+  "description": "What the project does, in one or two sentences.",
+  "folders": ["docs"],
+  "excludeFolders": ["website", "archive"],
+  "rules": [
+    "Follow this repository's CONTRIBUTING file before suggesting a code change."
+  ]
+}
+```
+
+Claiming the library on Context7 is optional; it unlocks an admin panel and is separate from this file. Context7 refreshes a listed repository on its own. A Context7 GitHub Action is only needed when the project wants a refresh on every push to the default branch.
+
+See the [official Context7 guide](https://context7.com/docs/adding-libraries) for registration steps and repository configuration options.

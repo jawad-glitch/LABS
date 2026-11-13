@@ -1,0 +1,7 @@
+{
+  "type": "fdc3.contact",
+  "name": "Example Contact",
+  "id": {
+    "email": "contact@example.com"
+  }
+}

@@ -1,0 +1,150 @@
+---
+id: contribution-compliance-requirements
+title: Contribution Requirements
+sidebar_label: Contribution Requirements
+description: "Requirements before FINOS can merge your code: ICLA, CCLA, license checks, and policies that keep contributions compliant across regulated financial firms."
+---
+
+## Overview {#overview}
+
+This page describes **intellectual property and licensing expectations when onboarding a new FINOS software project or open standard project**—not routine contributions to an existing repository (follow that project’s `CONTRIBUTING` file and its DCO, CLA, or CSLA setup).
+
+For **software** projects, after onboarding FINOS places the **technical charter** at the repository root as **`technical-charter.pdf`** (that exact filename). It reflects mission, goals, and responsibilities from the contribution process.
+
+**Open standard** projects use the [Standards Project Blueprint](https://github.com/finos/standards-project-blueprint) for Community Specification documents and CSLA instead of this PDF.
+
+Before you proceed, be familiar with:
+
+- [Contributing to FINOS](/docs/governance/Software-Projects/contribution), including [project governance](/docs/governance/project-lifecycle) and lifecycle stages.
+- [CLA vs. DCO](https://osr.finos.org/docs/bok/artifacts/clas-and-dcos#cla-vs-dco) in the FINOS Open Source Readiness (OSR) handbook.
+
+FINOS **software** projects establish contributor rights through a **Developer Certificate of Origin (DCO)** or **Contributor License Agreements (CLAs)**. Per OSR, **FINOS projects use DCO by default**; a project may use **CLA** when requested by the maintainers and coordinated with FINOS. **Labs** projects **always** use **DCO**.
+
+- For how DCO maps to CLA and when each applies, see OSR: [CLA vs. DCO](https://osr.finos.org/docs/bok/artifacts/clas-and-dcos#cla-vs-dco).
+- For configuring DCO checks on GitHub, see [DCO on GitHub](/docs/governance/Software-Projects/dco).
+
+FINOS **standards** (specification) projects use the **Community Specification License** and [**CSLA**](/docs/governance/Software-Projects/csla) (Community Specification Contributor License Agreement), not the generic software-project DCO/CLA path.
+
+## Contributor license agreement (or CLA){#contributor-license-agreement}
+
+The FINOS IP policy specifies that projects that adopt CLA should use FINOS contributor license agreements derived from the commonly used Apache-style CLA template.
+
+FINOS uses [EasyCLA](https://lfx.linuxfoundation.org/tools/easycla) ([direct access](https://lfcla.com)) so contributors can sign the appropriate documents when a repository requires CLA. EasyCLA is maintained by the Linux Foundation. It is designed to support open source communities by:
+
+* Recognizing a contributor’s signature across FINOS repositories that use the same EasyCLA configuration.
+* Letting contributors sign as individuals or be covered under a Corporate CLA when employed by a firm.
+* Letting companies designate a CLA Manager who can update approval configuration in the [EasyCLA Organization Dashboard](https://organization.lfx.linuxfoundation.org/).
+* Letting companies authorize employee usernames individually, or by email domain or GitHub organization affiliation.
+
+There is no cost to signing the FINOS CLA. Please note that this is different from [membership in FINOS](https://www.finos.org/membership-benefits). If your organization relies upon our projects, [please become a member](https://www.finos.org/members). Membership dues help fund the FINOS project ecosystem.
+
+If you change jobs after contributing to the Foundation under your previous employer's CCLA, please notify [help@finos.org](mailto:help@finos.org) so that we can ensure that an appropriate CLA is in place with you or your new employer.
+
+For signature workflows, CLA Managers, and enabling EasyCLA on a repository, see the dedicated [EasyCLA](/docs/governance/Software-Projects/easycla) page.
+
+#### Individual and Corporate CLA
+
+When a software project uses CLA, contributors typically use an **Individual Contributor License Agreement (ICLA)** or a **Corporate Contributor License Agreement (CCLA)**. For the distinction between them, see [Two types of CLA](https://osr.finos.org/docs/bok/artifacts/clas-and-dcos#two-types-of-cla) on OSR.
+
+## License Information {#license-information}
+
+All Foundation projects must include certain license information and copyright notices. If you are contributing a new project, you must include `LICENSE`, and `NOTICE` files, as described below. If you are contributing to an existing project, you may need to add information to the `NOTICE` or (optionally) `CONTRIBUTING` file.
+
+### The LICENSE file
+A `LICENSE` file must be present at the root of each project, and must contain the text of the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
+
+### The NOTICE file
+A `NOTICE` file must be present at the root of each project, and must contain the copyright notices of each copyright holder who has contributed to the project. If you are contributing to an existing project, you should add (or update) your copyright notice in the `NOTICE` file. A sample `NOTICE` file (Markdown format) is provided in the [FINOS Software project blueprint](https://github.com/finos/software-project-blueprint). It must also contain any other attributions required by third-party dependencies (see below).  
+
+You should use this template for your `NOTICE` file (from the [FINOS Software project blueprint](https://github.com/finos/software-project-blueprint/blob/main/NOTICE)). Add a `Copyright` line for each copyright holder who has contributed to the project:
+```
+{PROJECT_NAME} - FINOS
+Copyright {YYYY} - {CURRENT_YEAR} {NAME_OF_COPYRIGHT_OWNER} {EMAIL_OF_COPYRIGHT_OWNER}
+
+This product includes software developed at the Fintech Open Source Foundation (https://www.finos.org/).
+
+{OTHER_NOTICES}
+```
+
+### The CONTRIBUTING file
+The `CONTRIBUTING` file contains basic instructions to prospective contributors about how to make a contribution to the project – submitting a CLA, filing issues, making pull requests, etc. A sample `CONTRIBUTING.md` file (Markdown format) is provided in the [FINOS Software project blueprint](https://github.com/finos/software-project-blueprint).  Project leads are free to revise to fit the practices and style of the project, but references to the Foundation's contribution requirements must be included.  While a `CONTRIBUTING` file is not required, we strongly encourage you to add one to your repository as early as possible.
+
+Please note that Github will prompt this content when a user creates an issue or pull request, you can read more on [GitHub Contributing Guidelines](https://github.com/blog/1184-contributing-guidelines).
+
+### Source code license headers
+For [Graduated](/docs/governance/lifecycle-stages/graduated) projects, it's recommended that each source code file should include a license header comment. Most projects use the standard Apache-style header. Note that all copyright notices should go into a separate single `NOTICE.md` file at the root level (i.e. same level as `README.md` and `CONTRIBUTING.md`) of the GitHub/GitLab repository.
+
+```
+SPDX-License-Identifier: Apache-2.0
+Copyright {YYYY} FINOS {PROJECT_NAME} contributors - see NOTICE file
+ 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+ 
+    http://www.apache.org/licenses/LICENSE-2.0
+ 
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+If space is at a premium, you are welcome to use an abbreviated version like the following:
+
+```
+SPDX-License-Identifier: Apache-2.0
+Copyright {YYYY} FINOS {PROJECT_NAME} contributors - see NOTICE file
+```
+
+### SPDX information
+We encourage project teams to place a [SPDX-format](https://github.com/david-a-wheeler/spdx-tutorial#spdx-files) `LICENSE.spdx` file in the root of each project. SPDX is a standard for describing machine-readable license information about open source projects. For more information on SPDX, please see the [SPDX website](https://spdx.org/). See below for a basic example `LICENSE.spdx` file. For a tutorial on adding SPDX information to a project, [see here](https://github.com/david-a-wheeler/spdx-tutorial/blob/master/README.md).
+
+```
+SPDXVersion: SPDX-2.0
+DataLicense: CC0-1.0
+Creator: {NAME_OF_COPYRIGHT_OWNER}
+PackageName: {PROJECT_NAME}
+PackageOriginator: {NAME_OF_COPYRIGHT_OWNER}
+PackageHomePage: https://github.com/finos/{PROJECT_SLUG}
+PackageLicenseDeclared: Apache-2.0
+```
+
+## Third-Party Code Compliance {#third-party-code-compliance}
+
+If your contribution includes any third-party open source code, the license for that code must permit its use within an Apache-licensed project, and the Foundation's use of the code must comply with the terms of the third-party license.
+
+### Identifying acceptable licenses
+All Foundation projects must be licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) and the license for any third-party code must be compatible with this requirement. The Foundation [categorizes open source licenses in the same way as the Apache Software Foundation](/docs/governance/Software-Projects/license-categories):
+
+- **Category A licenses** have similar terms to the Apache License. Contributions to the Foundation can include (or depend upon) code licensed under Category A licenses.
+  - Examples: common variants of the BSD and MIT licenses; the Apache License.
+- **Category B licenses** impose restrictions on downstream use of the third-party code, but permit the code to be included in an Apache-licensed project. Typically, these are "weak copyleft" licenses requiring that modifications to the third-party code be licensed "reciprocally" under the same license. Contributions can include (or depend upon) Category B code, but if the code itself is included with the contribution, you should include a notice in the `CONTRIBUTING` file as described below.
+  - Examples: the CDDL, EPL, and MPL licenses.
+- **Category X licenses** impose restrictions that prevent the code from being included in an Apache-licensed project. Because all Foundation projects must be Apache-licensed, the Foundation does not accept contributions with Category X dependencies.
+  - Examples: most proprietary licenses; any version of the GPL, LGPL, or AGPL; Creative Commons Non-Commercial and No-Derivatives licenses.
+
+Projects teams are expected to ensure that the license of each dependency meets these requirements at all times; committers can expedite this by carefully researching each dependency before adding it. Because all incompatibly licensed dependencies must be removed before the Foundation can accept a contribution, contributors should also take care to avoid them during their development on a fork.
+
+### Including required third-party notices
+Depending how your contribution uses third-party open source software, you may need to add notices to the project you're contributing to.
+
+**If your contribution contains third-party code directly** (i.e. not via an import or similar reference resolved by the build system or interpreter) you must include a copy of the applicable license and preserve any copyright notices, license information, disclaimers, and similar notices in the third-party code. You should also add a notice in the following form to the project's file:
+
+`This project includes code from SuperWidget 1.2.3, which is licensed under a BSD-style license. For details, see lib/superwidget/.`
+
+If you have a `LICENSE.spdx` file in your repository, you should also update the PackageLicenseDeclared setting to use the appropriate SPDX license expression for your "mixed license" repository.
+
+**If your contribution contains Category B-licensed code directly**, you must also add a notice in the following form to the project's `NOTICE` file:
+
+`This project contains source code for SuperWidget 1.2.3, which is licensed under the Mozilla Public License, version 1.1. For details, see lib/superwidget/.`
+
+The purpose of this notice is to make contributors aware that their modifications to the Category B code will be governed by the terms of the Category B license.
+
+**If the third-party license requires specific notices**, you must add them to the `NOTICE` file. For example, some open source licenses require that you include a description of any modifications made to the third-party code.
+
+### Validating license and notice information
+When you make a contribution, the Foundation attempts to validate compliance with these requirements automatically using a variety of tools [made available by FINOS](/docs/development-infrastructure/code-validation/intro).
+
+However, no automated tool can resolve these questions definitively, so we depend upon our contributors and project teams to ensure compliance with this policy at all times.

@@ -1,0 +1,8 @@
+.vscode
+.project
+website/node_modules
+website/.docusaurus
+website/build
+.env.local
+archive/**/node_modules
+.DS_Store

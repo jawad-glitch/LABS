@@ -1,0 +1,12 @@
+[build]
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF . ../{packages,website,toolbox}/"
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+    
+[build.environment]
+  NODE_VERSION = "24.18.0"
+  NPM_VERSION = "11.16.0"

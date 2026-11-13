@@ -1,0 +1,380 @@
+---
+id: collaboration-infrastructure
+title: Collaboration Infrastructure
+description: "GitHub-based collaboration for FINOS: CLAs, org access, issues, and workflows that maintainers and contributors use across projects, SIGs, and programs."
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+FINOS leverages many services offered by [GitHub.com](https://github.com), which are documented in the [Collaboration Use Cases on GitHub](#collaboration-use-cases-on-github) and [other collaboration use cases](#other-collaboration-use-cases) sections below.
+
+In order to contribute to and collaborate on a FINOS project, you will need to [create a GitHub.com account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) and meet the FINOS [contribution requirements](/docs/governance/Software-Projects/contribution-compliance-requirements) for your project (for example DCO or CLA); this document will walk you through access control and permissions that are enforced on FINOS GitHub properties.
+
+:::important
+
+If you're a maintainer of a FINOS hosted project and need infrastructure that is not documented here, please [contact help@finos.org](mailto:help@finos.org), the FINOS Staff will be happy to assist you.
+
+:::
+
+## GitHub Account Setup
+In order to configure your GitHub access, it is necessary to:
+
+1. [Create an account on GitHub.com](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account)
+2. [Setup a Git client locally](https://help.github.com/en/github/getting-started-with-github/set-up-git)
+3. Ensure that the Git client is configured with your `<username>@users.github.com` email address (you can use `git config --list | grep user.email` command). If you use another email address, you may incur in one of the following issues:
+
+     1. Your corporate firewall blocks Git activity, unless you have signed in with an `@<your company domain>` email address.
+     2. GitHub forces you to set the email address as public, or it would reject push operations with the error `push declined due to email privacy restrictions`.
+  
+## Access Control
+All repositories managed by the Foundation are public. As a result, anyone can:
+
+1. Checkout the source code
+2. Consume any artifact produced by a Project
+3. Access [FINOS Kanban boards](https://github.com/orgs/finos/projects)
+4. Use GitHub Issues to contribute to the discussion (a GitHub account is required)
+
+Any GitHub user who meets [FINOS contribution requirements](/docs/governance/Software-Projects/contribution-compliance-requirements) for their project (such as DCO or CLA coverage) can also:
+
+1. [Become a member of the FINOS GitHub Organization](#becoming-github-finos-organization-member)
+2. Submit a code change via [Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
+
+[FINOS uses GitHub Teams](https://github.com/orgs/finos/teams) to manage each project's committer team. These teams are the only groups allowed to make direct changes to project repositories.
+
+Below is a recap of who can do what.
+
+| Who | GH role | What |
+|--- | :----------| :----------|
+| Anyone | None | Checkout the source code |
+| | | Consume any artifact produced by a Project |
+| | | Access FINOS issue boards |
+| Any GitHub user | Read | Fork repository |
+| | | Submit a code change via Pull Request (flagged by <a href={useBaseUrl('/docs/governance/Software-Projects/easycla')}>EasyCLA</a>)
+| | | Use GitHub Issues to contribute to the discussion |
+| GitHub user covered by [CLA](/docs/governance/Software-Projects/easycla) | Read | Become a member of the GitHub FINOS Organization |
+| | | Submit a code change via Pull Request (validated by the <a href={useBaseUrl('/docs/governance/Software-Projects/easycla')}>EasyCLA</a>) |
+| FINOS Staff | Triage | Issue/PR Triage |
+| | | Administration tasks |
+| | | Monitoring |
+| Project Maintainer (GitHub User) | Maintain | Approve Pull Requests |
+| | | Manage releases |
+| | | Manage roadmap |
+| | | Manage website and other project infrastructure |
+| | | Anything granted by the GitHub `Maintain` permission |
+| Lead Maintainer (GitHub User) | Maintain | Point of contact with FINOS Staff |
+
+Checkout the [GitHub docs around roles and permissions](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#repository-access-for-each-permission-level) to know more about entitlements.
+
+### GitHub Member VS FINOS Member
+Please note, [FINOS Members](https://finos.org/members) are organizations that provide industrial and financial support to the FINOS through their platinum, gold, and/or silver [membership fees](https://finos.org/membership-benefits), and through their participation in the [FINOS Governing Board](https://www.finos.org/governing-board). [Members of the FINOS GitHub Organization](https://github.com/orgs/finos/people) are individuals, represented by a [GitHub Profile](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/about-your-profile) and a signed FINOS [Contributor License Agreement (CLA)](/docs/governance/Software-Projects/easycla).
+
+### Becoming GitHub FINOS Organization member
+Assuming that you have read our [Contribution Requirements](/docs/governance/Software-Projects/contribution-compliance-requirements) and have the appropriate contributor coverage for your project (for example a [CLA](/docs/governance/Software-Projects/easycla) where your repository uses CLA), you can request to be invitated to [FINOS GitHub Organization](https://github.com/orgs/finos/people) by emailing your GitHub username to [help@finos.org](mailto:help@finos.org).
+
+### Public VS Private Membership
+
+<img alt="public-vs-private-membership" src={useBaseUrl('img/collab/public-vs-private.png')} />
+Any GitHub FINOS Organization member can decide whether to publish her/his affiliation with FINOS or not; given that the employer doesn't restrict such action, we welcome any of our member to set to Public the Organization visibility:
+
+1. Access https://github.com/orgs/finos/people
+2. Search for your name or GitHub username
+3. Open the dropdown close to Private
+4. Select Public visibility
+
+<img alt="repo-teams" src={useBaseUrl('img/collab/repo-teams.png')} />
+
+### Teams
+
+Given that all project contributors have the ability to follow the standard GitHub (Pull Request) development workflow, the only actors that need to have any entitlement on GitHub repositories are maintainers. We use GitHub Teams to manage that, where:
+1. Lead Maintainers have the ability to add new maintainers (aka GitHub Team maintainer)
+2. Project maintainers can vote to add/remove team members
+3. the project maintainers team have (GitHub) `Maintain` permission across all project (GitHub) repositories.
+
+<img alt="finos-teams" src={useBaseUrl('img/collab/finos-teams.png')} />
+
+### Useful links
+- [About permissions on GitHub](https://help.github.com/en/github/getting-started-with-github/access-permissions-on-github#organization-accounts)
+- [About GitHub Teams](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-teams)
+- [Other GitHub guides](https://guides.github.com/)
+
+## Collaboration use cases on GitHub
+
+### Code hosting
+
+Code in the Foundation is hosted exclusively on [https://github.com/finos](https://github.com/finos); each FINOS project code can be spread across different repositories, you can check the [FINOS Landscape](https://landscape.finos.org) to have an overview of all FINOS initiatives and the GitHub repositories that host its code.
+
+
+#### Repository setup
+The Foundation encourages the thoughtful design of projects such that they result in multiple functionally independent, decoupled libraries. One of the ways this can be done is by using multiple GitHub repositories per project (one per decoupled library).
+
+If you have an existing project and you'd like to add more repositories to it, you should have all permissions to be able to do it. If you'd like any advanced configuration for your repository, build or release process, please reach out to [help@finos.org](mailto:help@finos.org). 
+
+Although GitHub doesn't directly support the concept of a "project" (a group of related repositories), the Foundation keeps track of this information, and uses it in our [landscape](https://landscape.finos.org) and [metrics](https://metrics.finos.org) dashboards.
+
+#### Building and testing
+A build pipeline converts source code into deployable artifacts produced by the project team and hosted in GitHub. Reliable builds are essential because they can trigger automated tasks such as versioning, testing, quality checks, and compliance reporting.
+
+A working build process is key to implement more automated processes, such as release, <a href={useBaseUrl('/docs/development-infrastructure/continuous-integration/intro')}>Continuous Integration</a> and automated deployments; it is also a requirement for [project Graduation](/docs/governance/lifecycle-stages/graduated).
+
+#### Versioning
+Versioning is the process to establish a format to a project version and the rules to update it, preferably integrating with automated build and release systems; the Foundation mandates the use of [Semantic Versioning](https://semver.org/) ("semver") throughout a project's lifecycle:
+
+- for Incubating projects, version numbers must be less than 1.0.0
+- for [Graduated](/docs/governance/lifecycle-stages/graduated) projects, version numbers can be 1.0.0 or greater
+
+Every project team is encouraged to define specific criteria by which the MAJOR, MINOR and PATCH components of the semver scheme will be used (keeping in mind the general guidelines semver itself mandates), since this helps to provide clarity to consumers.
+
+#### Release
+The release process allows to publish deployable units into a publicly available artifact repository, by invoking the build process and applying version control to increment the project's version; the Foundation collects guides and best practices on how to release a project, depending on the <a href={useBaseUrl('/docs/development-infrastructure/continuous-integration/intro')}>language and eco-system of choice</a>.
+
+#### Best practices
+
+##### Avoid direct changes to GitHub repositories - use Pull Requests
+Making direct changes to repositories is not recommended, for teams bigger than 1, for few reasons, including:
+
+1. Direct commits are not validated, as they cannot be blocked (ie, if [CLA](/docs/governance/Software-Projects/easycla) is not in place)
+2. Pull Requests allow to have a conversation with the team
+3. Pull Requests tend to have a more thorough validation pipeline
+
+### Accepting Code Contributions
+Project teams are required to review contributions from non-committer community members (i.e. PRs) in a timely fashion. While this does not mean that all such contributions need to be accepted, they must be reviewed conscientiously and only rejected if there are legitimate reasons to do so. Those reasons must be clearly documented in the PR at the time of rejection, and any resubmissions re-reviewed in good faith.
+
+In addition to the usual code-level checks a project team may choose to perform on contributions (for code quality, roadmap alignment, etc.), it is also critically important that the legal requirements of the Foundation are met.  This involves:
+
+1. Confirming that the person providing the contribution has a Contributor Licensing Agreement in place with the Foundation (though [EasyCLA](/docs/governance/Software-Projects/easycla) will run an automatic scan of all Pull Requests).
+2. Confirming that their change doesn't introduce new code or dependencies that are incompatible with the Apache Software License.
+
+The Foundation's project infrastructure automatically checks for CLA compliance for pull requests only. Unfortunately it's not currently possible to check for CLA compliance of commits that are directly pushed to a master branch by a committer (this is a GitHub limitation).  For that reason, we strongly recommend that project teams do not add new project team members until they've verified that those contributors have a CLA in place with the Foundation.  In the meantime, you can encourage contributors to fork your project and contribute via pull requests, until such time as you've confirmed their CLA status with the Foundation's legal counsel.
+
+Confirming that contributions haven't introduced incompatibly licensed code is inherently build tool specific, and so we are unable to provide instructions that cover all possible development setups. Check the list of <a href={useBaseUrl('/docs/development-infrastructure/code-validation/intro')}>code validation tools</a> available to FINOS hosted projects.
+
+### Managing Issues
+[**GitHub Issues**](https://guides.github.com/features/issues/) provides a simple and flexible way to track task lists; issues can also include list of checkboxes, as shown in the image.
+
+Labels can be useful to add meta information to tasks, like type, audience and more.
+
+#### Issue Templates
+When creating a new issue, it is possible to guide users via Issue Templates, which allow to:
+
+1. Choose an issue type from a list; at FINOS, we start providing 3 templates: bugs, feature requests and support questions (check the project blueprint below)
+2. Define a template for the issue content (ie, abstract, expected result, actual result)
+
+#### Issue Labels
+Labels are very helpful to manage issues; each repository can define its own taxonomy, though it is helpful to enforce a common list of labels, so that the experience of using GitHub Issues across different repositories and projects is the same. It is also handy when using GitHub boards that link to multiple repositories.
+
+```
+- Priorities - #ff0000
+  - prio-high - High priority
+  - prio-low - Low priority
+  - prio-medium - Medium priority
+- Contribution hints - #5319e7
+  - good first issue - A good first issue to start contributing
+  - help wanted
+- Issue status - #a2e8e6
+  - on hold - Tasks not executed until further notice
+  - feature writing - Grooming and feature writing needed
+  - ready for dev - This item is ready for development
+- Types - #53c43c
+  - docs - Related to documentation
+  - question - Further information is requested
+  - meeting - If an issue describes a meeting agenda or minutes
+  - vote - If an issue describes a vote
+- Topics - #ffd4b7
+  - github - GitHub related topic
+  - docusaurus - Docusaurus related topic
+```
+
+### Project Releases
+The easiest way to define roadmaps in GitHub is using [**Milestones**](https://guides.github.com/features/issues/), which allow to group issues together and associate a title, description and due date.
+
+As a complement or alternative, [**GitHub project boards**](https://help.github.com/en/articles/about-project-boards) can be used to define a Kanban (or "flow") of activities across a list of predefined states, which can be mapped to the milestones of a roadmap.
+
+<img alt="milestone-example" src={useBaseUrl('img/collab/milestone-example.png')} />
+
+### Project Website
+FINOS Projects may need a Wiki in order to collaboratively edit and publish content related with general documentation, team composition, meeting information, how to get in touch and other useful info.
+
+You can read more on the <a href={useBaseUrl('/docs/development-infrastructure/project-documentation')}>project documentation page</a>.
+
+### Conversations
+In order to track threaded conversations - among FINOS Project / SIG team members, external collaborators and consumers - it is possible to use [GitHub Issues](https://help.github.com/en/github/managing-your-work-on-github/about-issues), with the following limitations:
+
+1. The scope of the conversations is always public, whereas there may be sensitive conversations across project leaders that may require to be confidential
+2. Issue comments are flat, although mentions and quoting can be used to follow multiple conversation threads.
+
+### [DEPRECATED] GitHub Team Discussions
+
+:::important
+
+The Team Discussion feature was [deprecated on February 8th 2023](https://github.blog/changelog/2023-02-08-sunset-notice-team-discussions/)
+
+:::
+
+A more advanced way is to use [GitHub Team Discussions](https://docs.github.com/discussions):
+
+1. Can be created as private, which are accessible only by team members
+2. Can be created as public to all GitHub FINOS org members
+3. Cannot be created at public to non FINOS member or unauthenticated visitors, so GitHub Issues is the only option for that.
+
+<img alt="team-page-discussions-tab" src={useBaseUrl('img/collab/team-page-discussions-tab.png')} />
+
+### FINOS Slack
+
+The [FINOS Slack](https://finos-lf.slack.com/) brings the FINOS Community together in a Slack Workspace dedicated to **_"public"_** conversations and made available to all FINOS Projects and Special Interest Groups. 
+
+[<img src="https://img.shields.io/badge/slack-@finos/community-green.svg?logo=slack" />](https://finos-lf.slack.com/messages/finos-community/)
+
+Join the FINOS Project, SIG and wider community conversation in the FINOS Community Slack. If you are an employee of a [FINOS Member](https://finos.org/members), corporate firewall restrictions allowing, you should be able to self-subscribe at https://finos-lf.slack.com/signup. If you are not a FINOS Member or have any trouble joining, please email to [help@finos.org](mailto:help@finos.org) with your desired email address and we'll set you up.
+
+The FINOS Community wide channel on Slack is reachable directly at https://finos-lf.slack.com/messages/finos-community/. We warmly encourage existing community contributors to invite their peers to join the collaboration and the open source fun :)
+
+FINOS Project and SIG Leads, please email to [help@finos.org](mailto:help@finos.org) to create a Slack Channel for your FINOS Project or Special Interest Group.
+
+<img alt="finos-slack-workspace" src={useBaseUrl('img/collab/finos-slack-workspace.png')} />
+
+All participants in the FINOS Slack are subject to the [LF Antitrust Policy](https://www.linuxfoundation.org/legal/antitrust-policy), the [FINOS Community Code of Conduct](https://www.finos.org/code-of-conduct) and all other [FINOS policies](/docs/governance/#policies). 
+
+It's extremely important that all participants in the FINOS Slack do not participate in any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
+
+### Voting
+FINOS Governance processes require voting at different levels (and publicly available), including but not limited to:
+
+1. Project Maintainers vote for accepting new members to their teams
+2. Project Maintainers vote to manage releases and other decide on any other decisions
+
+GitHub Issues can provide an easy platform to vehicle this process:
+
+1. The person casting the vote opens a GitHub Issue. The following items must be filled/reviewed, before circulating the issue URL:
+  a. Title and description of the vote; use the [VOTE] prefix in the issue title, to help issue browsing and discoverability
+  b. Add the vote label
+  c. List of users who have the right to a binding vote, typically project maintainers
+2. Everyone can vote the issue, until the vote is open:
+  a. Those with a GitHub account can simply react to the issue (see image to the right)
+  b. Those without a GitHub account can react via email (using any public FINOS list)
+3. The person casting the vote counts reactions and reports the following data in a issue comment:
+  a. Total votes (add links to email web history for each email vote, if any)
+  b. Binding votes (Approve, Deny, Abstained)
+  c. Result
+
+<img alt="vote-reactions" src={useBaseUrl('img/collab/vote-reactions.png')} />
+
+#### Project setup
+A project needs:
+
+1. A Github repository
+2. The `vote` issue label defined
+3. Issue template `.github/ISSUE_TEMPLATE/Vote.md` defined
+
+### Meeting Minutes
+
+<img alt="meeting-issue-template-create" src={useBaseUrl('img/collab/issue-template-create.png')} />
+
+Meetings are one of the most used collaboration channels at FINOS, and minutes are very important, as they provide transparency across all project activities and decisions. Follow the [Meeting Procedures](/docs/governance/meeting-procedures) for scheduling in LFX PCC, agendas, minutes, and AI summaries.
+
+Create a GitHub Issue for each meeting using the [Meeting template provided by FINOS](https://github.com/finos/software-project-blueprint/issues/new?template=meeting_minutes.yml). The issue is the public agenda and minutes record; do not use it to track attendance.
+
+- *Prior to the meeting* - the meeting leader creates a new GitHub Issue using the meetings issue template, a `[MEETING]` title prefix, and the `meeting` label, then circulates the issue as the agenda.
+- *At the beginning of the meeting* - the meeting leader posts the issue URL on the meeting chat.
+- *After the meeting* - review the LFX PCC Zoom AI summary, **anonymize** it, **publish** it, add the published summary URL to the issue, and close the issue.
+
+<img alt="meeting-issue" src={useBaseUrl('img/collab/meeting-issue.png')} />
+
+#### Project setup
+A project needs:
+
+1. A Github repository
+2. The meeting leader must have at least `Write` access to the repository
+3. The `meeting` issue label defined
+4. Issue template [`.github/ISSUE_TEMPLATE/meeting_minutes.yml`](https://github.com/finos/software-project-blueprint/blob/main/.github/ISSUE_TEMPLATE/meeting_minutes.yml) defined
+
+### Security Scanning
+In order to consolidate processes and tools around security vulnerabilities management, FINOS have shared a [guidelines around responsible disclosure for security vulnerabilities](/docs/governance/Software-Projects/cve-responsible-disclosure) and tools that can be used to automate code scanning, you can read more on the <a href={useBaseUrl('/docs/development-infrastructure/code-validation/intro')}>code validation page</a>. FINOS also provides a collection of Github Action that can be used on your repositories, checkout the [code scanning project](https://github.com/finos/code-scanning).
+
+### FINOS Project blueprint
+[Project blueprint](https://github.com/finos/software-project-blueprint) is a FINOS project that provides a template for new or existing repositories; it includes:
+
+1. A [README.md template](https://github.com/finos/software-project-blueprint/blob/master/README.template.md), with a suggested structure of content
+2. A [NOTICE template](https://github.com/finos/software-project-blueprint/blob/master/NOTICE), required by FINOS bylaws
+3. A [LICENSE template](https://github.com/finos/software-project-blueprint/blob/master/LICENSE), required by FINOS bylaws
+4. A [Code of Conduct](https://github.com/finos/software-project-blueprint/blob/master/.github/CODE_OF_CONDUCT.md) template, required by FINOS bylaws
+5. [Contributing guidelines](https://github.com/finos/software-project-blueprint/blob/master/CONTRIBUTING.md), required by FINOS bylaws
+6. A [MAINTAINERS.md](https://github.com/finos/software-project-blueprint/blob/main/MAINTAINERS.md) file in the repository root, listing the current project maintainers
+7. A [SECURITY.md](https://github.com/finos/software-project-blueprint/blob/main/SECURITY.md) file in the repository root, linking to the [FINOS Security Vulnerabilities Responsible Disclosure Policy](https://community.finos.org/docs/governance/software-projects/cve-responsible-disclosure/)
+8. Issue templates for bugs, feature requests and support questions , [defined in the `.github` folder](https://github.com/finos/software-project-blueprint/tree/master/.github/ISSUE_TEMPLATE)
+
+Placeholders use `{UPPER_SNAKE_CASE}` tokens throughout the blueprint.
+
+#### Creating a new repository
+Anyone can use the Project blueprint repository, simply accessing [https://github.com/finos/software-project-blueprint](https://github.com/finos/software-project-blueprint) and pressing the `Use this template` button and following instructions.
+
+The main `README.md` file contains instructions on how to replace placeholders across all blueprint files.
+
+#### Aligning existing repository with project blueprint
+There is no automated way to align an existing repository with the project blueprint structure, therefore it must be done manually, going through the blueprint items listed above and copy/paste content across repositories.
+
+#### Built-in documentation website
+The project blueprint comes with a pre-definite website that is built using Docusaurus (3.x) and served via Netlify to a custom finos.org subdomain.
+
+Getting started is quite simple:
+
+1. Make sure that your GitHub repository includes the `docs/` and `website/` folder from the [software-project-blueprint](https://github.com/finos/software-project-blueprint)
+2. Add [`osv-scanner.toml`](https://github.com/finos/software-project-blueprint/blob/main/website/osv-scanner.toml) to the website root. This helps keep project health accurate.
+3. Read our <a href={useBaseUrl('/docs/development-infrastructure/project-documentation')}>getting started guide</a> to understand more about Docusaurus
+
+#### How to use this blueprint
+1. Visit https://github.com/finos/software-project-blueprint
+2. Click on `Use this template` and follow GitHub's instructions.
+3. In your new repository, copy `README.template.md` to `README.md` (replacing this file).
+4. Search and replace the following tokens across the copied files:
+
+  | Token | Replace with |
+  | ----- | ------------ |
+  | `{PROJECT_NAME}` | The name of the FINOS project, e.g. `Open Developer Platform` |
+  | `{PROJECT_SLUG}` | The GitHub repository name, e.g. `software-project-blueprint` |
+  | `{PROJECT_URL}` | The GitHub repository URL, e.g. `https://github.com/finos/software-project-blueprint` |
+  | `{PROJECT_MAILING_LIST}` | The project mailing list address, if any |
+  | `{YYYY}` | The year you started working on the code |
+  | `{CURRENT_YEAR}` | The current year |
+  | `{NAME_OF_COPYRIGHT_OWNER}` | The copyright owner of the code (typically you or your employer) |
+  | `{EMAIL_OF_COPYRIGHT_OWNER}` | The email address of the copyright owner of the code (if known) |
+  | `{OTHER_NOTICES}` | Additional NOTICE attributions required by dependencies, or remove this token |
+
+5. Open the `NOTICE` file and either remove `{OTHER_NOTICES}` or [add attributions if required by your code's dependencies](/docs/governance/Software-Projects/license-categories).
+6. Open `README.md` and complete the content as appropriate for your project.
+7. Open `MAINTAINERS.md` and add maintainer names, GitHub usernames, and, optionally, email addresses.
+8. Add the [Apache license header to all of your source files](https://www.apache.org/licenses/LICENSE-2.0.html#apply).
+9. (optional) Remove the `EASYCLA_CHANGEME.md`, `.node-version`, and `renovate.json` files, if not applicable to your project.
+10. (optional) Remove the `docs/` and `website/` folders + the `netlify.toml` file, if you do not need a project documentation website.
+11. Commit and push all of your changes.
+
+### Automated and continuous quality scanning
+FINOS provides some examples on https://github.com/finos/code-scanning to run continuous code scanning activities. More tools are also documented on the <a href={useBaseUrl('/docs/development-infrastructure/code-validation/intro')}>code validation page</a>.
+
+## Other collaboration use cases
+
+### Meeting Management
+FINOS project and SIG maintainers schedule their own Zoom meetings in the Linux Foundation [LFX Project Control Center (PCC) Meetings](https://docs.linuxfoundation.org/lfx/project-control-center/v2-latest-version/collaborations/meetings) tool. Email [help@finos.org](mailto:help@finos.org) to be granted PCC access to your project, then follow the [FINOS Meeting Procedures](/docs/governance/meeting-procedures). 
+
+### Mailing Lists (Google Groups)
+The Foundation provides mailing lists via the [Google Groups service](https://groups.google.com/a/finos.org/forum/#!myforums).  Email, as a lowest common denominator communication channel, is one of the best ways to reach the broadest cross-section of the community as possible.
+
+The FINOS mailing lists have a fairly low amount of collaboration, as GitHub.com Issues and Discussions are normally used instead; they're mostly used for announcements and notifications, to stay in touch with marketing, community and project updates.
+
+Checkout the [list of FINOS Google Groups](/docs/journey/engage).
+
+#### Email Best Practices
+
+- Keep it clean - many members of the community participate from their place of employment, so please use professional tone and language at all times.
+- Treat people with respect and consideration - specifically, ensure you're familiar with the [code of conduct](https://www.finos.org/code-of-conduct).
+- Be helpful - be willing to jump in to answer questions.  Even if you aren't 100% sure of the answer, posting your understanding can help unlock a deeper conversation (and if you're unsure, briefly saying so is a good idea).
+- Stay calm - the written word is always open to interpretation, so give people the benefit of the doubt and try not to let emotions get out of control.
+- Be patient - people with the appropriate skills might not be around the moment you ask a question.  New community members will be asking "beginner" questions that may have already been answered previously - be gentle and polite in helping them navigate the Foundation's content.
+- Minimize "walls of text" - avoid emails containing large blocks of text.  A worthy aspiration is to try to craft emails that fit on a smart phone screen without swiping.
+- Prefer public mailing lists for all email communication - chances are that someone else in the community will be interested in the topic you're discussing, and by leveraging public mailing lists you create the opportunity for them to find that content themselves.
+- Don't use email attachment - Many banks silently delete emails containing certain types of file attachment - notably executables (EXE files, etc.), source code files (JS files, etc.), and archive files (ZIP files, etc.).  For this reason we recommend using file attachments sparingly, limiting the use of archive files when sending attachments, and trying to stick to "safe" (content only) file formats such as PDF, Word, Powerpoint, etc.
+
+### Contacting the FINOS team
+If a project team wishes to contact the FINOS team the can reach out via the [help@finos.org](mailto:help@finos.org).
+
+### Private or Sensitive Information
+In the rare event that a project team wishes to discuss private or sensitive matters, they can reach out to individual FINOS team members or at [legal@finos.org](mailto:legal@finos.org). Please note that the FINOS team is also responsible for handling Community Code of Conduct violations, so please see that page for details on reporting such incidents.

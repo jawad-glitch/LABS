@@ -1,0 +1,96 @@
+import constants from '../../constants';
+import { openApp, OpenCommonConfig } from '../support/open-control';
+import { APIDocumentation } from '../support/apiDocuments';
+import { OpenControlImpl } from '../support/open-support';
+import { DesktopAgent, getAgent } from '@finos/fdc3';
+import { assert, expect } from 'chai';
+import { ControlContextType } from '../support/intent-support';
+import { appIdMatches } from '../../utils';
+
+const documentation = '\r\nDocumentation: ' + APIDocumentation + '\r\nCause:';
+
+const config: OpenCommonConfig = {
+  target: 'AppIdentifier',
+  targetMultiple: 'AppIdentifier',
+};
+
+export default async () => {
+  let control: OpenControlImpl;
+  let fdc3: DesktopAgent;
+
+  beforeEach(async () => {
+    fdc3 = await getAgent();
+    control = new OpenControlImpl(fdc3);
+  });
+
+  return describe('fdc3.open', () => {
+    afterEach(async function afterEach() {
+      await control.closeMockAppIfOpened(this.currentTest!.title);
+    });
+
+    const AOpensB3 = `(AOpensB3) Can open app B from app A with no context and ${config.targetMultiple} as config.target`;
+    it(AOpensB3, async () => {
+      const targetApp = control.createTargetAppIdentifier(openApp.b.id);
+      const result = control.contextReceiver('fdc3-conformance-opened');
+      await control.openMockApp(AOpensB3, targetApp);
+      await result;
+    });
+
+    const AFailsToOpenB3 = `(AFailsToOpenB3) Receive AppNotFound error when targeting non-existent app AppMetadata (${config.targetMultiple}) as config.target`;
+    it(AFailsToOpenB3, async () => {
+      try {
+        const targetApp = control.createTargetAppIdentifier('ThisAppDoesNotExist');
+        await control.openMockApp(AFailsToOpenB3, targetApp);
+        assert.fail('No error was not thrown', documentation);
+      } catch (ex) {
+        control.confirmAppNotFoundErrorReceived(ex);
+      }
+    });
+
+    const AOpensBWithContext3 = `(AOpensBWithContext3) Can open app B from app A with context and AppMetadata (${config.targetMultiple}) as target, app B adds generic listener`;
+    it(AOpensBWithContext3, async () => {
+      const context = { type: 'fdc3.instrument', name: 'context' };
+      const targetApp = control.createTargetAppIdentifier(openApp.b.id);
+      const receiver = control.contextReceiver(ControlContextType.CONTEXT_RECEIVED);
+      await control.openMockApp(AOpensBWithContext3, targetApp, context);
+      await control.validateReceivedContext(await receiver, 'fdc3.instrument');
+    });
+
+    const AOpensBWithSpecificContext = `(AOpensBWithSpecificContext) Can open app B from app A with context and ${config.targetMultiple} as config.target and app B is expecting context`;
+    it(AOpensBWithSpecificContext, async () => {
+      const context = { type: 'fdc3.instrument', name: 'context' };
+      const targetApp = control.createTargetAppIdentifier(openApp.b.id);
+      const receiver = control.contextReceiver(ControlContextType.CONTEXT_RECEIVED);
+      await control.openMockApp(AOpensBWithSpecificContext, targetApp, context);
+      await control.validateReceivedContext(await receiver, 'fdc3.instrument');
+    });
+
+    const AOpensBMultipleListen = `(AOpensBMultipleListen) Can open app B from app A with context and ${config.targetMultiple} as config.target but app B has multiple listeners added before the correct one`;
+    it(AOpensBMultipleListen, async () => {
+      const context = { type: 'fdc3.instrument', name: 'context' };
+      const targetApp = control.createTargetAppIdentifier(openApp.b.id);
+      const receiver = control.contextReceiver(ControlContextType.CONTEXT_RECEIVED);
+      await control.openMockApp(AOpensBMultipleListen, targetApp, context);
+      await receiver;
+      await control.validateReceivedContext(await receiver, 'fdc3.instrument');
+    });
+
+    const AOpensBWithWrongContext = `(AOpensBWithWrongContext) Received App timeout when opening app B with fake context, app b listening for different context`;
+    it(AOpensBWithWrongContext, async () => {
+      await control.addListenerAndFailIfReceived();
+      const targetApp = control.createTargetAppIdentifier(openApp.b.id);
+      await control.expectAppTimeoutErrorOnOpen(AOpensBWithWrongContext, targetApp);
+    }).timeout(constants.NoListenerTimeout + 2000);
+
+    const AOpensB4 =
+      '(AOpensB4) Can open app B from app A with appId as config.target, and receives the same appId and also contains InstanceId';
+    it(AOpensB4, async () => {
+      const result = control.contextReceiver('fdc3-conformance-opened');
+      const targetApp = { appId: openApp.b.id };
+      const instanceIdentifier = await control.openMockApp(AOpensB4, targetApp);
+      expect(appIdMatches(instanceIdentifier.appId, openApp.b.id)).to.equal(true);
+      expect(instanceIdentifier).to.have.property('instanceId');
+      await result;
+    });
+  });
+};

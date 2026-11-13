@@ -1,0 +1,30 @@
+/**
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright FINOS FDC3 contributors - see NOTICE file
+ */
+
+textarea {
+  width: 400px;
+  height: 150px;
+}
+
+select {
+  width: 150px;
+  height: 24px;
+}
+
+.ctxInput {
+  width: 241px;
+  height: 24px;
+}
+
+.urlInput {
+  width: 400px;
+  height: 24px;
+}
+
+.header {
+  width: 200px;
+  height: 40px;
+  font-weight: 700;
+}

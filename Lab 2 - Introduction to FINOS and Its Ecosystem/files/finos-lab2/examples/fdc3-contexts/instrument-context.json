@@ -1,0 +1,9 @@
+{
+  "type": "fdc3.instrument",
+  "name": "Apple Inc.",
+  "id": {
+    "ticker": "AAPL",
+    "ISIN": "US0378331005",
+    "CUSIP": "037833100"
+  }
+}

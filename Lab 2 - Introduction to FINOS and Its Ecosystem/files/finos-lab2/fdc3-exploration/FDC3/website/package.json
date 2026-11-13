@@ -1,0 +1,62 @@
+{
+  "scripts": {
+    "clean": "npx rimraf build .docusaurus",
+    "examples": "docusaurus-examples",
+    "prestart": "npm run copy-schemas && npm run copy-appd && npm run copy-conformance && cross-env NODE_ENV=development npm run replace-conformance-urls && node schema2Markdown.js",
+    "start": "docusaurus start",
+    "prebuild": "npm run parent-build && npm run copy-schemas && npm run copy-appd && npm run copy-workbench && npm run copy-conformance && npm run replace-conformance-urls && npm run copy-reference-ui && node schema2Markdown.js && npm run copy-workbench && npm run copy-explained",
+    "build": "docusaurus build",
+    "build-temp": "npm run copy-schemas && npm run copy-appd && npm run copy-workbench && npm run copy-reference-ui && node schema2Markdown.js && npm run copy-workbench && npm run copy-explained && docusaurus build",
+    "parent-build": "cd .. && npm install && npm run build",
+    "copy-schemas": "del-cli static/schemas/next/*/ && cpy \"../packages/fdc3-schema/schemas/**\" static/schemas/next/ && cpy \"../packages/fdc3-context/schemas/context\" static/schemas/next/",
+    "copy-appd": "cpy \"../packages/fdc3-standard/src/app-directory/specification/*.schema.json\" \"static/schemas/next/\"",
+    "copy-workbench": "del-cli static/toolbox/fdc3-workbench && cpy \"../toolbox/fdc3-workbench/build/**\" static/toolbox/fdc3-workbench",
+    "copy-reference-ui": "del-cli static/toolbox/fdc3-reference-ui && cpy \"../toolbox/fdc3-for-web/reference-ui/dist/**\" static/toolbox/fdc3-reference-ui",
+    "copy-explained": "del-cli static/toolbox/fdc3-explained && cpy \"../toolbox/fdc3-explained\" ./static/toolbox/",
+    "copy-conformance": "del-cli static/toolbox/fdc3-conformance && cpy \"../toolbox/fdc3-conformance/dist/**\" static/toolbox/fdc3-conformance",
+    "replace-conformance-urls": "node replaceConformanceUrls.js",
+    "version": "cross-env VERSION=3.0 npm run version-run",
+    "version-run": "cross-env-shell \"echo Creating version: \\$VERSION... && npm run prebuild && npm run docusaurus docs:version $VERSION && npm run version:docs-schema && npm run version:docs-replace && npm run version:appd-route-replace && npm run version:schemas && npm run version:schemas-replace && npm run version:appd-replace && npm run version:conformance && npm run version:conformance-replace-version && npm run version:conformance-replace-path\"",
+    "version:docs-schema": "cross-env replace-in-files --string=/schemas/next --replacement=/schemas/$VERSION versioned_docs/version-$VERSION/*.md versioned_docs/version-$VERSION/*/*.md versioned_docs/version-$VERSION/*/*/*.md versioned_docs/version-$VERSION/*/*/*/*.md",
+    "version:docs-replace": "cross-env replace-in-files --string='(next)' --replacement='($VERSION)' versioned_docs/version-$VERSION/*.md versioned_docs/version-$VERSION/*/*.md versioned_docs/version-$VERSION/*/*/*.md versioned_docs/version-$VERSION/*/*/*/*.md",
+    "version:appd-route-replace": "cross-env replace-in-files --string=/docs/next/app-directory/api --replacement=/docs/$VERSION/app-directory/api versioned_docs/version-$VERSION/*.md versioned_docs/version-$VERSION/*/*.md versioned_docs/version-$VERSION/*/*/*.md versioned_docs/version-$VERSION/*/*/*/*.md versioned_sidebars/version-$VERSION-sidebars.json",
+    "version:schemas": "cross-env cpy . ../$VERSION --cwd=static/schemas/next",
+    "version:schemas-replace": "cross-env replace-in-files --string=/schemas/next --replacement=/schemas/$VERSION static/schemas/$VERSION/**/*.schema.json",
+    "version:appd-replace": "cross-env replace-in-files --string=\"\"next\"\" --replacement=\"\"$VERSION\"\" static/schemas/$VERSION/appd.schema.json",
+    "version:conformance": "cross-env cpy . \"../$VERSION/fdc3-conformance\" --cwd=\"static/toolbox/fdc3-conformance\"",
+    "version:conformance-replace-version": "cross-env replace-in-files --string=__FDC3_VERSION__ --replacement=$VERSION static/toolbox/$VERSION/fdc3-conformance/lib/fdc3-compliance.js",
+    "version:conformance-replace-path": "cross-env replace-in-files --string=\"fdc3.finos.org/toolbox/fdc3-conformance/\" --replacement=\"fdc3.finos.org/toolbox/$VERSION/fdc3-conformance/\" static/toolbox/$VERSION/fdc3-conformance/directories/website-conformance.json",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "docusaurus": "docusaurus"
+  },
+  "devDependencies": {
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/plugin-client-redirects": "^3.10.2",
+    "@docusaurus/preset-classic": "^3.10.2",
+    "@docusaurus/theme-mermaid": "^3.10.2",
+    "@mermaid-js/layout-elk": "^0.2.3",
+    "clsx": "^2.1.1",
+    "cpy-cli": "7.0.0",
+    "cross-env": "^10.1.0",
+    "del-cli": "8.0.1",
+    "fs-extra": "^11.4.1",
+    "js-yaml": "^5.5.0",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "replace-in-files-cli": "4.0.0",
+    "replace-json-property": "1.9.0",
+    "redocusaurus": "^2.2.1",
+    "rimraf": "6.1.4"
+  },
+  "overrides": {
+    "@mermaid-js/layout-elk": "^0.2.3",
+    "serialize-javascript": "^7.0.5",
+    "webpack": "~5.105.0",
+    "@docusaurus/theme-mermaid": {
+      "@mermaid-js/layout-elk": "^0.2.3"
+    }
+  },
+  "allowScripts": {}
+}

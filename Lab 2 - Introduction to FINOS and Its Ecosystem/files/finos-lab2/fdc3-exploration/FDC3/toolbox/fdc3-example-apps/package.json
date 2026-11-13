@@ -1,0 +1,63 @@
+{
+  "name": "@finos/fdc3-example-apps",
+  "version": "3.0.0",
+  "description": "FDC3 example web applications and a local App Directory server for Desktop Agent demos",
+  "author": "Fintech Open Source Foundation (FINOS)",
+  "homepage": "https://fdc3.finos.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finos/FDC3.git",
+    "directory": "toolbox/fdc3-example-apps"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "fdc3-example-apps": "./bin/run.mjs"
+  },
+  "files": [
+    "bin",
+    "main.ts",
+    "front-end-apps",
+    "server-apps",
+    "common",
+    "directory/properties.json",
+    "directory/static"
+  ],
+  "scripts": {
+    "clean": "rimraf --glob \"directory/static/generated\" \"front-end-apps/*/.vite\" \"server-apps/*/.vite\" \"directory/.vite\"",
+    "build": "tsc",
+    "dev": "tsx main.ts",
+    "start": "tsx main.ts",
+    "prepack": "npm run clean"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^4.12.0",
+    "@finos/fdc3": "3.0.0",
+    "@finos/fdc3-security": "3.0.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.0",
+    "jose": "^6.2.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "ws": "^8.21.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "rimraf": "^6.0.1",
+    "vite": "^8.3.4"
+  }
+}

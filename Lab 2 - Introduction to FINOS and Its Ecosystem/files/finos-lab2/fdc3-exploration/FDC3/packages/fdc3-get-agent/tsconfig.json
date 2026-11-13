@@ -1,0 +1,32 @@
+{
+    "extends": "../../tsconfig.root.json",
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "rootDirs": [
+            "src",
+            "test"
+        ],
+        "outDir": "dist",
+    },
+    "include": [
+        "src"
+    ],
+    "references": [
+        {
+            "path": "../fdc3-agent-proxy"
+        },
+        {
+            "path": "../fdc3-standard"
+        },
+        {
+            "path": "../fdc3-schema"
+        },
+        {
+            "path": "../fdc3-context"
+        },
+        {
+            "path": "../../toolbox/fdc3-for-web/fdc3-web-impl"
+        }
+    ]
+}

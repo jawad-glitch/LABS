@@ -1,0 +1,187 @@
+version: '1.0'
+stages:
+  - setup
+  - build
+  - distribute
+  - finalise
+steps:
+
+  main_clone:
+    title: Cloning main repository...
+    stage: 'setup'
+    type: git-clone
+    git: github
+    repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
+    revision: "${{CF_REVISION}}"
+
+  CheckRelease:
+    stage: 'setup'
+    image: alpine
+    commands:
+      - if [[ '${{CF_RELEASE_TAG}}' == *'CF_RELEASE_TAG'* ]]; then cf_export IS_RELEASE=false; else cf_export IS_RELEASE=true; fi
+
+  MvnSettings:
+    stage: 'setup'
+    title: Setup Maven settings
+    image: alpine/git
+    commands:
+      - cf_export MVN_CLI_OPT="-Dmaven.repo.local=\"${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}_m2/repository\" -s ${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}/settings.xml"
+
+  SetProperties:
+    stage: 'setup'
+    title: Setup build
+    image: alpine
+    commands:
+      - cf_export MVN_DEPLOY_FLAGS="${{MVN_CLI_OPT}} -Denv.CI_DEPLOY_PASSWORD=${{CI_DEPLOY_PASSWORD}} -Denv.CI_DEPLOY_USERNAME=${{CI_DEPLOY_USERNAME}} -Denv.GPG_KEYNAME=${{GPG_KEYNAME}} -Denv.GPG_PASSPHRASE=${{GPG_PASSPHRASE}}" --mask
+      - cf_export GPG_IMPORT_COMMAND="cat <(echo -e '${{GPG_PRIVATE_KEY}}') | gpg --batch --import" --mask
+      - cf_export GEN_DEPLOY_POM_SCRIPT="${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}/rosetta-source/src/main/resources/build-resources/create-deploy-pom.sh"
+      - cf_export MVN_DEPLOY_FILE_COMMAND="mvn ${{MVN_CLI_OPT}} deploy -Prelease -Dcheckstyle.skip=true -Dmaven.deploy.skip=true"
+
+  ReleaseProperties:
+    stage: 'setup'
+    title: Setup release build
+    image: alpine/git
+    when:
+      condition:
+        all:
+          releaseNameNotDefined: "${{IS_RELEASE}} == true"
+    commands:
+      - cf_export RELEASE_NAME=${{CF_RELEASE_TAG}}
+      - cf_export MAVEN_BUILD_PROFILES="typescript,full,release,excel,json-schema"
+
+  SnapshotProperties:
+    stage: 'setup'
+    title: Setup snapshot build
+    image: alpine/git
+    when:
+      condition:
+        all:
+          releaseNameNotDefined: "${{IS_RELEASE}} == false"
+    commands:
+      - cf_export RELEASE_NAME=${{GLOBAL_RELEASE_VERSION}}.${{CF_BRANCH_TAG_NORMALIZED}}-SNAPSHOT
+      - cf_export MAVEN_BUILD_PROFILES="typescript,release,excel,json-schema"
+
+  # Exports GCP_ACCESS_TOKEN, which the Artifact Registry servers in settings.xml
+  # use as their Basic auth password, by workload identity federation rather than
+  # a service account key. Step definition lives in the REGnosys/scripts repo, at
+  # codefresh/step-types/gcp-oidc-auth.yml.
+  #
+  # Last of the setup steps on purpose: the token lasts an hour from here, and
+  # everything that spends it is below.
+  Authenticate:
+    stage: 'setup'
+    title: Federate into GCP
+    type: regnosysops/gcp-oidc-auth:1.1.0
+    arguments:
+      WIF_PROVIDER: ${{GCP_WIF_PROVIDER_CODEFRESH_AUDIENCE}}
+      SERVICE_ACCOUNT: ${{GCP_CODEFRESH_SERVICE_ACCOUNT}}
+
+  Build:
+    stage: 'build'
+    title: Maven build
+    fail_fast: false
+    image: maven:3.9.11-eclipse-temurin-21-alpine
+    working_directory: ./
+    commands:
+      - bash -c "${{GPG_IMPORT_COMMAND}}"
+      - mvn ${{MVN_CLI_OPT}} versions:set -DnewVersion=${{RELEASE_NAME}} versions:update-child-modules -DallowSnapshots=true
+      - MAVEN_OPTS="-Xmx5g -XX:+UseG1GC" NORMALISE_SAMPLE_VERSION=true mvn ${{MVN_DEPLOY_FLAGS}} clean install org.sonatype.central:central-publishing-maven-plugin:0.7.0:publish -P "${{MAVEN_BUILD_PROFILES}}"
+
+  FailBuildPipeline:
+    stage: 'build'
+    title: Fail pipeline if the Maven build failed
+    image: codefresh/cli
+    when:
+      condition:
+        any:
+          mvnBuildFailure: steps.Build.result == 'failure'
+    commands:
+      - exit 1
+
+  BuildPython:
+    stage: 'build'
+    title: Python build
+    image: maven:3.9.11-eclipse-temurin-21
+    working_directory: ./
+    shell: bash
+    commands:
+      - apt-get update -qq && apt-get install -y --no-install-recommends python3 python3-pip python3-venv git
+      - python/build-cdm-python.sh ${{RELEASE_NAME}}
+
+  DeployTypeScript:
+    stage: 'build'
+    title: TypeScript deploy
+    fail_fast: false
+    image: maven:3.9.11-eclipse-temurin-21-alpine
+    working_directory: ./rosetta-source/
+    shell: bash
+    commands:
+      - apk add --no-cache zip
+      - bash -c "${{GPG_IMPORT_COMMAND}}"
+      - cd target/classes/cdm
+      - zip -r cdm-typescript-${{RELEASE_NAME}}.zip typescript
+      - ${{GEN_DEPLOY_POM_SCRIPT}} cdm-typescript ${{RELEASE_NAME}} zip
+      - ${{MVN_DEPLOY_FILE_COMMAND}}
+
+  DeployPython:
+    stage: 'build'
+    title: Python deploy to PyPI
+    fail_fast: false
+    image: python:3.12-slim
+    working_directory: ./rosetta-source/src/generated/python
+    when:
+      condition:
+        all:
+          isRelease: "${{IS_RELEASE}} == true"
+          isNotDevVersion: 'match("${{RELEASE_NAME}}", "dev", true) == false'
+          pythonBuildSuccess: steps.BuildPython.result == 'success'
+    environment:
+      - TWINE_PASSWORD=${{PYPI_TOKEN}}
+    commands:
+      - pip install twine
+      - twine upload --verbose --non-interactive --skip-existing --username __token__ --password $TWINE_PASSWORD *.whl
+
+  DeployExcel:
+    stage: 'build'
+    title: Excel deploy
+    fail_fast: false
+    image: maven:3.9.11-eclipse-temurin-21-alpine
+    working_directory: ./rosetta-source/
+    shell: bash
+    commands:
+      - bash -c "${{GPG_IMPORT_COMMAND}}"
+      - cd src/generated/excel
+      - mv model.xlsx encoded.model.xlsx
+      - base64 -d encoded.model.xlsx > cdm-excel-${{RELEASE_NAME}}.xlsx
+      - rm encoded.model.xlsx
+      - ${{GEN_DEPLOY_POM_SCRIPT}} cdm-excel ${{RELEASE_NAME}} xlsx
+      - ${{MVN_DEPLOY_FILE_COMMAND}}
+
+  DeployJsonSchema:
+    stage: 'build'
+    title: JSON Schema deploy
+    fail_fast: false
+    image: maven:3.9.11-eclipse-temurin-21-alpine
+    working_directory: ./rosetta-source/
+    shell: bash
+    commands:
+      - apk add --no-cache zip
+      - bash -c "${{GPG_IMPORT_COMMAND}}"
+      - cd src/generated
+      - zip -r cdm-json-schema-${{RELEASE_NAME}}.zip jsonschema
+      - ${{GEN_DEPLOY_POM_SCRIPT}} cdm-json-schema ${{RELEASE_NAME}} zip
+      - ${{MVN_DEPLOY_FILE_COMMAND}}
+
+  FailDeployPipeline:
+    stage: 'finalise'
+    title: Fail pipeline if the Maven deploy failed
+    image: codefresh/cli
+    when:
+      condition:
+        any:
+          typeScriptDeployFailure: steps.DeployTypeScript.result == 'failure'
+          pythonDeployFailure: steps.DeployPython.result == 'failure'
+          excelDeployFailure: steps.DeployExcel.result == 'failure'
+          jsonSchemaDeployFailure: steps.DeployJsonSchema.result == 'failure'
+    commands:
+      - exit 1

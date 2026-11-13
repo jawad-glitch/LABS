@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Trading App</title></head>
+<body><h1>Trading Application</h1><p id="status">Connecting...</p>
+<button id="place">Place demo order</button><pre id="events"></pre>
+<script src="/fdc3-client.js"></script><script>
+const out = x => document.getElementById("events").textContent += JSON.stringify(x) + "\n";
+const client = new FDC3Client();
+client.ready.then(async () => {
+ document.getElementById("status").textContent = "Connected: " + client.id;
+ await client.joinUserChannel("market-data");
+ await client.addIntentListener("PlaceOrder", context => out({orderReceived:context}));
+});
+document.getElementById("place").onclick = () => client.raiseIntent("PlaceOrder", {
+ type:"fdc3.order", id:"order-001", instrument:{ticker:"AAPL",MIC:"XNAS"},
+ side:"BUY", quantity:10, orderType:"MARKET"
+}).then(out).catch(e=>out(e.message));
+</script></body></html>

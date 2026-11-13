@@ -1,0 +1,25 @@
+{
+  "name": "fdc3-lab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --runInBand",
+    "agent": "node agent/desktop-agent.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@finos/fdc3": "^2.0.3",
+    "express": "^5.3.0",
+    "ws": "^8.23.0"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}

@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Research App</title></head>
+<body><h1>Research Application</h1><p id="status">Connecting to Desktop Agent...</p>
+<button id="publish">Publish selected instrument</button><pre id="events"></pre>
+<script src="/fdc3-client.js"></script><script>
+const log = x => document.getElementById("events").textContent += JSON.stringify(x) + "\n";
+const client = new FDC3Client();
+client.ready.then(async () => {
+ document.getElementById("status").textContent = "Connected: " + client.id;
+ await client.joinUserChannel("market-data");
+ await client.addContextListener("fdc3.instrument", x => log({receivedContext:x}));
+});
+document.getElementById("publish").onclick = () => client.broadcast({
+ type:"fdc3.instrument", id:{ticker:"AAPL",MIC:"XNAS"}, name:"Apple Inc."
+}).then(log).catch(e=>log(e.message));
+</script></body></html>

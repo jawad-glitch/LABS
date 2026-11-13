@@ -1,0 +1,5 @@
+Repository: https://github.com/finos/legend
+Base branch: master
+Feature branch: improve-documentation
+Remote push: local bare-repository simulation
+Real GitHub pull request: not submitted

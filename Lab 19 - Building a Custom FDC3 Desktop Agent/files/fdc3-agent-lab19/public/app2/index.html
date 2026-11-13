@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 App 2 - Chart Viewer</title>
+<style>
+body{font:15px Arial;background:#101827;color:#e7edf5;margin:25px}
+h1{color:#76c7ff}section{background:#1c293b;padding:16px;margin:15px 0;border-radius:9px}
+button,select{padding:10px;margin:5px;border-radius:5px;cursor:pointer}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#101827;padding:12px}
+.status{color:#8de0a3}.error{color:#ff9999}
+</style>
+</head>
+<body>
+<h1>FDC3 App 2 — Chart Viewer</h1>
+<p id="status">Connecting to Desktop Agent...</p>
+<section>
+<h2>Join a User Channel</h2>
+<select id="channel"></select>
+<button id="join">Join Channel</button>
+<p id="membership">No channel joined</p>
+</section>
+<section>
+<h2>Received Contexts</h2>
+<pre id="contexts">No contexts received yet.</pre>
+</section>
+<section>
+<h2>Received Intents</h2>
+<pre id="intents">No intents received yet.</pre>
+</section>
+<section>
+<h2>Connection Messages</h2>
+<pre id="messages">Waiting for messages...</pre>
+</section>
+<script>
+const wsUrl=`${location.protocol==="https:"?"wss":"ws"}://${location.host}`;
+const ws=new WebSocket(wsUrl);
+const statusEl=document.getElementById("status");
+let registered=false;
+let contextCount=0;
+function show(message){
+  const box=document.getElementById("messages");
+  box.textContent=JSON.stringify(message,null,2)+"\n\n"+(box.textContent==="Waiting for messages..."?"":box.textContent);
+}
+function send(message){
+  if(ws.readyState!==WebSocket.OPEN||!registered){
+    statusEl.textContent="Agent connection is not ready.";
+    statusEl.className="error";
+    return;
+  }
+  ws.send(JSON.stringify(message));
+}
+async function loadChannels(){
+  const response=await fetch("/api/channels");
+  const channels=await response.json();
+  document.getElementById("channel").innerHTML=channels.map(c=>
+    `<option value="${c.id}">${c.displayMetadata.name}</option>`).join("");
+}
+ws.onopen=()=>{statusEl.textContent="WebSocket connected; registering...";};
+ws.onmessage=event=>{
+  const message=JSON.parse(event.data);
+  show(message);
+  if(message.type==="registered"){
+    registered=true;
+    statusEl.textContent="Registered as ChartViewer — ViewChart handler active";
+    statusEl.className="status";
+  }
+  if(message.type==="channelJoined"){
+    document.getElementById("membership").textContent="Joined: "+message.channelId;
+  }
+  if(message.type==="context"){
+    contextCount++;
+    const box=document.getElementById("contexts");
+    box.textContent=`Received context #${contextCount}\n`+JSON.stringify(message,null,2)+"\n\n"+(box.textContent==="No contexts received yet."?"":box.textContent);
+  }
+  if(message.type==="intent"&&message.intent==="ViewChart"){
+    document.getElementById("intents").textContent=
+      `ViewChart intent received successfully\n`+JSON.stringify(message,null,2);
+  }
+  if(message.type==="error"){
+    statusEl.textContent="Agent error: "+message.message;
+    statusEl.className="error";
+  }
+};
+ws.onclose=()=>{registered=false;statusEl.textContent="Disconnected from agent";statusEl.className="error";};
+ws.onerror=()=>{statusEl.textContent="WebSocket connection error";statusEl.className="error";};
+
+loadChannels().catch(e=>statusEl.textContent="Could not load channels: "+e.message);
+document.getElementById("join").onclick=()=>{
+  send({type:"joinChannel",channelId:document.getElementById("channel").value});
+};
+ws.addEventListener("open",()=>{
+  ws.send(JSON.stringify({type:"register",appId:"ChartViewer",intents:["ViewChart"]}));
+});
+</script>
+</body>
+</html>

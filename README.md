@@ -172,3 +172,4 @@
 | [Lab 16 - Monitoring and Logging FDC3 Interactions](Lab%2016%20-%20Monitoring%20and%20Logging%20FDC3%20Interactions/PROOF.md) | no core-check file | 2026-11-13 14:13 |
 | [Lab 17 - FDC3 API with External Systems REST API](Lab%2017%20-%20FDC3%20API%20with%20External%20Systems%20REST%20API/PROOF.md) | no core-check file | 2026-11-13 14:21 |
 | [Lab 18 - Testing FDC3 Integration in Real-Time](Lab%2018%20-%20Testing%20FDC3%20Integration%20in%20Real-Time/PROOF.md) | no core-check file | 2026-11-13 14:32 |
+| [Lab 19 - Building a Custom FDC3 Desktop Agent](Lab%2019%20-%20Building%20a%20Custom%20FDC3%20Desktop%20Agent/PROOF.md) | no core-check file | 2026-11-13 14:40 |

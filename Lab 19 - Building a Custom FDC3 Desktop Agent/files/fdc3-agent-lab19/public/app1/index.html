@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 App 1 - Trading</title>
+<style>
+body{font:15px Arial;background:#101827;color:#e7edf5;margin:25px}
+h1{color:#76c7ff}section{background:#1c293b;padding:16px;margin:15px 0;border-radius:9px}
+button,select{padding:10px;margin:5px;border-radius:5px;cursor:pointer}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#101827;padding:12px}
+.status{color:#8de0a3}.error{color:#ff9999}
+</style>
+</head>
+<body>
+<h1>FDC3 App 1 — Trading</h1>
+<p id="status">Connecting to Desktop Agent...</p>
+<section>
+<h2>Join a User Channel</h2>
+<select id="channel"></select>
+<button id="join">Join Channel</button>
+<p id="membership">No channel joined</p>
+</section>
+<section>
+<h2>Broadcast Instrument Context</h2>
+<p>Context: <code>fdc3.instrument</code> — ticker: AAPL</p>
+<button id="broadcast">Broadcast AAPL Context</button>
+<p id="broadcastResult">No broadcast sent yet.</p>
+</section>
+<section>
+<h2>Raise Intent</h2>
+<button id="intent">Raise ViewChart for AAPL</button>
+<p id="intentResult">No intent raised yet.</p>
+</section>
+<section>
+<h2>Agent Messages</h2>
+<pre id="messages">Waiting for messages...</pre>
+</section>
+<script>
+const wsUrl=`${location.protocol==="https:"?"wss":"ws"}://${location.host}`;
+const ws=new WebSocket(wsUrl);
+const statusEl=document.getElementById("status");
+const messages=document.getElementById("messages");
+let instanceId=null;
+let registered=false;
+let joinedChannel=null;
+
+function show(message){
+  const line=JSON.stringify(message,null,2);
+  messages.textContent=line+"\n\n"+(messages.textContent==="Waiting for messages..."?"":messages.textContent);
+}
+function send(message){
+  if(ws.readyState!==WebSocket.OPEN||!registered){
+    statusEl.textContent="Agent connection is not ready.";
+    statusEl.className="error";
+    return false;
+  }
+  ws.send(JSON.stringify(message));
+  return true;
+}
+async function loadChannels(){
+  const response=await fetch("/api/channels");
+  const channels=await response.json();
+  document.getElementById("channel").innerHTML=channels.map(c=>
+    `<option value="${c.id}">${c.displayMetadata.name}</option>`).join("");
+}
+ws.onopen=()=>{statusEl.textContent="WebSocket connected; registering...";};
+ws.onmessage=event=>{
+  const message=JSON.parse(event.data);
+  show(message);
+  if(message.type==="connection")instanceId=message.instanceId;
+  if(message.type==="registered"){
+    registered=true;
+    statusEl.textContent="Registered as TradingApp — "+message.instanceId;
+    statusEl.className="status";
+  }
+  if(message.type==="broadcastComplete"){
+    document.getElementById("broadcastResult").textContent=
+      `Broadcast completed on ${message.channelId}; recipients: ${message.recipientCount}`;
+  }
+  if(message.type==="intentResolution"){
+    document.getElementById("intentResult").textContent=
+      `intentResolution: ${message.message}`;
+  }
+  if(message.type==="intentError"){
+    document.getElementById("intentResult").textContent=
+      `intentError: ${message.message}`;
+    document.getElementById("intentResult").className="error";
+  }
+  if(message.type==="channelJoined"){
+    joinedChannel=message.channelId;
+    document.getElementById("membership").textContent="Joined: "+joinedChannel;
+  }
+  if(message.type==="error"){
+    statusEl.textContent="Agent error: "+message.message;
+    statusEl.className="error";
+  }
+};
+ws.onclose=()=>{registered=false;statusEl.textContent="Disconnected from agent";statusEl.className="error";};
+ws.onerror=()=>{statusEl.textContent="WebSocket connection error";statusEl.className="error";};
+
+loadChannels().catch(e=>statusEl.textContent="Could not load channels: "+e.message);
+document.getElementById("join").onclick=()=>{
+  send({type:"joinChannel",channelId:document.getElementById("channel").value});
+};
+document.getElementById("broadcast").onclick=()=>{
+  send({
+    type:"broadcastContext",
+    channelId:joinedChannel||document.getElementById("channel").value,
+    context:{type:"fdc3.instrument",name:"Apple Inc.",id:{ticker:"AAPL"}}
+  });
+};
+document.getElementById("intent").onclick=()=>{
+  send({
+    type:"raiseIntent",
+    intent:"ViewChart",
+    context:{type:"fdc3.instrument",name:"Apple Inc.",id:{ticker:"AAPL"}}
+  });
+};
+ws.addEventListener("open",()=>{
+  ws.send(JSON.stringify({type:"register",appId:"TradingApp",intents:[]}));
+});
+</script>
+</body>
+</html>

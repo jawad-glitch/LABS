@@ -1,0 +1,31 @@
+{
+  "security": {
+    "jwtSecret": "GENERATE-A-NEW-SECRET-LOCALLY",
+    "tokenExpiry": "1h"
+  },
+  "permissions": {
+    "intents": {
+      "ViewChart": {
+        "minimumLevel": 25,
+        "allowedRoles": ["viewer", "trader", "financial_analyst", "admin"]
+      },
+      "ViewQuote": {
+        "minimumLevel": 25,
+        "allowedRoles": ["viewer", "trader", "financial_analyst", "admin"]
+      },
+      "StartTrade": {
+        "minimumLevel": 50,
+        "allowedRoles": ["trader", "admin"]
+      },
+      "ViewAnalysis": {
+        "minimumLevel": 75,
+        "allowedRoles": ["financial_analyst", "admin"]
+      },
+      "ViewPortfolio": {
+        "minimumLevel": 75,
+        "allowedRoles": ["financial_analyst", "admin"]
+      }
+    },
+    "maxTradeAmount": 1000000
+  }
+}

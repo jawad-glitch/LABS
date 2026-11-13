@@ -182,3 +182,4 @@
 | [Lab 10 - Developing with Compliance in Mind](Lab%2010%20-%20Developing%20with%20Compliance%20in%20Mind/PROOF.md) | no core-check file | 2026-11-13 20:34 |
 | [Lab 11 - Secure and Compliant CI-CD for Open Source](Lab%2011%20-%20Secure%20and%20Compliant%20CI-CD%20for%20Open%20Source/PROOF.md) | no core-check file | 2026-11-13 20:39 |
 | [Lab 12 - Auditing Open Source Projects for Compliance](Lab%2012%20-%20Auditing%20Open%20Source%20Projects%20for%20Compliance/PROOF.md) | no core-check file | 2026-11-13 20:44 |
+| [Lab 13 - Contribution Best Practices in Open Source](Lab%2013%20-%20Contribution%20Best%20Practices%20in%20Open%20Source/PROOF.md) | no core-check file | 2026-11-13 20:50 |

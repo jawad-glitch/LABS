@@ -169,3 +169,4 @@
 | [Lab 13 - FDC3 Event Handling and Async Actions](Lab%2013%20-%20FDC3%20Event%20Handling%20and%20Async%20Actions/PROOF.md) | no core-check file | 2026-11-13 13:47 |
 | [Lab 14 - Secure Intent Handling with Permissions](Lab%2014%20-%20Secure%20Intent%20Handling%20with%20Permissions/PROOF.md) | no core-check file | 2026-11-13 13:53 |
 | [Lab 15 - Multi-App Workflow Coordination with FDC3](Lab%2015%20-%20Multi-App%20Workflow%20Coordination%20with%20FDC3/PROOF.md) | no core-check file | 2026-11-13 14:03 |
+| [Lab 16 - Monitoring and Logging FDC3 Interactions](Lab%2016%20-%20Monitoring%20and%20Logging%20FDC3%20Interactions/PROOF.md) | no core-check file | 2026-11-13 14:13 |

@@ -1,0 +1,16 @@
+FDC3 Fault Report
+=================
+Generated: 2026-11-13T14:13:31.508Z
+Failed routing events: 2
+
+Failure 1
+timestamp: 2026-11-13T14:12:33.548Z
+intent: UnregisteredIntent
+source_app_id: portfolio-broadcaster
+explanation: No registered handler was found for intent UnregisteredIntent, according to the Desktop Agent routing-failure record.
+
+Failure 2
+timestamp: 2026-11-13T14:13:14.098Z
+intent: AlsoAlsoAlsoUnregisteredIntent
+source_app_id: portfolio-broadcaster
+explanation: No registered handler was found for intent AlsoAlsoAlsoUnregisteredIntent, according to the Desktop Agent routing-failure record.

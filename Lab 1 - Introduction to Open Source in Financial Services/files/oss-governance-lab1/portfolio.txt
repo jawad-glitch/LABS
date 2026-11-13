@@ -1,0 +1,8 @@
+# FINOS projects
+finos/perspective
+finos/legend
+# Apache fintech infrastructure
+apache/kafka
+apache/flink
+# Reference: strong copyleft example
+torvalds/linux

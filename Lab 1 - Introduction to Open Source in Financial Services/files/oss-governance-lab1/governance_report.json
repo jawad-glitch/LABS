@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-11-13T14:54:58.028328+00:00",
+  "records": [
+    {
+      "repo_slug": "finos/perspective",
+      "assessed_at": "2026-11-13T14:54:51.526645+00:00",
+      "license_record": {
+        "repo_slug": "finos/perspective",
+        "spdx_id": "Apache-2.0",
+        "license_name": "Apache License 2.0",
+        "risk_tier": "PERMISSIVE",
+        "requires_legal_review": false,
+        "stars": 11421,
+        "primary_language": "Rust"
+      },
+      "compliance_report": {
+        "repo_slug": "finos/perspective",
+        "total_score": 100,
+        "category_scores": {
+          "License": 20,
+          "Documentation": 20,
+          "Community Health": 20,
+          "CI/CD Maturity": 20,
+          "Security Posture": 20
+        },
+        "missing_categories": [],
+        "finos_tier": "MATURE"
+      },
+      "overall_status": "APPROVED"
+    },
+    {
+      "repo_slug": "finos/legend",
+      "assessed_at": "2026-11-13T14:54:53.177373+00:00",
+      "license_record": {
+        "repo_slug": "finos/legend",
+        "spdx_id": "Apache-2.0",
+        "license_name": "Apache License 2.0",
+        "risk_tier": "PERMISSIVE",
+        "requires_legal_review": false,
+        "stars": 1554,
+        "primary_language": "HTML"
+      },
+      "compliance_report": {
+        "repo_slug": "finos/legend",
+        "total_score": 100,
+        "category_scores": {
+          "License": 20,
+          "Documentation": 20,
+          "Community Health": 20,
+          "CI/CD Maturity": 20,
+          "Security Posture": 20
+        },
+        "missing_categories": [],
+        "finos_tier": "MATURE"
+      },
+      "overall_status": "APPROVED"
+    },
+    {
+      "repo_slug": "apache/kafka",
+      "assessed_at": "2026-11-13T14:54:55.192712+00:00",
+      "license_record": {
+        "repo_slug": "apache/kafka",
+        "spdx_id": "Apache-2.0",
+        "license_name": "Apache License 2.0",
+        "risk_tier": "PERMISSIVE",
+        "requires_legal_review": false,
+        "stars": 34214,
+        "primary_language": "Java"
+      },
+      "compliance_report": {
+        "repo_slug": "apache/kafka",
+        "total_score": 100,
+        "category_scores": {
+          "License": 20,
+          "Documentation": 20,
+          "Community Health": 20,
+          "CI/CD Maturity": 20,
+          "Security Posture": 20
+        },
+        "missing_categories": [],
+        "finos_tier": "MATURE"
+      },
+      "overall_status": "APPROVED"
+    },
+    {
+      "repo_slug": "apache/flink",
+      "assessed_at": "2026-11-13T14:54:56.767219+00:00",
+      "license_record": {
+        "repo_slug": "apache/flink",
+        "spdx_id": "Apache-2.0",
+        "license_name": "Apache License 2.0",
+        "risk_tier": "PERMISSIVE",
+        "requires_legal_review": false,
+        "stars": 26469,
+        "primary_language": "Java"
+      },
+      "compliance_report": {
+        "repo_slug": "apache/flink",
+        "total_score": 60,
+        "category_scores": {
+          "License": 20,
+          "Documentation": 0,
+          "Community Health": 20,
+          "CI/CD Maturity": 20,
+          "Security Posture": 0
+        },
+        "missing_categories": [
+          "Documentation",
+          "Security Posture"
+        ],
+        "finos_tier": "ACTIVE"
+      },
+      "overall_status": "APPROVED"
+    },
+    {
+      "repo_slug": "torvalds/linux",
+      "assessed_at": "2026-11-13T14:54:58.028283+00:00",
+      "license_record": {
+        "repo_slug": "torvalds/linux",
+        "spdx_id": "NOASSERTION",
+        "license_name": "Other",
+        "risk_tier": "UNKNOWN",
+        "requires_legal_review": true,
+        "stars": 255573,
+        "primary_language": "C"
+      },
+      "compliance_report": {
+        "repo_slug": "torvalds/linux",
+        "total_score": 20,
+        "category_scores": {
+          "License": 0,
+          "Documentation": 0,
+          "Community Health": 20,
+          "CI/CD Maturity": 0,
+          "Security Posture": 0
+        },
+        "missing_categories": [
+          "License",
+          "Documentation",
+          "CI/CD Maturity",
+          "Security Posture"
+        ],
+        "finos_tier": "INCUBATING"
+      },
+      "overall_status": "CONDITIONAL"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stock Quote</title>
+<style>
+body{font:15px Arial;background:#101827;color:#e8eef8;padding:18px}
+.card{background:#1e293b;padding:16px;border-radius:10px}
+input,button{padding:10px;border:0;border-radius:5px;margin:5px 3px}
+button{cursor:pointer;background:#4b9be8;color:white}
+.status{padding:5px 10px;border-radius:12px;background:#9b3434}
+.status.online{background:#16734d}
+#result{margin-top:15px;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<h2>Stock Quote</h2>
+<span id="status" class="status">Disconnected</span>
+<div class="card">
+<p>Search a ticker symbol</p>
+<input id="ticker" value="AAPL" maxlength="10" placeholder="e.g. AAPL">
+<button id="search">Search & Broadcast</button>
+<div id="result">No quote selected.</div>
+</div>
+<script src="/public/fdc3-client.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>News Feed</title>
+<style>
+body{font:15px Arial;background:#101827;color:#e8eef8;padding:18px}
+.card{background:#1e293b;padding:16px;border-radius:10px;margin-top:12px}
+.status{padding:5px 10px;border-radius:12px;background:#9b3434}
+.status.online{background:#16734d}
+button{padding:10px;border:0;border-radius:5px;background:#4b9be8;color:white;cursor:pointer}
+li{margin:12px 0}
+</style>
+</head>
+<body>
+<h2>Market News Feed</h2>
+<span id="status" class="status">Disconnected</span>
+<div class="card">
+<h3 id="symbol">Waiting for instrument context</h3>
+<ul id="headlines"><li>No news loaded.</li></ul>
+<button id="viewChart" disabled>View Chart</button>
+<p id="message"></p>
+</div>
+<script src="/public/fdc3-client.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

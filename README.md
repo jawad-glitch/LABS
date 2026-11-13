@@ -165,3 +165,4 @@
 | [Lab 9 - FDC3 Private Channels and Confidential Context Sharing](Lab%209%20-%20FDC3%20Private%20Channels%20and%20Confidential%20Context%20Sharing/PROOF.md) | no core-check file | 2026-11-13 13:15 |
 | [Lab 10 - Real-World FDC3 Workflow Automation](Lab%2010%20-%20Real-World%20FDC3%20Workflow%20Automation/PROOF.md) | no core-check file | 2026-11-13 13:25 |
 | [Lab 11 - Launching Apps Based on Instrument Context](Lab%2011%20-%20Launching%20Apps%20Based%20on%20Instrument%20Context/PROOF.md) | no core-check file | 2026-11-13 13:31 |
+| [Lab 12 - Implementing Contextual Workflows with FDC3](Lab%2012%20-%20Implementing%20Contextual%20Workflows%20with%20FDC3/PROOF.md) | no core-check file | 2026-11-13 13:39 |

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Charting</title>
+<style>
+body{font:15px Arial;background:#101827;color:#e8eef8;padding:18px}
+.card{background:#1e293b;padding:16px;border-radius:10px;margin-top:12px}
+.status{padding:5px 10px;border-radius:12px;background:#9b3434}
+.status.online{background:#16734d}
+canvas{width:100%;height:300px;background:#0b1220;border-radius:8px;display:block}
+</style>
+</head>
+<body>
+<h2>Instrument Charting</h2>
+<span id="status" class="status">Disconnected</span>
+<div class="card">
+<h3 id="symbol">Waiting for instrument context</h3>
+<p id="source">No update received.</p>
+<canvas id="chart" width="900" height="340"></canvas>
+</div>
+<script src="/public/fdc3-client.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

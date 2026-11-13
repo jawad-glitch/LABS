@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 Channel Consumer</title>
+<style>
+body{font:15px Arial,sans-serif;max-width:1000px;margin:25px auto;padding:0 16px;background:#f5f7fa;color:#202938}
+header{position:sticky;top:0;background:#172b4d;color:white;padding:14px;border-radius:8px;z-index:2}
+section{background:white;padding:18px;margin:16px 0;border-radius:8px}
+button,select{font:inherit;padding:9px;margin:5px;cursor:pointer}
+#log{max-height:430px;overflow:auto}.entry{border:1px solid #d5dae1;padding:12px;margin:10px 0;border-radius:6px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f5f7;padding:10px}
+</style></head>
+<body>
+<header id="status">Connecting to broker…</header>
+<section><h2>Join a Channel</h2><div id="channels"></div><p id="message"></p></section>
+<section><h2>Event Log</h2>
+<label>Filter by context type: <select id="filter"><option value="">All types</option></select></label>
+<button id="clear">Clear Log</button><div id="log"></div></section>
+<section><h2>Isolation Test</h2>
+<p>Joins red, switches the consumer to green, then probes red from a separate connection.</p>
+<button id="runTest">Run Isolation Test</button><p id="testResult">Not run.</p>
+</section>
+<script src="/shared/types/channel-client.js"></script><script src="app.js"></script>
+</body></html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 Channel Producer</title>
+<style>
+body{font:15px Arial,sans-serif;max-width:950px;margin:25px auto;padding:0 16px;background:#f5f7fa;color:#202938}
+header{position:sticky;top:0;background:#172b4d;color:white;padding:14px;border-radius:8px;z-index:2}
+section{background:white;padding:18px;margin:16px 0;border-radius:8px}
+button,input,select,textarea{font:inherit;padding:9px;margin:5px 3px}
+button{cursor:pointer}.channel{border-left:6px solid #888;background:#f1f3f6}
+.channel.user{border-left-style:dashed}pre,textarea{width:96%;box-sizing:border-box;background:#f4f5f7;padding:12px;overflow:auto}
+.error{color:#b42318}.ok{color:#167647}
+</style></head>
+<body>
+<header id="status">Connecting to broker…</header>
+<section><h2>Available Channels</h2><div id="channels"></div>
+<input id="newChannel" placeholder="New channel ID"><button id="create">Create Channel</button>
+<p id="channelMessage"></p></section>
+<section><h2>Broadcast Context</h2>
+<label>Context type <select id="contextType">
+<option>fdc3.instrument</option><option>fdc3.contact</option><option>fdc3.portfolio</option>
+</select></label><br>
+<textarea id="payload" rows="9">{
+  "type": "fdc3.instrument",
+  "name": "Example Instrument",
+  "id": {"ticker": "AAPL", "MIC": "XNAS", "ISIN": "US0378331005"}
+}</textarea><br>
+<button id="broadcast">Broadcast</button><span id="error" class="error"></span>
+</section>
+<section><h2>Restored Context</h2><pre id="restored">No previous context for this channel.</pre></section>
+<section><h2>Latest Broadcast Status</h2><p id="result">No broadcast sent.</p></section>
+<script src="/shared/types/channel-client.js"></script><script src="app.js"></script>
+</body></html>

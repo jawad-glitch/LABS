@@ -1,0 +1,1 @@
+{"name":"fdc3-channels-lab","version":"1.0.0","private":true,"scripts":{"broker":"node broker/server.js","producer":"node apps/producer/server.js","consumer":"node apps/consumer/server.js"},"dependencies":{"express":"^4.21.2","ws":"^8.18.0"}}

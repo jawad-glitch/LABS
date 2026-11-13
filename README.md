@@ -184,3 +184,4 @@
 | [Lab 12 - Auditing Open Source Projects for Compliance](Lab%2012%20-%20Auditing%20Open%20Source%20Projects%20for%20Compliance/PROOF.md) | no core-check file | 2026-11-13 20:44 |
 | [Lab 13 - Contribution Best Practices in Open Source](Lab%2013%20-%20Contribution%20Best%20Practices%20in%20Open%20Source/PROOF.md) | no core-check file | 2026-11-13 20:50 |
 | [Lab 14 - Integrating Open Source with Financial Services Apps](Lab%2014%20-%20Integrating%20Open%20Source%20with%20Financial%20Services%20Apps/PROOF.md) | no core-check file | 2026-11-13 20:55 |
+| [Lab 15 - Building Secure Applications with Open Source Tools](Lab%2015%20-%20Building%20Secure%20Applications%20with%20Open%20Source%20Tools/PROOF.md) | no core-check file | 2026-11-13 21:01 |

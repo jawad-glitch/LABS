@@ -1,5 +1,5 @@
 # Lab 2 - Introduction to FINOS and Its Ecosystem - completion proof
-Completed (UTC): 2026-11-13 15:02:34 | EC2: i-0cebcc69697ed9900 | host: ip-172-31-10-169 | user: ubuntu
+Completed (UTC): 2026-11-13 15:08:22 | EC2: i-00e7e62d356bb118b | host: ip-172-31-10-47 | user: ubuntu
 
 ## Core checks
 ```

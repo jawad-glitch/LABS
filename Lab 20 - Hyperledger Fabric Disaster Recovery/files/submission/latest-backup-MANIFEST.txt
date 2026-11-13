@@ -1,0 +1,8 @@
+Backup timestamp: 20261113T114515Z
+Backup type: Local Fabric disaster-recovery simulation
+Captured components:
+- Simulated organization crypto materials
+- Simulated channel configuration
+- Simulated peer and orderer ledger data
+- Simulated chaincode source
+Total backup size: 64K

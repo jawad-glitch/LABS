@@ -1,0 +1,5 @@
+Disaster timestamp: Fri Nov 13 11:45:23 UTC 2026
+Simulated Fabric containers stopped and removed.
+Simulated peer/orderer/CA volumes removed.
+Peer/orderer container check: empty (local simulation; no real containers).
+Organizations directory check: missing as expected.

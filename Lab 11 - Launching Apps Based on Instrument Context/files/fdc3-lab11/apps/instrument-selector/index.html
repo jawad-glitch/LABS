@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FDC3 Instrument Selector</title>
+<style>
+body{font:16px Arial;background:#101827;color:#e8eef8;margin:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.card{background:#1d2b40;padding:18px;border-radius:10px;border:1px solid #40516b}
+button{padding:10px;margin:5px 5px 5px 0;cursor:pointer;border:0;border-radius:6px}
+.selected{outline:2px solid #65b9ff}
+#status{white-space:pre-wrap;background:#0b1220;padding:14px;border-radius:8px}
+</style>
+</head>
+<body>
+<h1>Instrument Selector</h1>
+<p id="connection">Connecting to Desktop Agent…</p>
+<p>Channel: <strong id="channel"></strong></p>
+<div class="grid" id="instruments"></div>
+<h3>Intent actions</h3>
+<button id="chart" disabled>Open Chart (ViewChart)</button>
+<button id="trade" disabled>Launch Trading App (StartTrade)</button>
+<h3>Desktop Agent acknowledgements</h3>
+<pre id="status">Waiting for connection…</pre>
+<script src="/static/fdc3-client.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const channel = params.get("channel") || "red";
+document.getElementById("channel").textContent = channel;
+const client = new FDC3Client("instrument-selector",
+  (location.protocol === "https:" ? "wss://" : "ws://") + location.host);
+const instruments = [
+  {ticker:"AAPL",name:"Apple Inc.",isin:"US0378331005",mic:"XNAS"},
+  {ticker:"MSFT",name:"Microsoft Corporation",isin:"US5949181045",mic:"XNAS"},
+  {ticker:"GOOGL",name:"Alphabet Inc.",isin:"US02079K3059",mic:"XNAS"},
+  {ticker:"AMZN",name:"Amazon.com Inc.",isin:"US0231351067",mic:"XNAS"},
+  {ticker:"NVDA",name:"NVIDIA Corporation",isin:"US67066G1040",mic:"XNAS"},
+  {ticker:"TSLA",name:"Tesla Inc.",isin:"US88160R1014",mic:"XNAS"}
+];
+let selected = null;
+const status = document.getElementById("status");
+function report(label, result) {
+  status.textContent = label + ": " + result + "\n" + status.textContent;
+}
+function contextFor(item) {
+  return {type:"fdc3.instrument",name:item.name,
+    id:{ticker:item.ticker,ISIN:item.isin},
+    market:{MIC:item.mic,name:"NASDAQ"}};
+}
+instruments.forEach(item => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = "<h2>"+item.ticker+"</h2><p>"+item.name+
+    "</p><p>ISIN: "+item.isin+"</p><p>MIC: "+item.mic+"</p>";
+  card.onclick = async () => {
+    selected = item;
+    document.querySelectorAll(".card").forEach(el => el.classList.remove("selected"));
+    card.classList.add("selected");
+    try {
+      const result = await client.broadcast(contextFor(item));
+      report("Broadcast "+item.ticker, result.status);
+    } catch (e) { report("Broadcast "+item.ticker, "ERROR: "+e.message); }
+  };
+  document.getElementById("instruments").appendChild(card);
+});
+document.getElementById("chart").onclick = async () => {
+  if (!selected) return report("ViewChart", "Select an instrument first");
+  try { const r=await client.raiseIntent("ViewChart",contextFor(selected));report("ViewChart",r.status); }
+  catch(e){report("ViewChart","ERROR: "+e.message);}
+};
+document.getElementById("trade").onclick = async () => {
+  if (!selected) return report("StartTrade", "Select an instrument first");
+  try { const r=await client.raiseIntent("StartTrade",contextFor(selected));report("StartTrade",r.status); }
+  catch(e){report("StartTrade","ERROR: "+e.message);}
+};
+client.connect(channel).then(() => {
+  document.getElementById("connection").textContent = "Connected to Desktop Agent";
+  document.getElementById("chart").disabled = false;
+  document.getElementById("trade").disabled = false;
+}).catch(e => {
+  document.getElementById("connection").textContent = "Connection error: "+e.message;
+});
+</script>
+</body>
+</html>

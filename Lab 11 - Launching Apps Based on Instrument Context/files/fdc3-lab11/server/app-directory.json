@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "2.0",
+  "applications": [
+    {
+      "appId": "instrument-selector",
+      "name": "Instrument Selector",
+      "type": "web",
+      "details": {"url": "/apps/instrument-selector"},
+      "intents": [],
+      "autoLaunch": false
+    },
+    {
+      "appId": "chart-app",
+      "name": "Chart App",
+      "type": "web",
+      "details": {"url": "/apps/chart-app"},
+      "intents": [{"name": "ViewChart", "contexts": ["fdc3.instrument"]}],
+      "autoLaunch": true
+    },
+    {
+      "appId": "trading-app",
+      "name": "Trading App",
+      "type": "web",
+      "details": {"url": "/apps/trading-app"},
+      "intents": [{"name": "StartTrade", "contexts": ["fdc3.instrument"]}],
+      "autoLaunch": false
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FDC3 Chart App</title>
+<style>
+body{font:16px Arial;background:#111827;color:#e5edf8;margin:25px}
+.panel{background:#1e293b;padding:18px;border-radius:10px;margin:12px 0}
+svg{width:100%;height:300px;background:#0b1220;border-radius:8px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<h1>Chart App</h1>
+<p id="connection">Connecting…</p>
+<div class="panel"><h2 id="heading">Waiting for instrument context</h2>
+<p id="exchange">No instrument received</p></div>
+<div class="panel"><h3>Simulated candlestick chart</h3><svg id="chart" viewBox="0 0 720 300"></svg></div>
+<div class="panel"><h3>Last received context</h3><pre id="context">No context received</pre></div>
+<script src="/static/fdc3-client.js"></script>
+<script>
+const channel = new URLSearchParams(location.search).get("channel") || "red";
+const client = new FDC3Client("chart-app",
+  (location.protocol==="https:"?"wss://":"ws://")+location.host);
+function seed(text){let n=2166136261;for(let i=0;i<text.length;i++){n^=text.charCodeAt(i);n=Math.imul(n,16777619);}return n>>>0;}
+function render(context){
+  if(!context || context.type!=="fdc3.instrument") return;
+  const ticker=context.id.ticker;
+  document.getElementById("heading").textContent=ticker+" — "+context.name;
+  document.getElementById("exchange").textContent=
+    "Exchange: "+(context.market?.name||"Unknown")+" ("+(context.market?.MIC||"N/A")+")";
+  document.getElementById("context").textContent=JSON.stringify(context,null,2);
+  let state=seed(ticker), price=100;
+  const rand=()=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return state/4294967296;};
+  let svg="";
+  for(let i=0;i<36;i++){
+    const open=price;
+    const close=open+(rand()-.48)*9;
+    const high=Math.max(open,close)+rand()*4;
+    const low=Math.min(open,close)-rand()*4;
+    const x=24+i*19;
+    const y=v=>260-(v-65)*2.2;
+    const up=close>=open;
+    const fill=up?"#32c48d":"#ef6575";
+    svg+=`<line x1="${x+5}" y1="${y(high)}" x2="${x+5}" y2="${y(low)}" stroke="${fill}" stroke-width="2"/>`;
+    svg+=`<rect x="${x}" y="${Math.min(y(open),y(close))}" width="10" height="${Math.max(3,Math.abs(y(open)-y(close)))}" fill="${fill}"/>`;
+    price=close;
+  }
+  document.getElementById("chart").innerHTML=svg;
+}
+client.onContext((context,source)=>{render(context);});
+client.onIntent((intent,context,source)=>{
+  if(intent==="ViewChart") render(context);
+});
+client.connect(channel).then(()=>{
+  document.getElementById("connection").textContent="Connected — channel "+channel;
+}).catch(e=>{
+  document.getElementById("connection").textContent="Connection error: "+e.message;
+});
+</script>
+</body>
+</html>

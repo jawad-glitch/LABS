@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FDC3 Trading App</title>
+<style>
+body{font:16px Arial;background:#101827;color:#e8eef8;margin:25px}
+.panel{background:#1d2b40;padding:20px;border-radius:10px;margin:14px 0}
+label{display:block;margin:12px 0}
+input,button{padding:9px;border-radius:5px;border:0}
+#confirmation{background:#145c43;padding:12px;border-radius:7px;display:none}
+</style>
+</head>
+<body>
+<h1>Trading App</h1>
+<p id="connection">Connecting…</p>
+<div class="panel"><h2>Last-seen instrument</h2><p id="lastSeen">No instrument received</p></div>
+<div class="panel">
+<h2>Trade ticket</h2>
+<p id="ticketStatus">Waiting for StartTrade intent</p>
+<form id="ticket" style="display:none">
+<label>Ticker <input id="ticker" readonly></label>
+<label>Instrument name <input id="name" readonly></label>
+<label>ISIN <input id="isin" readonly></label>
+<label>Quantity <input id="quantity" type="number" min="1" value="100" required></label>
+<label><input type="radio" name="side" value="Buy" checked> Buy
+<input type="radio" name="side" value="Sell"> Sell</label>
+<button type="submit">Submit order</button>
+</form>
+<div id="confirmation"></div>
+</div>
+<script src="/static/fdc3-client.js"></script>
+<script>
+const channel=new URLSearchParams(location.search).get("channel")||"red";
+const client=new FDC3Client("trading-app",
+  (location.protocol==="https:"?"wss://":"ws://")+location.host);
+client.onContext(context=>{
+  if(context.type==="fdc3.instrument"){
+    document.getElementById("lastSeen").textContent=
+      context.id.ticker+" — "+context.name+" ("+(context.id.ISIN||"No ISIN")+")";
+  }
+});
+client.onIntent((intent,context)=>{
+  if(intent!=="StartTrade"||context.type!=="fdc3.instrument") return;
+  document.getElementById("ticker").value=context.id.ticker||"";
+  document.getElementById("name").value=context.name||"";
+  document.getElementById("isin").value=context.id.ISIN||"";
+  document.getElementById("ticket").style.display="block";
+  document.getElementById("ticketStatus").textContent="StartTrade received — ticket ready";
+  document.getElementById("confirmation").style.display="none";
+});
+document.getElementById("ticket").onsubmit=event=>{
+  event.preventDefault();
+  const order={
+    ticker:document.getElementById("ticker").value,
+    name:document.getElementById("name").value,
+    ISIN:document.getElementById("isin").value,
+    quantity:Number(document.getElementById("quantity").value),
+    side:document.querySelector('input[name="side"]:checked').value,
+    submittedAt:new Date().toISOString()
+  };
+  console.log("Simulated trade order:",order);
+  const banner=document.getElementById("confirmation");
+  banner.textContent="Order submitted (simulation): "+order.side+" "+order.quantity+" "+order.ticker;
+  banner.style.display="block";
+};
+client.connect(channel).then(()=>{
+  document.getElementById("connection").textContent="Connected — channel "+channel;
+}).catch(e=>{
+  document.getElementById("connection").textContent="Connection error: "+e.message;
+});
+</script>
+</body>
+</html>

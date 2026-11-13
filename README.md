@@ -178,3 +178,4 @@
 | [Lab 2 - Introduction to FINOS and Its Ecosystem](Lab%202%20-%20Introduction%20to%20FINOS%20and%20Its%20Ecosystem/PROOF.md) | no core-check file | 2026-11-13 15:08 |
 | [Lab 5 - Contributing to Open Source Projects](Lab%205%20-%20Contributing%20to%20Open%20Source%20Projects/PROOF.md) | no core-check file | 2026-11-13 15:22 |
 | [Lab 6 - Secure Software Development Basics](Lab%206%20-%20Secure%20Software%20Development%20Basics/PROOF.md) | no core-check file | 2026-11-13 15:29 |
+| [Lab 9 - Project Governance - Open Governance Models](Lab%209%20-%20Project%20Governance%20-%20Open%20Governance%20Models/PROOF.md) | no core-check file | 2026-11-13 20:28 |

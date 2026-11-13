@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 Market Data Viewer</title>
+<style>
+body{font:15px Arial,sans-serif;background:#f3f6fa;color:#172033;margin:24px}
+header,.panel{background:white;padding:18px;border-radius:10px;margin-bottom:16px;box-shadow:0 2px 8px #0001}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.card{background:white;border:2px solid #dce3ed;border-radius:9px;padding:16px;cursor:pointer}
+.card.selected{border-color:#2878d0;background:#eaf4ff}
+.price{font-size:24px;font-weight:bold;margin:8px 0}
+input,select,button{padding:10px;margin:5px;border:1px solid #ccd4df;border-radius:6px}
+button{background:#1769aa;color:white;cursor:pointer}
+#status{color:#53657b}
+</style>
+</head>
+<body>
+<header><h2>Market Data Viewer</h2><div id="status">Connecting to market feed…</div></header>
+<section class="panel">
+<label>System channel:
+<select id="channel"><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option><option value="yellow">Yellow</option></select></label>
+<span id="channelStatus">No channel selected</span>
+</section>
+<section class="panel">
+<label>Symbol <input id="symbol" value="AAPL" maxlength="15"></label>
+<button id="viewIntent">View Quote Intent</button>
+<button id="tradeIntent">Start Trade Intent</button>
+<div id="intentStatus"></div>
+</section>
+<h3>Live market quotes — select a card to broadcast its instrument context</h3>
+<div class="grid" id="quotes"></div>
+<script src="/fdc3-desktop-agent.js"></script>
+<script>
+const API = location.protocol + "//" + location.hostname + ":3001";
+const WS = "ws://" + location.hostname + ":8080";
+const grid = document.getElementById("quotes");
+const status = document.getElementById("status");
+const symbolInput = document.getElementById("symbol");
+let latest = {};
+
+function instrument(symbol) {
+  return { type:"fdc3.instrument", name:symbol, id:{ticker:symbol} };
+}
+function renderQuotes(data) {
+  latest = data || latest;
+  grid.innerHTML = "";
+  Object.values(latest).forEach(q => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.dataset.symbol = q.symbol;
+    card.innerHTML = "<strong></strong><div class='price'></div><div class='change'></div><small></small>";
+    card.querySelector("strong").textContent = q.symbol;
+    card.querySelector(".price").textContent = "$" + Number(q.price).toFixed(2);
+    card.querySelector(".change").textContent = "Change: " + Number(q.change).toFixed(2);
+    card.querySelector("small").textContent = "Volume: " + Number(q.volume).toLocaleString();
+    card.addEventListener("click", async () => {
+      symbolInput.value = q.symbol;
+      document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+      card.classList.add("selected");
+      await fdc3.broadcast(instrument(q.symbol));
+    });
+    grid.appendChild(card);
+  });
+}
+async function loadInitial() {
+  try {
+    const r = await fetch(API + "/api/market");
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    renderQuotes(await r.json());
+  } catch (e) { status.textContent = "Market REST request failed: " + e.message; }
+}
+fdc3.addContextListener("fdc3.instrument", ctx => {
+  const symbol = ctx.id && ctx.id.ticker ? ctx.id.ticker : ctx.name;
+  document.querySelectorAll(".card").forEach(card => {
+    card.classList.toggle("selected", card.dataset.symbol === symbol);
+  });
+  symbolInput.value = symbol;
+  status.textContent = "Received instrument context: " + symbol;
+});
+fdc3.getSystemChannels().then(channels => {
+  document.getElementById("channel").addEventListener("change", async e => {
+    const c = await fdc3.joinChannel(e.target.value);
+    document.getElementById("channelStatus").textContent = c.displayMetadata.name + " channel";
+    document.getElementById("channelStatus").style.color = c.displayMetadata.color;
+  });
+  document.getElementById("channel").dispatchEvent(new Event("change"));
+});
+document.getElementById("viewIntent").addEventListener("click", async () => {
+  const symbol = symbolInput.value.trim().toUpperCase();
+  try {
+    const result = await fdc3.raiseIntent("ViewQuote", instrument(symbol));
+    document.getElementById("intentStatus").textContent =
+      "ViewQuote resolved: " + JSON.stringify(result.data.data);
+  } catch (e) { document.getElementById("intentStatus").textContent = e.message; }
+});
+document.getElementById("tradeIntent").addEventListener("click", async () => {
+  const symbol = symbolInput.value.trim().toUpperCase();
+  try {
+    const result = await fdc3.raiseIntent("StartTrade", instrument(symbol));
+    document.getElementById("intentStatus").textContent =
+      "StartTrade resolved: " + JSON.stringify(result.data.data);
+  } catch (e) { document.getElementById("intentStatus").textContent = e.message; }
+});
+const socket = new WebSocket(WS);
+socket.onopen = () => { status.textContent = "Live market WebSocket connected"; };
+socket.onmessage = event => {
+  try {
+    const msg = JSON.parse(event.data);
+    if (msg.type === "marketData") renderQuotes(msg.data);
+  } catch (e) { console.error("Invalid market message", e); }
+};
+socket.onerror = () => { status.textContent = "WebSocket connection error — check EC2 port 8080"; };
+socket.onclose = () => { status.textContent = "WebSocket disconnected — reload to reconnect"; };
+loadInitial();
+</script>
+</body>
+</html>

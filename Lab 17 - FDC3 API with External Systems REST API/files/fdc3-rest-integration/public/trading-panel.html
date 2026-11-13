@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 Trading Panel</title>
+<style>
+body{font:15px Arial,sans-serif;background:#f3f6fa;color:#172033;margin:24px}
+.panel{background:white;padding:18px;border-radius:10px;margin-bottom:16px;box-shadow:0 2px 8px #0001}
+input,select,button{padding:10px;margin:5px;border:1px solid #ccd4df;border-radius:6px}
+button{background:#1769aa;color:white;cursor:pointer}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f9;padding:12px;border-radius:6px}
+table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:9px;border-bottom:1px solid #ddd}
+</style>
+</head>
+<body>
+<h2>FDC3 Trading Panel</h2>
+<section class="panel"><h3>Selected instrument / quote</h3><div id="quote">Waiting for an instrument context or intent…</div></section>
+<section class="panel">
+<h3>Trade ticket</h3>
+<form id="tradeForm">
+<label>Symbol <input id="tradeSymbol" required></label>
+<label>Side <select id="side"><option value="buy">Buy</option><option value="sell">Sell</option></select></label>
+<label>Quantity <input id="quantity" type="number" min="0.0001" step="any" value="1" required></label>
+<label>Price <input id="price" type="number" min="0.01" step="any" required></label>
+<button type="submit">Submit Trade</button>
+</form>
+<div id="tradeResult"></div>
+</section>
+<section class="panel"><h3>Trade history</h3><button id="refreshTrades">Refresh history</button>
+<table><thead><tr><th>Time</th><th>Symbol</th><th>Side</th><th>Quantity</th><th>Price</th><th>Trade UUID</th></tr></thead>
+<tbody id="tradeRows"></tbody></table></section>
+<script src="/fdc3-desktop-agent.js"></script>
+<script>
+const API = location.protocol + "//" + location.hostname + ":3001";
+const symbolField = document.getElementById("tradeSymbol");
+const priceField = document.getElementById("price");
+const quoteBox = document.getElementById("quote");
+
+function getSymbol(ctx) {
+  return (ctx.id && ctx.id.ticker ? ctx.id.ticker : ctx.name).toUpperCase();
+}
+async function loadQuote(symbol) {
+  symbol = symbol.toUpperCase();
+  try {
+    const r = await fetch(API + "/api/market/" + encodeURIComponent(symbol));
+    const q = await r.json();
+    if (!r.ok) throw new Error(q.message || "Quote unavailable");
+    priceField.value = q.price;
+    quoteBox.textContent = q.symbol + " — $" + Number(q.price).toFixed(2) +
+      " | Change: " + q.change + " | Volume: " + Number(q.volume).toLocaleString();
+    return q;
+  } catch (e) {
+    quoteBox.textContent = "Quote error: " + e.message;
+    throw e;
+  }
+}
+async function selectInstrument(ctx, focusForm) {
+  const symbol = getSymbol(ctx);
+  symbolField.value = symbol;
+  try { await loadQuote(symbol); } catch (e) {}
+  if (focusForm) symbolField.focus();
+}
+fdc3.addContextListener("fdc3.instrument", ctx => selectInstrument(ctx, false));
+fdc3.addIntentListener("ViewQuote", async ctx => {
+  try {
+    const q = await loadQuote(getSymbol(ctx));
+    quoteBox.textContent = "ViewQuote intent — " + JSON.stringify(q);
+  } catch (e) {}
+});
+fdc3.addIntentListener("StartTrade", ctx => selectInstrument(ctx, true));
+
+document.getElementById("tradeForm").addEventListener("submit", async event => {
+  event.preventDefault();
+  const payload = {
+    symbol: symbolField.value.trim().toUpperCase(),
+    side: document.getElementById("side").value,
+    quantity: Number(document.getElementById("quantity").value),
+    price: Number(priceField.value)
+  };
+  try {
+    const r = await fetch(API + "/api/trade", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    const trade = await r.json();
+    if (!r.ok) throw new Error(trade.message || "Trade failed");
+    document.getElementById("tradeResult").innerHTML = "";
+    const pre = document.createElement("pre");
+    pre.textContent = JSON.stringify(trade, null, 2);
+    document.getElementById("tradeResult").appendChild(pre);
+    await refreshTrades();
+  } catch (e) {
+    document.getElementById("tradeResult").textContent = "Trade error: " + e.message;
+  }
+});
+async function refreshTrades() {
+  const r = await fetch(API + "/api/trades");
+  const trades = await r.json();
+  const body = document.getElementById("tradeRows");
+  body.innerHTML = "";
+  trades.slice().reverse().forEach(t => {
+    const row = document.createElement("tr");
+    [new Date(t.timestamp).toLocaleString(), t.symbol, t.side, t.quantity, t.price, t.id]
+      .forEach(value => {
+        const cell = document.createElement("td");
+        cell.textContent = value;
+        row.appendChild(cell);
+      });
+    body.appendChild(row);
+  });
+}
+document.getElementById("refreshTrades").addEventListener("click", refreshTrades);
+refreshTrades().catch(e => console.error("Trade history load failed:", e));
+</script>
+</body>
+</html>

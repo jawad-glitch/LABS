@@ -1,0 +1,32 @@
+{
+  "roleLevels": {
+    "viewer": 1,
+    "analyst": 2,
+    "trader": 3
+  },
+  "intents": {
+    "StartCall": {"minRole":"trader","securityLevel":"high"},
+    "StartChat": {"minRole":"trader","securityLevel":"medium"},
+    "ViewChart": {"minRole":"viewer","securityLevel":"low"},
+    "ViewInstrument": {"minRole":"analyst","securityLevel":"medium"},
+    "ViewNews": {"minRole":"analyst","securityLevel":"low"}
+  },
+  "contexts": {
+    "instrument": {"minRole":"viewer","securityLevel":"low"},
+    "contact": {"minRole":"trader","securityLevel":"high"},
+    "portfolio": {"minRole":"analyst","securityLevel":"medium"},
+    "organization": {"minRole":"analyst","securityLevel":"low"}
+  },
+  "channels": {
+    "red": {"minRole":"trader"},
+    "green": {"minRole":"trader"},
+    "blue": {"minRole":"viewer"},
+    "yellow": {"minRole":"analyst"},
+    "orange": {"minRole":"analyst"}
+  },
+  "apps": {
+    "trading-app": {"minRole":"trader"},
+    "portfolio-app": {"minRole":"analyst"},
+    "research-app": {"minRole":"viewer"}
+  }
+}

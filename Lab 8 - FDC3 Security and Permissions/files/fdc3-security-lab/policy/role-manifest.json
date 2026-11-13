@@ -1,0 +1,22 @@
+{
+  "roles": {
+    "trader": {
+      "intents": ["StartCall", "StartChat", "ViewChart", "ViewInstrument", "ViewNews"],
+      "contexts": ["instrument", "contact", "portfolio"],
+      "channels": ["red", "green", "blue"],
+      "apps": ["trading-app", "portfolio-app"]
+    },
+    "analyst": {
+      "intents": ["ViewChart", "ViewInstrument", "ViewNews"],
+      "contexts": ["instrument", "organization", "portfolio"],
+      "channels": ["yellow", "orange"],
+      "apps": ["research-app", "portfolio-app"]
+    },
+    "viewer": {
+      "intents": ["ViewChart"],
+      "contexts": ["instrument"],
+      "channels": ["blue"],
+      "apps": ["research-app"]
+    }
+  }
+}

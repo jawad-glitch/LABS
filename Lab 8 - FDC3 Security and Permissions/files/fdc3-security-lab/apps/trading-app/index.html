@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDC3 Security Test Harness</title>
+<style>
+body{font:16px Arial;background:#111827;color:#e5e7eb;padding:24px;max-width:950px;margin:auto}
+section{background:#1f2937;padding:18px;border-radius:9px;margin:14px 0}
+label{display:inline-block;margin:8px 12px 8px 0}
+input,select{padding:9px;border-radius:5px;border:1px solid #64748b}
+button{padding:10px 14px;margin:5px;background:#2563eb;color:white;border:0;border-radius:5px;cursor:pointer}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0b1220;padding:12px;border-radius:6px}
+#session{height:180px;overflow:auto}
+</style>
+</head>
+<body>
+<h1>FDC3 Security and Permissions</h1>
+<p>Authorization decisions are evaluated by the server, not in this browser.</p>
+<section>
+<label>User ID <input id="user" value="tester"></label>
+<label>Role
+<select id="role"><option>trader</option><option>analyst</option><option>viewer</option><option>unknown-role</option></select>
+</label>
+</section>
+<section>
+<h2>Intent evaluation</h2>
+<select id="intent"><option>StartCall</option><option>StartChat</option><option>ViewChart</option><option>ViewInstrument</option><option>ViewNews</option><option>UnknownIntent</option></select>
+<button onclick="run('intent')">Evaluate intent</button>
+<h2>Context evaluation</h2>
+<select id="context"><option>fdc3.instrument</option><option>fdc3.contact</option><option>fdc3.portfolio</option><option>fdc3.organization</option></select>
+<select id="direction"><option>share</option><option>receive</option></select>
+<button onclick="run('context')">Evaluate context</button>
+<h2>Channel evaluation</h2>
+<select id="channel"><option>red</option><option>green</option><option>blue</option><option>yellow</option><option>orange</option></select>
+<button onclick="run('channel')">Evaluate channel</button>
+<h2>Application evaluation</h2>
+<select id="application"><option>trading-app</option><option>portfolio-app</option><option>research-app</option></select>
+<button onclick="run('app')">Evaluate app</button>
+</section>
+<section><h2>Latest response</h2><pre id="result">No request yet</pre></section>
+<section><h2>Browser session log</h2><pre id="session"></pre></section>
+<script src="security-test-client.js"></script>
+<script>
+const client = new SecurityTestClient(location.origin);
+async function run(kind) {
+  const user = document.getElementById('user').value || 'unknown';
+  const role = document.getElementById('role').value;
+  let promise;
+  if (kind === 'intent') promise = client.testIntent(user,role,document.getElementById('intent').value);
+  if (kind === 'context') promise = client.testContext(user,role,document.getElementById('context').value,document.getElementById('direction').value);
+  if (kind === 'channel') promise = client.testChannel(user,role,document.getElementById('channel').value);
+  if (kind === 'app') promise = client.testApp(user,role,document.getElementById('application').value);
+  const result = await promise;
+  document.getElementById('result').textContent = JSON.stringify(result,null,2);
+  const line = new Date().toISOString() + ' ' + kind.toUpperCase() + ' ' + JSON.stringify(result);
+  document.getElementById('session').textContent += line + '\n';
+}
+</script>
+</body>
+</html>

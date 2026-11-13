@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FDC3 Desktop Agent</title>
+<style>
+body{font:15px Arial;max-width:1000px;margin:30px auto;padding:0 16px;background:#f3f5f8}
+section{background:white;padding:16px;margin:14px 0;border-radius:8px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#111;color:#b9f6ca;padding:14px}
+</style>
+</head>
+<body>
+<h1>FDC3 Desktop Agent</h1>
+<p>Live in-memory intent registry and dispatch activity. Refreshes every three seconds.</p>
+<section><h2>Registered intent handlers</h2><pre id="registry">Loading...</pre></section>
+<section><h2>Recent intent dispatches</h2><pre id="log">Loading...</pre></section>
+<script>
+async function refresh(){
+  try{
+    const [registry,log]=await Promise.all([
+      fetch("/api/registry").then(r=>r.json()),
+      fetch("/api/dispatch-log").then(r=>r.json())
+    ]);
+    document.getElementById("registry").textContent=JSON.stringify(registry,null,2);
+    document.getElementById("log").textContent=JSON.stringify(log,null,2);
+  }catch(e){
+    document.getElementById("registry").textContent="Dashboard error: "+e.message;
+  }
+}
+refresh();
+setInterval(refresh,3000);
+</script>
+</body>
+</html>

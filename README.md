@@ -163,3 +163,4 @@
 | [Lab 7 - FDC3 App Directory Integration](Lab%207%20-%20FDC3%20App%20Directory%20Integration/PROOF.md) | no core-check file | 2026-11-13 13:00 |
 | [Lab 8 - FDC3 Security and Permissions](Lab%208%20-%20FDC3%20Security%20and%20Permissions/PROOF.md) | no core-check file | 2026-11-13 13:07 |
 | [Lab 9 - FDC3 Private Channels and Confidential Context Sharing](Lab%209%20-%20FDC3%20Private%20Channels%20and%20Confidential%20Context%20Sharing/PROOF.md) | no core-check file | 2026-11-13 13:15 |
+| [Lab 10 - Real-World FDC3 Workflow Automation](Lab%2010%20-%20Real-World%20FDC3%20Workflow%20Automation/PROOF.md) | no core-check file | 2026-11-13 13:25 |

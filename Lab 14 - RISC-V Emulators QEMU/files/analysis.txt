@@ -1,0 +1,24 @@
+LAB 14: RISC-V EMULATORS WITH QEMU
+Date: Sun Nov 15 05:16:03 UTC 2026
+
+Toolchain:
+riscv64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+qemu-riscv64 version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)
+GNU gdb (Ubuntu 15.1-1ubuntu1~24.04.1) 15.1
+
+Binary formats:
+hello_riscv:      ELF 64-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, BuildID[sha1]=e29bd9952a31bf590fc7c9bcb299f7705b163e7e, for GNU/Linux 4.15.0, not stripped
+system_info:      ELF 64-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, BuildID[sha1]=c1ee8a9344557d9146cab987b8c025b163126c5e, for GNU/Linux 4.15.0, not stripped
+debug_example:    ELF 64-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, BuildID[sha1]=c0bad51462eaf49dc1f6ddf803fd6bc7b5a1c9d6, for GNU/Linux 4.15.0, with debug_info, not stripped
+performance_test: ELF 64-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, BuildID[sha1]=0786460e7c63a946428b63ce1d954aa3af2eaf6e, for GNU/Linux 4.15.0, not stripped
+advanced_debug:   ELF 64-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), statically linked, BuildID[sha1]=3af79e36123debdf3442afacc4a63af6e8fc4a61, for GNU/Linux 4.15.0, with debug_info, not stripped
+
+Automated validation: PASS=5 FAIL=0
+
+Execution model:
+RISC-V Linux ELF programs were cross-compiled and executed with QEMU user-mode.
+QEMU user-mode translates RISC-V instructions and forwards system calls to the host kernel.
+The QEMU virt machine startup test checks machine initialization only.
+A separate RISC-V Linux kernel and root filesystem were not booted.
+
+Performance measurements are emulation timings, not native RISC-V hardware benchmarks.

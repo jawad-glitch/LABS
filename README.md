@@ -204,3 +204,4 @@
 | [Lab 11 - RISC-V Machine Mode CSR and PMP](Lab%2011%20-%20RISC-V%20Machine%20Mode%20CSR%20and%20PMP/PROOF.md) | no core-check file | 2026-11-15 04:46 |
 | [Lab 12 - RISC-V with Operating Systems](Lab%2012%20-%20RISC-V%20with%20Operating%20Systems/PROOF.md) | no core-check file | 2026-11-15 05:03 |
 | [Lab 13 - RISC-V Toolchains GCC LLVM QEMU GDB](Lab%2013%20-%20RISC-V%20Toolchains%20GCC%20LLVM%20QEMU%20GDB/PROOF.md) | no core-check file | 2026-11-15 05:07 |
+| [Lab 14 - RISC-V Emulators QEMU](Lab%2014%20-%20RISC-V%20Emulators%20QEMU/PROOF.md) | no core-check file | 2026-11-15 05:16 |

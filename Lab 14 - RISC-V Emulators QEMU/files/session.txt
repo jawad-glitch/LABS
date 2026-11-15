@@ -1,0 +1,40 @@
+=== GDB SESSION OUTPUT ===
+warning: BFD: warning: system-supplied DSO at 0x2aaaab2ac000 has a corrupt string table index
+0x0000000000010494 in _start ()
+Breakpoint 1 at 0x10630: file debug_example.c, line 17.
+
+Breakpoint 1, main () at debug_example.c:17
+17	    int num = 5;
+
+Stopped at main:
+pc             0x10630	0x10630 <main+8>
+sp             0x2aaaab2aadb0	0x2aaaab2aadb0
+a0             0x1	1
+a1             0x2aaaab2aaf98	46912504508312
+$1 = 10922
+Breakpoint 2 at 0x105aa: file debug_example.c, line 4.
+
+Breakpoint 2, factorial (n=5) at debug_example.c:4
+4	    if (n <= 1) return 1;
+
+Stopped inside factorial:
+pc             0x105aa	0x105aa <factorial+14>
+sp             0x2aaaab2aad90	0x2aaaab2aad90
+a0             0x5	5
+a1             0x2aaaab2aaf98	46912504508312
+$2 = 5
+Breakpoint 3 at 0x105f6: file debug_example.c, line 9.
+
+Breakpoint 2, factorial (n=4) at debug_example.c:4
+4	    if (n <= 1) return 1;
+
+Stopped inside divide_numbers:
+debug_session.gdb:18: Error in sourced command file:
+No symbol "a" in current context.
+
+=== PROGRAM OUTPUT ===
+=== RISC-V Debugging Example ===
+Factorial of 5 is 120
+Before division operation
+Division by zero detected safely.
+Division result: -1

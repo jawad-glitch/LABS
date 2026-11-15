@@ -202,3 +202,4 @@
 | [Lab 10 - RISC-V Memory Model and Load-Store Architecture](Lab%2010%20-%20RISC-V%20Memory%20Model%20and%20Load-Store%20Architecture/PROOF.md) | no core-check file | 2026-11-15 04:35 |
 | [Lab 11 - RISC-V Privileged Modes, CSR and PMP](Lab%2011%20-%20RISC-V%20Privileged%20Modes,%20CSR%20and%20PMP/PROOF.md) | no core-check file | 2026-11-15 04:40 |
 | [Lab 11 - RISC-V Machine Mode CSR and PMP](Lab%2011%20-%20RISC-V%20Machine%20Mode%20CSR%20and%20PMP/PROOF.md) | no core-check file | 2026-11-15 04:46 |
+| [Lab 12 - RISC-V with Operating Systems](Lab%2012%20-%20RISC-V%20with%20Operating%20Systems/PROOF.md) | no core-check file | 2026-11-15 04:55 |

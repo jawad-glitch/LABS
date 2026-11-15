@@ -1,0 +1,93 @@
+
+/home/ubuntu/lab6/bin/macros:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100b0 <_start>:
+   100b0:	00b00413          	addi	s0,zero,11
+   100b4:	01600493          	addi	s1,zero,22
+   100b8:	00040293          	addi	t0,s0,0
+   100bc:	00048413          	addi	s0,s1,0
+   100c0:	00028493          	addi	s1,t0,0
+   100c4:	01600313          	addi	t1,zero,22
+   100c8:	12641263          	bne	s0,t1,101ec <fail>
+   100cc:	00b00313          	addi	t1,zero,11
+   100d0:	10649e63          	bne	s1,t1,101ec <fail>
+   100d4:	02100913          	addi	s2,zero,33
+   100d8:	02c00993          	addi	s3,zero,44
+   100dc:	00090293          	addi	t0,s2,0
+   100e0:	00098913          	addi	s2,s3,0
+   100e4:	00028993          	addi	s3,t0,0
+   100e8:	02c00313          	addi	t1,zero,44
+   100ec:	10691063          	bne	s2,t1,101ec <fail>
+   100f0:	02100313          	addi	t1,zero,33
+   100f4:	0e699c63          	bne	s3,t1,101ec <fail>
+   100f8:	f8500a13          	addi	s4,zero,-123
+   100fc:	43fa5293          	srai	t0,s4,0x3f
+   10100:	005a4ab3          	xor	s5,s4,t0
+   10104:	405a8ab3          	sub	s5,s5,t0
+   10108:	07b00313          	addi	t1,zero,123
+   1010c:	0e6a9063          	bne	s5,t1,101ec <fail>
+   10110:	04d00b13          	addi	s6,zero,77
+   10114:	43fb5293          	srai	t0,s6,0x3f
+   10118:	005b4bb3          	xor	s7,s6,t0
+   1011c:	405b8bb3          	sub	s7,s7,t0
+   10120:	04d00313          	addi	t1,zero,77
+   10124:	0c6b9463          	bne	s7,t1,101ec <fail>
+   10128:	00400c13          	addi	s8,zero,4
+   1012c:	00900c93          	addi	s9,zero,9
+   10130:	019c4663          	blt	s8,s9,1013c <_start+0x8c>
+   10134:	000c0d13          	addi	s10,s8,0
+   10138:	0080006f          	jal	zero,10140 <_start+0x90>
+   1013c:	000c8d13          	addi	s10,s9,0
+   10140:	00900313          	addi	t1,zero,9
+   10144:	0a6d1463          	bne	s10,t1,101ec <fail>
+   10148:	00f00c13          	addi	s8,zero,15
+   1014c:	00600c93          	addi	s9,zero,6
+   10150:	019c4663          	blt	s8,s9,1015c <_start+0xac>
+   10154:	000c0d13          	addi	s10,s8,0
+   10158:	0080006f          	jal	zero,10160 <_start+0xb0>
+   1015c:	000c8d13          	addi	s10,s9,0
+   10160:	00f00313          	addi	t1,zero,15
+   10164:	086d1463          	bne	s10,t1,101ec <fail>
+   10168:	09600413          	addi	s0,zero,150
+   1016c:	00000493          	addi	s1,zero,0
+   10170:	06400913          	addi	s2,zero,100
+   10174:	00944663          	blt	s0,s1,10180 <_start+0xd0>
+   10178:	00040993          	addi	s3,s0,0
+   1017c:	0080006f          	jal	zero,10184 <_start+0xd4>
+   10180:	00048993          	addi	s3,s1,0
+   10184:	41300f33          	sub	t5,zero,s3
+   10188:	41200fb3          	sub	t6,zero,s2
+   1018c:	01ff4663          	blt	t5,t6,10198 <_start+0xe8>
+   10190:	000f0f13          	addi	t5,t5,0
+   10194:	0080006f          	jal	zero,1019c <_start+0xec>
+   10198:	000f8f13          	addi	t5,t6,0
+   1019c:	41e009b3          	sub	s3,zero,t5
+   101a0:	06400313          	addi	t1,zero,100
+   101a4:	04699463          	bne	s3,t1,101ec <fail>
+   101a8:	ffb00413          	addi	s0,zero,-5
+   101ac:	00944663          	blt	s0,s1,101b8 <_start+0x108>
+   101b0:	00040993          	addi	s3,s0,0
+   101b4:	0080006f          	jal	zero,101bc <_start+0x10c>
+   101b8:	00048993          	addi	s3,s1,0
+   101bc:	41300f33          	sub	t5,zero,s3
+   101c0:	41200fb3          	sub	t6,zero,s2
+   101c4:	01ff4663          	blt	t5,t6,101d0 <_start+0x120>
+   101c8:	000f0f13          	addi	t5,t5,0
+   101cc:	0080006f          	jal	zero,101d4 <_start+0x124>
+   101d0:	000f8f13          	addi	t5,t6,0
+   101d4:	41e009b3          	sub	s3,zero,t5
+   101d8:	00000313          	addi	t1,zero,0
+   101dc:	00699863          	bne	s3,t1,101ec <fail>
+
+00000000000101e0 <success>:
+   101e0:	00000513          	addi	a0,zero,0
+   101e4:	05d00893          	addi	a7,zero,93
+   101e8:	00000073          	ecall
+
+00000000000101ec <fail>:
+   101ec:	00100513          	addi	a0,zero,1
+   101f0:	05d00893          	addi	a7,zero,93
+   101f4:	00000073          	ecall

@@ -195,3 +195,4 @@
 | [Lab 3 - RISC-V Assembly Programming Basics](Lab%203%20-%20RISC-V%20Assembly%20Programming%20Basics/PROOF.md) | no core-check file | 2026-11-15 03:43 |
 | [Lab 4 - RISC-V Register Set and Stack Usage](Lab%204%20-%20RISC-V%20Register%20Set%20and%20Stack%20Usage/PROOF.md) | no core-check file | 2026-11-15 03:51 |
 | [Lab 5 - RISC-V Function Calls and Loops](Lab%205%20-%20RISC-V%20Function%20Calls%20and%20Loops/PROOF.md) | no core-check file | 2026-11-15 03:57 |
+| [Lab 6 - RISC-V Pseudo-Instructions and Macro Expansion](Lab%206%20-%20RISC-V%20Pseudo-Instructions%20and%20Macro%20Expansion/PROOF.md) | no core-check file | 2026-11-15 04:11 |

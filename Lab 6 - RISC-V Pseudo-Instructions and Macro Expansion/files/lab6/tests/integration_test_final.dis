@@ -1,0 +1,84 @@
+
+/home/ubuntu/lab6/bin/integration_test:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100b0 <_start>:
+   100b0:	fdb00413          	addi	s0,zero,-37
+   100b4:	43f45293          	srai	t0,s0,0x3f
+   100b8:	005444b3          	xor	s1,s0,t0
+   100bc:	405484b3          	sub	s1,s1,t0
+   100c0:	02500313          	addi	t1,zero,37
+   100c4:	10649263          	bne	s1,t1,101c8 <fail>
+   100c8:	06400913          	addi	s2,zero,100
+   100cc:	0c800993          	addi	s3,zero,200
+   100d0:	00090293          	addi	t0,s2,0
+   100d4:	00098913          	addi	s2,s3,0
+   100d8:	00028993          	addi	s3,t0,0
+   100dc:	0c800313          	addi	t1,zero,200
+   100e0:	0e691463          	bne	s2,t1,101c8 <fail>
+   100e4:	06400313          	addi	t1,zero,100
+   100e8:	0e699063          	bne	s3,t1,101c8 <fail>
+   100ec:	02a00a13          	addi	s4,zero,42
+   100f0:	06300a93          	addi	s5,zero,99
+   100f4:	015a4663          	blt	s4,s5,10100 <_start+0x50>
+   100f8:	000a0b13          	addi	s6,s4,0
+   100fc:	0080006f          	jal	zero,10104 <_start+0x54>
+   10100:	000a8b13          	addi	s6,s5,0
+   10104:	06300313          	addi	t1,zero,99
+   10108:	0c6b1063          	bne	s6,t1,101c8 <fail>
+   1010c:	09600b93          	addi	s7,zero,150
+   10110:	00000c13          	addi	s8,zero,0
+   10114:	06400c93          	addi	s9,zero,100
+   10118:	018bc663          	blt	s7,s8,10124 <_start+0x74>
+   1011c:	000b8d13          	addi	s10,s7,0
+   10120:	0080006f          	jal	zero,10128 <_start+0x78>
+   10124:	000c0d13          	addi	s10,s8,0
+   10128:	41a00f33          	sub	t5,zero,s10
+   1012c:	41900fb3          	sub	t6,zero,s9
+   10130:	01ff4663          	blt	t5,t6,1013c <_start+0x8c>
+   10134:	000f0f13          	addi	t5,t5,0
+   10138:	0080006f          	jal	zero,10140 <_start+0x90>
+   1013c:	000f8f13          	addi	t5,t6,0
+   10140:	41e00d33          	sub	s10,zero,t5
+   10144:	06400313          	addi	t1,zero,100
+   10148:	086d1063          	bne	s10,t1,101c8 <fail>
+   1014c:	ffb00b93          	addi	s7,zero,-5
+   10150:	018bc663          	blt	s7,s8,1015c <_start+0xac>
+   10154:	000b8d13          	addi	s10,s7,0
+   10158:	0080006f          	jal	zero,10160 <_start+0xb0>
+   1015c:	000c0d13          	addi	s10,s8,0
+   10160:	41a00f33          	sub	t5,zero,s10
+   10164:	41900fb3          	sub	t6,zero,s9
+   10168:	01ff4663          	blt	t5,t6,10174 <_start+0xc4>
+   1016c:	000f0f13          	addi	t5,t5,0
+   10170:	0080006f          	jal	zero,10178 <_start+0xc8>
+   10174:	000f8f13          	addi	t5,t6,0
+   10178:	41e00d33          	sub	s10,zero,t5
+   1017c:	00000313          	addi	t1,zero,0
+   10180:	046d1463          	bne	s10,t1,101c8 <fail>
+   10184:	03700b93          	addi	s7,zero,55
+   10188:	018bc663          	blt	s7,s8,10194 <_start+0xe4>
+   1018c:	000b8d13          	addi	s10,s7,0
+   10190:	0080006f          	jal	zero,10198 <_start+0xe8>
+   10194:	000c0d13          	addi	s10,s8,0
+   10198:	41a00f33          	sub	t5,zero,s10
+   1019c:	41900fb3          	sub	t6,zero,s9
+   101a0:	01ff4663          	blt	t5,t6,101ac <_start+0xfc>
+   101a4:	000f0f13          	addi	t5,t5,0
+   101a8:	0080006f          	jal	zero,101b0 <_start+0x100>
+   101ac:	000f8f13          	addi	t5,t6,0
+   101b0:	41e00d33          	sub	s10,zero,t5
+   101b4:	03700313          	addi	t1,zero,55
+   101b8:	006d1863          	bne	s10,t1,101c8 <fail>
+
+00000000000101bc <success>:
+   101bc:	00000513          	addi	a0,zero,0
+   101c0:	05d00893          	addi	a7,zero,93
+   101c4:	00000073          	ecall
+
+00000000000101c8 <fail>:
+   101c8:	00100513          	addi	a0,zero,1
+   101cc:	05d00893          	addi	a7,zero,93
+   101d0:	00000073          	ecall

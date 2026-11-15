@@ -1,0 +1,73 @@
+
+/home/ubuntu/lab6/bin/pseudo_demo:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100b0 <_start>:
+   100b0:	02a00293          	addi	t0,zero,42
+   100b4:	02a00313          	addi	t1,zero,42
+   100b8:	08629463          	bne	t0,t1,10140 <fail>
+   100bc:	000123b7          	lui	t2,0x12
+   100c0:	3453839b          	addiw	t2,t2,837 # 12345 <__global_pointer$+0x9f9>
+   100c4:	00012e37          	lui	t3,0x12
+   100c8:	345e0e1b          	addiw	t3,t3,837 # 12345 <__global_pointer$+0x9f9>
+   100cc:	07c39a63          	bne	t2,t3,10140 <fail>
+   100d0:	00000e93          	addi	t4,zero,0
+   100d4:	060e9663          	bne	t4,zero,10140 <fail>
+   100d8:	ffffff37          	lui	t5,0xfffff
+   100dc:	ffff0f1b          	addiw	t5,t5,-1 # ffffffffffffefff <__global_pointer$+0xfffffffffffed6b3>
+   100e0:	ffffffb7          	lui	t6,0xfffff
+   100e4:	ffff8f9b          	addiw	t6,t6,-1 # ffffffffffffefff <__global_pointer$+0xfffffffffffed6b3>
+   100e8:	05ff1c63          	bne	t5,t6,10140 <fail>
+   100ec:	3db00513          	addi	a0,zero,987
+   100f0:	00050593          	addi	a1,a0,0
+   100f4:	04b51663          	bne	a0,a1,10140 <fail>
+   100f8:	05500613          	addi	a2,zero,85
+   100fc:	fff64693          	xori	a3,a2,-1
+   10100:	40c00733          	sub	a4,zero,a2
+   10104:	fff6c793          	xori	a5,a3,-1
+   10108:	02f61c63          	bne	a2,a5,10140 <fail>
+   1010c:	faa00813          	addi	a6,zero,-86
+   10110:	03069863          	bne	a3,a6,10140 <fail>
+   10114:	fab00893          	addi	a7,zero,-85
+   10118:	03171463          	bne	a4,a7,10140 <fail>
+   1011c:	00000013          	addi	zero,zero,0
+   10120:	00c0006f          	jal	zero,1012c <after_skip>
+   10124:	00100413          	addi	s0,zero,1
+   10128:	0180006f          	jal	zero,10140 <fail>
+
+000000000001012c <after_skip>:
+   1012c:	00000413          	addi	s0,zero,0
+   10130:	00041863          	bne	s0,zero,10140 <fail>
+
+0000000000010134 <success>:
+   10134:	00000513          	addi	a0,zero,0
+   10138:	05d00893          	addi	a7,zero,93
+   1013c:	00000073          	ecall
+
+0000000000010140 <fail>:
+   10140:	00100513          	addi	a0,zero,1
+   10144:	05d00893          	addi	a7,zero,93
+   10148:	00000073          	ecall
+
+# PSEUDO: li t0, 42 => addi t0, zero, 42
+# PSEUDO: li t2, 0x12345 => lui t2, 0x12; addi t2, t2, 0x345
+# PSEUDO: li t4, 0 => addi t4, zero, 0
+# PSEUDO: li t5, -4097 => lui/addi sequence (inspect emitted immediates above)
+# PSEUDO: mv a1, a0 => addi a1, a0, 0
+# PSEUDO: not a3, a2 => xori a3, a2, -1
+# PSEUDO: neg a4, a2 => sub a4, zero, a2
+# PSEUDO: not a5, a3 => xori a5, a3, -1
+# PSEUDO: nop => addi zero, zero, 0
+# PSEUDO: j after_skip => jal zero, offset
+#
+# Immediate note:
+# LUI places its 20-bit immediate in bits 31:12 and sign-extends
+# the resulting 32-bit value on RV64. The following ADDI uses a
+# signed 12-bit offset. When lower bit 11 is set, the assembler
+# may round the LUI upper immediate upward and use a negative
+# ADDI offset to preserve the requested value.
+#
+# Verify actual instruction pairs above; these comments document
+# the expansion patterns and are not a substitute for the listing.

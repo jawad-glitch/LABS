@@ -1,0 +1,57 @@
+
+bin/recursive_sum:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+000000000001017c <_start>:
+   1017c:	00002297          	auipc	t0,0x2
+   10180:	e5c2b283          	ld	t0,-420(t0) # 11fd8 <_GLOBAL_OFFSET_TABLE_+0x8>
+   10184:	0022b023          	sd	sp,0(t0)
+   10188:	00a00513          	li	a0,10
+   1018c:	00000097          	auipc	ra,0x0
+   10190:	054080e7          	jalr	84(ra) # 101e0 <recursive_sum>
+   10194:	00002297          	auipc	t0,0x2
+   10198:	e442b283          	ld	t0,-444(t0) # 11fd8 <_GLOBAL_OFFSET_TABLE_+0x8>
+   1019c:	0002b303          	ld	t1,0(t0)
+   101a0:	00002397          	auipc	t2,0x2
+   101a4:	e403b383          	ld	t2,-448(t2) # 11fe0 <_GLOBAL_OFFSET_TABLE_+0x10>
+   101a8:	0003be03          	ld	t3,0(t2)
+   101ac:	41c304b3          	sub	s1,t1,t3
+   101b0:	0b000e93          	li	t4,176
+   101b4:	03d49063          	bne	s1,t4,101d4 <failed>
+   101b8:	00002297          	auipc	t0,0x2
+   101bc:	e302b283          	ld	t0,-464(t0) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x18>
+   101c0:	0092b023          	sd	s1,0(t0)
+   101c4:	03700293          	li	t0,55
+   101c8:	00551663          	bne	a0,t0,101d4 <failed>
+   101cc:	05d00893          	li	a7,93
+   101d0:	00000073          	ecall
+
+00000000000101d4 <failed>:
+   101d4:	00100513          	li	a0,1
+   101d8:	05d00893          	li	a7,93
+   101dc:	00000073          	ecall
+
+00000000000101e0 <recursive_sum>:
+   101e0:	ff010113          	addi	sp,sp,-16
+   101e4:	00a13023          	sd	a0,0(sp)
+   101e8:	00113423          	sd	ra,8(sp)
+   101ec:	00050e63          	beqz	a0,10208 <recursive_base>
+   101f0:	fff50513          	addi	a0,a0,-1
+   101f4:	00000097          	auipc	ra,0x0
+   101f8:	fec080e7          	jalr	-20(ra) # 101e0 <recursive_sum>
+   101fc:	00013283          	ld	t0,0(sp)
+   10200:	00550533          	add	a0,a0,t0
+   10204:	0140006f          	j	10218 <recursive_restore>
+
+0000000000010208 <recursive_base>:
+   10208:	00002297          	auipc	t0,0x2
+   1020c:	dd82b283          	ld	t0,-552(t0) # 11fe0 <_GLOBAL_OFFSET_TABLE_+0x10>
+   10210:	0022b023          	sd	sp,0(t0)
+   10214:	00000513          	li	a0,0
+
+0000000000010218 <recursive_restore>:
+   10218:	00813083          	ld	ra,8(sp)
+   1021c:	01010113          	addi	sp,sp,16
+   10220:	00008067          	ret

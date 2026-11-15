@@ -200,3 +200,4 @@
 | [Lab 8 - Floating-Point Operations in RISC-V](Lab%208%20-%20Floating-Point%20Operations%20in%20RISC-V/PROOF.md) | no core-check file | 2026-11-15 04:26 |
 | [Lab 9 - RISC-V Atomic Instructions A Extension](Lab%209%20-%20RISC-V%20Atomic%20Instructions%20A%20Extension/PROOF.md) | no core-check file | 2026-11-15 04:30 |
 | [Lab 10 - RISC-V Memory Model and Load-Store Architecture](Lab%2010%20-%20RISC-V%20Memory%20Model%20and%20Load-Store%20Architecture/PROOF.md) | no core-check file | 2026-11-15 04:35 |
+| [Lab 11 - RISC-V Privileged Modes, CSR and PMP](Lab%2011%20-%20RISC-V%20Privileged%20Modes,%20CSR%20and%20PMP/PROOF.md) | no core-check file | 2026-11-15 04:40 |

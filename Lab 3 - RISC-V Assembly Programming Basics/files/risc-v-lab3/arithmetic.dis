@@ -1,0 +1,43 @@
+
+arithmetic:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100e8 <_start>:
+   100e8:	00f00093          	addi	ra,zero,15
+   100ec:	00700113          	addi	sp,zero,7
+   100f0:	002081b3          	add	gp,ra,sp
+   100f4:	40208233          	sub	tp,ra,sp
+   100f8:	022082b3          	mul	t0,ra,sp
+   100fc:	00001317          	auipc	t1,0x1
+   10100:	06c30313          	addi	t1,t1,108 # 11168 <__DATA_BEGIN__>
+   10104:	00332023          	sw	gp,0(t1)
+   10108:	00001317          	auipc	t1,0x1
+   1010c:	06430313          	addi	t1,t1,100 # 1116c <result_sub>
+   10110:	00432023          	sw	tp,0(t1)
+   10114:	00001317          	auipc	t1,0x1
+   10118:	05c30313          	addi	t1,t1,92 # 11170 <result_mul>
+   1011c:	00532023          	sw	t0,0(t1)
+   10120:	00032383          	lw	t2,0(t1)
+   10124:	06900413          	addi	s0,zero,105
+   10128:	02839a63          	bne	t2,s0,1015c <failed>
+   1012c:	00001317          	auipc	t1,0x1
+   10130:	03c30313          	addi	t1,t1,60 # 11168 <__DATA_BEGIN__>
+   10134:	00032383          	lw	t2,0(t1)
+   10138:	01600413          	addi	s0,zero,22
+   1013c:	02839063          	bne	t2,s0,1015c <failed>
+   10140:	00001317          	auipc	t1,0x1
+   10144:	02c30313          	addi	t1,t1,44 # 1116c <result_sub>
+   10148:	00032383          	lw	t2,0(t1)
+   1014c:	00800413          	addi	s0,zero,8
+   10150:	00839663          	bne	t2,s0,1015c <failed>
+   10154:	00000513          	addi	a0,zero,0
+   10158:	0080006f          	jal	zero,10160 <exit>
+
+000000000001015c <failed>:
+   1015c:	00100513          	addi	a0,zero,1
+
+0000000000010160 <exit>:
+   10160:	05d00893          	addi	a7,zero,93
+   10164:	00000073          	ecall

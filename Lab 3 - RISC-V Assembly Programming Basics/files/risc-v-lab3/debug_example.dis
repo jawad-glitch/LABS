@@ -1,0 +1,67 @@
+
+debug_example:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100e8 <_start>:
+   100e8:	00001097          	auipc	ra,0x1
+   100ec:	0b008093          	addi	ra,ra,176 # 11198 <__DATA_BEGIN__>
+   100f0:	00500113          	addi	sp,zero,5
+   100f4:	00000193          	addi	gp,zero,0
+   100f8:	00000213          	addi	tp,zero,0
+
+00000000000100fc <sum_loop>:
+   100fc:	00220e63          	beq	tp,sp,10118 <end_sum>
+   10100:	00221293          	slli	t0,tp,0x2
+   10104:	00508333          	add	t1,ra,t0
+   10108:	00032383          	lw	t2,0(t1)
+   1010c:	007181b3          	add	gp,gp,t2
+   10110:	00120213          	addi	tp,tp,1 # 1 <_start-0x100e7>
+   10114:	fe9ff06f          	jal	zero,100fc <sum_loop>
+
+0000000000010118 <end_sum>:
+   10118:	00001417          	auipc	s0,0x1
+   1011c:	09440413          	addi	s0,s0,148 # 111ac <final_sum>
+   10120:	00342023          	sw	gp,0(s0)
+   10124:	00001097          	auipc	ra,0x1
+   10128:	07408093          	addi	ra,ra,116 # 11198 <__DATA_BEGIN__>
+   1012c:	0000a483          	lw	s1,0(ra)
+   10130:	00100213          	addi	tp,zero,1
+
+0000000000010134 <max_loop>:
+   10134:	02220263          	beq	tp,sp,10158 <end_max>
+   10138:	00221293          	slli	t0,tp,0x2
+   1013c:	00508333          	add	t1,ra,t0
+   10140:	00032383          	lw	t2,0(t1)
+   10144:	0074c463          	blt	s1,t2,1014c <update_max>
+   10148:	0080006f          	jal	zero,10150 <skip_update>
+
+000000000001014c <update_max>:
+   1014c:	00038493          	addi	s1,t2,0
+
+0000000000010150 <skip_update>:
+   10150:	00120213          	addi	tp,tp,1 # 1 <_start-0x100e7>
+   10154:	fe1ff06f          	jal	zero,10134 <max_loop>
+
+0000000000010158 <end_max>:
+   10158:	00001417          	auipc	s0,0x1
+   1015c:	05840413          	addi	s0,s0,88 # 111b0 <max_value>
+   10160:	00942023          	sw	s1,0(s0)
+   10164:	00042503          	lw	a0,0(s0)
+   10168:	05900593          	addi	a1,zero,89
+   1016c:	02b51063          	bne	a0,a1,1018c <failed>
+   10170:	00001417          	auipc	s0,0x1
+   10174:	03c40413          	addi	s0,s0,60 # 111ac <final_sum>
+   10178:	00042503          	lw	a0,0(s0)
+   1017c:	0cf00593          	addi	a1,zero,207
+   10180:	00b51663          	bne	a0,a1,1018c <failed>
+   10184:	00000513          	addi	a0,zero,0
+   10188:	0080006f          	jal	zero,10190 <exit>
+
+000000000001018c <failed>:
+   1018c:	00100513          	addi	a0,zero,1
+
+0000000000010190 <exit>:
+   10190:	05d00893          	addi	a7,zero,93
+   10194:	00000073          	ecall

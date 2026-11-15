@@ -1,0 +1,60 @@
+
+comprehensive_test:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100e8 <_start>:
+   100e8:	06400093          	addi	ra,zero,100
+   100ec:	01900113          	addi	sp,zero,25
+   100f0:	002081b3          	add	gp,ra,sp
+   100f4:	40208233          	sub	tp,ra,sp
+   100f8:	022082b3          	mul	t0,ra,sp
+   100fc:	0ff00313          	addi	t1,zero,255
+   10100:	00f00393          	addi	t2,zero,15
+   10104:	00737433          	and	s0,t1,t2
+   10108:	007364b3          	or	s1,t1,t2
+   1010c:	00734533          	xor	a0,t1,t2
+   10110:	03200593          	addi	a1,zero,50
+   10114:	0015c663          	blt	a1,ra,10120 <test3_true>
+   10118:	00000613          	addi	a2,zero,0
+   1011c:	0080006f          	jal	zero,10124 <test3_end>
+
+0000000000010120 <test3_true>:
+   10120:	00100613          	addi	a2,zero,1
+
+0000000000010124 <test3_end>:
+   10124:	00a00513          	addi	a0,zero,10
+   10128:	064000ef          	jal	ra,1018c <square_function>
+   1012c:	00050693          	addi	a3,a0,0
+   10130:	00001717          	auipc	a4,0x1
+   10134:	06470713          	addi	a4,a4,100 # 11194 <__DATA_BEGIN__>
+   10138:	00372023          	sw	gp,0(a4)
+   1013c:	00872223          	sw	s0,4(a4)
+   10140:	00c72423          	sw	a2,8(a4)
+   10144:	00d72623          	sw	a3,12(a4)
+   10148:	00072783          	lw	a5,0(a4)
+   1014c:	00472803          	lw	a6,4(a4)
+   10150:	00872883          	lw	a7,8(a4)
+   10154:	00c72903          	lw	s2,12(a4)
+   10158:	07d00993          	addi	s3,zero,125
+   1015c:	03379263          	bne	a5,s3,10180 <failed>
+   10160:	00f00993          	addi	s3,zero,15
+   10164:	01381e63          	bne	a6,s3,10180 <failed>
+   10168:	00100993          	addi	s3,zero,1
+   1016c:	01389a63          	bne	a7,s3,10180 <failed>
+   10170:	06400993          	addi	s3,zero,100
+   10174:	01391663          	bne	s2,s3,10180 <failed>
+   10178:	00000513          	addi	a0,zero,0
+   1017c:	0080006f          	jal	zero,10184 <exit>
+
+0000000000010180 <failed>:
+   10180:	00100513          	addi	a0,zero,1
+
+0000000000010184 <exit>:
+   10184:	05d00893          	addi	a7,zero,93
+   10188:	00000073          	ecall
+
+000000000001018c <square_function>:
+   1018c:	02a50533          	mul	a0,a0,a0
+   10190:	00008067          	jalr	zero,0(ra)

@@ -1,0 +1,59 @@
+
+functions:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100e8 <_start>:
+   100e8:	00800513          	addi	a0,zero,8
+   100ec:	00300593          	addi	a1,zero,3
+   100f0:	058000ef          	jal	ra,10148 <add_function>
+   100f4:	00001097          	auipc	ra,0x1
+   100f8:	09408093          	addi	ra,ra,148 # 11188 <__DATA_BEGIN__>
+   100fc:	00a0a023          	sw	a0,0(ra)
+   10100:	00500513          	addi	a0,zero,5
+   10104:	04c000ef          	jal	ra,10150 <factorial>
+   10108:	00001097          	auipc	ra,0x1
+   1010c:	08408093          	addi	ra,ra,132 # 1118c <fact_result>
+   10110:	00a0a023          	sw	a0,0(ra)
+   10114:	0000a103          	lw	sp,0(ra)
+   10118:	07800193          	addi	gp,zero,120
+   1011c:	02311063          	bne	sp,gp,1013c <failed>
+   10120:	00001097          	auipc	ra,0x1
+   10124:	06808093          	addi	ra,ra,104 # 11188 <__DATA_BEGIN__>
+   10128:	0000a103          	lw	sp,0(ra)
+   1012c:	00b00193          	addi	gp,zero,11
+   10130:	00311663          	bne	sp,gp,1013c <failed>
+   10134:	00000513          	addi	a0,zero,0
+   10138:	0080006f          	jal	zero,10140 <exit>
+
+000000000001013c <failed>:
+   1013c:	00100513          	addi	a0,zero,1
+
+0000000000010140 <exit>:
+   10140:	05d00893          	addi	a7,zero,93
+   10144:	00000073          	ecall
+
+0000000000010148 <add_function>:
+   10148:	00b50533          	add	a0,a0,a1
+   1014c:	00008067          	jalr	zero,0(ra)
+
+0000000000010150 <factorial>:
+   10150:	ff010113          	addi	sp,sp,-16
+   10154:	00113423          	sd	ra,8(sp)
+   10158:	00a13023          	sd	a0,0(sp)
+   1015c:	00100093          	addi	ra,zero,1
+   10160:	00a0dc63          	bge	ra,a0,10178 <fact_base_case>
+   10164:	fff50513          	addi	a0,a0,-1
+   10168:	fe9ff0ef          	jal	ra,10150 <factorial>
+   1016c:	00013083          	ld	ra,0(sp)
+   10170:	02150533          	mul	a0,a0,ra
+   10174:	0080006f          	jal	zero,1017c <fact_return>
+
+0000000000010178 <fact_base_case>:
+   10178:	00100513          	addi	a0,zero,1
+
+000000000001017c <fact_return>:
+   1017c:	00813083          	ld	ra,8(sp)
+   10180:	01010113          	addi	sp,sp,16
+   10184:	00008067          	jalr	zero,0(ra)

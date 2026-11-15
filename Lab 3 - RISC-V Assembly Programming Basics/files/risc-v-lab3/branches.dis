@@ -1,0 +1,53 @@
+
+branches:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100e8 <_start>:
+   100e8:	00a00093          	addi	ra,zero,10
+   100ec:	00500113          	addi	sp,zero,5
+   100f0:	00000193          	addi	gp,zero,0
+   100f4:	00114863          	blt	sp,ra,10104 <greater_than>
+   100f8:	00208a63          	beq	ra,sp,1010c <equal>
+   100fc:	00100193          	addi	gp,zero,1
+   10100:	0100006f          	jal	zero,10110 <end_comparison>
+
+0000000000010104 <greater_than>:
+   10104:	00200193          	addi	gp,zero,2
+   10108:	0080006f          	jal	zero,10110 <end_comparison>
+
+000000000001010c <equal>:
+   1010c:	00300193          	addi	gp,zero,3
+
+0000000000010110 <end_comparison>:
+   10110:	00001217          	auipc	tp,0x1
+   10114:	05820213          	addi	tp,tp,88 # 11168 <__DATA_BEGIN__>
+   10118:	00322023          	sw	gp,0(tp) # 0 <_start-0x100e8>
+   1011c:	00000293          	addi	t0,zero,0
+   10120:	00500313          	addi	t1,zero,5
+
+0000000000010124 <loop_start>:
+   10124:	00628663          	beq	t0,t1,10130 <loop_end>
+   10128:	00128293          	addi	t0,t0,1
+   1012c:	ff9ff06f          	jal	zero,10124 <loop_start>
+
+0000000000010130 <loop_end>:
+   10130:	00001397          	auipc	t2,0x1
+   10134:	03c38393          	addi	t2,t2,60 # 1116c <loop_counter>
+   10138:	0053a023          	sw	t0,0(t2)
+   1013c:	00022403          	lw	s0,0(tp) # 0 <_start-0x100e8>
+   10140:	00200493          	addi	s1,zero,2
+   10144:	00941c63          	bne	s0,s1,1015c <failed>
+   10148:	0003a403          	lw	s0,0(t2)
+   1014c:	00500493          	addi	s1,zero,5
+   10150:	00941663          	bne	s0,s1,1015c <failed>
+   10154:	00000513          	addi	a0,zero,0
+   10158:	0080006f          	jal	zero,10160 <exit>
+
+000000000001015c <failed>:
+   1015c:	00100513          	addi	a0,zero,1
+
+0000000000010160 <exit>:
+   10160:	05d00893          	addi	a7,zero,93
+   10164:	00000073          	ecall

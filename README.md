@@ -192,3 +192,4 @@
 | [Lab 20 - Real-World Open Source Project Contribution](Lab%2020%20-%20Real-World%20Open%20Source%20Project%20Contribution/PROOF.md) | no core-check file | 2026-11-15 03:22 |
 | [Lab 1 - Introduction to RISC-V](Lab%201%20-%20Introduction%20to%20RISC-V/PROOF.md) | no core-check file | 2026-11-15 03:30 |
 | [Lab 2 - RISC-V Base ISA Instruction Encoding and Binary Analysis](Lab%202%20-%20RISC-V%20Base%20ISA%20Instruction%20Encoding%20and%20Binary%20Analysis/PROOF.md) | no core-check file | 2026-11-15 03:36 |
+| [Lab 3 - RISC-V Assembly Programming Basics](Lab%203%20-%20RISC-V%20Assembly%20Programming%20Basics/PROOF.md) | no core-check file | 2026-11-15 03:43 |

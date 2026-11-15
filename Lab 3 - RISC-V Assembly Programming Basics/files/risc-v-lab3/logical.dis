@@ -1,0 +1,54 @@
+
+logical:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100e8 <_start>:
+   100e8:	0f000093          	addi	ra,zero,240
+   100ec:	0aa00113          	addi	sp,zero,170
+   100f0:	0020f1b3          	and	gp,ra,sp
+   100f4:	0020e233          	or	tp,ra,sp
+   100f8:	0020c2b3          	xor	t0,ra,sp
+   100fc:	fff0c313          	xori	t1,ra,-1
+   10100:	00209393          	slli	t2,ra,0x2
+   10104:	0020d413          	srli	s0,ra,0x2
+   10108:	00001497          	auipc	s1,0x1
+   1010c:	08c48493          	addi	s1,s1,140 # 11194 <__DATA_BEGIN__>
+   10110:	0034a023          	sw	gp,0(s1)
+   10114:	00001497          	auipc	s1,0x1
+   10118:	08448493          	addi	s1,s1,132 # 11198 <or_result>
+   1011c:	0044a023          	sw	tp,0(s1)
+   10120:	00001497          	auipc	s1,0x1
+   10124:	07c48493          	addi	s1,s1,124 # 1119c <xor_result>
+   10128:	0054a023          	sw	t0,0(s1)
+   1012c:	00001497          	auipc	s1,0x1
+   10130:	07448493          	addi	s1,s1,116 # 111a0 <not_result>
+   10134:	0064a023          	sw	t1,0(s1)
+   10138:	00001497          	auipc	s1,0x1
+   1013c:	06c48493          	addi	s1,s1,108 # 111a4 <sll_result>
+   10140:	0074a023          	sw	t2,0(s1)
+   10144:	00001497          	auipc	s1,0x1
+   10148:	06448493          	addi	s1,s1,100 # 111a8 <srl_result>
+   1014c:	0084a023          	sw	s0,0(s1)
+   10150:	0a000513          	addi	a0,zero,160
+   10154:	02a19a63          	bne	gp,a0,10188 <failed>
+   10158:	0fa00513          	addi	a0,zero,250
+   1015c:	02a21663          	bne	tp,a0,10188 <failed>
+   10160:	05a00513          	addi	a0,zero,90
+   10164:	02a29263          	bne	t0,a0,10188 <failed>
+   10168:	f0f00513          	addi	a0,zero,-241
+   1016c:	00a31e63          	bne	t1,a0,10188 <failed>
+   10170:	3c000513          	addi	a0,zero,960
+   10174:	00a39a63          	bne	t2,a0,10188 <failed>
+   10178:	03c00513          	addi	a0,zero,60
+   1017c:	00a41663          	bne	s0,a0,10188 <failed>
+   10180:	00000513          	addi	a0,zero,0
+   10184:	0080006f          	jal	zero,1018c <exit>
+
+0000000000010188 <failed>:
+   10188:	00100513          	addi	a0,zero,1
+
+000000000001018c <exit>:
+   1018c:	05d00893          	addi	a7,zero,93
+   10190:	00000073          	ecall

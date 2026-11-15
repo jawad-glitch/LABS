@@ -1,5 +1,5 @@
 # Lab 11 - RISC-V Machine Mode CSR and PMP - completion proof
-Completed (UTC): 2026-11-15 04:45:06 | EC2: i-07b5636307178ca7a | host: ip-172-31-10-28 | user: ubuntu
+Completed (UTC): 2026-11-15 04:46:34 | EC2: i-07b5636307178ca7a | host: ip-172-31-10-28 | user: ubuntu
 
 ## Core checks
 ```
@@ -17,6 +17,7 @@ IMAGE   ID             DISK USAGE   CONTENT SIZE   EXTRA
 ```
 ./riscv-lab11/bin/csr_pmp
 ./riscv-lab11/bin/hello
+./riscv-lab11/bin/priv_round_trip
 ./riscv-lab11/output/csr_pmp.log
 ./riscv-lab11/output/final_report.txt
 ./riscv-lab11/output/hello.log

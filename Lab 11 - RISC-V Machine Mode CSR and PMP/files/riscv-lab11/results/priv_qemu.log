@@ -1,0 +1,1 @@
+riscv_cpu_do_interrupt: hart:0, async:0, cause:0000000000000008, epc:0x00000000800001a0, tval:0x0000000000000000, desc=user_ecall

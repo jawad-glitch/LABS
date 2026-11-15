@@ -17,6 +17,7 @@ SECTIONS
 
     . = 0x80008000;
     .data : ALIGN(8) { *(.data*) }
+
     .bss : ALIGN(8)
     {
         __bss_start = .;

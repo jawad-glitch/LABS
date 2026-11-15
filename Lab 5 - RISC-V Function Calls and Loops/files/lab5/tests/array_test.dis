@@ -1,0 +1,92 @@
+
+bin/array_test:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+000000000001017c <_start>:
+   1017c:	00002517          	auipc	a0,0x2
+   10180:	e6c53503          	ld	a0,-404(a0) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x20>
+   10184:	00002297          	auipc	t0,0x2
+   10188:	e4c2b283          	ld	t0,-436(t0) # 11fd0 <_GLOBAL_OFFSET_TABLE_+0x8>
+   1018c:	0002a583          	lw	a1,0(t0)
+   10190:	00000097          	auipc	ra,0x0
+   10194:	054080e7          	jalr	84(ra) # 101e4 <array_sum>
+   10198:	00002297          	auipc	t0,0x2
+   1019c:	e402b283          	ld	t0,-448(t0) # 11fd8 <_GLOBAL_OFFSET_TABLE_+0x10>
+   101a0:	00a2b023          	sd	a0,0(t0)
+   101a4:	00002517          	auipc	a0,0x2
+   101a8:	e4453503          	ld	a0,-444(a0) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x20>
+   101ac:	00002297          	auipc	t0,0x2
+   101b0:	e242b283          	ld	t0,-476(t0) # 11fd0 <_GLOBAL_OFFSET_TABLE_+0x8>
+   101b4:	0002a583          	lw	a1,0(t0)
+   101b8:	00000097          	auipc	ra,0x0
+   101bc:	080080e7          	jalr	128(ra) # 10238 <find_max>
+   101c0:	00002297          	auipc	t0,0x2
+   101c4:	e202b283          	ld	t0,-480(t0) # 11fe0 <_GLOBAL_OFFSET_TABLE_+0x18>
+   101c8:	00a2b023          	sd	a0,0(t0)
+   101cc:	00002297          	auipc	t0,0x2
+   101d0:	e0c2b283          	ld	t0,-500(t0) # 11fd8 <_GLOBAL_OFFSET_TABLE_+0x10>
+   101d4:	0002b503          	ld	a0,0(t0)
+   101d8:	0ff57513          	zext.b	a0,a0
+   101dc:	05d00893          	li	a7,93
+   101e0:	00000073          	ecall
+
+00000000000101e4 <array_sum>:
+   101e4:	fe010113          	addi	sp,sp,-32
+   101e8:	00113c23          	sd	ra,24(sp)
+   101ec:	00813823          	sd	s0,16(sp)
+   101f0:	00913423          	sd	s1,8(sp)
+   101f4:	01213023          	sd	s2,0(sp)
+   101f8:	00050413          	mv	s0,a0
+   101fc:	00058493          	mv	s1,a1
+   10200:	00000913          	li	s2,0
+
+0000000000010204 <array_sum_loop>:
+   10204:	00048c63          	beqz	s1,1021c <array_sum_done>
+   10208:	00042283          	lw	t0,0(s0)
+   1020c:	00590933          	add	s2,s2,t0
+   10210:	00440413          	addi	s0,s0,4
+   10214:	fff48493          	addi	s1,s1,-1
+   10218:	fedff06f          	j	10204 <array_sum_loop>
+
+000000000001021c <array_sum_done>:
+   1021c:	00090513          	mv	a0,s2
+   10220:	00013903          	ld	s2,0(sp)
+   10224:	00813483          	ld	s1,8(sp)
+   10228:	01013403          	ld	s0,16(sp)
+   1022c:	01813083          	ld	ra,24(sp)
+   10230:	02010113          	addi	sp,sp,32
+   10234:	00008067          	ret
+
+0000000000010238 <find_max>:
+   10238:	fe010113          	addi	sp,sp,-32
+   1023c:	00113c23          	sd	ra,24(sp)
+   10240:	00813823          	sd	s0,16(sp)
+   10244:	00913423          	sd	s1,8(sp)
+   10248:	01213023          	sd	s2,0(sp)
+   1024c:	00050413          	mv	s0,a0
+   10250:	00058493          	mv	s1,a1
+   10254:	00042903          	lw	s2,0(s0)
+   10258:	00440413          	addi	s0,s0,4
+   1025c:	fff48493          	addi	s1,s1,-1
+
+0000000000010260 <find_max_loop>:
+   10260:	00048e63          	beqz	s1,1027c <find_max_done>
+   10264:	00042283          	lw	t0,0(s0)
+   10268:	00595463          	bge	s2,t0,10270 <find_max_skip>
+   1026c:	00028913          	mv	s2,t0
+
+0000000000010270 <find_max_skip>:
+   10270:	00440413          	addi	s0,s0,4
+   10274:	fff48493          	addi	s1,s1,-1
+   10278:	fe9ff06f          	j	10260 <find_max_loop>
+
+000000000001027c <find_max_done>:
+   1027c:	00090513          	mv	a0,s2
+   10280:	00013903          	ld	s2,0(sp)
+   10284:	00813483          	ld	s1,8(sp)
+   10288:	01013403          	ld	s0,16(sp)
+   1028c:	01813083          	ld	ra,24(sp)
+   10290:	02010113          	addi	sp,sp,32
+   10294:	00008067          	ret

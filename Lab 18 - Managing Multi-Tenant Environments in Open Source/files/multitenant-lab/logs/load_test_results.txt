@@ -1,0 +1,10 @@
+Multi-tenant concurrent login load test
+Total requests: 200
+Concurrency: 200 workers
+Tenant distribution: alpha=67, beta=67, gamma=66
+Successful requests: 0
+Failed requests: 200
+Error rate: 100.00%
+Median response time: 3.54 ms
+Total elapsed time: 3.49 seconds
+Acceptance: FAIL

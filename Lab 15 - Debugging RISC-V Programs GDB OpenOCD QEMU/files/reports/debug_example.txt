@@ -1,0 +1,8 @@
+RISC-V Debugging Example
+Factorial of 5 = 120
+Logical array size = 5
+Maximum reported = 99
+Original value = 20
+Pointer value: 20
+Modified value: 40
+Final value = 40

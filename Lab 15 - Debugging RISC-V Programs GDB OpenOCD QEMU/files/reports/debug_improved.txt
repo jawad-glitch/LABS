@@ -1,0 +1,3 @@
+Improved debugging example
+Factorial 5 = 120
+Correct maximum = 42

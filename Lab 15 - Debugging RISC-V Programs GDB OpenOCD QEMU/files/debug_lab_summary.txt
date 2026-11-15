@@ -1,0 +1,22 @@
+RISC-V Debugging Lab Completion Summary
+Date: Sun Nov 15 05:23:25 UTC 2026
+
+Created programs:
+assembly_debug.s
+common_errors.c
+debug_example.c
+debug_improved.c
+
+Compiled binaries:
+assembly_debug
+common_errors
+debug_example
+debug_improved
+
+Remote GDB return codes:
+C: 1
+Assembly: 1
+Advanced: 1
+
+QEMU user-mode debugging was performed.
+OpenOCD was installed; physical JTAG debugging was not performed.

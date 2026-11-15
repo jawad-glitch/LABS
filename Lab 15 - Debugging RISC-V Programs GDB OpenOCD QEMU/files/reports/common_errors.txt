@@ -1,0 +1,12 @@
+Common error demonstrations
+1. Array boundary:
+values[0] = 1
+values[1] = 2
+values[2] = 3
+values[3] = 4
+values[4] = 5
+Detected invalid index 5; access skipped
+2. Initialized variable:
+Value = 0
+3. Null pointer:
+Null pointer detected; dereference skipped

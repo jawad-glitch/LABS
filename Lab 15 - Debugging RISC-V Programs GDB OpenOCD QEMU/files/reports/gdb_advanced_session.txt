@@ -1,0 +1,21 @@
+warning: BFD: warning: system-supplied DSO at 0x2aaaab2ac000 has a corrupt string table index
+0x0000000000010480 in _start ()
+Breakpoint 1 at 0x10684: file src/debug_improved.c, line 20.
+
+Breakpoint 1, main () at src/debug_improved.c:20
+20	int main(void) {
+values = {66722, 0, -1423266272, 10922, 473064}
+Breakpoint 2 at 0x10604: file src/debug_improved.c, line 11.
+
+Breakpoint 2, find_max (arr=0x2aaaab2aada0, size=5) at src/debug_improved.c:11
+11	    if (arr == NULL || size <= 0) return -1;
+$1 = 5
+$2 = {10, 25, 8, 42, 15}
+Hardware watchpoint 3: max
+Warning:
+Could not insert hardware watchpoint 3.
+Could not insert hardware breakpoints:
+You may have requested too many hardware breakpoints/watchpoints.
+
+debug-configs/advanced_debug.gdb:13: Error in sourced command file:
+Command aborted.

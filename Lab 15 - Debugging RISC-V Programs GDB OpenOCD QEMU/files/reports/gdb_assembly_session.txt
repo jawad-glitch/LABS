@@ -1,0 +1,9 @@
+warning: BFD: warning: system-supplied DSO at 0x2aaaab2ac000 has a corrupt string table index
+_start () at src/assembly_debug.s:6
+6	    li x1, 10
+Breakpoint 1 at 0x10120: file src/assembly_debug.s, line 6.
+[Inferior 1 (process 12850) exited normally]
+
+--- Assembly entry ---
+debug-configs/assembly_script.gdb:8: Error in sourced command file:
+The program has no registers now.

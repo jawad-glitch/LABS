@@ -1,0 +1,25 @@
+
+bin/assembly_debug:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000010120 <_start>:
+   10120:	40a9                	li	ra,10
+   10122:	4151                	li	sp,20
+   10124:	4181                	li	gp,0
+   10126:	002081b3          	add	gp,ra,sp
+   1012a:	00002217          	auipc	tp,0x2
+   1012e:	ebe23203          	ld	tp,-322(tp) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x8>
+   10132:	00322023          	sw	gp,0(tp) # 0 <_start-0x10120>
+   10136:	00022283          	lw	t0,0(tp) # 0 <_start-0x10120>
+   1013a:	4315                	li	t1,5
+   1013c:	4381                	li	t2,0
+
+000000000001013e <loop>:
+   1013e:	939a                	add	t2,t2,t1
+   10140:	137d                	addi	t1,t1,-1
+   10142:	fe031ee3          	bnez	t1,1013e <loop>
+   10146:	4501                	li	a0,0
+   10148:	05d00893          	li	a7,93
+   1014c:	00000073          	ecall

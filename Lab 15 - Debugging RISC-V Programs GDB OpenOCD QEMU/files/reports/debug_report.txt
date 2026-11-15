@@ -1,0 +1,25 @@
+LAB 15: DEBUGGING RISC-V PROGRAMS
+Date: Sun Nov 15 05:23:21 UTC 2026
+
+Toolchain:
+riscv64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+GNU gdb (Ubuntu 15.1-1ubuntu1~24.04.1) 15.1
+qemu-riscv64 version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)
+Open On-Chip Debugger 0.12.0
+
+GDB remote sessions:
+C debugging exit code: 1
+Assembly debugging exit code: 1
+Advanced debugging exit code: 1
+
+Expected logical bug:
+find_max loops while i <= size rather than i < size.
+The extra guard element is 99, so the incorrect result is 99.
+
+Corrected version:
+debug_improved uses i < size and returns 42.
+
+Debugging model:
+QEMU user-mode emulates RISC-V Linux programs and provides a GDB remote stub.
+GDB connects to QEMU for breakpoints, stepping, registers and watchpoints.
+OpenOCD is installed but no physical hardware adapter or JTAG target is connected.

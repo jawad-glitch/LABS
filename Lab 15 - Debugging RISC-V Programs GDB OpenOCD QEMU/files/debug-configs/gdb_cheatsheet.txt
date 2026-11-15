@@ -1,0 +1,50 @@
+RISC-V GDB QUICK REFERENCE
+
+Execution:
+  run
+  continue
+  step
+  next
+  stepi
+  nexti
+  finish
+
+Breakpoints:
+  break main
+  break factorial
+  break file.c:25
+  info breakpoints
+  delete 1
+
+Watchpoints:
+  watch variable
+  watch *address
+  info watchpoints
+
+Variables and memory:
+  print variable
+  print/x variable
+  print/d variable
+  x/10wx address
+  x/5i $pc
+
+Registers and stack:
+  info registers
+  print $pc
+  print $sp
+  print $ra
+  backtrace
+  info locals
+  info args
+
+Assembly:
+  disassemble main
+  display/i $pc
+  stepi
+
+Remote QEMU debugging:
+  target remote localhost:PORT
+  detach
+
+QEMU user-mode debugging:
+  qemu-riscv64 -g PORT ./program

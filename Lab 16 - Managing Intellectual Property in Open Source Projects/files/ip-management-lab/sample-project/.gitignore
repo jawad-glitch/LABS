@@ -1,0 +1,9 @@
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+copyright-report.json
+sbom.spdx.json
+COMPLIANCE-REPORT.md
+pip-licenses.json
+npm-licenses.json

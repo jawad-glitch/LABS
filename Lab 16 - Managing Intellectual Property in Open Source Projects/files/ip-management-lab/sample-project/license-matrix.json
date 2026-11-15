@@ -1,0 +1,75 @@
+{
+  "projectLicense": "Apache-2.0",
+  "policyVersion": "1.0",
+  "rules": {
+    "MIT": {
+      "status": "compatible",
+      "action": "Retain copyright and license notices."
+    },
+    "BSD-2-Clause": {
+      "status": "compatible",
+      "action": "Retain copyright, conditions and disclaimer."
+    },
+    "BSD-3-Clause": {
+      "status": "compatible",
+      "action": "Retain copyright, conditions and disclaimer."
+    },
+    "Apache-2.0": {
+      "status": "compatible",
+      "action": "Retain license and applicable NOTICE information."
+    },
+    "ISC": {
+      "status": "compatible",
+      "action": "Retain the ISC copyright and permission notice."
+    },
+    "CC0-1.0": {
+      "status": "compatible",
+      "action": "Review the public-domain dedication and jurisdictional treatment."
+    },
+    "MPL-2.0": {
+      "status": "conditional",
+      "action": "Track covered files and provide MPL source when distributing modified covered files."
+    },
+    "LGPL-2.1": {
+      "status": "conditional",
+      "action": "Review linking, relinking and source obligations before distribution."
+    },
+    "LGPL-2.1-or-later": {
+      "status": "conditional",
+      "action": "Review linking, relinking and source obligations before distribution."
+    },
+    "LGPL-3.0": {
+      "status": "conditional",
+      "action": "Review LGPL-3.0 source, relinking and notice obligations."
+    },
+    "GPL-2.0": {
+      "status": "incompatible",
+      "action": "Do not combine or distribute under the Apache-2.0 project without legal review of the licensing arrangement."
+    },
+    "GPL-2.0-only": {
+      "status": "incompatible",
+      "action": "Do not combine or distribute under the Apache-2.0 project without legal review of the licensing arrangement."
+    },
+    "GPL-2.0-or-later": {
+      "status": "incompatible",
+      "action": "Do not combine or distribute under the Apache-2.0 project without legal review of the licensing arrangement."
+    },
+    "GPL-3.0": {
+      "status": "incompatible",
+      "action": "GPL-3.0 and Apache-2.0 have distribution compatibility concerns; obtain legal review before combining."
+    },
+    "GPL-3.0-only": {
+      "status": "incompatible",
+      "action": "GPL-3.0 and Apache-2.0 have distribution compatibility concerns; obtain legal review before combining."
+    },
+    "GPL-3.0-or-later": {
+      "status": "incompatible",
+      "action": "GPL-3.0 and Apache-2.0 have distribution compatibility concerns; obtain legal review before combining."
+    },
+    "UNKNOWN": {
+      "status": "conditional",
+      "action": "Verify the component's license from its authoritative license file before distribution."
+    }
+  },
+  "defaultStatus": "conditional"
+}

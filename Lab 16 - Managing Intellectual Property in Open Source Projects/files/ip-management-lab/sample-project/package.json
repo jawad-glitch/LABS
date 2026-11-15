@@ -1,0 +1,15 @@
+{
+  "name": "ip-compliance-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Open source IP compliance lab",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "4.21.2",
+    "lodash": "4.17.21",
+    "axios": "1.7.9",
+    "uuid": "11.0.3",
+    "@wordpress/element": "6.7.0",
+    "@fortawesome/fontawesome-svg-core": "6.7.2"
+  }
+}

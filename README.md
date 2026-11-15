@@ -186,3 +186,4 @@
 | [Lab 14 - Integrating Open Source with Financial Services Apps](Lab%2014%20-%20Integrating%20Open%20Source%20with%20Financial%20Services%20Apps/PROOF.md) | no core-check file | 2026-11-13 20:55 |
 | [Lab 15 - Building Secure Applications with Open Source Tools](Lab%2015%20-%20Building%20Secure%20Applications%20with%20Open%20Source%20Tools/PROOF.md) | no core-check file | 2026-11-13 21:01 |
 | [Lab 16 - Managing Intellectual Property in Open Source Projects](Lab%2016%20-%20Managing%20Intellectual%20Property%20in%20Open%20Source%20Projects/PROOF.md) | no core-check file | 2026-11-15 02:49 |
+| [Lab 17 - Open Source Project Lifecycle Management](Lab%2017%20-%20Open%20Source%20Project%20Lifecycle%20Management/PROOF.md) | no core-check file | 2026-11-15 02:54 |

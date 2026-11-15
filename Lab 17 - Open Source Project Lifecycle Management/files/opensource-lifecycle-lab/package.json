@@ -1,0 +1,19 @@
+{
+  "name": "opensource-lifecycle-toolkit",
+  "version": "1.0.0",
+  "description": "A demonstration toolkit for open source project lifecycle management",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "license": "MIT",
+  "scripts": {
+    "lint": "node --check src/index.js && node --check test/index.test.js",
+    "test": "node --test",
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "standard-version": "9.5.0"
+  },
+  "standard-version": {
+    "tagPrefix": "v"
+  }
+}

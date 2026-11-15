@@ -1,0 +1,6 @@
+read_verilog ../rtl/riscv_core.v
+read_verilog ../rtl/memory.v
+read_verilog ../rtl/riscv_system.v
+hierarchy -check -top riscv_system
+synth -top riscv_system
+stat

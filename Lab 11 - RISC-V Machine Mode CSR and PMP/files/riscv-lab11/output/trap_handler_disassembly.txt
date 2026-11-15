@@ -1,0 +1,82 @@
+
+bin/priv_round_trip:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000080000070 <trap_handler>:
+    80000070:	7111                	addi	sp,sp,-256
+    80000072:	e002                	sd	zero,0(sp)
+    80000074:	e406                	sd	ra,8(sp)
+    80000076:	ec0e                	sd	gp,24(sp)
+    80000078:	f012                	sd	tp,32(sp)
+    8000007a:	f416                	sd	t0,40(sp)
+    8000007c:	10010293          	addi	t0,sp,256
+    80000080:	e816                	sd	t0,16(sp)
+    80000082:	f81a                	sd	t1,48(sp)
+    80000084:	fc1e                	sd	t2,56(sp)
+    80000086:	e0a2                	sd	s0,64(sp)
+    80000088:	e4a6                	sd	s1,72(sp)
+    8000008a:	e8aa                	sd	a0,80(sp)
+    8000008c:	ecae                	sd	a1,88(sp)
+    8000008e:	f0b2                	sd	a2,96(sp)
+    80000090:	f4b6                	sd	a3,104(sp)
+    80000092:	f8ba                	sd	a4,112(sp)
+    80000094:	fcbe                	sd	a5,120(sp)
+    80000096:	e142                	sd	a6,128(sp)
+    80000098:	e546                	sd	a7,136(sp)
+    8000009a:	e94a                	sd	s2,144(sp)
+    8000009c:	ed4e                	sd	s3,152(sp)
+    8000009e:	f152                	sd	s4,160(sp)
+    800000a0:	f556                	sd	s5,168(sp)
+    800000a2:	f95a                	sd	s6,176(sp)
+    800000a4:	fd5e                	sd	s7,184(sp)
+    800000a6:	e1e2                	sd	s8,192(sp)
+    800000a8:	e5e6                	sd	s9,200(sp)
+    800000aa:	e9ea                	sd	s10,208(sp)
+    800000ac:	edee                	sd	s11,216(sp)
+    800000ae:	f1f2                	sd	t3,224(sp)
+    800000b0:	f5f6                	sd	t4,232(sp)
+    800000b2:	f9fa                	sd	t5,240(sp)
+    800000b4:	fdfe                	sd	t6,248(sp)
+    800000b6:	342022f3          	csrr	t0,mcause
+    800000ba:	4321                	li	t1,8
+    800000bc:	04629e63          	bne	t0,t1,80000118 <trap_halt>
+    800000c0:	341022f3          	csrr	t0,mepc
+    800000c4:	0291                	addi	t0,t0,4
+    800000c6:	34129073          	csrw	mepc,t0
+    800000ca:	10000337          	lui	t1,0x10000
+    800000ce:	05400393          	li	t2,84
+    800000d2:	00730023          	sb	t2,0(t1) # 10000000 <_start-0x70000000>
+    800000d6:	60a2                	ld	ra,8(sp)
+    800000d8:	61e2                	ld	gp,24(sp)
+    800000da:	7202                	ld	tp,32(sp)
+    800000dc:	72a2                	ld	t0,40(sp)
+    800000de:	7342                	ld	t1,48(sp)
+    800000e0:	73e2                	ld	t2,56(sp)
+    800000e2:	6406                	ld	s0,64(sp)
+    800000e4:	64a6                	ld	s1,72(sp)
+    800000e6:	6546                	ld	a0,80(sp)
+    800000e8:	65e6                	ld	a1,88(sp)
+    800000ea:	7606                	ld	a2,96(sp)
+    800000ec:	76a6                	ld	a3,104(sp)
+    800000ee:	7746                	ld	a4,112(sp)
+    800000f0:	77e6                	ld	a5,120(sp)
+    800000f2:	680a                	ld	a6,128(sp)
+    800000f4:	68aa                	ld	a7,136(sp)
+    800000f6:	694a                	ld	s2,144(sp)
+    800000f8:	69ea                	ld	s3,152(sp)
+    800000fa:	7a0a                	ld	s4,160(sp)
+    800000fc:	7aaa                	ld	s5,168(sp)
+    800000fe:	7b4a                	ld	s6,176(sp)
+    80000100:	7bea                	ld	s7,184(sp)
+    80000102:	6c0e                	ld	s8,192(sp)
+    80000104:	6cae                	ld	s9,200(sp)
+    80000106:	6d4e                	ld	s10,208(sp)
+    80000108:	6dee                	ld	s11,216(sp)
+    8000010a:	7e0e                	ld	t3,224(sp)
+    8000010c:	7eae                	ld	t4,232(sp)
+    8000010e:	7f4e                	ld	t5,240(sp)
+    80000110:	7fee                	ld	t6,248(sp)
+    80000112:	6142                	ld	sp,16(sp)
+    80000114:	30200073          	mret

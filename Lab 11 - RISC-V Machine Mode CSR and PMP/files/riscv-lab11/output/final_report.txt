@@ -1,0 +1,19 @@
+RISC-V Lab 11 - Privileged Modes
+================================
+Bare-metal UART smoke test: PASS
+CSR/PMP register inspection: PASS
+M-mode to U-mode transition: PASS
+U-mode ecall and M-mode trap: PASS
+U-mode resume after mret: PASS
+Full integer register save count: 0
+Full integer register restore count: 0
+
+PMP implementation note:
+Three NAPOT entries are used instead of TOR.
+This allows three disjoint regions with three entries.
+PMP unmatched accesses are denied to S/U mode;
+M-mode remains unrestricted for unmatched addresses.
+
+UART output from privilege round-trip:
+
+CSR/PMP output:

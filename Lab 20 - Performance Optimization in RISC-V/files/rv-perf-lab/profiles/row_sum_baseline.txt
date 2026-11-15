@@ -1,0 +1,26 @@
+BINARY SIZE
+Binary: /home/ubuntu/rv-perf-lab/src/row_sum_baseline
+Size bytes: 6000
+-rwxrwxr-x 1 ubuntu ubuntu 6000 Nov 15 06:17 /home/ubuntu/rv-perf-lab/src/row_sum_baseline
+
+STATIC INSTRUCTION COUNT
+Static instructions: 25
+
+INSTRUCTION FREQUENCY TABLE
+Mnemonic Count
+li 7
+add 4
+addi 2
+auipc 2
+blt 2
+ld 2
+slli 2
+ecall 1
+lw 1
+mul 1
+sw 1
+
+EMULATED EXECUTION TIME
+Wall-clock seconds: 0.010000
+User seconds: 0.00
+QEMU exit status: 0

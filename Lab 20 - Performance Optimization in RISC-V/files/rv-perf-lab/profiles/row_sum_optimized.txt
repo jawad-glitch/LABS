@@ -1,0 +1,24 @@
+BINARY SIZE
+Binary: /home/ubuntu/rv-perf-lab/optimized/row_sum_optimized
+Size bytes: 5992
+-rwxrwxr-x 1 ubuntu ubuntu 5992 Nov 15 06:17 /home/ubuntu/rv-perf-lab/optimized/row_sum_optimized
+
+STATIC INSTRUCTION COUNT
+Static instructions: 31
+
+INSTRUCTION FREQUENCY TABLE
+Mnemonic Count
+li 8
+add 7
+addi 4
+lw 4
+auipc 2
+bnez 2
+ld 2
+ecall 1
+sw 1
+
+EMULATED EXECUTION TIME
+Wall-clock seconds: 0.010000
+User seconds: 0.00
+QEMU exit status: 0

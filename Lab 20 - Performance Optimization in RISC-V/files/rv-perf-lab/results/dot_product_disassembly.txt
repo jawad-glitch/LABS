@@ -1,0 +1,47 @@
+
+optimized/dot_product_optimized:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+000000000001017c <_start>:
+   1017c:	00002417          	auipc	s0,0x2
+   10180:	e6c43403          	ld	s0,-404(s0) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x18>
+   10184:	00002497          	auipc	s1,0x2
+   10188:	e544b483          	ld	s1,-428(s1) # 11fd8 <_GLOBAL_OFFSET_TABLE_+0x8>
+   1018c:	42c1                	li	t0,16
+   1018e:	4901                	li	s2,0
+   10190:	4981                	li	s3,0
+   10192:	4a01                	li	s4,0
+   10194:	4a81                	li	s5,0
+
+0000000000010196 <dot_loop>:
+   10196:	00042303          	lw	t1,0(s0)
+   1019a:	0004a383          	lw	t2,0(s1)
+   1019e:	02730e33          	mul	t3,t1,t2
+   101a2:	9972                	add	s2,s2,t3
+   101a4:	00442303          	lw	t1,4(s0)
+   101a8:	0044a383          	lw	t2,4(s1)
+   101ac:	02730e33          	mul	t3,t1,t2
+   101b0:	99f2                	add	s3,s3,t3
+   101b2:	00842303          	lw	t1,8(s0)
+   101b6:	0084a383          	lw	t2,8(s1)
+   101ba:	02730e33          	mul	t3,t1,t2
+   101be:	9a72                	add	s4,s4,t3
+   101c0:	00c42303          	lw	t1,12(s0)
+   101c4:	00c4a383          	lw	t2,12(s1)
+   101c8:	02730e33          	mul	t3,t1,t2
+   101cc:	9af2                	add	s5,s5,t3
+   101ce:	0441                	addi	s0,s0,16
+   101d0:	04c1                	addi	s1,s1,16
+   101d2:	12fd                	addi	t0,t0,-1
+   101d4:	fc0291e3          	bnez	t0,10196 <dot_loop>
+   101d8:	013902b3          	add	t0,s2,s3
+   101dc:	015a0333          	add	t1,s4,s5
+   101e0:	929a                	add	t0,t0,t1
+   101e2:	00002317          	auipc	t1,0x2
+   101e6:	dfe33303          	ld	t1,-514(t1) # 11fe0 <_GLOBAL_OFFSET_TABLE_+0x10>
+   101ea:	00532023          	sw	t0,0(t1)
+   101ee:	4501                	li	a0,0
+   101f0:	05d00893          	li	a7,93
+   101f4:	00000073          	ecall

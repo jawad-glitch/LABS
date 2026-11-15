@@ -1,0 +1,23 @@
+
+DOT PRODUCT COMPARISON
+Metric                             |     Baseline |    Optimized |        Delta
+--------------------------------------------------------------------------------
+Binary size (bytes)                |         6208 |         6200 |           -8
+Static instruction count           |           25 |           38 |           13
+lw instruction count               |            2 |            8 |            6
+mul instruction count              |            3 |            4 |            1
+add/addi instruction count         |            4 |           10 |            6
+Emulated wall-clock time (sec)     |     0.010000 |     0.000000 | 100.00% reduction
+
+ROW SUM COMPARISON
+Metric                             |     Baseline |    Optimized |        Delta
+--------------------------------------------------------------------------------
+Binary size (bytes)                |         6000 |         5992 |           -8
+Static instruction count           |           25 |           31 |            6
+lw instruction count               |            1 |            4 |            3
+mul instruction count              |            1 |            0 |           -1
+add/addi instruction count         |            6 |           11 |            5
+Emulated wall-clock time (sec)     |     0.010000 |     0.010000 | 0.00% reduction
+
+Note: instruction frequencies are static disassembly counts, not dynamic execution counts.
+QEMU wall-clock measurements are host-dependent and may be below timer resolution.

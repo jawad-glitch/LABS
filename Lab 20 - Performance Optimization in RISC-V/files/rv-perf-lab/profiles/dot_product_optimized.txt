@@ -1,0 +1,25 @@
+BINARY SIZE
+Binary: /home/ubuntu/rv-perf-lab/optimized/dot_product_optimized
+Size bytes: 6200
+-rwxrwxr-x 1 ubuntu ubuntu 6200 Nov 15 06:17 /home/ubuntu/rv-perf-lab/optimized/dot_product_optimized
+
+STATIC INSTRUCTION COUNT
+Static instructions: 38
+
+INSTRUCTION FREQUENCY TABLE
+Mnemonic Count
+lw 8
+add 7
+li 7
+mul 4
+addi 3
+auipc 3
+ld 3
+bnez 1
+ecall 1
+sw 1
+
+EMULATED EXECUTION TIME
+Wall-clock seconds: 0.000000
+User seconds: 0.00
+QEMU exit status: 0

@@ -208,3 +208,4 @@
 | [Lab 15 - Debugging RISC-V Programs GDB OpenOCD QEMU](Lab%2015%20-%20Debugging%20RISC-V%20Programs%20GDB%20OpenOCD%20QEMU/PROOF.md) | no core-check file | 2026-11-15 05:24 |
 | [Lab 16 - RISC-V Processor Design and FPGA Prototyping](Lab%2016%20-%20RISC-V%20Processor%20Design%20and%20FPGA%20Prototyping/PROOF.md) | no core-check file | 2026-11-15 05:31 |
 | [Lab 17 - System-on-Chip Integration](Lab%2017%20-%20System-on-Chip%20Integration/PROOF.md) | no core-check file | 2026-11-15 05:47 |
+| [Lab 20 - Performance Optimization in RISC-V](Lab%2020%20-%20Performance%20Optimization%20in%20RISC-V/PROOF.md) | no core-check file | 2026-11-15 06:19 |

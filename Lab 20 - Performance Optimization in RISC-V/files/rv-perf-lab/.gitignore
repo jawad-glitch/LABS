@@ -1,0 +1,8 @@
+*.o
+*.elf
+core
+core.*
+src/dot_product_baseline
+src/row_sum_baseline
+optimized/dot_product_optimized
+optimized/row_sum_optimized

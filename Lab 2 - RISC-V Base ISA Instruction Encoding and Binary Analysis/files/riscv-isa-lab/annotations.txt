@@ -1,0 +1,96 @@
+Instruction : add t2,t2,t3
+Address     : 0x00010100
+Machine word: 0x01c383b3
+Binary      : 00000001110000111000001110110011
+
+Field        Bits                   Binary value     Decimal    Meaning
+funct7       [31:25]                0000000          0          0 = ADD, 32 = SUB
+rs2          [24:20]                11100            28         x28 = second source
+rs1          [19:15]                00111            7          x7 = first source
+funct3       [14:12]                000              0          0 = ADD/SUB family
+rd           [11:7]                 00111            7          x7 = destination
+opcode       [6:0]                  0110011          51         51 = R-type arithmetic
+
+----------------------------------------------------------------------------------------------------
+
+Instruction : addi t4,gp,-2032 # 11158 <result>
+Address     : 0x000100e8
+Machine word: 0x81018e93
+Binary      : 10000001000000011000111010010011
+
+Field        Bits                   Binary value     Decimal    Meaning
+imm[11:0]    [31:20]                100000010000     2064       signed immediate = -2032
+rs1          [19:15]                00011            3          x3 = source
+funct3       [14:12]                000              0          0 = ADDI
+rd           [11:7]                 11101            29         x29 = destination
+opcode       [6:0]                  0010011          19         19 = I-type arithmetic
+
+----------------------------------------------------------------------------------------------------
+
+Instruction : lw t3,0(t0)
+Address     : 0x000100fc
+Machine word: 0x0002ae03
+Binary      : 00000000000000101010111000000011
+
+Field        Bits                   Binary value     Decimal    Meaning
+imm[11:0]    [31:20]                000000000000     0          signed load offset = 0
+rs1          [19:15]                00101            5          x5 = base register
+funct3       [14:12]                010              2          2 = LW
+rd           [11:7]                 11100            28         x28 = destination
+opcode       [6:0]                  0000011          3          3 = load
+
+----------------------------------------------------------------------------------------------------
+
+Instruction : sw a0,0(t4)
+Address     : 0x00010140
+Machine word: 0x00aea023
+Binary      : 00000000101011101010000000100011
+
+Field        Bits                   Binary value     Decimal    Meaning
+imm[11:5]    [31:25]                0000000          0          upper store offset bits
+rs2          [24:20]                01010            10         x10 = stored value
+rs1          [19:15]                11101            29         x29 = base register
+funct3       [14:12]                010              2          2 = SW
+imm[4:0]     [11:7]                 00000            0          lower offset bits; full offset = 0
+opcode       [6:0]                  0100011          35         35 = store
+
+----------------------------------------------------------------------------------------------------
+
+Instruction : bne t1,zero,100fc <sum_loop>
+Address     : 0x0001010c
+Machine word: 0xfe0318e3
+Binary      : 11111110000000110001100011100011
+
+Field        Bits                   Binary value     Decimal    Meaning
+imm[12|10:5] [31:25]                1111111          127        upper branch bits; full offset = -16
+rs2          [24:20]                00000            0          x0 = second source
+rs1          [19:15]                00110            6          x6 = first source
+funct3       [14:12]                001              1          1 = BNE
+imm[4:1|11]  [11:7]                 10001            17         lower shuffled branch bits
+opcode       [6:0]                  1100011          99         99 = conditional branch
+
+----------------------------------------------------------------------------------------------------
+
+Instruction : lui t0,0x11
+Address     : 0x000100ec
+Machine word: 0x000112b7
+Binary      : 00000000000000010001001010110111
+
+Field        Bits                   Binary value     Decimal    Meaning
+imm[31:12]   [31:12]                00000000000000010001 17         upper immediate; value = 0x00011
+rd           [11:7]                 00101            5          x5 = destination
+opcode       [6:0]                  0110111          55         55 = LUI
+
+----------------------------------------------------------------------------------------------------
+
+Instruction : jal ra,1013c <double_store>
+Address     : 0x00010114
+Machine word: 0x028000ef
+Binary      : 00000010100000000000000011101111
+
+Field        Bits                   Binary value     Decimal    Meaning
+imm[20|10:1|11|19:12] [31:12]                00000010100000000000 10240      shuffled jump immediate; byte offset = 40
+rd           [11:7]                 00001            1          x1 = link destination
+opcode       [6:0]                  1101111          111        111 = JAL
+
+----------------------------------------------------------------------------------------------------

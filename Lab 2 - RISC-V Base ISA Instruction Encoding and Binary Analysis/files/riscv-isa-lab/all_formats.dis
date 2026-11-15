@@ -1,0 +1,39 @@
+
+all_formats:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100e8 <_start>:
+   100e8:	81018e93          	addi	t4,gp,-2032 # 11158 <result>
+   100ec:	000112b7          	lui	t0,0x11
+   100f0:	14828293          	addi	t0,t0,328 # 11148 <__DATA_BEGIN__>
+   100f4:	00400313          	addi	t1,zero,4
+   100f8:	00000393          	addi	t2,zero,0
+
+00000000000100fc <sum_loop>:
+   100fc:	0002ae03          	lw	t3,0(t0)
+   10100:	01c383b3          	add	t2,t2,t3
+   10104:	00428293          	addi	t0,t0,4
+   10108:	fff30313          	addi	t1,t1,-1
+   1010c:	fe0318e3          	bne	t1,zero,100fc <sum_loop>
+   10110:	00038513          	addi	a0,t2,0
+   10114:	028000ef          	jal	ra,1013c <double_store>
+   10118:	000eaf03          	lw	t5,0(t4)
+   1011c:	01400f93          	addi	t6,zero,20
+   10120:	01ff1863          	bne	t5,t6,10130 <failed>
+
+0000000000010124 <success>:
+   10124:	00000513          	addi	a0,zero,0
+   10128:	05d00893          	addi	a7,zero,93
+   1012c:	00000073          	ecall
+
+0000000000010130 <failed>:
+   10130:	00100513          	addi	a0,zero,1
+   10134:	05d00893          	addi	a7,zero,93
+   10138:	00000073          	ecall
+
+000000000001013c <double_store>:
+   1013c:	00151513          	slli	a0,a0,0x1
+   10140:	00aea023          	sw	a0,0(t4)
+   10144:	00008067          	jalr	zero,0(ra)

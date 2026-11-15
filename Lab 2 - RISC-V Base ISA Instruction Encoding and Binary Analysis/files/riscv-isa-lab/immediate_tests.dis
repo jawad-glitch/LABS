@@ -1,0 +1,10 @@
+
+immediate_tests.o:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <immediate_tests>:
+   0:	00209463          	bne	ra,sp,8 <immediate_tests+0x8>
+   4:	0000006f          	jal	zero,4 <immediate_tests+0x4>
+   8:	000000ef          	jal	ra,8 <immediate_tests+0x8>

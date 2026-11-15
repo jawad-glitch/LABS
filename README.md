@@ -190,3 +190,4 @@
 | [Lab 18 - Managing Multi-Tenant Environments in Open Source](Lab%2018%20-%20Managing%20Multi-Tenant%20Environments%20in%20Open%20Source/PROOF.md) | no core-check file | 2026-11-15 03:05 |
 | [Lab 19 - Open Source Security - Responsible Disclosure](Lab%2019%20-%20Open%20Source%20Security%20-%20Responsible%20Disclosure/PROOF.md) | no core-check file | 2026-11-15 03:13 |
 | [Lab 20 - Real-World Open Source Project Contribution](Lab%2020%20-%20Real-World%20Open%20Source%20Project%20Contribution/PROOF.md) | no core-check file | 2026-11-15 03:22 |
+| [Lab 1 - Introduction to RISC-V](Lab%201%20-%20Introduction%20to%20RISC-V/PROOF.md) | no core-check file | 2026-11-15 03:29 |

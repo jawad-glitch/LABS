@@ -1,0 +1,27 @@
+RISC-V Governance and Community
+===============================
+
+RISC-V International:
+- Maintains and develops the RISC-V ISA standards.
+- Supports technical collaboration and standardization.
+- Has members from industry, academia, and the wider community.
+
+Technical Work:
+- ISA specifications and extensions.
+- Privileged architecture.
+- Software and toolchain support.
+- Security and platform standards.
+- Industry working groups.
+
+Community Participation:
+- Review public specifications.
+- Participate in technical discussions.
+- Contribute to open-source repositories.
+- Attend community events and conferences.
+- Follow project contribution and governance processes.
+
+Resources:
+- https://riscv.org/
+- https://riscv.org/technical/
+- https://github.com/riscv
+- https://docs.riscv.org/

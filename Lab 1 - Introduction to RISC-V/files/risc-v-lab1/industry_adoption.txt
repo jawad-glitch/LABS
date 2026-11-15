@@ -1,0 +1,40 @@
+RISC-V Industry Adoption Analysis
+=================================
+
+1. Organizations and Ecosystem Participants
+- SiFive: RISC-V processor IP and silicon.
+- Western Digital: RISC-V use in storage-related processor designs.
+- Espressif: RISC-V-based ESP32-C3 microcontroller.
+- Alibaba: RISC-V processor development.
+- NVIDIA: RISC-V use in selected embedded and control processor roles.
+
+2. Industry Sectors
+Automotive:
+- Embedded controllers.
+- In-vehicle systems.
+- Safety-related processor research.
+
+Telecommunications:
+- Network processing.
+- Baseband and infrastructure research.
+- Specialized accelerators.
+
+Data Centers:
+- Research into custom processors and accelerators.
+- Storage and network controllers.
+
+Consumer Electronics:
+- Microcontrollers.
+- Smart devices.
+- Embedded control systems.
+
+3. Adoption Considerations
+- Software and operating-system support.
+- ISA profile and extension compatibility.
+- Performance and power requirements.
+- Toolchain and debugging support.
+- Product lifecycle and vendor support.
+
+Note:
+These examples indicate ecosystem activity, not universal deployment
+or identical levels of commercial adoption.

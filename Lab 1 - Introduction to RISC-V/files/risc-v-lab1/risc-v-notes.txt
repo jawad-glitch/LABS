@@ -1,0 +1,162 @@
+RISC-V Lab 1 Notes
+==================
+
+1. RISC-V History
+
+- Founded: 2010 at the University of California, Berkeley.
+- Key contributors: Krste Asanovic, Andrew Waterman, Yunsup Lee,
+  and David Patterson.
+- Original goals:
+  - Develop a clean and practical instruction set architecture.
+  - Provide an open instruction set for research and education.
+  - Avoid unnecessary complexity in the base instruction set.
+  - Support modular extensions for different computing requirements.
+  - Enable independent processor implementations.
+
+- RISC-V Foundation: Established in 2015.
+- RISC-V International: The global organization responsible for
+  maintaining and developing the RISC-V standards.
+
+2. RISC-V Principles
+
+Open Standard:
+- The ISA specifications are openly available.
+- Companies and individuals can implement compatible processors.
+- The open specification does not mean every implementation is
+  open-source hardware.
+
+Modular Design:
+- A processor implements a defined base ISA.
+- Optional standard extensions add capabilities.
+- Custom extensions can support specialized workloads.
+- Software compatibility depends on the implemented ISA features.
+
+Royalty-Free:
+- The standard ISA can be implemented without paying ISA royalties.
+- Commercial implementations may still involve costs for silicon,
+  software, support, patents, or other services.
+
+3. Architecture Benefits
+
+- Openness: Public specifications support independent implementations.
+- Modularity: Implementations can select suitable standard extensions.
+- Simplicity: The base instruction set is designed to be regular
+  and comparatively straightforward.
+- Scalability: Implementations can target embedded and general-purpose
+  systems, as well as high-performance designs.
+- Research: Open specifications support education and experimentation.
+- Competition: Multiple implementations can compete in the ecosystem.
+
+4. Important Distinction
+
+RISC-V is an instruction set architecture (ISA), not one particular
+processor chip. Different vendors can build different processors
+that implement the same ISA profile.
+
+5. Architecture Comparison
+==========================
+RISC-V vs Other Architectures Comparison
+========================================
+
+1. RISC-V vs x86
+
+RISC-V advantages:
+- Open ISA specification.
+- Modular base ISA and extensions.
+- Supports independent processor implementations.
+- No ISA royalty is required merely to implement the open standard.
+
+Considerations:
+- x86 has a much larger established desktop and server ecosystem.
+- Binary compatibility is architecture-specific.
+- RISC-V software and hardware ecosystems are still developing.
+
+2. RISC-V vs ARM
+
+RISC-V advantages:
+- Open ISA specification.
+- Flexible standard extension combinations.
+- No ISA licence fee is required merely to implement the open standard.
+
+Considerations:
+- ARM has a mature commercial ecosystem.
+- ARM-based systems have extensive software and hardware support.
+- RISC-V adoption and compatibility vary by application and platform.
+
+3. Key RISC-V Benefits
+
+- Modularity: Base ISA plus standard extensions.
+- Openness: Publicly available specifications.
+- Scalability: Multiple implementation classes.
+- Innovation: Custom extensions are possible.
+- Ecosystem choice: Multiple vendors can implement the ISA.
+RISC-V vs Other Architectures Comparison
+========================================
+
+1. RISC-V vs x86
+
+RISC-V advantages:
+- Open ISA specification.
+- Modular base ISA and extensions.
+- Supports independent processor implementations.
+- No ISA royalty is required merely to implement the open standard.
+
+Considerations:
+- x86 has a much larger established desktop and server ecosystem.
+- Binary compatibility is architecture-specific.
+- RISC-V software and hardware ecosystems are still developing.
+
+2. RISC-V vs ARM
+
+RISC-V advantages:
+- Open ISA specification.
+- Flexible standard extension combinations.
+- No ISA licence fee is required merely to implement the open standard.
+
+Considerations:
+- ARM has a mature commercial ecosystem.
+- ARM-based systems have extensive software and hardware support.
+- RISC-V adoption and compatibility vary by application and platform.
+
+3. Key RISC-V Benefits
+
+- Modularity: Base ISA plus standard extensions.
+- Openness: Publicly available specifications.
+- Scalability: Multiple implementation classes.
+- Innovation: Custom extensions are possible.
+- Ecosystem choice: Multiple vendors can implement the ISA.
+RISC-V vs Other Architectures Comparison
+========================================
+
+1. RISC-V vs x86
+
+RISC-V advantages:
+- Open ISA specification.
+- Modular base ISA and extensions.
+- Supports independent processor implementations.
+- No ISA royalty is required merely to implement the open standard.
+
+Considerations:
+- x86 has a much larger established desktop and server ecosystem.
+- Binary compatibility is architecture-specific.
+- RISC-V software and hardware ecosystems are still developing.
+
+2. RISC-V vs ARM
+
+RISC-V advantages:
+- Open ISA specification.
+- Flexible standard extension combinations.
+- No ISA licence fee is required merely to implement the open standard.
+
+Considerations:
+- ARM has a mature commercial ecosystem.
+- ARM-based systems have extensive software and hardware support.
+- RISC-V adoption and compatibility vary by application and platform.
+
+3. Key RISC-V Benefits
+
+- Modularity: Base ISA plus standard extensions.
+- Openness: Publicly available specifications.
+- Scalability: Multiple implementation classes.
+- Innovation: Custom extensions are possible.
+- Ecosystem choice: Multiple vendors can implement the ISA.

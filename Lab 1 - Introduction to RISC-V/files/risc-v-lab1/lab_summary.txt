@@ -1,0 +1,31 @@
+Lab 1: Introduction to RISC-V
+==============================
+
+Completed:
+1. Studied RISC-V history, principles, and architecture benefits.
+2. Compared RISC-V with x86 and ARM.
+3. Cross-compiled C programs for RV64GC.
+4. Generated and examined RISC-V assembly.
+5. Executed RISC-V binaries using QEMU user-mode emulation.
+6. Simulated embedded-system sensor and transmission operations.
+7. Simulated HPC-style matrix multiplication.
+8. Examined RISC-V modularity and extension examples.
+9. Explored open-source RISC-V repositories and governance.
+
+Main tools:
+- RISC-V GNU cross-compiler
+- RISC-V GNU assembler and linker
+- RISC-V objdump and readelf
+- QEMU RISC-V user-mode emulator
+- Python 3
+- Git and standard Linux utilities
+
+Important distinction:
+QEMU execution validates the RISC-V binaries in an emulator.
+The embedded example does not control physical hardware.
+The HPC example is an educational simulation, not a hardware benchmark.
+
+Key learning:
+RISC-V is an open ISA standard with a modular base-and-extension
+design. Different vendors can build different processors that
+implement compatible ISA specifications.

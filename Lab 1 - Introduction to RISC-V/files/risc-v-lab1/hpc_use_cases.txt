@@ -1,0 +1,30 @@
+RISC-V in High-Performance Computing
+====================================
+
+1. Processor and Supercomputing Research
+- RISC-V is used in processor and system research.
+- European Processor Initiative research included RISC-V-related work.
+- Vector extensions can support data-parallel workloads.
+
+2. Scientific Computing
+- Climate and weather modelling.
+- Computational fluid dynamics.
+- Molecular dynamics.
+- Astronomical data processing.
+
+3. AI and Machine Learning
+- Vector processing.
+- Matrix multiplication acceleration.
+- Custom neural-network accelerators.
+- Specialized data processing.
+
+4. Research Advantages
+- Public ISA specifications.
+- Freedom to experiment with implementation designs.
+- Custom extensions for specialized algorithms.
+- Reproducible architecture research.
+
+Important:
+The matrix multiplication program is a small educational workload.
+Running it in QEMU is not a benchmark of native RISC-V hardware or
+an exascale HPC system.

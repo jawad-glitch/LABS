@@ -1,0 +1,27 @@
+RISC-V in Embedded Systems
+==========================
+
+1. IoT Devices
+- Low-power processor implementations can target sensor and IoT devices.
+- Custom extensions may accelerate domain-specific workloads.
+- Examples include smart sensors, wearables, and home automation.
+
+2. Microcontrollers
+- SiFive FE310 family.
+- Espressif ESP32-C3.
+- GigaDevice GD32V family.
+- These are examples of commercial RISC-V-based microcontroller products.
+
+3. Real-Time Systems
+- RISC-V implementations can be designed for real-time workloads.
+- Interrupt behavior and timing depend on the processor implementation.
+- Potential applications include industrial control and monitoring.
+
+4. Edge Computing
+- Local processing can reduce communication latency.
+- Custom accelerators can support AI/ML inference.
+- Potential applications include smart cameras and sensor gateways.
+
+Important:
+The C program in this lab is a software simulation. It does not access
+physical GPIO pins, sensors, or a wireless network.

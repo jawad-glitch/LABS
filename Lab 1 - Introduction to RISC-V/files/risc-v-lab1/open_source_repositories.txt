@@ -1,0 +1,28 @@
+=== RISC-V Open-Source Ecosystem ===
+
+Repository: riscv-tests
+Description: ISA tests
+URL: https://github.com/riscv/riscv-tests
+
+Repository: riscv-opcodes
+Description: Instruction opcode database
+URL: https://github.com/riscv/riscv-opcodes
+
+Repository: riscv-pk
+Description: Proxy kernel
+URL: https://github.com/riscv/riscv-pk
+
+Repository: riscv-gnu-toolchain
+Description: GNU compiler and binutils toolchain
+URL: https://github.com/riscv/riscv-gnu-toolchain
+
+Repository: riscv-isa-manual
+Description: ISA specification
+URL: https://github.com/riscv/riscv-isa-manual
+
+Open ecosystem benefits:
+- Public specifications
+- Community development
+- Independent implementations
+- Research and education
+- Freedom to choose compatible implementations

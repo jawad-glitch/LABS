@@ -1,0 +1,42 @@
+RISC-V Extension Overview
+=========================
+
+Base Integer ISA:
+- RV32I: 32-bit base integer ISA.
+- RV64I: 64-bit base integer ISA.
+- RV128I: A 128-bit address-space variant has been discussed, but it
+  should not be treated as a commonly implemented general-purpose base.
+
+Common Standard Extensions:
+- M: Integer multiplication and division.
+- A: Atomic instructions.
+- F: Single-precision floating point.
+- D: Double-precision floating point.
+- Q: Quad-precision floating point.
+- C: Compressed instructions.
+- V: Vector extension.
+- B: Bit-manipulation extension family.
+
+Other standard extension names include:
+- Zicsr: Control and status register instructions.
+- Zifencei: Instruction-fetch fence instruction.
+
+G is shorthand for a defined general-purpose extension combination;
+it is not a separate instruction family.
+
+Custom Extensions:
+- Non-standard extensions commonly use an X-prefixed naming convention.
+- Implementations can add specialized instructions.
+- Software using custom instructions may not be portable to other CPUs.
+
+Modularity Benefits:
+1. Select features appropriate to the target processor.
+2. Support small embedded implementations.
+3. Support general-purpose processors.
+4. Enable vector and specialized processing.
+5. Encourage processor design experimentation.
+
+Note:
+This is an introductory overview, not a complete or normative list
+of ratified extensions. Consult the official ISA manual for exact
+versioning, dependencies, and extension naming rules.

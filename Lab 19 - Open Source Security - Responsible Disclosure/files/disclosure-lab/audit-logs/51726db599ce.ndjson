@@ -1,0 +1,7 @@
+{"timestamp":"2026-11-15T03:12:57.541773+00:00","vuln_id":"51726db599ce","event":"RECEIVED","actor":"system","details":{"title":"Authentication Bypass via JWT Algorithm Confusion"}}
+{"timestamp":"2026-11-15T03:12:57.651647+00:00","vuln_id":"51726db599ce","event":"NVD_ENRICHMENT","actor":"system","details":{"status":"unavailable","error":"503 Server Error: Service Unavailable for url: https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=CWE-287+fincore-auth&resultsPerPage=5","keywordSearch":"CWE-287 fincore-auth"}}
+{"timestamp":"2026-11-15T03:12:57.664912+00:00","vuln_id":"51726db599ce","event":"TRIAGING","actor":"security-lead","details":{"notes":"Initial triage and reproduction started","from":"RECEIVED"}}
+{"timestamp":"2026-11-15T03:12:57.672785+00:00","vuln_id":"51726db599ce","event":"CONFIRMED","actor":"security-lead","details":{"notes":"Issue confirmed in the lab test environment","from":"TRIAGING"}}
+{"timestamp":"2026-11-15T03:12:57.680782+00:00","vuln_id":"51726db599ce","event":"FIX_IN_PROGRESS","actor":"dev-team","details":{"notes":"Remediation work started","from":"CONFIRMED"}}
+{"timestamp":"2026-11-15T03:12:57.689177+00:00","vuln_id":"51726db599ce","event":"FIX_READY","actor":"dev-team","details":{"notes":"Patch reviewed and ready for release","from":"FIX_IN_PROGRESS"}}
+{"timestamp":"2026-11-15T03:12:58.733619+00:00","vuln_id":"51726db599ce","event":"DISCLOSED","actor":"security-lead","details":{"notes":"Lab advisory generated and signature verified; disclosure workflow completed","from":"FIX_READY"}}

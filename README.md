@@ -188,3 +188,4 @@
 | [Lab 16 - Managing Intellectual Property in Open Source Projects](Lab%2016%20-%20Managing%20Intellectual%20Property%20in%20Open%20Source%20Projects/PROOF.md) | no core-check file | 2026-11-15 02:49 |
 | [Lab 17 - Open Source Project Lifecycle Management](Lab%2017%20-%20Open%20Source%20Project%20Lifecycle%20Management/PROOF.md) | no core-check file | 2026-11-15 02:54 |
 | [Lab 18 - Managing Multi-Tenant Environments in Open Source](Lab%2018%20-%20Managing%20Multi-Tenant%20Environments%20in%20Open%20Source/PROOF.md) | no core-check file | 2026-11-15 03:05 |
+| [Lab 19 - Open Source Security - Responsible Disclosure](Lab%2019%20-%20Open%20Source%20Security%20-%20Responsible%20Disclosure/PROOF.md) | no core-check file | 2026-11-15 03:13 |

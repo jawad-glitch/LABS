@@ -1,0 +1,79 @@
+
+syscall_test:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+00000000000100e8 <_start>:
+   100e8:	04000893          	li	a7,64
+   100ec:	4505                	li	a0,1
+   100ee:	00001597          	auipc	a1,0x1
+   100f2:	0c658593          	addi	a1,a1,198 # 111b4 <__DATA_BEGIN__>
+   100f6:	02500613          	li	a2,37
+   100fa:	00000073          	ecall
+   100fe:	0ac00893          	li	a7,172
+   10102:	00000073          	ecall
+   10106:	842a                	mv	s0,a0
+   10108:	04000893          	li	a7,64
+   1010c:	4505                	li	a0,1
+   1010e:	82518593          	addi	a1,gp,-2011 # 111d9 <msg2>
+   10112:	4631                	li	a2,12
+   10114:	00000073          	ecall
+   10118:	8522                	mv	a0,s0
+   1011a:	056000ef          	jal	10170 <print_number>
+   1011e:	040000ef          	jal	1015e <print_newline>
+   10122:	0a900893          	li	a7,169
+   10126:	84418513          	addi	a0,gp,-1980 # 111f8 <__bss_start>
+   1012a:	4581                	li	a1,0
+   1012c:	00000073          	ecall
+   10130:	06054d63          	bltz	a0,101aa <fail>
+   10134:	04000893          	li	a7,64
+   10138:	4505                	li	a0,1
+   1013a:	83118593          	addi	a1,gp,-1999 # 111e5 <msg3>
+   1013e:	462d                	li	a2,11
+   10140:	00000073          	ecall
+   10144:	84418293          	addi	t0,gp,-1980 # 111f8 <__bss_start>
+   10148:	0002b503          	ld	a0,0(t0)
+   1014c:	024000ef          	jal	10170 <print_number>
+   10150:	00e000ef          	jal	1015e <print_newline>
+   10154:	05d00893          	li	a7,93
+   10158:	4501                	li	a0,0
+   1015a:	00000073          	ecall
+
+000000000001015e <print_newline>:
+   1015e:	04000893          	li	a7,64
+   10162:	4505                	li	a0,1
+   10164:	83c18593          	addi	a1,gp,-1988 # 111f0 <newline>
+   10168:	4605                	li	a2,1
+   1016a:	00000073          	ecall
+   1016e:	8082                	ret
+
+0000000000010170 <print_number>:
+   10170:	7179                	addi	sp,sp,-48
+   10172:	f406                	sd	ra,40(sp)
+   10174:	82aa                	mv	t0,a0
+   10176:	02010313          	addi	t1,sp,32
+   1017a:	4381                	li	t2,0
+   1017c:	4e29                	li	t3,10
+
+000000000001017e <number_loop>:
+   1017e:	03c2feb3          	remu	t4,t0,t3
+   10182:	03c2d2b3          	divu	t0,t0,t3
+   10186:	030e8e93          	addi	t4,t4,48
+   1018a:	137d                	addi	t1,t1,-1
+   1018c:	01d30023          	sb	t4,0(t1)
+   10190:	0385                	addi	t2,t2,1
+   10192:	fe0296e3          	bnez	t0,1017e <number_loop>
+   10196:	04000893          	li	a7,64
+   1019a:	4505                	li	a0,1
+   1019c:	859a                	mv	a1,t1
+   1019e:	861e                	mv	a2,t2
+   101a0:	00000073          	ecall
+   101a4:	70a2                	ld	ra,40(sp)
+   101a6:	6145                	addi	sp,sp,48
+   101a8:	8082                	ret
+
+00000000000101aa <fail>:
+   101aa:	05d00893          	li	a7,93
+   101ae:	4505                	li	a0,1
+   101b0:	00000073          	ecall

@@ -1,0 +1,186 @@
+=== RISC-V System Call Analysis ===
+
+Program: hello_syscall
+   100ec:	4505                	li	a0,1
+   100ee:	00001597          	auipc	a1,0x1
+   100f2:	01858593          	addi	a1,a1,24 # 11106 <__DATA_BEGIN__>
+   100f6:	4671                	li	a2,28
+   100f8:	00000073          	ecall
+   100fc:	05d00893          	li	a7,93
+   10100:	4501                	li	a0,0
+   10102:	00000073          	ecall
+
+Program: syscall_test
+   100ec:	4505                	li	a0,1
+   100ee:	00001597          	auipc	a1,0x1
+   100f2:	0c658593          	addi	a1,a1,198 # 111b4 <__DATA_BEGIN__>
+   100f6:	02500613          	li	a2,37
+   100fa:	00000073          	ecall
+   100fe:	0ac00893          	li	a7,172
+   10102:	00000073          	ecall
+   10106:	842a                	mv	s0,a0
+   10108:	04000893          	li	a7,64
+   1010c:	4505                	li	a0,1
+   1010e:	82518593          	addi	a1,gp,-2011 # 111d9 <msg2>
+   10112:	4631                	li	a2,12
+   10114:	00000073          	ecall
+   10118:	8522                	mv	a0,s0
+   1011a:	056000ef          	jal	10170 <print_number>
+   1011e:	040000ef          	jal	1015e <print_newline>
+   10122:	0a900893          	li	a7,169
+   10126:	84418513          	addi	a0,gp,-1980 # 111f8 <__bss_start>
+   1012a:	4581                	li	a1,0
+   1012c:	00000073          	ecall
+   10130:	06054d63          	bltz	a0,101aa <fail>
+   10134:	04000893          	li	a7,64
+   10138:	4505                	li	a0,1
+   1013a:	83118593          	addi	a1,gp,-1999 # 111e5 <msg3>
+   1013e:	462d                	li	a2,11
+   10140:	00000073          	ecall
+   10144:	84418293          	addi	t0,gp,-1980 # 111f8 <__bss_start>
+   10148:	0002b503          	ld	a0,0(t0)
+   1014c:	024000ef          	jal	10170 <print_number>
+   10150:	00e000ef          	jal	1015e <print_newline>
+   10154:	05d00893          	li	a7,93
+   10158:	4501                	li	a0,0
+   1015a:	00000073          	ecall
+
+000000000001015e <print_newline>:
+   1015e:	04000893          	li	a7,64
+   10162:	4505                	li	a0,1
+   10164:	83c18593          	addi	a1,gp,-1988 # 111f0 <newline>
+   10168:	4605                	li	a2,1
+   1016a:	00000073          	ecall
+   1016e:	8082                	ret
+
+--
+   10196:	04000893          	li	a7,64
+   1019a:	4505                	li	a0,1
+   1019c:	859a                	mv	a1,t1
+   1019e:	861e                	mv	a2,t2
+   101a0:	00000073          	ecall
+   101a4:	70a2                	ld	ra,40(sp)
+   101a6:	6145                	addi	sp,sp,48
+--
+
+00000000000101aa <fail>:
+   101aa:	05d00893          	li	a7,93
+   101ae:	4505                	li	a0,1
+   101b0:	00000073          	ecall
+
+Program: file_syscall
+   100f0:	00001597          	auipc	a1,0x1
+   100f4:	0c058593          	addi	a1,a1,192 # 111b0 <__DATA_BEGIN__>
+   100f8:	24100613          	li	a2,577
+   100fc:	1a400693          	li	a3,420
+   10100:	00000073          	ecall
+   10104:	08054963          	bltz	a0,10196 <error_exit>
+   10108:	842a                	mv	s0,a0
+   1010a:	04000893          	li	a7,64
+   1010e:	8522                	mv	a0,s0
+   10110:	80e18593          	addi	a1,gp,-2034 # 111be <write_msg>
+   10114:	02200613          	li	a2,34
+   10118:	00000073          	ecall
+   1011c:	06054d63          	bltz	a0,10196 <error_exit>
+   10120:	03900893          	li	a7,57
+   10124:	8522                	mv	a0,s0
+   10126:	00000073          	ecall
+   1012a:	03800893          	li	a7,56
+   1012e:	f9c00513          	li	a0,-100
+   10132:	00001597          	auipc	a1,0x1
+   10136:	07e58593          	addi	a1,a1,126 # 111b0 <__DATA_BEGIN__>
+   1013a:	4601                	li	a2,0
+   1013c:	4681                	li	a3,0
+   1013e:	00000073          	ecall
+   10142:	04054a63          	bltz	a0,10196 <error_exit>
+   10146:	842a                	mv	s0,a0
+   10148:	03f00893          	li	a7,63
+   1014c:	8522                	mv	a0,s0
+   1014e:	87018593          	addi	a1,gp,-1936 # 11220 <__bss_start>
+   10152:	08000613          	li	a2,128
+   10156:	00000073          	ecall
+   1015a:	02054e63          	bltz	a0,10196 <error_exit>
+   1015e:	84aa                	mv	s1,a0
+   10160:	03900893          	li	a7,57
+   10164:	8522                	mv	a0,s0
+   10166:	00000073          	ecall
+   1016a:	04000893          	li	a7,64
+   1016e:	4505                	li	a0,1
+   10170:	83018593          	addi	a1,gp,-2000 # 111e0 <success_msg>
+   10174:	02800613          	li	a2,40
+   10178:	00000073          	ecall
+   1017c:	04000893          	li	a7,64
+   10180:	4505                	li	a0,1
+   10182:	87018593          	addi	a1,gp,-1936 # 11220 <__bss_start>
+   10186:	8626                	mv	a2,s1
+   10188:	00000073          	ecall
+   1018c:	05d00893          	li	a7,93
+   10190:	4501                	li	a0,0
+   10192:	00000073          	ecall
+
+0000000000010196 <error_exit>:
+   10196:	04000893          	li	a7,64
+   1019a:	4509                	li	a0,2
+   1019c:	85818593          	addi	a1,gp,-1960 # 11208 <error_msg>
+   101a0:	465d                	li	a2,23
+   101a2:	00000073          	ecall
+   101a6:	05d00893          	li	a7,93
+   101aa:	4505                	li	a0,1
+   101ac:	00000073          	ecall
+
+Program: memory_syscalls
+   100ec:	4505                	li	a0,1
+   100ee:	00001597          	auipc	a1,0x1
+   100f2:	07858593          	addi	a1,a1,120 # 11166 <__DATA_BEGIN__>
+   100f6:	02200613          	li	a2,34
+   100fa:	00000073          	ecall
+   100fe:	0de00893          	li	a7,222
+   10102:	4501                	li	a0,0
+--
+   10106:	460d                	li	a2,3
+   10108:	02200693          	li	a3,34
+   1010c:	577d                	li	a4,-1
+   1010e:	4781                	li	a5,0
+   10110:	00000073          	ecall
+   10114:	72fd                	lui	t0,0xfffff
+   10116:	2285                	addiw	t0,t0,1 # fffffffffffff001 <__global_pointer$+0xfffffffffffed69b>
+--
+   1012e:	02731763          	bne	t1,t2,1015c <error_exit>
+   10132:	0d700893          	li	a7,215
+   10136:	8522                	mv	a0,s0
+   10138:	6585                	lui	a1,0x1
+   1013a:	00000073          	ecall
+   1013e:	ed19                	bnez	a0,1015c <error_exit>
+   10140:	04000893          	li	a7,64
+   10144:	4505                	li	a0,1
+   10146:	82218593          	addi	a1,gp,-2014 # 11188 <success>
+   1014a:	02f00613          	li	a2,47
+   1014e:	00000073          	ecall
+   10152:	05d00893          	li	a7,93
+   10156:	4501                	li	a0,0
+   10158:	00000073          	ecall
+
+000000000001015c <error_exit>:
+   1015c:	05d00893          	li	a7,93
+   10160:	4505                	li	a0,1
+   10162:	00000073          	ecall
+
+Program: performance_test
+   100ea:	7102829b          	addiw	t0,t0,1808 # 2710 <msg_len+0x26d8>
+
+00000000000100ee <loop>:
+   100ee:	0ac00893          	li	a7,172
+   100f2:	00000073          	ecall
+   100f6:	12fd                	addi	t0,t0,-1
+   100f8:	fe029be3          	bnez	t0,100ee <loop>
+--
+   10100:	4505                	li	a0,1
+   10102:	00001597          	auipc	a1,0x1
+   10106:	01a58593          	addi	a1,a1,26 # 1111c <__DATA_BEGIN__>
+   1010a:	03800613          	li	a2,56
+   1010e:	00000073          	ecall
+   10112:	05d00893          	li	a7,93
+   10116:	4501                	li	a0,0
+   10118:	00000073          	ecall
+
+=== Analysis completed ===

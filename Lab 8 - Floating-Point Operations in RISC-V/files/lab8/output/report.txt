@@ -1,0 +1,48 @@
+RISC-V Lab 8 - Floating-Point Operations
+=========================================
+Execution environment: QEMU RISC-V user-mode
+
+fp_driver: PASS
+fp_precision: PASS
+fp_special: PASS
+
+=== Driver results ===
+[S] add(5,2) = 7 expected=7 [PASS]
+[S] sub(5,2) = 3 expected=3 [PASS]
+[S] mul(5,2) = 10 expected=10 [PASS]
+[S] div(7,2) = 3.5 expected=3.5 [PASS]
+[S] sqrt(9) = 3 expected=3 [PASS]
+[S] fma(2,3,4) = 10 expected=10 [PASS]
+[D] add(5,2) = 7 expected=7 [PASS]
+[D] sub(5,2) = 3 expected=3 [PASS]
+[D] mul(5,2) = 10 expected=10 [PASS]
+[D] div(7,2) = 3.5 expected=3.5 [PASS]
+[D] sqrt(9) = 3 expected=3 [PASS]
+[D] fma(2,3,4) = 10 expected=10 [PASS]
+[D] widen(1.25) = 1.25 expected=1.25 [PASS]
+[S] narrow(1.25) = 1.25 expected=1.25 [PASS]
+Driver failures: 0
+
+=== Precision deviations and results ===
+Scenario A - Catastrophic cancellation
+epsilon        single             double             relative_error
+Scenario B - Large-small addition loss
+small_addend   single_result      double_result      single_absorbed double_absorbed
+Scenario C - Iterative accumulation drift
+Single sum: 100.000175476 deviation from 100: 0.000175476074219
+Double sum: 99.9999999999997 deviation from 100: -3.41060513164848e-13
+
+=== Special-value classifications ===
+[S] condition 1 result=inf class=+Inf [PASS]
+[D] condition 1 result=inf class=+Inf [PASS]
+[S] condition 2 result=-inf class=-Inf [PASS]
+[D] condition 2 result=-inf class=-Inf [PASS]
+[S] condition 3 result=nan class=NaN [PASS]
+[D] condition 3 result=nan class=NaN [PASS]
+[S] condition 4 result=inf class=+Inf [PASS]
+[D] condition 4 result=inf class=+Inf [PASS]
+
+Special-value checks: 8/8 passed
+All IEEE 754 special-value checks passed.
+
+Overall status: PASS

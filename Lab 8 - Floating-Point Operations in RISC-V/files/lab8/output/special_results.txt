@@ -1,0 +1,11 @@
+[S] condition 1 result=inf class=+Inf [PASS]
+[D] condition 1 result=inf class=+Inf [PASS]
+[S] condition 2 result=-inf class=-Inf [PASS]
+[D] condition 2 result=-inf class=-Inf [PASS]
+[S] condition 3 result=nan class=NaN [PASS]
+[D] condition 3 result=nan class=NaN [PASS]
+[S] condition 4 result=inf class=+Inf [PASS]
+[D] condition 4 result=inf class=+Inf [PASS]
+
+Special-value checks: 8/8 passed
+All IEEE 754 special-value checks passed.

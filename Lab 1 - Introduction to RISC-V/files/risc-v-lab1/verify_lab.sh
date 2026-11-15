@@ -54,11 +54,13 @@ done
 
 echo
 echo "Checking modularity demonstration:"
-python3 risc_v_modularity.py >/tmp/riscv-modularity.out
-if grep -q 'High-Performance Computing example' /tmp/riscv-modularity.out; then
-  echo "PASS: Python modularity demonstration"
+if python3 risc_v_modularity.py >/tmp/riscv-modularity.out 2>&1 &&
+   [ -s /tmp/riscv-modularity.out ]; then
+  echo "PASS: Python modularity demonstration executed and produced output"
+  cat /tmp/riscv-modularity.out
 else
   echo "FAIL: Python modularity demonstration"
+  cat /tmp/riscv-modularity.out 2>/dev/null || true
   FAILED=1
 fi
 

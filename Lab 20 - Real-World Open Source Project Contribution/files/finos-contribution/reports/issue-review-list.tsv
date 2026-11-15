@@ -1,0 +1,29 @@
+#3285	Support horizontal expansion ("wide" mode) in `list_flatten`		https://github.com/perspective-dev/perspective/issues/3285
+#3251	Virtual servers: allow restricting aggregates per column (not only per column type)		https://github.com/perspective-dev/perspective/issues/3251
+#3244	Support filtering across columns		https://github.com/perspective-dev/perspective/issues/3244
+#3088	`join` aggregate doesn't handle long content		https://github.com/perspective-dev/perspective/issues/3088
+#3065	[ONBOARDING] Perspective to OpenJS	internal	https://github.com/perspective-dev/perspective/issues/3065
+#2976	[X/Y Line] Multiple Y Axes		https://github.com/perspective-dev/perspective/issues/2976
+#2965	Copy .selected.ndjson is not limited to selection	bug	https://github.com/perspective-dev/perspective/issues/2965
+#2956	Proposal to evaluate expression columns based on dependency ordering		https://github.com/perspective-dev/perspective/issues/2956
+#2950	Registering a custom plugin breaks html export		https://github.com/perspective-dev/perspective/issues/2950
+#2892	Support HTML in row expressions	enhancement	https://github.com/perspective-dev/perspective/issues/2892
+#2877	Support rolling filters for date time cols	enhancement	https://github.com/perspective-dev/perspective/issues/2877
+#2853	`Server` instance not pickle-able, `PerspectiveManager` was pickle-able	enhancement	https://github.com/perspective-dev/perspective/issues/2853
+#2836	Expose "Export to PNG" to @finos/perspective_viewer		https://github.com/perspective-dev/perspective/issues/2836
+#2737	Suggestion to make dynamic filters possible. One filter will filter the options on the next one	enhancement	https://github.com/perspective-dev/perspective/issues/2737
+#2631	Feature request : Click + drag to zoom, event/callback to back-end	enhancement	https://github.com/perspective-dev/perspective/issues/2631
+#2611	Creating a table using arrow buffer fails with Table initialization failed: Error: Abort(): Could not load arrow column of type `time64`	enhancement	https://github.com/perspective-dev/perspective/issues/2611
+#2445	Percentile aggregator	enhancement, C++	https://github.com/perspective-dev/perspective/issues/2445
+#2442	Step plot	enhancement	https://github.com/perspective-dev/perspective/issues/2442
+#2441	Exit edit mode with ESC 	enhancement	https://github.com/perspective-dev/perspective/issues/2441
+#2420	Switching between pyodide + regular python builds requires cleaning / rebuilding native artifacts	internal	https://github.com/perspective-dev/perspective/issues/2420
+#2410	Allow wheel zooming on a single axis	enhancement, plugins	https://github.com/perspective-dev/perspective/issues/2410
+#2312	support for editable enum type	question	https://github.com/perspective-dev/perspective/issues/2312
+#2253	Document Plugin Configuration Options	documentation	https://github.com/perspective-dev/perspective/issues/2253
+#2007	Changing view configuration causes the expanded/collapsed state of groups to be reset	bug	https://github.com/perspective-dev/perspective/issues/2007
+#1906	Re-trigger cell gradient style with get_min_max(colname)	enhancement	https://github.com/perspective-dev/perspective/issues/1906
+#1896	Request for UNPIVOT in Data Grid	enhancement	https://github.com/perspective-dev/perspective/issues/1896
+#1877	Add `date()`/`datetime()` functions to ExprTK suitable for simple data cleaning.	enhancement	https://github.com/perspective-dev/perspective/issues/1877
+#1812	Feed a stream of RecordBatches to a table (Python)	enhancement, Python	https://github.com/perspective-dev/perspective/issues/1812
+#1723	Memory leak with table.update on non numbers? 	bug, C++	https://github.com/perspective-dev/perspective/issues/1723

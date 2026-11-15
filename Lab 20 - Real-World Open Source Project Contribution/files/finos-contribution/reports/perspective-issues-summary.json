@@ -1,0 +1,280 @@
+[
+  {
+    "number": 3285,
+    "title": "Support horizontal expansion (\"wide\" mode) in `list_flatten`",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/3285",
+    "labels": [],
+    "created_at": "2026-11-09T10:52:09Z",
+    "updated_at": "2026-11-09T10:52:09Z"
+  },
+  {
+    "number": 3251,
+    "title": "Virtual servers: allow restricting aggregates per column (not only per column type)",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/3251",
+    "labels": [],
+    "created_at": "2026-10-10T14:04:03Z",
+    "updated_at": "2026-10-10T14:04:03Z"
+  },
+  {
+    "number": 3244,
+    "title": "Support filtering across columns",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/3244",
+    "labels": [],
+    "created_at": "2026-09-25T20:48:30Z",
+    "updated_at": "2026-10-25T13:21:26Z"
+  },
+  {
+    "number": 3088,
+    "title": "`join` aggregate doesn't handle long content",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/3088",
+    "labels": [],
+    "created_at": "2025-11-28T15:24:38Z",
+    "updated_at": "2025-11-28T15:26:10Z"
+  },
+  {
+    "number": 3065,
+    "title": "[ONBOARDING] Perspective to OpenJS",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/3065",
+    "labels": [
+      "internal"
+    ],
+    "created_at": "2025-10-21T13:55:04Z",
+    "updated_at": "2026-03-17T19:28:32Z"
+  },
+  {
+    "number": 2976,
+    "title": "[X/Y Line] Multiple Y Axes",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2976",
+    "labels": [],
+    "created_at": "2025-04-08T15:20:04Z",
+    "updated_at": "2026-01-04T19:33:42Z"
+  },
+  {
+    "number": 2965,
+    "title": "Copy .selected.ndjson is not limited to selection",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2965",
+    "labels": [
+      "bug"
+    ],
+    "created_at": "2025-03-28T17:25:59Z",
+    "updated_at": "2025-03-28T17:26:13Z"
+  },
+  {
+    "number": 2956,
+    "title": "Proposal to evaluate expression columns based on dependency ordering",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2956",
+    "labels": [],
+    "created_at": "2025-03-16T23:19:26Z",
+    "updated_at": "2025-03-20T20:58:21Z"
+  },
+  {
+    "number": 2950,
+    "title": "Registering a custom plugin breaks html export",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2950",
+    "labels": [],
+    "created_at": "2025-03-11T21:29:20Z",
+    "updated_at": "2025-03-11T21:29:57Z"
+  },
+  {
+    "number": 2892,
+    "title": "Support HTML in row expressions",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2892",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2025-01-06T15:23:06Z",
+    "updated_at": "2025-02-02T16:09:57Z"
+  },
+  {
+    "number": 2877,
+    "title": "Support rolling filters for date time cols",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2877",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2024-12-12T06:09:55Z",
+    "updated_at": "2025-01-09T21:21:52Z"
+  },
+  {
+    "number": 2853,
+    "title": "`Server` instance not pickle-able, `PerspectiveManager` was pickle-able",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2853",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2024-11-16T16:29:05Z",
+    "updated_at": "2024-11-27T15:48:44Z"
+  },
+  {
+    "number": 2836,
+    "title": "Expose \"Export to PNG\" to @finos/perspective_viewer",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2836",
+    "labels": [],
+    "created_at": "2024-11-07T14:39:10Z",
+    "updated_at": "2025-04-24T17:17:34Z"
+  },
+  {
+    "number": 2737,
+    "title": "Suggestion to make dynamic filters possible. One filter will filter the options on the next one",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2737",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2024-09-04T15:23:46Z",
+    "updated_at": "2024-09-04T15:30:48Z"
+  },
+  {
+    "number": 2631,
+    "title": "Feature request : Click + drag to zoom, event/callback to back-end",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2631",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2024-05-29T22:07:21Z",
+    "updated_at": "2024-06-14T20:02:05Z"
+  },
+  {
+    "number": 2611,
+    "title": "Creating a table using arrow buffer fails with Table initialization failed: Error: Abort(): Could not load arrow column of type `time64`",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2611",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2024-05-05T18:40:44Z",
+    "updated_at": "2024-05-15T18:14:40Z"
+  },
+  {
+    "number": 2445,
+    "title": "Percentile aggregator",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2445",
+    "labels": [
+      "enhancement",
+      "C++"
+    ],
+    "created_at": "2023-11-21T11:29:22Z",
+    "updated_at": "2025-06-07T03:48:30Z"
+  },
+  {
+    "number": 2442,
+    "title": "Step plot",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2442",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2023-11-20T01:18:33Z",
+    "updated_at": "2023-11-20T03:26:56Z"
+  },
+  {
+    "number": 2441,
+    "title": "Exit edit mode with ESC ",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2441",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2023-11-20T01:12:25Z",
+    "updated_at": "2023-11-20T01:12:44Z"
+  },
+  {
+    "number": 2420,
+    "title": "Switching between pyodide + regular python builds requires cleaning / rebuilding native artifacts",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2420",
+    "labels": [
+      "internal"
+    ],
+    "created_at": "2023-11-08T01:27:37Z",
+    "updated_at": "2024-02-05T18:53:12Z"
+  },
+  {
+    "number": 2410,
+    "title": "Allow wheel zooming on a single axis",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2410",
+    "labels": [
+      "enhancement",
+      "plugins"
+    ],
+    "created_at": "2023-10-31T20:05:42Z",
+    "updated_at": "2025-03-20T08:49:49Z"
+  },
+  {
+    "number": 2312,
+    "title": "support for editable enum type",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2312",
+    "labels": [
+      "question"
+    ],
+    "created_at": "2023-07-20T14:49:56Z",
+    "updated_at": "2025-02-02T20:56:04Z"
+  },
+  {
+    "number": 2253,
+    "title": "Document Plugin Configuration Options",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2253",
+    "labels": [
+      "documentation"
+    ],
+    "created_at": "2023-06-10T04:32:24Z",
+    "updated_at": "2025-01-19T16:00:08Z"
+  },
+  {
+    "number": 2007,
+    "title": "Changing view configuration causes the expanded/collapsed state of groups to be reset",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/2007",
+    "labels": [
+      "bug"
+    ],
+    "created_at": "2022-11-04T15:06:15Z",
+    "updated_at": "2025-02-13T21:00:44Z"
+  },
+  {
+    "number": 1906,
+    "title": "Re-trigger cell gradient style with get_min_max(colname)",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/1906",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2022-07-11T13:33:11Z",
+    "updated_at": "2022-07-11T13:43:29Z"
+  },
+  {
+    "number": 1896,
+    "title": "Request for UNPIVOT in Data Grid",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/1896",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2022-07-07T15:15:01Z",
+    "updated_at": "2022-07-13T17:31:06Z"
+  },
+  {
+    "number": 1877,
+    "title": "Add `date()`/`datetime()` functions to ExprTK suitable for simple data cleaning.",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/1877",
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2022-06-29T23:07:56Z",
+    "updated_at": "2022-06-29T23:09:48Z"
+  },
+  {
+    "number": 1812,
+    "title": "Feed a stream of RecordBatches to a table (Python)",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/1812",
+    "labels": [
+      "enhancement",
+      "Python"
+    ],
+    "created_at": "2022-05-15T10:46:29Z",
+    "updated_at": "2022-05-17T18:24:42Z"
+  },
+  {
+    "number": 1723,
+    "title": "Memory leak with table.update on non numbers? ",
+    "html_url": "https://github.com/perspective-dev/perspective/issues/1723",
+    "labels": [
+      "bug",
+      "C++"
+    ],
+    "created_at": "2022-02-22T17:37:46Z",
+    "updated_at": "2023-07-11T10:59:37Z"
+  }
+]

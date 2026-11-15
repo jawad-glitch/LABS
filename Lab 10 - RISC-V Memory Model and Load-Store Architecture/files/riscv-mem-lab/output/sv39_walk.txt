@@ -1,0 +1,6 @@
+Mapped VA 0x1234 -> PA 0x20000234, fault=0
+mapped second page VA=0x2345 PA=0x20001345 fault=0 PASS
+unmapped page      VA=0x9000 PA=0x0 fault=1 PASS
+permission denied  VA=0x1000 PA=0x0 fault=2 PASS
+level-1 superpage  VA=0x200123 PA=0x40000123 fault=0 PASS
+Sv39 walker tests: PASS

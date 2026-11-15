@@ -1,0 +1,6 @@
+Protection mappings: RW=0x2aaaab2ad000 RO=0x2aaaab2ae000 NONE=0x2aaaab2af000
+Faults captured: 2
+Fault 1: attempt=4 type=write address=0x2aaaab2ae000 si_code=2 (SEGV_ACCERR)
+Fault 2: attempt=5 type=read address=0x2aaaab2af000 si_code=2 (SEGV_ACCERR)
+mprotect upgrade verification: PASS
+mmap/mprotect protection tests: PASS

@@ -1,0 +1,6 @@
+Iterations per test: 1000000
+M integer arithmetic: 22.046 ms
+A atomic operations:  3.715 ms
+F single precision:   22.070 ms
+D double precision:   22.452 ms
+Result checksum: 500837676

@@ -1,0 +1,5 @@
+fetch_add: old=15 new=18
+fetch_and: old=18 new=18
+fetch_or: old=18 new=82
+compare_exchange success=1 value=153
+compare_exchange failure=0 expected=153 value=153

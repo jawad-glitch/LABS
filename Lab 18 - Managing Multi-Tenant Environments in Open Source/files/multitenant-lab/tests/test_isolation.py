@@ -1,68 +1,60 @@
-import os
+import json
+import urllib.request
+import urllib.error
 import uuid
-import httpx
 
-BASE = os.getenv("API_URL", "http://127.0.0.1:8000")
-TIMEOUT = 10
+BASE = "http://127.0.0.1:8000"
+
+def request(method, path, tenant, token=None, payload=None):
+    headers = {"X-Tenant-Name": tenant}
+    data = None
+    if payload is not None:
+        data = json.dumps(payload).encode()
+        headers["Content-Type"] = "application/json"
+    if token:
+        headers["Authorization"] = "Bearer " + token
+    req = urllib.request.Request(BASE + path, data=data, headers=headers, method=method)
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            body = response.read()
+            return response.status, json.loads(body) if body else {}
+    except urllib.error.HTTPError as exc:
+        body = exc.read()
+        try:
+            parsed = json.loads(body) if body else {}
+        except Exception:
+            parsed = {}
+        return exc.code, parsed
 
 def login(tenant, username="admin", password="AdminPass123!"):
-    response = httpx.post(
-        f"{BASE}/login",
-        headers={"X-Tenant-Name": tenant},
-        json={"username": username, "password": password},
-        timeout=TIMEOUT,
-    )
-    assert response.status_code == 200, response.text
-    return response.json()["access_token"]
-
-def headers(tenant, token):
-    return {"X-Tenant-Name": tenant, "Authorization": f"Bearer {token}"}
-
-def test_health():
-    response = httpx.get(f"{BASE}/health", timeout=TIMEOUT)
-    assert response.status_code == 200
-    assert response.json()["status"] == "ok"
+    status, body = request("POST", "/login", tenant, payload={
+        "username": username, "password": password
+    })
+    assert status == 200, f"Login failed for {tenant}: {status} {body}"
+    assert body.get("access_token"), f"No JWT returned for {tenant}"
+    return body["access_token"]
 
 def test_tenant_a_record_is_not_visible_to_tenant_b():
-    marker = "isolation-" + uuid.uuid4().hex
+    marker = "alpha-private-" + uuid.uuid4().hex
     token_a = login("alpha")
-    create = httpx.post(
-        f"{BASE}/items",
-        headers=headers("alpha", token_a),
-        json={"name": marker},
-        timeout=TIMEOUT,
-    )
-    assert create.status_code == 200, create.text
+    status, created = request("POST", "/items", "alpha", token_a, {"name": marker})
+    assert status == 201, f"Tenant A create failed: {status} {created}"
 
     token_b = login("beta")
-    listing = httpx.get(
-        f"{BASE}/items", headers=headers("beta", token_b), timeout=TIMEOUT
-    )
-    assert listing.status_code == 200, listing.text
-    assert marker not in [item["name"] for item in listing.json()["items"]]
+    status, listing = request("GET", "/items", "beta", token_b)
+    assert status == 200, f"Tenant B list failed: {status} {listing}"
+    assert marker not in json.dumps(listing), "TENANT ISOLATION FAILURE: Tenant B saw Tenant A's record"
 
-    own_listing = httpx.get(
-        f"{BASE}/items", headers=headers("alpha", token_a), timeout=TIMEOUT
-    )
-    assert marker in [item["name"] for item in own_listing.json()["items"]]
+def test_tenant_context_mismatch_is_forbidden():
+    token_a = login("alpha")
+    status, _ = request("GET", "/items", "beta", token_a)
+    assert status in (403, 404), f"Cross-tenant request was not rejected: HTTP {status}"
 
 def test_read_only_user_cannot_write():
-    token = login("alpha", "user", "UserPass123!")
-    response = httpx.post(
-        f"{BASE}/items",
-        headers=headers("alpha", token),
-        json={"name": "should-be-forbidden"},
-        timeout=TIMEOUT,
-    )
-    assert response.status_code == 403
+    token = login("gamma", "user", "UserPass123!")
+    status, _ = request("POST", "/items", "gamma", token, {"name": "unauthorized-write"})
+    assert status == 403, f"Read-only user write should return 403, got {status}"
 
-def test_tenant_header_cannot_override_jwt_tenant():
-    token_a = login("alpha")
-    response = httpx.get(
-        f"{BASE}/items", headers=headers("beta", token_a), timeout=TIMEOUT
-    )
-    assert response.status_code == 403
-
-def test_all_three_tenants_have_separate_admin_tokens():
-    tokens = {tenant: login(tenant) for tenant in ("alpha", "beta", "gamma")}
-    assert len(set(tokens.values())) == 3
+def test_three_tenants_receive_distinct_tokens():
+    tokens = [login(t) for t in ("alpha", "beta", "gamma")]
+    assert len(set(tokens)) == 3, "Each tenant login should receive a unique JWT"

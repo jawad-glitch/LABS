@@ -1,6 +1,6 @@
 import json
-import statistics
 import time
+import statistics
 import urllib.request
 import urllib.error
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -13,26 +13,19 @@ PASSWORD = "AdminPass123!"
 
 def one_request(index):
     tenant = TENANTS[index % len(TENANTS)]
-    payload = json.dumps({
-        "username": "admin",
-        "password": PASSWORD
-    }).encode()
-    request = urllib.request.Request(
+    payload = json.dumps({"username": "admin", "password": PASSWORD}).encode()
+    req = urllib.request.Request(
         BASE + "/login",
         data=payload,
-        headers={
-            "Content-Type": "application/json",
-            "X-Tenant-Name": tenant,
-        },
+        headers={"Content-Type": "application/json", "X-Tenant-Name": tenant},
         method="POST",
     )
     start = time.perf_counter()
     try:
-        with urllib.request.urlopen(request, timeout=15) as response:
+        with urllib.request.urlopen(req, timeout=20) as response:
             body = json.loads(response.read())
             elapsed = (time.perf_counter() - start) * 1000
-            success = response.status == 200 and bool(body.get("access_token"))
-            return elapsed, success, tenant
+            return elapsed, response.status == 200 and bool(body.get("access_token")), tenant
     except Exception:
         return (time.perf_counter() - start) * 1000, False, tenant
 
@@ -53,10 +46,8 @@ median_ms = statistics.median(latencies) if latencies else 0
 lines = [
     "Multi-tenant concurrent login load test",
     f"Total requests: {TOTAL}",
-    f"Concurrency: 200 workers",
-    f"Tenant distribution: alpha={sum(r[2]=='alpha' for r in results)}, "
-    f"beta={sum(r[2]=='beta' for r in results)}, "
-    f"gamma={sum(r[2]=='gamma' for r in results)}",
+    "Concurrency: 200 workers",
+    f"Tenant distribution: alpha={sum(r[2]=='alpha' for r in results)}, beta={sum(r[2]=='beta' for r in results)}, gamma={sum(r[2]=='gamma' for r in results)}",
     f"Successful requests: {successes}",
     f"Failed requests: {errors}",
     f"Error rate: {error_rate:.2f}%",

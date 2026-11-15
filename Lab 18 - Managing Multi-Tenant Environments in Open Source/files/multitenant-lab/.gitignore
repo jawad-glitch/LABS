@@ -4,3 +4,9 @@ __pycache__/
 *.pyc
 .env
 logs/*.tmp
+
+!logs/load_test_results.txt
+
+!logs/load_test_results.txt
+
+!logs/load_test_results.txt

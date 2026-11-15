@@ -198,3 +198,4 @@
 | [Lab 6 - RISC-V Pseudo-Instructions and Macro Expansion](Lab%206%20-%20RISC-V%20Pseudo-Instructions%20and%20Macro%20Expansion/PROOF.md) | no core-check file | 2026-11-15 04:11 |
 | [Lab 7 - RISC-V M A F D Extensions](Lab%207%20-%20RISC-V%20M%20A%20F%20D%20Extensions/PROOF.md) | no core-check file | 2026-11-15 04:21 |
 | [Lab 8 - Floating-Point Operations in RISC-V](Lab%208%20-%20Floating-Point%20Operations%20in%20RISC-V/PROOF.md) | no core-check file | 2026-11-15 04:26 |
+| [Lab 9 - RISC-V Atomic Instructions A Extension](Lab%209%20-%20RISC-V%20Atomic%20Instructions%20A%20Extension/PROOF.md) | no core-check file | 2026-11-15 04:30 |

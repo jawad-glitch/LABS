@@ -1,0 +1,49 @@
+
+bin/amo_suite:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+000000000001017c <_start>:
+   1017c:	00002297          	auipc	t0,0x2
+   10180:	e642b283          	ld	t0,-412(t0) # 11fe0 <_GLOBAL_OFFSET_TABLE_+0x8>
+   10184:	00002317          	auipc	t1,0x2
+   10188:	e6433303          	ld	t1,-412(t1) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x10>
+   1018c:	03300393          	addi	t2,zero,51
+   10190:	0e72ae2f          	amoswap.w.aqrl	t3,t2,(t0)
+   10194:	01c32023          	sw	t3,0(t1)
+   10198:	00700393          	addi	t2,zero,7
+   1019c:	0672ae2f          	amoadd.w.aqrl	t3,t2,(t0)
+   101a0:	01c32223          	sw	t3,4(t1)
+   101a4:	03c00393          	addi	t2,zero,60
+   101a8:	6672ae2f          	amoand.w.aqrl	t3,t2,(t0)
+   101ac:	01c32423          	sw	t3,8(t1)
+   101b0:	08000393          	addi	t2,zero,128
+   101b4:	4672ae2f          	amoor.w.aqrl	t3,t2,(t0)
+   101b8:	01c32623          	sw	t3,12(t1)
+   101bc:	05500393          	addi	t2,zero,85
+   101c0:	2672ae2f          	amoxor.w.aqrl	t3,t2,(t0)
+   101c4:	01c32823          	sw	t3,16(t1)
+   101c8:	05a00e93          	addi	t4,zero,90
+   101cc:	00032f03          	lw	t5,0(t1)
+   101d0:	05ee9063          	bne	t4,t5,10210 <fail>
+   101d4:	03300e93          	addi	t4,zero,51
+   101d8:	00432f03          	lw	t5,4(t1)
+   101dc:	03ee9a63          	bne	t4,t5,10210 <fail>
+   101e0:	03a00e93          	addi	t4,zero,58
+   101e4:	00832f03          	lw	t5,8(t1)
+   101e8:	03ee9463          	bne	t4,t5,10210 <fail>
+   101ec:	03800e93          	addi	t4,zero,56
+   101f0:	00c32f03          	lw	t5,12(t1)
+   101f4:	01ee9e63          	bne	t4,t5,10210 <fail>
+   101f8:	0b800e93          	addi	t4,zero,184
+   101fc:	01032f03          	lw	t5,16(t1)
+   10200:	01ee9863          	bne	t4,t5,10210 <fail>
+   10204:	05d00893          	addi	a7,zero,93
+   10208:	00000513          	addi	a0,zero,0
+   1020c:	00000073          	ecall
+
+0000000000010210 <fail>:
+   10210:	05d00893          	addi	a7,zero,93
+   10214:	00100513          	addi	a0,zero,1
+   10218:	00000073          	ecall

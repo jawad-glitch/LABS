@@ -1,0 +1,2 @@
+   101b8:	0c6522af          	amoswap.w.aq	t0,t1,(a0)
+   101c4:	0a05202f          	amoswap.w.rl	zero,zero,(a0)

@@ -1,0 +1,5 @@
+Threads: 4 (2 unsynchronized, 2 atomic)
+Increments per thread: 500000
+Expected counter value: 1000000
+Unsynchronized counter: 920521
+Atomic counter: 1000000

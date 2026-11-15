@@ -1,0 +1,6 @@
+
+bin/amo_suite:     file format elf64-littleriscv
+
+Contents of section .data:
+ 12000 5a000000 00000000 00000000 00000000  Z...............
+ 12010 00000000 00000000                    ........        

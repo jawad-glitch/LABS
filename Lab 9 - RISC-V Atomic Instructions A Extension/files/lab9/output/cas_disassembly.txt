@@ -1,0 +1,48 @@
+
+bin/cas:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+000000000001017c <_start>:
+   1017c:	00002517          	auipc	a0,0x2
+   10180:	e6c53503          	ld	a0,-404(a0) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x8>
+   10184:	02900593          	addi	a1,zero,41
+   10188:	06300613          	addi	a2,zero,99
+   1018c:	064000ef          	jal	ra,101f0 <compare_and_swap>
+   10190:	00100293          	addi	t0,zero,1
+   10194:	04551863          	bne	a0,t0,101e4 <fail>
+   10198:	00002317          	auipc	t1,0x2
+   1019c:	e5033303          	ld	t1,-432(t1) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x8>
+   101a0:	00032383          	lw	t2,0(t1)
+   101a4:	06300293          	addi	t0,zero,99
+   101a8:	02539e63          	bne	t2,t0,101e4 <fail>
+   101ac:	00002517          	auipc	a0,0x2
+   101b0:	e3c53503          	ld	a0,-452(a0) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x8>
+   101b4:	02900593          	addi	a1,zero,41
+   101b8:	07b00613          	addi	a2,zero,123
+   101bc:	034000ef          	jal	ra,101f0 <compare_and_swap>
+   101c0:	02051263          	bne	a0,zero,101e4 <fail>
+   101c4:	00002317          	auipc	t1,0x2
+   101c8:	e2433303          	ld	t1,-476(t1) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x8>
+   101cc:	00032383          	lw	t2,0(t1)
+   101d0:	06300293          	addi	t0,zero,99
+   101d4:	00539863          	bne	t2,t0,101e4 <fail>
+   101d8:	05d00893          	addi	a7,zero,93
+   101dc:	00000513          	addi	a0,zero,0
+   101e0:	00000073          	ecall
+
+00000000000101e4 <fail>:
+   101e4:	05d00893          	addi	a7,zero,93
+   101e8:	00100513          	addi	a0,zero,1
+   101ec:	00000073          	ecall
+
+00000000000101f0 <compare_and_swap>:
+   101f0:	140522af          	lr.w.aq	t0,(a0)
+   101f4:	00b29a63          	bne	t0,a1,10208 <compare_and_swap+0x18>
+   101f8:	1ac5232f          	sc.w.rl	t1,a2,(a0)
+   101fc:	fe031ae3          	bne	t1,zero,101f0 <compare_and_swap>
+   10200:	00100513          	addi	a0,zero,1
+   10204:	00008067          	jalr	zero,0(ra)
+   10208:	00000513          	addi	a0,zero,0
+   1020c:	00008067          	jalr	zero,0(ra)

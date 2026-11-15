@@ -1,0 +1,31 @@
+
+bin/spinlock:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+000000000001017c <_start>:
+   1017c:	00002517          	auipc	a0,0x2
+   10180:	e6453503          	ld	a0,-412(a0) # 11fe0 <_GLOBAL_OFFSET_TABLE_+0x8>
+   10184:	030000ef          	jal	ra,101b4 <acquire_lock>
+   10188:	00002297          	auipc	t0,0x2
+   1018c:	e602b283          	ld	t0,-416(t0) # 11fe8 <_GLOBAL_OFFSET_TABLE_+0x10>
+   10190:	0002a303          	lw	t1,0(t0)
+   10194:	00130313          	addi	t1,t1,1
+   10198:	0062a023          	sw	t1,0(t0)
+   1019c:	00002517          	auipc	a0,0x2
+   101a0:	e4453503          	ld	a0,-444(a0) # 11fe0 <_GLOBAL_OFFSET_TABLE_+0x8>
+   101a4:	020000ef          	jal	ra,101c4 <release_lock>
+   101a8:	05d00893          	addi	a7,zero,93
+   101ac:	00000513          	addi	a0,zero,0
+   101b0:	00000073          	ecall
+
+00000000000101b4 <acquire_lock>:
+   101b4:	00100313          	addi	t1,zero,1
+   101b8:	0c6522af          	amoswap.w.aq	t0,t1,(a0)
+   101bc:	fe029ee3          	bne	t0,zero,101b8 <acquire_lock+0x4>
+   101c0:	00008067          	jalr	zero,0(ra)
+
+00000000000101c4 <release_lock>:
+   101c4:	0a05202f          	amoswap.w.rl	zero,zero,(a0)
+   101c8:	00008067          	jalr	zero,0(ra)

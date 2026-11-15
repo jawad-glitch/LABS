@@ -1,0 +1,5 @@
+   10190:	0e72ae2f          	amoswap.w.aqrl	t3,t2,(t0)
+   1019c:	0672ae2f          	amoadd.w.aqrl	t3,t2,(t0)
+   101a8:	6672ae2f          	amoand.w.aqrl	t3,t2,(t0)
+   101b4:	4672ae2f          	amoor.w.aqrl	t3,t2,(t0)
+   101c0:	2672ae2f          	amoxor.w.aqrl	t3,t2,(t0)

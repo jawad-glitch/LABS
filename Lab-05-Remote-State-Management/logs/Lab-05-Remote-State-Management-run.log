@@ -1,0 +1,714 @@
+##### TASK 1: tools (parallel downloads) + AWS emulator #####
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+Preconfiguring packages ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 218068 files and directories currently installed.)
+Preparing to unpack .../00-libpython3.12t64_3.12.3-1ubuntu0.17_amd64.deb ...
+Unpacking libpython3.12t64:amd64 (3.12.3-1ubuntu0.17) over (3.12.3-1ubuntu0.9) ...
+Preparing to unpack .../01-python3.12_3.12.3-1ubuntu0.17_amd64.deb ...
+Unpacking python3.12 (3.12.3-1ubuntu0.17) over (3.12.3-1ubuntu0.9) ...
+Preparing to unpack .../02-libpython3.12-stdlib_3.12.3-1ubuntu0.17_amd64.deb ...
+Unpacking libpython3.12-stdlib:amd64 (3.12.3-1ubuntu0.17) over (3.12.3-1ubuntu0.9) ...
+Preparing to unpack .../03-python3.12-minimal_3.12.3-1ubuntu0.17_amd64.deb ...
+Unpacking python3.12-minimal (3.12.3-1ubuntu0.17) over (3.12.3-1ubuntu0.9) ...
+Preparing to unpack .../04-libpython3.12-minimal_3.12.3-1ubuntu0.17_amd64.deb ...
+Unpacking libpython3.12-minimal:amd64 (3.12.3-1ubuntu0.17) over (3.12.3-1ubuntu0.9) ...
+Preparing to unpack .../05-gpg-wks-client_2.4.4-2ubuntu17.6_amd64.deb ...
+Unpacking gpg-wks-client (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Preparing to unpack .../06-dirmngr_2.4.4-2ubuntu17.6_amd64.deb ...
+Unpacking dirmngr (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Preparing to unpack .../07-gpgsm_2.4.4-2ubuntu17.6_amd64.deb ...
+Unpacking gpgsm (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Preparing to unpack .../08-gnupg-utils_2.4.4-2ubuntu17.6_amd64.deb ...
+Unpacking gnupg-utils (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Preparing to unpack .../09-gpg-agent_2.4.4-2ubuntu17.6_amd64.deb ...
+Unpacking gpg-agent (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Preparing to unpack .../10-gpg_2.4.4-2ubuntu17.6_amd64.deb ...
+Unpacking gpg (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Preparing to unpack .../11-gpgconf_2.4.4-2ubuntu17.6_amd64.deb ...
+Unpacking gpgconf (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Preparing to unpack .../12-gnupg_2.4.4-2ubuntu17.6_all.deb ...
+Unpacking gnupg (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Preparing to unpack .../13-keyboxd_2.4.4-2ubuntu17.6_amd64.deb ...
+Unpacking keyboxd (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Preparing to unpack .../14-gpgv_2.4.4-2ubuntu17.6_amd64.deb ...
+Unpacking gpgv (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Setting up gpgv (2.4.4-2ubuntu17.6) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 218068 files and directories currently installed.)
+Preparing to unpack .../00-ca-certificates_20260816ubuntu0.24.04.2_all.deb ...
+Unpacking ca-certificates (20260816ubuntu0.24.04.2) over (20260601~24.04.1) ...
+Preparing to unpack .../01-wget_1.21.4-1ubuntu4.5_amd64.deb ...
+Unpacking wget (1.21.4-1ubuntu4.5) over (1.21.4-1ubuntu4.1) ...
+Preparing to unpack .../02-curl_8.5.0-2ubuntu10.16_amd64.deb ...
+Unpacking curl (8.5.0-2ubuntu10.16) over (8.5.0-2ubuntu10.9) ...
+Preparing to unpack .../03-libcurl4t64_8.5.0-2ubuntu10.16_amd64.deb ...
+Unpacking libcurl4t64:amd64 (8.5.0-2ubuntu10.16) over (8.5.0-2ubuntu10.9) ...
+Preparing to unpack .../04-libcurl3t64-gnutls_8.5.0-2ubuntu10.16_amd64.deb ...
+Unpacking libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.16) over (8.5.0-2ubuntu10.9) ...
+Preparing to unpack .../05-git-man_1%3a2.43.0-1ubuntu7.4_all.deb ...
+Unpacking git-man (1:2.43.0-1ubuntu7.4) over (1:2.43.0-1ubuntu7.3) ...
+Preparing to unpack .../06-git_1%3a2.43.0-1ubuntu7.4_amd64.deb ...
+Unpacking git (1:2.43.0-1ubuntu7.4) over (1:2.43.0-1ubuntu7.3) ...
+Preparing to unpack .../07-gnupg-l10n_2.4.4-2ubuntu17.6_all.deb ...
+Unpacking gnupg-l10n (2.4.4-2ubuntu17.6) over (2.4.4-2ubuntu17.4) ...
+Preparing to unpack .../08-jq_1.7.1-3ubuntu0.24.04.2_amd64.deb ...
+Unpacking jq (1.7.1-3ubuntu0.24.04.2) over (1.7.1-3ubuntu0.24.04.1) ...
+Preparing to unpack .../09-libjq1_1.7.1-3ubuntu0.24.04.2_amd64.deb ...
+Unpacking libjq1:amd64 (1.7.1-3ubuntu0.24.04.2) over (1.7.1-3ubuntu0.24.04.1) ...
+Selecting previously unselected package python3-pip-whl.
+Preparing to unpack .../10-python3-pip-whl_24.0+dfsg-1ubuntu1.3_all.deb ...
+Unpacking python3-pip-whl (24.0+dfsg-1ubuntu1.3) ...
+Selecting previously unselected package python3-setuptools-whl.
+Preparing to unpack .../11-python3-setuptools-whl_68.1.2-2ubuntu1.2_all.deb ...
+Unpacking python3-setuptools-whl (68.1.2-2ubuntu1.2) ...
+Preparing to unpack .../12-software-properties-common_0.99.49.4_all.deb ...
+Unpacking software-properties-common (0.99.49.4) over (0.99.49.3) ...
+Preparing to unpack .../13-software-properties-gtk_0.99.49.4_all.deb ...
+Unpacking software-properties-gtk (0.99.49.4) over (0.99.49.3) ...
+Preparing to unpack .../14-python3-software-properties_0.99.49.4_all.deb ...
+Unpacking python3-software-properties (0.99.49.4) over (0.99.49.3) ...
+Selecting previously unselected package python3.12-venv.
+Preparing to unpack .../15-python3.12-venv_3.12.3-1ubuntu0.17_amd64.deb ...
+Unpacking python3.12-venv (3.12.3-1ubuntu0.17) ...
+Selecting previously unselected package python3-venv.
+Preparing to unpack .../16-python3-venv_3.12.3-0ubuntu2.1_amd64.deb ...
+Unpacking python3-venv (3.12.3-0ubuntu2.1) ...
+Setting up python3-setuptools-whl (68.1.2-2ubuntu1.2) ...
+Setting up wget (1.21.4-1ubuntu4.5) ...
+Setting up libcurl4t64:amd64 (8.5.0-2ubuntu10.16) ...
+Setting up libjq1:amd64 (1.7.1-3ubuntu0.24.04.2) ...
+Setting up libpython3.12-minimal:amd64 (3.12.3-1ubuntu0.17) ...
+Setting up libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.16) ...
+Setting up ca-certificates (20260816ubuntu0.24.04.2) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+Updating certificates in /etc/ssl/certs...
+rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+4 added, 5 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Setting up gnupg-l10n (2.4.4-2ubuntu17.6) ...
+Setting up jq (1.7.1-3ubuntu0.24.04.2) ...
+Setting up gpgconf (2.4.4-2ubuntu17.6) ...
+Setting up git-man (1:2.43.0-1ubuntu7.4) ...
+Setting up curl (8.5.0-2ubuntu10.16) ...
+Setting up gpg (2.4.4-2ubuntu17.6) ...
+Setting up gnupg-utils (2.4.4-2ubuntu17.6) ...
+Setting up python3.12-minimal (3.12.3-1ubuntu0.17) ...
+Setting up gpg-agent (2.4.4-2ubuntu17.6) ...
+Setting up libpython3.12-stdlib:amd64 (3.12.3-1ubuntu0.17) ...
+Setting up python3-pip-whl (24.0+dfsg-1ubuntu1.3) ...
+Setting up python3.12 (3.12.3-1ubuntu0.17) ...
+Setting up gpgsm (2.4.4-2ubuntu17.6) ...
+Setting up libpython3.12t64:amd64 (3.12.3-1ubuntu0.17) ...
+Setting up dirmngr (2.4.4-2ubuntu17.6) ...
+Setting up python3-software-properties (0.99.49.4) ...
+Setting up keyboxd (2.4.4-2ubuntu17.6) ...
+Setting up git (1:2.43.0-1ubuntu7.4) ...
+Setting up gnupg (2.4.4-2ubuntu17.6) ...
+Setting up gpg-wks-client (2.4.4-2ubuntu17.6) ...
+Setting up python3.12-venv (3.12.3-1ubuntu0.17) ...
+Setting up software-properties-common (0.99.49.4) ...
+Setting up python3-venv (3.12.3-0ubuntu2.1) ...
+Setting up software-properties-gtk (0.99.49.4) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libglib2.0-0t64:amd64 (2.80.0-6ubuntu3.5) ...
+Processing triggers for dbus (1.14.10-4ubuntu4.1) ...
+Processing triggers for shared-mime-info (2.4-4) ...
+Processing triggers for install-info (7.1-3build2) ...
+Processing triggers for desktop-file-utils (0.27-2build1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1.1ubuntu3) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+Processing triggers for systemd (255.4-1ubuntu8.12) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+ systemctl restart packagekit.service
+
+Service restarts being deferred:
+ systemctl restart NetworkManager.service
+ systemctl restart networkd-dispatcher.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ ubuntu @ user manager service: sh[3288], systemd[1661]
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+Terraform v1.6.6
+on linux_amd64
+
+Your version of Terraform is out of date! The latest version
+is 1.17.2. You can update by downloading from https://www.terraform.io/downloads.html
+aws-cli/2.40.3 Python/3.14.8 Linux/6.14.0-1018-aws exe/x86_64.ubuntu.24
+{
+    "UserId": "AKIAIOSFODNN7EXAMPLE",
+    "Account": "123456789012",
+    "Arn": "arn:aws:sts::123456789012:user/moto"
+}
+##### TASK 2: S3 backend #####
+
+[0m[1mInitializing the backend...[0m
+
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Installing hashicorp/aws v5.100.0...
+- Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+
+Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.[0m
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_s3_bucket.terraform_state[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket" "terraform_state" {
+      [32m+[0m[0m acceleration_status         = (known after apply)
+      [32m+[0m[0m acl                         = (known after apply)
+      [32m+[0m[0m arn                         = (known after apply)
+      [32m+[0m[0m bucket                      = "terraform-state-bucket-unique-12345"
+      [32m+[0m[0m bucket_domain_name          = (known after apply)
+      [32m+[0m[0m bucket_prefix               = (known after apply)
+      [32m+[0m[0m bucket_regional_domain_name = (known after apply)
+      [32m+[0m[0m force_destroy               = false
+      [32m+[0m[0m hosted_zone_id              = (known after apply)
+      [32m+[0m[0m id                          = (known after apply)
+      [32m+[0m[0m object_lock_enabled         = (known after apply)
+      [32m+[0m[0m policy                      = (known after apply)
+      [32m+[0m[0m region                      = (known after apply)
+      [32m+[0m[0m request_payer               = (known after apply)
+      [32m+[0m[0m tags                        = {
+          [32m+[0m[0m "Environment" = "lab"
+          [32m+[0m[0m "Name"        = "Terraform State Bucket"
+          [32m+[0m[0m "Purpose"     = "Remote State Storage"
+        }
+      [32m+[0m[0m tags_all                    = {
+          [32m+[0m[0m "Environment" = "lab"
+          [32m+[0m[0m "Name"        = "Terraform State Bucket"
+          [32m+[0m[0m "Purpose"     = "Remote State Storage"
+        }
+      [32m+[0m[0m website_domain              = (known after apply)
+      [32m+[0m[0m website_endpoint            = (known after apply)
+    }
+
+[1m  # aws_s3_bucket_public_access_block.terraform_state_pab[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_public_access_block" "terraform_state_pab" {
+      [32m+[0m[0m block_public_acls       = true
+      [32m+[0m[0m block_public_policy     = true
+      [32m+[0m[0m bucket                  = (known after apply)
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m ignore_public_acls      = true
+      [32m+[0m[0m restrict_public_buckets = true
+    }
+
+[1m  # aws_s3_bucket_server_side_encryption_configuration.terraform_state_encryption[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_server_side_encryption_configuration" "terraform_state_encryption" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m rule {
+          [32m+[0m[0m apply_server_side_encryption_by_default {
+              [32m+[0m[0m sse_algorithm = "AES256"
+            }
+        }
+    }
+
+[1m  # aws_s3_bucket_versioning.terraform_state_versioning[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_versioning" "terraform_state_versioning" {
+      [32m+[0m[0m bucket = (known after apply)
+      [32m+[0m[0m id     = (known after apply)
+
+      [32m+[0m[0m versioning_configuration {
+          [32m+[0m[0m mfa_delete = (known after apply)
+          [32m+[0m[0m status     = "Enabled"
+        }
+    }
+
+[1mPlan:[0m 4 to add, 0 to change, 0 to destroy.
+[0m
+Changes to Outputs:
+  [32m+[0m[0m s3_bucket_arn  = (known after apply)
+  [32m+[0m[0m s3_bucket_name = "terraform-state-bucket-unique-12345"
+[0m[1maws_s3_bucket.terraform_state: Creating...[0m[0m
+[0m[1maws_s3_bucket.terraform_state: Creation complete after 1s [id=terraform-state-bucket-unique-12345][0m
+[0m[1maws_s3_bucket_server_side_encryption_configuration.terraform_state_encryption: Creating...[0m[0m
+[0m[1maws_s3_bucket_versioning.terraform_state_versioning: Creating...[0m[0m
+[0m[1maws_s3_bucket_public_access_block.terraform_state_pab: Creating...[0m[0m
+[0m[1maws_s3_bucket_public_access_block.terraform_state_pab: Creation complete after 0s [id=terraform-state-bucket-unique-12345][0m
+[0m[1maws_s3_bucket_server_side_encryption_configuration.terraform_state_encryption: Creation complete after 0s [id=terraform-state-bucket-unique-12345][0m
+[0m[1maws_s3_bucket_versioning.terraform_state_versioning: Creation complete after 1s [id=terraform-state-bucket-unique-12345][0m
+[0m[1m[32m
+Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0ms3_bucket_arn = "arn:aws:s3:::terraform-state-bucket-unique-12345"
+s3_bucket_name = "terraform-state-bucket-unique-12345"
+Bucket created: terraform-state-bucket-unique-12345
+##### TASK 3: DynamoDB locking #####
+[0m[1maws_s3_bucket.terraform_state: Refreshing state... [id=terraform-state-bucket-unique-12345][0m
+[0m[1maws_s3_bucket_versioning.terraform_state_versioning: Refreshing state... [id=terraform-state-bucket-unique-12345][0m
+[0m[1maws_s3_bucket_server_side_encryption_configuration.terraform_state_encryption: Refreshing state... [id=terraform-state-bucket-unique-12345][0m
+[0m[1maws_s3_bucket_public_access_block.terraform_state_pab: Refreshing state... [id=terraform-state-bucket-unique-12345][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_dynamodb_table.terraform_state_lock[0m will be created
+[0m  [32m+[0m[0m resource "aws_dynamodb_table" "terraform_state_lock" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m billing_mode     = "PAY_PER_REQUEST"
+      [32m+[0m[0m hash_key         = "LockID"
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m name             = "terraform-state-lock-lab"
+      [32m+[0m[0m read_capacity    = (known after apply)
+      [32m+[0m[0m stream_arn       = (known after apply)
+      [32m+[0m[0m stream_label     = (known after apply)
+      [32m+[0m[0m stream_view_type = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Environment" = "lab"
+          [32m+[0m[0m "Name"        = "Terraform State Lock Table"
+          [32m+[0m[0m "Purpose"     = "State Locking"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Environment" = "lab"
+          [32m+[0m[0m "Name"        = "Terraform State Lock Table"
+          [32m+[0m[0m "Purpose"     = "State Locking"
+        }
+      [32m+[0m[0m write_capacity   = (known after apply)
+
+      [32m+[0m[0m attribute {
+          [32m+[0m[0m name = "LockID"
+          [32m+[0m[0m type = "S"
+        }
+    }
+
+[1mPlan:[0m 1 to add, 0 to change, 0 to destroy.
+[0m
+Changes to Outputs:
+  [32m+[0m[0m dynamodb_table_arn  = (known after apply)
+  [32m+[0m[0m dynamodb_table_name = "terraform-state-lock-lab"
+[0m[1maws_dynamodb_table.terraform_state_lock: Creating...[0m[0m
+[0m[1maws_dynamodb_table.terraform_state_lock: Creation complete after 0s [id=terraform-state-lock-lab][0m
+[0m[1m[32m
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0mdynamodb_table_arn = "arn:aws:dynamodb:us-east-1:123456789012:table/terraform-state-lock-lab"
+dynamodb_table_name = "terraform-state-lock-lab"
+s3_bucket_arn = "arn:aws:s3:::terraform-state-bucket-unique-12345"
+s3_bucket_name = "terraform-state-bucket-unique-12345"
+DynamoDB table created: terraform-state-lock-lab
+{
+    "Status": "Enabled"
+}
+{
+    "Name": "terraform-state-lock-lab",
+    "Status": "ACTIVE",
+    "KeySchema": [
+        {
+            "AttributeName": "LockID",
+            "KeyType": "HASH"
+        }
+    ]
+}
+##### TASK 4: main infrastructure on remote backend #####
+
+[0m[1mInitializing the backend...[0m
+[0m[32m
+Successfully configured the backend "s3"! Terraform will automatically
+use this backend unless the backend configuration changes.[0m
+
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Installing hashicorp/aws v5.100.0...
+- Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+
+Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.[0m
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_internet_gateway.main[0m will be created
+[0m  [32m+[0m[0m resource "aws_internet_gateway" "main" {
+      [32m+[0m[0m arn      = (known after apply)
+      [32m+[0m[0m id       = (known after apply)
+      [32m+[0m[0m owner_id = (known after apply)
+      [32m+[0m[0m tags     = {
+          [32m+[0m[0m "Environment" = "lab"
+          [32m+[0m[0m "ManagedBy"   = "Terraform"
+          [32m+[0m[0m "Name"        = "Main IGW"
+        }
+      [32m+[0m[0m tags_all = {
+          [32m+[0m[0m "Environment" = "lab"
+          [32m+[0m[0m "ManagedBy"   = "Terraform"
+          [32m+[0m[0m "Name"        = "Main IGW"
+        }
+      [32m+[0m[0m vpc_id   = (known after apply)
+    }
+
+[1m  # aws_subnet.public[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "public" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.0.1.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = true
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Environment" = "lab"
+          [32m+[0m[0m "ManagedBy"   = "Terraform"
+          [32m+[0m[0m "Name"        = "Public Subnet"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Environment" = "lab"
+          [32m+[0m[0m "ManagedBy"   = "Terraform"
+          [32m+[0m[0m "Name"        = "Public Subnet"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # aws_vpc.main[0m will be created
+[0m  [32m+[0m[0m resource "aws_vpc" "main" {
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m cidr_block                           = "10.0.0.0/16"
+      [32m+[0m[0m default_network_acl_id               = (known after apply)
+      [32m+[0m[0m default_route_table_id               = (known after apply)
+      [32m+[0m[0m default_security_group_id            = (known after apply)
+      [32m+[0m[0m dhcp_options_id                      = (known after apply)
+      [32m+[0m[0m enable_dns_hostnames                 = true
+      [32m+[0m[0m enable_dns_support                   = true
+      [32m+[0m[0m enable_network_address_usage_metrics = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_tenancy                     = "default"
+      [32m+[0m[0m ipv6_association_id                  = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block                      = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_network_border_group = (known after apply)
+      [32m+[0m[0m main_route_table_id                  = (known after apply)
+      [32m+[0m[0m owner_id                             = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Environment" = "lab"
+          [32m+[0m[0m "ManagedBy"   = "Terraform"
+          [32m+[0m[0m "Name"        = "Main VPC"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Environment" = "lab"
+          [32m+[0m[0m "ManagedBy"   = "Terraform"
+          [32m+[0m[0m "Name"        = "Main VPC"
+        }
+    }
+
+[1mPlan:[0m 3 to add, 0 to change, 0 to destroy.
+[0m
+Changes to Outputs:
+  [32m+[0m[0m subnet_id = (known after apply)
+  [32m+[0m[0m vpc_id    = (known after apply)
+[0m[1maws_vpc.main: Creating...[0m[0m
+[0m[1maws_vpc.main: Still creating... [10s elapsed][0m[0m
+[0m[1maws_vpc.main: Creation complete after 12s [id=vpc-c085b3805e182ccd8][0m
+[0m[1maws_internet_gateway.main: Creating...[0m[0m
+[0m[1maws_subnet.public: Creating...[0m[0m
+[0m[1maws_internet_gateway.main: Creation complete after 0s [id=igw-1ea8d3f717615eefd][0m
+[0m[1maws_subnet.public: Still creating... [10s elapsed][0m[0m
+[0m[1maws_subnet.public: Creation complete after 10s [id=subnet-b2434e10254cba3b0][0m
+[0m[1m[32m
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0msubnet_id = "subnet-b2434e10254cba3b0"
+vpc_id = "vpc-c085b3805e182ccd8"
+# aws_internet_gateway.main:
+resource "aws_internet_gateway" "main" {
+    arn      = "arn:aws:ec2:us-east-1:123456789012:internet-gateway/igw-1ea8d3f717615eefd"
+    id       = "igw-1ea8d3f717615eefd"
+    owner_id = "123456789012"
+    tags     = {
+        "Environment" = "lab"
+        "ManagedBy"   = "Terraform"
+        "Name"        = "Main IGW"
+    }
+    tags_all = {
+        "Environment" = "lab"
+        "ManagedBy"   = "Terraform"
+        "Name"        = "Main IGW"
+    }
+    vpc_id   = "vpc-c085b3805e182ccd8"
+}
+
+# aws_subnet.public:
+resource "aws_subnet" "public" {
+    arn                                            = "arn:aws:ec2:us-east-1:123456789012:subnet/subnet-b2434e10254cba3b0"
+    assign_ipv6_address_on_creation                = false
+    availability_zone                              = "us-east-1a"
+    availability_zone_id                           = "use1-az6"
+    cidr_block                                     = "10.0.1.0/24"
+    enable_dns64                                   = false
+    enable_lni_at_device_index                     = 0
+    enable_resource_name_dns_a_record_on_launch    = false
+    enable_resource_name_dns_aaaa_record_on_launch = false
+    id                                             = "subnet-b2434e10254cba3b0"
+2026-11-15 07:08:41       5038 terraform.tfstate
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2026-11-15T07:08:41+00:00",
+    "ContentLength": 5038,
+    "ETag": "\"e129b0b32797283e7e6dacb544576388\"",
+    "VersionId": "38e25ff6-28f1-490a-a22d-93dbe505ad06",
+    "ContentType": "application/json",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}
+{
+    "Items": [
+        {
+            "LockID": {
+                "S": "terraform-state-bucket-unique-12345/infrastructure/terraform.tfstate-md5"
+            },
+            "Digest": {
+                "S": "e129b0b32797283e7e6dacb544576388"
+            }
+        }
+    ],
+    "Count": 1,
+    "ScannedCount": 1,
+    "ConsumedCapacity": null
+}
+Testing Terraform state locking...
+Lock held by another 'user'. Second operation (should FAIL):
+Acquiring state lock. This may take a few moments...
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mError acquiring the state lock[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mError message: operation error DynamoDB: PutItem, https response error
+[31m│[0m [0mStatusCode: 400, RequestID:
+[31m│[0m [0mosGNM0I5fPJ02Wgymdw2kS8ja59Ip6YRmJGFfr5rwaevri31eBUV,
+[31m│[0m [0mConditionalCheckFailedException: The conditional request failed
+[31m│[0m [0mLock Info:
+[31m│[0m [0m  ID:        fake-lock-1
+[31m│[0m [0m  Path:      
+[31m│[0m [0m  Operation: OperationTypePlan
+[31m│[0m [0m  Who:       other-user
+[31m│[0m [0m  Version:   
+[31m│[0m [0m  Created:   0001-01-01 00:00:00 +0000 UTC
+[31m│[0m [0m  Info:      
+[31m│[0m [0m
+[31m│[0m [0m
+[31m│[0m [0mTerraform acquires a state lock to protect the state from being written
+[31m│[0m [0mby multiple users at the same time. Please resolve the issue above and try
+[31m│[0m [0magain. For most commands, you can disable locking with the "-lock=false"
+[31m│[0m [0mflag, but this is not recommended.
+[31m╵[0m[0m
+EXPECTED: plan blocked by state lock
+Releasing lock...
+Second operation again (should SUCCEED):
+[0m[1maws_vpc.main: Refreshing state... [id=vpc-c085b3805e182ccd8][0m
+[0m[1maws_internet_gateway.main: Refreshing state... [id=igw-1ea8d3f717615eefd][0m
+[0m[1maws_subnet.public: Refreshing state... [id=subnet-b2434e10254cba3b0][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+State locking test completed.
+Creating state backup...
+Completed 4.9 KiB/4.9 KiB (403.2 KiB/s) with 1 file(s) remainingdownload: s3://terraform-state-bucket-unique-12345/infrastructure/terraform.tfstate to ../../terraform-state-backups/terraform.tfstate.20261115_070912
+Available state file versions:
+{
+    "Versions": [
+        {
+            "ETag": "\"e129b0b32797283e7e6dacb544576388\"",
+            "Size": 5038,
+            "StorageClass": "STANDARD",
+            "Key": "infrastructure/terraform.tfstate",
+            "VersionId": "38e25ff6-28f1-490a-a22d-93dbe505ad06",
+            "IsLatest": true,
+            "LastModified": "2026-11-15T07:08:41+00:00",
+            "Owner": {
+                "DisplayName": "webfile",
+                "ID": "75aa57f09aa0c8caeab4f8c24e99d10f8e7faeebf76c078efc7c6caea54ba06a"
+            }
+        }
+    ],
+    "RequestCharged": null,
+    "Prefix": "infrastructure/terraform.tfstate"
+}
+Creating full bucket backup...
+Completed 4.9 KiB/4.9 KiB (468.1 KiB/s) with 1 file(s) remainingdownload: s3://terraform-state-bucket-unique-12345/infrastructure/terraform.tfstate to ../../terraform-state-backups/full_backup_20261115_070912/infrastructure/terraform.tfstate
+Backup completed. Files saved to: /home/ubuntu/terraform-state-backups
+total 20
+drwxrwxr-x  3 ubuntu ubuntu 4096 Nov 15 07:09 .
+drwxr-x--- 24 ubuntu ubuntu 4096 Nov 15 07:09 ..
+drwxrwxr-x  3 ubuntu ubuntu 4096 Nov 15 07:09 full_backup_20261115_070912
+-rw-rw-r--  1 ubuntu ubuntu 5038 Nov 15 07:08 terraform.tfstate.20261115_070912
+Testing state recovery...
+[0m[1maws_vpc.main: Refreshing state... [id=vpc-c085b3805e182ccd8][0m
+[0m[1maws_subnet.public: Refreshing state... [id=subnet-b2434e10254cba3b0][0m
+[0m[1maws_internet_gateway.main: Refreshing state... [id=igw-1ea8d3f717615eefd][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+[0m[1m[32m
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0msubnet_id = "subnet-b2434e10254cba3b0"
+vpc_id = "vpc-c085b3805e182ccd8"
+Completed 4.9 KiB/4.9 KiB (921.7 KiB/s) with 1 file(s) remainingdownload: s3://terraform-state-bucket-unique-12345/infrastructure/terraform.tfstate to ./state_backup_before_test.json
+Completed 21 Bytes/21 Bytes (1.0 KiB/s) with 1 file(s) remainingupload: ./corrupted_state.json to s3://terraform-state-bucket-unique-12345/infrastructure/terraform.tfstate
+Testing with corrupted state (should fail)...
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1merror loading state: state data in S3 does not have the expected content.
+[31m│[0m [0m
+[31m│[0m [0mThe checksum calculated for the state stored in S3 does not match the checksum
+[31m│[0m [0mstored in DynamoDB.
+[31m│[0m [0m
+[31m│[0m [0mBucket: terraform-state-bucket-unique-12345
+[31m│[0m [0mKey:    infrastructure/terraform.tfstate
+[31m│[0m [0mCalculated checksum: df88ea8fa815acb418790fcad3aa9ea5
+[31m│[0m [0mStored checksum:     e129b0b32797283e7e6dacb544576388
+[31m│[0m [0m
+[31m│[0m [0mThis may be caused by unusually long delays in S3 processing a previous state
+[31m│[0m [0mupdate. Please wait for a minute or two and try again.
+[31m│[0m [0m
+[31m│[0m [0mIf this problem persists, and neither S3 nor DynamoDB are experiencing an
+[31m│[0m [0moutage, you may need to manually verify the remote state and update the Digest
+[31m│[0m [0mvalue stored in the DynamoDB table to the following value: e129b0b32797283e7e6dacb544576388
+[31m│[0m [0m[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m
+[31m╵[0m[0m
+Expected failure due to corrupted state
+Restoring from backup...
+Completed 4.9 KiB/4.9 KiB (704.2 KiB/s) with 1 file(s) remainingupload: ./state_backup_before_test.json to s3://terraform-state-bucket-unique-12345/infrastructure/terraform.tfstate
+Testing after recovery (should succeed)...
+[0m[1maws_vpc.main: Refreshing state... [id=vpc-c085b3805e182ccd8][0m
+[0m[1maws_internet_gateway.main: Refreshing state... [id=igw-1ea8d3f717615eefd][0m
+[0m[1maws_subnet.public: Refreshing state... [id=subnet-b2434e10254cba3b0][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+Recovery test completed successfully.
+##### TASK 5: advanced #####
+Verifying state file encryption...
+{
+    "ServerSideEncryptionConfiguration": {
+        "Rules": [
+            {
+                "ApplyServerSideEncryptionByDefault": {
+                    "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": false
+            }
+        ]
+    }
+}
+"AES256"
+{
+    "Status": "Enabled"
+}
+Encryption verification completed.
+Initial state file info:
+{ "LastModified": "2026-11-15T07:09:46+00:00", "ETag": "\"e129b0b32797283e7e6dacb544576388\"", "Size": 5038 }
+[0m[1maws_vpc.main: Refreshing state... [id=vpc-c085b3805e182ccd8][0m
+[0m[1maws_subnet.public: Refreshing state... [id=subnet-b2434e10254cba3b0][0m
+[0m[1maws_internet_gateway.main: Refreshing state... [id=igw-1ea8d3f717615eefd][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+[0m[1m[32m
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0msubnet_id = "subnet-b2434e10254cba3b0"
+vpc_id = "vpc-c085b3805e182ccd8"
+State file info after:
+{ "LastModified": "2026-11-15T07:09:46+00:00", "ETag": "\"e129b0b32797283e7e6dacb544576388\"", "Size": 5038 }
+No changes detected in state file (no infra changes were needed).
+-------------------------------------------------------------------------------------------------------------------
+|                                               ListObjectVersions                                                |
++----------------------------------+-----------------------------+-------+----------------------------------------+
+|                Key               |        LastModified         | Size  |               VersionId                |
++----------------------------------+-----------------------------+-------+----------------------------------------+
+|  infrastructure/terraform.tfstate|  2026-11-15T07:09:46+00:00  |  5038 |  c94364d6-6e56-444d-afae-47ce3b148032  |
+|  infrastructure/terraform.tfstate|  2026-11-15T07:09:33+00:00  |  21   |  673edfe6-aa1c-44b4-a28c-f2f7c63fcc2f  |
+|  infrastructure/terraform.tfstate|  2026-11-15T07:08:41+00:00  |  5038 |  38e25ff6-28f1-490a-a22d-93dbe505ad06  |
++----------------------------------+-----------------------------+-------+----------------------------------------+
+Monitoring completed.
+##### TASK 6: cleanup script (created, NOT run) + resource listing #####
+S3 Buckets:
+2026-11-15 07:07:21 terraform-state-bucket-unique-12345
+DynamoDB Tables:
+[
+    "terraform-state-lock-lab"
+]
+VPC Resources:
+[
+    {
+        "VpcId": "vpc-c085b3805e182ccd8",
+        "CidrBlock": "10.0.0.0/16",
+        "Tags": [
+            {
+                "Key": "Name",
+                "Value": "Main VPC"
+            },
+            {
+                "Key": "Environment",
+                "Value": "lab"
+            },
+            {
+                "Key": "ManagedBy",
+                "Value": "Terraform"
+            }
+        ]
+    }
+]
+##### LAB SCRIPT DONE in 389s #####

@@ -210,3 +210,4 @@
 | [Lab 17 - System-on-Chip Integration](Lab%2017%20-%20System-on-Chip%20Integration/PROOF.md) | no core-check file | 2026-11-15 05:47 |
 | [Lab 20 - Performance Optimization in RISC-V](Lab%2020%20-%20Performance%20Optimization%20in%20RISC-V/PROOF.md) | no core-check file | 2026-11-15 06:19 |
 | [Lab 1 - Introduction to Terraform](Lab%201%20-%20Introduction%20to%20Terraform/PROOF.md) | no core-check file | 2026-11-15 06:26 |
+| [Lab-05-Remote-State-Management](Lab-05-Remote-State-Management/PROOF.md) | RESULT: PASS (lab script completed; see run log) | 2026-11-15 07:11 |
